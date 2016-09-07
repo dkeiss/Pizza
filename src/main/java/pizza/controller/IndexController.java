@@ -20,12 +20,20 @@ public class IndexController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String root(Principal principal) {
-        return "index";
+        return login(principal);
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(Principal principal) {
-        return "index";
+        return login(principal);
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(Principal principal) {
+        if (principal == null) {
+            return "login";
+        }
+        return "order";
     }
 
     @RequestMapping("properties")
