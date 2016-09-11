@@ -19,4 +19,9 @@ public class UserServiceImpl implements UserService {
         return userRepositories.findByAlias(alias);
     }
 
+    @Override
+    public boolean isUserPasswordValid(String name, String password) {
+        return userRepositories.findByAlias(name) != null; // TODO real check
+    }
+
 }

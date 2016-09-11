@@ -9,4 +9,6 @@ public interface UserService {
 
     User getUserByAlias(String alias);
 
+    boolean isUserPasswordValid(String name, String password);
+
 }
