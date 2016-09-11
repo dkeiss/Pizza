@@ -15,6 +15,9 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    private PizzaAuthenticationProvider pizzaAuthenticationProvider;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
@@ -23,8 +26,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 authorizeRequests();
     }
 
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.authenticationProvider(pizzaAuthenticationProvider);
     }
+
 }
