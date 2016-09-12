@@ -8,6 +8,6 @@ import pizza.domain.User;
  */
 public interface UserRepositories extends CrudRepository<User, Integer> {
 
-    User findByAlias(String alias);
+    User findByUsername(String alias);
 
 }

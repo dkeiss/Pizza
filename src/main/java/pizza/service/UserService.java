@@ -7,8 +7,8 @@ import pizza.domain.User;
  */
 public interface UserService {
 
-    User getUserByAlias(String alias);
+    boolean isUsernameAndPasswordValid(String username, String password);
 
-    boolean isUserPasswordValid(String name, String password);
+    boolean isAdmin(String alias);
 
 }

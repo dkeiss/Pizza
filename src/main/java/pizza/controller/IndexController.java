@@ -23,9 +23,6 @@ public class IndexController {
 
     private Logger log = Logger.getLogger(IndexController.class);
 
-    @Autowired
-    private UserService userService;
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String root(Principal principal) {
         return login(principal);
