@@ -13,13 +13,10 @@ import java.util.Iterator;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
-import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
-import static org.springframework.util.Assert.isNull;
-import static org.springframework.util.Assert.isTrue;
 
 /**
  * Created by Daniel Keiss on 12.09.2016.
