@@ -6,7 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import pizza.domain.PasswordType;
 import pizza.domain.User;
-import pizza.repositories.UserRepositories;
+import pizza.repositories.UserRepository;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertFalse;
@@ -24,7 +24,7 @@ public class UserServiceTest {
     private UserService userService = new UserServiceImpl();
 
     @Mock
-    private UserRepositories userRepositories;
+    private UserRepository userRepository;
 
     @Mock
     private User user;
@@ -33,7 +33,7 @@ public class UserServiceTest {
     public void before() {
         initMocks(this);
 
-        when(userRepositories.findByUsername("alias")).thenReturn(user);
+        when(userRepository.findByUsername("alias")).thenReturn(user);
     }
 
     @Test

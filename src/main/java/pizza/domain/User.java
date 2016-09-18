@@ -13,8 +13,8 @@ import java.util.Date;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_id_seq")
-	@SequenceGenerator(name = "product_id_seq", sequenceName = "PRODUCT_ID_SEQ", allocationSize = 100)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")
+	@SequenceGenerator(name = "user_id_seq", sequenceName = "USER_ID_SEQ", allocationSize = 100)
 	private Integer id;
 
 	private String username;

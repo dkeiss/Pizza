@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pizza.domain.PasswordType;
 import pizza.domain.User;
-import pizza.repositories.UserRepositories;
+import pizza.repositories.UserRepository;
 
 /**
  * Created by Daniel Keiss on 11.09.2016.
@@ -13,7 +13,7 @@ import pizza.repositories.UserRepositories;
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	private UserRepositories userRepositories;
+	private UserRepository userRepository;
 
 	@Override
 	public boolean isUsernameAndPasswordValid(String username, String password) {
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	private User getUserByUsername(String username) {
-		return userRepositories.findByUsername(username);
+		return userRepository.findByUsername(username);
 	}
 
 }
