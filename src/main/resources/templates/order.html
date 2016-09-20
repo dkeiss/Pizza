@@ -23,6 +23,11 @@
             <div>Type</div><div th:text="${{product.type}}"></div>
             <br />
         </div>
+
+        <form id="order" th:object="${order}" th:action="@{/order}" action="#" method="post" role="form">
+            <input type="number" class="form-control" th:field="${order.id}" id="id" name="id" value="1234"/>
+            <div><input type="submit" value="Bestellen"/></div>
+        </form>
     </div>
 
     <div class="container">
