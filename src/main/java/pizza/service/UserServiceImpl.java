@@ -16,6 +16,11 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 
 	@Override
+	public boolean isUsernameValid(String username) {
+		return getUserByUsername(username) != null;
+	}
+
+	@Override
 	public boolean isUsernameAndPasswordValid(String username, String password) {
 		User user = getUserByUsername(username);
 		if (user != null) {

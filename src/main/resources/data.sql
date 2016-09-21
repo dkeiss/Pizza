@@ -1,6 +1,6 @@
 -- User
 INSERT INTO USER (ID, USERNAME, PASSWORD, PASSWORD_TYPE, ADMIN, FIRSTNAME, LASTNAME, CREATION_DATE) VALUES (1, 'admin', 'password', 'PLAIN', true, 'Bruce', 'Wayne', now());
-INSERT INTO USER (ID, USERNAME, PASSWORD, PASSWORD_TYPE, ADMIN, FIRSTNAME, LASTNAME, CREATION_DATE) VALUES (2, 'user', 'password', 'PLAIN', false, 'Hans', 'Maulwurf', now());
+INSERT INTO USER (ID, USERNAME, ADMIN, FIRSTNAME, LASTNAME, CREATION_DATE) VALUES (2, 'user', false, 'Hans', 'Maulwurf', now());
 
 -- Product
 INSERT INTO PRODUCT (ID, NAME, TYPE, CREATION_DATE) VALUES (1, 'Pizza Mix', 'Pizza', now());

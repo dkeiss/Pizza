@@ -22,8 +22,6 @@ import pizza.service.ProductService;
 @Controller
 public class IndexController {
 
-    private Logger log = Logger.getLogger(IndexController.class);
-
     @Autowired
     private ProductService productService;
 
@@ -46,6 +44,9 @@ public class IndexController {
     public String login(Principal principal, Model model) {
         if (principal == null) {
             return "login";
+        }
+        if("admin".equals(principal.getName())){
+            return "admin_login";
         }
         model.addAttribute("order", new Order());
         return "order";

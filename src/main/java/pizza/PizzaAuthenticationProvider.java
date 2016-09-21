@@ -26,10 +26,10 @@ public class PizzaAuthenticationProvider implements AuthenticationProvider{
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String name = authentication.getName();
         String password = authentication.getCredentials().toString();
-        if (userService.isUsernameAndPasswordValid(name, password)) {
+        if (userService.isUsernameValid(name)) {
             List<GrantedAuthority> grantedAuths = new ArrayList<>();
             grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
-            if(userService.isAdmin(name)){
+            if(userService.isAdmin(name) && userService.isUsernameAndPasswordValid(name, password)){
                 grantedAuths.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
             }
             return new UsernamePasswordAuthenticationToken(name, password, grantedAuths);

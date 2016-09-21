@@ -5,6 +5,8 @@ package pizza.service;
  */
 public interface UserService {
 
+    boolean isUsernameValid(String username);
+
     boolean isUsernameAndPasswordValid(String username, String password);
 
     boolean isAdmin(String alias);
