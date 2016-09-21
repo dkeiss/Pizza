@@ -1,0 +1,134 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    background: #F0F0F0;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    padding: 0 10px 0 10px;
+    margin: 0 auto;
+    max-width: 920px;
+}
+
+.container-box {
+    background: #FFFFFF;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #3595b4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin: 0;
+    float: left;
+    padding: 3px 0px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/*####################################################################################################*/
+/*##############################                HEADER                  ##############################*/
+/*####################################################################################################*/
+
+#header {
+    border-top: 5px solid red;
+}
+
+#header h1 {
+    background: red;
+    padding: 8px 15px;
+    margin: 0 0 20px 0;
+    float: left;
+    display: block;
+}
+
+/*####################################################################################################*/
+/*##############################               FOODMENU                 ##############################*/
+/*####################################################################################################*/
+
+#foodmenu input {
+    border: 1px solid #3595b4;
+    padding: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+#foodmenu input:hover {
+    background: #3595b4;
+}
+
+/*####################################################################################################*/
+/*##############################               ADDUSER                  ##############################*/
+/*####################################################################################################*/
+
+#adduser input {
+    padding: 5px 10px;
+    margin-left: 15px;    
+}
+
+#adduser input[type=text] {
+    width: 50%;
+}
+
+#adduser input[type=button] {
+    border: 1px solid #3595b4;
+    cursor: pointer;
+}
+
+#adduser input[type=button]:hover {
+    background: #3595b4;
+}
+
+#adduser .newUser-accepted {
+    background: #67C100;
+}
+
+#adduser .newUser-notAccepted {
+    background: #FF4949;
+}
+
+/*####################################################################################################*/
+/*##############################              TABLEUSER                 ##############################*/
+/*####################################################################################################*/
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table th,
+table td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table th {
+    text-align: left;
+    background-color: #3595B4;
+    color: white;
+}
+
+table td {
+    vertical-align: top;
+}

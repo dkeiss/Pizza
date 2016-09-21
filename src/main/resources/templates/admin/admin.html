@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8" />
+    <title>Bestellung bezahlen ...</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+    <link href="../../static/css/admin/app.css" th:href="@{/css/admin/app.css}" rel="stylesheet" media="screen"/>
+    <script src="../../static/js/jquery-2.1.4.min.js" th:src="@{/js/jquery-2.1.4.min.js}"></script>
+    <script src="../../static/js/sorttable.js" th:src="@{/js/sorttable.js}"></script>
+    <script src="../../static/js/service.js" th:src="@{/js/service.js}"></script>
+    <script src="../../static/js/function.js" th:src="@{/js/function.js}"></script>
+</head>
+<body>
+
+<div id="header">
+    <div class="container">
+        <h1>Admin</h1>
+    </div>
+</div>
+
+<div id="main">
+    <div class="container">
+        <div id="weblinks" class="container-box">
+            <a href="Warenkorb/index.html">Bestellungen - Warenkorb</a>
+        </div>
+
+        <div id="foodmenu" class="container-box">
+            <p>Speisekarte - Json erstellen:</p>
+            <input type="button" id="button_generateJson" value="Drück mich ..." onclick="generateJson()"/>
+        </div>
+
+        <div id="adduser" class="container-box">
+            <p>Neuen User eintragen: </p>
+            <input type="text" placeholder="Nachname, Vorname" id="newUser" onclick="removeAcceptedClass(this)"/>
+            <input type="button" value="Bestätigen" onclick="checkAddUser()"/>
+        </div>
+
+        <div id="tableuser" class="container-box">
+            <table class="sortable">
+                <tbody id="tableuser-input"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
+</body>
+</html>

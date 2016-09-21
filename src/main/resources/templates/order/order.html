@@ -4,9 +4,7 @@
 <head>
     <title>Login</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="../static/css/core.css"
-          th:href="@{/css/core.css}"
-          rel="stylesheet" media="screen"/>
+    <link href="../../static/css/core.css" th:href="@{/css/core.css}" rel="stylesheet" media="screen"/>
 </head>
 <body>
 
@@ -19,12 +17,14 @@
 <div id="main">
     <div class="container" th:unless="${#lists.isEmpty(allProducts)}">
         <div th:each="product : ${allProducts}">
-            <div>Name</div><div th:text="${{product.name}}"></div>
-            <div>Type</div><div th:text="${{product.type}}"></div>
-            <br />
+            <div>Name</div>
+            <div th:text="${{product.name}}"></div>
+            <div>Type</div>
+            <div th:text="${{product.type}}"></div>
+            <br/>
         </div>
 
-        <form id="order" th:object="${order}" th:action="@{/order}" action="#" method="post" role="form">
+        <form id="order" th:object="${order}" th:action="@{/templates/order}" action="#" method="post" role="form">
             <input type="number" class="form-control" th:field="${order.id}" id="id" name="id" value="1234"/>
             <div><input type="submit" value="Bestellen"/></div>
         </form>

@@ -20,7 +20,7 @@ public class AdminController {
             return "login";
         }
         model.addAttribute("order", new Order());
-        return "order";
+        return "admin/admin";
     }
 
 }

@@ -1,0 +1,347 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 10pt;
+    padding: 0px;
+    margin: 0px;
+    background: #F0F0F0;
+    overflow-y: scroll;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    padding: 0 10px 0 10px;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+#ajax-load {
+    background: #000;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 10;
+}
+
+#ajax-load img {
+    left: calc(50% - 100px);
+    top: calc(50% - 20px);
+    position: absolute;
+}
+
+/*####################################################################################################*/
+/*##############################                HEADER                  ##############################*/
+/*####################################################################################################*/
+
+#header {
+    width: 100%;
+    border-top: 5px solid #f80;
+}
+
+#header h1 {
+    padding: 0px 15px 5px 15px;
+    margin: 0 0 0 0;
+    background-color: #F80;
+    display: inline-block;
+    color: #FFFFFF;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#categorySelector {
+    display: block;
+    float: left;
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.buttonCategory {
+    display: inline-block;
+    color: #3595b4;
+    font-weight: 600;
+    padding: 8px 10px;
+    cursor: pointer;
+    width: 100px;
+}
+
+.buttonCategory:hover,
+.buttonCategory:hover i {
+    font-weight: 800;
+}
+
+.buttonCategory i {
+    padding: 0 5px 0 0;
+}
+
+.buttonCategory-active {
+    font-weight: 800;
+}
+
+/*####################################################################################################*/
+/*##############################           CONTAINER-ORDER              ##############################*/
+/*####################################################################################################*/
+
+#container-order {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    overflow: hidden;
+    display: none;
+    visibility: visible;
+}
+
+.container-order-visible {
+    display: block !important;
+}
+
+#container-order-opacity {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: #000;
+    opacity: 0.7;
+    visibility: inherit;
+}
+
+#container-order-div {
+    background: #FFFFFF;
+    position: relative;
+    width: 420px;
+    margin: 3% auto;
+    border: 5px solid #F80;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+#container-order-div .buttonClose {
+    padding: 2px 10px 2px 10px;
+    text-align: right;
+    cursor: pointer;
+    background: #50AECC;
+}
+
+#container-order-div .buttonClose:hover {
+    color: #FFFFFF;
+}
+
+#container-order-div .box {
+    padding: 10px;
+    background: #F0F0F0;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+#container-order-div table.box {
+    border-bottom: 0px;
+}
+
+#container-order-div .box input {
+    width: 95%;
+    padding: 10px 8px;
+    position: relative;
+}
+
+#container-order-div table,
+#container-order-div tbody,
+#container-order-div tr {
+    width: 100%;
+    display: grid;
+    padding: 2px 0px 2px 0px;
+}
+
+#container-order-div .box td:first-child {
+    width: 80%;
+}
+
+#container-order-div .box td:last-child {
+    width: 20%;
+    text-align: right;
+}
+
+#container-order-div .box div {
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#order-accept button {
+    width: 100%;
+    height: 40px;
+    background: #50aecc;
+    color: #FFFFFF;
+    font-weight: 700;
+    border: 0;
+    cursor: pointer;
+}
+
+#order-accept button:hover {
+    background: #2083A2;
+}
+
+#order-click-button-accepted {
+    display: none;
+    background: #67C100 !important;
+    border: 0;
+}
+
+#order-click-button-accepted:focus {
+    outline: none;
+}
+
+.boxExtraMenu {
+    background: #FFFFFF !important;
+}
+
+.boxExtraMenu label {
+    display: block;
+    padding-bottom: 10px;
+}
+
+.boxExtraMenu button {
+    font-size: 12px;
+}
+
+.boxExtraMenu button {
+    width: 180px;
+    padding: 3px 5px;
+    margin: 0px 0px 5px 0px;
+    border: 1px solid #F80;
+    background: #F0F0F0;
+    cursor: pointer;
+}
+
+.boxExtraMenu button:hover {
+    background: #F80;
+}
+
+.boxExtraMenu button:focus {
+    outline: none;
+}
+
+.boxExtraMenu button p {
+    margin: 0px;
+    float: left;
+}
+
+.boxExtraMenu button span {
+    float: right;
+}
+
+.boxExtraMenu-error {
+    background: #F1C9C9 !important;
+}
+
+.btActive {
+    background-color: #50AECC !important;
+}
+
+.btActive:hover {
+    background: #2083A2 !important;
+}
+
+/*####################################################################################################*/
+/*##############################                 MAIN                   ##############################*/
+/*####################################################################################################*/
+
+#main {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.invisible {
+    display: none;
+}
+
+.rest {
+    background-color: #FFFFFF;
+    margin: 0 0 100px 0;
+}
+
+/*####################################################################################################*/
+/*##############################              PRODUCTLIST               ##############################*/
+/*####################################################################################################*/
+
+.productCategory {
+    display: none;
+}
+
+.category-visible {
+    display: block !important;
+}
+
+#productList table,
+#productList tbody {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+tr.subCategory-header {
+    text-align: left;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+tr.subCategory-header th {
+    text-align: left;
+}
+
+tr.subCategory-header th h3 {
+    margin: 0;
+}
+
+tr.subCategory-products {
+    border-bottom: 1px solid #EEEEEE;
+}
+
+tr.subCategory-products:hover {
+    background: #DDDDDD;
+}
+
+tr.subCategory-header th,
+tr.subCategory-products td {
+    padding: 10px;
+}
+
+tr.subCategory-header th:first-child,
+tr.subCategory-products td:first-child {
+    padding-left: 10px;
+}
+
+
+tr.subCategory-products td.name {
+    font-weight: 600;
+}
+
+tr.subCategory-products td.name span.description {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+th.size,
+td.price {
+    width: 100px;
+    text-align: center !important;
+}
+
+td.price div {
+    padding: 10px;
+    background: #50aecc;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+td.price div:hover {
+    background: #2083A2;
+}

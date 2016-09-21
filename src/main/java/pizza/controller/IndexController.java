@@ -46,10 +46,10 @@ public class IndexController {
             return "login";
         }
         if("admin".equals(principal.getName())){
-            return "admin_login";
+            return "admin/login";
         }
         model.addAttribute("order", new Order());
-        return "order";
+        return "order/order";
     }
 
     @RequestMapping("properties")
