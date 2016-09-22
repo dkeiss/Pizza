@@ -6,6 +6,9 @@ import pizza.domain.PasswordType;
 import pizza.domain.User;
 import pizza.repositories.UserRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Daniel Keiss on 11.09.2016.
  */
@@ -42,6 +45,13 @@ public class UserServiceImpl implements UserService {
 	public boolean isAdmin(String username) {
 		User user = getUserByUsername(username);
 		return user.isAdmin();
+	}
+
+	@Override
+	public List<User> getUsers() {
+		List<User> users = new ArrayList<>();
+		userRepository.findAll().forEach(users::add);
+		return users;
 	}
 
 	private User getUserByUsername(String username) {
