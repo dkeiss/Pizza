@@ -38,7 +38,7 @@ public class PizzaAuthenticationProviderTest {
     public void authenticateValidUserPassword() throws Exception {
         Authentication authentication = mock(Authentication.class);
         when(authentication.getCredentials()).thenReturn("test1234");
-        when(userService.isUsernameAndPasswordValid(anyString(), anyString())).thenReturn(true);
+        when(userService.isUsernameValid(anyString())).thenReturn(true);
 
         authentication = pizzaAuthenticationProvider.authenticate(authentication);
 
@@ -51,6 +51,7 @@ public class PizzaAuthenticationProviderTest {
     public void authenticateValidUserPasswordWithAdminRole() throws Exception {
         Authentication authentication = mock(Authentication.class);
         when(authentication.getCredentials()).thenReturn("test1234");
+        when(userService.isUsernameValid(anyString())).thenReturn(true);
         when(userService.isUsernameAndPasswordValid(anyString(), anyString())).thenReturn(true);
         when(userService.isAdmin(anyString())).thenReturn(true);
 
@@ -64,7 +65,7 @@ public class PizzaAuthenticationProviderTest {
     }
 
     @Test
-    public void authenticateInalidUserPassword() throws Exception {
+    public void authenticateInvalidUserPassword() throws Exception {
         Authentication authentication = mock(Authentication.class);
         when(authentication.getCredentials()).thenReturn("test1234");
         when(userService.isUsernameAndPasswordValid(anyString(), anyString())).thenReturn(false);
