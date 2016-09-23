@@ -10,7 +10,7 @@ var HtmlControl = (function () {
     HtmlControl.prototype.createButtonMenu = function () {
         var output = "";
         for (var i = 0; i < this._category.length; i++) {
-            var categoryName = this._category[i].Name;
+            var categoryName = this._category[i].name;
             output += "<div class=\"buttonCategory\" onclick=\"htmlControl.setVisible(this, 'category-" + categoryName + "')\"><i class=\"fa fa-angle-double-right fa-1\" aria-hidden=\"true\"></i>" + categoryName + "</div>";
         }
         this._categoryElement.innerHTML = output;
@@ -19,11 +19,11 @@ var HtmlControl = (function () {
     HtmlControl.prototype.showProductList = function () {
         var output = "";
         for (var i = 0; i < this._category.length; i++) {
-            var categoryName = this._category[i].Name;
+            var categoryName = this._category[i].name;
             output += "<div class=\"productCategory\" id=\"category-" + categoryName + "\">";
-            var subCategory = this._category[i].SubCategories;
+            var subCategory = this._category[i].subCategories;
             for (var j = 0; j < subCategory.length; j++) {
-                if (subCategory[j].Products.length !== 0) {
+                if (subCategory[j].products.length !== 0) {
                     output += this.createProductTable(subCategory[j]);
                 }
             }
@@ -33,17 +33,17 @@ var HtmlControl = (function () {
     };
     HtmlControl.prototype.createProductTable = function (subCategory) {
         var output = "<table class=\"subCategory\"><tbody>";
-        output += "<tr class=\"subCategory-header\"><th><h3>" + subCategory.Name + "</h3></th>";
+        output += "<tr class=\"subCategory-header\"><th><h3>" + subCategory.name + "</h3></th>";
         var showProductSize = [false, false, false, false];
-        for (var _i = 0, _a = subCategory.Products; _i < _a.length; _i++) {
+        for (var _i = 0, _a = subCategory.products; _i < _a.length; _i++) {
             var productItem = _a[_i];
-            if (productItem.PriceSmall !== "") {
+            if (productItem.priceSmall !== "") {
                 showProductSize[0] = true;
             }
-            if (productItem.PriceMedium !== "") {
+            if (productItem.priceMedium !== "") {
                 showProductSize[1] = true;
             }
-            if (productItem.PriceLarge !== "") {
+            if (productItem.priceLarge !== "") {
                 showProductSize[2] = true;
             }
             if (productItem.Price !== "") {
@@ -68,31 +68,31 @@ var HtmlControl = (function () {
             output += "<th class=\"size\"></th>";
         }
         output += "</tr>";
-        var products = subCategory.Products;
+        var products = subCategory.products;
         for (var _b = 0; _b < products.length; _b++) {
             var product = products[_b];
             output += "<tr class=\"subCategory-products\">";
-            output += "<td class=\"name\"><span>" + product.Number + ".</span> " + product.Name + " <br />";
-            output += "<span class=\"description\">" + product.Description + "</span></td>";
-            if (product.Price !== "" && !changeSize) {
-                output += this.createOrderButtonForTableCell(product, product.Price, "normal");
+            output += "<td class=\"name\"><span>" + product.number + ".</span> " + product.name + " <br />";
+            output += "<span class=\"description\">" + product.description + "</span></td>";
+            if (product.price !== "" && !changeSize) {
+                output += this.createOrderButtonForTableCell(product, product.price, "normal");
             }
             else {
-                if (product.PriceSmall !== "") {
-                    output += this.createOrderButtonForTableCell(product, product.PriceSmall, "klein");
+                if (product.priceSmall !== "") {
+                    output += this.createOrderButtonForTableCell(product, product.priceSmall, "klein");
                 }
-                if (product.PriceSmall === "" && changeSize) {
-                    output += this.createOrderButtonForTableCell(product, product.Price, "klein");
+                if (product.priceSmall === "" && changeSize) {
+                    output += this.createOrderButtonForTableCell(product, product.price, "klein");
                 }
                 // Eine leere Zelle, damit die mittlere Zelle richtig positioniert wird...
-                if (product.PriceSmall === "" && showProductSize[0]) {
+                if (product.priceSmall === "" && showProductSize[0]) {
                     output += "<td></td>";
                 }
-                if (product.PriceMedium !== "") {
-                    output += this.createOrderButtonForTableCell(product, product.PriceMedium, "mittel");
+                if (product.priceMedium !== "") {
+                    output += this.createOrderButtonForTableCell(product, product.priceMedium, "mittel");
                 }
-                if (product.PriceLarge !== "") {
-                    output += this.createOrderButtonForTableCell(product, product.PriceLarge, "groß");
+                if (product.priceLarge !== "") {
+                    output += this.createOrderButtonForTableCell(product, product.priceLarge, "groß");
                 }
             }
             output += "</tr>";
@@ -100,7 +100,7 @@ var HtmlControl = (function () {
         return output + "</tbody></table>";
     };
     HtmlControl.prototype.createOrderButtonForTableCell = function (product, price, size) {
-        return "<td class=\"price\"><div category=\"" + product.Category + "\" name=\"" + product.Name + "\" number=\"" + product.Number + "\" price=\"" + price + "\" size=\"" + size + "\" onclick=\"orderControl.loadExtraMenu(this)\">" + price + " \u20AC</div></td>";
+        return "<td class=\"price\"><div category=\"" + product.category + "\" name=\"" + product.name + "\" number=\"" + product.number + "\" price=\"" + price + "\" size=\"" + size + "\" onclick=\"orderControl.loadExtraMenu(this)\">" + price + " \u20AC</div></td>";
     };
     HtmlControl.prototype.setVisible = function (buttonElement, buttonName) {
         var categoryVisible = document.getElementsByClassName("category-visible");

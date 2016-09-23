@@ -30,7 +30,7 @@ var Service = (function () {
     /* ############  WebOrder  ############ */
     Service.loadFoodMenu = function () {
         var productData = this.ajax("ResponseFoodMenu");
-        return productData.ProductCategories;
+        return productData.productCategories;
     };
     Service.loadAdditionalMenu = function (productId) {
         return this.ajax("GetAdditionalInfo", "{value: '" + productId + "'}");
@@ -59,7 +59,9 @@ var Service = (function () {
         });
         var serviceData = null;
         respons.done(function (data) {
-            serviceData = data.d;
+            console.log( "second success" );
+            console.log( data );
+            serviceData = data;
         });
         return serviceData;
     };
