@@ -46,7 +46,7 @@ var HtmlControl = (function () {
             if (productItem.priceLarge !== "") {
                 showProductSize[2] = true;
             }
-            if (productItem.Price !== "") {
+            if (productItem.price !== "") {
                 showProductSize[3] = true;
             }
         }

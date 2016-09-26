@@ -30,8 +30,8 @@ var OrderControl = (function () {
         var output = "";
         if (jData !== null) {
             // ReSharper disable once QualifiedExpressionMaybeNull
-            for (var i = 0; i < jData.As.length; i++) {
-                output = this.createAdditionalMenu(jData.As[i], element, output);
+            for (var i = 0; i < jData.as.length; i++) {
+                output = this.createAdditionalMenu(jData.as[i], element, output);
             }
         }
         document.getElementById("menu-extra").innerHTML = output;
@@ -39,12 +39,12 @@ var OrderControl = (function () {
     };
     /// HTML-Konstruktor für Extra-Zutaten
     OrderControl.prototype.createAdditionalMenu = function (jDataA, element, output) {
-        var duty = jDataA.Duty;
+        var duty = jDataA.duty;
         output += "<div class=\"box boxExtraMenu\" duty=\"" + duty + "\">";
         output += "<label>" + this._strLabel + "</label>";
         output += "<div>";
         var size = element.getAttribute("size");
-        for (var i = 0; i < jDataA.Bs.length; i++) {
+        for (var i = 0; i < jDataA.bs.length; i++) {
             var tempSize = -1;
             if (size === "klein" || size === "normal") {
                 tempSize = 0;
@@ -55,8 +55,8 @@ var OrderControl = (function () {
             if (size === "groß") {
                 tempSize = 2;
             }
-            var price = jDataA.Bs[i].Prices[tempSize];
-            var name_1 = jDataA.Bs[i].Name;
+            var price = jDataA.bs[i].prices[tempSize];
+            var name_1 = jDataA.bs[i].name;
             output += "<button class=\"button-ingredients\" onclick=\"orderControl.clickExtraIngredients(this)\" name=\"" + name_1 + "\" price=\"" + price.toFixed(2) + "\">";
             output += "<p>" + name_1 + "</p>";
             output += "<span>" + price.toFixed(2) + "</span>";

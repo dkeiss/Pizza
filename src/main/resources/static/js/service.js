@@ -33,7 +33,7 @@ var Service = (function () {
         return productData.productCategories;
     };
     Service.loadAdditionalMenu = function (productId) {
-        return this.ajax("GetAdditionalInfo", "{value: '" + productId + "'}");
+        return this.ajax('GetAdditionalInfo', '{"value" : "' + productId + '"}');
     };
     Service.checkUserDiscount = function (userName) {
         return this.ajax("GetUserDiscount", "{userName: '" + userName + "'}");
@@ -55,7 +55,7 @@ var Service = (function () {
             async: false
         });
         respons.fail(function (data) {
-            alert("Fail: " + JSON.parse(data.d));
+            alert("Fail: " + JSON.parse(data));
         });
         var serviceData = null;
         respons.done(function (data) {
