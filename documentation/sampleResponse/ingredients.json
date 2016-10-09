@@ -1,0 +1,25 @@
+/* Beispiel-JSON für die Abfrage von Zutaten für ein Produkt */
+
+{
+  "ingredientGroups": [
+    {
+      "id": 1,
+      "name": "Zusätzliche Zutaten",
+      "description": "Zusätzliche Zutaten",
+      "optional": true,
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "frischer Knoblauch",
+          "description": "",
+          "priceCategories": [
+            {
+              "price": 0.00,
+              "categorie": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

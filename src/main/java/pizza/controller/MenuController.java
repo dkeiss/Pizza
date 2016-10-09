@@ -34,14 +34,14 @@ public class MenuController {
     public
     @ResponseBody
     String responseFoodMenu(Principal principal, Model model) throws IOException {
-        return new String(Files.readAllBytes(Paths.get("Speisekarte.json")));
+        return new String(Files.readAllBytes(Paths.get("documentation/Speisekarte.json")));
     }
 
     @RequestMapping(value = "/GetAdditionalInfo", method = RequestMethod.POST)
     public
     @ResponseBody
     AdditionalMenuVO getAdditionalInfo(@RequestBody GetAdditionalMenuVO getAdditionalMenuVO, Principal principal, Model model) throws IOException {
-        String additionalMenuJson = new String(Files.readAllBytes(Paths.get("ZusatzMenu.json")));
+        String additionalMenuJson = new String(Files.readAllBytes(Paths.get("documentation/ZusatzMenu.json")));
         AdditionalMenusVO additionalMenusVO = objectMapper.readValue(additionalMenuJson, AdditionalMenusVO.class);
         List<AdditionalMenuVO> additionalMenus = additionalMenusVO.getAdditionalMenus();
         Long id = Long.valueOf(getAdditionalMenuVO.getValue());

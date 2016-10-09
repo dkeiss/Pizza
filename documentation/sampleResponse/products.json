@@ -1,0 +1,29 @@
+/* Beispiel-JSON für die Abfrage von allen Produkten */
+
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Angebote",
+      "groups": [
+        {
+          "id": 2,
+          "name": "Indische Gerichte",
+          "products": [
+            {
+              "id": 3,
+              "name": "Murga Mandel-Curry",
+              "description": "description",
+              "priceCategories": [
+                {
+                  "price": 7.50,
+                  "categorie": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
