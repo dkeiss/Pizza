@@ -17,20 +17,30 @@ import java.util.List;
  * Created by Daniel Keiss on 11.09.2016.
  */
 @Component
-public class PizzaAuthenticationProvider implements AuthenticationProvider{
+public class PizzaAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
     private UserService userService;
 
+    public final static SimpleGrantedAuthority ROLE_USER = new SimpleGrantedAuthority("ROLE_USER");
+    public final static SimpleGrantedAuthority ROLE_ADMIN = new SimpleGrantedAuthority("ROLE_ADMIN");
+
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String name = authentication.getName();
-        String password = authentication.getCredentials().toString();
         if (userService.isUsernameValid(name)) {
             List<GrantedAuthority> grantedAuths = new ArrayList<>();
-            grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
-            if(userService.isAdmin(name) && userService.isUsernameAndPasswordValid(name, password)){
-                grantedAuths.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+            grantedAuths.add(ROLE_USER);
+            String password = authentication.getCredentials() != null ? authentication.getCredentials().toString() : null;
+            if (userService.isAdmin(name)) {
+                grantedAuths.add(ROLE_ADMIN);
+                UsernamePasswordAuthenticationToken passwordAuthenticationToken = new UsernamePasswordAuthenticationToken(name, password, grantedAuths);
+                if (password != null && userService.isUsernameAndPasswordValid(name, password)) {
+                    return passwordAuthenticationToken;
+                } else {
+                    passwordAuthenticationToken.setAuthenticated(false);
+                    return passwordAuthenticationToken;
+                }
             }
             return new UsernamePasswordAuthenticationToken(name, password, grantedAuths);
         } else {

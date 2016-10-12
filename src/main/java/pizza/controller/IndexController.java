@@ -1,6 +1,8 @@
 package pizza.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.security.Principal;
 import java.util.List;
 import java.util.Properties;
+
 import org.apache.log4j.Logger;
 import pizza.domain.Order;
 import pizza.domain.Product;
@@ -42,13 +45,18 @@ public class IndexController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Principal principal, Model model) {
-        if (principal == null) {
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
+        if (usernamePasswordAuthenticationToken == null) {
             return "login";
         }
-        if("admin".equals(principal.getName())){
-            return "admin/login";
+        model.addAttribute("username", usernamePasswordAuthenticationToken.getName());
+        model.addAttribute("admin", usernamePasswordAuthenticationToken.getAuthorities().contains(pizza.PizzaAuthenticationProvider.ROLE_ADMIN));
+        if (!usernamePasswordAuthenticationToken.isAuthenticated()) {
+            return "login";
         }
-        model.addAttribute("order", new Order());
+        if (usernamePasswordAuthenticationToken.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {
+            return "admin/admin";
+        }
         return "order/order";
     }
 

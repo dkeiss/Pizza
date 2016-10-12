@@ -23,9 +23,7 @@ public class OrderController {
     @RequestMapping(value = "/order", method = RequestMethod.POST)
     public Order order(Principal principal, @Valid @ModelAttribute("order") Order order, BindingResult bindingResult) {
         System.out.println(order);
-
         return order;
-
     }
 
 }
