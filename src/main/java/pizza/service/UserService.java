@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface UserService {
 
-    boolean isUsernameValid(String username);
+    boolean usernameExist(String username);
 
     boolean isUsernameAndPasswordValid(String username, String password);
 

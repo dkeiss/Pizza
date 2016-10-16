@@ -28,7 +28,7 @@ public class PizzaAuthenticationProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String name = authentication.getName();
-        if (userService.isUsernameValid(name)) {
+        if (userService.usernameExist(name)) {
             List<GrantedAuthority> grantedAuths = new ArrayList<>();
             grantedAuths.add(ROLE_USER);
             String password = authentication.getCredentials() != null ? authentication.getCredentials().toString() : null;

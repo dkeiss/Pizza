@@ -1,5 +1,7 @@
 package pizza.service;
 
+import org.h2.jdbc.JdbcSQLException;
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper;
 import org.springframework.stereotype.Service;
@@ -7,6 +9,7 @@ import pizza.domain.PasswordType;
 import pizza.domain.User;
 import pizza.repositories.UserRepository;
 import pizza.service.exception.UserNotFoundException;
+import pizza.service.exception.UsernameAlreadyUsedException;
 import pizza.vo.UserVO;
 
 import java.util.ArrayList;
@@ -26,7 +29,7 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public boolean isUsernameValid(String username) {
+    public boolean usernameExist(String username) {
         return getUserByUsername(username) != null;
     }
 
@@ -67,9 +70,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserVO> addUser(UserVO userVO) {
+        if (usernameExist(userVO.getUsername())) {
+            throw new UsernameAlreadyUsedException();
+        }
         userVO.setId(null);
         User user = new User();
-        copyProperties(userVO, user, "creationDate", "modificationDate");
+        copyFromValueObject(userVO, user);
         user.setCreationDate(new Date());
         userRepository.save(user);
         return getUsers();
@@ -81,9 +87,13 @@ public class UserServiceImpl implements UserService {
         if (user == null) {
             throw new UserNotFoundException();
         }
-        copyProperties(userVO, user, "creationDate", "modificationDate");
+        copyFromValueObject(userVO, user);
         user.setModificationDate(new Date());
         userRepository.save(user);
+    }
+
+    private void copyFromValueObject(UserVO userVO, User user) {
+        copyProperties(userVO, user, "creationDate", "modificationDate");
     }
 
     private User getUserByUsername(String username) {
