@@ -1,9 +1,11 @@
 package pizza.vo;
 
 import lombok.Data;
+import lombok.Getter;
 
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * Created by Daniel Keiss on 16.10.2016.
@@ -11,7 +13,7 @@ import java.math.BigDecimal;
 @Data
 public class UserVO {
 
-    private Long id;
+    private Integer id;
 
     @NotNull
     private String firstname;
@@ -19,7 +21,9 @@ public class UserVO {
     private String lastname;
     @NotNull
     private String username;
-    private BigDecimal rabatt;
+    private BigDecimal discount;
     private boolean admin;
+    private Date creationDate;
+    private Date modificationDate;
 
 }

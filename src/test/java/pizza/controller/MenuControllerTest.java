@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 /**
- * Created by Keissenator on 26.09.2016.
+ * Created by Daniel Keiss on 26.09.2016.
  */
 public class MenuControllerTest {
 
@@ -20,7 +20,7 @@ public class MenuControllerTest {
 
     @Test
     public void getAdditionalInfo() throws Exception {
-        String additionalMenuJson = new String(Files.readAllBytes(Paths.get("ZusatzMenu.json")));
+        String additionalMenuJson = new String(Files.readAllBytes(Paths.get("documentation/ZusatzMenu.json")));
         AdditionalMenusVO additionalMenusVO = objectMapper.readValue(additionalMenuJson, AdditionalMenusVO.class);
         System.out.println(additionalMenusVO);
     }

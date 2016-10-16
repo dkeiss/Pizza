@@ -1,6 +1,7 @@
 package pizza.service;
 
 import pizza.domain.User;
+import pizza.vo.UserVO;
 
 import java.util.List;
 
@@ -15,6 +16,10 @@ public interface UserService {
 
     boolean isAdmin(String alias);
 
-    List<User> getUsers();
+    List<UserVO> getUsers();
+
+    List<UserVO> addUser(UserVO user);
+
+    void updateUser(UserVO user);
 
 }

@@ -3,6 +3,7 @@ package pizza.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -24,6 +25,8 @@ public class User {
 	private boolean admin;
 	private String firstname;
 	private String lastname;
+	private BigDecimal discount;
 	private Date creationDate;
+	private Date modificationDate;
 
 }
