@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import pizza.domain.PasswordType;
 import pizza.domain.User;
 import pizza.repositories.UserRepository;
+import pizza.service.exception.UserNotFoundException;
 import pizza.vo.UserVO;
 
 import java.util.ArrayList;
@@ -77,6 +78,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updateUser(UserVO userVO) {
         User user = userRepository.findOne(userVO.getId());
+        if (user == null) {
+            throw new UserNotFoundException();
+        }
         copyProperties(userVO, user, "creationDate", "modificationDate");
         user.setModificationDate(new Date());
         userRepository.save(user);
