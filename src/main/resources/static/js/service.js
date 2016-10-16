@@ -15,7 +15,7 @@ var Service = (function () {
         return this.ajax("AddNewUser", "{newUser: '" + newUser + "'}");
     };
     Service.loadUserTable = function () {
-        return this.ajax("user");
+        return this.ajax("LoadUserTable");
     };
     /* ############  WebAdmin/Warenkorb  ############ */
     Service.loadTableData = function () {
@@ -30,10 +30,10 @@ var Service = (function () {
     /* ############  WebOrder  ############ */
     Service.loadFoodMenu = function () {
         var productData = this.ajax("ResponseFoodMenu");
-        return productData.productCategories;
+        return productData.ProductCategories;
     };
     Service.loadAdditionalMenu = function (productId) {
-        return this.ajax('GetAdditionalInfo', '{"value" : "' + productId + '"}');
+        return this.ajax("GetAdditionalInfo", "{value: '" + productId + "'}");
     };
     Service.checkUserDiscount = function (userName) {
         return this.ajax("GetUserDiscount", "{userName: '" + userName + "'}");
@@ -55,18 +55,16 @@ var Service = (function () {
             async: false
         });
         respons.fail(function (data) {
-            alert("Fail: " + JSON.parse(data));
+            alert("Fail: " + JSON.parse(data.d));
         });
         var serviceData = null;
         respons.done(function (data) {
-            console.log( "second success" );
-            console.log( data );
-            serviceData = data;
+            serviceData = data.d;
         });
         return serviceData;
     };
     //private static webserviceUlr = "../../WebService/Service.asmx/";
-    Service.webserviceUlr = window.location.origin + "/";
+    Service.webserviceUlr = window.location.origin + "/WebService/Service.asmx/";
     return Service;
-})();
+}());
 //# sourceMappingURL=service.js.map

@@ -13,4 +13,4 @@ $(document).ready(function () {
     orderControl = new OrderControl();
     document.getElementById("ajax-load").style.display = "none";
 });
-//# sourceMappingURL=function.js.map
+//# sourceMappingURL=function.ts.map

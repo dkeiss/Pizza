@@ -1,5 +1,5 @@
-/// <reference path="../../WebService/js/jquery.d.ts" />
-/// <reference path="../../WebService/js/service.ts" />
+/// <reference path="../../js/jquery.d.ts" />
+/// <reference path="../../js/service.ts" />
 $(document).ready(function () {
     createTableUser();
 });
