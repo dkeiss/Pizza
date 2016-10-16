@@ -1,4 +1,6 @@
-﻿class Service
+﻿/// <reference path="jquery.d.ts" />
+
+class Service
 {
     //private static webserviceUlr = "../../WebService/Service.asmx/";
     private static webserviceUlr = `${window.location.origin}/WebService/Service.asmx/`;

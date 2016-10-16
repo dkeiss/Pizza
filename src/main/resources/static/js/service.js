@@ -1,3 +1,4 @@
+/// <reference path="jquery.d.ts" />
 var Service = (function () {
     function Service() {
     }
