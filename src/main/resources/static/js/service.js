@@ -16,7 +16,7 @@ var Service = (function () {
         return this.ajax("AddNewUser", "{newUser: '" + newUser + "'}");
     };
     Service.loadUserTable = function () {
-        return this.ajax("LoadUserTable");
+        return this.ajaxGet("users");
     };
     /* ############  WebAdmin/Warenkorb  ############ */
     Service.loadTableData = function () {
@@ -64,8 +64,28 @@ var Service = (function () {
         });
         return serviceData;
     };
+    Service.ajaxGet = function (serviceMethod, data) {
+        if (data === void 0) { data = null; }
+        var respons = $.ajax({
+            type: "GET",
+            url: this.webserviceUlr + serviceMethod,
+            data: data,
+            scriptCharset: "utf-8",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            async: false
+        });
+        respons.fail(function (data) {
+            alert("Fail: " + JSON.parse(data.d));
+        });
+        var serviceData = null;
+        respons.done(function (data) {
+            serviceData = data.d;
+        });
+        return serviceData;
+    };
     //private static webserviceUlr = "../../WebService/Service.asmx/";
-    Service.webserviceUlr = window.location.origin + "/WebService/Service.asmx/";
+    Service.webserviceUlr = window.location.origin + "/rest/";
     return Service;
 }());
 //# sourceMappingURL=service.js.map

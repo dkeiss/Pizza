@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pizza.domain.User;
 import pizza.service.UserService;
+import pizza.vo.UserVO;
 
+import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -20,9 +23,25 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public @ResponseBody List<User> getUsers(){
-        return userService.getUsers();
+    @RequestMapping(value = "rest/users", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    List<UserVO> getUsers() {
+        UserVO user = new UserVO();
+        user.setAdmin(false);
+        user.setFirstname("Hans");
+        user.setLastname("Maulwurf");
+        user.setId(1l);
+        user.setRabatt(BigDecimal.ONE);
+
+        UserVO admin = new UserVO();
+        admin.setAdmin(true);
+        admin.setFirstname("Homer");
+        admin.setLastname("Simson");
+        admin.setId(2l);
+        admin.setRabatt(BigDecimal.ZERO);
+
+        return Arrays.asList(user, admin);
     }
 
 }

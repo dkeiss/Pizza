@@ -3,7 +3,7 @@
 class Service
 {
     //private static webserviceUlr = "../../WebService/Service.asmx/";
-    private static webserviceUlr = `${window.location.origin}/WebService/Service.asmx/`;
+    private static webserviceUlr = `${window.location.origin}/rest/`;
 
     /* ############  WebAdmin  ############ */
     public static generateJson()
@@ -25,7 +25,7 @@ class Service
 
     public static loadUserTable(): any
     {
-        return this.ajax("LoadUserTable");
+        return this.ajaxGet("users");
     }
 
     /* ############  WebAdmin/Warenkorb  ############ */
@@ -73,6 +73,30 @@ class Service
     {
         const respons = $.ajax({
             type: "POST",
+            url: this.webserviceUlr + serviceMethod,
+            data: data,
+            scriptCharset : "utf-8",
+            contentType : "application/json; charset=utf-8",
+            dataType : "json",
+            async : false
+        });
+
+        respons.fail((data) => {
+            alert(`Fail: ${JSON.parse(data.d)}`);
+        });
+
+        var serviceData = null;
+        respons.done((data) =>
+        {
+            serviceData =  data.d;
+        });
+
+        return serviceData;
+    }
+    private static ajaxGet(serviceMethod:string, data:any = null): any
+    {
+        const respons = $.ajax({
+            type: "GET",
             url: this.webserviceUlr + serviceMethod,
             data: data,
             scriptCharset : "utf-8",
