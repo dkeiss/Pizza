@@ -25,14 +25,6 @@ import pizza.service.ProductService;
 @Controller
 public class IndexController {
 
-    @Autowired
-    private ProductService productService;
-
-    @ModelAttribute("allProducts")
-    public List<Product> allProducts() {
-        return this.productService.findAll();
-    }
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String root(Principal principal, Model model) {
         return login(principal, model);
@@ -58,12 +50,6 @@ public class IndexController {
             return "admin/admin";
         }
         return "order/order";
-    }
-
-    @RequestMapping("properties")
-    @ResponseBody
-    Properties properties() {
-        return System.getProperties();
     }
 
 }

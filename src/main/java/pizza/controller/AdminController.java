@@ -23,4 +23,9 @@ public class AdminController {
         return "admin/admin";
     }
 
+    @RequestMapping(value = "/admin/usermanagement", method = RequestMethod.GET)
+    public String usermanagement(Principal principal, Model model) {
+        return "admin/usermanagement";
+    }
+
 }
