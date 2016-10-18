@@ -18,13 +18,13 @@ public class User {
     @SequenceGenerator(name = "USER_ID_SEQ", sequenceName = "USER_ID_SEQ", allocationSize = 100)
     private Integer id;
     @Column(unique = true)
-    private String username;
+    private String userName;
     private String password;
     @Enumerated(EnumType.STRING)
     private PasswordType passwordType;
-    private boolean admin;
-    private String firstname;
-    private String lastname;
+    private boolean isAdmin;
+    private String firstName;
+    private String lastName;
     private BigDecimal discount;
     private Date creationDate;
     private Date modificationDate;

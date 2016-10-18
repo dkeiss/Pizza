@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserVO> addUser(UserVO userVO) {
-        if (usernameExist(userVO.getUsername())) {
+        if (usernameExist(userVO.getUserName())) {
             throw new UsernameAlreadyUsedException();
         }
         userVO.setId(null);
@@ -97,7 +97,7 @@ public class UserServiceImpl implements UserService {
     }
 
     private User getUserByUsername(String username) {
-        return userRepository.findByUsername(username);
+        return userRepository.findByUserName(username);
     }
 
 }

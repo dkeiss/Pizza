@@ -33,7 +33,7 @@ public class UserServiceTest {
     public void before() {
         initMocks(this);
 
-        when(userRepository.findByUsername("alias")).thenReturn(user);
+        when(userRepository.findByUserName("alias")).thenReturn(user);
     }
 
     @Test
