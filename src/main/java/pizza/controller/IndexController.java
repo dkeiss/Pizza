@@ -25,6 +25,9 @@ import pizza.service.ProductService;
 @Controller
 public class IndexController {
 
+    @Autowired
+    private AuthenticationValidator authenticationValidator;
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String root(Principal principal, Model model) {
         return login(principal, model);
@@ -38,12 +41,7 @@ public class IndexController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Principal principal, Model model) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
-        if (usernamePasswordAuthenticationToken == null) {
-            return "login";
-        }
-        model.addAttribute("username", usernamePasswordAuthenticationToken.getName());
-        model.addAttribute("admin", usernamePasswordAuthenticationToken.getAuthorities().contains(pizza.PizzaAuthenticationProvider.ROLE_ADMIN));
-        if (!usernamePasswordAuthenticationToken.isAuthenticated()) {
+        if (!authenticationValidator.isAuthenticated(usernamePasswordAuthenticationToken, model)) {
             return "login";
         }
         if (usernamePasswordAuthenticationToken.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {

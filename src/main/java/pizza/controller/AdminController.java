@@ -16,16 +16,16 @@ import java.security.Principal;
 public class AdminController {
 
     @Autowired
-    private PrincipalValidator principalValidator;
+    private AuthenticationValidator authenticationValidator;
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String admin(Principal principal, Model model) {
-        return "admin/admin";
+        return authenticationValidator.checkAdminAuthentication(principal, model, "admin/admin");
     }
 
     @RequestMapping(value = "/admin/usermanagement", method = RequestMethod.GET)
     public String usermanagement(Principal principal, Model model) {
-        return "admin/usermanagement";
+        return authenticationValidator.checkAdminAuthentication(principal, model, "admin/usermanagement");
     }
 
 }
