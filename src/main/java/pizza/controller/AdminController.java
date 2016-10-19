@@ -1,5 +1,6 @@
 package pizza.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,12 +15,11 @@ import java.security.Principal;
 @Controller
 public class AdminController {
 
-    @RequestMapping(value = "/admin/login", method = RequestMethod.POST)
-    public String adminLogin(Principal principal, Model model) {
-        if (principal == null) {
-            return "login";
-        }
-        model.addAttribute("order", new Order());
+    @Autowired
+    private PrincipalValidator principalValidator;
+
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String admin(Principal principal, Model model) {
         return "admin/admin";
     }
 
