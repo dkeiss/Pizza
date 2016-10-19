@@ -1,5 +1,6 @@
 package pizza.controller;
 
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.catalina.mapper.Mapper;
 import org.springframework.stereotype.Controller;
@@ -40,7 +41,7 @@ public class MenuController {
     @RequestMapping(value = "/GetAdditionalInfo", method = RequestMethod.POST)
     public
     @ResponseBody
-    AdditionalMenuVO getAdditionalInfo(@RequestBody GetAdditionalMenuVO getAdditionalMenuVO, Principal principal, Model model) throws IOException {
+    AdditionalMenuVO getAdditionalInfo(@RequestBody GetAdditionalMenuVO getAdditionalMenuVO, Principal principal, Model model) throws IOException, JsonMappingException {
         String additionalMenuJson = new String(Files.readAllBytes(Paths.get("documentation/ZusatzMenu.json")));
         AdditionalMenusVO additionalMenusVO = objectMapper.readValue(additionalMenuJson, AdditionalMenusVO.class);
         List<AdditionalMenuVO> additionalMenus = additionalMenusVO.getAdditionalMenus();
