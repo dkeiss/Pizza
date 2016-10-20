@@ -1,5 +1,5 @@
-
-interface IUserList {
+interface IUserList
+{
     id: number;
     firstName: string;
     lastName: string;

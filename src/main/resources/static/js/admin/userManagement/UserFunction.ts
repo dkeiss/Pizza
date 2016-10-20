@@ -1,11 +1,12 @@
-/// <reference path="../../jquery.d.ts" />
+/// <reference path="../../thirdParty/jquery.d.ts" />
 /// <reference path="UserService.ts" />
 
 namespace WebApplication.Admin.UserManagement
 {
-    $(document).ready( () =>
+    $(document).ready(() =>
     {
-        UserService.loadUserTable( userList => {
+        UserService.loadUserTable(userList =>
+        {
             alert(userList[0].userName);
         });
     });
