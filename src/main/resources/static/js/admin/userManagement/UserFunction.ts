@@ -6,7 +6,7 @@ namespace WebApplication.Admin.UserManagement
     $(document).ready( () =>
     {
         UserService.loadUserTable( userList => {
-            alert(userList[0].username);
+            alert(userList[0].userName);
         });
     });
 }

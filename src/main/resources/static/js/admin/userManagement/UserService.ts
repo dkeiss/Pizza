@@ -11,7 +11,7 @@ namespace WebApplication.Admin.UserManagement
             this.ajaxGet("users", onSuccess);
         }
 
-        private static ajaxGet(serviceMethod: string, onSuccess: (userList: IUserList) => void)
+        private static ajaxGet(serviceMethod: string, onSuccess: (xhr: any) => void)
         {
             $.ajax({
                 type: "GET",
