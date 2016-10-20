@@ -1,11 +1,11 @@
 
 interface IUserList {
     id: number;
-    firstname: string;
-    lastname: string;
-    username: string;
+    firstName: string;
+    lastName: string;
+    userName: string;
     discount: number;
-    admin: boolean;
+    isAdmin: boolean;
     creationDate: number;
     modificationDate?: number;
 }
