@@ -4,7 +4,8 @@
     <meta charset="utf-8"/>
     <title>UserManagement</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge;"/>
-    <link href="../../static/css/admin/app.css" th:href="@{/css/admin/app.css}" rel="stylesheet" media="screen"/>
+    <link href="../../static/css/admin/userManagement.css" th:href="@{/css/admin/userManagement.css}" rel="stylesheet" media="screen"/>
+    <link href="../../static/css/_core.css" th:href="@{/css/_core.css}" rel="stylesheet" media="screen"/>
     <script src="../../static/js/thirdParty/jquery-2.1.4.min.js" th:src="@{/js/thirdParty/jquery-2.1.4.min.js}"></script>
     <script src="../../static/js/admin/userManagement/UserFunction.js" th:src="@{/js/admin/userManagement/UserFunction.js}"></script>
     <script src="../../static/js/admin/userManagement/UserService.js" th:src="@{/js/admin/userManagement/UserService.js}"></script>
@@ -13,13 +14,35 @@
 </head>
 <body>
 
-<div id="header">
-    <div class="container">
-        <h1>Admin</h1>
-        <div th:replace="fragments/header :: header">&nbsp;</div>
+    <div class="core-container-header">
+        <div class="core-container-center">
+            <h1>Admin</h1>
+            <div th:replace="fragments/header :: header">&nbsp;</div>
+        </div>
     </div>
-</div>
 
+    <div class="core-container-center">
+        <div class="core-container-box">
+            <input class="core-inputField um-inputField_firstName" maxlength="100" placeholder="Vorname" />
+            <input class="core-inputField um-inputField_lastName" maxlength="100" placeholder="Nachname"/>
+            <input class="core-inputField um-inputField_email" maxlength="100" placeholder="E-Mail"/>
+            <label class="core-warningLabel um-warningLabel_newUser"></label>
+            <div class="core-submitButton um-submitButton_newUser">Bestätigen</div>
+        </div>
+
+        <div class="core-container-box">
+            <table class="um-userTable">
+                <tr class="um-userTable-headlines">
+                    <th>Admin</th>
+                    <th>Vorname</th>
+                    <th>Nachname</th>
+                    <th>E-Mail</th>
+                    <th>Rabatt</th>
+                    <th>Löschen</th>
+                </tr>
+            </table>
+        </div>
+    </div>
 
 
 </body>

@@ -1,30 +1,21 @@
 /// <reference path="../../thirdParty/jquery.d.ts" />
-/// <reference path="UserService.ts" />
+/// <reference path="TableController.ts" />
 
 namespace WebApplication.Admin.UserManagement
 {
     $(document).ready(() =>
     {
-        const webApplication = new UserFunction();
-        webApplication.start();
+        new UserFunction();
     });
 
 
     export class UserFunction
     {
-        private _userList: IUserList = null;
+        private _tableController: TableController = null;
 
         constructor()
         {
-            UserService.loadUserTable(userList =>
-            {
-                this._userList = userList;
-            });
-        }
-
-        public start()
-        {
-
+            this._tableController = new TableController();
         }
     }
 }
