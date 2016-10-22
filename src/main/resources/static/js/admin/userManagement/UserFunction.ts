@@ -16,6 +16,7 @@ namespace WebApplication.Admin.UserManagement
         constructor()
         {
             this._tableController = new TableController();
+            this._tableController.start();
         }
     }
 }

@@ -1,3 +1,4 @@
+
 interface IUserList
 {
     id: number;
@@ -5,7 +6,7 @@ interface IUserList
     lastName: string;
     userName: string;
     discount: number;
-    isAdmin: boolean;
+    admin: boolean;
     creationDate: number;
     modificationDate?: number;
 }
