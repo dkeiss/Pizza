@@ -2,14 +2,10 @@ package pizza.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
-import pizza.vo.AdditionalMenuVO;
-import pizza.vo.AdditionalMenusVO;
+import pizza.vo.product.AdditionalMenusVO;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Daniel Keiss on 26.09.2016.

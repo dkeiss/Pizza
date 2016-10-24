@@ -1,4 +1,4 @@
-package pizza.vo;
+package pizza.vo.user;
 
 import lombok.Data;
 import lombok.Getter;

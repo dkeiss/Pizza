@@ -6,6 +6,7 @@ import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import pizza.domain.User;
 import pizza.repositories.UserRepository;
 
@@ -20,6 +21,7 @@ import javax.mail.internet.MimeMessage;
 /**
  * Created by Daniel Keiss on 19.10.2016.
  */
+@Service
 public class SendMailImpl implements SendMail {
 
     @Value("${smtp.host}")
