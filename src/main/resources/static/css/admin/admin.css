@@ -1,0 +1,64 @@
+@import url("../_core.css");
+
+.admin-button {
+    color: #3595b4;
+    text-align: center;
+    text-transform:uppercase;
+    cursor: pointer;
+    transition: 0.3s linear;
+    border: solid 1px #fff;
+
+}
+
+.admin-button:hover {
+    background-color: #f7fdff;
+    border: solid 1px #2e90ae;
+}
+
+.admin-label {
+    float: left;
+    padding: 5px 5px 0px 0px;
+}
+
+.admin-errorLabel {
+    color: #F00;
+    padding: 5px 5px 0px 0px;
+}
+
+.admin-submitButton{
+    width: 120px;
+    text-align: center;
+    background-color: #ccc;
+    text-transform: uppercase;
+    padding: 5px 0;
+    float: right;
+}
+
+.admin-submitButton:hover {
+    background-color: #FF0000;
+}
+
+.admin-inputField_time{
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #bbb;
+    background-color: #fff;
+
+    font-size: 15px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-inputField_time_error{
+    color: #f00;
+    background-color: #fee;
+}
+
+.admin-submitButton_simple{
+    margin: 0px 5px 0px 0px;
+    float: left;
+}
+
+.admin-submitButton_expert{
+    margin: 0px 0px 0px 5px;
+    float: right;
+}
