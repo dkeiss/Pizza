@@ -6,7 +6,12 @@ class WebService
 class UserManagementSelectors
 {
     public static userTable = ".um-userTable";
-    public static userTableRow = ".um-userTable tr";
+    public static userTableRow = ".um-userTable td";
+}
+
+class UserManagementCss
+{
+    public static userTableShowIcon = "um-userTable-showIcon";
 }
 
 class AdminOverviewSelectors

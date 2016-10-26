@@ -45,3 +45,15 @@
 .um-userTable td:nth-child(7) {
     text-align: center;
 }
+
+.um-userTable td:nth-child(7) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.um-userTable-showIcon {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+

@@ -13,15 +13,29 @@ namespace WebApplication.Admin.UserManagement
         constructor()
         {
             this._userTableSelector = $(UserManagementSelectors.userTable);
-            this._userTableRowSelector = $(UserManagementSelectors.userTableRow);
 
             this.updateUserList();
             this.createTable();
+
+            this._userTableRowSelector = $(UserManagementSelectors.userTableRow);
         }
 
         public start(): void
         {
-            this._userTableRowSelector.on("click", () => {});
+            this._userTableRowSelector.on("click", event =>
+            {
+                if (!$(event.currentTarget).hasClass("edit")) return;
+
+                $(event.currentTarget)
+                    .append(
+                        $("<input>", {
+                            type: "text",
+                            val: $(event.currentTarget).text()
+                        })
+                    );
+
+                //$(event.currentTarget).find("td:last-child").addClass(UserManagementCss.userTableShowIcon);
+            });
         }
 
         private updateUserList(): void
@@ -37,8 +51,6 @@ namespace WebApplication.Admin.UserManagement
             const userList = this._userList;
             let element = "";
 
-            console.log(userList);
-
             for(let i = 0; i < userList.length; i++)
             {
                 element += "<tr userid='" + userList[i].id + "'>";
@@ -52,10 +64,10 @@ namespace WebApplication.Admin.UserManagement
                     element += "<td><input type='checkbox' /></td>"
                 }
 
-                element += "<td>" + userList[i].firstName + "</td>";
-                element += "<td>" + userList[i].lastName + "</td>";
-                element += "<td></td>";
-                element += "<td>" + userList[i].discount + "</td>";
+                element += "<td class='edit'>" + userList[i].firstName + "</td>";
+                element += "<td class='edit'>" + userList[i].lastName + "</td>";
+                element += "<td class='edit'></td>";
+                element += "<td class='edit'>" + userList[i].discount + "</td>";
                 element += "<td> X </td>";
                 element += "<td> Y </td>";
                 element += "</tr>";
