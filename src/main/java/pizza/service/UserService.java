@@ -17,7 +17,7 @@ public interface UserService {
 
     List<UserVO> getUsers();
 
-    List<UserVO> addUser(UserVO user);
+    List<UserVO> createUser(UserVO user);
 
     void updateUser(UserVO user);
 
