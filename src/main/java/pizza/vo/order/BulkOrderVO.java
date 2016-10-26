@@ -1,8 +1,10 @@
 package pizza.vo.order;
 
 import lombok.Data;
+import lombok.Getter;
 
 import javax.validation.constraints.NotNull;
+import java.beans.Transient;
 import java.util.Date;
 
 /**
@@ -12,7 +14,7 @@ import java.util.Date;
 public class BulkOrderVO {
 
     @NotNull
-    private Integer bulkOrderId;
+    private Integer id;
 
     @NotNull
     private Integer catalogId;
@@ -23,6 +25,11 @@ public class BulkOrderVO {
     @NotNull
     private Date activeUntil;
 
+    private Date creationDate;
+
+    private Date modificationDate;
+
+    @Transient
     public boolean isActive() {
         return new Date().before(activeUntil);
     }

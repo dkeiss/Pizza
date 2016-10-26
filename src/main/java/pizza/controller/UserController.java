@@ -28,8 +28,8 @@ public class UserController {
     @RequestMapping(value = "", method = RequestMethod.POST)
     public
     @ResponseBody
-    List<UserVO> addUser(@RequestBody UserVO user) {
-        return userService.addUser(user);
+    List<UserVO> createUser(@RequestBody UserVO user) {
+        return userService.createUser(user);
     }
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.PUT)

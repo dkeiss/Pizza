@@ -7,9 +7,9 @@ import pizza.domain.User;
 import pizza.repositories.UserRepository;
 import pizza.service.exception.UserNotFoundException;
 import pizza.service.exception.UsernameAlreadyUsedException;
+import pizza.service.common.ObjectMapperService;
 import pizza.vo.user.UserVO;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +20,7 @@ import static org.springframework.beans.BeanUtils.copyProperties;
  * Created by Daniel Keiss on 11.09.2016.
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, ObjectMapperService {
 
     @Autowired
     private UserRepository userRepository;
@@ -56,23 +56,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserVO> getUsers() {
-        List<UserVO> userVOs = new ArrayList<>();
-        userRepository.findAll().forEach(userBO -> {
-            UserVO userVO = new UserVO();
-            copyProperties(userBO, userVO);
-            userVOs.add(userVO);
-        });
-        return userVOs;
+        return copyListFromObject(userRepository.findAll(), UserVO.class);
     }
 
     @Override
-    public List<UserVO> addUser(UserVO userVO) {
+    public List<UserVO> createUser(UserVO userVO) {
         if (usernameExist(userVO.getUserName())) {
             throw new UsernameAlreadyUsedException();
         }
         userVO.setId(null);
-        User user = new User();
-        copyFromValueObject(userVO, user);
+        User user = copyFromObject(userVO, new User());
         user.setCreationDate(new Date());
         userRepository.save(user);
         return getUsers();
@@ -84,13 +77,9 @@ public class UserServiceImpl implements UserService {
         if (user == null) {
             throw new UserNotFoundException();
         }
-        copyFromValueObject(userVO, user);
+        copyFromObject(userVO, user);
         user.setModificationDate(new Date());
         userRepository.save(user);
-    }
-
-    private void copyFromValueObject(UserVO userVO, User user) {
-        copyProperties(userVO, user, "creationDate", "modificationDate");
     }
 
     private User getUserByUsername(String username) {
