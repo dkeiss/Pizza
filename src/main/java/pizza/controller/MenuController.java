@@ -2,26 +2,21 @@ package pizza.controller;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.catalina.mapper.Mapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import pizza.domain.Order;
-import pizza.vo.AdditionalMenuVO;
-import pizza.vo.AdditionalMenusVO;
-import pizza.vo.GetAdditionalMenuVO;
+import pizza.vo.product.AdditionalMenuVO;
+import pizza.vo.product.AdditionalMenusVO;
+import pizza.vo.product.GetAdditionalMenuVO;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.Principal;
 import java.util.List;
-import java.util.Map;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 /**
  * Created by Daniel Keiss on 23.09.2016.

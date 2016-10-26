@@ -1,7 +1,6 @@
 package pizza.service;
 
-import pizza.domain.User;
-import pizza.vo.UserVO;
+import pizza.vo.user.UserVO;
 
 import java.util.List;
 

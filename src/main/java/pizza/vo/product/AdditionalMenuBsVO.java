@@ -1,4 +1,4 @@
-package pizza.vo;
+package pizza.vo.product;
 
 import lombok.Data;
 
@@ -9,10 +9,9 @@ import java.util.List;
  * Created by Daniel Keiss on 26.09.2016.
  */
 @Data
-public class AdditionalMenuVO {
+public class AdditionalMenuBsVO {
 
-    public List<Long> numbers;
-    public List<AdditionMenuAsVO> as;
+    public String name;
+    public List<BigDecimal> prices;
 
 }
-

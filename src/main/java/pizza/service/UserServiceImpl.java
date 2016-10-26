@@ -1,16 +1,13 @@
 package pizza.service;
 
-import org.h2.jdbc.JdbcSQLException;
-import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper;
 import org.springframework.stereotype.Service;
 import pizza.domain.PasswordType;
 import pizza.domain.User;
 import pizza.repositories.UserRepository;
 import pizza.service.exception.UserNotFoundException;
 import pizza.service.exception.UsernameAlreadyUsedException;
-import pizza.vo.UserVO;
+import pizza.vo.user.UserVO;
 
 import java.util.ArrayList;
 import java.util.Date;

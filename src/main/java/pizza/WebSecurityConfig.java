@@ -21,6 +21,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/css/**").permitAll()
+                .antMatchers("/rest/**").permitAll() // TODO disable after development
                 .anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout().permitAll().and().
                 authorizeRequests();
         http.csrf().disable(); // todo find a way for crsf token with javascript!
