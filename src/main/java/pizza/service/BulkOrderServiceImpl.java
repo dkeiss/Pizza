@@ -14,8 +14,6 @@ import pizza.vo.order.BulkOrderVO;
 import java.util.Date;
 import java.util.List;
 
-import static org.springframework.beans.BeanUtils.copyProperties;
-
 /**
  * Created by Daniel Keiss on 26.10.2016.
  */
