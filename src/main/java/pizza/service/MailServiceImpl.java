@@ -10,19 +10,11 @@ import org.springframework.stereotype.Service;
 import pizza.domain.User;
 import pizza.repositories.UserRepository;
 
-import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
 /**
  * Created by Daniel Keiss on 19.10.2016.
  */
 @Service
-public class SendMailImpl implements SendMail {
+public class MailServiceImpl implements MailService {
 
     @Value("${smtp.host}")
     private String smtpHost;
@@ -31,14 +23,14 @@ public class SendMailImpl implements SendMail {
     private UserRepository userRepository;
 
     @Override
-    public void sendInvitationToAll() throws EmailException {
+    public void sendBulkOrderInvitationToAll(String bulkOrderName) throws EmailException {
         Email email = new SimpleEmail();
         email.setHostName(smtpHost);
         email.setSmtpPort(465);
         email.setAuthenticator(new DefaultAuthenticator("whbpizza", "whb@pizza"));
         email.setSSLOnConnect(true);
         email.setFrom("whbpizza@gmail.com");
-        email.setSubject("Das Bestellsystem ist eröffnet!");
+        email.setSubject("Die Sammelbestellung für \"" + bulkOrderName + "\" ist eröffnet!");
         email.setMsg("Bestellungen können nun aufgenommen werden :-)");
 
         for (User user : userRepository.findAll()) {

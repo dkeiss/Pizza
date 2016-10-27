@@ -1,13 +1,14 @@
 package pizza.service;
 
+import org.apache.commons.mail.EmailException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pizza.domain.BulkOrder;
-import pizza.domain.User;
 import pizza.repositories.BulkOrderRepository;
 import pizza.service.common.ObjectMapperService;
+import pizza.service.exception.BulkOrderActiveUntilNotValidException;
+import pizza.service.exception.BulkOrderAlreadyActiveException;
 import pizza.service.exception.BulkOrderNotFoundException;
-import pizza.service.exception.UserNotFoundException;
 import pizza.vo.order.BulkOrderVO;
 
 import java.util.Date;
@@ -24,6 +25,9 @@ public class BulkOrderServiceImpl implements BulkOrderService, ObjectMapperServi
     @Autowired
     private BulkOrderRepository bulkOrderRepository;
 
+    @Autowired
+    private MailService mailService;
+
     @Override
     public List<BulkOrderVO> listBulkOrders() {
         return copyListFromObject(bulkOrderRepository.findAll(), BulkOrderVO.class);
@@ -31,12 +35,21 @@ public class BulkOrderServiceImpl implements BulkOrderService, ObjectMapperServi
 
     @Override
     public BulkOrderVO createBulkOrder(BulkOrderVO bulkOrderVO) {
-        checkIfBulkOrderIsValid(bulkOrderVO);
+        isValid(bulkOrderVO);
+
         bulkOrderVO.setId(null);
         BulkOrder bulkOrderBO = copyFromObject(bulkOrderVO, new BulkOrder());
         bulkOrderBO.setCreationDate(new Date());
         bulkOrderRepository.save(bulkOrderBO);
-        return copyFromObject(bulkOrderBO, bulkOrderVO);
+        bulkOrderVO = copyFromObject(bulkOrderBO, bulkOrderVO);
+
+        try {
+            mailService.sendBulkOrderInvitationToAll(bulkOrderVO.getName());
+        } catch (EmailException e) {
+            e.printStackTrace();
+        }
+
+        return bulkOrderVO;
     }
 
     @Override
@@ -61,8 +74,21 @@ public class BulkOrderServiceImpl implements BulkOrderService, ObjectMapperServi
         bulkOrderRepository.save(bulkOrder);
     }
 
-    private void checkIfBulkOrderIsValid(BulkOrderVO bulkOrder) {
-        // TODO
+    private void isValid(BulkOrderVO bulkOrder) {
+        isActiveUntilValid(bulkOrder);
+        isAnotherBulkOrderActive();
+    }
+
+    private void isActiveUntilValid(BulkOrderVO bulkOrder) {
+        if (!bulkOrder.isActive()) {
+            throw new BulkOrderActiveUntilNotValidException();
+        }
+    }
+
+    private void isAnotherBulkOrderActive() {
+        if(!bulkOrderRepository.findByActiveUntilGreaterThan(new Date()).isEmpty()){
+            throw new BulkOrderAlreadyActiveException();
+        }
     }
 
 }

@@ -5,8 +5,8 @@ import org.apache.commons.mail.EmailException;
 /**
  * Created by Daniel Keiss on 19.10.2016.
  */
-public interface SendMail {
+public interface MailService {
 
-    void sendInvitationToAll() throws EmailException;
+    void sendBulkOrderInvitationToAll(String bulkOrderName) throws EmailException;
 
 }
