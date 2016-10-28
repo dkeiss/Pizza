@@ -2,7 +2,7 @@ package pizza.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
-import pizza.vo.product.AdditionalMenusVO;
+import pizza.vo.product.additional.AdditionalMenusVO;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 /**
  * Created by Daniel Keiss on 26.09.2016.
  */
-public class MenuControllerTest {
+public class OldMenuControllerTest {
 
     ObjectMapper objectMapper = new ObjectMapper();
 
