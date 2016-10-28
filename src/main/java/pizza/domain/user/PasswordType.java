@@ -1,4 +1,4 @@
-package pizza.domain;
+package pizza.domain.user;
 
 /**
  * Created by Daniel Keiss on 12.09.2016.

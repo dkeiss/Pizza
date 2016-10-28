@@ -1,8 +1,5 @@
 package pizza.service.common;
 
-import pizza.domain.BulkOrder;
-import pizza.vo.order.BulkOrderVO;
-
 import java.util.ArrayList;
 import java.util.List;
 

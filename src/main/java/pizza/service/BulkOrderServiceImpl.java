@@ -3,7 +3,7 @@ package pizza.service;
 import org.apache.commons.mail.EmailException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pizza.domain.BulkOrder;
+import pizza.domain.order.BulkOrder;
 import pizza.repositories.BulkOrderRepository;
 import pizza.service.common.ObjectMapperService;
 import pizza.service.exception.BulkOrderActiveUntilNotValidException;

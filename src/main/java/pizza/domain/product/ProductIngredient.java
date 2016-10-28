@@ -1,4 +1,4 @@
-package pizza.domain;
+package pizza.domain.product;
 
 import lombok.Data;
 
@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Data
-public class ProductProductvariant {
+public class ProductIngredient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_id_seq")

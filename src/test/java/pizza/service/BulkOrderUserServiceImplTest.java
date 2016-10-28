@@ -4,17 +4,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.mockito.internal.stubbing.BaseStubbing;
-import org.springframework.beans.factory.annotation.Autowired;
-import pizza.domain.BulkOrder;
+import pizza.domain.order.BulkOrder;
 import pizza.repositories.BulkOrderRepository;
 import pizza.service.exception.BulkOrderActiveUntilNotValidException;
 import pizza.service.exception.BulkOrderAlreadyActiveException;
 import pizza.vo.order.BulkOrderVO;
 
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.core.Is.is;
@@ -28,7 +24,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 /**
  * Created by Daniel Keiss on 27.10.2016.
  */
-public class BulkOrderServiceImplTest {
+public class BulkOrderUserServiceImplTest {
 
     @InjectMocks
     private BulkOrderService bulkOrderService = new BulkOrderServiceImpl();

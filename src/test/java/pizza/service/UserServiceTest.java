@@ -4,8 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import pizza.domain.PasswordType;
-import pizza.domain.User;
+import pizza.domain.user.PasswordType;
+import pizza.domain.user.User;
 import pizza.repositories.UserRepository;
 
 import static org.hamcrest.core.Is.is;

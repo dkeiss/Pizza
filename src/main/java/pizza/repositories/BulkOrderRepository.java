@@ -1,8 +1,7 @@
 package pizza.repositories;
 
 import org.springframework.data.repository.CrudRepository;
-import pizza.domain.BulkOrder;
-import pizza.domain.Product;
+import pizza.domain.order.BulkOrder;
 
 import java.util.Date;
 import java.util.List;

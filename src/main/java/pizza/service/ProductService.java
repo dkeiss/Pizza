@@ -1,6 +1,6 @@
 package pizza.service;
 
-import pizza.domain.Product;
+import pizza.domain.product.Product;
 
 import java.util.List;
 

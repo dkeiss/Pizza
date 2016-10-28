@@ -2,8 +2,8 @@ package pizza.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pizza.domain.PasswordType;
-import pizza.domain.User;
+import pizza.domain.user.PasswordType;
+import pizza.domain.user.User;
 import pizza.repositories.UserRepository;
 import pizza.service.exception.UserNotFoundException;
 import pizza.service.exception.UsernameAlreadyUsedException;
