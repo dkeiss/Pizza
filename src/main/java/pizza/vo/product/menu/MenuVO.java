@@ -9,6 +9,8 @@ import java.util.List;
 @Data
 public class MenuVO {
 
+    private Integer id;
+    private String name;
     private List<ProductCatalogVO> productCataloges;
 
 }

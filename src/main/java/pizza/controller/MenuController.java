@@ -4,11 +4,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pizza.vo.product.menu.*;
 import pizza.vo.product.menu.oldDELETE.*;
+import pizza.vo.user.UserVO;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -30,16 +32,40 @@ public class MenuController {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
+    private MenuVO menuVO = testMenu();
+
+    private MenuVO testMenu() {
+        MenuVO menuVO = new MenuVO();
+        menuVO.setName("Test Menu");
+        menuVO.setId(1);
+        return menuVO;
+    }
+
     @RequestMapping(value = "", method = RequestMethod.GET)
     public
     @ResponseBody
-    MenuVO getMenu(Principal principal, Model model) throws IOException {
+    MenuVO getMenu() throws IOException {
+        return menuVO;
+    }
+
+    @RequestMapping(value = "", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    MenuVO createMenu(@RequestBody MenuVO menuVO) throws IOException {
+        this.menuVO = menuVO;
+        return menuVO;
+    }
+
+    @RequestMapping(value = "full", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    MenuVO getMenuFull() throws IOException {
         String menu = new String(Files.readAllBytes(Paths.get("documentation/Speisekarte.json")));
         OldMenuVO oldMenuVO = objectMapper.readValue(menu, OldMenuVO.class);
 
-        MenuVO menuVO = new MenuVO();
+        MenuVO menuVO = testMenu();
         List<ProductCatalogVO> productCatalogVOs = new ArrayList<>();
-        for (OldProductCategoryVO oldProductCategoryVO :  oldMenuVO.getProductCategories()) {
+        for (OldProductCategoryVO oldProductCategoryVO : oldMenuVO.getProductCategories()) {
             ProductCatalogVO productCatalogVO = new ProductCatalogVO();
             productCatalogVO.setName(oldProductCategoryVO.getName());
             List<ProductCategoryVO> productCategoryVOs = new ArrayList<>();
@@ -49,9 +75,9 @@ public class MenuController {
 
                 List<ProductGroupVO> productGroupVOs = new ArrayList<>();
                 ProductGroupVO productGroupVO = new ProductGroupVO();
-                if(oldSubCategoryVO.getProducts().size() > 0) {
+                if (oldSubCategoryVO.getProducts().size() > 0) {
                     productGroupVO.setName(oldSubCategoryVO.getProducts().get(0).getCategory());
-                }else{
+                } else {
                     productGroupVO.setName(oldSubCategoryVO.getName());
                 }
                 productGroupVOs.add(productGroupVO);
@@ -63,16 +89,16 @@ public class MenuController {
                     productVO.setNumber(oldProductVO.getNumber());
                     productVO.setDescription(oldProductVO.getDescription());
                     List<ProductVariationVO> productVariationVOs = new ArrayList<>();
-                    if(!StringUtils.isEmpty(oldProductVO.getPrice())){
+                    if (!StringUtils.isEmpty(oldProductVO.getPrice())) {
                         productVariationVOs.add(defaultPrice(oldProductVO.getPrice()));
                     }
-                    if(!StringUtils.isEmpty(oldProductVO.getPriceSmall())){
+                    if (!StringUtils.isEmpty(oldProductVO.getPriceSmall())) {
                         productVariationVOs.add(smallPrice(oldProductVO.getPriceSmall()));
                     }
-                    if(!StringUtils.isEmpty(oldProductVO.getPriceMedium())){
+                    if (!StringUtils.isEmpty(oldProductVO.getPriceMedium())) {
                         productVariationVOs.add(mediumPrice(oldProductVO.getPriceMedium()));
                     }
-                    if(!StringUtils.isEmpty(oldProductVO.getPriceLarge())){
+                    if (!StringUtils.isEmpty(oldProductVO.getPriceLarge())) {
                         productVariationVOs.add(largePrice(oldProductVO.getPriceLarge()));
                     }
                     productVO.setProductVariations(productVariationVOs);
