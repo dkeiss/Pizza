@@ -1,0 +1,3954 @@
+{
+  "productCataloges": [
+    {
+      "name": "Angebot",
+      "productCategories": [
+        {
+          "name": "Indische Gerichte",
+          "productGroups": [
+            {
+              "name": "Indische Gerichte",
+              "products": [
+                {
+                  "number": 730,
+                  "name": "Murga Mandel-Curry",
+                  "description": "Hähnchenfleisch mit Mandeln, versch. Gemüse, leicht-scharfer Currysauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.5
+                    }
+                  ]
+                },
+                {
+                  "number": 731,
+                  "name": "Aw Saag",
+                  "description": "Kartoffeln, Broccoli, fr. Paprika, fr. Tomaten, Spinat, leicht-scharfe Currysauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.2
+                    }
+                  ]
+                },
+                {
+                  "number": 732,
+                  "name": "Lamm Vidolor",
+                  "description": "Lammfleisch gebraten, fr. Tomaten, fr. Paprika, Ingwer, Zwiebeln, leicht-scharfe Currysauc",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 9.6
+                    }
+                  ]
+                },
+                {
+                  "number": 733,
+                  "name": "Lamm Bhindi",
+                  "description": "Lammfleisch mit fr. Tomaten, Auberginen, Zucchini, Zwiebeln, leicht-scharfe Currysauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 9.6
+                    }
+                  ]
+                },
+                {
+                  "number": 734,
+                  "name": "Murgh Sabji",
+                  "description": "Hühnerfleisch mit Gemüse in deftig-leckerer Currysauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 735,
+                  "name": "Murgh Vindaloo",
+                  "description": "Hühnerfleisch mit Kartoffeln in deftig-leckerer Currysauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 736,
+                  "name": "Lamm Saag",
+                  "description": "Lammfleisch gebraten mit Ingwer, Knoblauch, Spinat, fr. Tomaten, Currysauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 9.6
+                    }
+                  ]
+                },
+                {
+                  "number": 737,
+                  "name": "Karahi Chicken",
+                  "description": "Hähnchenfleisch, fr. Paprika, Zwiebeln, Peperoni, Ingwer, Currysauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.8
+                    }
+                  ]
+                },
+                {
+                  "number": 738,
+                  "name": "Prawn Khumbi",
+                  "description": "Garnelen, fr. Tomaten, Zwiebeln, fr. Champignons in Currysauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 11.9
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pizza",
+      "productCategories": [
+        {
+          "name": "Leckere Pizza",
+          "productGroups": [
+            {
+              "name": "Pizza",
+              "products": [
+                {
+                  "number": 2,
+                  "name": "Margherita",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 3.2
+                    },
+                    {
+                      "name": "medium",
+                      "price": 4.4
+                    },
+                    {
+                      "name": "large",
+                      "price": 6.3
+                    }
+                  ]
+                },
+                {
+                  "number": 4,
+                  "name": "Rhodos",
+                  "description": "mit Gyros, Zwiebeln, Peperoni, Tzatziki (ohne Tomatensauce)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.7
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.6
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.9
+                    }
+                  ]
+                },
+                {
+                  "number": 6,
+                  "name": "Salami",
+                  "description": "mit Salami",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 4.4
+                    },
+                    {
+                      "name": "medium",
+                      "price": 5.9
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.4
+                    }
+                  ]
+                },
+                {
+                  "number": 8,
+                  "name": "Western",
+                  "description": "mit Hähnchenfleisch, roten Zwiebeln, Jalapenos, Barbecuesauce (ohne Tomatensauce)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.6
+                    },
+                    {
+                      "name": "medium",
+                      "price": 8.6
+                    },
+                    {
+                      "name": "large",
+                      "price": 9.6
+                    }
+                  ]
+                },
+                {
+                  "number": 10,
+                  "name": "Prosciutto",
+                  "description": "mit Vorderschinken",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 4.4
+                    },
+                    {
+                      "name": "medium",
+                      "price": 5.9
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.4
+                    }
+                  ]
+                },
+                {
+                  "number": 12,
+                  "name": "Funghi",
+                  "description": "fr. Champignons",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 4.5
+                    },
+                    {
+                      "name": "medium",
+                      "price": 6.1
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.4
+                    }
+                  ]
+                },
+                {
+                  "number": 15,
+                  "name": "Hellas",
+                  "description": "Gyros, Zwiebeln, Weichkäse, Peperoni",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.1
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.1
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.4
+                    }
+                  ]
+                },
+                {
+                  "number": 17,
+                  "name": "New York",
+                  "description": "Hollandaise-Sauce, Broccoli, Vorderschinken (ohne Tomatensauce)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.6
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.3
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.5
+                    }
+                  ]
+                },
+                {
+                  "number": 18,
+                  "name": "Tonno",
+                  "description": "mit Thunfisch",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 4.6
+                    },
+                    {
+                      "name": "medium",
+                      "price": 6.2
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 20,
+                  "name": "Spinaci",
+                  "description": "mit Spinat (Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 4.4
+                    },
+                    {
+                      "name": "medium",
+                      "price": 6.2
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.8
+                    }
+                  ]
+                },
+                {
+                  "number": 21,
+                  "name": "La Maria",
+                  "description": "Peperonisalami, fr. Paprika, Jalapenos",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.1
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.3
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.7
+                    }
+                  ]
+                },
+                {
+                  "number": 22,
+                  "name": "Poncha",
+                  "description": "mit Mais, Zwiebeln, Barbecue-Sauce, Paprika (ohne Tomatensauce)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.2
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.1
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.9
+                    }
+                  ]
+                },
+                {
+                  "number": 23,
+                  "name": "Hollandaise",
+                  "description": "mit Pute, Paprika, Broccoli, Sauce-Hollandaise (ohne Tomatensauce)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.6
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.4
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.9
+                    }
+                  ]
+                },
+                {
+                  "number": 26,
+                  "name": "Pizza Pasta",
+                  "description": "mit Spaghetti, Fleischsauce",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 4.7
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.3
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.7
+                    }
+                  ]
+                },
+                {
+                  "number": 27,
+                  "name": "Bombay",
+                  "description": "mit Putenbrust, Currysauce, Ananas (ohne Tomatensauce)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.2
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.4
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.6
+                    }
+                  ]
+                },
+                {
+                  "number": 28,
+                  "name": "Frutti Di Mare",
+                  "description": "mit Meeresfrüchte (Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.6
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.8
+                    },
+                    {
+                      "name": "large",
+                      "price": 9.1
+                    }
+                  ]
+                },
+                {
+                  "number": 30,
+                  "name": "Gyros",
+                  "description": "mit Gyros",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 4.9
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.1
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.3
+                    }
+                  ]
+                },
+                {
+                  "number": 32,
+                  "name": "Inferno",
+                  "description": "mit Salami, Peperoni",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.1
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.1
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.3
+                    }
+                  ]
+                },
+                {
+                  "number": 34,
+                  "name": "Caprese",
+                  "description": "Mozzarella, fr. Tomaten (Basilikum)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.1
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.2
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.4
+                    }
+                  ]
+                },
+                {
+                  "number": 36,
+                  "name": "Napolitana",
+                  "description": "Sardellen, Kapern, Oliven6, Knoblauch",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.2
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.3
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.6
+                    }
+                  ]
+                },
+                {
+                  "number": 38,
+                  "name": "Mista",
+                  "description": "Vorderschinken, fr. Champignons, Salami",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.1
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.2
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.2
+                    }
+                  ]
+                },
+                {
+                  "number": 40,
+                  "name": "Hawaii",
+                  "description": "Ananas, Vorderschinken",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.2
+                    },
+                    {
+                      "name": "medium",
+                      "price": 6.9
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.4
+                    }
+                  ]
+                },
+                {
+                  "number": 41,
+                  "name": "Gourmet",
+                  "description": "Räucherlachs, fr. Tomaten, Scampi (Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.9
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.9
+                    },
+                    {
+                      "name": "large",
+                      "price": 9.5
+                    }
+                  ]
+                },
+                {
+                  "number": 42,
+                  "name": "Kentucky",
+                  "description": "mit Hähnchenbrust, Mozzarella",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.2
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.3
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.5
+                    }
+                  ]
+                },
+                {
+                  "number": 43,
+                  "name": "Amerika",
+                  "description": "Barbeque-Sauce, Mozzarella, Speck, Peperoni, Champignons (ohne Tomatensauce)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.7
+                    },
+                    {
+                      "name": "medium",
+                      "price": 6.9
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 44,
+                  "name": "Alla Pino",
+                  "description": "Thunfisch, Weichkäse, Zwiebeln, Tomaten, Peperoni",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.4
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.8
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.3
+                    }
+                  ]
+                },
+                {
+                  "number": 46,
+                  "name": "Kreta",
+                  "description": "Weichkäse, Zwiebeln, fr. Tomaten",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 4.9
+                    },
+                    {
+                      "name": "medium",
+                      "price": 6.8
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 48,
+                  "name": "Athen",
+                  "description": "Weichkäse, Spinat, (Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.1
+                    },
+                    {
+                      "name": "medium",
+                      "price": 6.9
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 50,
+                  "name": "Da Vinci",
+                  "description": "Spinat, Ei, Salami, Vorderschinken, fr. Tomaten, Mozzarella",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.5
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.4
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.7
+                    }
+                  ]
+                },
+                {
+                  "number": 51,
+                  "name": "Parma",
+                  "description": "Parmaschinken, Ruccola",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.9
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.6
+                    },
+                    {
+                      "name": "large",
+                      "price": 9.2
+                    }
+                  ]
+                },
+                {
+                  "number": 52,
+                  "name": "Mafioso",
+                  "description": "mit Thunfisch, Zwiebeln, Salami",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.2
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.2
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 54,
+                  "name": "Camorra",
+                  "description": "mit Thunfisch, Zwiebeln, Sardellen, Oliven",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.3
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.1
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.3
+                    }
+                  ]
+                },
+                {
+                  "number": 55,
+                  "name": "A La Chef",
+                  "description": "Spinat, Champignons, Mozzarella",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.2
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.2
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.4
+                    }
+                  ]
+                },
+                {
+                  "number": 56,
+                  "name": "Vegetaria",
+                  "description": "mit Spinat, fr. Champignons, Broccoli, Artischocken (Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.4
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.1
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.4
+                    }
+                  ]
+                },
+                {
+                  "number": 57,
+                  "name": "Gyros Hollandaise",
+                  "description": "Sauce-Hollandaise, Gyros, Jalapenos (ohne Tomatensauce)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.7
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.4
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.7
+                    }
+                  ]
+                },
+                {
+                  "number": 58,
+                  "name": "Capriciosa",
+                  "description": "mit fr. Champignons, Zwiebeln, Salami, Vorderschinken",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.4
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.3
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.4
+                    }
+                  ]
+                },
+                {
+                  "number": 60,
+                  "name": "Quattro Stagioni",
+                  "description": "mit Thunfisch, fr. Champignons, Vorderschinken, Salami",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.4
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.5
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.4
+                    }
+                  ]
+                },
+                {
+                  "number": 61,
+                  "name": "Speed Pizza",
+                  "description": "mit Thunfisch, Champignons, Zwiebeln, Vorderschinken",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.7
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.3
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.6
+                    }
+                  ]
+                },
+                {
+                  "number": 62,
+                  "name": "Calzone 1",
+                  "description": "Gefüllt mit Thunfisch, fr. Champignons, Vorderschinken",
+                  "productVariations": [
+                    {
+                      "name": "medium",
+                      "price": 7.4
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.7
+                    }
+                  ]
+                },
+                {
+                  "number": 63,
+                  "name": "Calzone 2",
+                  "description": "Gefüllt mit roter Zwiebel, Gyros, Krautsalat",
+                  "productVariations": [
+                    {
+                      "name": "medium",
+                      "price": 7.4
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.9
+                    }
+                  ]
+                },
+                {
+                  "number": 64,
+                  "name": "Calzone 3",
+                  "description": "Gefüllt mit Spinat, fr. Champignons, Weichkäse",
+                  "productVariations": [
+                    {
+                      "name": "medium",
+                      "price": 7.3
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.6
+                    }
+                  ]
+                },
+                {
+                  "number": 66,
+                  "name": "Miami",
+                  "description": "mit Putenbrust, Broccoli, Mais",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.6
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.4
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.7
+                    }
+                  ]
+                },
+                {
+                  "number": 68,
+                  "name": "Diavolo",
+                  "description": "mit Salami, fr. Paprika, Peperoni",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 6.1
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.1
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 70,
+                  "name": "Montana Spezial",
+                  "description": "mit Spinat, Scampi, fr. Tomaten, Mozzarella (Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.9
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.6
+                    },
+                    {
+                      "name": "large",
+                      "price": 9.2
+                    }
+                  ]
+                },
+                {
+                  "number": 72,
+                  "name": "Scampi",
+                  "description": "mit Scampi (Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.3
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.3
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.7
+                    }
+                  ]
+                },
+                {
+                  "number": 76,
+                  "name": "Quattro Formaggi",
+                  "description": "vier verschiedene Käsesorten",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.6
+                    },
+                    {
+                      "name": "medium",
+                      "price": 7.2
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.7
+                    }
+                  ]
+                },
+                {
+                  "number": 77,
+                  "name": "Pizza Garnelen",
+                  "description": "mit Garnelen, Knoblauch",
+                  "productVariations": [
+                    {
+                      "name": "medium",
+                      "price": 9.6
+                    },
+                    {
+                      "name": "large",
+                      "price": 11.9
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Party-Pizza",
+          "productGroups": [
+            {
+              "name": "Pizza",
+              "products": [
+                {
+                  "number": 1,
+                  "name": "Party-Blech-Pizza",
+                  "description": "für ca. 5 Personen (40x60 cm)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 19
+                    }
+                  ]
+                },
+                {
+                  "number": 1,
+                  "name": "Party-Blech-Pizza",
+                  "description": "für ca. 4 Personen (rund 45 cm)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 15
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Panini",
+          "productGroups": [
+            {
+              "name": "Pizza",
+              "products": [
+                {
+                  "number": 91,
+                  "name": "Panini",
+                  "description": "Pizzabrötchen mit Kräuterbutter ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.8
+                    }
+                  ]
+                },
+                {
+                  "number": 93,
+                  "name": "Panini",
+                  "description": "Pizzabrötchen mit Aioli",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.9
+                    }
+                  ]
+                },
+                {
+                  "number": 94,
+                  "name": "Panini gefüllt",
+                  "description": "(7 Stk.) gefüllt mit Gouda und Thunfisch",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.9
+                    }
+                  ]
+                },
+                {
+                  "number": 95,
+                  "name": "Panini gefüllt",
+                  "description": "(7 Stk.) gefüllt mit Putenfleisch und Gouda ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.9
+                    }
+                  ]
+                },
+                {
+                  "number": 96,
+                  "name": "Panini gefüllt",
+                  "description": "(7 Stk.) gefüllt mit Gouda und Vorderschinken",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.7
+                    }
+                  ]
+                },
+                {
+                  "number": 97,
+                  "name": "Panini gefüllt",
+                  "description": "(7 Stk.) gefüllt mit Gyros",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.7
+                    }
+                  ]
+                },
+                {
+                  "number": 98,
+                  "name": "Panini gefüllt",
+                  "description": "(7 Stk.) gefüllt mit Weichkäse und Spinat",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.7
+                    }
+                  ]
+                },
+                {
+                  "number": 99,
+                  "name": "Panini gefüllt",
+                  "description": "(7 Stk.) gefüllt mit fr. Champignons, Gouda-Käse[1]",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.8
+                    }
+                  ]
+                },
+                {
+                  "number": 100,
+                  "name": "Panini gefüllt",
+                  "description": "(7 Stk.) gefüllt mit Gouda und Salami",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.6
+                    }
+                  ]
+                },
+                {
+                  "number": 101,
+                  "name": "Extra Butter",
+                  "description": "Kräuterbutter hausgemacht",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 0.6
+                    }
+                  ]
+                },
+                {
+                  "number": 103,
+                  "name": "Extra Aioli",
+                  "description": "hausgemacht",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 0.7
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pasta",
+      "productCategories": [
+        {
+          "name": "Spaghetti",
+          "productGroups": [
+            {
+              "name": "Pasta",
+              "products": [
+                {
+                  "number": 313,
+                  "name": "Spaghetti Napoli",
+                  "description": "mit Tomaten-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6.4
+                    }
+                  ]
+                },
+                {
+                  "number": 314,
+                  "name": "Aioli E Peperoncini",
+                  "description": "mit Olivenöl,fr.Basilikum,Peperoni,fr.Tomaten,scharf(Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                },
+                {
+                  "number": 315,
+                  "name": "Bolognese",
+                  "description": "mit (Rind) Fleischsauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6.6
+                    }
+                  ]
+                },
+                {
+                  "number": 316,
+                  "name": "Mare",
+                  "description": "Meeresfrüchte,fr.Tomaten,Zwiebeln,Tomatensauce,Sahnesauce(Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.5
+                    }
+                  ]
+                },
+                {
+                  "number": 317,
+                  "name": "Carbonara",
+                  "description": "mit Vorderschinken,Ei in Käse-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                },
+                {
+                  "number": 318,
+                  "name": "Spaghetti Scampi",
+                  "description": "mit Scampi,fr.Paprika,Sahnesauce(Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.7
+                    }
+                  ]
+                },
+                {
+                  "number": 319,
+                  "name": "Tonno",
+                  "description": "mit Thunfisch,Zwiebeln,Erbsen,Tomaten-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Maccaroni",
+          "productGroups": [
+            {
+              "name": "Pasta",
+              "products": [
+                {
+                  "number": 320,
+                  "name": "Maccaroni Bolognese",
+                  "description": "Nudelröllchen mit (Rind) Fleischsauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6.6
+                    }
+                  ]
+                },
+                {
+                  "number": 321,
+                  "name": "Santa Maria",
+                  "description": "Nudelröllchen,Spinat,Champignons,Tomaten- Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                },
+                {
+                  "number": 322,
+                  "name": "Santa Fe",
+                  "description": "Nudelröllchen, Broccoli, Zwiebeln, fr. Champignons, Tomaten-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                },
+                {
+                  "number": 323,
+                  "name": "Casa",
+                  "description": "Nudelröllchen,fr.Champignons,Erbsen,Vorderschinken,Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                },
+                {
+                  "number": 324,
+                  "name": "Maccaroni Primavera",
+                  "description": "fr.Tomaten,Zwiebeln,Champignons,Tomaten-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                },
+                {
+                  "number": 325,
+                  "name": "San Marino",
+                  "description": "Nudelröllchen,Hühnerfleisch,fr.Champignons,Curry-Käse-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.4
+                    }
+                  ]
+                },
+                {
+                  "number": 326,
+                  "name": "Maccaroni Hollandaise",
+                  "description": "Nudelröllchen,Broccoli,Spinat,Sauce-Hollandaise(Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 327,
+                  "name": "Maccaroni Speed",
+                  "description": "mit Hähnchenfleisch, fr. Champignons, Zwiebeln, fr. Paprika, Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tortellini",
+          "productGroups": [
+            {
+              "name": "Pasta",
+              "products": [
+                {
+                  "number": 335,
+                  "name": "Alla Panna ",
+                  "description": "mit Vorderschinken,Ei und Käse-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.2
+                    }
+                  ]
+                },
+                {
+                  "number": 336,
+                  "name": "Tortellini Bolognese ",
+                  "description": "(Rind) Fleischsauce,Hausrezept",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6.7
+                    }
+                  ]
+                },
+                {
+                  "number": 337,
+                  "name": "Fiorentina",
+                  "description": "Broccoli,Spinat,(Knoblauch),Käse-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                },
+                {
+                  "number": 338,
+                  "name": "Tortellini Spinaci",
+                  "description": "Spinat,Vorderschinken,Tomaten-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.3
+                    }
+                  ]
+                },
+                {
+                  "number": 339,
+                  "name": "Quattro Formaggio",
+                  "description": "vier versch. Käsesorten,Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.2
+                    }
+                  ]
+                },
+                {
+                  "number": 340,
+                  "name": "El Chico",
+                  "description": "mit Broccoli,Scampi,Sahnesauce (Knoblauch )",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tagliatelle",
+          "productGroups": [
+            {
+              "name": "Pasta",
+              "products": [
+                {
+                  "number": 341,
+                  "name": "Della Chef",
+                  "description": "Bandnudeln,Scampi,Spinat,Sahnesauce (Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.8
+                    }
+                  ]
+                },
+                {
+                  "number": 342,
+                  "name": "Tagliatelle Milano",
+                  "description": "Bandnudeln,Hühnerfleisch,Champignons,Curry-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.2
+                    }
+                  ]
+                },
+                {
+                  "number": 343,
+                  "name": "Con Funghi",
+                  "description": "Bandnudeln,fr.Champignons,Paprika,Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.3
+                    }
+                  ]
+                },
+                {
+                  "number": 345,
+                  "name": "Rimini",
+                  "description": "Bandnudeln, Broccoli, Hühnerfleisch, fr. Tomaten, in Tomaten-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.4
+                    }
+                  ]
+                },
+                {
+                  "number": 347,
+                  "name": "Al Salmone",
+                  "description": "Bandnudeln,Lachs,Tomaten-Sahnesauce (Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 349,
+                  "name": "Alfredo",
+                  "description": "Bandnudeln,Vorderschinken,Erbsen,Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gnocchi",
+          "productGroups": [
+            {
+              "name": "Pasta",
+              "products": [
+                {
+                  "number": 350,
+                  "name": "Speed ",
+                  "description": "Gnocchi,Spinat in Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.2
+                    }
+                  ]
+                },
+                {
+                  "number": 351,
+                  "name": "Neptun",
+                  "description": "Gnocchi,Gorgonzola in Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                },
+                {
+                  "number": 352,
+                  "name": "Gnocchi mit Champignons",
+                  "description": "in Sahnesauce,Champignons",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.3
+                    }
+                  ]
+                },
+                {
+                  "number": 353,
+                  "name": "Gnocchi",
+                  "description": "Gnocchi,mit Hühnerfleisch und Broccoli in Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.3
+                    }
+                  ]
+                },
+                {
+                  "number": 354,
+                  "name": "Pollo Funghi",
+                  "description": "Gnocchi, Hähnchenfleisch, fr. Champignons, fr. Paprika in Tomaten-Sahne-Sauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.8
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Aufläufe",
+          "productGroups": [
+            {
+              "name": "Pasta",
+              "products": [
+                {
+                  "number": 186,
+                  "name": "Rigatoni",
+                  "description": "Maccaroni, Bolognesesauce (hausgemacht, vom Rind)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                },
+                {
+                  "number": 187,
+                  "name": "Della Chef ",
+                  "description": "Maccaroni, fr. Tomaten, Vorderschinken, Erbsen, fr. Champignons, Tomaten-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.8
+                    }
+                  ]
+                },
+                {
+                  "number": 191,
+                  "name": "Kartoffelauflauf",
+                  "description": "Spinat, fr. Paprika, Mais, Hollandaise-Sauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 202,
+                  "name": "Kartoffel-Gratin",
+                  "description": "Kartoffeln, Broccoli, Vorderschinken, Spinat mit Curry-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 203,
+                  "name": "Kentucky Al Forno",
+                  "description": "Hähnchenbrust, fr. Tomaten, fr. Paprika, Tomaten-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 204,
+                  "name": "Maccaroni Rahmsauce",
+                  "description": "Putenbrust mit Rahmsauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 205,
+                  "name": "Maccaroni Hollandaise ",
+                  "description": "Gyros mit Sauce Hollandaise ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 208,
+                  "name": "Gemüse Gratin",
+                  "description": "Kartoffeln, fr. Paprika, fr. Champignons, Spinat, Tomaten-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.8
+                    }
+                  ]
+                },
+                {
+                  "number": 212,
+                  "name": "Tortellini Al Forno",
+                  "description": "fr. Tomaten, (Rind) Fleischsauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.7
+                    }
+                  ]
+                },
+                {
+                  "number": 214,
+                  "name": "Lasagne ",
+                  "description": "Nudelschichten, Ei, Vorderschinken, Fleischsauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.5
+                    }
+                  ]
+                },
+                {
+                  "number": 215,
+                  "name": "Macceroni",
+                  "description": "(Rind) Fleischsauce, Sahne, Chilli Con Carne (schartf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.8
+                    }
+                  ]
+                },
+                {
+                  "number": 216,
+                  "name": "Tortellini Broccoli Al Forno",
+                  "description": "Vorderschinken, Broccoli mit Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.7
+                    }
+                  ]
+                },
+                {
+                  "number": 217,
+                  "name": "Canneloni",
+                  "description": "Gefüllte Nudelröllchen mit Tomaten-Sahnesauce ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.6
+                    }
+                  ]
+                },
+                {
+                  "number": 222,
+                  "name": "Tortellini Hawaii ",
+                  "description": "Tortellini, Ananas, Vorderschinken und Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.7
+                    }
+                  ]
+                },
+                {
+                  "number": 223,
+                  "name": "Risotto Con Pollo",
+                  "description": "mir Reis, Hühnerfleisch, Champignons mit Rahmsauce ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 224,
+                  "name": "Kartoffel Max ",
+                  "description": "Kartoffeln, Gyros, fr. Paprika, Weichkäse, Sahnesauce ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 226,
+                  "name": "Tagliatelle Putenbrust",
+                  "description": "Bandnudeln mit Putenbrust, fr. Champignons, Sauce-Hollandaise",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 228,
+                  "name": "Greek Al Forno",
+                  "description": "Maccaroni, fr.Tomaten, Weichkäse, Rahmsauce ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.7
+                    }
+                  ]
+                },
+                {
+                  "number": 232,
+                  "name": "Royal Al Forno",
+                  "description": "Maccaroni, Scampi, (Knoblauch) mit Käse-Sahnesauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.6
+                    }
+                  ]
+                },
+                {
+                  "number": 234,
+                  "name": "Pasta Mista Della Casa ",
+                  "description": "vier verschiedene Nudelsorten mit Vorderschinken, Tomaten, Sahnesauce ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 236,
+                  "name": "Vegetaria Al Forno",
+                  "description": "Maccaroni, fr. Champignons, Broccoli, Spinat, fr. Tomaten in Tomatensauce (Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 238,
+                  "name": "Gyros Auflauf ",
+                  "description": "vier verschiedene Nudelsorten,Sahnesauce,Gyros,Zwiebeln,Weichkäse,Maccaroni",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Insalata",
+      "productCategories": [
+        {
+          "name": "Salate",
+          "productGroups": [
+            {
+              "name": "Insalata",
+              "products": [
+                {
+                  "number": 421,
+                  "name": "Insalata Speciale",
+                  "description": "Eisbergsalat,Gurken,Tomaten,gebr.Champignons,Krautsalat,Pep.,rote Zwiebeln,Weichkäse",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.2
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.2
+                    }
+                  ]
+                },
+                {
+                  "number": 422,
+                  "name": "Chicken Salat",
+                  "description": "Eisbergsalat,Tomaten,Gurken,Paprika,Mais,Möhren,Hähnchenbrust",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.1
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.6
+                    }
+                  ]
+                },
+                {
+                  "number": 427,
+                  "name": "Salat Gourmet",
+                  "description": "Eisbergsalat, Tomaten, Gurken, gebratene Champignons, Broccoli, Hähnchenfleisch",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.5
+                    },
+                    {
+                      "name": "large",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 423,
+                  "name": "Pollo Salat",
+                  "description": "Eisbergsalat, Tomaten, Gurken, Mais, in der Pfanne gebr. Hähnchenfleisch, Zwiebeln,Paprika",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.2
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 424,
+                  "name": "Cocktail Salat ",
+                  "description": "Eisbergsalat,Gurke,Cherrytomaten,Möhren,rote Zwiebel,Paprika,Rucola",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.1
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.6
+                    }
+                  ]
+                },
+                {
+                  "number": 428,
+                  "name": "Gemischter Salat",
+                  "description": "Eisbergsalat,Tomaten,Gurke,Paprika,Möhren,Mais,rote Beete,Spargel",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 4.4
+                    },
+                    {
+                      "name": "large",
+                      "price": 6.5
+                    }
+                  ]
+                },
+                {
+                  "number": 429,
+                  "name": "Salat Gyros",
+                  "description": "Eisbergsalat,Tomaten,Gurke,Gyros,rote Zwiebeln,Krautsalat,Peperoni,Weichkäse",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.2
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.8
+                    }
+                  ]
+                },
+                {
+                  "number": 430,
+                  "name": "Nizza Salat",
+                  "description": "Eisbergsalat,Tomaten,Gurke,Thunfisch,Mais,Zwiebeln",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 4.9
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.2
+                    }
+                  ]
+                },
+                {
+                  "number": 432,
+                  "name": "Capriciosa Spezial",
+                  "description": "Eisbergsalat,Tomaten,Gurke,Gouda,Vorderschinken,Ei,Mais,Oliven",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.1
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.2
+                    }
+                  ]
+                },
+                {
+                  "number": 436,
+                  "name": "Greek Salat",
+                  "description": "Eisbergsalat,Tomaten,Gurke,Ei,Peperoni,Zwiebeln,Weichkäse,Krautsalat,Oliven",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.1
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.3
+                    }
+                  ]
+                },
+                {
+                  "number": 437,
+                  "name": "Speed Salat",
+                  "description": "Eisbergsalat,Tomaten,Gurke,Mais,Thunfisch,Vorderschinken,Gouda,Oliven,Ei",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.3
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.6
+                    }
+                  ]
+                },
+                {
+                  "number": 438,
+                  "name": "Salat Casa",
+                  "description": "Eisbergsalat,Tom.,Gurk.,Gouda,Ei,Vordersch.,Thunf.,Mais,Artischocken,Zwieb.Spargel",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 5.4
+                    },
+                    {
+                      "name": "large",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 442,
+                  "name": "Tomatensalat",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.5
+                    }
+                  ]
+                },
+                {
+                  "number": 444,
+                  "name": "Gurkensalat",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.5
+                    }
+                  ]
+                },
+                {
+                  "number": 446,
+                  "name": "Grüner Salat",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.5
+                    }
+                  ]
+                },
+                {
+                  "number": 448,
+                  "name": "Möhrensalat",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.1
+                    }
+                  ]
+                },
+                {
+                  "number": 450,
+                  "name": "Krautsalat",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.1
+                    }
+                  ]
+                },
+                {
+                  "number": 452,
+                  "name": "Maissalat",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.1
+                    }
+                  ]
+                },
+                {
+                  "number": 456,
+                  "name": "Oliven",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.1
+                    }
+                  ]
+                },
+                {
+                  "number": 458,
+                  "name": "Peperoni",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.1
+                    }
+                  ]
+                },
+                {
+                  "number": 495,
+                  "name": "Weichkäse",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Baguette",
+      "productCategories": [
+        {
+          "name": "Baguette",
+          "productGroups": [
+            {
+              "name": "Baguette",
+              "products": [
+                {
+                  "number": 110,
+                  "name": "Käse",
+                  "description": "mit Gouda",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.6
+                    }
+                  ]
+                },
+                {
+                  "number": 114,
+                  "name": "Tonno",
+                  "description": "mit Thunfisch",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.4
+                    }
+                  ]
+                },
+                {
+                  "number": 115,
+                  "name": "Schinken",
+                  "description": "mit Vorderschinken",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.1
+                    }
+                  ]
+                },
+                {
+                  "number": 116,
+                  "name": "Salami",
+                  "description": "mit Salami",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.1
+                    }
+                  ]
+                },
+                {
+                  "number": 118,
+                  "name": "New York",
+                  "description": "mit Gouda, Vorderschinken",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.7
+                    }
+                  ]
+                },
+                {
+                  "number": 120,
+                  "name": "Bali",
+                  "description": "mit Gouda, Thunfisch",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.8
+                    }
+                  ]
+                },
+                {
+                  "number": 121,
+                  "name": "Parma",
+                  "description": "mit Parmaschinken, Rucola, fr. Tomaten",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 5.4
+                    }
+                  ]
+                },
+                {
+                  "number": 122,
+                  "name": "Toscana",
+                  "description": "mit fr. Tomaten, Mozzarella",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.8
+                    }
+                  ]
+                },
+                {
+                  "number": 124,
+                  "name": "Hawaii",
+                  "description": "mit Vorderschinken, Ananas, Gouda",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.8
+                    }
+                  ]
+                },
+                {
+                  "number": 126,
+                  "name": "Mallorca",
+                  "description": "mit Vorderschinken, Gouda, Ei",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.5
+                    }
+                  ]
+                },
+                {
+                  "number": 128,
+                  "name": "Ibiza",
+                  "description": "mit Hühnerfleisch, Gouda",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 5.4
+                    }
+                  ]
+                },
+                {
+                  "number": 129,
+                  "name": "Baguette Gyros",
+                  "description": "mit Gyros, Zwiebeln",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Schnitzel",
+      "productCategories": [
+        {
+          "name": "Schnitzel",
+          "productGroups": [
+            {
+              "name": "Schnitzel",
+              "products": [
+                {
+                  "number": 602,
+                  "name": "Schnitzel Bella ",
+                  "description": "mit Vorderschinken,(Rind)Fleischsauce,Gouda überb.(Beilagensalat)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.4
+                    }
+                  ]
+                },
+                {
+                  "number": 603,
+                  "name": "Schnitzel Hollandaise ",
+                  "description": "mit Spargel,Broccoli,Hollandaise-Sauce,Gouda überb. (Beilagensalat)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.4
+                    }
+                  ]
+                },
+                {
+                  "number": 604,
+                  "name": "Schnitzel Wiener Art ",
+                  "description": "mit Zitrone (Beilagensalat)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6.9
+                    }
+                  ]
+                },
+                {
+                  "number": 605,
+                  "name": "Schlemmer Schnitzel",
+                  "description": "mit fr.Champignons, Zwiebeln, mit Sahnesauce, Gouda überb. (Beilagensalat)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.4
+                    }
+                  ]
+                },
+                {
+                  "number": 606,
+                  "name": "Jägerschnitzel",
+                  "description": "mit fr. Champignons, Rahmsauce (Beilagensalat)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.8
+                    }
+                  ]
+                },
+                {
+                  "number": 608,
+                  "name": "Zigeunerschnitzel",
+                  "description": "mit Paprika, Zwiebeln, Gurken (Beilagensalat)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.8
+                    }
+                  ]
+                },
+                {
+                  "number": 610,
+                  "name": "Putenschnitzel",
+                  "description": "mit Rahmsauce (Beilagensalat)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 612,
+                  "name": "Hawaii Schnitzel",
+                  "description": "mit Ananas, Vorderschinken, Sahnesauce, mit Gouda überb. (Beilagensalat)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.4
+                    }
+                  ]
+                },
+                {
+                  "number": 616,
+                  "name": "Cordon Bleu",
+                  "description": "gef. mit Vorderschinken, Sauce-Hollandaise (Beilagensalat)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.6
+                    }
+                  ]
+                },
+                {
+                  "number": 617,
+                  "name": "Schnitzel Mozzarella ",
+                  "description": "mit Mozzarella, Tomatenscheiben, Basilikum und Gouda überb.",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.6
+                    }
+                  ]
+                },
+                {
+                  "number": 618,
+                  "name": "Ungarisch",
+                  "description": "Zwiebeln, Paprika, Tomaten-Sahnesauce (Beilagensalat,scharf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 619,
+                  "name": "Schnitzel Paris",
+                  "description": "mit Vorderschinken, Spargel, Gouda überb., Sauce-Hollandaise (Beilagensalat)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "International",
+      "productCategories": [
+        {
+          "name": "Fisch",
+          "productGroups": [
+            {
+              "name": "International",
+              "products": [
+                {
+                  "number": 556,
+                  "name": "Seelachsfilet",
+                  "description": "mit Remoulade, Zitrone, Pommes Frites",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6.9
+                    }
+                  ]
+                },
+                {
+                  "number": 558,
+                  "name": "Calamaris",
+                  "description": "mir Remoulade, Zitrone, grüner Salat",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.2
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Beilagen",
+          "productGroups": [
+            {
+              "name": "International",
+              "products": [
+                {
+                  "number": 582,
+                  "name": "Pommes ",
+                  "description": "klein",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 1.5
+                    }
+                  ]
+                },
+                {
+                  "number": 584,
+                  "name": "Pommes ",
+                  "description": "groß",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2
+                    }
+                  ]
+                },
+                {
+                  "number": 585,
+                  "name": "Bratwurst",
+                  "description": "mit Pommes ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.8
+                    }
+                  ]
+                },
+                {
+                  "number": 588,
+                  "name": "Currywurst",
+                  "description": "mit Pommes ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.5
+                    }
+                  ]
+                },
+                {
+                  "number": 594,
+                  "name": "Kroketten",
+                  "description": "(8 Stk.)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.2
+                    }
+                  ]
+                },
+                {
+                  "number": 596,
+                  "name": "Dampfreis",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.9
+                    }
+                  ]
+                },
+                {
+                  "number": 600,
+                  "name": "Tzatziki",
+                  "description": "hausgemacht",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2
+                    }
+                  ]
+                },
+                {
+                  "number": 602,
+                  "name": "Mayonnaise",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 0.5
+                    }
+                  ]
+                },
+                {
+                  "number": 603,
+                  "name": "Ketchup",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 0.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gyros vom Spieß",
+          "productGroups": [
+            {
+              "name": "International",
+              "products": [
+                {
+                  "number": 658,
+                  "name": "Gyros Pita ",
+                  "description": "mit rote Zwiebeln, Krautsalat, Tzatziki",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.8
+                    }
+                  ]
+                },
+                {
+                  "number": 661,
+                  "name": "Gyros Teller",
+                  "description": "mit Pommes Frites,rote Zwiebeln,Karutsalat,Tzatziki",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.4
+                    }
+                  ]
+                },
+                {
+                  "number": 666,
+                  "name": "Gyros Teller ",
+                  "description": "mit Pommes und Tzatziki ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6.6
+                    }
+                  ]
+                },
+                {
+                  "number": 667,
+                  "name": "Gyros ",
+                  "description": "überbacken mit Sauce Hollandaise, Pommes Frites ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Potatoe",
+          "productGroups": [
+            {
+              "name": "International",
+              "products": [
+                {
+                  "number": 680,
+                  "name": "Percy Sredge",
+                  "description": "Baked Potatoe mit Vorderschinkenstreifen,Broccoli,Sourcream,Käse überbacken",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.2
+                    }
+                  ]
+                },
+                {
+                  "number": 681,
+                  "name": "Chuck Berry",
+                  "description": "Backed Potatoe mit gebr. Hähnchenbrust,Champignons,Hausdressing,überbacken",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.3
+                    }
+                  ]
+                },
+                {
+                  "number": 681,
+                  "name": "Bil Haley ",
+                  "description": "Backed Potatoe mit Spinat,Feta-Käse, Zwiebeln,Hausdressing,Käse überbacken",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.4
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Chicken Nuggets",
+          "productGroups": [
+            {
+              "name": "International",
+              "products": [
+                {
+                  "number": 641,
+                  "name": "Chicken Nuggets ",
+                  "description": "(6 Stk.) mit Pommes, 1 Sauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 5.9
+                    }
+                  ]
+                },
+                {
+                  "number": 642,
+                  "name": "Chicken Nuggets ",
+                  "description": "(9 Stk.) mit Pommes, 2 Saucen",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                },
+                {
+                  "number": 643,
+                  "name": "Chicken Nuggets ",
+                  "description": "(20 Stk.) mit Pommes, 3 Saucen",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.9
+                    }
+                  ]
+                },
+                {
+                  "number": 645,
+                  "name": "Chicken Wings ",
+                  "description": "(6 Stk.) mit BBQ-Sauce-pikant, würzig, Pommes Frites ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6.4
+                    }
+                  ]
+                },
+                {
+                  "number": 646,
+                  "name": "Chicken Wings ",
+                  "description": "(9 Stk.) mit BBQ-Saucen-pikant, würzig, Pommes Frites ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.6
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "American Burger",
+          "productGroups": [
+            {
+              "name": "International",
+              "products": [
+                {
+                  "number": 672,
+                  "name": "Florida Burger ",
+                  "description": "100 gr. Fleisch, 0.5 l Cola dazu",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6.9
+                    }
+                  ]
+                },
+                {
+                  "number": 673,
+                  "name": "Florida Cheese Burger ",
+                  "description": "100 gr. Fleisch mit Gouda, 0.5 l Cola dazu",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 674,
+                  "name": "Mega Burger ",
+                  "description": "2x 100 gr. Fleisch, 0.5 l Cola dazu ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 676,
+                  "name": "Mega Cheese Burger ",
+                  "description": "2x 100 gr. Fleisch mit Gouda, 0.5 l Cola dazu ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.9
+                    }
+                  ]
+                },
+                {
+                  "number": 677,
+                  "name": "Mega Florida Burger ",
+                  "description": "mit 180 gr. Fleisch, Bacon, Jalapenos, dazu 0.5 l Cola",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.5
+                    }
+                  ]
+                },
+                {
+                  "number": 678,
+                  "name": "Mega Burger ",
+                  "description": "mit 2x 180gr. Fleisch, Bacon, Jalapenos, dazu 0.5 l Cola",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 9.9
+                    }
+                  ]
+                },
+                {
+                  "number": 679,
+                  "name": "Chicken-Burger",
+                  "description": "mit Hähnchenfleisch, dazu Coca Cola (0,5 l)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                },
+                {
+                  "number": 683,
+                  "name": "Mexico-Burger",
+                  "description": "180 gr. Fleisch, Jalapeños, Mais, Chili-Sauce, dazu Coca Cola (0,5 l)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 9.1
+                    }
+                  ]
+                },
+                {
+                  "number": 684,
+                  "name": "Barbecue-Burger",
+                  "description": "180 gr. Fleisch, Barbecue-Sauce, rote Zwiebeln, dazu Coca Cola (0,5 l)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 9.1
+                    }
+                  ]
+                },
+                {
+                  "number": 685,
+                  "name": "Curry-Burger",
+                  "description": "180 gr. Fleisch, Curry-Mayo-Sauce, dazu Coca Cola (0,5 l)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 9.1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Asia",
+      "productCategories": [
+        {
+          "name": "Suppen & Snacks",
+          "productGroups": [
+            {
+              "name": "Asia",
+              "products": [
+                {
+                  "number": 548,
+                  "name": "Hühnersuppe",
+                  "description": "mit chin. Gemüse",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.9
+                    }
+                  ]
+                },
+                {
+                  "number": 549,
+                  "name": "Wan Tan Suppe",
+                  "description": "mit chin. Gemüse ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 4.1
+                    }
+                  ]
+                },
+                {
+                  "number": 550,
+                  "name": "Peking Gulaschsuppe",
+                  "description": "hausgemacht (scharf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.9
+                    }
+                  ]
+                },
+                {
+                  "number": 554,
+                  "name": "Rinder-Gulaschsuppe",
+                  "description": "hausgemacht (scharf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.9
+                    }
+                  ]
+                },
+                {
+                  "number": 551,
+                  "name": "Frühlingsrolle",
+                  "description": "Gefüllt mit Hühnerfleisch, chin.Gemüse, süß-sauer-Sauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.7
+                    }
+                  ]
+                },
+                {
+                  "number": 552,
+                  "name": "Mini-Frühlingsrollen",
+                  "description": "(8 Stk.) gefüllt mit chin.Gemüse und süß-sauer-Sauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.2
+                    }
+                  ]
+                },
+                {
+                  "number": 553,
+                  "name": "Kroepoek",
+                  "description": "Krabbenchips",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gebr. Reis mit Ei",
+          "productGroups": [
+            {
+              "name": "Asia",
+              "products": [
+                {
+                  "number": 561,
+                  "name": "Nasi Goreng Spezial",
+                  "description": "(scharf) mit Ei, Scampi,Zwiebeln,Hühnerfleisch,Erbsen,Curry,Gemüse",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.2
+                    }
+                  ]
+                },
+                {
+                  "number": 562,
+                  "name": "Schweinefleisch",
+                  "description": "mit Ei, Schweinefleisch, chin. Gemüse",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.4
+                    }
+                  ]
+                },
+                {
+                  "number": 563,
+                  "name": "Hühnerfleisch",
+                  "description": "mit Ei, Hühnerfleisch, chin. Gemüse",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 564,
+                  "name": "Rindfleisch",
+                  "description": "mit Ei, Rindfleisch, chin. Gemüse",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 566,
+                  "name": "Reis Spezial",
+                  "description": "mit Ei, Rindfleisch, Schweinefleisch, Hühnerfleisch, chin. Gemüse",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.9
+                    }
+                  ]
+                },
+                {
+                  "number": 568,
+                  "name": "Vegetarischer Reis ",
+                  "description": "Gebratener Reis mit Ei, chin. Gemüse ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6.3
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gebr. Nudeln mit Ei",
+          "productGroups": [
+            {
+              "name": "Asia",
+              "products": [
+                {
+                  "number": 572,
+                  "name": "Schweinefleisch",
+                  "description": "mit Ei, Schweinefleisch, chin. Gemüse",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.1
+                    }
+                  ]
+                },
+                {
+                  "number": 573,
+                  "name": "Hühnerfleisch",
+                  "description": "mit Ei, Hühnerfleisch, chin. Gemüse ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 574,
+                  "name": "Rindfleisch",
+                  "description": "mit Ei, Rindfleisch, chin. Gemüse ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 7.9
+                    }
+                  ]
+                },
+                {
+                  "number": 575,
+                  "name": "Bami Goreng ",
+                  "description": "mit Ei, Hühnerfleisch, Vorderschinken, Curry, Scampi, Gemüse ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.2
+                    }
+                  ]
+                },
+                {
+                  "number": 577,
+                  "name": "Nudeln Spezial",
+                  "description": "mit Ei, Rindfleisch, Schweinefleisch, Hühnerfleisch, chin. Gemüse ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.9
+                    }
+                  ]
+                },
+                {
+                  "number": 578,
+                  "name": "Scampi - scharf",
+                  "description": "mit Ei, Scampi, chin. Gemüse (Knoblauch)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.2
+                    }
+                  ]
+                },
+                {
+                  "number": 579,
+                  "name": "Vegetarische Nudeln",
+                  "description": "Gebratene Nudeln mit Ei, chin. Gemüse",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6.3
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Hummerkrabben",
+          "productGroups": [
+            {
+              "name": "Asia",
+              "products": [
+                {
+                  "number": 580,
+                  "name": "Chup-Suey",
+                  "description": "mit Gemüse ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 11.3
+                    }
+                  ]
+                },
+                {
+                  "number": 581,
+                  "name": "Kun Bao (scharf)",
+                  "description": "mit Bambus, fr.Campignons, Paprika, Morcheln(Hoisin-Sauce)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 11.3
+                    }
+                  ]
+                },
+                {
+                  "number": 583,
+                  "name": "Szechuan-Art",
+                  "description": "mit Bambus, Paprika, Möhren, Champignons(scharf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 11.3
+                    }
+                  ]
+                },
+                {
+                  "number": 587,
+                  "name": "Hummerkrabben",
+                  "description": "mit Bambus, Paprika, Glasnudeln",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 11.3
+                    }
+                  ]
+                },
+                {
+                  "number": 589,
+                  "name": "Hummer Süß-Sauer ",
+                  "description": "mit Bambus, Paprika, Möhren",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 11.3
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ente",
+          "productGroups": [
+            {
+              "name": "Asia",
+              "products": [
+                {
+                  "number": 521,
+                  "name": "Peking-Ente",
+                  "description": "mit chin. Gemüse ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 10.3
+                    }
+                  ]
+                },
+                {
+                  "number": 522,
+                  "name": "Curry ",
+                  "description": "Bambus, fr.Champignons, Paprika, Bambus (scharf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 10.3
+                    }
+                  ]
+                },
+                {
+                  "number": 523,
+                  "name": "Süß-Sauer ",
+                  "description": "mit Ananas, Paprika, Bambus, Möhren",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 10.3
+                    }
+                  ]
+                },
+                {
+                  "number": 524,
+                  "name": "Kun-Bao",
+                  "description": "mit Bambus, fr.Champignons, Paprika, Morcheln, Hoisinsauce(scharf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 10.3
+                    }
+                  ]
+                },
+                {
+                  "number": 525,
+                  "name": "Erdnuss-Ente (leicht scharf)",
+                  "description": "mit chin. Gemüse",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 10.3
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Huhn",
+          "productGroups": [
+            {
+              "name": "Asia",
+              "products": [
+                {
+                  "number": 529,
+                  "name": "Huhn Szechuan Art ",
+                  "description": "Bambus, Paprika, Zwiebeln, Möhren",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 530,
+                  "name": "Huhn Chop Suey",
+                  "description": "chin. Gemüse ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 531,
+                  "name": "Huhn Curry-scharf",
+                  "description": "Bambus, Paprika, fr.Champignons, Bambus, Peperoni",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 533,
+                  "name": "Huhn Süß-Sauer ",
+                  "description": "Bambus, Ananas",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 534,
+                  "name": "Huhn Kun Bao",
+                  "description": "Bambus, fr.Champignons, Paprika, Morcheln, Hoisinsauce(scharf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 535,
+                  "name": "Huhn Ku-Lu-Ju",
+                  "description": "Bambus, Möhren, Paprika, Ananas, süß-sauer, paniert",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 536,
+                  "name": "Peking Spezial",
+                  "description": "Bambus, Paprika, Banane, Ananas, Curry (leicht scharf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 538,
+                  "name": "Huhn Erdnuss",
+                  "description": "Paprika, Bambus, Möhren, Erdnusssauce",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Schwein",
+          "productGroups": [
+            {
+              "name": "Asia",
+              "products": [
+                {
+                  "number": 501,
+                  "name": "Chop Suey",
+                  "description": "mit chin. Gemüse ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 502,
+                  "name": "Curry ",
+                  "description": "mit Bambus, Paprika, fr. Champignons (scharf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 504,
+                  "name": "Kun Bao",
+                  "description": "mit Bambus, fr. Champignons, Paprika, Morcheln, Hoisinsauce (scharf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 505,
+                  "name": "Ku-Lu-Ju",
+                  "description": "mit Ananas, Paprika, süß-sauer, paniert, Bambus ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 506,
+                  "name": "Szechuan Art ",
+                  "description": "mit Bambus, Paprika, Zwiebeln, Möhren, Bambus (scharf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                },
+                {
+                  "number": 507,
+                  "name": "Süß-Sauer ",
+                  "description": "mit Bambus, Paprika, Ananas, Möhren, süß-sauer ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Rind",
+          "productGroups": [
+            {
+              "name": "Asia",
+              "products": [
+                {
+                  "number": 511,
+                  "name": "Chop Suey ",
+                  "description": "mit chin. Gemüse ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.2
+                    }
+                  ]
+                },
+                {
+                  "number": 512,
+                  "name": "Onions",
+                  "description": "miz Zwiebeln",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.2
+                    }
+                  ]
+                },
+                {
+                  "number": 513,
+                  "name": "Curry- Leicht scharf ",
+                  "description": "mit Bambus, Paprika, fr. Champignons",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.2
+                    }
+                  ]
+                },
+                {
+                  "number": 514,
+                  "name": "Rindfleisch",
+                  "description": "mit Broccoli, fr. Champignons, Bambus ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.2
+                    }
+                  ]
+                },
+                {
+                  "number": 515,
+                  "name": "Kun Bao (scharf)",
+                  "description": "mit Bambus, fr. Champignons, Paprika, Morcheln, Hoisinsauce ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.2
+                    }
+                  ]
+                },
+                {
+                  "number": 516,
+                  "name": "Szechuan Art ",
+                  "description": "mit Bambus, Paprika, Zwiebeln (scharf)",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 8.2
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kiddy-Box",
+      "productCategories": [
+        {
+          "name": "Happy-Kiddy-Box",
+          "productGroups": [
+            {
+              "name": "Kiddy-Box",
+              "products": [
+                {
+                  "number": 701,
+                  "name": "6er Nuggets",
+                  "description": "mit Pommes Frites, 1 Capri Sonne, 1 Überraschung",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 5.5
+                    }
+                  ]
+                },
+                {
+                  "number": 702,
+                  "name": "Hamburger ",
+                  "description": "mit Pommes Frites, 1 Capri Sonne, 1 Überraschung ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 5.5
+                    }
+                  ]
+                },
+                {
+                  "number": 703,
+                  "name": "1 Mini Pizza Margherita",
+                  "description": "mit 1 Capri Sonne, 1 Überraschung",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 5.5
+                    }
+                  ]
+                },
+                {
+                  "number": 704,
+                  "name": "Spaghetti Napoli",
+                  "description": "1 Capri Sonne, 1 Überraschung",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 5.5
+                    }
+                  ]
+                },
+                {
+                  "number": 705,
+                  "name": "Gebratene Nudeln",
+                  "description": "mit Gemüse, 1 Capri Sonne, 1 Überraschung",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 5.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Getränke",
+      "productCategories": [
+        {
+          "name": "Getränke",
+          "productGroups": [
+            {
+              "name": "Getränke",
+              "products": [
+                {
+                  "number": 800,
+                  "name": "Coca-Cola",
+                  "description": "1l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.5
+                    }
+                  ]
+                },
+                {
+                  "number": 802,
+                  "name": "Fanta",
+                  "description": "1l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.5
+                    }
+                  ]
+                },
+                {
+                  "number": 804,
+                  "name": "Sprite",
+                  "description": "1l Flasche ",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.5
+                    }
+                  ]
+                },
+                {
+                  "number": 806,
+                  "name": "Coca-Cola-Light",
+                  "description": "1l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.5
+                    }
+                  ]
+                },
+                {
+                  "number": 807,
+                  "name": "Cola Zero",
+                  "description": "1l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.5
+                    }
+                  ]
+                },
+                {
+                  "number": 808,
+                  "name": "Mezzo Mix",
+                  "description": "1l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.5
+                    }
+                  ]
+                },
+                {
+                  "number": 809,
+                  "name": "Mineralwasser ",
+                  "description": "0.7l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.1
+                    }
+                  ]
+                },
+                {
+                  "number": 810,
+                  "name": "Apfelschorle",
+                  "description": "1l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 2.5
+                    }
+                  ]
+                },
+                {
+                  "number": 812,
+                  "name": "Orangensaft",
+                  "description": "1l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3
+                    }
+                  ]
+                },
+                {
+                  "number": 813,
+                  "name": "Multivitaminsaft",
+                  "description": "1l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3
+                    }
+                  ]
+                },
+                {
+                  "number": 814,
+                  "name": "Reissdorf",
+                  "description": "0,5l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 1.8
+                    }
+                  ]
+                },
+                {
+                  "number": 815,
+                  "name": "Erdinger Weizen",
+                  "description": "0,5l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 1.8
+                    }
+                  ]
+                },
+                {
+                  "number": 816,
+                  "name": "Früh Kölsch",
+                  "description": "0,5l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 1.8
+                    }
+                  ]
+                },
+                {
+                  "number": 817,
+                  "name": "Erdinger Weizen ",
+                  "description": "(Alkoholfrei) 0,5l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 1.8
+                    }
+                  ]
+                },
+                {
+                  "number": 818,
+                  "name": "Warsteiner Pils",
+                  "description": "0,5l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 1.8
+                    }
+                  ]
+                },
+                {
+                  "number": 819,
+                  "name": "Mixery",
+                  "description": "Mischgetränk, Cola",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 1.8
+                    }
+                  ]
+                },
+                {
+                  "number": 820,
+                  "name": "Vitamalz",
+                  "description": "0,5l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 1.8
+                    }
+                  ]
+                },
+                {
+                  "number": 824,
+                  "name": "Chianti",
+                  "description": "0,75l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6
+                    }
+                  ]
+                },
+                {
+                  "number": 826,
+                  "name": "Frascati",
+                  "description": "0,75l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6
+                    }
+                  ]
+                },
+                {
+                  "number": 828,
+                  "name": "Lambrusco",
+                  "description": "0,75l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6
+                    }
+                  ]
+                },
+                {
+                  "number": 830,
+                  "name": "Rosata",
+                  "description": "0.75l Flasche",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 6
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dessert",
+      "productCategories": [
+        {
+          "name": "Desserts",
+          "productGroups": [
+            {
+              "name": "Dessert",
+              "products": [
+                {
+                  "number": 750,
+                  "name": "Tiramisu",
+                  "description": "hausgemacht mit Sahne",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.5
+                    }
+                  ]
+                },
+                {
+                  "number": 751,
+                  "name": "Gebackene Ananas",
+                  "description": "hausgemacht mit Honig",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.5
+                    }
+                  ]
+                },
+                {
+                  "number": 752,
+                  "name": "Mousse au Chocolat",
+                  "description": "hausgemacht",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.2
+                    }
+                  ]
+                },
+                {
+                  "number": 755,
+                  "name": "Gebackener Apfel ",
+                  "description": "hausgemacht mit Honig",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.5
+                    }
+                  ]
+                },
+                {
+                  "number": 756,
+                  "name": "Gebackene Banane",
+                  "description": "hausgemacht mit Honig",
+                  "productVariations": [
+                    {
+                      "name": "default",
+                      "price": 3.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ben & Jerrys Eiscreme",
+          "productGroups": [
+            {
+              "name": "Dessert",
+              "products": [
+                {
+                  "number": 710,
+                  "name": "Fudge Brownie",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 3.7
+                    },
+                    {
+                      "name": "large",
+                      "price": 6.9
+                    }
+                  ]
+                },
+                {
+                  "number": 711,
+                  "name": "Cookie Dough",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 3.7
+                    },
+                    {
+                      "name": "large",
+                      "price": 6.9
+                    }
+                  ]
+                },
+                {
+                  "number": 712,
+                  "name": "Chunky Monkey ",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 3.7
+                    },
+                    {
+                      "name": "large",
+                      "price": 6.9
+                    }
+                  ]
+                },
+                {
+                  "number": 713,
+                  "name": "Strawberry Cheesecake",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 3.7
+                    },
+                    {
+                      "name": "large",
+                      "price": 6.9
+                    }
+                  ]
+                },
+                {
+                  "number": 714,
+                  "name": "Fairly Nuts ",
+                  "description": "",
+                  "productVariations": [
+                    {
+                      "name": "small",
+                      "price": 3.7
+                    },
+                    {
+                      "name": "large",
+                      "price": 6.9
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

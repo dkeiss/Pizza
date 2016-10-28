@@ -1,11 +1,14 @@
 package pizza.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pizza.vo.product.menu.*;
+import pizza.vo.product.menu.oldDELETE.*;
 
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -13,6 +16,7 @@ import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -24,44 +28,96 @@ import java.util.List;
 @RequestMapping("rest/menu")
 public class MenuController {
 
+    private ObjectMapper objectMapper = new ObjectMapper();
+
     @RequestMapping(value = "", method = RequestMethod.GET)
     public
     @ResponseBody
     MenuVO getMenu(Principal principal, Model model) throws IOException {
+        String menu = new String(Files.readAllBytes(Paths.get("documentation/Speisekarte.json")));
+        OldMenuVO oldMenuVO = objectMapper.readValue(menu, OldMenuVO.class);
+
         MenuVO menuVO = new MenuVO();
-        ProductCatalogVO angebot = new ProductCatalogVO();
-        angebot.setName("Angebot");
-        ProductCategoryVO indischeGerichteCategory = new ProductCategoryVO();
-        indischeGerichteCategory.setName("Indische Gerichte");
-        ProductGroupVO indischeGerichteGroup = new ProductGroupVO();
-        indischeGerichteGroup.setName("Indische Gerichte");
-        indischeGerichteGroup.setProducts(Arrays.asList(
-                createProductWithOnePrice(730, "Murga Mandel-Curry", "Hähnchenfleisch mit Mandeln, versch. Gemüse, leicht-scharfer Currysauce", "7.50"),
-                createProductWithOnePrice(731, "Aw Saag", "Kartoffeln, Broccoli, fr. Paprika, fr. Tomaten, Spinat, leicht-scharfe Currysauce", "7.20"),
-                createProductWithOnePrice(732, "Lamm Vidolor", "Lammfleisch gebraten, fr. Tomaten, fr. Paprika, Ingwer, Zwiebeln, leicht-scharfe Currysauce", "9.60"),
-                createProductWithOnePrice(733, "Lamm Bhindi", "Lammfleisch mit fr. Tomaten, Auberginen, Zucchini, Zwiebeln, leicht-scharfe Currysauce", "9.60"),
-                createProductWithOnePrice(734, "Murgh Sabji", "Hühnerfleisch mit Gemüse in deftig-leckerer Currysauce", "7.90"),
-                createProductWithOnePrice(735, "Murgh Vindaloo", "Hühnerfleisch mit Kartoffeln in deftig-leckerer Currysauce", "7.90"),
-                createProductWithOnePrice(736, "Lamm Saag", "Lammfleisch gebraten mit Ingwer, Knoblauch, Spinat, fr. Tomaten, Currysauce", "9.60"),
-                createProductWithOnePrice(737, "Karahi Chicken", "Hähnchenfleisch, fr. Paprika, Zwiebeln, Peperoni, Ingwer, Currysauce", "7.80"),
-                createProductWithOnePrice(738, "Prawn Khumbi", "Garnelen, fr. Tomaten, Zwiebeln, fr. Champignons in Currysauce", "11.90")
-        ));
-        indischeGerichteCategory.setProductGroups(Arrays.asList(indischeGerichteGroup));
-        angebot.setProductCategories(Arrays.asList(indischeGerichteCategory));
-        menuVO.setProductCataloges(Arrays.asList(angebot));
+        List<ProductCatalogVO> productCatalogVOs = new ArrayList<>();
+        for (OldProductCategoryVO oldProductCategoryVO :  oldMenuVO.getProductCategories()) {
+            ProductCatalogVO productCatalogVO = new ProductCatalogVO();
+            productCatalogVO.setName(oldProductCategoryVO.getName());
+            List<ProductCategoryVO> productCategoryVOs = new ArrayList<>();
+            for (OldSubCategoryVO oldSubCategoryVO : oldProductCategoryVO.getSubCategories()) {
+                ProductCategoryVO productCategoryVO = new ProductCategoryVO();
+                productCategoryVO.setName(oldSubCategoryVO.getName());
+
+                List<ProductGroupVO> productGroupVOs = new ArrayList<>();
+                ProductGroupVO productGroupVO = new ProductGroupVO();
+                if(oldSubCategoryVO.getProducts().size() > 0) {
+                    productGroupVO.setName(oldSubCategoryVO.getProducts().get(0).getCategory());
+                }else{
+                    productGroupVO.setName(oldSubCategoryVO.getName());
+                }
+                productGroupVOs.add(productGroupVO);
+
+                List<ProductVO> productVOs = new ArrayList<>();
+                for (OldProductVO oldProductVO : oldSubCategoryVO.getProducts()) {
+                    ProductVO productVO = new ProductVO();
+                    productVO.setName(oldProductVO.getName());
+                    productVO.setNumber(oldProductVO.getNumber());
+                    productVO.setDescription(oldProductVO.getDescription());
+                    List<ProductVariationVO> productVariationVOs = new ArrayList<>();
+                    if(!StringUtils.isEmpty(oldProductVO.getPrice())){
+                        productVariationVOs.add(defaultPrice(oldProductVO.getPrice()));
+                    }
+                    if(!StringUtils.isEmpty(oldProductVO.getPriceSmall())){
+                        productVariationVOs.add(smallPrice(oldProductVO.getPriceSmall()));
+                    }
+                    if(!StringUtils.isEmpty(oldProductVO.getPriceMedium())){
+                        productVariationVOs.add(mediumPrice(oldProductVO.getPriceMedium()));
+                    }
+                    if(!StringUtils.isEmpty(oldProductVO.getPriceLarge())){
+                        productVariationVOs.add(largePrice(oldProductVO.getPriceLarge()));
+                    }
+                    productVO.setProductVariations(productVariationVOs);
+                    productVOs.add(productVO);
+                    productGroupVO.setProducts(productVOs);
+                }
+                productCategoryVO.setProductGroups(productGroupVOs);
+                productCategoryVOs.add(productCategoryVO);
+            }
+            productCatalogVO.setProductCategories(productCategoryVOs);
+            productCatalogVOs.add(productCatalogVO);
+        }
+        menuVO.setProductCataloges(productCatalogVOs);
         return menuVO;
     }
 
-    private ProductVO createProductWithOnePrice(int number, String name, String description, String price) {
-        ProductVO productVO = new ProductVO();
-        productVO.setNumber(number);
-        productVO.setName(name);
-        productVO.setDescription(description);
+    private ProductVariationVO largePrice(String price) {
+        return productVariation("large", price);
+    }
+
+    private ProductVariationVO mediumPrice(String price) {
+        return productVariation("medium", price);
+    }
+
+    private ProductVariationVO smallPrice(String price) {
+        return productVariation("small", price);
+    }
+
+    private ProductVariationVO defaultPrice(String price) {
+        return productVariation("default", price);
+    }
+
+    private ProductVariationVO productVariation(String variation, String price) {
         ProductVariationVO productVariationVO = new ProductVariationVO();
-        productVariationVO.setName("Standard");
+        productVariationVO.setName(variation);
         productVariationVO.setPrice(new BigDecimal(price));
-        productVO.setProductVariations(Collections.singletonList(productVariationVO));
-        return productVO;
+        return productVariationVO;
+    }
+
+    @RequestMapping(value = "/legacy", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    OldMenuVO responseFoodMenu(Principal principal, Model model) throws IOException {
+        String menu = new String(Files.readAllBytes(Paths.get("documentation/Speisekarte.json")));
+        return objectMapper.readValue(menu, OldMenuVO.class);
     }
 
 }

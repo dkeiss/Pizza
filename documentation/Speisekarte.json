@@ -724,11 +724,6 @@
       "name": "Pasta",
       "subCategories": [
         {
-          "name": "Nudeln",
-          "products": [
-          ]
-        },
-        {
           "name": "Spaghetti",
           "products": [
             {
@@ -1784,11 +1779,6 @@
       "name": "International",
       "subCategories": [
         {
-          "name": "Internationale Gerichte",
-          "products": [
-          ]
-        },
-        {
           "name": "Fisch",
           "products": [
             {
@@ -2153,11 +2143,6 @@
     {
       "name": "Asia",
       "subCategories": [
-        {
-          "name": "Chinesische Gerichte",
-          "products": [
-          ]
-        },
         {
           "name": "Suppen & Snacks",
           "products": [
