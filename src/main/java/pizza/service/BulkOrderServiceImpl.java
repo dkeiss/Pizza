@@ -2,6 +2,7 @@ package pizza.service;
 
 import org.apache.commons.mail.EmailException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import pizza.domain.order.BulkOrder;
 import pizza.repositories.BulkOrderRepository;
@@ -28,7 +29,7 @@ public class BulkOrderServiceImpl implements BulkOrderService, ObjectMapperServi
 
     @Override
     public List<BulkOrderVO> listBulkOrders() {
-        return copyListFromObject(bulkOrderRepository.findAll(), BulkOrderVO.class);
+        return copyListFromBusinessObject(bulkOrderRepository.findAll(), BulkOrderVO.class);
     }
 
     @Override
@@ -36,10 +37,10 @@ public class BulkOrderServiceImpl implements BulkOrderService, ObjectMapperServi
         isValid(bulkOrderVO);
 
         bulkOrderVO.setId(null);
-        BulkOrder bulkOrderBO = copyFromObject(bulkOrderVO, new BulkOrder());
+        BulkOrder bulkOrderBO = copyFromValueObject(bulkOrderVO, new BulkOrder());
         bulkOrderBO.setCreationDate(new Date());
-        bulkOrderRepository.save(bulkOrderBO);
-        bulkOrderVO = copyFromObject(bulkOrderBO, bulkOrderVO);
+        bulkOrderBO = bulkOrderRepository.save(bulkOrderBO);
+        bulkOrderVO = copyFromBusinessObject(bulkOrderBO, bulkOrderVO);
 
         try {
             mailService.sendBulkOrderInvitationToAll(bulkOrderVO.getName());
@@ -53,12 +54,19 @@ public class BulkOrderServiceImpl implements BulkOrderService, ObjectMapperServi
     @Override
     public BulkOrderVO getBulkOrderById(Integer bulkorderId) {
         BulkOrder bulkOrder = bulkOrderRepository.findOne(bulkorderId);
-        return copyFromObject(bulkOrder, new BulkOrderVO());
+        if (bulkOrder == null) {
+            throw new BulkOrderNotFoundException();
+        }
+        return copyFromBusinessObject(bulkOrder, new BulkOrderVO());
     }
 
     @Override
     public void deleteBulkOrderById(Integer bulkorderId) {
-        bulkOrderRepository.delete(bulkorderId);
+        try {
+            bulkOrderRepository.delete(bulkorderId);
+        } catch (EmptyResultDataAccessException e) {
+            throw new BulkOrderNotFoundException();
+        }
     }
 
     @Override
@@ -67,7 +75,7 @@ public class BulkOrderServiceImpl implements BulkOrderService, ObjectMapperServi
         if (bulkOrder == null) {
             throw new BulkOrderNotFoundException();
         }
-        copyFromObject(bulkOrderVO, bulkOrder);
+        copyFromValueObject(bulkOrderVO, bulkOrder);
         bulkOrder.setModificationDate(new Date());
         bulkOrderRepository.save(bulkOrder);
     }
@@ -84,7 +92,7 @@ public class BulkOrderServiceImpl implements BulkOrderService, ObjectMapperServi
     }
 
     private void isAnotherBulkOrderActive() {
-        if(!bulkOrderRepository.findByActiveUntilGreaterThan(new Date()).isEmpty()){
+        if (!bulkOrderRepository.findByActiveUntilGreaterThan(new Date()).isEmpty()) {
             throw new BulkOrderAlreadyActiveException();
         }
     }

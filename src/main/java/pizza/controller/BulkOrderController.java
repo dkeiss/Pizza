@@ -41,7 +41,7 @@ public class BulkOrderController {
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.GET)
     public
     @ResponseBody
-    ResponseEntity<BulkOrderVO> getBulkOrder(@RequestParam Integer bulkorderId) {
+    ResponseEntity<BulkOrderVO> getBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
         BulkOrderVO bulkOrderVO = bulkOrderService.getBulkOrderById(bulkorderId);
         if (bulkOrderVO == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

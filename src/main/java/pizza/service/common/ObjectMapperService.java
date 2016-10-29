@@ -10,12 +10,17 @@ import static org.springframework.beans.BeanUtils.copyProperties;
  */
 public interface ObjectMapperService {
 
-    default <T> T copyFromObject(Object source, T destination) {
+    default <T> T copyFromValueObject(Object source, T destination) {
         copyProperties(source, destination, "creationDate", "modificationDate");
         return destination;
     }
 
-    default <T> List<T> copyListFromObject(Iterable source, Class<T> destination) {
+    default <T> T copyFromBusinessObject(Object source, T destination) {
+        copyProperties(source, destination);
+        return destination;
+    }
+
+    default <T> List<T> copyListFromBusinessObject(Iterable source, Class<T> destination) {
         List<T> destList = new ArrayList<>();
         source.forEach(o -> {
             T dest = null;
