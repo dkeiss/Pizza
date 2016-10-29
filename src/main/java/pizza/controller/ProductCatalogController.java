@@ -42,12 +42,19 @@ public class ProductCatalogController {
         return productCatalogService.createProductCatalog(menuVO);
     }
 
+//    @RequestMapping(value = "{bulkorderId}", method = RequestMethod.GET)
+//    public
+//    @ResponseBody
+//    ProductCatalogVO getProductCatalog(@PathVariable("bulkorderId") Integer bulkorderId) throws IOException {
+//        return productCatalogService.getProductCatalog(bulkorderId);
+//    }
+
     @RequestMapping(value = "{bulkorderId}", method = RequestMethod.GET)
     public
     @ResponseBody
     ProductCatalogVO getProductCatalog(@PathVariable("bulkorderId") Integer bulkorderId) throws IOException {
-        return productCatalogService.getProductCatalog(bulkorderId);
+        String menu = new String(Files.readAllBytes(Paths.get("documentation/Speisekarte_new.json")));
+        return new ObjectMapper().readValue(menu, ProductCatalogVO.class);
     }
-
 
 }

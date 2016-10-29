@@ -1,5 +1,4 @@
 {
-  "id": 100,
   "name": "test",
   "productCategories": [
     {
@@ -7,11 +6,9 @@
       "name": "Angebot",
       "productGroups": [
         {
-          "id": null,
           "name": "Indische Gerichte",
           "products": [
             {
-              "id": null,
               "number": 730,
               "name": "Murga Mandel-Curry",
               "description": "Hähnchenfleisch mit Mandeln, versch. Gemüse, leicht-scharfer Currysauce",
@@ -23,7 +20,6 @@
               ]
             },
             {
-              "id": null,
               "number": 731,
               "name": "Aw Saag",
               "description": "Kartoffeln, Broccoli, fr. Paprika, fr. Tomaten, Spinat, leicht-scharfe Currysauce",
@@ -35,7 +31,6 @@
               ]
             },
             {
-              "id": null,
               "number": 732,
               "name": "Lamm Vidolor",
               "description": "Lammfleisch gebraten, fr. Tomaten, fr. Paprika, Ingwer, Zwiebeln, leicht-scharfe Currysauc",
@@ -47,7 +42,6 @@
               ]
             },
             {
-              "id": null,
               "number": 733,
               "name": "Lamm Bhindi",
               "description": "Lammfleisch mit fr. Tomaten, Auberginen, Zucchini, Zwiebeln, leicht-scharfe Currysauce",
@@ -59,7 +53,6 @@
               ]
             },
             {
-              "id": null,
               "number": 734,
               "name": "Murgh Sabji",
               "description": "Hühnerfleisch mit Gemüse in deftig-leckerer Currysauce",
@@ -71,7 +64,6 @@
               ]
             },
             {
-              "id": null,
               "number": 735,
               "name": "Murgh Vindaloo",
               "description": "Hühnerfleisch mit Kartoffeln in deftig-leckerer Currysauce",
@@ -83,7 +75,6 @@
               ]
             },
             {
-              "id": null,
               "number": 736,
               "name": "Lamm Saag",
               "description": "Lammfleisch gebraten mit Ingwer, Knoblauch, Spinat, fr. Tomaten, Currysauce",
@@ -95,7 +86,6 @@
               ]
             },
             {
-              "id": null,
               "number": 737,
               "name": "Karahi Chicken",
               "description": "Hähnchenfleisch, fr. Paprika, Zwiebeln, Peperoni, Ingwer, Currysauce",
@@ -107,7 +97,6 @@
               ]
             },
             {
-              "id": null,
               "number": 738,
               "name": "Prawn Khumbi",
               "description": "Garnelen, fr. Tomaten, Zwiebeln, fr. Champignons in Currysauce",
@@ -127,11 +116,9 @@
       "name": "Pizza",
       "productGroups": [
         {
-          "id": null,
           "name": "Leckere Pizza",
           "products": [
             {
-              "id": null,
               "number": 2,
               "name": "Margherita",
               "description": "",
@@ -151,7 +138,6 @@
               ]
             },
             {
-              "id": null,
               "number": 4,
               "name": "Rhodos",
               "description": "mit Gyros, Zwiebeln, Peperoni, Tzatziki (ohne Tomatensauce)",
@@ -171,7 +157,6 @@
               ]
             },
             {
-              "id": null,
               "number": 6,
               "name": "Salami",
               "description": "mit Salami",
@@ -191,7 +176,6 @@
               ]
             },
             {
-              "id": null,
               "number": 8,
               "name": "Western",
               "description": "mit Hähnchenfleisch, roten Zwiebeln, Jalapenos, Barbecuesauce (ohne Tomatensauce)",
@@ -211,7 +195,6 @@
               ]
             },
             {
-              "id": null,
               "number": 10,
               "name": "Prosciutto",
               "description": "mit Vorderschinken",
@@ -231,7 +214,6 @@
               ]
             },
             {
-              "id": null,
               "number": 12,
               "name": "Funghi",
               "description": "fr. Champignons",
@@ -251,7 +233,6 @@
               ]
             },
             {
-              "id": null,
               "number": 15,
               "name": "Hellas",
               "description": "Gyros, Zwiebeln, Weichkäse, Peperoni",
@@ -271,7 +252,6 @@
               ]
             },
             {
-              "id": null,
               "number": 17,
               "name": "New York",
               "description": "Hollandaise-Sauce, Broccoli, Vorderschinken (ohne Tomatensauce)",
@@ -291,7 +271,6 @@
               ]
             },
             {
-              "id": null,
               "number": 18,
               "name": "Tonno",
               "description": "mit Thunfisch",
@@ -311,7 +290,6 @@
               ]
             },
             {
-              "id": null,
               "number": 20,
               "name": "Spinaci",
               "description": "mit Spinat (Knoblauch)",
@@ -331,7 +309,6 @@
               ]
             },
             {
-              "id": null,
               "number": 21,
               "name": "La Maria",
               "description": "Peperonisalami, fr. Paprika, Jalapenos",
@@ -351,7 +328,6 @@
               ]
             },
             {
-              "id": null,
               "number": 22,
               "name": "Poncha",
               "description": "mit Mais, Zwiebeln, Barbecue-Sauce, Paprika (ohne Tomatensauce)",
@@ -371,7 +347,6 @@
               ]
             },
             {
-              "id": null,
               "number": 23,
               "name": "Hollandaise",
               "description": "mit Pute, Paprika, Broccoli, Sauce-Hollandaise (ohne Tomatensauce)",
@@ -391,7 +366,6 @@
               ]
             },
             {
-              "id": null,
               "number": 26,
               "name": "Pizza Pasta",
               "description": "mit Spaghetti, Fleischsauce",
@@ -411,7 +385,6 @@
               ]
             },
             {
-              "id": null,
               "number": 27,
               "name": "Bombay",
               "description": "mit Putenbrust, Currysauce, Ananas (ohne Tomatensauce)",
@@ -431,7 +404,6 @@
               ]
             },
             {
-              "id": null,
               "number": 28,
               "name": "Frutti Di Mare",
               "description": "mit Meeresfrüchte (Knoblauch)",
@@ -451,7 +423,6 @@
               ]
             },
             {
-              "id": null,
               "number": 30,
               "name": "Gyros",
               "description": "mit Gyros",
@@ -471,7 +442,6 @@
               ]
             },
             {
-              "id": null,
               "number": 32,
               "name": "Inferno",
               "description": "mit Salami, Peperoni",
@@ -491,7 +461,6 @@
               ]
             },
             {
-              "id": null,
               "number": 34,
               "name": "Caprese",
               "description": "Mozzarella, fr. Tomaten (Basilikum)",
@@ -511,7 +480,6 @@
               ]
             },
             {
-              "id": null,
               "number": 36,
               "name": "Napolitana",
               "description": "Sardellen, Kapern, Oliven6, Knoblauch",
@@ -531,7 +499,6 @@
               ]
             },
             {
-              "id": null,
               "number": 38,
               "name": "Mista",
               "description": "Vorderschinken, fr. Champignons, Salami",
@@ -551,7 +518,6 @@
               ]
             },
             {
-              "id": null,
               "number": 40,
               "name": "Hawaii",
               "description": "Ananas, Vorderschinken",
@@ -571,7 +537,6 @@
               ]
             },
             {
-              "id": null,
               "number": 41,
               "name": "Gourmet",
               "description": "Räucherlachs, fr. Tomaten, Scampi (Knoblauch)",
@@ -591,7 +556,6 @@
               ]
             },
             {
-              "id": null,
               "number": 42,
               "name": "Kentucky",
               "description": "mit Hähnchenbrust, Mozzarella",
@@ -611,7 +575,6 @@
               ]
             },
             {
-              "id": null,
               "number": 43,
               "name": "Amerika",
               "description": "Barbeque-Sauce, Mozzarella, Speck, Peperoni, Champignons (ohne Tomatensauce)",
@@ -631,7 +594,6 @@
               ]
             },
             {
-              "id": null,
               "number": 44,
               "name": "Alla Pino",
               "description": "Thunfisch, Weichkäse, Zwiebeln, Tomaten, Peperoni",
@@ -651,7 +613,6 @@
               ]
             },
             {
-              "id": null,
               "number": 46,
               "name": "Kreta",
               "description": "Weichkäse, Zwiebeln, fr. Tomaten",
@@ -671,7 +632,6 @@
               ]
             },
             {
-              "id": null,
               "number": 48,
               "name": "Athen",
               "description": "Weichkäse, Spinat, (Knoblauch)",
@@ -691,7 +651,6 @@
               ]
             },
             {
-              "id": null,
               "number": 50,
               "name": "Da Vinci",
               "description": "Spinat, Ei, Salami, Vorderschinken, fr. Tomaten, Mozzarella",
@@ -711,7 +670,6 @@
               ]
             },
             {
-              "id": null,
               "number": 51,
               "name": "Parma",
               "description": "Parmaschinken, Ruccola",
@@ -731,7 +689,6 @@
               ]
             },
             {
-              "id": null,
               "number": 52,
               "name": "Mafioso",
               "description": "mit Thunfisch, Zwiebeln, Salami",
@@ -751,7 +708,6 @@
               ]
             },
             {
-              "id": null,
               "number": 54,
               "name": "Camorra",
               "description": "mit Thunfisch, Zwiebeln, Sardellen, Oliven",
@@ -771,7 +727,6 @@
               ]
             },
             {
-              "id": null,
               "number": 55,
               "name": "A La Chef",
               "description": "Spinat, Champignons, Mozzarella",
@@ -791,7 +746,6 @@
               ]
             },
             {
-              "id": null,
               "number": 56,
               "name": "Vegetaria",
               "description": "mit Spinat, fr. Champignons, Broccoli, Artischocken (Knoblauch)",
@@ -811,7 +765,6 @@
               ]
             },
             {
-              "id": null,
               "number": 57,
               "name": "Gyros Hollandaise",
               "description": "Sauce-Hollandaise, Gyros, Jalapenos (ohne Tomatensauce)",
@@ -831,7 +784,6 @@
               ]
             },
             {
-              "id": null,
               "number": 58,
               "name": "Capriciosa",
               "description": "mit fr. Champignons, Zwiebeln, Salami, Vorderschinken",
@@ -851,7 +803,6 @@
               ]
             },
             {
-              "id": null,
               "number": 60,
               "name": "Quattro Stagioni",
               "description": "mit Thunfisch, fr. Champignons, Vorderschinken, Salami",
@@ -871,7 +822,6 @@
               ]
             },
             {
-              "id": null,
               "number": 61,
               "name": "Speed Pizza",
               "description": "mit Thunfisch, Champignons, Zwiebeln, Vorderschinken",
@@ -891,7 +841,6 @@
               ]
             },
             {
-              "id": null,
               "number": 62,
               "name": "Calzone 1",
               "description": "Gefüllt mit Thunfisch, fr. Champignons, Vorderschinken",
@@ -907,7 +856,6 @@
               ]
             },
             {
-              "id": null,
               "number": 63,
               "name": "Calzone 2",
               "description": "Gefüllt mit roter Zwiebel, Gyros, Krautsalat",
@@ -923,7 +871,6 @@
               ]
             },
             {
-              "id": null,
               "number": 64,
               "name": "Calzone 3",
               "description": "Gefüllt mit Spinat, fr. Champignons, Weichkäse",
@@ -939,7 +886,6 @@
               ]
             },
             {
-              "id": null,
               "number": 66,
               "name": "Miami",
               "description": "mit Putenbrust, Broccoli, Mais",
@@ -959,7 +905,6 @@
               ]
             },
             {
-              "id": null,
               "number": 68,
               "name": "Diavolo",
               "description": "mit Salami, fr. Paprika, Peperoni",
@@ -979,7 +924,6 @@
               ]
             },
             {
-              "id": null,
               "number": 70,
               "name": "Montana Spezial",
               "description": "mit Spinat, Scampi, fr. Tomaten, Mozzarella (Knoblauch)",
@@ -999,7 +943,6 @@
               ]
             },
             {
-              "id": null,
               "number": 72,
               "name": "Scampi",
               "description": "mit Scampi (Knoblauch)",
@@ -1019,7 +962,6 @@
               ]
             },
             {
-              "id": null,
               "number": 76,
               "name": "Quattro Formaggi",
               "description": "vier verschiedene Käsesorten",
@@ -1039,7 +981,6 @@
               ]
             },
             {
-              "id": null,
               "number": 77,
               "name": "Pizza Garnelen",
               "description": "mit Garnelen, Knoblauch",
@@ -1057,11 +998,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Party-Pizza",
           "products": [
             {
-              "id": null,
               "number": 1,
               "name": "Party-Blech-Pizza",
               "description": "für ca. 5 Personen (40x60 cm)",
@@ -1073,7 +1012,6 @@
               ]
             },
             {
-              "id": null,
               "number": 1,
               "name": "Party-Blech-Pizza",
               "description": "für ca. 4 Personen (rund 45 cm)",
@@ -1087,11 +1025,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Panini",
           "products": [
             {
-              "id": null,
               "number": 91,
               "name": "Panini",
               "description": "Pizzabrötchen mit Kräuterbutter ",
@@ -1103,7 +1039,6 @@
               ]
             },
             {
-              "id": null,
               "number": 93,
               "name": "Panini",
               "description": "Pizzabrötchen mit Aioli",
@@ -1115,7 +1050,6 @@
               ]
             },
             {
-              "id": null,
               "number": 94,
               "name": "Panini gefüllt",
               "description": "(7 Stk.) gefüllt mit Gouda und Thunfisch",
@@ -1127,7 +1061,6 @@
               ]
             },
             {
-              "id": null,
               "number": 95,
               "name": "Panini gefüllt",
               "description": "(7 Stk.) gefüllt mit Putenfleisch und Gouda ",
@@ -1139,7 +1072,6 @@
               ]
             },
             {
-              "id": null,
               "number": 96,
               "name": "Panini gefüllt",
               "description": "(7 Stk.) gefüllt mit Gouda und Vorderschinken",
@@ -1151,7 +1083,6 @@
               ]
             },
             {
-              "id": null,
               "number": 97,
               "name": "Panini gefüllt",
               "description": "(7 Stk.) gefüllt mit Gyros",
@@ -1163,7 +1094,6 @@
               ]
             },
             {
-              "id": null,
               "number": 98,
               "name": "Panini gefüllt",
               "description": "(7 Stk.) gefüllt mit Weichkäse und Spinat",
@@ -1175,7 +1105,6 @@
               ]
             },
             {
-              "id": null,
               "number": 99,
               "name": "Panini gefüllt",
               "description": "(7 Stk.) gefüllt mit fr. Champignons, Gouda-Käse[1]",
@@ -1187,7 +1116,6 @@
               ]
             },
             {
-              "id": null,
               "number": 100,
               "name": "Panini gefüllt",
               "description": "(7 Stk.) gefüllt mit Gouda und Salami",
@@ -1199,7 +1127,6 @@
               ]
             },
             {
-              "id": null,
               "number": 101,
               "name": "Extra Butter",
               "description": "Kräuterbutter hausgemacht",
@@ -1211,7 +1138,6 @@
               ]
             },
             {
-              "id": null,
               "number": 103,
               "name": "Extra Aioli",
               "description": "hausgemacht",
@@ -1231,11 +1157,9 @@
       "name": "Pasta",
       "productGroups": [
         {
-          "id": null,
           "name": "Spaghetti",
           "products": [
             {
-              "id": null,
               "number": 313,
               "name": "Spaghetti Napoli",
               "description": "mit Tomaten-Sahnesauce",
@@ -1247,7 +1171,6 @@
               ]
             },
             {
-              "id": null,
               "number": 314,
               "name": "Aioli E Peperoncini",
               "description": "mit Olivenöl,fr.Basilikum,Peperoni,fr.Tomaten,scharf(Knoblauch)",
@@ -1259,7 +1182,6 @@
               ]
             },
             {
-              "id": null,
               "number": 315,
               "name": "Bolognese",
               "description": "mit (Rind) Fleischsauce",
@@ -1271,7 +1193,6 @@
               ]
             },
             {
-              "id": null,
               "number": 316,
               "name": "Mare",
               "description": "Meeresfrüchte,fr.Tomaten,Zwiebeln,Tomatensauce,Sahnesauce(Knoblauch)",
@@ -1283,7 +1204,6 @@
               ]
             },
             {
-              "id": null,
               "number": 317,
               "name": "Carbonara",
               "description": "mit Vorderschinken,Ei in Käse-Sahnesauce",
@@ -1295,7 +1215,6 @@
               ]
             },
             {
-              "id": null,
               "number": 318,
               "name": "Spaghetti Scampi",
               "description": "mit Scampi,fr.Paprika,Sahnesauce(Knoblauch)",
@@ -1307,7 +1226,6 @@
               ]
             },
             {
-              "id": null,
               "number": 319,
               "name": "Tonno",
               "description": "mit Thunfisch,Zwiebeln,Erbsen,Tomaten-Sahnesauce",
@@ -1321,11 +1239,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Maccaroni",
           "products": [
             {
-              "id": null,
               "number": 320,
               "name": "Maccaroni Bolognese",
               "description": "Nudelröllchen mit (Rind) Fleischsauce",
@@ -1337,7 +1253,6 @@
               ]
             },
             {
-              "id": null,
               "number": 321,
               "name": "Santa Maria",
               "description": "Nudelröllchen,Spinat,Champignons,Tomaten- Sahnesauce",
@@ -1349,7 +1264,6 @@
               ]
             },
             {
-              "id": null,
               "number": 322,
               "name": "Santa Fe",
               "description": "Nudelröllchen, Broccoli, Zwiebeln, fr. Champignons, Tomaten-Sahnesauce",
@@ -1361,7 +1275,6 @@
               ]
             },
             {
-              "id": null,
               "number": 323,
               "name": "Casa",
               "description": "Nudelröllchen,fr.Champignons,Erbsen,Vorderschinken,Sahnesauce",
@@ -1373,7 +1286,6 @@
               ]
             },
             {
-              "id": null,
               "number": 324,
               "name": "Maccaroni Primavera",
               "description": "fr.Tomaten,Zwiebeln,Champignons,Tomaten-Sahnesauce",
@@ -1385,7 +1297,6 @@
               ]
             },
             {
-              "id": null,
               "number": 325,
               "name": "San Marino",
               "description": "Nudelröllchen,Hühnerfleisch,fr.Champignons,Curry-Käse-Sahnesauce",
@@ -1397,7 +1308,6 @@
               ]
             },
             {
-              "id": null,
               "number": 326,
               "name": "Maccaroni Hollandaise",
               "description": "Nudelröllchen,Broccoli,Spinat,Sauce-Hollandaise(Knoblauch)",
@@ -1409,7 +1319,6 @@
               ]
             },
             {
-              "id": null,
               "number": 327,
               "name": "Maccaroni Speed",
               "description": "mit Hähnchenfleisch, fr. Champignons, Zwiebeln, fr. Paprika, Sahnesauce",
@@ -1423,11 +1332,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Tortellini",
           "products": [
             {
-              "id": null,
               "number": 335,
               "name": "Alla Panna ",
               "description": "mit Vorderschinken,Ei und Käse-Sahnesauce",
@@ -1439,7 +1346,6 @@
               ]
             },
             {
-              "id": null,
               "number": 336,
               "name": "Tortellini Bolognese ",
               "description": "(Rind) Fleischsauce,Hausrezept",
@@ -1451,7 +1357,6 @@
               ]
             },
             {
-              "id": null,
               "number": 337,
               "name": "Fiorentina",
               "description": "Broccoli,Spinat,(Knoblauch),Käse-Sahnesauce",
@@ -1463,7 +1368,6 @@
               ]
             },
             {
-              "id": null,
               "number": 338,
               "name": "Tortellini Spinaci",
               "description": "Spinat,Vorderschinken,Tomaten-Sahnesauce",
@@ -1475,7 +1379,6 @@
               ]
             },
             {
-              "id": null,
               "number": 339,
               "name": "Quattro Formaggio",
               "description": "vier versch. Käsesorten,Sahnesauce",
@@ -1487,7 +1390,6 @@
               ]
             },
             {
-              "id": null,
               "number": 340,
               "name": "El Chico",
               "description": "mit Broccoli,Scampi,Sahnesauce (Knoblauch )",
@@ -1501,11 +1403,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Tagliatelle",
           "products": [
             {
-              "id": null,
               "number": 341,
               "name": "Della Chef",
               "description": "Bandnudeln,Scampi,Spinat,Sahnesauce (Knoblauch)",
@@ -1517,7 +1417,6 @@
               ]
             },
             {
-              "id": null,
               "number": 342,
               "name": "Tagliatelle Milano",
               "description": "Bandnudeln,Hühnerfleisch,Champignons,Curry-Sahnesauce",
@@ -1529,7 +1428,6 @@
               ]
             },
             {
-              "id": null,
               "number": 343,
               "name": "Con Funghi",
               "description": "Bandnudeln,fr.Champignons,Paprika,Sahnesauce",
@@ -1541,7 +1439,6 @@
               ]
             },
             {
-              "id": null,
               "number": 345,
               "name": "Rimini",
               "description": "Bandnudeln, Broccoli, Hühnerfleisch, fr. Tomaten, in Tomaten-Sahnesauce",
@@ -1553,7 +1450,6 @@
               ]
             },
             {
-              "id": null,
               "number": 347,
               "name": "Al Salmone",
               "description": "Bandnudeln,Lachs,Tomaten-Sahnesauce (Knoblauch)",
@@ -1565,7 +1461,6 @@
               ]
             },
             {
-              "id": null,
               "number": 349,
               "name": "Alfredo",
               "description": "Bandnudeln,Vorderschinken,Erbsen,Sahnesauce",
@@ -1579,11 +1474,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Gnocchi",
           "products": [
             {
-              "id": null,
               "number": 350,
               "name": "Speed ",
               "description": "Gnocchi,Spinat in Sahnesauce",
@@ -1595,7 +1488,6 @@
               ]
             },
             {
-              "id": null,
               "number": 351,
               "name": "Neptun",
               "description": "Gnocchi,Gorgonzola in Sahnesauce",
@@ -1607,7 +1499,6 @@
               ]
             },
             {
-              "id": null,
               "number": 352,
               "name": "Gnocchi mit Champignons",
               "description": "in Sahnesauce,Champignons",
@@ -1619,7 +1510,6 @@
               ]
             },
             {
-              "id": null,
               "number": 353,
               "name": "Gnocchi",
               "description": "Gnocchi,mit Hühnerfleisch und Broccoli in Sahnesauce",
@@ -1631,7 +1521,6 @@
               ]
             },
             {
-              "id": null,
               "number": 354,
               "name": "Pollo Funghi",
               "description": "Gnocchi, Hähnchenfleisch, fr. Champignons, fr. Paprika in Tomaten-Sahne-Sauce",
@@ -1645,11 +1534,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Aufläufe",
           "products": [
             {
-              "id": null,
               "number": 186,
               "name": "Rigatoni",
               "description": "Maccaroni, Bolognesesauce (hausgemacht, vom Rind)",
@@ -1661,7 +1548,6 @@
               ]
             },
             {
-              "id": null,
               "number": 187,
               "name": "Della Chef ",
               "description": "Maccaroni, fr. Tomaten, Vorderschinken, Erbsen, fr. Champignons, Tomaten-Sahnesauce",
@@ -1673,7 +1559,6 @@
               ]
             },
             {
-              "id": null,
               "number": 191,
               "name": "Kartoffelauflauf",
               "description": "Spinat, fr. Paprika, Mais, Hollandaise-Sauce",
@@ -1685,7 +1570,6 @@
               ]
             },
             {
-              "id": null,
               "number": 202,
               "name": "Kartoffel-Gratin",
               "description": "Kartoffeln, Broccoli, Vorderschinken, Spinat mit Curry-Sahnesauce",
@@ -1697,7 +1581,6 @@
               ]
             },
             {
-              "id": null,
               "number": 203,
               "name": "Kentucky Al Forno",
               "description": "Hähnchenbrust, fr. Tomaten, fr. Paprika, Tomaten-Sahnesauce",
@@ -1709,7 +1592,6 @@
               ]
             },
             {
-              "id": null,
               "number": 204,
               "name": "Maccaroni Rahmsauce",
               "description": "Putenbrust mit Rahmsauce",
@@ -1721,7 +1603,6 @@
               ]
             },
             {
-              "id": null,
               "number": 205,
               "name": "Maccaroni Hollandaise ",
               "description": "Gyros mit Sauce Hollandaise ",
@@ -1733,7 +1614,6 @@
               ]
             },
             {
-              "id": null,
               "number": 208,
               "name": "Gemüse Gratin",
               "description": "Kartoffeln, fr. Paprika, fr. Champignons, Spinat, Tomaten-Sahnesauce",
@@ -1745,7 +1625,6 @@
               ]
             },
             {
-              "id": null,
               "number": 212,
               "name": "Tortellini Al Forno",
               "description": "fr. Tomaten, (Rind) Fleischsauce",
@@ -1757,7 +1636,6 @@
               ]
             },
             {
-              "id": null,
               "number": 214,
               "name": "Lasagne ",
               "description": "Nudelschichten, Ei, Vorderschinken, Fleischsauce",
@@ -1769,7 +1647,6 @@
               ]
             },
             {
-              "id": null,
               "number": 215,
               "name": "Macceroni",
               "description": "(Rind) Fleischsauce, Sahne, Chilli Con Carne (schartf)",
@@ -1781,7 +1658,6 @@
               ]
             },
             {
-              "id": null,
               "number": 216,
               "name": "Tortellini Broccoli Al Forno",
               "description": "Vorderschinken, Broccoli mit Sahnesauce",
@@ -1793,7 +1669,6 @@
               ]
             },
             {
-              "id": null,
               "number": 217,
               "name": "Canneloni",
               "description": "Gefüllte Nudelröllchen mit Tomaten-Sahnesauce ",
@@ -1805,7 +1680,6 @@
               ]
             },
             {
-              "id": null,
               "number": 222,
               "name": "Tortellini Hawaii ",
               "description": "Tortellini, Ananas, Vorderschinken und Sahnesauce",
@@ -1817,7 +1691,6 @@
               ]
             },
             {
-              "id": null,
               "number": 223,
               "name": "Risotto Con Pollo",
               "description": "mir Reis, Hühnerfleisch, Champignons mit Rahmsauce ",
@@ -1829,7 +1702,6 @@
               ]
             },
             {
-              "id": null,
               "number": 224,
               "name": "Kartoffel Max ",
               "description": "Kartoffeln, Gyros, fr. Paprika, Weichkäse, Sahnesauce ",
@@ -1841,7 +1713,6 @@
               ]
             },
             {
-              "id": null,
               "number": 226,
               "name": "Tagliatelle Putenbrust",
               "description": "Bandnudeln mit Putenbrust, fr. Champignons, Sauce-Hollandaise",
@@ -1853,7 +1724,6 @@
               ]
             },
             {
-              "id": null,
               "number": 228,
               "name": "Greek Al Forno",
               "description": "Maccaroni, fr.Tomaten, Weichkäse, Rahmsauce ",
@@ -1865,7 +1735,6 @@
               ]
             },
             {
-              "id": null,
               "number": 232,
               "name": "Royal Al Forno",
               "description": "Maccaroni, Scampi, (Knoblauch) mit Käse-Sahnesauce",
@@ -1877,7 +1746,6 @@
               ]
             },
             {
-              "id": null,
               "number": 234,
               "name": "Pasta Mista Della Casa ",
               "description": "vier verschiedene Nudelsorten mit Vorderschinken, Tomaten, Sahnesauce ",
@@ -1889,7 +1757,6 @@
               ]
             },
             {
-              "id": null,
               "number": 236,
               "name": "Vegetaria Al Forno",
               "description": "Maccaroni, fr. Champignons, Broccoli, Spinat, fr. Tomaten in Tomatensauce (Knoblauch)",
@@ -1901,7 +1768,6 @@
               ]
             },
             {
-              "id": null,
               "number": 238,
               "name": "Gyros Auflauf ",
               "description": "vier verschiedene Nudelsorten,Sahnesauce,Gyros,Zwiebeln,Weichkäse,Maccaroni",
@@ -1921,11 +1787,9 @@
       "name": "Insalata",
       "productGroups": [
         {
-          "id": null,
           "name": "Salate",
           "products": [
             {
-              "id": null,
               "number": 421,
               "name": "Insalata Speciale",
               "description": "Eisbergsalat,Gurken,Tomaten,gebr.Champignons,Krautsalat,Pep.,rote Zwiebeln,Weichkäse",
@@ -1941,7 +1805,6 @@
               ]
             },
             {
-              "id": null,
               "number": 422,
               "name": "Chicken Salat",
               "description": "Eisbergsalat,Tomaten,Gurken,Paprika,Mais,Möhren,Hähnchenbrust",
@@ -1957,7 +1820,6 @@
               ]
             },
             {
-              "id": null,
               "number": 427,
               "name": "Salat Gourmet",
               "description": "Eisbergsalat, Tomaten, Gurken, gebratene Champignons, Broccoli, Hähnchenfleisch",
@@ -1973,7 +1835,6 @@
               ]
             },
             {
-              "id": null,
               "number": 423,
               "name": "Pollo Salat",
               "description": "Eisbergsalat, Tomaten, Gurken, Mais, in der Pfanne gebr. Hähnchenfleisch, Zwiebeln,Paprika",
@@ -1989,7 +1850,6 @@
               ]
             },
             {
-              "id": null,
               "number": 424,
               "name": "Cocktail Salat ",
               "description": "Eisbergsalat,Gurke,Cherrytomaten,Möhren,rote Zwiebel,Paprika,Rucola",
@@ -2005,7 +1865,6 @@
               ]
             },
             {
-              "id": null,
               "number": 428,
               "name": "Gemischter Salat",
               "description": "Eisbergsalat,Tomaten,Gurke,Paprika,Möhren,Mais,rote Beete,Spargel",
@@ -2021,7 +1880,6 @@
               ]
             },
             {
-              "id": null,
               "number": 429,
               "name": "Salat Gyros",
               "description": "Eisbergsalat,Tomaten,Gurke,Gyros,rote Zwiebeln,Krautsalat,Peperoni,Weichkäse",
@@ -2037,7 +1895,6 @@
               ]
             },
             {
-              "id": null,
               "number": 430,
               "name": "Nizza Salat",
               "description": "Eisbergsalat,Tomaten,Gurke,Thunfisch,Mais,Zwiebeln",
@@ -2053,7 +1910,6 @@
               ]
             },
             {
-              "id": null,
               "number": 432,
               "name": "Capriciosa Spezial",
               "description": "Eisbergsalat,Tomaten,Gurke,Gouda,Vorderschinken,Ei,Mais,Oliven",
@@ -2069,7 +1925,6 @@
               ]
             },
             {
-              "id": null,
               "number": 436,
               "name": "Greek Salat",
               "description": "Eisbergsalat,Tomaten,Gurke,Ei,Peperoni,Zwiebeln,Weichkäse,Krautsalat,Oliven",
@@ -2085,7 +1940,6 @@
               ]
             },
             {
-              "id": null,
               "number": 437,
               "name": "Speed Salat",
               "description": "Eisbergsalat,Tomaten,Gurke,Mais,Thunfisch,Vorderschinken,Gouda,Oliven,Ei",
@@ -2101,7 +1955,6 @@
               ]
             },
             {
-              "id": null,
               "number": 438,
               "name": "Salat Casa",
               "description": "Eisbergsalat,Tom.,Gurk.,Gouda,Ei,Vordersch.,Thunf.,Mais,Artischocken,Zwieb.Spargel",
@@ -2117,7 +1970,6 @@
               ]
             },
             {
-              "id": null,
               "number": 442,
               "name": "Tomatensalat",
               "description": "",
@@ -2129,7 +1981,6 @@
               ]
             },
             {
-              "id": null,
               "number": 444,
               "name": "Gurkensalat",
               "description": "",
@@ -2141,7 +1992,6 @@
               ]
             },
             {
-              "id": null,
               "number": 446,
               "name": "Grüner Salat",
               "description": "",
@@ -2153,7 +2003,6 @@
               ]
             },
             {
-              "id": null,
               "number": 448,
               "name": "Möhrensalat",
               "description": "",
@@ -2165,7 +2014,6 @@
               ]
             },
             {
-              "id": null,
               "number": 450,
               "name": "Krautsalat",
               "description": "",
@@ -2177,7 +2025,6 @@
               ]
             },
             {
-              "id": null,
               "number": 452,
               "name": "Maissalat",
               "description": "",
@@ -2189,7 +2036,6 @@
               ]
             },
             {
-              "id": null,
               "number": 456,
               "name": "Oliven",
               "description": "",
@@ -2201,7 +2047,6 @@
               ]
             },
             {
-              "id": null,
               "number": 458,
               "name": "Peperoni",
               "description": "",
@@ -2213,7 +2058,6 @@
               ]
             },
             {
-              "id": null,
               "number": 495,
               "name": "Weichkäse",
               "description": "",
@@ -2233,11 +2077,9 @@
       "name": "Baguette",
       "productGroups": [
         {
-          "id": null,
           "name": "Baguette",
           "products": [
             {
-              "id": null,
               "number": 110,
               "name": "Käse",
               "description": "mit Gouda",
@@ -2249,7 +2091,6 @@
               ]
             },
             {
-              "id": null,
               "number": 114,
               "name": "Tonno",
               "description": "mit Thunfisch",
@@ -2261,7 +2102,6 @@
               ]
             },
             {
-              "id": null,
               "number": 115,
               "name": "Schinken",
               "description": "mit Vorderschinken",
@@ -2273,7 +2113,6 @@
               ]
             },
             {
-              "id": null,
               "number": 116,
               "name": "Salami",
               "description": "mit Salami",
@@ -2285,7 +2124,6 @@
               ]
             },
             {
-              "id": null,
               "number": 118,
               "name": "New York",
               "description": "mit Gouda, Vorderschinken",
@@ -2297,7 +2135,6 @@
               ]
             },
             {
-              "id": null,
               "number": 120,
               "name": "Bali",
               "description": "mit Gouda, Thunfisch",
@@ -2309,7 +2146,6 @@
               ]
             },
             {
-              "id": null,
               "number": 121,
               "name": "Parma",
               "description": "mit Parmaschinken, Rucola, fr. Tomaten",
@@ -2321,7 +2157,6 @@
               ]
             },
             {
-              "id": null,
               "number": 122,
               "name": "Toscana",
               "description": "mit fr. Tomaten, Mozzarella",
@@ -2333,7 +2168,6 @@
               ]
             },
             {
-              "id": null,
               "number": 124,
               "name": "Hawaii",
               "description": "mit Vorderschinken, Ananas, Gouda",
@@ -2345,7 +2179,6 @@
               ]
             },
             {
-              "id": null,
               "number": 126,
               "name": "Mallorca",
               "description": "mit Vorderschinken, Gouda, Ei",
@@ -2357,7 +2190,6 @@
               ]
             },
             {
-              "id": null,
               "number": 128,
               "name": "Ibiza",
               "description": "mit Hühnerfleisch, Gouda",
@@ -2369,7 +2201,6 @@
               ]
             },
             {
-              "id": null,
               "number": 129,
               "name": "Baguette Gyros",
               "description": "mit Gyros, Zwiebeln",
@@ -2389,11 +2220,9 @@
       "name": "Schnitzel",
       "productGroups": [
         {
-          "id": null,
           "name": "Schnitzel",
           "products": [
             {
-              "id": null,
               "number": 602,
               "name": "Schnitzel Bella ",
               "description": "mit Vorderschinken,(Rind)Fleischsauce,Gouda überb.(Beilagensalat)",
@@ -2405,7 +2234,6 @@
               ]
             },
             {
-              "id": null,
               "number": 603,
               "name": "Schnitzel Hollandaise ",
               "description": "mit Spargel,Broccoli,Hollandaise-Sauce,Gouda überb. (Beilagensalat)",
@@ -2417,7 +2245,6 @@
               ]
             },
             {
-              "id": null,
               "number": 604,
               "name": "Schnitzel Wiener Art ",
               "description": "mit Zitrone (Beilagensalat)",
@@ -2429,7 +2256,6 @@
               ]
             },
             {
-              "id": null,
               "number": 605,
               "name": "Schlemmer Schnitzel",
               "description": "mit fr.Champignons, Zwiebeln, mit Sahnesauce, Gouda überb. (Beilagensalat)",
@@ -2441,7 +2267,6 @@
               ]
             },
             {
-              "id": null,
               "number": 606,
               "name": "Jägerschnitzel",
               "description": "mit fr. Champignons, Rahmsauce (Beilagensalat)",
@@ -2453,7 +2278,6 @@
               ]
             },
             {
-              "id": null,
               "number": 608,
               "name": "Zigeunerschnitzel",
               "description": "mit Paprika, Zwiebeln, Gurken (Beilagensalat)",
@@ -2465,7 +2289,6 @@
               ]
             },
             {
-              "id": null,
               "number": 610,
               "name": "Putenschnitzel",
               "description": "mit Rahmsauce (Beilagensalat)",
@@ -2477,7 +2300,6 @@
               ]
             },
             {
-              "id": null,
               "number": 612,
               "name": "Hawaii Schnitzel",
               "description": "mit Ananas, Vorderschinken, Sahnesauce, mit Gouda überb. (Beilagensalat)",
@@ -2489,7 +2311,6 @@
               ]
             },
             {
-              "id": null,
               "number": 616,
               "name": "Cordon Bleu",
               "description": "gef. mit Vorderschinken, Sauce-Hollandaise (Beilagensalat)",
@@ -2501,7 +2322,6 @@
               ]
             },
             {
-              "id": null,
               "number": 617,
               "name": "Schnitzel Mozzarella ",
               "description": "mit Mozzarella, Tomatenscheiben, Basilikum und Gouda überb.",
@@ -2513,7 +2333,6 @@
               ]
             },
             {
-              "id": null,
               "number": 618,
               "name": "Ungarisch",
               "description": "Zwiebeln, Paprika, Tomaten-Sahnesauce (Beilagensalat,scharf)",
@@ -2525,7 +2344,6 @@
               ]
             },
             {
-              "id": null,
               "number": 619,
               "name": "Schnitzel Paris",
               "description": "mit Vorderschinken, Spargel, Gouda überb., Sauce-Hollandaise (Beilagensalat)",
@@ -2545,11 +2363,9 @@
       "name": "International",
       "productGroups": [
         {
-          "id": null,
           "name": "Fisch",
           "products": [
             {
-              "id": null,
               "number": 556,
               "name": "Seelachsfilet",
               "description": "mit Remoulade, Zitrone, Pommes Frites",
@@ -2561,7 +2377,6 @@
               ]
             },
             {
-              "id": null,
               "number": 558,
               "name": "Calamaris",
               "description": "mir Remoulade, Zitrone, grüner Salat",
@@ -2575,11 +2390,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Beilagen",
           "products": [
             {
-              "id": null,
               "number": 582,
               "name": "Pommes ",
               "description": "klein",
@@ -2591,7 +2404,6 @@
               ]
             },
             {
-              "id": null,
               "number": 584,
               "name": "Pommes ",
               "description": "groß",
@@ -2603,7 +2415,6 @@
               ]
             },
             {
-              "id": null,
               "number": 585,
               "name": "Bratwurst",
               "description": "mit Pommes ",
@@ -2615,7 +2426,6 @@
               ]
             },
             {
-              "id": null,
               "number": 588,
               "name": "Currywurst",
               "description": "mit Pommes ",
@@ -2627,7 +2437,6 @@
               ]
             },
             {
-              "id": null,
               "number": 594,
               "name": "Kroketten",
               "description": "(8 Stk.)",
@@ -2639,7 +2448,6 @@
               ]
             },
             {
-              "id": null,
               "number": 596,
               "name": "Dampfreis",
               "description": "",
@@ -2651,7 +2459,6 @@
               ]
             },
             {
-              "id": null,
               "number": 600,
               "name": "Tzatziki",
               "description": "hausgemacht",
@@ -2663,7 +2470,6 @@
               ]
             },
             {
-              "id": null,
               "number": 602,
               "name": "Mayonnaise",
               "description": "",
@@ -2675,7 +2481,6 @@
               ]
             },
             {
-              "id": null,
               "number": 603,
               "name": "Ketchup",
               "description": "",
@@ -2689,11 +2494,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Gyros vom Spieß",
           "products": [
             {
-              "id": null,
               "number": 658,
               "name": "Gyros Pita ",
               "description": "mit rote Zwiebeln, Krautsalat, Tzatziki",
@@ -2705,7 +2508,6 @@
               ]
             },
             {
-              "id": null,
               "number": 661,
               "name": "Gyros Teller",
               "description": "mit Pommes Frites,rote Zwiebeln,Karutsalat,Tzatziki",
@@ -2717,7 +2519,6 @@
               ]
             },
             {
-              "id": null,
               "number": 666,
               "name": "Gyros Teller ",
               "description": "mit Pommes und Tzatziki ",
@@ -2729,7 +2530,6 @@
               ]
             },
             {
-              "id": null,
               "number": 667,
               "name": "Gyros ",
               "description": "überbacken mit Sauce Hollandaise, Pommes Frites ",
@@ -2743,11 +2543,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Potatoe",
           "products": [
             {
-              "id": null,
               "number": 680,
               "name": "Percy Sredge",
               "description": "Baked Potatoe mit Vorderschinkenstreifen,Broccoli,Sourcream,Käse überbacken",
@@ -2759,7 +2557,6 @@
               ]
             },
             {
-              "id": null,
               "number": 681,
               "name": "Chuck Berry",
               "description": "Backed Potatoe mit gebr. Hähnchenbrust,Champignons,Hausdressing,überbacken",
@@ -2771,7 +2568,6 @@
               ]
             },
             {
-              "id": null,
               "number": 681,
               "name": "Bil Haley ",
               "description": "Backed Potatoe mit Spinat,Feta-Käse, Zwiebeln,Hausdressing,Käse überbacken",
@@ -2785,11 +2581,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Chicken Nuggets",
           "products": [
             {
-              "id": null,
               "number": 641,
               "name": "Chicken Nuggets ",
               "description": "(6 Stk.) mit Pommes, 1 Sauce",
@@ -2801,7 +2595,6 @@
               ]
             },
             {
-              "id": null,
               "number": 642,
               "name": "Chicken Nuggets ",
               "description": "(9 Stk.) mit Pommes, 2 Saucen",
@@ -2813,7 +2606,6 @@
               ]
             },
             {
-              "id": null,
               "number": 643,
               "name": "Chicken Nuggets ",
               "description": "(20 Stk.) mit Pommes, 3 Saucen",
@@ -2825,7 +2617,6 @@
               ]
             },
             {
-              "id": null,
               "number": 645,
               "name": "Chicken Wings ",
               "description": "(6 Stk.) mit BBQ-Sauce-pikant, würzig, Pommes Frites ",
@@ -2837,7 +2628,6 @@
               ]
             },
             {
-              "id": null,
               "number": 646,
               "name": "Chicken Wings ",
               "description": "(9 Stk.) mit BBQ-Saucen-pikant, würzig, Pommes Frites ",
@@ -2851,11 +2641,9 @@
           ]
         },
         {
-          "id": null,
           "name": "American Burger",
           "products": [
             {
-              "id": null,
               "number": 672,
               "name": "Florida Burger ",
               "description": "100 gr. Fleisch, 0.5 l Cola dazu",
@@ -2867,7 +2655,6 @@
               ]
             },
             {
-              "id": null,
               "number": 673,
               "name": "Florida Cheese Burger ",
               "description": "100 gr. Fleisch mit Gouda, 0.5 l Cola dazu",
@@ -2879,7 +2666,6 @@
               ]
             },
             {
-              "id": null,
               "number": 674,
               "name": "Mega Burger ",
               "description": "2x 100 gr. Fleisch, 0.5 l Cola dazu ",
@@ -2891,7 +2677,6 @@
               ]
             },
             {
-              "id": null,
               "number": 676,
               "name": "Mega Cheese Burger ",
               "description": "2x 100 gr. Fleisch mit Gouda, 0.5 l Cola dazu ",
@@ -2903,7 +2688,6 @@
               ]
             },
             {
-              "id": null,
               "number": 677,
               "name": "Mega Florida Burger ",
               "description": "mit 180 gr. Fleisch, Bacon, Jalapenos, dazu 0.5 l Cola",
@@ -2915,7 +2699,6 @@
               ]
             },
             {
-              "id": null,
               "number": 678,
               "name": "Mega Burger ",
               "description": "mit 2x 180gr. Fleisch, Bacon, Jalapenos, dazu 0.5 l Cola",
@@ -2927,7 +2710,6 @@
               ]
             },
             {
-              "id": null,
               "number": 679,
               "name": "Chicken-Burger",
               "description": "mit Hähnchenfleisch, dazu Coca Cola (0,5 l)",
@@ -2939,7 +2721,6 @@
               ]
             },
             {
-              "id": null,
               "number": 683,
               "name": "Mexico-Burger",
               "description": "180 gr. Fleisch, Jalapeños, Mais, Chili-Sauce, dazu Coca Cola (0,5 l)",
@@ -2951,7 +2732,6 @@
               ]
             },
             {
-              "id": null,
               "number": 684,
               "name": "Barbecue-Burger",
               "description": "180 gr. Fleisch, Barbecue-Sauce, rote Zwiebeln, dazu Coca Cola (0,5 l)",
@@ -2963,7 +2743,6 @@
               ]
             },
             {
-              "id": null,
               "number": 685,
               "name": "Curry-Burger",
               "description": "180 gr. Fleisch, Curry-Mayo-Sauce, dazu Coca Cola (0,5 l)",
@@ -2983,11 +2762,9 @@
       "name": "Asia",
       "productGroups": [
         {
-          "id": null,
           "name": "Suppen & Snacks",
           "products": [
             {
-              "id": null,
               "number": 548,
               "name": "Hühnersuppe",
               "description": "mit chin. Gemüse",
@@ -2999,7 +2776,6 @@
               ]
             },
             {
-              "id": null,
               "number": 549,
               "name": "Wan Tan Suppe",
               "description": "mit chin. Gemüse ",
@@ -3011,7 +2787,6 @@
               ]
             },
             {
-              "id": null,
               "number": 550,
               "name": "Peking Gulaschsuppe",
               "description": "hausgemacht (scharf)",
@@ -3023,7 +2798,6 @@
               ]
             },
             {
-              "id": null,
               "number": 554,
               "name": "Rinder-Gulaschsuppe",
               "description": "hausgemacht (scharf)",
@@ -3035,7 +2809,6 @@
               ]
             },
             {
-              "id": null,
               "number": 551,
               "name": "Frühlingsrolle",
               "description": "Gefüllt mit Hühnerfleisch, chin.Gemüse, süß-sauer-Sauce",
@@ -3047,7 +2820,6 @@
               ]
             },
             {
-              "id": null,
               "number": 552,
               "name": "Mini-Frühlingsrollen",
               "description": "(8 Stk.) gefüllt mit chin.Gemüse und süß-sauer-Sauce",
@@ -3059,7 +2831,6 @@
               ]
             },
             {
-              "id": null,
               "number": 553,
               "name": "Kroepoek",
               "description": "Krabbenchips",
@@ -3073,11 +2844,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Gebr. Reis mit Ei",
           "products": [
             {
-              "id": null,
               "number": 561,
               "name": "Nasi Goreng Spezial",
               "description": "(scharf) mit Ei, Scampi,Zwiebeln,Hühnerfleisch,Erbsen,Curry,Gemüse",
@@ -3089,7 +2858,6 @@
               ]
             },
             {
-              "id": null,
               "number": 562,
               "name": "Schweinefleisch",
               "description": "mit Ei, Schweinefleisch, chin. Gemüse",
@@ -3101,7 +2869,6 @@
               ]
             },
             {
-              "id": null,
               "number": 563,
               "name": "Hühnerfleisch",
               "description": "mit Ei, Hühnerfleisch, chin. Gemüse",
@@ -3113,7 +2880,6 @@
               ]
             },
             {
-              "id": null,
               "number": 564,
               "name": "Rindfleisch",
               "description": "mit Ei, Rindfleisch, chin. Gemüse",
@@ -3125,7 +2891,6 @@
               ]
             },
             {
-              "id": null,
               "number": 566,
               "name": "Reis Spezial",
               "description": "mit Ei, Rindfleisch, Schweinefleisch, Hühnerfleisch, chin. Gemüse",
@@ -3137,7 +2902,6 @@
               ]
             },
             {
-              "id": null,
               "number": 568,
               "name": "Vegetarischer Reis ",
               "description": "Gebratener Reis mit Ei, chin. Gemüse ",
@@ -3151,11 +2915,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Gebr. Nudeln mit Ei",
           "products": [
             {
-              "id": null,
               "number": 572,
               "name": "Schweinefleisch",
               "description": "mit Ei, Schweinefleisch, chin. Gemüse",
@@ -3167,7 +2929,6 @@
               ]
             },
             {
-              "id": null,
               "number": 573,
               "name": "Hühnerfleisch",
               "description": "mit Ei, Hühnerfleisch, chin. Gemüse ",
@@ -3179,7 +2940,6 @@
               ]
             },
             {
-              "id": null,
               "number": 574,
               "name": "Rindfleisch",
               "description": "mit Ei, Rindfleisch, chin. Gemüse ",
@@ -3191,7 +2951,6 @@
               ]
             },
             {
-              "id": null,
               "number": 575,
               "name": "Bami Goreng ",
               "description": "mit Ei, Hühnerfleisch, Vorderschinken, Curry, Scampi, Gemüse ",
@@ -3203,7 +2962,6 @@
               ]
             },
             {
-              "id": null,
               "number": 577,
               "name": "Nudeln Spezial",
               "description": "mit Ei, Rindfleisch, Schweinefleisch, Hühnerfleisch, chin. Gemüse ",
@@ -3215,7 +2973,6 @@
               ]
             },
             {
-              "id": null,
               "number": 578,
               "name": "Scampi - scharf",
               "description": "mit Ei, Scampi, chin. Gemüse (Knoblauch)",
@@ -3227,7 +2984,6 @@
               ]
             },
             {
-              "id": null,
               "number": 579,
               "name": "Vegetarische Nudeln",
               "description": "Gebratene Nudeln mit Ei, chin. Gemüse",
@@ -3241,11 +2997,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Hummerkrabben",
           "products": [
             {
-              "id": null,
               "number": 580,
               "name": "Chup-Suey",
               "description": "mit Gemüse ",
@@ -3257,7 +3011,6 @@
               ]
             },
             {
-              "id": null,
               "number": 581,
               "name": "Kun Bao (scharf)",
               "description": "mit Bambus, fr.Campignons, Paprika, Morcheln(Hoisin-Sauce)",
@@ -3269,7 +3022,6 @@
               ]
             },
             {
-              "id": null,
               "number": 583,
               "name": "Szechuan-Art",
               "description": "mit Bambus, Paprika, Möhren, Champignons(scharf)",
@@ -3281,7 +3033,6 @@
               ]
             },
             {
-              "id": null,
               "number": 587,
               "name": "Hummerkrabben",
               "description": "mit Bambus, Paprika, Glasnudeln",
@@ -3293,7 +3044,6 @@
               ]
             },
             {
-              "id": null,
               "number": 589,
               "name": "Hummer Süß-Sauer ",
               "description": "mit Bambus, Paprika, Möhren",
@@ -3307,11 +3057,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Ente",
           "products": [
             {
-              "id": null,
               "number": 521,
               "name": "Peking-Ente",
               "description": "mit chin. Gemüse ",
@@ -3323,7 +3071,6 @@
               ]
             },
             {
-              "id": null,
               "number": 522,
               "name": "Curry ",
               "description": "Bambus, fr.Champignons, Paprika, Bambus (scharf)",
@@ -3335,7 +3082,6 @@
               ]
             },
             {
-              "id": null,
               "number": 523,
               "name": "Süß-Sauer ",
               "description": "mit Ananas, Paprika, Bambus, Möhren",
@@ -3347,7 +3093,6 @@
               ]
             },
             {
-              "id": null,
               "number": 524,
               "name": "Kun-Bao",
               "description": "mit Bambus, fr.Champignons, Paprika, Morcheln, Hoisinsauce(scharf)",
@@ -3359,7 +3104,6 @@
               ]
             },
             {
-              "id": null,
               "number": 525,
               "name": "Erdnuss-Ente (leicht scharf)",
               "description": "mit chin. Gemüse",
@@ -3373,11 +3117,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Huhn",
           "products": [
             {
-              "id": null,
               "number": 529,
               "name": "Huhn Szechuan Art ",
               "description": "Bambus, Paprika, Zwiebeln, Möhren",
@@ -3389,7 +3131,6 @@
               ]
             },
             {
-              "id": null,
               "number": 530,
               "name": "Huhn Chop Suey",
               "description": "chin. Gemüse ",
@@ -3401,7 +3142,6 @@
               ]
             },
             {
-              "id": null,
               "number": 531,
               "name": "Huhn Curry-scharf",
               "description": "Bambus, Paprika, fr.Champignons, Bambus, Peperoni",
@@ -3413,7 +3153,6 @@
               ]
             },
             {
-              "id": null,
               "number": 533,
               "name": "Huhn Süß-Sauer ",
               "description": "Bambus, Ananas",
@@ -3425,7 +3164,6 @@
               ]
             },
             {
-              "id": null,
               "number": 534,
               "name": "Huhn Kun Bao",
               "description": "Bambus, fr.Champignons, Paprika, Morcheln, Hoisinsauce(scharf)",
@@ -3437,7 +3175,6 @@
               ]
             },
             {
-              "id": null,
               "number": 535,
               "name": "Huhn Ku-Lu-Ju",
               "description": "Bambus, Möhren, Paprika, Ananas, süß-sauer, paniert",
@@ -3449,7 +3186,6 @@
               ]
             },
             {
-              "id": null,
               "number": 536,
               "name": "Peking Spezial",
               "description": "Bambus, Paprika, Banane, Ananas, Curry (leicht scharf)",
@@ -3461,7 +3197,6 @@
               ]
             },
             {
-              "id": null,
               "number": 538,
               "name": "Huhn Erdnuss",
               "description": "Paprika, Bambus, Möhren, Erdnusssauce",
@@ -3475,11 +3210,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Schwein",
           "products": [
             {
-              "id": null,
               "number": 501,
               "name": "Chop Suey",
               "description": "mit chin. Gemüse ",
@@ -3491,7 +3224,6 @@
               ]
             },
             {
-              "id": null,
               "number": 502,
               "name": "Curry ",
               "description": "mit Bambus, Paprika, fr. Champignons (scharf)",
@@ -3503,7 +3235,6 @@
               ]
             },
             {
-              "id": null,
               "number": 504,
               "name": "Kun Bao",
               "description": "mit Bambus, fr. Champignons, Paprika, Morcheln, Hoisinsauce (scharf)",
@@ -3515,7 +3246,6 @@
               ]
             },
             {
-              "id": null,
               "number": 505,
               "name": "Ku-Lu-Ju",
               "description": "mit Ananas, Paprika, süß-sauer, paniert, Bambus ",
@@ -3527,7 +3257,6 @@
               ]
             },
             {
-              "id": null,
               "number": 506,
               "name": "Szechuan Art ",
               "description": "mit Bambus, Paprika, Zwiebeln, Möhren, Bambus (scharf)",
@@ -3539,7 +3268,6 @@
               ]
             },
             {
-              "id": null,
               "number": 507,
               "name": "Süß-Sauer ",
               "description": "mit Bambus, Paprika, Ananas, Möhren, süß-sauer ",
@@ -3553,11 +3281,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Rind",
           "products": [
             {
-              "id": null,
               "number": 511,
               "name": "Chop Suey ",
               "description": "mit chin. Gemüse ",
@@ -3569,7 +3295,6 @@
               ]
             },
             {
-              "id": null,
               "number": 512,
               "name": "Onions",
               "description": "miz Zwiebeln",
@@ -3581,7 +3306,6 @@
               ]
             },
             {
-              "id": null,
               "number": 513,
               "name": "Curry- Leicht scharf ",
               "description": "mit Bambus, Paprika, fr. Champignons",
@@ -3593,7 +3317,6 @@
               ]
             },
             {
-              "id": null,
               "number": 514,
               "name": "Rindfleisch",
               "description": "mit Broccoli, fr. Champignons, Bambus ",
@@ -3605,7 +3328,6 @@
               ]
             },
             {
-              "id": null,
               "number": 515,
               "name": "Kun Bao (scharf)",
               "description": "mit Bambus, fr. Champignons, Paprika, Morcheln, Hoisinsauce ",
@@ -3617,7 +3339,6 @@
               ]
             },
             {
-              "id": null,
               "number": 516,
               "name": "Szechuan Art ",
               "description": "mit Bambus, Paprika, Zwiebeln (scharf)",
@@ -3637,11 +3358,9 @@
       "name": "Kiddy-Box",
       "productGroups": [
         {
-          "id": null,
           "name": "Happy-Kiddy-Box",
           "products": [
             {
-              "id": null,
               "number": 701,
               "name": "6er Nuggets",
               "description": "mit Pommes Frites, 1 Capri Sonne, 1 Überraschung",
@@ -3653,7 +3372,6 @@
               ]
             },
             {
-              "id": null,
               "number": 702,
               "name": "Hamburger ",
               "description": "mit Pommes Frites, 1 Capri Sonne, 1 Überraschung ",
@@ -3665,7 +3383,6 @@
               ]
             },
             {
-              "id": null,
               "number": 703,
               "name": "1 Mini Pizza Margherita",
               "description": "mit 1 Capri Sonne, 1 Überraschung",
@@ -3677,7 +3394,6 @@
               ]
             },
             {
-              "id": null,
               "number": 704,
               "name": "Spaghetti Napoli",
               "description": "1 Capri Sonne, 1 Überraschung",
@@ -3689,7 +3405,6 @@
               ]
             },
             {
-              "id": null,
               "number": 705,
               "name": "Gebratene Nudeln",
               "description": "mit Gemüse, 1 Capri Sonne, 1 Überraschung",
@@ -3709,11 +3424,9 @@
       "name": "Getränke",
       "productGroups": [
         {
-          "id": null,
           "name": "Getränke",
           "products": [
             {
-              "id": null,
               "number": 800,
               "name": "Coca-Cola",
               "description": "1l Flasche",
@@ -3725,7 +3438,6 @@
               ]
             },
             {
-              "id": null,
               "number": 802,
               "name": "Fanta",
               "description": "1l Flasche",
@@ -3737,7 +3449,6 @@
               ]
             },
             {
-              "id": null,
               "number": 804,
               "name": "Sprite",
               "description": "1l Flasche ",
@@ -3749,7 +3460,6 @@
               ]
             },
             {
-              "id": null,
               "number": 806,
               "name": "Coca-Cola-Light",
               "description": "1l Flasche",
@@ -3761,7 +3471,6 @@
               ]
             },
             {
-              "id": null,
               "number": 807,
               "name": "Cola Zero",
               "description": "1l Flasche",
@@ -3773,7 +3482,6 @@
               ]
             },
             {
-              "id": null,
               "number": 808,
               "name": "Mezzo Mix",
               "description": "1l Flasche",
@@ -3785,7 +3493,6 @@
               ]
             },
             {
-              "id": null,
               "number": 809,
               "name": "Mineralwasser ",
               "description": "0.7l Flasche",
@@ -3797,7 +3504,6 @@
               ]
             },
             {
-              "id": null,
               "number": 810,
               "name": "Apfelschorle",
               "description": "1l Flasche",
@@ -3809,7 +3515,6 @@
               ]
             },
             {
-              "id": null,
               "number": 812,
               "name": "Orangensaft",
               "description": "1l Flasche",
@@ -3821,7 +3526,6 @@
               ]
             },
             {
-              "id": null,
               "number": 813,
               "name": "Multivitaminsaft",
               "description": "1l Flasche",
@@ -3833,7 +3537,6 @@
               ]
             },
             {
-              "id": null,
               "number": 814,
               "name": "Reissdorf",
               "description": "0,5l Flasche",
@@ -3845,7 +3548,6 @@
               ]
             },
             {
-              "id": null,
               "number": 815,
               "name": "Erdinger Weizen",
               "description": "0,5l Flasche",
@@ -3857,7 +3559,6 @@
               ]
             },
             {
-              "id": null,
               "number": 816,
               "name": "Früh Kölsch",
               "description": "0,5l Flasche",
@@ -3869,7 +3570,6 @@
               ]
             },
             {
-              "id": null,
               "number": 817,
               "name": "Erdinger Weizen ",
               "description": "(Alkoholfrei) 0,5l Flasche",
@@ -3881,7 +3581,6 @@
               ]
             },
             {
-              "id": null,
               "number": 818,
               "name": "Warsteiner Pils",
               "description": "0,5l Flasche",
@@ -3893,7 +3592,6 @@
               ]
             },
             {
-              "id": null,
               "number": 819,
               "name": "Mixery",
               "description": "Mischgetränk, Cola",
@@ -3905,7 +3603,6 @@
               ]
             },
             {
-              "id": null,
               "number": 820,
               "name": "Vitamalz",
               "description": "0,5l Flasche",
@@ -3917,7 +3614,6 @@
               ]
             },
             {
-              "id": null,
               "number": 824,
               "name": "Chianti",
               "description": "0,75l Flasche",
@@ -3929,7 +3625,6 @@
               ]
             },
             {
-              "id": null,
               "number": 826,
               "name": "Frascati",
               "description": "0,75l Flasche",
@@ -3941,7 +3636,6 @@
               ]
             },
             {
-              "id": null,
               "number": 828,
               "name": "Lambrusco",
               "description": "0,75l Flasche",
@@ -3953,7 +3647,6 @@
               ]
             },
             {
-              "id": null,
               "number": 830,
               "name": "Rosata",
               "description": "0.75l Flasche",
@@ -3973,11 +3666,9 @@
       "name": "Dessert",
       "productGroups": [
         {
-          "id": null,
           "name": "Desserts",
           "products": [
             {
-              "id": null,
               "number": 750,
               "name": "Tiramisu",
               "description": "hausgemacht mit Sahne",
@@ -3989,7 +3680,6 @@
               ]
             },
             {
-              "id": null,
               "number": 751,
               "name": "Gebackene Ananas",
               "description": "hausgemacht mit Honig",
@@ -4001,7 +3691,6 @@
               ]
             },
             {
-              "id": null,
               "number": 752,
               "name": "Mousse au Chocolat",
               "description": "hausgemacht",
@@ -4013,7 +3702,6 @@
               ]
             },
             {
-              "id": null,
               "number": 755,
               "name": "Gebackener Apfel ",
               "description": "hausgemacht mit Honig",
@@ -4025,7 +3713,6 @@
               ]
             },
             {
-              "id": null,
               "number": 756,
               "name": "Gebackene Banane",
               "description": "hausgemacht mit Honig",
@@ -4039,11 +3726,9 @@
           ]
         },
         {
-          "id": null,
           "name": "Ben & Jerrys Eiscreme",
           "products": [
             {
-              "id": null,
               "number": 710,
               "name": "Fudge Brownie",
               "description": "",
@@ -4059,7 +3744,6 @@
               ]
             },
             {
-              "id": null,
               "number": 711,
               "name": "Cookie Dough",
               "description": "",
@@ -4075,7 +3759,6 @@
               ]
             },
             {
-              "id": null,
               "number": 712,
               "name": "Chunky Monkey ",
               "description": "",
@@ -4091,7 +3774,6 @@
               ]
             },
             {
-              "id": null,
               "number": 713,
               "name": "Strawberry Cheesecake",
               "description": "",
@@ -4107,7 +3789,6 @@
               ]
             },
             {
-              "id": null,
               "number": 714,
               "name": "Fairly Nuts ",
               "description": "",
