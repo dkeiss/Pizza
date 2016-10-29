@@ -32,10 +32,10 @@ public class MenuController {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
-    private MenuVO menuVO = testMenu();
+    private ProductCatalogVO menuVO = testMenu();
 
-    private MenuVO testMenu() {
-        MenuVO menuVO = new MenuVO();
+    private ProductCatalogVO testMenu() {
+        ProductCatalogVO menuVO = new ProductCatalogVO();
         menuVO.setName("Test Menu");
         menuVO.setId(1);
         return menuVO;
@@ -44,14 +44,14 @@ public class MenuController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public
     @ResponseBody
-    MenuVO getMenu() throws IOException {
+    ProductCatalogVO getMenu() throws IOException {
         return menuVO;
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public
     @ResponseBody
-    MenuVO createMenu(@RequestBody MenuVO menuVO) throws IOException {
+    ProductCatalogVO createMenu(@RequestBody ProductCatalogVO menuVO) throws IOException {
         this.menuVO = menuVO;
         return menuVO;
     }
@@ -59,28 +59,22 @@ public class MenuController {
     @RequestMapping(value = "full", method = RequestMethod.GET)
     public
     @ResponseBody
-    MenuVO getMenuFull() throws IOException {
+    ProductCatalogVO getMenuFull() throws IOException {
         String menu = new String(Files.readAllBytes(Paths.get("documentation/Speisekarte.json")));
         OldMenuVO oldMenuVO = objectMapper.readValue(menu, OldMenuVO.class);
 
-        MenuVO menuVO = testMenu();
-        List<ProductCatalogVO> productCatalogVOs = new ArrayList<>();
+        ProductCatalogVO menuVO = testMenu();
+        menuVO.setId(100);
+        menuVO.setName("test");
+        List<ProductCategoryVO> productCategoryVOs = new ArrayList<>();
         for (OldProductCategoryVO oldProductCategoryVO : oldMenuVO.getProductCategories()) {
-            ProductCatalogVO productCatalogVO = new ProductCatalogVO();
-            productCatalogVO.setName(oldProductCategoryVO.getName());
-            List<ProductCategoryVO> productCategoryVOs = new ArrayList<>();
-            for (OldSubCategoryVO oldSubCategoryVO : oldProductCategoryVO.getSubCategories()) {
-                ProductCategoryVO productCategoryVO = new ProductCategoryVO();
-                productCategoryVO.setName(oldSubCategoryVO.getName());
+            ProductCategoryVO productCategoryVO = new ProductCategoryVO();
+            productCategoryVO.setName(oldProductCategoryVO.getName());
 
-                List<ProductGroupVO> productGroupVOs = new ArrayList<>();
+            List<ProductGroupVO> productGroupVOs = new ArrayList<>();
+            for (OldSubCategoryVO oldSubCategoryVO : oldProductCategoryVO.getSubCategories()) {
                 ProductGroupVO productGroupVO = new ProductGroupVO();
-                if (oldSubCategoryVO.getProducts().size() > 0) {
-                    productGroupVO.setName(oldSubCategoryVO.getProducts().get(0).getCategory());
-                } else {
-                    productGroupVO.setName(oldSubCategoryVO.getName());
-                }
-                productGroupVOs.add(productGroupVO);
+                productGroupVO.setName(oldSubCategoryVO.getName());
 
                 List<ProductVO> productVOs = new ArrayList<>();
                 for (OldProductVO oldProductVO : oldSubCategoryVO.getProducts()) {
@@ -103,15 +97,14 @@ public class MenuController {
                     }
                     productVO.setProductVariations(productVariationVOs);
                     productVOs.add(productVO);
-                    productGroupVO.setProducts(productVOs);
                 }
-                productCategoryVO.setProductGroups(productGroupVOs);
-                productCategoryVOs.add(productCategoryVO);
+                productGroupVO.setProducts(productVOs);
+                productGroupVOs.add(productGroupVO);
             }
-            productCatalogVO.setProductCategories(productCategoryVOs);
-            productCatalogVOs.add(productCatalogVO);
+            productCategoryVO.setProductGroups(productGroupVOs);
+            productCategoryVOs.add(productCategoryVO);
         }
-        menuVO.setProductCataloges(productCatalogVOs);
+        menuVO.setProductCategories(productCategoryVOs);
         return menuVO;
     }
 

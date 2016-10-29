@@ -11,6 +11,8 @@ import java.util.List;
 @Data
 public class ProductGroupVO {
 
+    private Integer id;
+
     private String name;
 
     private List<ProductVO> products;

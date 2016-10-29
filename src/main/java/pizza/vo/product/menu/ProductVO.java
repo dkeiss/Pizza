@@ -11,9 +11,14 @@ import java.util.List;
 @Data
 public class ProductVO {
 
+    private Integer id;
+
     private Integer number;
+
     private String name;
+
     private String description;
+
     private List<ProductVariationVO> productVariations;
 
 }
