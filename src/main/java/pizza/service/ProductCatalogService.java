@@ -16,5 +16,4 @@ public interface ProductCatalogService {
 
     List<ProductCatalogInfoVO> listProductCataloges();
 
-
 }

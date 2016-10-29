@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * Created by Daniel Keiss on 28.10.2016.
@@ -18,5 +19,7 @@ public class ProductVariationVO {
     private String name;
 
     private BigDecimal price;
+
+    private Date creationDate;
 
 }

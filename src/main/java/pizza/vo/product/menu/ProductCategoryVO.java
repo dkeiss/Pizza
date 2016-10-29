@@ -3,6 +3,7 @@ package pizza.vo.product.menu;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,5 +18,7 @@ public class ProductCategoryVO {
     private String name;
 
     private List<ProductGroupVO> productGroups;
+
+    private Date creationDate;
 
 }

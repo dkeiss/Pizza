@@ -5,15 +5,13 @@ import org.springframework.stereotype.Service;
 import pizza.domain.user.PasswordType;
 import pizza.domain.user.User;
 import pizza.repositories.UserRepository;
+import pizza.service.common.ObjectMapperService;
 import pizza.service.exception.NotFoundException;
 import pizza.service.exception.UsernameAlreadyUsedException;
-import pizza.service.common.ObjectMapperService;
 import pizza.vo.user.UserVO;
 
 import java.util.Date;
 import java.util.List;
-
-import static org.springframework.beans.BeanUtils.copyProperties;
 
 
 /**

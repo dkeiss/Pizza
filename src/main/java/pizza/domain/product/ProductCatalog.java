@@ -21,9 +21,9 @@ public class ProductCatalog {
 
     private String name;
 
-    private Date creationDate;
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "productCatalog", cascade = {CascadeType.ALL}, orphanRemoval = true)
     private List<ProductCategory> productCategories;
+
+    private Date creationDate;
 
 }

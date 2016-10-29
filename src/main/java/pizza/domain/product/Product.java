@@ -34,4 +34,6 @@ public class Product {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "product", cascade = {CascadeType.ALL}, orphanRemoval = true)
     private List<ProductVariation> productVariations;
 
+    private Date creationDate;
+
 }

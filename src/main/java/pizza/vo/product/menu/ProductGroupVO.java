@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import pizza.domain.product.Product;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,5 +19,7 @@ public class ProductGroupVO {
     private String name;
 
     private List<ProductVO> products;
+
+    private Date creationDate;
 
 }
