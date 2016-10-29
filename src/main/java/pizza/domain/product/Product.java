@@ -32,24 +32,6 @@ public class Product {
     private ProductGroup productGroup;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "product", cascade = {CascadeType.ALL}, orphanRemoval = true)
-    private List<ProductVariations> productsProductVariations;
-
-    public List<ProductVariation> getProductVariations() {
-        List<ProductVariation> productVariations = new ArrayList<>();
-        for (ProductVariations productsProductVariation : productsProductVariations) {
-            productVariations.add(productsProductVariation.getProductVariation());
-        }
-        return productVariations;
-    }
-
-    public void setProductVariations(List<ProductVariation> productVariations) {
-        productsProductVariations.clear();
-        for (ProductVariation productVariation : productVariations) {
-            ProductVariations productsProductVariation = new ProductVariations();
-            productsProductVariation.setProduct(this);
-            productsProductVariation.setProductVariation(productVariation);
-            productsProductVariations.add(productsProductVariation);
-        }
-    }
+    private List<ProductVariation> productVariations;
 
 }
