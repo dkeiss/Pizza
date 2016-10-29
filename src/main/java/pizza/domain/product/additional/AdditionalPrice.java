@@ -16,7 +16,7 @@ public class AdditionalPrice {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ADDITIONAL_PRICE_ID_SEQ")
     @SequenceGenerator(name = "ADDITIONAL_PRICE_ID_SEQ", sequenceName = "ADDITIONAL_PRICE_ID_SEQ", allocationSize = 100)
-    private Integer id;
+    private Integer additionalPriceId;
 
     private String name;
 

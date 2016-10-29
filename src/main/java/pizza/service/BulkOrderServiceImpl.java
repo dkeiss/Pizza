@@ -9,7 +9,7 @@ import pizza.repositories.BulkOrderRepository;
 import pizza.service.common.ObjectMapperService;
 import pizza.service.exception.BulkOrderActiveUntilNotValidException;
 import pizza.service.exception.BulkOrderAlreadyActiveException;
-import pizza.service.exception.BulkOrderNotFoundException;
+import pizza.service.exception.NotFoundException;
 import pizza.vo.order.BulkOrderVO;
 
 import java.util.Date;
@@ -36,7 +36,7 @@ public class BulkOrderServiceImpl implements BulkOrderService, ObjectMapperServi
     public BulkOrderVO createBulkOrder(BulkOrderVO bulkOrderVO) {
         isValid(bulkOrderVO);
 
-        bulkOrderVO.setId(null);
+        bulkOrderVO.setBulkOrderId(null);
         BulkOrder bulkOrderBO = copyFromValueObject(bulkOrderVO, new BulkOrder());
         bulkOrderBO.setCreationDate(new Date());
         bulkOrderBO = bulkOrderRepository.save(bulkOrderBO);
@@ -55,7 +55,7 @@ public class BulkOrderServiceImpl implements BulkOrderService, ObjectMapperServi
     public BulkOrderVO getBulkOrderById(Integer bulkorderId) {
         BulkOrder bulkOrder = bulkOrderRepository.findOne(bulkorderId);
         if (bulkOrder == null) {
-            throw new BulkOrderNotFoundException();
+            throw new NotFoundException();
         }
         return copyFromBusinessObject(bulkOrder, new BulkOrderVO());
     }
@@ -65,15 +65,15 @@ public class BulkOrderServiceImpl implements BulkOrderService, ObjectMapperServi
         try {
             bulkOrderRepository.delete(bulkorderId);
         } catch (EmptyResultDataAccessException e) {
-            throw new BulkOrderNotFoundException();
+            throw new NotFoundException();
         }
     }
 
     @Override
     public void updateBulkOrderById(BulkOrderVO bulkOrderVO) {
-        BulkOrder bulkOrder = bulkOrderRepository.findOne(bulkOrderVO.getId());
+        BulkOrder bulkOrder = bulkOrderRepository.findOne(bulkOrderVO.getBulkOrderId());
         if (bulkOrder == null) {
-            throw new BulkOrderNotFoundException();
+            throw new NotFoundException();
         }
         copyFromValueObject(bulkOrderVO, bulkOrder);
         bulkOrder.setModificationDate(new Date());

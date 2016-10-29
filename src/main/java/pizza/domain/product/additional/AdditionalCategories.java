@@ -17,7 +17,7 @@ public class AdditionalCategories {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ADDITIONAL_CATEGORIES_ID_SEQ")
     @SequenceGenerator(name = "ADDITIONAL_CATEGORIES_ID_SEQ", sequenceName = "ADDITIONAL_CATEGORIES_ID_SEQ", allocationSize = 100)
-    private Integer id;
+    private Integer additionalCategoriesId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PRODUCT_ID")

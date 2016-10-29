@@ -2,6 +2,7 @@ package pizza.vo.product.menu;
 
 import lombok.Data;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.math.BigDecimal;
 
 /**
@@ -9,6 +10,8 @@ import java.math.BigDecimal;
  */
 @Data
 public class ProductVariationVO {
+
+    private Integer productVariationId;
 
     private String name;
 

@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 public class ProductCatalogVO {
 
-    private Integer id;
+    private Integer productCatalogId;
 
     private String name;
 

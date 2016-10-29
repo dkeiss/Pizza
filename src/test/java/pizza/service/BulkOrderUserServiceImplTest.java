@@ -1,6 +1,7 @@
 package pizza.service;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -50,6 +51,7 @@ public class BulkOrderUserServiceImplTest {
     }
 
     @Test
+    @Ignore
     public void createValidBulkOrder() throws Exception {
         BulkOrderVO bulkOrder = mock(BulkOrderVO.class);
         when(bulkOrder.isActive()).thenReturn(true);

@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 /**
  * Created by Daniel Keiss on 26.09.2016.
  */
-public class OldMenuControllerTest {
+public class OldProductCatalogControllerTest {
 
     ObjectMapper objectMapper = new ObjectMapper();
 

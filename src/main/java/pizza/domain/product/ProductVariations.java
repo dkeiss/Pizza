@@ -1,6 +1,7 @@
 package pizza.domain.product;
 
 import lombok.Data;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
@@ -14,7 +15,7 @@ public class ProductVariations {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PRODUCT_VARIATIONS_ID_SEQ")
     @SequenceGenerator(name = "PRODUCT_VARIATIONS_ID_SEQ", sequenceName = "PRODUCT_VARIATIONS_ID_SEQ", allocationSize = 100)
-    private Integer id;
+    private Integer productVariationsId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PRODUCT_ID")

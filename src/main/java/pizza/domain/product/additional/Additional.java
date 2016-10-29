@@ -15,7 +15,7 @@ public class Additional {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ADDITIONAL_ID_SEQ")
     @SequenceGenerator(name = "ADDITIONAL_ID_SEQ", sequenceName = "ADDITIONAL_ID_SEQ", allocationSize = 100)
-    private Integer id;
+    private Integer additionalId;
 
     private String description;
 

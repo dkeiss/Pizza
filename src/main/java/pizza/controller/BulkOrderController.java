@@ -53,7 +53,7 @@ public class BulkOrderController {
     public
     @ResponseBody
     void updateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId, @RequestBody BulkOrderVO bulkOrder) {
-        bulkOrder.setId(bulkorderId);
+        bulkOrder.setBulkOrderId(bulkorderId);
         bulkOrderService.updateBulkOrderById(bulkOrder);
     }
 

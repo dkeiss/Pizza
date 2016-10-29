@@ -36,7 +36,7 @@ public class UserController {
     public
     @ResponseBody
     void updateUser(@PathVariable("userId") Integer userId, @RequestBody UserVO user) {
-        user.setId(userId);
+        user.setUserId(userId);
         userService.updateUser(user);
     }
 

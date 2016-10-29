@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 public class ProductVO {
 
-    private Integer id;
+    private Integer productId;
 
     private Integer number;
 

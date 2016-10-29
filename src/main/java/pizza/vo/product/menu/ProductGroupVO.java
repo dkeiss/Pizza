@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 public class ProductGroupVO {
 
-    private Integer id;
+    private Integer productGroupId;
 
     private String name;
 

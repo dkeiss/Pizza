@@ -13,7 +13,7 @@ import java.util.Date;
 @Data
 public class UserVO {
 
-    private Integer id;
+    private Integer userId;
 
     @NotNull
     private String firstName;

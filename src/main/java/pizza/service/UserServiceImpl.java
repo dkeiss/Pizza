@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import pizza.domain.user.PasswordType;
 import pizza.domain.user.User;
 import pizza.repositories.UserRepository;
-import pizza.service.exception.UserNotFoundException;
+import pizza.service.exception.NotFoundException;
 import pizza.service.exception.UsernameAlreadyUsedException;
 import pizza.service.common.ObjectMapperService;
 import pizza.vo.user.UserVO;
@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
         if (usernameExist(userVO.getUserName())) {
             throw new UsernameAlreadyUsedException();
         }
-        userVO.setId(null);
+        userVO.setUserId(null);
         User user = copyFromValueObject(userVO, new User());
         user.setCreationDate(new Date());
         userRepository.save(user);
@@ -73,9 +73,9 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
 
     @Override
     public void updateUser(UserVO userVO) {
-        User user = userRepository.findOne(userVO.getId());
+        User user = userRepository.findOne(userVO.getUserId());
         if (user == null) {
-            throw new UserNotFoundException();
+            throw new NotFoundException();
         }
         copyFromValueObject(userVO, user);
         user.setModificationDate(new Date());

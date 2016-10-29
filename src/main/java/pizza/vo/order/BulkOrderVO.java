@@ -14,7 +14,7 @@ import java.util.Date;
 public class BulkOrderVO {
 
     @NotNull
-    private Integer id;
+    private Integer bulkOrderId;
 
     @NotNull
     private Integer catalogId;

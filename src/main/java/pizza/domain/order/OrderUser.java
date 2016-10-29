@@ -19,7 +19,7 @@ public class OrderUser {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ORDER_ID_SEQ")
     @SequenceGenerator(name = "ORDER_ID_SEQ", sequenceName = "ORDER_ID_SEQ", allocationSize = 100)
-    private Integer id;
+    private Integer orderUserId;
 
     private BigDecimal amount;
 

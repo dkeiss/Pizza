@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 /**
  * Created by Daniel Keiss on 26.10.2016.
  */
-@ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Bulk Order not found!")
-public class BulkOrderNotFoundException extends RuntimeException {
+@ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Object not found!")
+public class NotFoundException extends RuntimeException {
 }
