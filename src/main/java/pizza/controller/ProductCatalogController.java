@@ -16,6 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -32,7 +33,12 @@ public class ProductCatalogController {
     public
     @ResponseBody
     List<ProductCatalogInfoVO> listProductCataloges() throws IOException {
-        return productCatalogService.listProductCataloges();
+//        return productCatalogService.listProductCataloges();
+        ProductCatalogVO productCatalog = getProductCatalog(100);
+        ProductCatalogInfoVO productCatalogInfoVO = new ProductCatalogInfoVO();
+        productCatalogInfoVO.setName(productCatalog.getName());
+        productCatalogInfoVO.setProductCatalogId(100);
+        return Collections.singletonList(productCatalogInfoVO);
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
