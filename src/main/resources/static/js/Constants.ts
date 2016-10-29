@@ -6,12 +6,18 @@ class WebService
 class UserManagementSelectors
 {
     public static userTable = ".um-userTable";
-    public static userTableRow = ".um-userTable td";
+    public static userTableRow = ".um-userTable tr";
+    public static userTableCell = ".um-userTable td";
+    public static userTableConfirmEdit = ".um-userTable_confirmEdit";
+    public static userTableAboardEdit = ".um-userTable_aboardEdit";
 }
 
 class UserManagementCss
 {
     public static userTableShowIcon = "um-userTable-showIcon";
+    public static userTableHiddenIcon = "um-userTable-hiddenIcon";
+    public static userTableActiveCellEdit = "um-userTable-activeCellEdit";
+    public static userTableDisableTrSelections = "um-userTable-disableSelections";
 }
 
 class AdminOverviewSelectors

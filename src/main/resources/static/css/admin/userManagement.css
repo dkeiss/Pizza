@@ -30,8 +30,7 @@
 }
 
 .um-userTable-headlines th:nth-child(1),
-.um-userTable-headlines th:nth-child(6),
-.um-userTable-headlines td:nth-child(7) {
+.um-userTable-headlines th:nth-child(6) {
     width: 1px;
     font-size: 10px;
 }
@@ -41,12 +40,11 @@
 }
 
 .um-userTable td:nth-child(1),
-.um-userTable td:nth-child(6),
-.um-userTable td:nth-child(7) {
+.um-userTable td:nth-child(6) {
     text-align: center;
 }
 
-.um-userTable td:nth-child(7) {
+.um-userTable-hiddenIcon {
     opacity: 0;
     pointer-events: none;
 }
@@ -56,4 +54,16 @@
     pointer-events: auto;
 }
 
+.um-userTable-activeCellEdit span {
+    display: none;
+}
 
+.um-userTable-disableSelections {
+
+}
+
+.um-userTable-confirmIcon,
+.um-userTable-aboardIcon {
+    background: url(../../img/pen.png) no-repeat;
+
+}

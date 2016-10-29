@@ -17,25 +17,12 @@ namespace WebApplication.Admin.UserManagement
             this.updateUserList();
             this.createTable();
 
-            this._userTableRowSelector = $(UserManagementSelectors.userTableRow);
+            this._userTableRowSelector = $(UserManagementSelectors.userTableCell);
         }
 
         public start(): void
         {
-            this._userTableRowSelector.on("click", event =>
-            {
-                if (!$(event.currentTarget).hasClass("edit")) return;
-
-                $(event.currentTarget)
-                    .append(
-                        $("<input>", {
-                            type: "text",
-                            val: $(event.currentTarget).text()
-                        })
-                    );
-
-                //$(event.currentTarget).find("td:last-child").addClass(UserManagementCss.userTableShowIcon);
-            });
+            this._userTableRowSelector.on("click", event => this.activeTableEdit(event));
         }
 
         private updateUserList(): void
@@ -46,7 +33,7 @@ namespace WebApplication.Admin.UserManagement
             });
         }
 
-        private createTable()
+        private createTable(): void
         {
             const userList = this._userList;
             let element = "";
@@ -64,16 +51,65 @@ namespace WebApplication.Admin.UserManagement
                     element += "<td><input type='checkbox' /></td>"
                 }
 
-                element += "<td class='edit'>" + userList[i].firstName + "</td>";
-                element += "<td class='edit'>" + userList[i].lastName + "</td>";
-                element += "<td class='edit'></td>";
-                element += "<td class='edit'>" + userList[i].discount + "</td>";
-                element += "<td> X </td>";
-                element += "<td> Y </td>";
+                element += "<td class='edit'><span>" + userList[i].firstName + "</span></td>";
+                element += "<td class='edit'><span>" + userList[i].lastName + "</span></td>";
+                element += "<td class='edit'><span></span></td>";
+                element += "<td class='edit'><span>" + userList[i].discount + "</span></td>";
+                element += "<td>" +
+                        "<div  class='bla'>" +
+                            "<div class='um-userTable-confirmIcon " + UserManagementSelectors.userTableConfirmEdit + "'></div>" +
+                        "</div>" +
+                        "<div class='" + UserManagementCss.userTableHiddenIcon + "'>" +
+                            "<div class='um-userTable-confirmIcon " + UserManagementSelectors.userTableConfirmEdit + "'></div>" +
+                            "<div class='um-userTable-aboardIcon " + UserManagementSelectors.userTableAboardEdit + "'></div>" +
+                        "</div>"
+                        "</td>";
                 element += "</tr>";
             }
 
             this._userTableSelector.append(element);
+        }
+
+        private activeTableEdit(event: JQueryEventObject): void
+        {
+            const target = event.currentTarget;
+
+            if (!$(target).hasClass("edit")) return;
+
+
+            if (!$(target).hasClass(UserManagementCss.userTableActiveCellEdit))
+            {
+                // Input inputField and hide text
+                $(target)
+                    .addClass(UserManagementCss.userTableActiveCellEdit)
+                    .append(
+                        $("<input>", {
+                            type: "text",
+                            val: $(event.currentTarget).text()
+                        })
+                    );
+
+                // Disable all another tr in table
+                $(target)
+                    .closest("table")
+                    .find("tr")
+                    .next()
+                    .each( (index, element) =>
+                    {
+                        if (!$(element).find("td").hasClass(UserManagementCss.userTableActiveCellEdit))
+                        {
+                            $(element).addClass(UserManagementCss.userTableDisableTrSelections);
+                        }
+                    });
+
+                // Show confirm & abort button-icons
+                $(target)
+                    .closest("tr")
+                    .find("td")
+                    .last()
+                    .removeClass(UserManagementCss.userTableHiddenIcon)
+                    .addClass(UserManagementCss.userTableShowIcon);
+            }
         }
     }
 }
