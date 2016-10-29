@@ -10,6 +10,8 @@ import java.util.List;
 @Data
 public class ProductCatalogVO {
 
+    private Integer id;
+
     private String name;
 
     private List<ProductCategoryVO> productCategories;

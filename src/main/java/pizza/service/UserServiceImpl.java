@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
 
     @Override
     public List<UserVO> getUsers() {
-        return copyListFromObject(userRepository.findAll(), UserVO.class);
+        return copyListFromBusinessObject(userRepository.findAll(), UserVO.class);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
             throw new UsernameAlreadyUsedException();
         }
         userVO.setId(null);
-        User user = copyFromObject(userVO, new User());
+        User user = copyFromValueObject(userVO, new User());
         user.setCreationDate(new Date());
         userRepository.save(user);
         return getUsers();
@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
         if (user == null) {
             throw new UserNotFoundException();
         }
-        copyFromObject(userVO, user);
+        copyFromValueObject(userVO, user);
         user.setModificationDate(new Date());
         userRepository.save(user);
     }
