@@ -51,46 +51,32 @@ namespace WebApplication.Admin.Overview
             console.log("test2");
             this._adminCardBtn = $(AdminOverviewSelectors.adminCardBtn);
             this._adminCardBtn.hover(function(){$(this).text("Derzeit ist keine Sammelbestellung aktiv");},function(){$(this).text("Warenkorb");});
-            this._adminCardBtn.toggleClass("admin-button-enabled",false);
-            this._adminCardBtn.toggleClass("admin-button-disabled",true);
+            this._adminCardBtn.on("click",function(){window.location.replace('/admin/ordermanagement')});
+
 
             this._adminUploadCatalogBtn = $(AdminOverviewSelectors.adminUploadCatalogBtn);
 
             this._adminTimepicker = $(AdminOverviewSelectors.adminTimepicker);
-            this._adminTimepicker.hide();
-            //this._adminTimepicker.on("change", () => this.validateTime());
 
             this._adminCatalogPrefixLbl = $(AdminOverviewSelectors.adminCatalogPrefixLbl);
             this._adminCatalogPostfixLbl = $(AdminOverviewSelectors.adminCatalogPostfixLbl);
             this._adminCatalogCB = $(AdminOverviewSelectors.adminCatalogCB);
-            this._adminCatalogCB.hide();
 
             this._adminCardErrorLbl = $(AdminOverviewSelectors.adminCardErrorLbl);
-            this._adminCardErrorLbl.hide();
 
             this._adminUMGMTErrorLbl = $(AdminOverviewSelectors.adminUMGMTErrorLbl);
-            this._adminUMGMTErrorLbl.hide();
 
             this._adminPrintErrorLbl = $(AdminOverviewSelectors.adminPrintErrorLbl);
-            this._adminPrintErrorLbl.hide();
 
             this._adminUploadErrorLbl = $(AdminOverviewSelectors.adminUploadErrorLbl);
-            this._adminUploadErrorLbl.hide();
 
             this._adminTimepickerLabel = $(AdminOverviewSelectors.adminTimepickerLabel);
-            this._adminTimepickerLabel.hide();
 
             this._adminActivateCtlgBtn = $(AdminOverviewSelectors.adminActivateCtlgBtn);
-            this._adminActivateCtlgBtn.on("click", () => this.activateBulkOrder());
-            this._adminActivateCtlgBtn.text("Aktivieren");
 
+            this.resetGUI();
             this.getProductCatalogs();
             this.getCurrentBulkOrder();
-
-        }
-
-        public setText(): void {
-            console.log("hover");
 
         }
 
@@ -113,10 +99,6 @@ namespace WebApplication.Admin.Overview
             }
 
             return isValid;
-        }
-
-        private cancelCatalog(): void{
-
         }
 
         private deaktivateBulkOrder(): void{
@@ -142,6 +124,8 @@ namespace WebApplication.Admin.Overview
 
                 }*/
             );
+            this.resetGUI();
+            this.getCurrentBulkOrder();
         }
 
         private activateBulkOrder(): void{
@@ -168,6 +152,8 @@ namespace WebApplication.Admin.Overview
                         this._adminActivateCtlgBtn.toggleClass("admin-submitButton-enabled",true);
                         this._adminActivateCtlgBtn.on("click", () => this.activateBulkOrder());
                         this._adminTimepickerLabel.hide();
+                        this.resetGUI();
+                        this.getCurrentBulkOrder();
                     },
                     errorResponse => {
                         this._errorResponse = errorResponse.responseJSON;
@@ -202,7 +188,18 @@ namespace WebApplication.Admin.Overview
         }
 
         private resetGUI(): void {
-
+            this._adminCardBtn.hover(function(){$(this).text("Derzeit ist keine Sammelbestellung aktiv");},function(){$(this).text("Warenkorb");});
+            this._adminCardBtn.toggleClass("admin-button-enabled",false);
+            this._adminCardBtn.toggleClass("admin-button-disabled",true);
+            this._adminTimepicker.hide();
+            this._adminCatalogCB.hide();
+            this._adminCardErrorLbl.hide();
+            this._adminUMGMTErrorLbl.hide();
+            this._adminPrintErrorLbl.hide();
+            this._adminUploadErrorLbl.hide();
+            this._adminTimepickerLabel.hide();
+            this._adminActivateCtlgBtn.on("click", () => this.activateBulkOrder());
+            this._adminActivateCtlgBtn.text("Aktivieren");
         }
 
         private getCurrentBulkOrder(): void
