@@ -34,6 +34,10 @@
     width: 100%;
 }
 
+.um-userTable td input:required:invalid {
+    border: 1px solid red;
+}
+
 .um-userTable-headlines th:nth-child(1),
 .um-userTable-headlines th:nth-child(5),
 .um-userTable-headlines th:nth-child(6){

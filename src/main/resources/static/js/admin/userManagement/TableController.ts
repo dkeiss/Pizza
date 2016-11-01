@@ -7,6 +7,7 @@ namespace WebApplication.Admin.UserManagement
     export class TableController
     {
         private _userList: IUserList[] = null;
+        private _findUserSelector: JQuery = null;
         private _userTableSelector: JQuery = null;
         private _userTableRowSelector: JQuery = null;
         private _userTableDeleteUser: JQuery = null;
@@ -21,6 +22,7 @@ namespace WebApplication.Admin.UserManagement
 
         constructor()
         {
+            this._findUserSelector = $(UserManagementSelectors.inputFieldFindUser);
             this._userTableSelector = $(UserManagementSelectors.userTable);
             this.refreshConstructor()
         }
@@ -29,15 +31,16 @@ namespace WebApplication.Admin.UserManagement
         {
             this.updateUserList();
             this.createTable();
-
-            this._userTableRowSelector = $(UserManagementSelectors.userTableCell);
-            this._userTableDeleteUser = $(UserManagementSelectors.userTableDeleteUser);
-            this._userTableAboardEdit = $(UserManagementSelectors.userTableAboardEdit);
-            this._userTableConfirmEdit = $(UserManagementSelectors.userTableConfirmEdit);
         }
 
         public start(): void
         {
+            this._userTableRowSelector = $(UserManagementSelectors.userTableCell);
+            this._userTableDeleteUser = $(UserManagementSelectors.userTableDeleteUser);
+            this._userTableAboardEdit = $(UserManagementSelectors.userTableAboardEdit);
+            this._userTableConfirmEdit = $(UserManagementSelectors.userTableConfirmEdit);
+
+            this._findUserSelector.on("keyup", event => this.findUserInList(event));
             this._userTableRowSelector.on("click", event => this.activeTableEdit(event));
             this._userTableDeleteUser.on("click", event => this.deleteSelectedUser(event));
             this._userTableConfirmEdit.on("click", event => this.rowConfirmIcon(event));
@@ -52,9 +55,10 @@ namespace WebApplication.Admin.UserManagement
             });
         }
 
-        private createTable(): void
+        private createTable(newUserList?: IUserList[]): void
         {
-            const userList = this._userList;
+            const userList = newUserList == null ? this._userList : newUserList;
+
             let element = "";
 
             for(let i = 0; i < userList.length; i++)
@@ -117,6 +121,7 @@ namespace WebApplication.Admin.UserManagement
                     .append(
                         $("<input>", {
                             type: "text",
+                            required: "required",
                             val: $(event.currentTarget).text()
                         })
                     );
@@ -131,6 +136,7 @@ namespace WebApplication.Admin.UserManagement
                             type: "number",
                             min: "0",
                             step: "0.01",
+                            required: "required",
                             val: $(event.currentTarget).text()
                         })
                     );
@@ -154,6 +160,8 @@ namespace WebApplication.Admin.UserManagement
             editUser.lastName = this.getRowTdInputText(elementTr, "td.lastName");
             editUser.discount = parseFloat(this.getRowTdInputText(elementTr, "td.discount"));
             editUser.admin = this.getRowTdCheckBox(elementTr);
+
+            if(editUser.firstName.length == 0) return;
 
             UserService.sendEditUser(editUser, success =>
             {
@@ -316,6 +324,24 @@ namespace WebApplication.Admin.UserManagement
                 this.refreshConstructor();
                 this.start();
             }, 200);
+        }
+
+        private findUserInList(event: JQueryEventObject): void
+        {
+            const findUser = $(event.currentTarget).val();
+
+            if (findUser.length == 0)
+            {
+                this.createTable();
+                this.start();
+            }
+
+            if (findUser.length >= 3)
+            {
+                let userList: IUserList[] = this._userList.filter(item => item.lastName.toLowerCase().indexOf(findUser.toLowerCase()) >= 0);
+                this.createTable(userList);
+                this.start();
+            }
         }
     }
 

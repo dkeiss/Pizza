@@ -5,6 +5,8 @@ class WebService
 
 class UserManagementSelectors
 {
+    public static inputFieldFindUser = ".um-inputField_findUser";
+
     public static userTable = ".um-userTable";
     public static userTableRow = ".um-userTable tr";
     public static userTableCell = ".um-userTable td";
