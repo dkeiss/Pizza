@@ -1,18 +1,42 @@
 @import url("../_core.css");
 
-.admin-button {
-    color: #3595b4;
-    text-align: center;
-    text-transform:uppercase;
-    cursor: pointer;
-    transition: 0.3s linear;
-    border: solid 1px #fff;
-
+.admin-container-box {
+    background-color: #FFFFFF;
+    overflow: hidden;
+    margin: 30px 0 0px 0;
 }
 
-.admin-button:hover {
+
+.admin-button {
+    color: #3595b4;
+    padding: 10px;
+    text-align: center;
+    text-transform:uppercase;
+    border: solid 1px #fff;
+}
+
+.admin-button-enabled {
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+.admin-button-enabled:hover {
     background-color: #f7fdff;
     border: solid 1px #2e90ae;
+}
+
+.core-container-box-button{
+    padding: 0px;
+}
+
+.admin-button-disabled{
+    color: #dddddd;
+    cursor: not-allowed;
+}
+
+.admin-submitButton-disabled{
+    color: #dddddd;
+    cursor: not-allowed;
 }
 
 .admin-label {
@@ -20,31 +44,56 @@
     padding: 5px 5px 0px 0px;
 }
 
-.admin-errorLabel {
+.admin-errorLableTimepicker {
     color: #F00;
     padding: 5px 5px 0px 0px;
+}
+
+.admin-errorLabel {
+    color: #F00;
+    padding: 0px 5px 5px 5px;
+    display: block;
+    text-align: center;
 }
 
 .admin-submitButton{
     width: 120px;
     text-align: center;
-    background-color: #ccc;
     text-transform: uppercase;
     padding: 5px 0;
     float: right;
-
+    cursor: pointer;
 }
 
-.admin-submitButton:hover {
+.admin-submitButton-enabled{
+    background-color: #ccc;
+    color: #000;
+}
+
+.admin-submitButton-enabled:hover {
     background-color: #FF0000;
+}
+
+.admin-submitButton-disabled{
+    background-color: #ddd;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.admin-combobox{
+    font:inherit;
+    float: left;
+    padding: 4px;
+    /*display: none;*/
 }
 
 .admin-inputField_time{
     width: 50px;
-    padding: 5px;
+    padding: 4px;
     border: 1px solid #bbb;
     background-color: #fff;
 
+   /* font: inherit;*/
     font-size: 15px;
     font-family: 'Segoe UI', sans-serif;
 }
