@@ -8,10 +8,10 @@
     <link href="../../static/css/admin/admin.css" th:href="@{/css/admin/admin.css}" rel="stylesheet" media="screen"/>
     <link href="../../static/css/_core.css" th:href="@{/css/_core.css}" rel="stylesheet" media="screen"/>
 
+    <script src="../../static/js/thirdParty/jquery-2.1.4.min.js" th:src="@{/js/thirdParty/jquery-2.1.4.min.js}"></script>
+
     <link rel="stylesheet" href="../../static/js/thirdParty/timepicker/include/ui-1.10.0/ui-lightness/jquery-ui-1.10.0.custom.min.css" type="text/css" />
     <link rel="stylesheet" href="../../static/css/timepicker/jquery.ui.timepicker.css?v=0.3.3" type="text/css" />
-
-    <script src="../../static/js/thirdParty/jquery-2.1.4.min.js" th:src="@{/js/thirdParty/jquery-2.1.4.min.js}"></script>
 
     <script type="text/javascript" src="../../static/js/thirdParty/timepicker/include/ui-1.10.0/jquery.ui.core.min.js"></script>
     <script type="text/javascript" src="../../static/js/thirdParty/timepicker/include/ui-1.10.0/jquery.ui.widget.min.js"></script>
@@ -20,6 +20,7 @@
     <script type="text/javascript" src="../../static/js/thirdParty/timepicker/jquery.ui.timepicker.js?v=0.3.3"></script>
 
     <script src="../../static/js/admin/overview/AdminFunction.js" th:src="@{/js/admin/overview/AdminFunction.js}"></script>
+    <script src="../../static/js/admin/overview/AdminFunction.js" th:src="@{/js/admin/overview/AdminService.js}"></script>
 
     <script src="../../static/js/Constants.js" th:src="@{/js/Constants.js}"></script>
     <script src="../../static/js/WebServiceAccess.js" th:src="@{/js/WebServiceAccess.js}"></script>
@@ -34,33 +35,53 @@
 </div>
 
 <div class="core-container-center">
-    <div class="core-container-box admin-button">Warenkorb</div>
-    <div class="core-container-box admin-button">Benutzerverwaltung</div>
+    <div class="admin-container-box">
+        <div class="admin-button admin-button-enabled admin-button_card">Warenkorb</div>
+        <label class="admin-errorLabel admin-errorlabel_card">errorText</label>
+    </div>
+
+
+    <div class="admin-container-box">
+        <div class="admin-button admin-button-enabled admin-button_umgmt" onclick="window.location.replace('/admin/usermanagement')">Benutzerverwaltung</div>
+        <label class="admin-errorLabel admin-errorlabel_umgmt">errorText</label>
+    </div>
+
     <div class="core-container-box">
-        <label class="admin-label">Bestellsystem aktivieren um </label>
-        <input class="admin-inputField_time" maxlength="5" id="timepicker.[1]" placeholder="hh:mm"/>
+        <label class="admin-label admin-label_catalogPrefix">Kein Produktkatalog vorhanden</label>
+        <select class="admin-combobox admin-combobox_productCatalogs" name="productCatalogs" size="0"></select>
+        <label class="admin-label admin-label_catalogPostfix"></label>
+        <input class="admin-inputField_time" maxlength="5" id="admintimepicker" placeholder="hh:mm" readonly="true"/>
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#timepicker\\.\\[1\\]').timepicker( {
+                $('admintimepicker').timepicker( {
                     hourText: 'Stunde',             // Define the locale text for "Hours"
                     minuteText: 'Minute',         // Define the locale text for "Minute"
                     amPmText: ['', ''],     // Display text for AM PM
                     showAnim: 'blind'
                 } );
             });
+
         </script>
         <pre id="script_1" style="display: none" class="code">$('#timepicker').timepicker();</pre>
-        <div class="admin-submitButton">Aktivieren</div>
-        <label class="admin-errorLabel admin-errorlabel_time">Ungültige Uhrzeit!</label>
+        <div class="admin-submitButton admin-submitButton-enabled admin-submitButton_activateCtlg">Aktivieren</div>
+        <label class="admin-errorLableTimepicker admin-errorlabel_time">Ungültige Uhrzeit!</label>
     </div>
-    <div class="core-container-box admin-button">Druckinformationen bearbeiten</div>
-    <div class="core-container-box admin-button">Produktkatalog hochladen</div>
-    <label class="admin-errorLabel admin-errorlabel_upload"></label>
+
+    <div class="admin-container-box">
+        <div class="admin-button admin-button-enabled admin-button_print">Druckinformationen bearbeiten</div>
+        <label class="admin-errorLabel admin-errorlabel_print">errorText</label>
+    </div>
+
+    <div class="admin-container-box">
+        <div class="admin-button admin-button-enabled admin-button_uploadcatalog">Produktkatalog hochladen</div>
+        <label class="admin-errorLabel admin-errorlabel_upload">errorText</label>
+    </div>
+
     <div class="core-container-box">
         <label class="admin-label">Beispiel-Produktkatalog herunterladen</label>
         <div style="width: 250px; float: right">
-            <div class="admin-submitButton admin-submitButton_expert">Experte</div>
-            <div class="admin-submitButton admin-submitButton_simple">Simple</div>
+            <div class="admin-submitButton admin-submitButton-enabled admin-submitButton_expert">Experte</div>
+            <div class="admin-submitButton admin-submitButton-enabled admin-submitButton_simple">Simple</div>
         </div>
     </div>
 </div>

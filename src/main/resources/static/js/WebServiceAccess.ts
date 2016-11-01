@@ -18,4 +18,35 @@ class WebServiceAccess
             }
         });
     }
+
+    public static ajaxPost(webServiceMethod: string, postData: any, onSuccess: (xhr: any) => void, onError: (xhr: any) => void)
+    {
+        $.ajax({
+            type: "POST",
+            url: webServiceMethod,
+            scriptCharset: "utf-8",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(postData),
+            async: false,
+            success: onSuccess,
+            error: onError
+        });
+    }
+
+    public static ajaxDelete(webServiceMethod: string, deleteData: any)
+    {
+        $.ajax({
+            type: "DELETE",
+            url: webServiceMethod + '/' +  deleteData,
+            scriptCharset: "utf-8",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            async: false,
+            error: (xhr: JQueryXHR) =>
+            {
+                alert(xhr.statusText + " - " + xhr.status);
+            }
+        });
+    }
 }
