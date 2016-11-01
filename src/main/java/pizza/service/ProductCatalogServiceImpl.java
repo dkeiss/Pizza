@@ -42,7 +42,7 @@ public class ProductCatalogServiceImpl implements ProductCatalogService, ObjectM
         if (productCatalog == null) {
             throw new NotFoundException();
         }
-        return copyFromBusinessObject(productCatalog, new ProductCatalogVO());
+        return getProductCatalogFromBO(productCatalog);
     }
 
     @Override
