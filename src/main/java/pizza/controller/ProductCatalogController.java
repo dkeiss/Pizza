@@ -33,12 +33,7 @@ public class ProductCatalogController {
     public
     @ResponseBody
     List<ProductCatalogInfoVO> listProductCataloges() throws IOException {
-//        return productCatalogService.listProductCataloges();
-        ProductCatalogVO productCatalog = getProductCatalog(100);
-        ProductCatalogInfoVO productCatalogInfoVO = new ProductCatalogInfoVO();
-        productCatalogInfoVO.setName(productCatalog.getName());
-        productCatalogInfoVO.setProductCatalogId(100);
-        return Collections.singletonList(productCatalogInfoVO);
+        return productCatalogService.listProductCataloges();
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
@@ -48,19 +43,11 @@ public class ProductCatalogController {
         return productCatalogService.createProductCatalog(menuVO);
     }
 
-//    @RequestMapping(value = "{bulkorderId}", method = RequestMethod.GET)
-//    public
-//    @ResponseBody
-//    ProductCatalogVO getProductCatalog(@PathVariable("bulkorderId") Integer bulkorderId) throws IOException {
-//        return productCatalogService.getProductCatalog(bulkorderId);
-//    }
-
-    @RequestMapping(value = "{bulkorderId}", method = RequestMethod.GET)
+    @RequestMapping(value = "{productCatalogId}", method = RequestMethod.GET)
     public
     @ResponseBody
-    ProductCatalogVO getProductCatalog(@PathVariable("bulkorderId") Integer bulkorderId) throws IOException {
-        String menu = new String(Files.readAllBytes(Paths.get("documentation/Speisekarte_new.json")));
-        return new ObjectMapper().readValue(menu, ProductCatalogVO.class);
+    ProductCatalogVO getProductCatalog(@PathVariable("productCatalogId") Integer productCatalogId) throws IOException {
+        return productCatalogService.getProductCatalog(productCatalogId);
     }
 
 }

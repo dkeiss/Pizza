@@ -25,7 +25,7 @@ public class User {
     private boolean isAdmin;
     private String firstName;
     private String lastName;
-    private BigDecimal discount;
+    private BigDecimal discount = BigDecimal.ZERO;
     private Date creationDate;
     private Date modificationDate;
 

@@ -51,7 +51,7 @@ class WebServiceAccess
         });
     }
 
-    public static ajaxDelete(webServiceMethod: string, deleteData: any)
+    public static ajaxDelete(webServiceMethod: string, deleteData: any, onSuccess: (xhr: any) => void)
     {
         $.ajax({
             type: "DELETE",
@@ -60,6 +60,7 @@ class WebServiceAccess
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             async: false,
+            success: onSuccess,
             error: (xhr: JQueryXHR) =>
             {
                 alert(xhr.statusText + " - " + xhr.status);

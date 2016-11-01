@@ -8,10 +8,13 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 import pizza.service.UserService;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Daniel Keiss on 11.09.2016.
@@ -35,7 +38,7 @@ public class PizzaAuthenticationProvider implements AuthenticationProvider {
             if (userService.isAdmin(name)) {
                 grantedAuths.add(ROLE_ADMIN);
                 UsernamePasswordAuthenticationToken passwordAuthenticationToken = new UsernamePasswordAuthenticationToken(name, password, grantedAuths);
-                if (password != null && userService.isUsernameAndPasswordValid(name, password)) {
+                if (!StringUtils.isEmpty(password) && userService.isUsernameAndPasswordValid(name, password)) {
                     return passwordAuthenticationToken;
                 } else {
                     passwordAuthenticationToken.setAuthenticated(false);

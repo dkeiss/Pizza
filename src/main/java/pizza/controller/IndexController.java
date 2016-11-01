@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import pizza.controller.validator.AuthenticationValidator;
+import pizza.service.UserService;
 
 import java.security.Principal;
 
@@ -18,6 +20,9 @@ public class IndexController {
 
     @Autowired
     private AuthenticationValidator authenticationValidator;
+
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String root(Principal principal, Model model) {
@@ -32,13 +37,22 @@ public class IndexController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Principal principal, Model model) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
-        if (!authenticationValidator.isAuthenticated(usernamePasswordAuthenticationToken, model)) {
-            return "login";
+        boolean authenticated = authenticationValidator.isAuthenticated(usernamePasswordAuthenticationToken, model);
+        if (!authenticated) {
+            if (usernamePasswordAuthenticationToken != null && userService.isInitialAdminPassword(usernamePasswordAuthenticationToken.getName())) {
+                return "admin/initialpassword";
+            } else {
+                return "login";
+            }
         }
-        if (usernamePasswordAuthenticationToken.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {
+        if (isAdmin(usernamePasswordAuthenticationToken)) {
             return "admin/admin";
         }
         return "order/order";
+    }
+
+    boolean isAdmin(UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken) {
+        return usernamePasswordAuthenticationToken.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"));
     }
 
 }

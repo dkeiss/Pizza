@@ -1,11 +1,16 @@
-package pizza.controller;
+package pizza.controller.validator;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
+import pizza.PizzaAuthenticationProvider;
+import pizza.service.UserService;
 
 import java.security.Principal;
+import java.util.Map;
 
 /**
  * Created by Daniel Keiss on 19.10.2016.
@@ -22,20 +27,28 @@ public class AuthenticationValidator {
 
     public String checkAdminAuthentication(Principal principal, Model model, String template) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
-        if (isAuthenticated(principal, model) && usernamePasswordAuthenticationToken.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {
+        if (isAuthenticated(principal, model) && isAdmin(usernamePasswordAuthenticationToken)) {
             return template;
         }
         return "login";
     }
 
     public boolean isAuthenticated(Principal principal, Model model) {
-        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
-        if (usernamePasswordAuthenticationToken == null) {
+        UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) principal;
+        if (authenticationToken == null || StringUtils.isEmpty(principal.getName())) {
             return false;
         }
-        model.addAttribute("username", usernamePasswordAuthenticationToken.getName());
-        model.addAttribute("admin", usernamePasswordAuthenticationToken.getAuthorities().contains(pizza.PizzaAuthenticationProvider.ROLE_ADMIN));
-        return usernamePasswordAuthenticationToken.isAuthenticated();
+        model.addAttribute("username", authenticationToken.getName());
+
+        if (isAdmin(authenticationToken)) {
+            model.addAttribute("isAdmin", true);
+        }
+
+        return authenticationToken.isAuthenticated();
+    }
+
+    private boolean isAdmin(UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken) {
+        return usernamePasswordAuthenticationToken.getAuthorities().contains(PizzaAuthenticationProvider.ROLE_ADMIN);
     }
 
 }

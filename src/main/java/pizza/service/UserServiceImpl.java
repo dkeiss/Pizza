@@ -38,7 +38,9 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
     }
 
     private boolean checkPassword(String password, User user) {
-        if (PasswordType.PLAIN.equals(user.getPasswordType())) {
+        if (user.getPassword() == null || password == null) {
+            return false;
+        } else if (PasswordType.PLAIN.equals(user.getPasswordType())) {
             return user.getPassword().equals(password);
         } else if (PasswordType.ENCRYPTED.equals(user.getPasswordType())) {
             throw new IllegalArgumentException("Not implemented yet!");
@@ -58,7 +60,7 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
     }
 
     @Override
-    public List<UserVO> createUser(UserVO userVO) {
+    public UserVO createUser(UserVO userVO) {
         if (usernameExist(userVO.getUserName())) {
             throw new UsernameAlreadyUsedException();
         }
@@ -66,17 +68,42 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
         User user = copyFromValueObject(userVO, new User());
         user.setCreationDate(new Date());
         userRepository.save(user);
-        return getUsers();
+        return copyFromBusinessObject(user, new UserVO());
     }
 
     @Override
     public void updateUser(UserVO userVO) {
-        User user = userRepository.findOne(userVO.getUserId());
+        User user = getUserById(userVO.getUserId());
+        copyFromValueObject(userVO, user);
+        user.setModificationDate(new Date());
+        userRepository.save(user);
+    }
+
+    @Override
+    public UserVO getUser(Integer userId) {
+        User user = getUserById(userId);
+        return copyFromBusinessObject(user, new UserVO());
+    }
+
+    private User getUserById(Integer userId) {
+        User user = userRepository.findOne(userId);
         if (user == null) {
             throw new NotFoundException();
         }
-        copyFromValueObject(userVO, user);
-        user.setModificationDate(new Date());
+        return user;
+    }
+
+    @Override
+    public boolean isInitialAdminPassword(String username) {
+        User user = getUserByUsername(username);
+        return user.isAdmin() && user.getPassword() == null;
+    }
+
+    @Override
+    public void setInitialAdminPassword(String username, String password) {
+        User user = getUserByUsername(username);
+        user.setPassword(password);
+        user.setPasswordType(PasswordType.PLAIN);
         userRepository.save(user);
     }
 
