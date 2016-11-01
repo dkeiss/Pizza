@@ -73,13 +73,24 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
 
     @Override
     public void updateUser(UserVO userVO) {
-        User user = userRepository.findOne(userVO.getUserId());
-        if (user == null) {
-            throw new NotFoundException();
-        }
+        User user = getUserById(userVO.getUserId());
         copyFromValueObject(userVO, user);
         user.setModificationDate(new Date());
         userRepository.save(user);
+    }
+
+    @Override
+    public UserVO getUser(Integer userId) {
+        User user = getUserById(userId);
+        return copyFromBusinessObject(user, new UserVO());
+    }
+
+    private User getUserById(Integer userId) {
+        User user = userRepository.findOne(userId);
+        if (user == null) {
+            throw new NotFoundException();
+        }
+        return user;
     }
 
     @Override

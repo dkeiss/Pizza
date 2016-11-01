@@ -21,6 +21,8 @@ public interface UserService {
 
     void updateUser(UserVO user);
 
+    UserVO getUser(Integer userId);
+
     boolean isInitialAdminPassword(String name);
 
     void setInitialAdminPassword(String username, String password);

@@ -46,4 +46,11 @@ public class UserController {
         return new HashMap();
     }
 
+    @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    UserVO getUser(@PathVariable("userId") Integer userId) {
+        return userService.getUser(userId);
+    }
+
 }
