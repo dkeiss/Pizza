@@ -21,10 +21,10 @@ namespace WebApplication.Admin.Overview
             WebServiceAccess.ajaxPost(WebService.url + "bulkorder",bulkOrder, onSuccess, onError);
         }
 
-        public static deactivateBulkOrder(id: number): void
+        public static deactivateBulkOrder(id: number, onSuccess: (bulkOrder: any) => void): void
         {
             console.log("delete");
-            WebServiceAccess.ajaxDelete(WebService.url + "bulkorder",id);
+            WebServiceAccess.ajaxDelete(WebService.url + "bulkorder",id, onSuccess);
         }
 
         public static loadProductCatalogs(onSuccess: (productCatalog: IProductCatalog[]) => void): void

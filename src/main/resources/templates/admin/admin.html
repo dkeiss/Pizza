@@ -10,15 +10,6 @@
 
     <script src="../../static/js/thirdParty/jquery-2.1.4.min.js" th:src="@{/js/thirdParty/jquery-2.1.4.min.js}"></script>
 
-    <link rel="stylesheet" href="../../static/js/thirdParty/timepicker/include/ui-1.10.0/ui-lightness/jquery-ui-1.10.0.custom.min.css" type="text/css" />
-    <link rel="stylesheet" href="../../static/css/timepicker/jquery.ui.timepicker.css?v=0.3.3" type="text/css" />
-
-    <script type="text/javascript" src="../../static/js/thirdParty/timepicker/include/ui-1.10.0/jquery.ui.core.min.js"></script>
-    <script type="text/javascript" src="../../static/js/thirdParty/timepicker/include/ui-1.10.0/jquery.ui.widget.min.js"></script>
-    <script type="text/javascript" src="../../static/js/thirdParty/timepicker/include/ui-1.10.0/jquery.ui.tabs.min.js"></script>
-    <script type="text/javascript" src="../../static/js/thirdParty/timepicker/include/ui-1.10.0/jquery.ui.position.min.js"></script>
-    <script type="text/javascript" src="../../static/js/thirdParty/timepicker/jquery.ui.timepicker.js?v=0.3.3"></script>
-
     <script src="../../static/js/admin/overview/AdminFunction.js" th:src="@{/js/admin/overview/AdminFunction.js}"></script>
     <script src="../../static/js/admin/overview/AdminFunction.js" th:src="@{/js/admin/overview/AdminService.js}"></script>
 
@@ -50,18 +41,7 @@
         <label class="admin-label admin-label_catalogPrefix">Kein Produktkatalog vorhanden</label>
         <select class="admin-combobox admin-combobox_productCatalogs" name="productCatalogs" size="0"></select>
         <label class="admin-label admin-label_catalogPostfix"></label>
-        <input class="admin-inputField_time" maxlength="5" id="admintimepicker" placeholder="hh:mm" readonly="true"/>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('admintimepicker').timepicker( {
-                    hourText: 'Stunde',             // Define the locale text for "Hours"
-                    minuteText: 'Minute',         // Define the locale text for "Minute"
-                    amPmText: ['', ''],     // Display text for AM PM
-                    showAnim: 'blind'
-                } );
-            });
-
-        </script>
+        <input class="admin-inputField_time" maxlength="5" placeholder="hh:mm" readonly="true"/>
         <pre id="script_1" style="display: none" class="code">$('#timepicker').timepicker();</pre>
         <div class="admin-submitButton admin-submitButton-enabled admin-submitButton_activateCtlg">Aktivieren</div>
         <label class="admin-errorLableTimepicker admin-errorlabel_time">Ungültige Uhrzeit!</label>
