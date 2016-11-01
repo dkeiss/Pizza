@@ -6,7 +6,7 @@ namespace WebApplication.Admin.UserManagement
 {
     export class TableController
     {
-        private _userList: IUserList[] = null;
+        private _userList: IUserList = null;
         private _findUserSelector: JQuery = null;
         private _userTableSelector: JQuery = null;
         private _userTableRowSelector: JQuery = null;
@@ -55,7 +55,7 @@ namespace WebApplication.Admin.UserManagement
             });
         }
 
-        private createTable(newUserList?: IUserList[]): void
+        private createTable(newUserList?: IUserList): void
         {
             const userList = newUserList == null ? this._userList : newUserList;
 
@@ -76,7 +76,7 @@ namespace WebApplication.Admin.UserManagement
 
                 element += "<td class='edit firstName'><span>" + userList[i].firstName + "</span></td>";
                 element += "<td class='edit lastName'><span>" + userList[i].lastName + "</span></td>";
-                element += "<td class='edit email'><span></span></td>";
+                element += "<td class='edit email'><span>" + userList[i].userName + "</span></td>";
                 element += "<td class='number discount'><span>" + userList[i].discount + "</span></td>";
                 element += "<td class='" + this._cssHiddenEditIcon + "'>" +
                             "<div class='um-userTable-iconSingle um-userTable-deleteIcon um-userTable_deleteUser'></div>" +
@@ -158,6 +158,7 @@ namespace WebApplication.Admin.UserManagement
             editUser.userId = parseInt(elementTr.attr("userid"));
             editUser.firstName = this.getRowTdInputText(elementTr, "td.firstName");
             editUser.lastName = this.getRowTdInputText(elementTr, "td.lastName");
+            editUser.userName = this.getRowTdInputText(elementTr, "td.email");
             editUser.discount = parseFloat(this.getRowTdInputText(elementTr, "td.discount"));
             editUser.admin = this.getRowTdCheckBox(elementTr);
 
@@ -338,7 +339,7 @@ namespace WebApplication.Admin.UserManagement
 
             if (findUser.length >= 3)
             {
-                let userList: IUserList[] = this._userList.filter(item => item.lastName.toLowerCase().indexOf(findUser.toLowerCase()) >= 0);
+                let userList: IUserList = this._userList.filter(item => item.lastName.toLowerCase().indexOf(findUser.toLowerCase()) >= 0);
                 this.createTable(userList);
                 this.start();
             }
@@ -350,6 +351,7 @@ namespace WebApplication.Admin.UserManagement
         userId: number;
         firstName: string;
         lastName: string;
+        userName: string;
         discount: number;
         admin: boolean;
     }

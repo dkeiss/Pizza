@@ -5,6 +5,14 @@ class WebService
 
 class UserManagementSelectors
 {
+    public static newUserIsAdmin = ".um-newUser_isAdmin";
+    public static newUserFirstName = ".um-newUser_firstName";
+    public static newUserLastName = ".um-newUser_lastName";
+    public static newUserEMail = ".um-newUser_email";
+    public static newUserDiscount = ".um-newUser_discount";
+    public static newUserWarningLabel = ".um-newUser_warningLabel";
+    public static newUserSubmit = ".um-newUser_submit";
+
     public static inputFieldFindUser = ".um-inputField_findUser";
 
     public static userTable = ".um-userTable";

@@ -1,5 +1,6 @@
+interface IUserList extends Array<IUser>{}
 
-interface IUserList
+interface IUser
 {
     userId: number;
     firstName: string;
@@ -14,6 +15,15 @@ interface IUserList
 interface IEditUser
 {
     userId: number;
+    firstName: string;
+    lastName: string;
+    userName: string;
+    discount: number;
+    admin: boolean;
+}
+
+interface IAddNewUser
+{
     firstName: string;
     lastName: string;
     discount: number;

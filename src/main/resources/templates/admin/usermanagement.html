@@ -10,6 +10,7 @@
     <script src="../../static/js/admin/userManagement/UserFunction.js" th:src="@{/js/admin/userManagement/UserFunction.js}"></script>
     <script src="../../static/js/admin/userManagement/UserService.js" th:src="@{/js/admin/userManagement/UserService.js}"></script>
     <script src="../../static/js/admin/userManagement/TableController.js" th:src="@{/js/admin/userManagement/TableController.js}"></script>
+    <script src="../../static/js/admin/userManagement/NewUserController.js" th:src="@{/js/admin/userManagement/NewUserController.js}"></script>
     <script src="../../static/js/Constants.js" th:src="@{/js/Constants.js}"></script>
     <script src="../../static/js/WebServiceAccess.js" th:src="@{/js/WebServiceAccess.js}"></script>
 </head>
@@ -24,18 +25,37 @@
 
     <div class="core-container-center">
         <div class="core-container-box">
-            <input class="core-inputField um-inputField_firstName" maxlength="100" placeholder="Vorname" />
-            <input class="core-inputField um-inputField_lastName" maxlength="100" placeholder="Nachname"/>
-            <input class="core-inputField um-inputField_email" maxlength="100" placeholder="E-Mail"/>
-            <label class="core-warningLabel um-warningLabel_newUser"></label>
-            <div class="core-submitButton um-submitButton_newUser">Bestätigen</div>
+            <div class="core-container-boxHeader">Einen neuen Nutzer eintragen ...</div>
+            <div class="core-container-boxBody">
+                <div class="um-newUser-fieldContainer row1">
+                    <input type="text" class="core-inputField um-newUser_firstName" maxlength="100" placeholder="Vorname" />
+                    <input type="text" class="core-inputField um-newUser_lastName" maxlength="100" placeholder="Nachname"/>
+                </div>
+
+                <div class="um-newUser-fieldContainer row2">
+                    <input type="text" class="core-inputField um-newUser_email" maxlength="100" placeholder="E-Mail"/>
+                    <div class="um-newUser-separateContainer">
+                        <input type="number" min="0" step="0.01" value="0" class="core-inputField um-newUser_discount" />
+                        <div class="um-newUser-selectRoleContainer">
+                            <label>Admin Rechte?</label>
+                            <input type="checkbox" class="um-newUser_isAdmin" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="core-submitButton um-newUser_submit">Bestätigen</div>
+                <label class="core-warningLabel um-newUser-warningLabel um-newUser_warningLabel"></label>
+            </div>
         </div>
 
         <div class="core-container-box">
-            <input class="core-inputField um-inputField_findUser" maxlength="100" placeholder="Suche Nutzer"/>
+            <div class="core-container-boxHeader">Einen Nutzer suchen ...</div>
+            <div class="core-container-boxBody">
+                <input class="core-inputField um-inputField_findUser" maxlength="100" placeholder="Nachname"/>
+            </div>
         </div>
 
-        <div class="core-container-box">
+        <div class="core-container-box core-container-boxBody">
             <table class="um-userTable">
                 <tr class="um-userTable-headlines">
                     <th>Admin</th>

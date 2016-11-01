@@ -34,6 +34,23 @@ class WebServiceAccess
         });
     }
 
+    public static ajaxPut(webServiceMethod: string, putData: any)
+    {
+        $.ajax({
+            type: "PUT",
+            url: webServiceMethod,
+            scriptCharset: "utf-8",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(putData),
+            async: false,
+            error: (xhr: JQueryXHR) =>
+            {
+                alert(xhr.statusText + " - " + xhr.status);
+            }
+        });
+    }
+
     public static ajaxDelete(webServiceMethod: string, deleteData: any)
     {
         $.ajax({

@@ -38,9 +38,25 @@ p {
 
 .core-container-box {
     background-color: #FFFFFF;
+    overflow: hidden;
+    margin: 30px 0 0 0;
+    border: 1px solid #3595b4;
+}
+
+.core-container-boxHeader {
+    padding: 5px 10px;
+    background-color: #3595b4;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.core-container-box.core-container-boxBody {
+    border: none;
+}
+
+.core-container-boxBody {
     padding: 10px;
     overflow: hidden;
-    margin: 30px 0 0px 0;
 }
 
 .core-inputField {
@@ -57,8 +73,15 @@ p {
     text-transform: uppercase;
     float: left;
     padding: 5px 0;
+    cursor: pointer;
 }
 
 .core-submitButton:hover {
     background-color: #FF0000;
+}
+
+.core-warningLabel {
+    width: 100%;
+    display: none;
+    float: left;
 }
