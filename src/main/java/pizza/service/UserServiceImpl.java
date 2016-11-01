@@ -93,6 +93,7 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
         User user = getUserByUsername(username);
         user.setPassword(password);
         user.setPasswordType(PasswordType.PLAIN);
+        userRepository.save(user);
     }
 
     private User getUserByUsername(String username) {

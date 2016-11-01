@@ -18,9 +18,6 @@ import java.util.Map;
 @Component
 public class AuthenticationValidator {
 
-    @Autowired
-    private UserService userService;
-
     public String checkAuthentication(Principal principal, Model model, String template) {
         if (isAuthenticated(principal, model)) {
             return template;
@@ -30,7 +27,7 @@ public class AuthenticationValidator {
 
     public String checkAdminAuthentication(Principal principal, Model model, String template) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
-        if (isAuthenticated(principal, model) && usernamePasswordAuthenticationToken.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {
+        if (isAuthenticated(principal, model) && isAdmin(usernamePasswordAuthenticationToken)) {
             return template;
         }
         return "login";
@@ -42,29 +39,16 @@ public class AuthenticationValidator {
             return false;
         }
         model.addAttribute("username", authenticationToken.getName());
-        boolean isAdmin = authenticationToken.getAuthorities().contains(PizzaAuthenticationProvider.ROLE_ADMIN);
-        boolean initialAdminPassword = isInitialAdminPassword(authenticationToken.getDetails());
-        model.addAttribute("isAdmin", isAdmin && !initialAdminPassword);
 
-        boolean authenticated = authenticationToken.isAuthenticated();
-        if (!authenticated && initialAdminPassword) {
-            String password = authenticationToken.getCredentials() != null ? authenticationToken.getCredentials().toString() : null;
-            if (StringUtils.isEmpty(password)) {
-                model.addAttribute("adminInitialPassword", true);
-            } else {
-                // set initial password
-                userService.setInitialAdminPassword(principal.getName(), password);
-                return true;
-            }
+        if (isAdmin(authenticationToken)) {
+            model.addAttribute("isAdmin", true);
         }
-        return authenticated;
+
+        return authenticationToken.isAuthenticated();
     }
 
-    private boolean isInitialAdminPassword(Object details) {
-        if (details instanceof Map && ((Map) details).containsKey("initialAdminPassword")) {
-            return (boolean) ((Map) details).get("initialAdminPassword");
-        }
-        return false;
+    private boolean isAdmin(UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken) {
+        return usernamePasswordAuthenticationToken.getAuthorities().contains(PizzaAuthenticationProvider.ROLE_ADMIN);
     }
 
 }
