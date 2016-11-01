@@ -11,5 +11,17 @@ namespace WebApplication.Admin.UserManagement
         {
             WebServiceAccess.ajaxGet(WebService.url + "users", onSuccess);
         }
+
+        public static sendEditUser(sendEditUser: IEditUser, onSuccess: (success: boolean) => void): void
+        {
+            // Todo: @Simon & @Daniel => Request definieren und testen
+            onSuccess(true);
+        }
+
+        public static deleteUser(sendUserId: number, onSuccess: (success: boolean) => void): void
+        {
+            // Todo: @Simon & @Daniel => Request definieren und testen
+            onSuccess(true);
+        }
     }
 }

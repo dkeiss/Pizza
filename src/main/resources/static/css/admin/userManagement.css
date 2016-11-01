@@ -15,6 +15,7 @@
     text-align: left;
     background-color: #3595B4;
     color: white;
+    font-size: 12px;
 }
 
 .um-userTable th,
@@ -29,14 +30,21 @@
     vertical-align: top;
 }
 
-.um-userTable-headlines th:nth-child(1),
-.um-userTable-headlines th:nth-child(6) {
-    width: 1px;
-    font-size: 10px;
+.um-userTable td input {
+    width: 100%;
 }
 
-.um-userTable-headlines th:nth-child(5) {
-    width: 40px;
+.um-userTable-headlines th:nth-child(1),
+.um-userTable-headlines th:nth-child(5),
+.um-userTable-headlines th:nth-child(6){
+    width: 8%;
+    max-width: 8%;
+}
+
+.um-userTable-headlines th:nth-child(2),
+.um-userTable-headlines th:nth-child(3),
+.um-userTable-headlines th:nth-child(4) {
+    width: 25%;
 }
 
 .um-userTable td:nth-child(1),
@@ -44,9 +52,8 @@
     text-align: center;
 }
 
-.um-userTable-hiddenIcon {
-    opacity: 0;
-    pointer-events: none;
+.um-userTable td:nth-child(6) {
+    padding: 0;
 }
 
 .um-userTable-showIcon {
@@ -59,11 +66,38 @@
 }
 
 .um-userTable-disableSelections {
+    opacity: 0.5;
+    pointer-events: none;
+}
 
+.um-userTable-iconSingle {
+    width: 100%;
+    float: left;
+    height: 40px;
+}
+
+.um-userTable-iconMulti {
+    width: 50%;
+    height: 40px;
+    float: left;
+}
+
+.um-userTable-deleteIcon {
+    background: url(../../img/pen.png) no-repeat center;
+    background-size: 16px;
 }
 
 .um-userTable-confirmIcon,
 .um-userTable-aboardIcon {
-    background: url(../../img/pen.png) no-repeat;
+    background: url(../../img/pen.png) no-repeat center;
+    background-size: 16px;
+}
 
+.um-userTable-hiddenEditIcon .um-userTable-confirmIcon,
+.um-userTable-hiddenEditIcon .um-userTable-aboardIcon {
+    display: none;
+}
+
+.um-userTable-showIcon .um-userTable-deleteIcon {
+    display: none;
 }
