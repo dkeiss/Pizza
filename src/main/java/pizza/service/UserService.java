@@ -17,8 +17,12 @@ public interface UserService {
 
     List<UserVO> getUsers();
 
-    List<UserVO> createUser(UserVO user);
+    UserVO createUser(UserVO user);
 
     void updateUser(UserVO user);
+
+    boolean isInitialAdminPassword(String name);
+
+    void setInitialAdminPassword(String username, String password);
 
 }

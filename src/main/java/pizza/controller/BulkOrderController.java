@@ -10,9 +10,7 @@ import pizza.service.BulkOrderService;
 import pizza.vo.order.OrderActivateVO;
 import pizza.vo.order.BulkOrderVO;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Daniel Keiss on 24.10.2016.
@@ -52,16 +50,18 @@ public class BulkOrderController {
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.PUT)
     public
     @ResponseBody
-    void updateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId, @RequestBody BulkOrderVO bulkOrder) {
+    Map updateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId, @RequestBody BulkOrderVO bulkOrder) {
         bulkOrder.setBulkOrderId(bulkorderId);
         bulkOrderService.updateBulkOrderById(bulkOrder);
+        return new HashMap<>();
     }
 
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.DELETE)
     public
     @ResponseBody
-    void deleteBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
+    Map deleteBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
         bulkOrderService.deleteBulkOrderById(bulkorderId);
+        return new HashMap<>();
     }
 
 }

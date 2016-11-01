@@ -38,7 +38,9 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
     }
 
     private boolean checkPassword(String password, User user) {
-        if (PasswordType.PLAIN.equals(user.getPasswordType())) {
+        if (user.getPassword() == null || password == null) {
+            return false;
+        } else if (PasswordType.PLAIN.equals(user.getPasswordType())) {
             return user.getPassword().equals(password);
         } else if (PasswordType.ENCRYPTED.equals(user.getPasswordType())) {
             throw new IllegalArgumentException("Not implemented yet!");
@@ -58,7 +60,7 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
     }
 
     @Override
-    public List<UserVO> createUser(UserVO userVO) {
+    public UserVO createUser(UserVO userVO) {
         if (usernameExist(userVO.getUserName())) {
             throw new UsernameAlreadyUsedException();
         }
@@ -66,7 +68,7 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
         User user = copyFromValueObject(userVO, new User());
         user.setCreationDate(new Date());
         userRepository.save(user);
-        return getUsers();
+        return copyFromBusinessObject(user, new UserVO());
     }
 
     @Override
@@ -78,6 +80,19 @@ public class UserServiceImpl implements UserService, ObjectMapperService {
         copyFromValueObject(userVO, user);
         user.setModificationDate(new Date());
         userRepository.save(user);
+    }
+
+    @Override
+    public boolean isInitialAdminPassword(String username) {
+        User user = getUserByUsername(username);
+        return user.isAdmin() && user.getPassword() == null;
+    }
+
+    @Override
+    public void setInitialAdminPassword(String username, String password) {
+        User user = getUserByUsername(username);
+        user.setPassword(password);
+        user.setPasswordType(PasswordType.PLAIN);
     }
 
     private User getUserByUsername(String username) {

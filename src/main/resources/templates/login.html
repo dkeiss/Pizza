@@ -25,9 +25,20 @@
             Sie wurden ausgeloggt.
         </div>
         <form th:action="@{/login}" method="post">
-            <div><label> Benutzer : <input type="text" name="username" th:value="${username}"/> </label></div>
-            <div th:if="${admin}"><label> Passwort: <input type="password" name="password"/> </label></div>
-            <div><input type="submit" value="Einloggen"/></div>
+            <div>
+                <label> Benutzer : <input type="text" name="username" th:value="${username}"/> </label>
+            </div>
+            <div th:if="${isAdmin}">
+                <label> Passwort: <input type="password" name="password"/></label>
+            </div>
+            <div th:if="${adminInitialPassword}">
+                <label> Passwort vergeben </label>
+                <label> Passwort: <input type="password" name="password"/> </label><br />
+                <label> Passwort Wiederholen: <input type="password" name="passwordRepeat"/> </label>
+            </div>
+            <div>
+                <input type="submit" value="Einloggen"/>
+            </div>
         </form>
     </div>
 </div>

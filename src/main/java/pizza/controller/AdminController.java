@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pizza.domain.Order;
+import pizza.controller.validator.AuthenticationValidator;
 
 import java.security.Principal;
 

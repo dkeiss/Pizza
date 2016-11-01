@@ -6,10 +6,12 @@ import org.springframework.web.bind.annotation.*;
 import pizza.service.UserOrderService;
 import pizza.vo.order.UserOrderVO;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
- * Created by Keissenator on 22.10.2016.
+ * Created by Daniel Keiss on 22.10.2016.
  */
 @Controller
 @RequestMapping("rest/user/")
@@ -35,7 +37,8 @@ public class UserOrderController {
     @RequestMapping(value = "order/{userId}", method = RequestMethod.PUT)
     public
     @ResponseBody
-    void updateUserOrder(@PathVariable("userId") Integer userId, @RequestBody UserOrderVO userOrder) {
+    Map updateUserOrder(@PathVariable("userId") Integer userId, @RequestBody UserOrderVO userOrder) {
+        return new HashMap();
     }
 
 }
