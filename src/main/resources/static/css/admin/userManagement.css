@@ -6,11 +6,30 @@
     height: 40px;
 }
 
-.um-newUser-selectRoleContainer {
+.um-newUser-discountContainer,
+.um-newUser-isAdminContainer {
     width: 50%;
-    float: right;
-    padding: 6px 0;
     text-align: center;
+    min-width: 50%;
+}
+
+.um-newUser-discountContainer {
+    float: left;
+}
+
+.um-newUser-discountContainer label {
+    float: left;
+    padding: 7px 15px 7px 0;
+}
+
+.um-newUser-discountContainer input[type="number"] {
+    width: 20%;
+    min-width: 20%;
+}
+
+.um-newUser-isAdminContainer {
+    float: right;
+    padding: 7px 0;
 }
 
 .um-newUser-separateContainer {
@@ -29,17 +48,25 @@
     float: right;
 }
 
-.um-newUser-fieldContainer.row2 input[type="number"] {
-    width: 15%;
-    float: left;
-}
-
 .um-newUser-fieldContainer.row2 {
     padding: 0 0 10px 0;
 }
 
 .um-newUser-warningLabel {
     margin: 10px 0 0 0;
+}
+
+.um-newUser-hiddenWarning {
+    display: none;
+}
+
+.um-newUser-showWarning {
+    display: block;
+}
+
+.um-newUser-inputError {
+    border: 1px solid #a9a9a9;
+    border-bottom-color: #ff0000;
 }
 
 

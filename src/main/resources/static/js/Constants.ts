@@ -5,6 +5,7 @@ class WebService
 
 class UserManagementSelectors
 {
+    public static newUserContainer = ".um-newUser_container";
     public static newUserIsAdmin = ".um-newUser_isAdmin";
     public static newUserFirstName = ".um-newUser_firstName";
     public static newUserLastName = ".um-newUser_lastName";

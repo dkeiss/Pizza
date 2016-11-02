@@ -7,6 +7,7 @@ namespace WebApplication.Admin.UserManagement
 {
     export class NewUserController
     {
+        private _newUserContainer: JQuery = null;
         private _isAdminSelector: JQuery =  null;
         private _firstNameSelector: JQuery = null;
         private _lastNameSelector: JQuery = null;
@@ -15,8 +16,13 @@ namespace WebApplication.Admin.UserManagement
         private _warningLabelSelector: JQuery = null;
         private _submitSelector: JQuery = null;
 
+        private _cssInputError = "um-newUser-inputError";
+        private _cssHiddenWarning = "um-newUser-hiddenWarning";
+        private _cssShowWarning = "um-newUser-showWarning";
+
         constructor()
         {
+            this._newUserContainer = $(UserManagementSelectors.newUserContainer);
             this._isAdminSelector = $(UserManagementSelectors.newUserIsAdmin);
             this._firstNameSelector = $(UserManagementSelectors.newUserFirstName);
             this._lastNameSelector = $(UserManagementSelectors.newUserLastName);
@@ -28,19 +34,85 @@ namespace WebApplication.Admin.UserManagement
 
         public start()
         {
-            this._submitSelector.on("click", () => this.checkSubmit());
+            this._submitSelector.on("click", () => this.checkBeforeSubmit());
         }
 
-        private checkSubmit()
+        private checkBeforeSubmit()
         {
+            let isOkay: boolean = true;
 
+            if (this._firstNameSelector.val().trim().length == 0)
+            {
+                this._firstNameSelector.addClass(this._cssInputError);
+                isOkay = false;
+            }
+
+            if (this._lastNameSelector.val().trim().length == 0)
+            {
+                this._lastNameSelector.addClass(this._cssInputError);
+                isOkay = false
+            }
+
+            if (this._emailSelector.val().trim().length == 0)
+            {
+                this._emailSelector.addClass(this._cssInputError);
+                isOkay = false;
+            }
+
+            if (!NewUserController.isValidEmailAddress(this._emailSelector.val().trim()))
+            {
+                this._emailSelector.addClass(this._cssInputError)
+                isOkay = false;
+            }
+
+            if (this._discountSelector.val().length == 0)
+            {
+                this._discountSelector.addClass(this._cssInputError);
+                isOkay = false;
+            }
+
+
+            if (isOkay)
+            {
+                this.saveAndResetInputField();
+            }
+            else
+            {
+                this._warningLabelSelector.removeClass(this._cssHiddenWarning).addClass(this._cssShowWarning);
+            }
+        }
+
+        private static isValidEmailAddress(email: string): boolean
+        {
+            const pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+            return pattern.test(email);
+        }
+
+        private saveAndResetInputField(): void
+        {
+            const newUser: IAddNewUser = new RequestNewUser();
+            newUser.firstName = this._firstNameSelector.val();
+            newUser.lastName = this._lastNameSelector.val();
+            newUser.userName = this._emailSelector.val();
+            newUser.discount = parseFloat(this._discountSelector.val());
+
+            newUser.admin = this._isAdminSelector.is(":checked") ? true : false;
+
+
+            this._warningLabelSelector.removeClass(this._cssShowWarning).addClass(this._cssHiddenWarning);
+            this._firstNameSelector.val("");
+            this._lastNameSelector.val("");
+            this._emailSelector.val("");
+            this._discountSelector.val("0");
+            this._isAdminSelector.prop("checked", false);
         }
     }
 
-    export class NewUser implements IAddNewUser
+    export class RequestNewUser implements IAddNewUser
     {
         firstName: string;
         lastName: string;
+        userName: string;
         discount: number;
         admin: boolean;
     }

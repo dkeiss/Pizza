@@ -40,18 +40,15 @@ p {
     background-color: #FFFFFF;
     overflow: hidden;
     margin: 30px 0 0 0;
-    border: 1px solid #3595b4;
+    border: 1px solid #c4c8ca;
+    padding: 10px;
 }
 
 .core-container-boxHeader {
-    padding: 5px 10px;
-    background-color: #3595b4;
-    color: #ffffff;
-    font-weight: 400;
-}
-
-.core-container-box.core-container-boxBody {
-    border: none;
+    border-bottom: 1px solid #c4c8ca;
+    padding: 0 0 10px 0;
+    margin: 0 0 10px 0;
+    font-weight: 500;
 }
 
 .core-container-boxBody {
@@ -82,6 +79,10 @@ p {
 
 .core-warningLabel {
     width: 100%;
-    display: none;
     float: left;
+    font-size: 12px;
+    text-align: center;
+    background-color: #ffc500;
+    margin-top: 10px;
+    padding: 5px 0;
 }

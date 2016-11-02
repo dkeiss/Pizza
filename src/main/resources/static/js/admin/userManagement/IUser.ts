@@ -26,6 +26,7 @@ interface IAddNewUser
 {
     firstName: string;
     lastName: string;
+    userName: string;
     discount: number;
     admin: boolean;
 }
