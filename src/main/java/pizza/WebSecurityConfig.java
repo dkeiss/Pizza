@@ -22,9 +22,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/css/**").permitAll()
                 .antMatchers("/rest/**").permitAll() // TODO disable after development
+                .antMatchers("/console/**").permitAll() // h2 console disable after development
                 .anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout().permitAll().and().
                 authorizeRequests();
         http.csrf().disable(); // todo find a way for crsf token with javascript!
+
+        // to use H2 web console
+        http.headers().frameOptions().disable();
     }
 
     @Override
