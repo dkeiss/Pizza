@@ -8,19 +8,19 @@ import static org.springframework.beans.BeanUtils.copyProperties;
 /**
  * Created by Daniel Keiss on 26.10.2016.
  */
-public interface ObjectMapperService {
+public class ObjectMapperUtil {
 
-    default <T> T copyFromValueObject(Object source, T destination) {
+    public static <T> T copyFromValueObject(Object source, T destination) {
         copyProperties(source, destination, "creationDate", "modificationDate");
         return destination;
     }
 
-    default <T> T copyFromBusinessObject(Object source, T destination) {
+    public static <T> T copyFromBusinessObject(Object source, T destination) {
         copyProperties(source, destination);
         return destination;
     }
 
-    default <T> List<T> copyListFromBusinessObject(Iterable source, Class<T> destination) {
+    public static <T> List<T> copyListFromBusinessObject(Iterable source, Class<T> destination) {
         List<T> destList = new ArrayList<>();
         source.forEach(o -> {
             T dest = null;

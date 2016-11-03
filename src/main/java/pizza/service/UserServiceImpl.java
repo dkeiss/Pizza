@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import pizza.domain.user.PasswordType;
 import pizza.domain.user.User;
 import pizza.repositories.UserRepository;
-import pizza.service.common.ObjectMapperService;
+import pizza.service.common.ObjectMapperUtil;
 import pizza.service.exception.NotFoundException;
 import pizza.service.exception.UsernameAlreadyUsedException;
 import pizza.vo.user.UserVO;
@@ -13,12 +13,16 @@ import pizza.vo.user.UserVO;
 import java.util.Date;
 import java.util.List;
 
+import static pizza.service.common.ObjectMapperUtil.copyFromBusinessObject;
+import static pizza.service.common.ObjectMapperUtil.copyFromValueObject;
+import static pizza.service.common.ObjectMapperUtil.copyListFromBusinessObject;
+
 
 /**
  * Created by Daniel Keiss on 11.09.2016.
  */
 @Service
-public class UserServiceImpl implements UserService, ObjectMapperService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;

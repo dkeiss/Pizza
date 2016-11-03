@@ -974,7 +974,7 @@ interface JQueryStatic {
      *
      * @param target An object that will receive the new properties if additional objects are passed in or that will extend the jQuery namespace if it is the sole argument.
      * @param object1 An object containing additional properties to merge in.
-     * @param objectN Additional objects containing properties to merge in.
+     * @param objectN AdditionalVO objects containing properties to merge in.
      */
     extend(target: any, object1?: any, ...objectN: any[]): any;
     /**
@@ -983,7 +983,7 @@ interface JQueryStatic {
      * @param deep If true, the merge becomes recursive (aka. deep copy).
      * @param target The object to extend. It will receive the new properties.
      * @param object1 An object containing additional properties to merge in.
-     * @param objectN Additional objects containing properties to merge in.
+     * @param objectN AdditionalVO objects containing properties to merge in.
      */
     extend(deep: boolean, target: any, object1?: any, ...objectN: any[]): any;
 
@@ -2457,14 +2457,14 @@ interface JQuery {
      * Execute all handlers and behaviors attached to the matched elements for the given event type.
      * 
      * @param eventType A string containing a JavaScript event type, such as click or submit.
-     * @param extraParameters Additional parameters to pass along to the event handler.
+     * @param extraParameters AdditionalVO parameters to pass along to the event handler.
      */
     trigger(eventType: string, extraParameters?: any[]|Object): JQuery;
     /**
      * Execute all handlers and behaviors attached to the matched elements for the given event type.
      * 
      * @param event A jQuery.Event object.
-     * @param extraParameters Additional parameters to pass along to the event handler.
+     * @param extraParameters AdditionalVO parameters to pass along to the event handler.
      */
     trigger(event: JQueryEventObject, extraParameters?: any[]|Object): JQuery;
 

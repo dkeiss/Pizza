@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pizza.domain.product.ProductCatalog;
 import pizza.repositories.ProductCatalogRepository;
-import pizza.service.common.ObjectMapperService;
+import pizza.service.common.ObjectMapperUtil;
 import pizza.service.exception.NotFoundException;
 import pizza.vo.product.menu.ProductCatalogInfoVO;
 import pizza.vo.product.menu.ProductCatalogVO;
@@ -12,6 +12,7 @@ import pizza.vo.product.menu.ProductCatalogVO;
 import java.util.Date;
 import java.util.List;
 
+import static pizza.service.common.ObjectMapperUtil.copyListFromBusinessObject;
 import static pizza.service.common.ProductBusinessToValueObjectConverter.getProductCatalogFromBO;
 import static pizza.service.common.ProductValueToBusinessObjectConverter.getProductCategoriesFromVO;
 
@@ -19,7 +20,7 @@ import static pizza.service.common.ProductValueToBusinessObjectConverter.getProd
  * Created by Daniel Keiss on 29.10.2016.
  */
 @Service
-public class ProductCatalogServiceImpl implements ProductCatalogService, ObjectMapperService {
+public class ProductCatalogServiceImpl implements ProductCatalogService {
 
     @Autowired
     private ProductCatalogRepository productCatalogRepository;

@@ -14,7 +14,7 @@ import java.util.Date;
 public class AdditionalPrice {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ADDITIONAL_PRICE_ID_SEQ")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "ADDITIONAL_PRICE_ID_SEQ")
     @SequenceGenerator(name = "ADDITIONAL_PRICE_ID_SEQ", sequenceName = "ADDITIONAL_PRICE_ID_SEQ", allocationSize = 100)
     private Integer additionalPriceId;
 

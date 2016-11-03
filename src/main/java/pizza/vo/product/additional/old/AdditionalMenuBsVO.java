@@ -1,4 +1,4 @@
-package pizza.vo.product.additional;
+package pizza.vo.product.additional.old;
 
 import lombok.Data;
 

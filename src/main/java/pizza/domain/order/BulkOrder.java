@@ -14,7 +14,7 @@ import java.util.Date;
 public class BulkOrder {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BULK_ORDER_ID_SEQ")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "BULK_ORDER_ID_SEQ")
     @SequenceGenerator(name = "BULK_ORDER_ID_SEQ", sequenceName = "BULK_ORDER_ID_SEQ", allocationSize = 100)
     private Integer bulkOrderId;
 

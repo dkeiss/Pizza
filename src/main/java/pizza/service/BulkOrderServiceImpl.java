@@ -6,7 +6,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import pizza.domain.order.BulkOrder;
 import pizza.repositories.BulkOrderRepository;
-import pizza.service.common.ObjectMapperService;
+import pizza.service.common.ObjectMapperUtil;
 import pizza.service.exception.BulkOrderActiveUntilNotValidException;
 import pizza.service.exception.BulkOrderAlreadyActiveException;
 import pizza.service.exception.NotFoundException;
@@ -15,11 +15,15 @@ import pizza.vo.order.BulkOrderVO;
 import java.util.Date;
 import java.util.List;
 
+import static pizza.service.common.ObjectMapperUtil.copyFromBusinessObject;
+import static pizza.service.common.ObjectMapperUtil.copyFromValueObject;
+import static pizza.service.common.ObjectMapperUtil.copyListFromBusinessObject;
+
 /**
  * Created by Daniel Keiss on 26.10.2016.
  */
 @Service
-public class BulkOrderServiceImpl implements BulkOrderService, ObjectMapperService {
+public class BulkOrderServiceImpl implements BulkOrderService {
 
     @Autowired
     private BulkOrderRepository bulkOrderRepository;

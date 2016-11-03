@@ -1,7 +1,8 @@
-package pizza.vo.product.additional;
+package pizza.vo.product.additional.old;
 
 import lombok.Data;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 /**
@@ -10,7 +11,7 @@ import java.util.List;
 @Data
 public class AdditionalMenuVO {
 
-    public List<Long> numbers;
+    public List<Integer> numbers;
     public List<AdditionMenuAsVO> as;
 
 }
