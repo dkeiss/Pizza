@@ -47,7 +47,13 @@ class WebServiceAccess
             error: (xhr: JQueryXHR) =>
             {
                 alert(xhr.statusText + " - " + xhr.status);
-            }
+                console.log(xhr);
+            },
+            success: (xhr: JQueryXHR) =>
+            {
+                alert(xhr.statusText + " - " + xhr.status);
+                console.log(xhr);
+            },
         });
     }
 

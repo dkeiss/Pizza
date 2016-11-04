@@ -62,7 +62,11 @@ namespace WebApplication.Admin.UserManagement
 
             if (isOkay)
             {
-                this.saveAndResetInputField();
+                this.saveAndResetInputField(newUser =>
+                {
+                    console.log("new User: " + JSON.stringify(newUser));
+                    UserService.sendNewUser(newUser);
+                });
             }
             else
             {
@@ -76,9 +80,9 @@ namespace WebApplication.Admin.UserManagement
             return pattern.test(email);
         }
 
-        private saveAndResetInputField(): void
+        private saveAndResetInputField(returnNewUser: (newUser: IAddNewUser) => void): void
         {
-            const newUser: IAddNewUser = new RequestNewUser();
+            const newUser = new RequestNewUser();
             newUser.firstName = this._firstNameSelector.val();
             newUser.lastName = this._lastNameSelector.val();
             newUser.userName = this._emailSelector.val();
@@ -92,6 +96,8 @@ namespace WebApplication.Admin.UserManagement
             this._emailSelector.val("");
             this._discountSelector.val("0");
             this._isAdminSelector.prop("checked", false);
+
+            returnNewUser(newUser);
         }
     }
 

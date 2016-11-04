@@ -3,12 +3,14 @@
 /// <reference path="TableController.ts" />
 
 
+
 namespace WebApplication.Admin.UserManagement
 {
     $(document).ready(() =>
     {
         new UserFunction();
     });
+
 
 
     export class UserFunction
