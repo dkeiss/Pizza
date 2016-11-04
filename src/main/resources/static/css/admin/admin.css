@@ -4,6 +4,7 @@
     background-color: #FFFFFF;
     overflow: hidden;
     margin: 30px 0 0px 0;
+    border: 1px solid #c4c8ca;
 }
 
 
@@ -113,4 +114,20 @@
 .admin-submitButton_expert{
     margin: 0px 0px 0px 5px;
     float: right;
+}
+
+.error_blink {
+    animation: error 0.4s ease-out;
+}
+
+.success_blink {
+    animation: success 0.4s ease-out;
+}
+
+@keyframes success {
+    0%  {background-color: green;}
+}
+
+@keyframes error {
+    0%  {background-color: red;}
 }
