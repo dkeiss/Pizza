@@ -51,8 +51,9 @@ class WebServiceAccess
             },
             success: (xhr: JQueryXHR) =>
             {
-                alert(xhr.statusText + " - " + xhr.status);
-                console.log(xhr);
+                //errorResponse.responseJSON
+                alert("bla: " + xhr.responseJSON);
+                console.log(xhr.responseJSON);
             },
         });
     }

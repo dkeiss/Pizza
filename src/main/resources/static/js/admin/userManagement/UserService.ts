@@ -12,16 +12,17 @@ namespace WebApplication.Admin.UserManagement
             WebServiceAccess.ajaxGet(WebService.user, onSuccess);
         }
 
-        public static sendNewUser(sendNewUser: IAddNewUser)
+        public static sendNewUser(sendNewUser: IAddNewUser, success: () => void)
         {
             WebServiceAccess.ajaxPut(WebService.user, sendNewUser);
+            success();
         }
 
         public static sendEditUser(sendEditUser: IEditUser, onSuccess: (success: boolean) => void): void
         {
             // Todo: @Simon & @Daniel => Request definieren und testen
             //WebServiceAccess.ajaxPost(WebService.user, sendEditUser, onSuccess, (error) => {alert(error); console.log(error);});
-            WebServiceAccess.ajaxPut(WebService.user, sendEditUser); // 405 error "Method Not Allowed"
+            WebServiceAccess.ajaxPut(WebService.user + "/" + sendEditUser.userId, sendEditUser); // 405 error "Method Not Allowed"
         }
 
         public static deleteUser(sendUserId: number, onSuccess: (success: boolean) => void): void
