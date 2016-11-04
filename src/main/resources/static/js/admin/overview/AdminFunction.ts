@@ -36,6 +36,12 @@ namespace WebApplication.Admin.Overview
         private _adminUploadErrorLbl: JQuery = null;
         private _adminActivateCtlgBtn: JQuery = null;
 
+        private _adminCardDiv: JQuery = null;
+        private _adminUMNMTDiv: JQuery = null;
+        private _adminBulkOrderDiv: JQuery = null;
+        private _adminPrintDiv: JQuery = null;
+        private _adminCatalogDiv: JQuery = null;
+
         private _bulkOrder: IBulkOrder[] = null;
         private _currentBulkOrder: IBulkOrder = null;
 
@@ -60,6 +66,11 @@ namespace WebApplication.Admin.Overview
             this._adminUploadErrorLbl = $(AdminOverviewSelectors.adminUploadErrorLbl);
             this._adminTimepickerLabel = $(AdminOverviewSelectors.adminTimepickerLabel);
             this._adminActivateCtlgBtn = $(AdminOverviewSelectors.adminActivateCtlgBtn);
+            this._adminCardDiv = $(AdminOverviewSelectors.adminCardDiv);
+            this._adminUMNMTDiv = $(AdminOverviewSelectors.adminUMNMTDiv);
+            this._adminBulkOrderDiv = $(AdminOverviewSelectors.adminBulkOrderDiv);
+            this._adminPrintDiv = $(AdminOverviewSelectors.adminPrintDiv);
+            this._adminCatalogDiv = $(AdminOverviewSelectors.adminCatalogDiv);
 
             this.resetGUI();
             this.getProductCatalogs();
@@ -85,6 +96,11 @@ namespace WebApplication.Admin.Overview
                 this._adminActivateCtlgBtn.removeClass("admin-submitButton-enabled");
                 this._adminTimepickerLabel.text("Ungültige Uhrzeit");
                 this._adminTimepickerLabel.show();
+                this._adminBulkOrderDiv.addClass("admin-failure-blink");
+                setTimeout(() =>
+                {
+                    this._adminBulkOrderDiv.removeClass("admin-failure-blink");
+                }, 500);
             }
 
             return isValid;
@@ -94,7 +110,15 @@ namespace WebApplication.Admin.Overview
             AdminService.deactivateBulkOrder(this._currentBulkOrder.bulkOrderId, success => {
                 if (success){
                     this.resetGUI();
+                    this.getProductCatalogs();
                     this.getCurrentBulkOrder();
+                    this._adminCardDiv.addClass("admin-success-blink");
+                    this._adminBulkOrderDiv.addClass("admin-success-blink");
+                    setTimeout(() =>
+                    {
+                        this._adminCardDiv.removeClass("admin-success-blink");
+                        this._adminBulkOrderDiv.removeClass("admin-success-blink");
+                    }, 500);
                 }}
 
                 /*,
@@ -150,6 +174,13 @@ namespace WebApplication.Admin.Overview
 
                         this.resetGUI();
                         this.getCurrentBulkOrder();
+                        this._adminCardDiv.addClass("admin-success-blink");
+                        this._adminBulkOrderDiv.addClass("admin-success-blink");
+                        setTimeout(() =>
+                        {
+                            this._adminCardDiv.removeClass("admin-success-blink");
+                            this._adminBulkOrderDiv.removeClass("admin-success-blink");
+                        }, 500);
                     },
                     errorResponse => {
                         this._errorResponse = errorResponse.responseJSON;
@@ -159,6 +190,11 @@ namespace WebApplication.Admin.Overview
                         this._adminActivateCtlgBtn.addClass("admin-submitButton-disabled");
                         this._adminActivateCtlgBtn.removeClass("admin-submitButton-enabled");
                         this._adminTimepickerLabel.show();
+                        this._adminBulkOrderDiv.addClass("admin-failure-blink");
+                        setTimeout(() =>
+                        {
+                            this._adminBulkOrderDiv.removeClass("admin-failure-blink");
+                        }, 500);
                     }
                 );
             }
@@ -194,6 +230,11 @@ namespace WebApplication.Admin.Overview
             this._adminPrintErrorLbl.hide();
             this._adminUploadErrorLbl.hide();
             this._adminTimepickerLabel.hide();
+            this._adminCatalogCB.empty();
+            this._adminTimepicker.val("");
+            this._adminCatalogPostfixLbl.show();
+            this._currentBulkOrder = null;
+            this._adminActivateCtlgBtn.off();
             this._adminActivateCtlgBtn.on("click", () => this.activateBulkOrder());
             this._adminActivateCtlgBtn.text("Aktivieren");
         }

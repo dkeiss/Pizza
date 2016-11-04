@@ -25,6 +25,7 @@ class UserManagementSelectors
     public static userTableAboardEdit = ".um-userTable_aboardEdit";
 }
 
+// timepicker -> timePicker, Rest komplett ausschreiben
 class AdminOverviewSelectors
 {
     public static adminTimepicker = ".admin-inputField_time";
@@ -44,5 +45,12 @@ class AdminOverviewSelectors
     public static adminUMGMTErrorLbl = ".admin-errorlabel_umgmt";
     public static adminPrintErrorLbl = ".admin-errorlabel_print";
     public static adminUploadErrorLbl = ".admin-errorlabel_upload";
+
+    public static adminCardDiv = ".admin-container_cardDiv";
+    public static adminUMNMTDiv = ".admin-container_umnmtDiv";
+    public static adminBulkOrderDiv = ".admin-container_bulkOrderDiv";
+    public static adminPrintDiv = ".admin-container_printDiv";
+    public static adminCatalogDiv = ".admin-container_catalogDiv";
+
 }
 
