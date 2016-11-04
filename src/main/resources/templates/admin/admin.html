@@ -26,33 +26,32 @@
 </div>
 
 <div class="core-container-center">
-    <div class="admin-container-box">
+    <div class="admin-container-box admin-container_cardDiv">
         <div class="admin-button admin-button-enabled admin-button_card">Warenkorb</div>
         <label class="admin-errorLabel admin-errorlabel_card">errorText</label>
     </div>
 
 
-    <div class="admin-container-box">
+    <div class="admin-container-box admin-container_umnmtDiv">
         <div class="admin-button admin-button-enabled admin-button_umgmt" onclick="window.location.replace('/admin/usermanagement')">Benutzerverwaltung</div>
         <label class="admin-errorLabel admin-errorlabel_umgmt">errorText</label>
     </div>
 
-    <div class="core-container-box">
+    <div class="core-container-box admin-container_bulkOrderDiv">
         <label class="admin-label admin-label_catalogPrefix">Kein Produktkatalog vorhanden</label>
         <select class="admin-combobox admin-combobox_productCatalogs" name="productCatalogs" size="0"></select>
         <label class="admin-label admin-label_catalogPostfix"></label>
         <input class="admin-inputField_time" maxlength="5" placeholder="hh:mm" readonly="true"/>
-        <pre id="script_1" style="display: none" class="code">$('#timepicker').timepicker();</pre>
         <div class="admin-submitButton admin-submitButton-enabled admin-submitButton_activateCtlg">Aktivieren</div>
         <label class="admin-errorLableTimepicker admin-errorlabel_time">Ungültige Uhrzeit!</label>
     </div>
 
-    <div class="admin-container-box">
+    <div class="admin-container-box admin-container_printDiv">
         <div class="admin-button admin-button-enabled admin-button_print">Druckinformationen bearbeiten</div>
         <label class="admin-errorLabel admin-errorlabel_print">errorText</label>
     </div>
 
-    <div class="admin-container-box">
+    <div class="admin-container-box admin-container_catalogDiv">
         <div class="admin-button admin-button-enabled admin-button_uploadcatalog">Produktkatalog hochladen</div>
         <label class="admin-errorLabel admin-errorlabel_upload">errorText</label>
     </div>
