@@ -9,7 +9,7 @@ namespace WebApplication.Admin.UserManagement
     {
         public static loadUserTable(onSuccess: (userList: IUserList) => void): void
         {
-            WebServiceAccess.ajaxGet(WebService.url + "users", onSuccess);
+            WebServiceAccess.ajaxGet(WebService.user, onSuccess);
         }
 
         public static sendEditUser(sendEditUser: IEditUser, onSuccess: (success: boolean) => void): void

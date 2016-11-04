@@ -64,10 +64,11 @@
     display: block;
 }
 
-.um-newUser-inputError {
-    border: 1px solid #a9a9a9;
-    border-bottom-color: #ff0000;
+.core-inputField.um-newUser-inputError {
+    border: 1px solid #ff0000;
+    padding: 6px;
 }
+
 
 
 .um-userTable {

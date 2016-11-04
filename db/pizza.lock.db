@@ -1,6 +1,6 @@
 #FileLock
-#Thu Nov 03 15:48:50 CET 2016
-hostName=Flux-Mobile.Speedport_W_921V_1_39_000
-id=1582aa9f10a5909500ce653a913dd8e0873a13ea39b
+#Fri Nov 04 16:20:27 CET 2016
+hostName=DESKTOP-O0LMQQC.fritz.box
+id=1582fed37ea1a911cda5fe42c283f96c77d7a229e96
 method=file
-server=192.168.2.104\:61105
+server=192.168.178.29\:50580
