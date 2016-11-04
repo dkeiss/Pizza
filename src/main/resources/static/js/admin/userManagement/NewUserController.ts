@@ -32,12 +32,12 @@ namespace WebApplication.Admin.UserManagement
             this._submitSelector = $(UserManagementSelectors.newUserSubmit);
         }
 
-        public start()
+        public start(success: () => void)
         {
-            this._submitSelector.on("click", () => this.checkBeforeSubmit());
+            this._submitSelector.on("click", () => this.checkBeforeSubmit(success));
         }
 
-        private checkBeforeSubmit()
+        private checkBeforeSubmit(success: () => void)
         {
             let isOkay: boolean = true;
 
@@ -65,7 +65,7 @@ namespace WebApplication.Admin.UserManagement
                 this.saveAndResetInputField(newUser =>
                 {
                     console.log("new User: " + JSON.stringify(newUser));
-                    UserService.sendNewUser(newUser);
+                    UserService.sendNewUser(newUser, success);
                 });
             }
             else
