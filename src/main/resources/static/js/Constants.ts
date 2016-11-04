@@ -43,5 +43,9 @@ class AdminOverviewSelectors
     public static adminUMGMTErrorLbl = ".admin-errorlabel_umgmt";
     public static adminPrintErrorLbl = ".admin-errorlabel_print";
     public static adminUploadErrorLbl = ".admin-errorlabel_upload";
+
+
+    public static adminCatalogDiv = ".admin-container_catalogDiv";
+    public static adminCardDiv = ".admin-container_cardDiv";
 }
 
