@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static pizza.controller.ResponseUtil.getResponseWithStatus;
+
 /**
  * Created by Daniel Keiss on 22.10.2016.
  */
@@ -38,7 +40,7 @@ public class UserOrderController {
     public
     @ResponseBody
     Map updateUserOrder(@PathVariable("userId") Integer userId, @RequestBody UserOrderVO userOrder) {
-        return new HashMap();
+        return getResponseWithStatus(true);
     }
 
 }

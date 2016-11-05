@@ -13,6 +13,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static pizza.controller.ResponseUtil.getResponseWithStatus;
+
 /**
  * Created by Daniel Keiss on 22.09.2016.
  */
@@ -43,7 +45,15 @@ public class UserController {
     Map updateUser(@PathVariable("userId") Integer userId, @RequestBody UserVO user) {
         user.setUserId(userId);
         userService.updateUser(user);
-        return new HashMap();
+        return getResponseWithStatus(true);
+    }
+
+    @RequestMapping(value = "/{userId}", method = RequestMethod.DELETE)
+    public
+    @ResponseBody
+    Map deleteUser(@PathVariable("userId") Integer userId) {
+        userService.deleteUser(userId);
+        return getResponseWithStatus(true);
     }
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
