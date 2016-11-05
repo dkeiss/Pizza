@@ -48,6 +48,14 @@ public class UserController {
         return getResponseWithStatus(true);
     }
 
+    @RequestMapping(value = "/{userId}", method = RequestMethod.DELETE)
+    public
+    @ResponseBody
+    Map deleteUser(@PathVariable("userId") Integer userId) {
+        userService.deleteUser(userId);
+        return getResponseWithStatus(true);
+    }
+
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
     public
     @ResponseBody

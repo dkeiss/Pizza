@@ -27,4 +27,6 @@ public interface UserService {
 
     void setInitialAdminPassword(String username, String password);
 
+    void deleteUser(Integer userId);
+
 }
