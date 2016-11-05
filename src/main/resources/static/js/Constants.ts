@@ -1,6 +1,7 @@
 class WebService
 {
-    public static url = `${window.location.origin}/rest/`; //Todo: @Sascha
+    public static productCatalog = `${window.location.origin}/rest/productcatalog`;
+    public static bulkOrder = `${window.location.origin}/rest/bulkorder`;
     public static user = `${window.location.origin}/rest/user`;
 }
 
@@ -25,29 +26,28 @@ class UserManagementSelectors
     public static userTableAboardEdit = ".um-userTable_aboardEdit";
 }
 
-// timepicker -> timePicker, Rest komplett ausschreiben
 class AdminOverviewSelectors
 {
-    public static adminTimepicker = ".admin-inputField_time";
-    public static adminTimepickerLabel = ".admin-errorlabel_time";
-    public static adminCardBtn = ".admin-button_card";
-    public static adminUploadCatalogBtn = ".admin-button_uploadcatalog";
+    public static adminTimePicker = ".admin-inputField_time";
+    public static adminTimePickerLabel = ".admin-errorlabel_time";
+    public static adminCardButton = ".admin-button_card";
+    public static adminUploadCatalogButton = ".admin-button_uploadcatalog";
 
-    public static adminCatalogPrefixLbl = ".admin-label_catalogPrefix";
-    public static adminCatalogPostfixLbl = ".admin-label_catalogPostfix";
-    public static adminCatalogCB = ".admin-combobox_productCatalogs";
-
-
-    public static adminActivateCtlgBtn = ".admin-submitButton_activateCtlg";
+    public static adminCatalogPrefixLabel = ".admin-label_catalogPrefix";
+    public static adminCatalogPostfixLabel = ".admin-label_catalogPostfix";
+    public static adminCatalogComboBox = ".admin-combobox_productCatalogs";
 
 
-    public static adminCardErrorLbl = ".admin-errorlabel_card";
-    public static adminUMGMTErrorLbl = ".admin-errorlabel_umgmt";
-    public static adminPrintErrorLbl = ".admin-errorlabel_print";
-    public static adminUploadErrorLbl = ".admin-errorlabel_upload";
+    public static adminActivateCatalogButton = ".admin-submitButton_activateCtlg";
+
+
+    public static adminCardErrorLabel = ".admin-errorlabel_card";
+    public static adminUserManagementErrorLabel = ".admin-errorlabel_umgmt";
+    public static adminPrintErrorLabel = ".admin-errorlabel_print";
+    public static adminUploadErrorLabel = ".admin-errorlabel_upload";
 
     public static adminCardDiv = ".admin-container_cardDiv";
-    public static adminUMNMTDiv = ".admin-container_umnmtDiv";
+    public static adminUserManagementDiv = ".admin-container_umnmtDiv";
     public static adminBulkOrderDiv = ".admin-container_bulkOrderDiv";
     public static adminPrintDiv = ".admin-container_printDiv";
     public static adminCatalogDiv = ".admin-container_catalogDiv";
