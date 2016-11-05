@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outFile": "_app.js",
+    "sourceMap": false,
+    "removeComments": true
+  },
+  "files": [
+    "../Constants.ts",
+    "../WebServiceAccess.ts",
+    "AdminFunction.ts",
+    "AdminService.ts",
+    "IBulkOrder.ts",
+    "IErrorResponse.ts"
+  ]
+}
