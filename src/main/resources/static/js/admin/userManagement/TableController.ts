@@ -27,7 +27,7 @@ namespace WebApplication.Admin.UserManagement
             this.refreshConstructor()
         }
 
-        private refreshConstructor()
+        public refreshConstructor()
         {
             this.updateUserList();
             this.createTable();
