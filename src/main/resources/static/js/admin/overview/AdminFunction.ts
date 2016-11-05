@@ -11,15 +11,6 @@ namespace WebApplication.Admin.Overview
     {
         new AdminFunction();
     });
-    /*$(document).ready(() =>
-    {
-        $('#timepicker.startTime').timepicker( {
-            hourText: 'Stunde',             // Define the locale text for "Hours"
-            minuteText: 'Minute',         // Define the locale text for "Minute"
-            amPmText: ['', ''],     // Display text for AM PM
-            showAnim: 'blind'
-        } );
-    });*/
 
     export class AdminFunction
     {
@@ -112,36 +103,12 @@ namespace WebApplication.Admin.Overview
                     this.resetGUI();
                     this.getProductCatalogs();
                     this.getCurrentBulkOrder();
-                    this._adminCardDiv.addClass("admin-success-blink");
                     this._adminBulkOrderDiv.addClass("admin-success-blink");
                     setTimeout(() =>
                     {
-                        this._adminCardDiv.removeClass("admin-success-blink");
                         this._adminBulkOrderDiv.removeClass("admin-success-blink");
                     }, 500);
                 }}
-
-                /*,
-
-                bulkOrder => {
-                    console.log("deaktivated");
-                    this._currentBulkOrder = bulkOrder;
-                    this._adminTimePicker.toggleClass("admin-inputField_time_error",false);
-                    this._adminActivateCatalogButton.toggleClass("admin-submitButton-disabled",false);
-                    this._adminActivateCatalogButton.toggleClass("admin-submitButton-enabled",true);
-                    this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
-                    this._adminTimePickerLabel.hide();
-                },
-                errorResponse => {
-                    this._errorResponse = errorResponse.responseJSON;
-                    this._adminTimePickerLabel.text(this._errorResponse.message);
-                    this._adminTimePicker.toggleClass("admin-inputField_time_error",true);
-                    this._adminActivateCatalogButton.toggleClass("admin-submitButton-disabled",true);
-                    this._adminActivateCatalogButton.toggleClass("admin-submitButton-enabled",false);
-                    this._adminActivateCatalogButton.off();
-                    this._adminTimePickerLabel.show();
-
-                }*/
             );
 
         }
@@ -174,11 +141,9 @@ namespace WebApplication.Admin.Overview
 
                         this.resetGUI();
                         this.getCurrentBulkOrder();
-                        this._adminCardDiv.addClass("admin-success-blink");
                         this._adminBulkOrderDiv.addClass("admin-success-blink");
                         setTimeout(() =>
                         {
-                            this._adminCardDiv.removeClass("admin-success-blink");
                             this._adminBulkOrderDiv.removeClass("admin-success-blink");
                         }, 500);
                     },
@@ -237,6 +202,7 @@ namespace WebApplication.Admin.Overview
             this._adminActivateCatalogButton.off();
             this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
             this._adminActivateCatalogButton.text("Aktivieren");
+            this._adminCardButton.on("click",function(){return false});
         }
 
         private getCurrentBulkOrder(): void

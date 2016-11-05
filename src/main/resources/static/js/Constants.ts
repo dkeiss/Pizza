@@ -1,5 +1,6 @@
 class WebService
 {
+    public static userOrder = `${window.location.origin}/rest/userorder`;
     public static productCatalog = `${window.location.origin}/rest/productcatalog`;
     public static bulkOrder = `${window.location.origin}/rest/bulkorder`;
     public static user = `${window.location.origin}/rest/user`;
@@ -52,5 +53,12 @@ class AdminOverviewSelectors
     public static adminPrintDiv = ".admin-container_printDiv";
     public static adminCatalogDiv = ".admin-container_catalogDiv";
 
+}
+
+class ShoppingCardSelectors {
+    public static orderTable = ".card-orderTable";
+    public static orderTableSortButton = ".card-orderTable_sortButton";
+    public static orderTableStateButton = ".card-orderTable_stateButton";
+    public static orderTableDeleteButton = ".card-orderTable_deleteButton";
 }
 
