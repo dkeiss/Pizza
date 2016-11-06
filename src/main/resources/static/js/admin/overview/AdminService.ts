@@ -1,10 +1,8 @@
 /// <reference path="../../thirdParty/jquery.d.ts" />
 /// <reference path="../share/Constants.ts" />
 /// <reference path="../share/WebServiceAccess.ts" />
-/// <reference path="IBulkOrder.ts" />
 /// <reference path="../productCatalog/IProductCatalog.ts" />
 /// <reference path="IAdmin.ts" />
-/// <reference path="IErrorResponse.ts" />
 
 namespace WebApplication.Admin.Overview
 {

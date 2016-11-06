@@ -1,6 +1,6 @@
 /// <reference path="../../thirdParty/jquery.d.ts" />
-/// <reference path="../../Constants.ts" />
-/// <reference path="../../WebServiceAccess.ts" />
+/// <reference path="../share/Constants.ts" />
+/// <reference path="../share/WebServiceAccess.ts" />
 /// <reference path="IUserOrder.ts" />
 
 namespace WebApplication.Admin.ShoppingCard
