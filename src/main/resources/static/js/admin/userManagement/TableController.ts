@@ -178,8 +178,6 @@ namespace WebApplication.Admin.UserManagement
             editUser.discount = parseFloat(this.getRowTdInputText(elementTr, "td.discount"));
             editUser.admin = this.getRowTdCheckBox(elementTr);
 
-            if(editUser.firstName.length == 0) return;
-
             UserService.sendEditUser(editUser, success =>
             {
                 if (success) this.requestSuccess();

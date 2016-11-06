@@ -14,7 +14,7 @@ namespace WebApplication.Admin.UserManagement
 
         public static sendNewUser(sendNewUser: IAddNewUser, onSuccess: () => void): void
         {
-            WebServiceAccess.ajaxPut(WebService.user, sendNewUser, onSuccess);
+            WebServiceAccess.ajaxPost(WebService.user, sendNewUser, onSuccess);
         }
 
         public static sendEditUser(sendEditUser: IEditUser, onSuccess: (success: IOnSuccess) => void): void

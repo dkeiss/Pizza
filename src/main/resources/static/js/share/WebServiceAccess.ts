@@ -17,7 +17,7 @@ class WebServiceAccess
         });
     }
 
-    public static ajaxPost(webServiceMethod: string, postData: any, onSuccess: (xhr: any) => void, onError: (xhr: any) => void)
+    public static ajaxPost(webServiceMethod: string, postData: any, onSuccess: (xhr: any) => void, onError?: (xhr: any) => void)
     {
         $.ajax({
             type: "POST",

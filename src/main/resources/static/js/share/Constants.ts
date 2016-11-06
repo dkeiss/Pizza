@@ -69,3 +69,9 @@ class ErrorDialogSelectors
     public static text = ".core-serverError_text";
     public static refreshButton = ".core-serverError_refreshButton";
 }
+
+class UserOrderSelector
+{
+    public static menuContainerSelector = ".userOrder-menu_container";
+    public static menuClickSelectors = ".userOrder-menu_elementClick";
+}
