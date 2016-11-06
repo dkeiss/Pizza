@@ -5,8 +5,8 @@
     "removeComments": true
   },
   "files": [
-    "../Constants.ts",
-    "../WebServiceAccess.ts",
+    "../share/Constants.ts",
+    "../share/WebServiceAccess.ts",
     "AdminFunction.ts",
     "AdminService.ts",
     "IBulkOrder.ts",

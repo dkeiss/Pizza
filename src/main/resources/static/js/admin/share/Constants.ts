@@ -1,7 +1,7 @@
 class WebService
 {
     public static url = `${window.location.origin}/rest/`; //Todo: @Sascha
-    public static user = `${window.location.origin}/rest/user`;
+    public static user = `${window.location.origin}/rest/users`;
 }
 
 class UserManagementSelectors

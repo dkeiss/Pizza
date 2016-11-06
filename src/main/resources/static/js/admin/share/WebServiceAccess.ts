@@ -1,4 +1,4 @@
-/// <reference path="thirdParty/jquery.d.ts" />
+/// <reference path="../../thirdParty/jquery.d.ts" />
 
 class WebServiceAccess
 {
@@ -34,7 +34,7 @@ class WebServiceAccess
         });
     }
 
-    public static ajaxPut(webServiceMethod: string, putData: any)
+    public static ajaxPut(webServiceMethod: string, putData: any, onSuccess: (xhr: IOnSuccess) => void)
     {
         $.ajax({
             type: "PUT",
@@ -49,16 +49,11 @@ class WebServiceAccess
                 alert(xhr.statusText + " - " + xhr.status);
                 console.log(xhr);
             },
-            success: (xhr: JQueryXHR) =>
-            {
-                //errorResponse.responseJSON
-                alert("bla: " + xhr.responseJSON);
-                console.log(xhr.responseJSON);
-            },
+            success: onSuccess
         });
     }
 
-    public static ajaxDelete(webServiceMethod: string, deleteData: any, onSuccess: (xhr: any) => void)
+    public static ajaxDelete(webServiceMethod: string, deleteData: any, onSuccess: (xhr: IOnSuccess) => void)
     {
         $.ajax({
             type: "DELETE",
@@ -74,4 +69,9 @@ class WebServiceAccess
             }
         });
     }
+}
+
+interface IOnSuccess
+{
+    success: boolean;
 }

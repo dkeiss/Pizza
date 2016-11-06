@@ -76,7 +76,7 @@ namespace WebApplication.Admin.UserManagement
 
                 element += "<td class='edit firstName'><span>" + userList[i].firstName + "</span></td>";
                 element += "<td class='edit lastName'><span>" + userList[i].lastName + "</span></td>";
-                element += "<td class='edit email'><span>" + userList[i].userName + "</span></td>";
+                element += "<td class='email'><span>" + userList[i].userName + "</span></td>";
                 element += "<td class='number discount'><span>" + userList[i].discount + "</span></td>";
                 element += "<td class='" + this._cssHiddenEditIcon + "'>" +
                             "<div class='um-userTable-iconSingle um-userTable-deleteIcon um-userTable_deleteUser'></div>" +
@@ -104,7 +104,10 @@ namespace WebApplication.Admin.UserManagement
             {
                 if (!$(target).hasClass("edit"))
                 {
-                    if (!$(target).hasClass("number")) return;
+                    if (!$(target).hasClass("email"))
+                    {
+                        if (!$(target).hasClass("number")) return;
+                    }
                 }
             }
 
@@ -114,6 +117,19 @@ namespace WebApplication.Admin.UserManagement
             }
 
             if ($(target).hasClass("edit"))
+            {
+                // Input inputField and hide text
+                $(target)
+                    .addClass(this._cssActiveCellEdit)
+                    .append(
+                        $("<input>", {
+                            type: "text",
+                            val: $(event.currentTarget).text()
+                        })
+                    );
+            }
+
+            if ($(target).hasClass("email"))
             {
                 // Input inputField and hide text
                 $(target)
@@ -135,7 +151,7 @@ namespace WebApplication.Admin.UserManagement
                         $("<input>", {
                             type: "number",
                             min: "0",
-                            step: "0.01",
+                            step: "0.1",
                             required: "required",
                             val: $(event.currentTarget).text()
                         })
@@ -232,7 +248,7 @@ namespace WebApplication.Admin.UserManagement
                         }
                     }
 
-                    if ($(element).hasClass("edit") || $(element).hasClass("number"))
+                    if ($(element).hasClass("edit") || $(element).hasClass("email") || $(element).hasClass("number"))
                     {
                         $(element)
                             .removeClass(this._cssActiveCellEdit)

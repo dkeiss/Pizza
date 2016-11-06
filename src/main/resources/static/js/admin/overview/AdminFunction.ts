@@ -1,6 +1,6 @@
 /// <reference path="../../thirdParty/jquery.d.ts" />
 /// <reference path="AdminService.ts" />
-/// <reference path="../../Constants.ts" />
+/// <reference path="../share/Constants.ts" />
 /// <reference path="../productCatalog/IProductCatalog.ts" />
 /// <reference path="IBulkOrder.ts" />
 
