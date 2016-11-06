@@ -1,0 +1,186 @@
+{
+  "productCatalog": {
+    "name": "Einfacher Produktkatalog",
+    "productCategories": [
+      {
+        "name": "Pizza",
+        "productGroups": [
+          {
+            "name": "Leckere Pizza",
+            "products": [
+              {
+                "number": 2,
+                "name": "Margherita",
+                "description": "",
+                "productVariations": [
+                  {
+                    "name": "small",
+                    "price": 3.2
+                  },
+                  {
+                    "name": "medium",
+                    "price": 4.4
+                  },
+                  {
+                    "name": "large",
+                    "price": 6.3
+                  }
+                ]
+              },
+              {
+                "number": 6,
+                "name": "Salami",
+                "description": "mit Salami",
+                "productVariations": [
+                  {
+                    "name": "small",
+                    "price": 4.4
+                  },
+                  {
+                    "name": "medium",
+                    "price": 5.9
+                  },
+                  {
+                    "name": "large",
+                    "price": 7.4
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Party-Pizza",
+            "products": [
+              {
+                "number": 1,
+                "name": "Party-Blech-Pizza",
+                "description": "für ca. 5 Personen (40x60 cm)",
+                "productVariations": [
+                  {
+                    "name": "default",
+                    "price": 19
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": null,
+        "name": "Insalata",
+        "productGroups": [
+          {
+            "name": "Salate",
+            "products": [
+              {
+                "number": 421,
+                "name": "Insalata Speciale",
+                "description": "Eisbergsalat,Gurken,Tomaten,gebr.Champignons,Krautsalat,Pep.,rote Zwiebeln,Weichkäse",
+                "productVariations": [
+                  {
+                    "name": "small",
+                    "price": 5.2
+                  },
+                  {
+                    "name": "large",
+                    "price": 7.2
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "addionals": [
+    {
+      "name": "Extra Zutaten",
+      "duty": false,
+      "productIds": [
+        2,
+        6
+      ],
+      "additionals": [
+        {
+          "description": "scharfe Sauce",
+          "additionalPrices": [
+            {
+              "name": "",
+              "price": 0
+            },
+            {
+              "name": "",
+              "price": 0
+            },
+            {
+              "name": "",
+              "price": 0
+            }
+          ]
+        },
+        {
+          "description": "Peperoniwurst",
+          "additionalPrices": [
+            {
+              "name": "",
+              "price": 0.4
+            },
+            {
+              "name": "",
+              "price": 0.8
+            },
+            {
+              "name": "",
+              "price": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dressing",
+      "duty": true,
+      "productIds": [
+        421
+      ],
+      "additionals": [
+        {
+          "description": "Joghurtdressing",
+          "additionalPrices": [
+            {
+              "name": "",
+              "price": 0
+            },
+            {
+              "name": "",
+              "price": 0
+            },
+            {
+              "name": "",
+              "price": 0
+            }
+          ]
+        },
+        {
+          "description": "Chocktaildressing",
+          "additionalPrices": [
+            {
+              "name": "",
+              "price": 0
+            },
+            {
+              "name": "",
+              "price": 0
+            },
+            {
+              "name": "",
+              "price": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

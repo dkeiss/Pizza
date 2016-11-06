@@ -37,6 +37,10 @@
     border-bottom: 1px solid #ddd;
 }
 
+.sc-orderTable td:nth-child(6){
+    text-align: right;
+}
+
 .sc-orderTable-headlines th:nth-child(2),
 .sc-orderTable-headlines th:nth-child(7),
 .sc-orderTable-headlines th:nth-child(8){

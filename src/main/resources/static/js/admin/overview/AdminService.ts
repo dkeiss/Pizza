@@ -20,7 +20,7 @@ namespace WebApplication.Admin.Overview
             WebServiceAccess.ajaxPost(WebService.bulkOrder,bulkOrder, onSuccess, onError);
         }
 
-        public static deactivateBulkOrder(id: number, onSuccess: (bulkOrder: any) => void): void
+        public static deactivateBulkOrder(id: number, onSuccess: (success: IOnSuccess) => void): void
         {
             console.log("delete");
             WebServiceAccess.ajaxDelete(WebService.bulkOrder,id, onSuccess);
@@ -30,6 +30,12 @@ namespace WebApplication.Admin.Overview
         {
             console.log("loadingmenu");
             WebServiceAccess.ajaxGet(WebService.productCatalog, onSuccess);
+        }
+
+        public static uploadProductCatalog(file: string, onSuccess: (fileUpload: any) => void, onError: (xhr: any) => void): void
+        {
+            console.log("post");
+            WebServiceAccess.ajaxPost(WebService.bulkOrder,file, onSuccess, onError);
         }
     }
 }

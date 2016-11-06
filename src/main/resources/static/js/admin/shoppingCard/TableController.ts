@@ -21,15 +21,7 @@ namespace WebApplication.Admin.ShoppingCard
 
         private _tableData: any;
 
-        private _orderList: IUserOrder[] = [
-            {orderId:7,firstName: "Max", lastName: "Mustermann", productId: 1, productName: "Pizza Salami", productAdditions: "Peperonie, Kapern", productVariation: "Groß", productPrice: "7,53 €", paid: false},
-            {orderId:8,firstName: "Rosa", lastName: "Schlüpfer", productId: 4, productName: "Calzone", productAdditions: "", productVariation: "Normal", productPrice: "6,50 €", paid: false},
-            {orderId:9,firstName: "Chris P.", lastName: "Bacon", productId: 17, productName: "Pizza Schinken", productAdditions: "", productVariation: "Groß", productPrice: "9,50 €", paid: false},
-            {orderId:10,firstName: "Peter", lastName: "Sile", productId: 12, productName: "Nudeln", productAdditions: "", productVariation: "Normal", productPrice: "12,00 €", paid: false},
-            {orderId:11,firstName: "Wilma", lastName: "Bierholen", productId: 3, productName: "Pizza Diavolo", productAdditions: "Jalapenos", productVariation: "Klein", productPrice: "7,53 €", paid: false},
-            {orderId:12,firstName: "Axel", lastName: "Schweiß", productId: 4, productName: "Salat", productAdditions: "Ohne Ei", productVariation: "Normal", productPrice: "5,99 €", paid: false}
-        ];
-
+        private _orderList: IUserOrder[] = null;
 
         constructor()
         {
@@ -47,11 +39,11 @@ namespace WebApplication.Admin.ShoppingCard
         }
 
         private getUserOrders() : void {
-            console.log(this._orderList);
-            /*ShoppinCardService.loadUserOrders(orderList =>
+            ShoppingCardService.loadUserOrders(orderList =>
             {
                 this._orderList = orderList;
-            });*/
+                console.log(this._orderList);
+            });
         }
 
         private createTable() : void {
@@ -59,14 +51,22 @@ namespace WebApplication.Admin.ShoppingCard
             this._tableData = new Array(this._orderList.length);
 
             for(let i = 0; i < this._orderList.length; i++) {
+                console.log(this._orderList[i]);
                 let element = "";
-                element += "<tr userid='" + this._orderList[i].orderId + "'>";
+                element += "<tr orderid='" + this._orderList[i].userOrderId + "'>";
                 element += "<td >" +  this._orderList[i].firstName + " " + this._orderList[i].lastName + "</td>";
                 element += "<td >" +  this._orderList[i].productId + "</td>";
                 element += "<td >" +  this._orderList[i].productName + "</td>";
-                element += "<td >" +  this._orderList[i].productAdditions + "</td>";
-                element += "<td >" +  this._orderList[i].productVariation + "</td>";
-                element += "<td >" +  this._orderList[i].productPrice + "</td>";
+                let additionString = "";
+                if(this._orderList[i].additionals) {
+                    for (let a = 0; a < this._orderList[i].additionals.length; a++) {
+                        additionString += this._orderList[i].additionals[a].description + ", ";
+                    }
+                    additionString = additionString.substring(0,additionString.length - 2);
+                }
+                element += "<td >" +  additionString + "</td>";
+                element += "<td >" +  this._orderList[i].productVariationName + "</td>";
+                element += "<td >" +  this._orderList[i].sum.toFixed(2).toString().replace(".",",") + " €</td>";
                 element += "<td class='"+  (this._orderList[i].paid ? "sc-orderTable-paidIcon" : "sc-orderTable-outstandingIcon") + " card-orderTable_stateButton'></td>";
                 element += "<td class='sc-orderTable-trashIcon card-orderTable_deleteButton'></td>";
                 element += "</tr>";
@@ -76,9 +76,9 @@ namespace WebApplication.Admin.ShoppingCard
                 this._tableData[i][0] =  this._orderList[i].firstName + " " + this._orderList[i].lastName;
                 this._tableData[i][1] =  this._orderList[i].productId;
                 this._tableData[i][2] =  this._orderList[i].productName;
-                this._tableData[i][3] =  this._orderList[i].productAdditions;
-                this._tableData[i][4] =  this._orderList[i].productVariation;
-                this._tableData[i][5] =  this._orderList[i].productPrice.replace(",",".").replace(" €", "");
+                this._tableData[i][3] =  additionString;
+                this._tableData[i][4] =  this._orderList[i].productVariationName;
+                this._tableData[i][5] =  this._orderList[i].sum;
                 this._tableData[i][6] =  this._orderList[i].paid ? "1" : "2";
                 this._tableData[i][8] = this._orderTableBody.find("tr").last()[0];
             }
@@ -94,22 +94,6 @@ namespace WebApplication.Admin.ShoppingCard
                 let elements = $(this).closest("tr").find("td");
                 for(let i = 0; i < elements.length; i++)
                     $(elements[i]).removeClass("sc-orderTable-deleteIndicator")});
-
-            /*let rows = this._orderTableBody.find("tr");
-            this._tableData = new Array(rows.length);
-            for(let i = 0; i <rows.length; i++) {
-                let columns = $(rows[i]).find("td");
-                this._tableData[i] = new Array(columns.length+1);
-                for(let j = 0; j <columns.length; j++) {
-                    if(j==1 || j == 5)
-                        this._tableData[i][j] =  columns[j].innerText.replace(",",".").replace(" €", "");
-                    else if(j==6)
-                        this._tableData[i][j] = $(columns[j]).hasClass("sc-orderTable-paidIcon") ? "1" : "2";
-                    else
-                        this._tableData[i][j] = columns[j].innerText;
-                }
-                this._tableData[i][columns.length] =
-            }*/
             this.sort(0);
         }
 
@@ -128,21 +112,23 @@ namespace WebApplication.Admin.ShoppingCard
         }
         private switchOrderState(event: JQueryEventObject): void
         {
-            var paid: boolean;
             const orderId = parseInt($(event.currentTarget)
                 .closest("tr")
                 .attr("orderid"));
-            paid = $(event.currentTarget).hasClass("sc-orderTable-paidIcon");
-            let updateUserkOrder: IUserOrder = null;
+            console.log(orderId);
 
-            ShoppingCardService.markOrder(updateUserkOrder, success =>
+            let updateUserOrder: IUserOrderPaid = {
+                paid: $(event.currentTarget).hasClass("sc-orderTable-paidIcon")
+            };
+
+            ShoppingCardService.markOrder(orderId,updateUserOrder, success =>
             {
-                $(event.currentTarget).toggleClass("sc-orderTable-outstandingIcon",paid).toggleClass("sc-orderTable-paidIcon",!paid);
-                this._tableData[$(event.currentTarget).closest("tr").index()][6] = !paid ? "1" : "2";
-                $(event.currentTarget).closest("tr").addClass(!paid ? "sc-orderTable-green-blink" : "sc-orderTable-red-blink");
+                $(event.currentTarget).toggleClass("sc-orderTable-outstandingIcon",updateUserOrder.paid).toggleClass("sc-orderTable-paidIcon",!updateUserOrder.paid);
+                this._tableData[$(event.currentTarget).closest("tr").index()][6] = !updateUserOrder.paid ? "1" : "2";
+                $(event.currentTarget).closest("tr").addClass(!updateUserOrder.paid ? "sc-orderTable-green-blink" : "sc-orderTable-red-blink");
                 setTimeout(() =>
                 {
-                    $(event.currentTarget).closest("tr").removeClass(!paid ? "sc-orderTable-green-blink" : "sc-orderTable-red-blink");
+                    $(event.currentTarget).closest("tr").removeClass(!updateUserOrder.paid ? "sc-orderTable-green-blink" : "sc-orderTable-red-blink");
                 }, 500);
             }
             );

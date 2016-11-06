@@ -26,6 +26,7 @@ namespace WebApplication.Admin.Overview
         private _adminPrintErrorLabel: JQuery = null;
         private _adminUploadErrorLabel: JQuery = null;
         private _adminActivateCatalogButton: JQuery = null;
+        private _adminFileInput: JQuery = null;
 
         private _adminCardDiv: JQuery = null;
         private _adminUserManagementDiv: JQuery = null;
@@ -62,6 +63,7 @@ namespace WebApplication.Admin.Overview
             this._adminBulkOrderDiv = $(AdminOverviewSelectors.adminBulkOrderDiv);
             this._adminPrintDiv = $(AdminOverviewSelectors.adminPrintDiv);
             this._adminCatalogDiv = $(AdminOverviewSelectors.adminCatalogDiv);
+            this._adminFileInput = $(AdminOverviewSelectors.adminFileInput);
 
             this.resetGUI();
             this.getProductCatalogs();
@@ -71,7 +73,7 @@ namespace WebApplication.Admin.Overview
 
         public validateTime() : boolean {
             this._adminActivateCatalogButton.off();
-            console.log("test2");
+            console.log("time");
 
             let isValid = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])$/.test(this._adminTimePicker.val());
 
@@ -179,7 +181,57 @@ namespace WebApplication.Admin.Overview
             });
         }
 
+        private uploadProductCatalog(): void {
+            let filename = this._adminFileInput.val();
+            console.log(filename);
+
+            var data = new FormData();
+            data.append("file",filename);
+
+            /*AdminService.uploadProductCatalog(data, success =>  {
+                console.log("success");
+            }, error => {});*/
+
+            /*jQuery.each(jQuery('#file')[0].files, function(i, file) {
+                data.append('file-'+i, file);
+            });*/
+            /*AdminService.activateBulkOrder(_newBulkOrder,
+                bulkOrder => {
+                    this._currentBulkOrder = bulkOrder;
+
+                    this._adminTimePicker.removeClass("admin-inputField_time_error");
+                    this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled").addClass("admin-submitButton-enabled");
+
+                    this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
+                    this._adminTimePickerLabel.hide();
+
+                    this.resetGUI();
+                    this.getCurrentBulkOrder();
+                    this._adminBulkOrderDiv.addClass("admin-success-blink");
+                    setTimeout(() =>
+                    {
+                        this._adminBulkOrderDiv.removeClass("admin-success-blink");
+                    }, 500);
+                },
+                errorResponse => {
+                    this._errorResponse = errorResponse.responseJSON;
+                    this._adminTimePickerLabel.text(this._errorResponse.message);
+
+                    this._adminTimePicker.addClass("admin-inputField_time_error");
+                    this._adminActivateCatalogButton.addClass("admin-submitButton-disabled").removeClass("admin-submitButton-enabled");
+                    this._adminTimePickerLabel.show();
+                    this._adminBulkOrderDiv.addClass("admin-failure-blink");
+                    setTimeout(() =>
+                    {
+                        this._adminBulkOrderDiv.removeClass("admin-failure-blink");
+                    }, 500);
+                }
+            );*/
+
+        }
+
         private resetGUI(): void {
+            this._adminFileInput.hide();
             this._adminCardButton.off();
             this._adminCardButton.hover(function(){$(this).text("Derzeit ist keine Sammelbestellung aktiv");},function(){$(this).text("Warenkorb");});
             this._adminCardButton.removeClass("admin-button-enabled").addClass("admin-button-disabled");
@@ -198,6 +250,8 @@ namespace WebApplication.Admin.Overview
             this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
             this._adminActivateCatalogButton.text("Aktivieren");
             this._adminCardButton.on("click",function(){return false});
+            this._adminUploadCatalogButton.on("click", () => {this._adminFileInput.trigger("click");});
+            this._adminFileInput.on("change", () => this.uploadProductCatalog());
         }
 
         private getCurrentBulkOrder(): void

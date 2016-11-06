@@ -1,6 +1,6 @@
 class WebService
 {
-    public static userOrder = `${window.location.origin}/rest/userorder`;
+    public static shoppingCard = `${window.location.origin}/rest/admin/shoppingcard`;
     public static productCatalog = `${window.location.origin}/rest/productcatalog`;
     public static bulkOrder = `${window.location.origin}/rest/bulkorder`;
     public static user = `${window.location.origin}/rest/user`;
@@ -52,6 +52,8 @@ class AdminOverviewSelectors
     public static adminBulkOrderDiv = ".admin-container_bulkOrderDiv";
     public static adminPrintDiv = ".admin-container_printDiv";
     public static adminCatalogDiv = ".admin-container_catalogDiv";
+
+    public static adminFileInput= ".admin-inputField_file";
 
 }
 

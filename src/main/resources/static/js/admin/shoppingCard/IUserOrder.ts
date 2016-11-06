@@ -1,12 +1,27 @@
+
+interface IProductAdditionInfo{
+    additionalId: number;
+    description: string;
+}
+
+
+interface IProductAdditions extends Array<IProductAdditionInfo>{}
+
 interface IUserOrder
 {
-    orderId: number;
+    userOrderId: number;
+    userId: number;
     firstName: string;
     lastName: string;
     productId: number;
     productName: string;
-    productAdditions: string;
-    productVariation: string;
-    productPrice: string;
+    productVariationId: number;
+    productVariationName: string;
+    additionals: IProductAdditions;
+    sum: number;
+    paid: boolean;
+}
+
+interface IUserOrderPaid {
     paid: boolean;
 }
