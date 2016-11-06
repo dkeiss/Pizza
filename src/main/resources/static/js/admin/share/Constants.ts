@@ -62,3 +62,10 @@ class ShoppingCardSelectors {
     public static orderTableDeleteButton = ".card-orderTable_deleteButton";
 }
 
+class ErrorDialogSelectors
+{
+    public static container = ".core-serverError_container";
+    public static title = ".core-serverError_title";
+    public static text = ".core-serverError_text";
+    public static refreshButton = ".core-serverError_refreshButton";
+}

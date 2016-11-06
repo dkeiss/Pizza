@@ -1,4 +1,5 @@
 /// <reference path="../../thirdParty/jquery.d.ts" />
+/// <reference path="ShowErrorDialog.ts" />
 
 class WebServiceAccess
 {
@@ -12,10 +13,7 @@ class WebServiceAccess
             dataType: "json",
             async: false,
             success: onSuccess,
-            error: (xhr: JQueryXHR) =>
-            {
-                alert(xhr.statusText + " - " + xhr.status);
-            }
+            error: (xhr: JQueryXHR) => { new ShowErrorDialog(xhr) }
         });
     }
 
@@ -30,7 +28,7 @@ class WebServiceAccess
             data: JSON.stringify(postData),
             async: false,
             success: onSuccess,
-            error: onError
+            error: (xhr: JQueryXHR) => { new ShowErrorDialog(xhr) }
         });
     }
 
@@ -44,12 +42,8 @@ class WebServiceAccess
             dataType: "json",
             data: JSON.stringify(putData),
             async: false,
-            error: (xhr: JQueryXHR) =>
-            {
-                alert(xhr.statusText + " - " + xhr.status);
-                console.log(xhr);
-            },
-            success: onSuccess
+            success: onSuccess,
+            error: (xhr: JQueryXHR) => { new ShowErrorDialog(xhr) }
         });
     }
 
@@ -63,10 +57,7 @@ class WebServiceAccess
             dataType: "json",
             async: false,
             success: onSuccess,
-            error: (xhr: JQueryXHR) =>
-            {
-                alert(xhr.statusText + " - " + xhr.status);
-            }
+            error: (xhr: JQueryXHR) => { new ShowErrorDialog(xhr) }
         });
     }
 }
