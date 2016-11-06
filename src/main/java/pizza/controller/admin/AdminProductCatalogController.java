@@ -2,20 +2,22 @@ package pizza.controller.admin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import pizza.service.AdditionalService;
 import pizza.service.AdminProductCatalogService;
-import pizza.service.ProductCatalogService;
 import pizza.vo.product.menu.ProductCatalogFullVO;
 import pizza.vo.product.menu.ProductCatalogInfoVO;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.stream.Collectors;
+
 
 /**
  * Created by Daniel Keiss on 06.11.2016.
@@ -36,6 +38,21 @@ public class AdminProductCatalogController {
         String fileString = read(file.getInputStream());
         ProductCatalogFullVO productCatalogFull = objectMapper.readValue(fileString, ProductCatalogFullVO.class);
         return adminProductCatalogService.createProductCatalogFull(productCatalogFull);
+    }
+
+    @RequestMapping(value = "/download/{fileType}", method = RequestMethod.GET)
+    public HttpEntity<InputStreamResource> getFile(@PathVariable("fileType") String fileType, HttpServletResponse response) throws FileNotFoundException {
+        Path path = Paths.get("documentation/sample/json/product_catalog_full.json");
+        File file = path.toFile();
+
+        HttpHeaders header = new HttpHeaders();
+        header.setContentType(new MediaType("application", "json"));
+        header.set("Content-Disposition",
+                "attachment; filename=" + fileType + ".json");
+        header.setContentLength(file.length());
+
+        InputStreamResource isr = new InputStreamResource(new FileInputStream(file));
+        return new ResponseEntity<>(isr, header, HttpStatus.OK);
     }
 
     private static String read(InputStream input) throws IOException {
