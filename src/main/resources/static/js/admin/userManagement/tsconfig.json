@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     "outFile": "_app.js",
-    "sourceMap": false,
+    "sourceMap": true,
     "removeComments": true
   },
   "files": [
-    "../Constants.ts",
-    "../WebServiceAccess.ts",
+    "../share/Constants.ts",
+    "../share/WebServiceAccess.ts",
+    "../share/ErrorDialog.ts",
     "UserFunction.ts",
     "UserService.ts",
     "IUser.ts",

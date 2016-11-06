@@ -1,6 +1,6 @@
 /// <reference path="../../thirdParty/jquery.d.ts" />
-/// <reference path="../../Constants.ts" />
-/// <reference path="../../WebServiceAccess.ts" />
+/// <reference path="../share/Constants.ts" />
+/// <reference path="../share/WebServiceAccess.ts" />
 /// <reference path="IUser.ts" />
 
 namespace WebApplication.Admin.UserManagement
@@ -12,24 +12,19 @@ namespace WebApplication.Admin.UserManagement
             WebServiceAccess.ajaxGet(WebService.user, onSuccess);
         }
 
-        public static sendNewUser(sendNewUser: IAddNewUser, success: () => void)
+        public static sendNewUser(sendNewUser: IAddNewUser, onSuccess: () => void): void
         {
-            WebServiceAccess.ajaxPut(WebService.user, sendNewUser);
-            success();
+            WebServiceAccess.ajaxPut(WebService.user, sendNewUser, onSuccess);
         }
 
-        public static sendEditUser(sendEditUser: IEditUser, onSuccess: (success: boolean) => void): void
+        public static sendEditUser(sendEditUser: IEditUser, onSuccess: (success: IOnSuccess) => void): void
         {
-            // Todo: @Simon & @Daniel => Request definieren und testen
-            //WebServiceAccess.ajaxPost(WebService.user, sendEditUser, onSuccess, (error) => {alert(error); console.log(error);});
-            WebServiceAccess.ajaxPut(WebService.user + "/" + sendEditUser.userId, sendEditUser); // 405 error "Method Not Allowed"
+            WebServiceAccess.ajaxPut(WebService.user + "/" + sendEditUser.userId, sendEditUser, onSuccess);
         }
 
-        public static deleteUser(sendUserId: number, onSuccess: (success: boolean) => void): void
+        public static deleteUser(sendUserId: number, onSuccess: (success: IOnSuccess) => void): void
         {
-            // Todo: @Simon & @Daniel => Request definieren und testen
-            //onSuccess(true);
-            WebServiceAccess.ajaxDelete(WebService.user, sendUserId, (okay) => {console.log(okay)}); // 405 error "Method Not Allowed"
+            WebServiceAccess.ajaxDelete(WebService.user, sendUserId, onSuccess);
         }
     }
 }

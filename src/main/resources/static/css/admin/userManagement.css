@@ -162,10 +162,14 @@
     background-size: 16px;
 }
 
-.um-userTable-confirmIcon,
+.um-userTable-confirmIcon {
+    background: url(../../img/icon-access-green.png) no-repeat center;
+    background-size: 22px;
+}
+
 .um-userTable-aboardIcon {
-    background: url(../../img/pen.png) no-repeat center;
-    background-size: 16px;
+    background: url(../../img/icon-close-red.png) no-repeat center;
+    background-size: 22px;
 }
 
 .um-userTable-hiddenEditIcon .um-userTable-confirmIcon,
