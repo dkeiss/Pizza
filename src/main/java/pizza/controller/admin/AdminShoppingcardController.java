@@ -90,6 +90,15 @@ public class AdminShoppingcardController {
         return getResponseWithStatus(true);
     }
 
+    @RequestMapping(value = "/{userOrderId}", method = RequestMethod.DELETE)
+    public
+    @ResponseBody
+    Map deleteUserOrder(@PathVariable("userOrderId") Integer userOrderId) {
+        UserOrderVO userOrder = getUserOrderById(userOrderId);
+        userOrders.remove(userOrder);
+        return getResponseWithStatus(true);
+    }
+
     private UserOrderVO getUserOrderById(Integer userOrderId) {
         for (UserOrderVO userOrder : userOrders) {
             if (userOrder.getUserOrderId().equals(userOrderId)) {

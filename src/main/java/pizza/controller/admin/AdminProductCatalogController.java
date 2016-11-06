@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import pizza.service.AdminProductCatalogService;
+import pizza.service.exception.NotFoundException;
 import pizza.vo.product.menu.ProductCatalogFullVO;
 import pizza.vo.product.menu.ProductCatalogInfoVO;
 
@@ -42,8 +43,11 @@ public class AdminProductCatalogController {
 
     @RequestMapping(value = "/download/{fileType}", method = RequestMethod.GET)
     public HttpEntity<InputStreamResource> getFile(@PathVariable("fileType") String fileType, HttpServletResponse response) throws FileNotFoundException {
-        Path path = Paths.get("documentation/sample/json/product_catalog_full.json");
+        Path path = Paths.get("src/main/resources/static/json/product_catalog_" + fileType.toLowerCase() + ".json");
         File file = path.toFile();
+        if (!file.exists()) {
+            throw new NotFoundException();
+        }
 
         HttpHeaders header = new HttpHeaders();
         header.setContentType(new MediaType("application", "json"));
