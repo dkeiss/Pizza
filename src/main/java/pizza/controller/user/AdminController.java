@@ -35,6 +35,11 @@ public class AdminController {
         return authenticationValidator.checkAdminAuthentication(principal, model, "admin/usermanagement");
     }
 
+    @RequestMapping(value = "/admin/shoppingcard", method = RequestMethod.GET)
+    public String shoppingcard(Principal principal, Model model) {
+        return authenticationValidator.checkAdminAuthentication(principal, model, "admin/shoppingcard");
+    }
+
     @RequestMapping(value = "/admin/initialpassword", method = RequestMethod.GET)
     public String getInitialPasswordPage(Principal principal, Model model) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
