@@ -5,8 +5,8 @@
     "removeComments": true
   },
   "files": [
-    "../Constants.ts",
-    "../WebServiceAccess.ts",
+    "../../share/Constants.ts",
+    "../../share/WebServiceAccess.ts",
     "TableController.ts",
     "IUserOrder.ts",
     "ShoppingCardService.ts"

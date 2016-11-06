@@ -1,4 +1,4 @@
-/// <reference path="../../thirdParty/jquery.d.ts" />
+/// <reference path="../thirdParty/jquery.d.ts" />
 /// <reference path="ShowErrorDialog.ts" />
 
 class WebServiceAccess

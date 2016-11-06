@@ -1,6 +1,6 @@
 /// <reference path="../../thirdParty/jquery.d.ts" />
-/// <reference path="../share/Constants.ts" />
-/// <reference path="../share/WebServiceAccess.ts" />
+/// <reference path="../../share/Constants.ts" />
+/// <reference path="../../share/WebServiceAccess.ts" />
 /// <reference path="../productCatalog/IProductCatalog.ts" />
 /// <reference path="IAdmin.ts" />
 

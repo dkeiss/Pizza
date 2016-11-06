@@ -5,9 +5,9 @@
     "removeComments": true
   },
   "files": [
-    "../share/Constants.ts",
-    "../share/WebServiceAccess.ts",
-    "../share/ErrorDialog.ts",
+    "../../share/Constants.ts",
+    "../../share/WebServiceAccess.ts",
+    "../../share/ErrorDialog.ts",
     "UserFunction.ts",
     "UserService.ts",
     "IUser.ts",

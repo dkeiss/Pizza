@@ -1,5 +1,5 @@
 /// <reference path="../../thirdParty/jquery.d.ts" />
-/// <reference path="../share/Constants.ts" />
+/// <reference path="../../share/Constants.ts" />
 /// <reference path="IUserOrder.ts" />
 /// <reference path="ShoppingCardService.ts" />
 
