@@ -145,6 +145,14 @@ p {
 .core-serverError-text {
     display: block;
     width: 100%;
+    color: #fff;
+    padding: 10px 30px;
+    text-align: left;
+}
+
+.core-serverError-text span {
+    color: #ff0000;
+    padding: 0 10px 0 0;
 }
 
 .core-serverError-refreshButton {
@@ -155,4 +163,9 @@ p {
     cursor: pointer;
     text-transform: uppercase;
     border-top: 1px solid #fff;
+    display: none;
+}
+
+.core-serverError-refreshButton.core-serverError-showButton {
+    display: block;
 }
