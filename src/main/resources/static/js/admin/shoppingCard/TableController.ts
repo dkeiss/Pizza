@@ -56,26 +56,6 @@ namespace WebApplication.Admin.ShoppingCard
 
         private createTable() : void {
 
-            /*let rows = this._orderTableBody.find("tr");
-            this._tableData = new Array(rows.length);
-
-            for(let i = 0; i <rows.length; i++) {
-                let columns = $(rows[i]).find("td");
-                this._tableData[i] = new Array(columns.length+1);
-                for(let j = 0; j <columns.length; j++) {
-                    if(j==1 || j == 5)
-                        this._tableData[i][j] =  columns[j].innerText.replace(",",".").replace(" €", "");
-                    else if(j==6)
-                        this._tableData[i][j] = $(columns[j]).hasClass("sc-orderTable-paidIcon") ? "1" : "2";
-                    else
-                        this._tableData[i][j] = columns[j].innerText;
-                }
-                this._tableData[i][columns.length] = rows[i];
-            }*/
-
-
-
-
             this._tableData = new Array(this._orderList.length);
 
             for(let i = 0; i < this._orderList.length; i++) {
@@ -178,22 +158,13 @@ namespace WebApplication.Admin.ShoppingCard
         private sort(column: number): void
         {
             if(this._currentSortColumn == column) {
-                if ($(this._orderTableSortButton[column]).hasClass("sc-orderTable-sortUpIcon")){
-                    $(this._orderTableSortButton[column]).removeClass("sc-orderTable-sortUpIcon");
-                    $(this._orderTableSortButton[column]).addClass("sc-orderTable-sortDownIcon");
-                } else {
-                    $(this._orderTableSortButton[column]).addClass("sc-orderTable-sortUpIcon");
-                    $(this._orderTableSortButton[column]).removeClass("sc-orderTable-sortDownIcon");
-                }
+                let ascSort = $(this._orderTableSortButton[column]).hasClass("sc-orderTable-sortUpIcon");
+                $(this._orderTableSortButton[column]).toggleClass("sc-orderTable-sortUpIcon",!ascSort).toggleClass("sc-orderTable-sortDownIcon",ascSort);
                 this._tableData.reverse();
             } else {
-                for(let i = 0; i < this._orderTableSortButton.length; i++){
-                    $(this._orderTableSortButton[i]).removeClass("sc-orderTable-sortUpIcon");
-                    $(this._orderTableSortButton[i]).removeClass("sc-orderTable-sortDownIcon");
-                    $(this._orderTableSortButton[i]).addClass("sc-orderTable-sortIcon");
-                }
-                $(this._orderTableSortButton[column]).removeClass("sc-orderTable-sortIcon");
-                $(this._orderTableSortButton[column]).addClass("sc-orderTable-sortUpIcon");
+                for(let i = 0; i < this._orderTableSortButton.length; i++)
+                    $(this._orderTableSortButton[i]).removeClass("sc-orderTable-sortUpIcon").removeClass("sc-orderTable-sortDownIcon").addClass("sc-orderTable-sortIcon");
+                $(this._orderTableSortButton[column]).removeClass("sc-orderTable-sortIcon").addClass("sc-orderTable-sortUpIcon");
                 this._currentSortColumn = column;
                 this._tableData = this._tableData.sort((a,b) => this.sortByColumn(a,b));
             }

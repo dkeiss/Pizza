@@ -77,14 +77,12 @@ namespace WebApplication.Admin.Overview
 
             if (isValid) {
                 this._adminTimePicker.removeClass("admin-inputField_time_error");
-                this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled");
-                this._adminActivateCatalogButton.addClass("admin-submitButton-enabled");
+                this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled").addClass("admin-submitButton-enabled");
                 this._adminTimePickerLabel.hide();
                 this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
             } else {
                 this._adminTimePicker.addClass("admin-inputField_time_error");
-                this._adminActivateCatalogButton.addClass("admin-submitButton-disabled");
-                this._adminActivateCatalogButton.removeClass("admin-submitButton-enabled");
+                this._adminActivateCatalogButton.addClass("admin-submitButton-disabled").removeClass("admin-submitButton-enabled");
                 this._adminTimePickerLabel.text("Ungültige Uhrzeit");
                 this._adminTimePickerLabel.show();
                 this._adminBulkOrderDiv.addClass("admin-failure-blink");
@@ -133,8 +131,7 @@ namespace WebApplication.Admin.Overview
                         this._currentBulkOrder = bulkOrder;
 
                         this._adminTimePicker.removeClass("admin-inputField_time_error");
-                        this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled");
-                        this._adminActivateCatalogButton.addClass("admin-submitButton-enabled");
+                        this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled").addClass("admin-submitButton-enabled");
 
                         this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
                         this._adminTimePickerLabel.hide();
@@ -152,8 +149,7 @@ namespace WebApplication.Admin.Overview
                         this._adminTimePickerLabel.text(this._errorResponse.message);
 
                         this._adminTimePicker.addClass("admin-inputField_time_error");
-                        this._adminActivateCatalogButton.addClass("admin-submitButton-disabled");
-                        this._adminActivateCatalogButton.removeClass("admin-submitButton-enabled");
+                        this._adminActivateCatalogButton.addClass("admin-submitButton-disabled").removeClass("admin-submitButton-enabled");
                         this._adminTimePickerLabel.show();
                         this._adminBulkOrderDiv.addClass("admin-failure-blink");
                         setTimeout(() =>
@@ -175,7 +171,7 @@ namespace WebApplication.Admin.Overview
                 if(this._adminCatalogComboBox.children('option').length>0){
                     this._adminCatalogComboBox.show();
                     this._adminCatalogPrefixLabel.text("Warenkorb für");
-                    this._adminCatalogPostfixLabel.text(" aktivieren bis");
+                    this._adminCatalogPostfixLabel.text("aktivieren bis");
                     this._adminTimePicker.show();
                     this._adminTimePicker.prop('readonly', false);
                     this._adminTimePicker.on("change", () => this.validateTime());
@@ -186,8 +182,7 @@ namespace WebApplication.Admin.Overview
         private resetGUI(): void {
             this._adminCardButton.off();
             this._adminCardButton.hover(function(){$(this).text("Derzeit ist keine Sammelbestellung aktiv");},function(){$(this).text("Warenkorb");});
-            this._adminCardButton.removeClass("admin-button-enabled");
-            this._adminCardButton.addClass("admin-button-disabled");
+            this._adminCardButton.removeClass("admin-button-enabled").addClass("admin-button-disabled");
             this._adminTimePicker.hide();
             this._adminCatalogComboBox.hide();
             this._adminCardErrorLabel.hide();
@@ -217,8 +212,7 @@ namespace WebApplication.Admin.Overview
 
                 if(this._currentBulkOrder){
 
-                    this._adminCardButton.removeClass("admin-button-disabled");
-                    this._adminCardButton.addClass("admin-button-enabled");
+                    this._adminCardButton.removeClass("admin-button-disabled").addClass("admin-button-enabled");
                     this._adminCardButton.off();
                     //this._adminCardButton.on("click",function(){window.location.replace('/admin/ordermanagement')});
 

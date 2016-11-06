@@ -1,6 +1,6 @@
 #FileLock
-#Fri Nov 04 23:34:06 CET 2016
+#Sat Nov 05 22:56:20 CET 2016
 hostName=Hoshek
-id=158317a3e59fab8752c77c0a46b672b6ae1d64cacc5
+id=158367e0629aceaf1dba29a5fd53aff8937856bf7d5
 method=file
-server=192.168.42.171\:53271
+server=192.168.42.171\:55085
