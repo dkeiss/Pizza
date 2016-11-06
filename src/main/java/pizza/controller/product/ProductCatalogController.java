@@ -1,22 +1,14 @@
 package pizza.controller.product;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import pizza.service.ProductCatalogService;
-import pizza.vo.product.menu.*;
-import pizza.vo.product.menu.oldDELETE.*;
+import pizza.vo.product.menu.ProductCatalogFullVO;
+import pizza.vo.product.menu.ProductCatalogInfoVO;
+import pizza.vo.product.menu.ProductCatalogVO;
 
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.security.Principal;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -32,15 +24,15 @@ public class ProductCatalogController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public
     @ResponseBody
-    List<ProductCatalogInfoVO> listProductCataloges() throws IOException {
+    List<ProductCatalogInfoVO> listProductInfos() throws IOException {
         return productCatalogService.listProductCataloges();
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public
     @ResponseBody
-    ProductCatalogVO createMenu(@RequestBody ProductCatalogVO menuVO) throws IOException {
-        return productCatalogService.createProductCatalog(menuVO);
+    ProductCatalogVO createProductCatalog(@RequestBody ProductCatalogVO productCatalog) throws IOException {
+        return productCatalogService.createProductCatalog(productCatalog);
     }
 
     @RequestMapping(value = "{productCatalogId}", method = RequestMethod.GET)

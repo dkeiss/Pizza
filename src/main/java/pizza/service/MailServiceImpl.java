@@ -23,20 +23,26 @@ public class MailServiceImpl implements MailService {
     private UserRepository userRepository;
 
     @Override
-    public void sendBulkOrderInvitationToAll(String bulkOrderName) throws EmailException {
-        Email email = new SimpleEmail();
-        email.setHostName(smtpHost);
-        email.setSmtpPort(465);
-        email.setAuthenticator(new DefaultAuthenticator("whbpizza", "whb@pizza"));
-        email.setSSLOnConnect(true);
-        email.setFrom("whbpizza@gmail.com");
-        email.setSubject("Die Sammelbestellung für \"" + bulkOrderName + "\" ist eröffnet!");
-        email.setMsg("Bestellungen können nun aufgenommen werden :-)");
+    public void sendBulkOrderInvitationToAll(String bulkOrderName) {
+        new Thread(() -> {
+            try {
+                Email email = new SimpleEmail();
+                email.setHostName(smtpHost);
+                email.setSmtpPort(465);
+                email.setAuthenticator(new DefaultAuthenticator("whbpizza", "whb@pizza"));
+                email.setSSLOnConnect(true);
+                email.setFrom("whbpizza@gmail.com");
+                email.setSubject("Die Sammelbestellung für \"" + bulkOrderName + "\" ist eröffnet!");
+                email.setMsg("Bestellungen können nun aufgenommen werden :-)");
 
-        for (User user : userRepository.findAll()) {
-            email.addTo(user.getUserName());
-        }
+                for (User user : userRepository.findAll()) {
+                    email.addTo(user.getUserName());
+                }
 
-        email.send();
+                email.send();
+            } catch (EmailException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 }
