@@ -5,9 +5,8 @@
     <meta charset="utf-8"/>
     <title>Adminbereich</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge;"/>
-    <link href="../../static/css/admin/admin.css" th:href="@{/css/admin/admin.css}" rel="stylesheet" media="screen"/>
     <link href="../../static/css/_core.css" th:href="@{/css/_core.css}" rel="stylesheet" media="screen"/>
-
+    <link href="../../static/css/admin/admin.css" th:href="@{/css/admin/admin.css}" rel="stylesheet" media="screen"/>
     <script src="../../static/js/thirdParty/jquery-2.1.4.min.js" th:src="@{/js/thirdParty/jquery-2.1.4.min.js}"></script>
     <script src="../../static/js/admin/overview/_app.js" th:src="@{/js/admin/overview/_app.js}"></script>
 </head>
@@ -21,14 +20,16 @@
 </div>
 
 <div class="core-container-center">
-    <div class="admin-container-box admin-container_cardDiv">
-        <div class="admin-button admin-button-enabled admin-button_card">Warenkorb</div>
+    <div class="core-link-container-box admin-container_cardDiv">
+        <a href="/admin/ordermanagement" class="admin-button-enabled admin-button_card">Warenkorb</a>
+        <!--<div class="admin-button admin-button-enabled admin-button_card">Warenkorb</div>-->
         <label class="admin-errorLabel admin-errorlabel_card">errorText</label>
     </div>
 
 
-    <div class="admin-container-box admin-container_umnmtDiv">
-        <div class="admin-button admin-button-enabled admin-button_umgmt" onclick="window.location.replace('/admin/usermanagement')">Benutzerverwaltung</div>
+    <div class="core-link-container-box admin-container_umnmtDiv">
+        <a href="/admin/usermanagement" class="admin-button-enabled admin-button_umgmt">Benutzerverwaltung</a>
+        <!--<div class="admin-button admin-button-enabled admin-button_umgmt" onclick="window.location.replace('/admin/usermanagement')">Benutzerverwaltung</div>-->
         <label class="admin-errorLabel admin-errorlabel_umgmt">errorText</label>
     </div>
 
@@ -41,13 +42,15 @@
         <label class="admin-errorLableTimepicker admin-errorlabel_time">Ungültige Uhrzeit!</label>
     </div>
 
-    <div class="admin-container-box admin-container_printDiv">
-        <div class="admin-button admin-button-enabled admin-button_print">Druckinformationen bearbeiten</div>
+    <div class="core-link-container-box admin-container_printDiv">
+        <a href="#" class="admin-button-enabled admin-button_print">Druckinformationen bearbeiten</a>
+        <!--<div class="admin-button admin-button-enabled admin-button_print">Druckinformationen bearbeiten</div>-->
         <label class="admin-errorLabel admin-errorlabel_print">errorText</label>
     </div>
 
-    <div class="admin-container-box admin-container_catalogDiv">
-        <div class="admin-button admin-button-enabled admin-button_uploadcatalog">Produktkatalog hochladen</div>
+    <div class="core-link-container-box admin-container_catalogDiv">
+        <a href="#" class="admin-button-enabled admin-button_uploadcatalog">Produktkatalog hochladen</a>
+        <!--<div class="admin-button admin-button-enabled admin-button_uploadcatalog">Produktkatalog hochladen</div>-->
         <label class="admin-errorLabel admin-errorlabel_upload">errorText</label>
     </div>
 

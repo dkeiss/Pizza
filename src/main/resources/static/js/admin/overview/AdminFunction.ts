@@ -2,7 +2,7 @@
 /// <reference path="AdminService.ts" />
 /// <reference path="../share/Constants.ts" />
 /// <reference path="../productCatalog/IProductCatalog.ts" />
-/// <reference path="IBulkOrder.ts" />
+/// <reference path="IAdmin.ts" />
 
 
 namespace WebApplication.Admin.Overview
@@ -11,33 +11,24 @@ namespace WebApplication.Admin.Overview
     {
         new AdminFunction();
     });
-    /*$(document).ready(() =>
-    {
-        $('#timepicker.startTime').timepicker( {
-            hourText: 'Stunde',             // Define the locale text for "Hours"
-            minuteText: 'Minute',         // Define the locale text for "Minute"
-            amPmText: ['', ''],     // Display text for AM PM
-            showAnim: 'blind'
-        } );
-    });*/
 
     export class AdminFunction
     {
-        private _adminCardBtn: JQuery = null;
-        private _adminTimepicker: JQuery = null;
-        private _adminTimepickerLabel: JQuery = null;
-        private _adminUploadCatalogBtn: JQuery = null;
-        private _adminCatalogPostfixLbl: JQuery = null;
-        private _adminCatalogPrefixLbl: JQuery = null;
-        private _adminCatalogCB: JQuery = null;
-        private _adminCardErrorLbl: JQuery = null;
-        private _adminUMGMTErrorLbl: JQuery = null;
-        private _adminPrintErrorLbl: JQuery = null;
-        private _adminUploadErrorLbl: JQuery = null;
-        private _adminActivateCtlgBtn: JQuery = null;
+        private _adminCardButton: JQuery = null;
+        private _adminTimePicker: JQuery = null;
+        private _adminTimePickerLabel: JQuery = null;
+        private _adminUploadCatalogButton: JQuery = null;
+        private _adminCatalogPostfixLabel: JQuery = null;
+        private _adminCatalogPrefixLabel: JQuery = null;
+        private _adminCatalogComboBox: JQuery = null;
+        private _adminCardErrorLabel: JQuery = null;
+        private _adminUserManagementErrorLabel: JQuery = null;
+        private _adminPrintErrorLabel: JQuery = null;
+        private _adminUploadErrorLabel: JQuery = null;
+        private _adminActivateCatalogButton: JQuery = null;
 
         private _adminCardDiv: JQuery = null;
-        private _adminUMNMTDiv: JQuery = null;
+        private _adminUserManagementDiv: JQuery = null;
         private _adminBulkOrderDiv: JQuery = null;
         private _adminPrintDiv: JQuery = null;
         private _adminCatalogDiv: JQuery = null;
@@ -54,20 +45,20 @@ namespace WebApplication.Admin.Overview
         constructor()
         {
             console.log("test2");
-            this._adminCardBtn = $(AdminOverviewSelectors.adminCardBtn);
-            this._adminUploadCatalogBtn = $(AdminOverviewSelectors.adminUploadCatalogBtn);
-            this._adminTimepicker = $(AdminOverviewSelectors.adminTimepicker);
-            this._adminCatalogPrefixLbl = $(AdminOverviewSelectors.adminCatalogPrefixLbl);
-            this._adminCatalogPostfixLbl = $(AdminOverviewSelectors.adminCatalogPostfixLbl);
-            this._adminCatalogCB = $(AdminOverviewSelectors.adminCatalogCB);
-            this._adminCardErrorLbl = $(AdminOverviewSelectors.adminCardErrorLbl);
-            this._adminUMGMTErrorLbl = $(AdminOverviewSelectors.adminUMGMTErrorLbl);
-            this._adminPrintErrorLbl = $(AdminOverviewSelectors.adminPrintErrorLbl);
-            this._adminUploadErrorLbl = $(AdminOverviewSelectors.adminUploadErrorLbl);
-            this._adminTimepickerLabel = $(AdminOverviewSelectors.adminTimepickerLabel);
-            this._adminActivateCtlgBtn = $(AdminOverviewSelectors.adminActivateCtlgBtn);
+            this._adminCardButton = $(AdminOverviewSelectors.adminCardButton);
+            this._adminUploadCatalogButton = $(AdminOverviewSelectors.adminUploadCatalogButton);
+            this._adminTimePicker = $(AdminOverviewSelectors.adminTimePicker);
+            this._adminCatalogPrefixLabel = $(AdminOverviewSelectors.adminCatalogPrefixLabel);
+            this._adminCatalogPostfixLabel = $(AdminOverviewSelectors.adminCatalogPostfixLabel);
+            this._adminCatalogComboBox = $(AdminOverviewSelectors.adminCatalogComboBox);
+            this._adminCardErrorLabel = $(AdminOverviewSelectors.adminCardErrorLabel);
+            this._adminUserManagementErrorLabel = $(AdminOverviewSelectors.adminUserManagementErrorLabel);
+            this._adminPrintErrorLabel = $(AdminOverviewSelectors.adminPrintErrorLabel);
+            this._adminUploadErrorLabel = $(AdminOverviewSelectors.adminUploadErrorLabel);
+            this._adminTimePickerLabel = $(AdminOverviewSelectors.adminTimePickerLabel);
+            this._adminActivateCatalogButton = $(AdminOverviewSelectors.adminActivateCatalogButton);
             this._adminCardDiv = $(AdminOverviewSelectors.adminCardDiv);
-            this._adminUMNMTDiv = $(AdminOverviewSelectors.adminUMNMTDiv);
+            this._adminUserManagementDiv = $(AdminOverviewSelectors.adminUserManagementDiv);
             this._adminBulkOrderDiv = $(AdminOverviewSelectors.adminBulkOrderDiv);
             this._adminPrintDiv = $(AdminOverviewSelectors.adminPrintDiv);
             this._adminCatalogDiv = $(AdminOverviewSelectors.adminCatalogDiv);
@@ -79,23 +70,23 @@ namespace WebApplication.Admin.Overview
         }
 
         public validateTime() : boolean {
-            this._adminActivateCtlgBtn.off();
+            this._adminActivateCatalogButton.off();
             console.log("test2");
 
-            let isValid = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])$/.test(this._adminTimepicker.val());
+            let isValid = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])$/.test(this._adminTimePicker.val());
 
             if (isValid) {
-                this._adminTimepicker.removeClass("admin-inputField_time_error");
-                this._adminActivateCtlgBtn.removeClass("admin-submitButton-disabled");
-                this._adminActivateCtlgBtn.addClass("admin-submitButton-enabled");
-                this._adminTimepickerLabel.hide();
-                this._adminActivateCtlgBtn.on("click", () => this.activateBulkOrder());
+                this._adminTimePicker.removeClass("admin-inputField_time_error");
+                this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled");
+                this._adminActivateCatalogButton.addClass("admin-submitButton-enabled");
+                this._adminTimePickerLabel.hide();
+                this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
             } else {
-                this._adminTimepicker.addClass("admin-inputField_time_error");
-                this._adminActivateCtlgBtn.addClass("admin-submitButton-disabled");
-                this._adminActivateCtlgBtn.removeClass("admin-submitButton-enabled");
-                this._adminTimepickerLabel.text("Ungültige Uhrzeit");
-                this._adminTimepickerLabel.show();
+                this._adminTimePicker.addClass("admin-inputField_time_error");
+                this._adminActivateCatalogButton.addClass("admin-submitButton-disabled");
+                this._adminActivateCatalogButton.removeClass("admin-submitButton-enabled");
+                this._adminTimePickerLabel.text("Ungültige Uhrzeit");
+                this._adminTimePickerLabel.show();
                 this._adminBulkOrderDiv.addClass("admin-failure-blink");
                 setTimeout(() =>
                 {
@@ -112,52 +103,28 @@ namespace WebApplication.Admin.Overview
                     this.resetGUI();
                     this.getProductCatalogs();
                     this.getCurrentBulkOrder();
-                    this._adminCardDiv.addClass("admin-success-blink");
                     this._adminBulkOrderDiv.addClass("admin-success-blink");
                     setTimeout(() =>
                     {
-                        this._adminCardDiv.removeClass("admin-success-blink");
                         this._adminBulkOrderDiv.removeClass("admin-success-blink");
                     }, 500);
                 }}
-
-                /*,
-
-                bulkOrder => {
-                    console.log("deaktivated");
-                    this._currentBulkOrder = bulkOrder;
-                    this._adminTimepicker.toggleClass("admin-inputField_time_error",false);
-                    this._adminActivateCtlgBtn.toggleClass("admin-submitButton-disabled",false);
-                    this._adminActivateCtlgBtn.toggleClass("admin-submitButton-enabled",true);
-                    this._adminActivateCtlgBtn.on("click", () => this.activateBulkOrder());
-                    this._adminTimepickerLabel.hide();
-                },
-                errorResponse => {
-                    this._errorResponse = errorResponse.responseJSON;
-                    this._adminTimepickerLabel.text(this._errorResponse.message);
-                    this._adminTimepicker.toggleClass("admin-inputField_time_error",true);
-                    this._adminActivateCtlgBtn.toggleClass("admin-submitButton-disabled",true);
-                    this._adminActivateCtlgBtn.toggleClass("admin-submitButton-enabled",false);
-                    this._adminActivateCtlgBtn.off();
-                    this._adminTimepickerLabel.show();
-
-                }*/
             );
 
         }
 
         private activateBulkOrder(): void{
             if(this.validateTime()){
-                this._adminActivateCtlgBtn.off();
-                let time = this._adminTimepicker.val().split(":");
+                this._adminActivateCatalogButton.off();
+                let time = this._adminTimePicker.val().split(":");
                 let endDate = new Date();
                 endDate.setHours(time[0],time[1]);
 
 
                 let _newBulkOrder: IBulkOrder = {
                     bulkOrderId: -1,
-                    catalogId: this._availableProductCatalogs[this._adminCatalogCB.val()].productCatalogId,
-                    name: this._availableProductCatalogs[this._adminCatalogCB.val()].name,
+                    catalogId: this._availableProductCatalogs[this._adminCatalogComboBox.val()].productCatalogId,
+                    name: this._availableProductCatalogs[this._adminCatalogComboBox.val()].name,
                     activeUntil: endDate.getTime()
                 };
 
@@ -165,31 +132,29 @@ namespace WebApplication.Admin.Overview
                     bulkOrder => {
                         this._currentBulkOrder = bulkOrder;
 
-                        this._adminTimepicker.removeClass("admin-inputField_time_error");
-                        this._adminActivateCtlgBtn.removeClass("admin-submitButton-disabled");
-                        this._adminActivateCtlgBtn.addClass("admin-submitButton-enabled");
+                        this._adminTimePicker.removeClass("admin-inputField_time_error");
+                        this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled");
+                        this._adminActivateCatalogButton.addClass("admin-submitButton-enabled");
 
-                        this._adminActivateCtlgBtn.on("click", () => this.activateBulkOrder());
-                        this._adminTimepickerLabel.hide();
+                        this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
+                        this._adminTimePickerLabel.hide();
 
                         this.resetGUI();
                         this.getCurrentBulkOrder();
-                        this._adminCardDiv.addClass("admin-success-blink");
                         this._adminBulkOrderDiv.addClass("admin-success-blink");
                         setTimeout(() =>
                         {
-                            this._adminCardDiv.removeClass("admin-success-blink");
                             this._adminBulkOrderDiv.removeClass("admin-success-blink");
                         }, 500);
                     },
                     errorResponse => {
                         this._errorResponse = errorResponse.responseJSON;
-                        this._adminTimepickerLabel.text(this._errorResponse.message);
+                        this._adminTimePickerLabel.text(this._errorResponse.message);
 
-                        this._adminTimepicker.addClass("admin-inputField_time_error");
-                        this._adminActivateCtlgBtn.addClass("admin-submitButton-disabled");
-                        this._adminActivateCtlgBtn.removeClass("admin-submitButton-enabled");
-                        this._adminTimepickerLabel.show();
+                        this._adminTimePicker.addClass("admin-inputField_time_error");
+                        this._adminActivateCatalogButton.addClass("admin-submitButton-disabled");
+                        this._adminActivateCatalogButton.removeClass("admin-submitButton-enabled");
+                        this._adminTimePickerLabel.show();
                         this._adminBulkOrderDiv.addClass("admin-failure-blink");
                         setTimeout(() =>
                         {
@@ -204,39 +169,40 @@ namespace WebApplication.Admin.Overview
             AdminService.loadProductCatalogs(availableProductCatalogs => {
                 this._availableProductCatalogs = availableProductCatalogs;
                 for(let i = 0; i < this._availableProductCatalogs.length; i++) {
-                    this._adminCatalogCB.append( new Option(this._availableProductCatalogs[i].name,i.toString()));
+                    this._adminCatalogComboBox.append( new Option(this._availableProductCatalogs[i].name,i.toString()));
                 }
-                console.log(this._adminCatalogCB.children('option').length);
-                if(this._adminCatalogCB.children('option').length>0){
-                    this._adminCatalogCB.show();
-                    this._adminCatalogPrefixLbl.text("Warenkorb für");
-                    this._adminCatalogPostfixLbl.text(" aktivieren bis");
-                    this._adminTimepicker.show();
-                    this._adminTimepicker.prop('readonly', false);
-                    this._adminTimepicker.on("change", () => this.validateTime());
+                console.log(this._adminCatalogComboBox.children('option').length);
+                if(this._adminCatalogComboBox.children('option').length>0){
+                    this._adminCatalogComboBox.show();
+                    this._adminCatalogPrefixLabel.text("Warenkorb für");
+                    this._adminCatalogPostfixLabel.text(" aktivieren bis");
+                    this._adminTimePicker.show();
+                    this._adminTimePicker.prop('readonly', false);
+                    this._adminTimePicker.on("change", () => this.validateTime());
                 }
             });
         }
 
         private resetGUI(): void {
-            this._adminCardBtn.off();
-            this._adminCardBtn.hover(function(){$(this).text("Derzeit ist keine Sammelbestellung aktiv");},function(){$(this).text("Warenkorb");});
-            this._adminCardBtn.removeClass("admin-button-enabled");
-            this._adminCardBtn.addClass("admin-button-disabled");
-            this._adminTimepicker.hide();
-            this._adminCatalogCB.hide();
-            this._adminCardErrorLbl.hide();
-            this._adminUMGMTErrorLbl.hide();
-            this._adminPrintErrorLbl.hide();
-            this._adminUploadErrorLbl.hide();
-            this._adminTimepickerLabel.hide();
-            this._adminCatalogCB.empty();
-            this._adminTimepicker.val("");
-            this._adminCatalogPostfixLbl.show();
+            this._adminCardButton.off();
+            this._adminCardButton.hover(function(){$(this).text("Derzeit ist keine Sammelbestellung aktiv");},function(){$(this).text("Warenkorb");});
+            this._adminCardButton.removeClass("admin-button-enabled");
+            this._adminCardButton.addClass("admin-button-disabled");
+            this._adminTimePicker.hide();
+            this._adminCatalogComboBox.hide();
+            this._adminCardErrorLabel.hide();
+            this._adminUserManagementErrorLabel.hide();
+            this._adminPrintErrorLabel.hide();
+            this._adminUploadErrorLabel.hide();
+            this._adminTimePickerLabel.hide();
+            this._adminCatalogComboBox.empty();
+            this._adminTimePicker.val("");
+            this._adminCatalogPostfixLabel.show();
             this._currentBulkOrder = null;
-            this._adminActivateCtlgBtn.off();
-            this._adminActivateCtlgBtn.on("click", () => this.activateBulkOrder());
-            this._adminActivateCtlgBtn.text("Aktivieren");
+            this._adminActivateCatalogButton.off();
+            this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
+            this._adminActivateCatalogButton.text("Aktivieren");
+            this._adminCardButton.on("click",function(){return false});
         }
 
         private getCurrentBulkOrder(): void
@@ -251,24 +217,24 @@ namespace WebApplication.Admin.Overview
 
                 if(this._currentBulkOrder){
 
-                    this._adminCardBtn.removeClass("admin-button-disabled");
-                    this._adminCardBtn.addClass("admin-button-enabled");
-                    this._adminCardBtn.off();
-                    this._adminCardBtn.on("click",function(){window.location.replace('/admin/ordermanagement')});
+                    this._adminCardButton.removeClass("admin-button-disabled");
+                    this._adminCardButton.addClass("admin-button-enabled");
+                    this._adminCardButton.off();
+                    //this._adminCardButton.on("click",function(){window.location.replace('/admin/ordermanagement')});
 
-                    this._adminCatalogCB.hide();
-                    this._adminCatalogPostfixLbl.hide();
+                    this._adminCatalogComboBox.hide();
+                    this._adminCatalogPostfixLabel.hide();
 
-                    this._adminCatalogPrefixLbl.text("Warenkorb \""+this._currentBulkOrder.name+"\" ist noch aktiv bis");
-                    this._adminTimepicker.show();
-                    this._adminTimepicker.prop('readonly',true);
+                    this._adminCatalogPrefixLabel.text("Warenkorb \""+this._currentBulkOrder.name+"\" ist noch aktiv bis");
+                    this._adminTimePicker.show();
+                    this._adminTimePicker.prop('readonly',true);
                     console.log(new Date(this._currentBulkOrder.activeUntil).toString());
-                    this._adminTimepicker.val(new Date(this._currentBulkOrder.activeUntil).toTimeString().substr(0,5));
-                    this._adminTimepicker.off();
+                    this._adminTimePicker.val(new Date(this._currentBulkOrder.activeUntil).toTimeString().substr(0,5));
+                    this._adminTimePicker.off();
 
-                    this._adminActivateCtlgBtn.off();
-                    this._adminActivateCtlgBtn.text("Abbrechen");
-                    this._adminActivateCtlgBtn.on("click", () => this.deaktivateBulkOrder());
+                    this._adminActivateCatalogButton.off();
+                    this._adminActivateCatalogButton.text("Abbrechen");
+                    this._adminActivateCatalogButton.on("click", () => this.deaktivateBulkOrder());
                 }
             });
         }

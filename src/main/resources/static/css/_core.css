@@ -8,12 +8,18 @@ body {
 
 a {
     color: #3595b4;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-transform:uppercase;
     text-decoration: none;
+    /*color: #3595b4;
+    text-decoration: none;*/
 }
-
+/*
 a:hover {
     text-decoration: underline;
-}
+}*/
 
 p {
     float: left;
@@ -54,6 +60,13 @@ p {
 .core-container-boxBody {
     padding: 10px;
     overflow: hidden;
+}
+
+.core-link-container-box{
+    background-color: #FFFFFF;
+    overflow: hidden;
+    margin: 30px 0 0px 0;
+    border: 1px solid #c4c8ca;
 }
 
 .core-inputField {
