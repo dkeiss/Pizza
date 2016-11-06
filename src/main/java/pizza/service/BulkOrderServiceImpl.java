@@ -46,11 +46,7 @@ public class BulkOrderServiceImpl implements BulkOrderService {
         bulkOrderBO = bulkOrderRepository.save(bulkOrderBO);
         bulkOrderVO = copyFromBusinessObject(bulkOrderBO, bulkOrderVO);
 
-        try {
-            mailService.sendBulkOrderInvitationToAll(bulkOrderVO.getName());
-        } catch (EmailException e) {
-            e.printStackTrace();
-        }
+        mailService.sendBulkOrderInvitationToAll(bulkOrderVO.getName());
 
         return bulkOrderVO;
     }
