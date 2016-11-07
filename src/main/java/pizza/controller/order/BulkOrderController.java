@@ -1,14 +1,9 @@
 package pizza.controller.order;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import pizza.controller.ResponseUtil;
-import pizza.repositories.BulkOrderRepository;
 import pizza.service.BulkOrderService;
-import pizza.vo.order.OrderActivateVO;
 import pizza.vo.order.BulkOrderVO;
 
 import java.util.*;
@@ -42,12 +37,15 @@ public class BulkOrderController {
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.GET)
     public
     @ResponseBody
-    ResponseEntity<BulkOrderVO> getBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
-        BulkOrderVO bulkOrderVO = bulkOrderService.getBulkOrderById(bulkorderId);
-        if (bulkOrderVO == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(bulkOrderVO, HttpStatus.OK);
+    BulkOrderVO getBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
+        return bulkOrderService.getBulkOrderById(bulkorderId);
+    }
+
+    @RequestMapping(value = "/active", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    BulkOrderVO getActiveBulkOrder() {
+        return bulkOrderService.getActiveBulkOrder();
     }
 
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.PUT)

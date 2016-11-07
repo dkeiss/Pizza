@@ -6,6 +6,7 @@ import pizza.domain.product.ProductCatalog;
 import pizza.repositories.ProductCatalogRepository;
 import pizza.service.common.ObjectMapperUtil;
 import pizza.service.exception.NotFoundException;
+import pizza.vo.order.BulkOrderVO;
 import pizza.vo.product.menu.ProductCatalogInfoVO;
 import pizza.vo.product.menu.ProductCatalogVO;
 
@@ -23,6 +24,9 @@ import static pizza.service.common.ProductValueToBusinessObjectConverter.getProd
 public class ProductCatalogServiceImpl implements ProductCatalogService {
 
     @Autowired
+    private BulkOrderService bulkOrderService;
+
+    @Autowired
     private ProductCatalogRepository productCatalogRepository;
 
     @Override
@@ -38,8 +42,8 @@ public class ProductCatalogServiceImpl implements ProductCatalogService {
     }
 
     @Override
-    public ProductCatalogVO getProductCatalog(Integer id) {
-        ProductCatalog productCatalog = productCatalogRepository.findOne(id);
+    public ProductCatalogVO getProductCatalog(Integer productCatalogId) {
+        ProductCatalog productCatalog = productCatalogRepository.findOne(productCatalogId);
         if (productCatalog == null) {
             throw new NotFoundException();
         }
@@ -49,6 +53,20 @@ public class ProductCatalogServiceImpl implements ProductCatalogService {
     @Override
     public List<ProductCatalogInfoVO> listProductCataloges() {
         return copyListFromBusinessObject(productCatalogRepository.findAll(), ProductCatalogInfoVO.class);
+    }
+
+    @Override
+    public boolean productCatalogExists(Integer productCatalogId) {
+        return productCatalogRepository.findOne(productCatalogId) != null;
+    }
+
+    @Override
+    public ProductCatalogVO getActiveProductCatalog() {
+        BulkOrderVO activeBulkOrder = bulkOrderService.getActiveBulkOrder();
+        if (activeBulkOrder == null) {
+            throw new NotFoundException();
+        }
+        return getProductCatalog(activeBulkOrder.getCatalogId());
     }
 
 }

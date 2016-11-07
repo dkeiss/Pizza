@@ -12,8 +12,12 @@ public interface ProductCatalogService {
 
     ProductCatalogVO createProductCatalog(ProductCatalogVO menuVO);
 
-    ProductCatalogVO getProductCatalog(Integer id);
+    ProductCatalogVO getProductCatalog(Integer productCatalogId);
 
     List<ProductCatalogInfoVO> listProductCataloges();
+
+    boolean productCatalogExists(Integer productCatalogId);
+
+    ProductCatalogVO getActiveProductCatalog();
 
 }
