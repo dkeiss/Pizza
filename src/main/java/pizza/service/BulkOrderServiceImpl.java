@@ -1,14 +1,13 @@
 package pizza.service;
 
-import org.apache.commons.mail.EmailException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import pizza.domain.order.BulkOrder;
 import pizza.repositories.BulkOrderRepository;
-import pizza.service.common.ObjectMapperUtil;
 import pizza.service.exception.BulkOrderActiveUntilNotValidException;
 import pizza.service.exception.BulkOrderAlreadyActiveException;
+import pizza.service.exception.BulkOrderProductCatalogNotExistsException;
 import pizza.service.exception.NotFoundException;
 import pizza.vo.order.BulkOrderVO;
 
@@ -27,6 +26,9 @@ public class BulkOrderServiceImpl implements BulkOrderService {
 
     @Autowired
     private BulkOrderRepository bulkOrderRepository;
+
+    @Autowired
+    private ProductCatalogService productCatalogService;
 
     @Autowired
     private MailService mailService;
@@ -80,9 +82,36 @@ public class BulkOrderServiceImpl implements BulkOrderService {
         bulkOrderRepository.save(bulkOrder);
     }
 
+    @Override
+    public BulkOrderVO getActiveBulkOrder() {
+        BulkOrder activeBulkOrder = findActiveBulkOrder();
+        if(activeBulkOrder == null){
+            throw new NotFoundException();
+        }
+        return copyFromBusinessObject(activeBulkOrder, new BulkOrderVO());
+    }
+
+    public BulkOrder findActiveBulkOrder() {
+        List<BulkOrder> activeBulkOrders = bulkOrderRepository.findByActiveUntilGreaterThan(new Date());
+        if(activeBulkOrders.isEmpty()){
+            return null;
+        }
+        if(activeBulkOrders.size() > 1){
+            throw new RuntimeException("More than one bulk order active. Please contact your administrator!");
+        }
+        return activeBulkOrders.get(0);
+    }
+
     private void isValid(BulkOrderVO bulkOrder) {
         isActiveUntilValid(bulkOrder);
         isAnotherBulkOrderActive();
+        productCatalogExists(bulkOrder.getCatalogId());
+    }
+
+    private void productCatalogExists(Integer productCatalogId) {
+        if (!productCatalogService.productCatalogExists(productCatalogId)) {
+            throw new BulkOrderProductCatalogNotExistsException();
+        }
     }
 
     private void isActiveUntilValid(BulkOrderVO bulkOrder) {

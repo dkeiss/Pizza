@@ -42,4 +42,11 @@ public class ProductCatalogController {
         return productCatalogService.getProductCatalog(productCatalogId);
     }
 
+    @RequestMapping(value = "active", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    ProductCatalogVO getActiveProductCatalog() throws IOException {
+        return productCatalogService.getActiveProductCatalog();
+    }
+
 }
