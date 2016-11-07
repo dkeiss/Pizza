@@ -71,6 +71,30 @@ namespace WebApplication.Admin.Overview
 
         }
 
+        private resetGUI(): void {
+            this._adminFileInput.hide();
+            this._adminCardButton.off();
+            this._adminCardButton.hover(function(){$(this).text("Derzeit ist keine Sammelbestellung aktiv");},function(){$(this).text("Warenkorb");});
+            this._adminCardButton.removeClass("admin-button-enabled").addClass("admin-button-disabled");
+            this._adminTimePicker.hide();
+            this._adminCatalogComboBox.hide();
+            this._adminCardErrorLabel.hide();
+            this._adminUserManagementErrorLabel.hide();
+            this._adminPrintErrorLabel.hide();
+            this._adminUploadErrorLabel.hide();
+            this._adminTimePickerLabel.hide();
+            this._adminCatalogComboBox.empty();
+            this._adminTimePicker.val("");
+            this._adminCatalogPostfixLabel.show();
+            this._currentBulkOrder = null;
+            this._adminActivateCatalogButton.off();
+            this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
+            this._adminActivateCatalogButton.text("Aktivieren");
+            this._adminCardButton.on("click",function(){return false});
+            this._adminUploadCatalogButton.on("click", () => {this._adminFileInput.trigger("click");});
+            this._adminFileInput.on("change", () => this.uploadProductCatalog());
+        }
+
         public validateTime() : boolean {
             this._adminActivateCatalogButton.off();
             console.log("time");
@@ -98,6 +122,13 @@ namespace WebApplication.Admin.Overview
         }
 
         private deaktivateBulkOrder(): void{
+            this._adminCatalogPrefixLabel.addClass("hide");
+            this._adminCatalogPostfixLabel.addClass("hide");
+            this._adminTimePicker.addClass("hide");
+            this._adminCatalogComboBox.addClass("hide");
+            this._adminActivateCatalogButton.addClass("hide");
+            this._adminBulkOrderDiv.addClass("admin-loading");
+
             AdminService.deactivateBulkOrder(this._currentBulkOrder.bulkOrderId, success => {
                 if (success){
                     this.resetGUI();
@@ -108,6 +139,13 @@ namespace WebApplication.Admin.Overview
                     {
                         this._adminBulkOrderDiv.removeClass("admin-success-blink");
                     }, 500);
+
+                    this._adminCatalogPrefixLabel.removeClass("hide");
+                    this._adminCatalogPostfixLabel.removeClass("hide");
+                    this._adminTimePicker.removeClass("hide");
+                    this._adminCatalogComboBox.removeClass("hide");
+                    this._adminActivateCatalogButton.removeClass("hide");
+                    this._adminBulkOrderDiv.removeClass("admin-loading");
                 }}
             );
 
@@ -128,6 +166,13 @@ namespace WebApplication.Admin.Overview
                     activeUntil: endDate.getTime()
                 };
 
+                this._adminCatalogPrefixLabel.addClass("hide");
+                this._adminCatalogPostfixLabel.addClass("hide");
+                this._adminTimePicker.addClass("hide");
+                this._adminCatalogComboBox.addClass("hide");
+                this._adminActivateCatalogButton.addClass("hide");
+                this._adminBulkOrderDiv.addClass("admin-loading");
+
                 AdminService.activateBulkOrder(_newBulkOrder,
                     bulkOrder => {
                         this._currentBulkOrder = bulkOrder;
@@ -145,6 +190,13 @@ namespace WebApplication.Admin.Overview
                         {
                             this._adminBulkOrderDiv.removeClass("admin-success-blink");
                         }, 500);
+
+                        this._adminCatalogPrefixLabel.removeClass("hide");
+                        this._adminCatalogPostfixLabel.removeClass("hide");
+                        this._adminTimePicker.removeClass("hide");
+                        this._adminCatalogComboBox.removeClass("hide");
+                        this._adminActivateCatalogButton.removeClass("hide");
+                        this._adminBulkOrderDiv.removeClass("admin-loading");
                     },
                     errorResponse => {
                         this._errorResponse = errorResponse.responseJSON;
@@ -158,6 +210,13 @@ namespace WebApplication.Admin.Overview
                         {
                             this._adminBulkOrderDiv.removeClass("admin-failure-blink");
                         }, 500);
+
+                        this._adminCatalogPrefixLabel.removeClass("hide");
+                        this._adminCatalogPostfixLabel.removeClass("hide");
+                        this._adminTimePicker.removeClass("hide");
+                        this._adminCatalogComboBox.removeClass("hide");
+                        this._adminActivateCatalogButton.removeClass("hide");
+                        this._adminBulkOrderDiv.removeClass("admin-loading");
                     }
                 );
             }
@@ -182,77 +241,68 @@ namespace WebApplication.Admin.Overview
         }
 
         private uploadProductCatalog(): void {
-            let filename = this._adminFileInput.val();
-            console.log(filename);
 
-            var data = new FormData();
-            data.append("file",filename);
+            /* Workaround: (this._adminFileInput[0] as any).files[0] instead of this._adminFileInput[0].files[0] because
+               Typescript doesn't know the property "files" at HTMLElements
+               -> Update of Typescript should fix this
+            */
+            let file = (this._adminFileInput[0] as any).files[0];
 
-            /*AdminService.uploadProductCatalog(data, success =>  {
-                console.log("success");
-            }, error => {});*/
+            let formData = new FormData();
+            formData.append('file',file);
 
-            /*jQuery.each(jQuery('#file')[0].files, function(i, file) {
-                data.append('file-'+i, file);
-            });*/
-            /*AdminService.activateBulkOrder(_newBulkOrder,
-                bulkOrder => {
-                    this._currentBulkOrder = bulkOrder;
+            this._adminUploadCatalogButton.addClass("hide");
+            this._adminCatalogDiv.addClass("admin-loading");
 
-                    this._adminTimePicker.removeClass("admin-inputField_time_error");
-                    this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled").addClass("admin-submitButton-enabled");
 
-                    this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
-                    this._adminTimePickerLabel.hide();
+            AdminService.uploadProductCatalog(formData,onSuccess => {
+                this._adminUploadCatalogButton.removeClass("hide");
+                this._adminCatalogDiv.removeClass("admin-loading");
+                this._adminCatalogDiv.addClass("admin-success-blink");
+                setTimeout(() =>
+                {
+                    this._adminCatalogDiv.removeClass("admin-success-blink");
+                }, 500);
+            },onError => {
+                this._adminUploadCatalogButton.removeClass("hide");
+                this._adminCatalogDiv.removeClass("admin-loading");
+            });
 
-                    this.resetGUI();
-                    this.getCurrentBulkOrder();
-                    this._adminBulkOrderDiv.addClass("admin-success-blink");
-                    setTimeout(() =>
-                    {
-                        this._adminBulkOrderDiv.removeClass("admin-success-blink");
-                    }, 500);
-                },
-                errorResponse => {
-                    this._errorResponse = errorResponse.responseJSON;
-                    this._adminTimePickerLabel.text(this._errorResponse.message);
 
-                    this._adminTimePicker.addClass("admin-inputField_time_error");
-                    this._adminActivateCatalogButton.addClass("admin-submitButton-disabled").removeClass("admin-submitButton-enabled");
-                    this._adminTimePickerLabel.show();
-                    this._adminBulkOrderDiv.addClass("admin-failure-blink");
-                    setTimeout(() =>
-                    {
-                        this._adminBulkOrderDiv.removeClass("admin-failure-blink");
-                    }, 500);
+           /* $.ajax({
+                type: "POST",
+                url: WebService.adminProductCatalog + "/upload",
+                scriptCharset: "utf-8",
+                contentType: false,
+                processData: false,
+                cache: false,
+                data: formData,
+                async: true,
+                success: function(result){console.log("success")},
+                error: (xhr: JQueryXHR) => { new ShowErrorDialog(xhr) },
+                xhr: function() {
+                    var xhr = $.ajaxSettings.xhr();
+                    if(xhr.upload){
+                        console.log("pgorgress4");
+                        xhr.upload.addEventListener("progress",function(event) {
+                            console.log("pgorgress3");
+                            if (event.lengthComputable) {
+                                let percentComplete = event.loaded / event.total;
+                                let ausgabe = Math.ceil((event.loaded / event.total) * 100) + '%';
+                                console.log(percentComplete + "#" + ausgabe);
+                                $('#_progress').width(Math.ceil((event.loaded / event.total) * 100) + '%');
+                            }
+                        },false);
+                    return xhr;
+                    }
                 }
-            );*/
-
+            });*/
         }
 
-        private resetGUI(): void {
-            this._adminFileInput.hide();
-            this._adminCardButton.off();
-            this._adminCardButton.hover(function(){$(this).text("Derzeit ist keine Sammelbestellung aktiv");},function(){$(this).text("Warenkorb");});
-            this._adminCardButton.removeClass("admin-button-enabled").addClass("admin-button-disabled");
-            this._adminTimePicker.hide();
-            this._adminCatalogComboBox.hide();
-            this._adminCardErrorLabel.hide();
-            this._adminUserManagementErrorLabel.hide();
-            this._adminPrintErrorLabel.hide();
-            this._adminUploadErrorLabel.hide();
-            this._adminTimePickerLabel.hide();
-            this._adminCatalogComboBox.empty();
-            this._adminTimePicker.val("");
-            this._adminCatalogPostfixLabel.show();
-            this._currentBulkOrder = null;
-            this._adminActivateCatalogButton.off();
-            this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
-            this._adminActivateCatalogButton.text("Aktivieren");
-            this._adminCardButton.on("click",function(){return false});
-            this._adminUploadCatalogButton.on("click", () => {this._adminFileInput.trigger("click");});
-            this._adminFileInput.on("change", () => this.uploadProductCatalog());
-        }
+        /*private uploadProgressEvent(event: any): void
+        {
+
+        }*/
 
         private getCurrentBulkOrder(): void
         {

@@ -60,7 +60,26 @@ class WebServiceAccess
             error: (xhr: JQueryXHR) => { new ShowErrorDialog(xhr) }
         });
     }
+
+    public static ajaxPostMultipart(webServiceMethod: string, postData: any, onSuccess: (xhr: any) => void, onError?: (xhr: any) => void)
+    {
+        $.ajax({
+            type: "POST",
+            url: webServiceMethod,
+            scriptCharset: "utf-8",
+            contentType: false,
+            processData: false,
+            cache: false,
+            data: postData,
+            async: false,
+            success: onSuccess,
+            error: (xhr: JQueryXHR) => { new ShowErrorDialog(xhr) }
+        });
+    }
 }
+
+
+
 
 interface IOnSuccess
 {

@@ -32,10 +32,10 @@ namespace WebApplication.Admin.Overview
             WebServiceAccess.ajaxGet(WebService.productCatalog, onSuccess);
         }
 
-        public static uploadProductCatalog(file: string, onSuccess: (fileUpload: any) => void, onError: (xhr: any) => void): void
+        public static uploadProductCatalog(formData: any, onSuccess: (success: IOnSuccess) => void, onError: (xhr: any) => void): void
         {
             console.log("post");
-            WebServiceAccess.ajaxPost(WebService.bulkOrder,file, onSuccess, onError);
+            WebServiceAccess.ajaxPostMultipart(WebService.adminProductCatalog + "/upload",formData, onSuccess, onError);
         }
     }
 }

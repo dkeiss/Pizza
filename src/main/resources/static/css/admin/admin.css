@@ -33,6 +33,7 @@
 .admin-button-disabled{
     color: #dddddd;
     cursor: not-allowed;
+    border: solid 1px #fff;
 }
 
 .core-container-box-button{
@@ -135,4 +136,13 @@
 
 @keyframes failure-blink {
     5%  {background-color: #f88;}
+}
+
+.admin-loading{
+    background: url(../../img/loader.gif) no-repeat center;
+    background-size: 32px;
+}
+
+.hide{
+    opacity: 0.2;
 }

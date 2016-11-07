@@ -1,6 +1,7 @@
 class WebService
 {
     public static shoppingCard = `${window.location.origin}/rest/admin/shoppingcard`;
+    public static adminProductCatalog = `${window.location.origin}/rest/admin/productcatalog`;
     public static productCatalog = `${window.location.origin}/rest/productcatalog`;
     public static bulkOrder = `${window.location.origin}/rest/bulkorder`;
     public static user = `${window.location.origin}/rest/user`;
