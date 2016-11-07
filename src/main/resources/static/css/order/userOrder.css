@@ -1,0 +1,13 @@
+@import url("../_core.css");
+
+.userOrder-menu-container {
+
+}
+
+.userOrder-menu-container div {
+    float: left;
+    padding: 10px 20px;
+    background-color: aliceblue;
+    margin: 0 6px 6px 6px;
+    cursor: pointer;
+}

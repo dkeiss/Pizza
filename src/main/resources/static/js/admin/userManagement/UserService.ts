@@ -1,6 +1,6 @@
 /// <reference path="../../thirdParty/jquery.d.ts" />
-/// <reference path="../../Constants.ts" />
-/// <reference path="../../WebServiceAccess.ts" />
+/// <reference path="../../share/Constants.ts" />
+/// <reference path="../../share/WebServiceAccess.ts" />
 /// <reference path="IUser.ts" />
 
 namespace WebApplication.Admin.UserManagement
@@ -9,19 +9,22 @@ namespace WebApplication.Admin.UserManagement
     {
         public static loadUserTable(onSuccess: (userList: IUserList) => void): void
         {
-            WebServiceAccess.ajaxGet(WebService.url + "users", onSuccess);
+            WebServiceAccess.ajaxGet(WebService.user, onSuccess);
         }
 
-        public static sendEditUser(sendEditUser: IEditUser, onSuccess: (success: boolean) => void): void
+        public static sendNewUser(sendNewUser: IAddNewUser, onSuccess: () => void): void
         {
-            // Todo: @Simon & @Daniel => Request definieren und testen
-            onSuccess(true);
+            WebServiceAccess.ajaxPost(WebService.user, sendNewUser, onSuccess);
         }
 
-        public static deleteUser(sendUserId: number, onSuccess: (success: boolean) => void): void
+        public static sendEditUser(sendEditUser: IEditUser, onSuccess: (success: IOnSuccess) => void): void
         {
-            // Todo: @Simon & @Daniel => Request definieren und testen
-            onSuccess(true);
+            WebServiceAccess.ajaxPut(WebService.user + "/" + sendEditUser.userId, sendEditUser, onSuccess);
+        }
+
+        public static deleteUser(sendUserId: number, onSuccess: (success: IOnSuccess) => void): void
+        {
+            WebServiceAccess.ajaxDelete(WebService.user, sendUserId, onSuccess);
         }
     }
 }

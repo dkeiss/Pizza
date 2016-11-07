@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outFile": "_app.js",
+    "sourceMap": true,
+    "removeComments": true
+  },
+  "files": [
+    "../share/Constants.ts",
+    "../share/WebServiceAccess.ts",
+    "../share/ErrorDialog.ts",
+    "IProductCatalog.ts",
+    "OrderFunction.ts",
+    "CreateProductCatalogHtml"
+  ]
+}

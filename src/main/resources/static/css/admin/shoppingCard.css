@@ -1,0 +1,150 @@
+@import url("../_core.css");
+
+.sc-orderTable {
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.sc-orderTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.sc-orderTable th {
+    text-transform: uppercase;
+    text-align: left;
+    background-color: #3595B4;
+    color: white;
+    font-size: 12px;
+}
+
+.sc-orderTable-headlines th:nth-child(1),
+.sc-orderTable-headlines th:nth-child(2),
+.sc-orderTable-headlines th:nth-child(3),
+.sc-orderTable-headlines th:nth-child(4),
+.sc-orderTable-headlines th:nth-child(5),
+.sc-orderTable-headlines th:nth-child(6),
+.sc-orderTable-headlines th:nth-child(7){
+    cursor: pointer;
+}
+
+
+.sc-orderTable th,
+.sc-orderTable td {
+    border: 1px solid black;
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.sc-orderTable td:nth-child(6){
+    text-align: right;
+}
+
+.sc-orderTable-headlines th:nth-child(2),
+.sc-orderTable-headlines th:nth-child(7),
+.sc-orderTable-headlines th:nth-child(8){
+    width: 3%;
+    max-width: 3%;
+}
+
+.sc-orderTable-headlines th:nth-child(5){
+    width: 5%;
+    max-width: 5%;
+}
+
+.sc-orderTable-headlines th:nth-child(6){
+    width: 10%;
+    max-width: 10%;
+}
+
+
+.sc-orderTable-headlines th:nth-child(1),
+.sc-orderTable-headlines th:nth-child(3) {
+    width: 20%;
+}
+
+.sc-orderTable-headlines th:nth-child(4) {
+    width: 36%;
+}
+
+.sc-orderTable-sortIcon {
+    background: url(../../img/sort.png) no-repeat right;
+    background-size: 16px;
+}
+
+.sc-orderTable-sortUpIcon {
+    background: url(../../img/sortUp.png) no-repeat right;
+    background-size: 16px;
+}
+
+.sc-orderTable-sortDownIcon {
+    background: url(../../img/sortDown.png) no-repeat right;
+    background-size: 16px;
+}
+
+
+.sc-orderTable-outstandingIcon {
+    background: url(../../img/outstanding.png) no-repeat center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+.sc-orderTable-outstandingIcon:hover {
+    background: url(../../img/markPaid.png) no-repeat center;
+    background-size: 16px;
+}
+
+.sc-orderTable-paidIcon {
+    background: url(../../img/paid.png) no-repeat center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+.sc-orderTable-paidIcon:hover {
+    background: url(../../img/markOutstanding.png) no-repeat center;
+    background-size: 16px;
+}
+
+.sc-orderTable-trashIcon {
+    background: url(../../img/trash.png) no-repeat center;
+    background-size: 16px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.sc-orderTable-trashIcon:hover {
+    opacity: 1;
+}
+
+.sc-orderTable-markPaidIcon {
+    background: url(../../img/markPaid.png) no-repeat center;
+    background-size: 16px;
+}
+
+.sc-orderTable-markOutstaindingIcon {
+    background: url(../../img/markOutstanding.png) no-repeat center;
+    background-size: 16px;
+}
+
+
+.sc-orderTable-green-blink{
+    animation: green-blink 0.5s ease-out;
+}
+
+.sc-orderTable-red-blink{
+    animation: red-blink 0.5s ease-out;
+}
+
+@keyframes green-blink {
+    5%  {background-color: lightgreen;}
+}
+
+@keyframes red-blink {
+    5%  {background-color: #f88;}
+}
+
+
+.sc-orderTable-deleteIndicator{
+    text-decoration: line-through;
+}

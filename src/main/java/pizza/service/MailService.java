@@ -7,6 +7,6 @@ import org.apache.commons.mail.EmailException;
  */
 public interface MailService {
 
-    void sendBulkOrderInvitationToAll(String bulkOrderName) throws EmailException;
+    void sendBulkOrderInvitationToAll(String bulkOrderName);
 
 }

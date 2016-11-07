@@ -1,0 +1,40 @@
+{
+  "productCatalog": {
+    "name": "Einfacher Produktkatalog",
+    "productCategories": [
+      {
+        "name": "",
+        "productGroups": [
+          {
+            "name": "",
+            "products": [
+              {
+                "number": 2,
+                "name": "Margherita",
+                "description": "",
+                "productVariations": [
+                  {
+                    "name": "medium",
+                    "price": 4.4
+                  }
+                ]
+              },
+              {
+                "number": 6,
+                "name": "Salami",
+                "description": "mit Salami",
+                "productVariations": [
+                  {
+                    "name": "medium",
+                    "price": 5.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "addionals":[]
+}

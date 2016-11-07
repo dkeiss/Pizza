@@ -1,12 +1,11 @@
 @import url("../_core.css");
 
-.admin-container-box {
+/*.admin-container-box {
     background-color: #FFFFFF;
     overflow: hidden;
     margin: 30px 0 0px 0;
     border: 1px solid #c4c8ca;
 }
-
 
 .admin-button {
     color: #3595b4;
@@ -14,11 +13,12 @@
     text-align: center;
     text-transform:uppercase;
     border: solid 1px #fff;
-}
+}*/
 
 .admin-button-enabled {
     cursor: pointer;
     transition: 0.3s linear;
+    border: solid 1px #fff;
 }
 
 .admin-button-enabled:hover {
@@ -33,6 +33,10 @@
 .admin-button-disabled{
     color: #dddddd;
     cursor: not-allowed;
+}
+
+.core-container-box-button{
+    padding: 0px;
 }
 
 .admin-submitButton-disabled{
@@ -85,6 +89,7 @@
     font:inherit;
     float: left;
     padding: 4px;
+    margin-right: 5px;
     /*display: none;*/
 }
 
@@ -116,18 +121,18 @@
     float: right;
 }
 
-.error_blink {
-    animation: error 0.4s ease-out;
+.admin-success-blink{
+    animation: success-blink 0.5s ease-out;
 }
 
-.success_blink {
-    animation: success 0.4s ease-out;
+.admin-failure-blink{
+    animation: failure-blink 0.5s ease-out;
 }
 
-@keyframes success {
-    0%  {background-color: green;}
+@keyframes success-blink {
+    5%  {background-color: lightgreen;}
 }
 
-@keyframes error {
-    0%  {background-color: red;}
+@keyframes failure-blink {
+    5%  {background-color: #f88;}
 }

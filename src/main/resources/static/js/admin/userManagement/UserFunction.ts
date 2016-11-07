@@ -3,12 +3,14 @@
 /// <reference path="TableController.ts" />
 
 
+
 namespace WebApplication.Admin.UserManagement
 {
     $(document).ready(() =>
     {
         new UserFunction();
     });
+
 
 
     export class UserFunction
@@ -18,11 +20,15 @@ namespace WebApplication.Admin.UserManagement
 
         constructor()
         {
-            this._newUserController = new NewUserController();
-            this._newUserController.start();
-
             this._tableController = new TableController();
             this._tableController.start();
+
+            this._newUserController = new NewUserController();
+            this._newUserController.start(() =>
+            {
+                this._tableController.refreshConstructor();
+                this._tableController.start();
+            });
         }
     }
 }

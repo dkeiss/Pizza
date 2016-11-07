@@ -64,10 +64,11 @@
     display: block;
 }
 
-.um-newUser-inputError {
-    border: 1px solid #a9a9a9;
-    border-bottom-color: #ff0000;
+.core-inputField.um-newUser-inputError {
+    border: 1px solid #ff0000;
+    padding: 6px;
 }
+
 
 
 .um-userTable {
@@ -161,10 +162,14 @@
     background-size: 16px;
 }
 
-.um-userTable-confirmIcon,
+.um-userTable-confirmIcon {
+    background: url(../../img/icon-access-green.png) no-repeat center;
+    background-size: 22px;
+}
+
 .um-userTable-aboardIcon {
-    background: url(../../img/pen.png) no-repeat center;
-    background-size: 16px;
+    background: url(../../img/icon-close-red.png) no-repeat center;
+    background-size: 22px;
 }
 
 .um-userTable-hiddenEditIcon .um-userTable-confirmIcon,

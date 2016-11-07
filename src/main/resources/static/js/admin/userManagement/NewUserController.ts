@@ -32,26 +32,15 @@ namespace WebApplication.Admin.UserManagement
             this._submitSelector = $(UserManagementSelectors.newUserSubmit);
         }
 
-        public start()
+        public start(onSuccess: () => void)
         {
-            this._submitSelector.on("click", () => this.checkBeforeSubmit());
+            this._submitSelector.on("click", () => this.checkBeforeSubmit(onSuccess));
         }
 
-        private checkBeforeSubmit()
+        private checkBeforeSubmit(onSuccess: () => void)
         {
             let isOkay: boolean = true;
 
-            if (this._firstNameSelector.val().trim().length == 0)
-            {
-                this._firstNameSelector.addClass(this._cssInputError);
-                isOkay = false;
-            }
-
-            if (this._lastNameSelector.val().trim().length == 0)
-            {
-                this._lastNameSelector.addClass(this._cssInputError);
-                isOkay = false
-            }
 
             if (this._emailSelector.val().trim().length == 0)
             {
@@ -67,14 +56,16 @@ namespace WebApplication.Admin.UserManagement
 
             if (this._discountSelector.val().length == 0)
             {
-                this._discountSelector.addClass(this._cssInputError);
-                isOkay = false;
+                this._discountSelector.val(0);
             }
 
 
             if (isOkay)
             {
-                this.saveAndResetInputField();
+                this.saveAndResetInputField(newUser =>
+                {
+                    UserService.sendNewUser(newUser, onSuccess);
+                });
             }
             else
             {
@@ -88,23 +79,24 @@ namespace WebApplication.Admin.UserManagement
             return pattern.test(email);
         }
 
-        private saveAndResetInputField(): void
+        private saveAndResetInputField(returnNewUser: (newUser: IAddNewUser) => void): void
         {
-            const newUser: IAddNewUser = new RequestNewUser();
+            const newUser = new RequestNewUser();
             newUser.firstName = this._firstNameSelector.val();
             newUser.lastName = this._lastNameSelector.val();
             newUser.userName = this._emailSelector.val();
             newUser.discount = parseFloat(this._discountSelector.val());
-
             newUser.admin = this._isAdminSelector.is(":checked") ? true : false;
 
-
+            this._newUserContainer.find("." + this._cssInputError).removeClass(this._cssInputError);
             this._warningLabelSelector.removeClass(this._cssShowWarning).addClass(this._cssHiddenWarning);
             this._firstNameSelector.val("");
             this._lastNameSelector.val("");
             this._emailSelector.val("");
             this._discountSelector.val("0");
             this._isAdminSelector.prop("checked", false);
+
+            returnNewUser(newUser);
         }
     }
 

@@ -5,16 +5,14 @@
     <title>UserManagement</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge;"/>
     <link href="../../static/css/admin/userManagement.css" th:href="@{/css/admin/userManagement.css}" rel="stylesheet" media="screen"/>
-    <link href="../../static/css/_core.css" th:href="@{/css/_core.css}" rel="stylesheet" media="screen"/>
     <script src="../../static/js/thirdParty/jquery-2.1.4.min.js" th:src="@{/js/thirdParty/jquery-2.1.4.min.js}"></script>
-    <script src="../../static/js/admin/userManagement/UserFunction.js" th:src="@{/js/admin/userManagement/UserFunction.js}"></script>
-    <script src="../../static/js/admin/userManagement/UserService.js" th:src="@{/js/admin/userManagement/UserService.js}"></script>
-    <script src="../../static/js/admin/userManagement/TableController.js" th:src="@{/js/admin/userManagement/TableController.js}"></script>
-    <script src="../../static/js/admin/userManagement/NewUserController.js" th:src="@{/js/admin/userManagement/NewUserController.js}"></script>
-    <script src="../../static/js/Constants.js" th:src="@{/js/Constants.js}"></script>
-    <script src="../../static/js/WebServiceAccess.js" th:src="@{/js/WebServiceAccess.js}"></script>
+    <script src="../../static/js/admin/userManagement/_app.js" th:src="@{/js/admin/userManagement/_app.js}"></script>
 </head>
 <body>
+
+    <div class="core-dialog-container">
+        <div th:replace="fragments/serverErrorDialog :: serverError">&nbsp;</div>
+    </div>
 
     <div class="core-container-header">
         <div class="core-container-center">
@@ -28,7 +26,7 @@
             <div class="core-container-boxHeader">Einen neuen Nutzer eintragen ...</div>
             <div class="um-newUser-fieldContainer row1">
                 <input type="text" class="core-inputField um-newUser_firstName" maxlength="100" placeholder="Vorname" />
-                <input type="text" class="core-inputField um-newUser_lastName" maxlength="100" placeholder="Nachname"/>
+                <input type="text" class="core-inputField um-newUser_lastName" maxlength="100" placeholder="Nachname" />
             </div>
 
             <div class="um-newUser-fieldContainer row2">
@@ -46,7 +44,7 @@
             </div>
 
             <div class="core-submitButton um-newUser_submit">Bestätigen</div>
-            <label class="core-warningLabel um-newUser-hiddenWarning um-newUser_warningLabel">Fehlende Einträge oder die E-Mail ist nicht valide!</label>
+            <label class="core-warningLabel um-newUser-hiddenWarning um-newUser_warningLabel">E-Mail ist nicht valide!</label>
         </div>
 
         <div class="core-container-box">

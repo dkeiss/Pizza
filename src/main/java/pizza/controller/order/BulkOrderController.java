@@ -5,12 +5,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import pizza.controller.ResponseUtil;
 import pizza.repositories.BulkOrderRepository;
 import pizza.service.BulkOrderService;
 import pizza.vo.order.OrderActivateVO;
 import pizza.vo.order.BulkOrderVO;
 
 import java.util.*;
+
+import static pizza.controller.ResponseUtil.getResponseWithStatus;
 
 /**
  * Created by Daniel Keiss on 24.10.2016.
@@ -53,7 +56,7 @@ public class BulkOrderController {
     Map updateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId, @RequestBody BulkOrderVO bulkOrder) {
         bulkOrder.setBulkOrderId(bulkorderId);
         bulkOrderService.updateBulkOrderById(bulkOrder);
-        return new HashMap<>();
+        return getResponseWithStatus(true);
     }
 
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.DELETE)
@@ -61,7 +64,7 @@ public class BulkOrderController {
     @ResponseBody
     Map deleteBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
         bulkOrderService.deleteBulkOrderById(bulkorderId);
-        return new HashMap<>();
+        return getResponseWithStatus(true);
     }
 
 }

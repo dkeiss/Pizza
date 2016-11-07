@@ -1,4 +1,5 @@
-/// <reference path="thirdParty/jquery.d.ts" />
+/// <reference path="../thirdParty/jquery.d.ts" />
+/// <reference path="ShowErrorDialog.ts" />
 
 class WebServiceAccess
 {
@@ -12,14 +13,11 @@ class WebServiceAccess
             dataType: "json",
             async: false,
             success: onSuccess,
-            error: (xhr: JQueryXHR) =>
-            {
-                alert(xhr.statusText + " - " + xhr.status);
-            }
+            error: (xhr: JQueryXHR) => { new ShowErrorDialog(xhr) }
         });
     }
 
-    public static ajaxPost(webServiceMethod: string, postData: any, onSuccess: (xhr: any) => void, onError: (xhr: any) => void)
+    public static ajaxPost(webServiceMethod: string, postData: any, onSuccess: (xhr: any) => void, onError?: (xhr: any) => void)
     {
         $.ajax({
             type: "POST",
@@ -30,11 +28,11 @@ class WebServiceAccess
             data: JSON.stringify(postData),
             async: false,
             success: onSuccess,
-            error: onError
+            error: (xhr: JQueryXHR) => { new ShowErrorDialog(xhr) }
         });
     }
 
-    public static ajaxPut(webServiceMethod: string, putData: any)
+    public static ajaxPut(webServiceMethod: string, putData: any, onSuccess: (xhr: IOnSuccess) => void)
     {
         $.ajax({
             type: "PUT",
@@ -44,14 +42,12 @@ class WebServiceAccess
             dataType: "json",
             data: JSON.stringify(putData),
             async: false,
-            error: (xhr: JQueryXHR) =>
-            {
-                alert(xhr.statusText + " - " + xhr.status);
-            }
+            success: onSuccess,
+            error: (xhr: JQueryXHR) => { new ShowErrorDialog(xhr) }
         });
     }
 
-    public static ajaxDelete(webServiceMethod: string, deleteData: any, onSuccess: (xhr: any) => void)
+    public static ajaxDelete(webServiceMethod: string, deleteData: any, onSuccess: (xhr: IOnSuccess) => void)
     {
         $.ajax({
             type: "DELETE",
@@ -61,10 +57,12 @@ class WebServiceAccess
             dataType: "json",
             async: false,
             success: onSuccess,
-            error: (xhr: JQueryXHR) =>
-            {
-                alert(xhr.statusText + " - " + xhr.status);
-            }
+            error: (xhr: JQueryXHR) => { new ShowErrorDialog(xhr) }
         });
     }
+}
+
+interface IOnSuccess
+{
+    success: boolean;
 }

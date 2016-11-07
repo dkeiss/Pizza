@@ -1,6 +1,7 @@
 package pizza.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import pizza.domain.user.PasswordType;
 import pizza.domain.user.User;
@@ -109,6 +110,15 @@ public class UserServiceImpl implements UserService {
         user.setPassword(password);
         user.setPasswordType(PasswordType.PLAIN);
         userRepository.save(user);
+    }
+
+    @Override
+    public void deleteUser(Integer userId) {
+        try {
+            userRepository.delete(userId);
+        } catch (EmptyResultDataAccessException e) {
+            throw new NotFoundException();
+        }
     }
 
     private User getUserByUsername(String username) {

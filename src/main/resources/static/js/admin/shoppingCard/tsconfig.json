@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outFile": "_app.js",
+    "sourceMap": false,
+    "removeComments": true
+  },
+  "files": [
+    "../../share/Constants.ts",
+    "../../share/WebServiceAccess.ts",
+    "TableController.ts",
+    "IUserOrder.ts",
+    "ShoppingCardService.ts"
+  ]
+}

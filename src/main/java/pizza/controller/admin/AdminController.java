@@ -1,4 +1,4 @@
-package pizza.controller.user;
+package pizza.controller.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -33,6 +33,11 @@ public class AdminController {
     @RequestMapping(value = "/admin/usermanagement", method = RequestMethod.GET)
     public String usermanagement(Principal principal, Model model) {
         return authenticationValidator.checkAdminAuthentication(principal, model, "admin/usermanagement");
+    }
+
+    @RequestMapping(value = "/admin/shoppingcard", method = RequestMethod.GET)
+    public String shoppingcard(Principal principal, Model model) {
+        return authenticationValidator.checkAdminAuthentication(principal, model, "admin/shoppingcard");
     }
 
     @RequestMapping(value = "/admin/initialpassword", method = RequestMethod.GET)

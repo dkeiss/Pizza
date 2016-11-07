@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>UserManagement</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;"/>
+    <link href="../../static/css/admin/shoppingCard.css" th:href="@{/css/admin/shoppingCard.css}" rel="stylesheet" media="screen"/>
+    <link href="../../static/css/_core.css" th:href="@{/css/_core.css}" rel="stylesheet" media="screen"/>
+    <script src="../../static/js/thirdParty/jquery-2.1.4.min.js" th:src="@{/js/thirdParty/jquery-2.1.4.min.js}"></script>
+    <script src="../../static/js/admin/shoppingCard/_app.js" th:src="@{/js/admin/shoppingCard/_app.js}"></script>
+</head>
+<body>
+
+    <div class="core-container-header">
+        <div class="core-container-center">
+            <h1>Admin</h1>
+            <div th:replace="fragments/header :: header">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="core-container-center">
+        <div class="core-container-box">
+        </div>
+        <div class="core-container-box">
+            <table class="sc-orderTable card-orderTable">
+                <thead>
+                    <tr class="sc-orderTable-headlines ">
+                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Benutzer</th>
+                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Nr</th>
+                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Artikel</th>
+                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Extras</th>
+                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Größe</th>
+                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Preis</th>
+                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton"></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

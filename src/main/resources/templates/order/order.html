@@ -2,87 +2,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 >
 <head>
-    <title>Bestellen</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/order/app.css" th:href="@{/css/order/app.css}" rel="stylesheet" />
-    <script src="../../static/js/jquery-2.1.4.min.js" th:src="@{/js/jquery-2.1.4.min.js}"></script>
-    <script src="../../static/js/service.js" th:src="@{/js/service.js}"></script>
-    <script src="../../static/js/order/htmlControl.js" th:src="@{/js/order/htmlControl.js}"></script>
-    <script src="../../static/js/order/orderControl.js" th:src="@{/js/order/orderControl.js}"></script>
-    <script src="../../static/js/order/function.js" th:src="@{/js/order/function.js}"></script>
+    <meta charset="utf-8"/>
+    <title>WebOrder</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;"/>
+    <link href="../../static/css/order/userOrder.css" th:href="@{/css/order/userOrder.css}" rel="stylesheet" media="screen"/>
+    <script src="../../static/js/thirdParty/jquery-2.1.4.min.js" th:src="@{/js/thirdParty/jquery-2.1.4.min.js}"></script>
+    <script src="../../static/js/userOrder/_app.js" th:src="@{/js/userOrder//_app.js}"></script>
 </head>
 <body>
+<!-- <div id="ajax-load"><img width="220" height="19" src="../../static/img/ajax-loader.gif" th:src="@{/img/ajax-loader.gif}"/></div> -->
 
-<div id="ajax-load"><img width="220" height="19" src="../../static/img/ajax-loader.gif" th:src="@{/img/ajax-loader.gif}"/></div>
-
-<div id="container-order">
-    <div id="container-order-opacity" onclick="orderControl.closeExtraMenu()"></div>
-    <div id="container-order-div">
-        <div class="buttonClose" onclick="orderControl.closeExtraMenu()"><i class="fa fa-times fa-2" aria-hidden="true"></i></div>
-
-        <div class="box">
-            <input type="text" id="input-User" placeholder="Nachname, Vorname" onkeyup="orderControl.checkUserDiscount(this);"/>
-        </div>
-
-        <div id="menu-extra"></div>
-
-        <table class="box">
-            <tr>
-                <td id="productItem"></td>
-                <td id="productPrice" price=""></td>
-            </tr>
-            <tr>
-                <td>Extra Zutaten</td>
-                <td id="menu-extra-calc">0.00 €</td>
-            </tr>
-            <tr>
-                <td>Rabatt</td>
-                <td id="discount">- 0.00 €</td>
-            </tr>
-        </table>
-
-        <div id="order-accept">
-            <button id="order-click-button" onclick="orderControl.orderAcceptButton(this)">0.00 €</button>
-            <button id="order-click-button-accepted"></button>
-        </div>
-    </div>
-</div>
-
-<div id="header">
-    <div class="container">
-        <h1>Speedpizza</h1>
-        <div th:replace="fragments/header :: header">&nbsp;</div>
-        <div id="categorySelector"></div>
-    </div>
-</div>
-
-<div id="main">
-    <div class="container">
-        <div class="rest invisible" id="rest">
-            <div id="zusatzList"></div>
-            <div id="productList"></div>
-        </div>
-    </div>
-</div>
-
-<!--<div id="main">
-    <div class="container" th:unless="${#lists.isEmpty(allProducts)}">
-        <div th:each="product : ${allProducts}">
-            <div>Name</div>
-            <div th:text="${{product.name}}"></div>
-            <div>Type</div>
-            <div th:text="${{product.type}}"></div>
-            <br/>
-        </div>
-
-        <form id="order" th:object="${order}" th:action="@{/templates/order}" action="#" method="post" role="form">
-            <input type="number" class="form-control" th:field="${order.id}" id="id" name="id" value="1234"/>
-            <div><input type="submit" value="Bestellen"/></div>
-        </form>
+    <div class="core-dialog-container">
+        <div th:replace="fragments/serverErrorDialog :: serverError">&nbsp;</div>
     </div>
 
-</div>-->
+    <div class="core-container-header">
+        <div class="core-container-center">
+            <h1>Admin</h1>
+            <div th:replace="fragments/header :: header">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="core-container-center">
+        <div class="core-container-box">
+            <div class="userOrder-menu-container userOrder-menu_container"></div>
+        </div>
+    </div>
 
 </body>
 </html>
