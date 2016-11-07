@@ -104,8 +104,14 @@ namespace WebApplication.Admin.ShoppingCard
                 .closest("tr")
                 .attr("orderid"));
 
+            $(event.currentTarget).closest("tr").find('td').addClass("hide");
+            $(event.currentTarget).removeClass("hide");
+            $(event.currentTarget).removeClass("sc-orderTable-trashIcon").addClass("loading");
+
             ShoppingCardService.deleteOrder(orderId, success =>
             {
+                $(event.currentTarget).removeClass("loading").addClass("sc-orderTable-trashIcon");
+                $(event.currentTarget).closest("tr").find('td').removeClass("hide");
                 this._tableData.splice($(event.currentTarget).closest("tr").index(),1);
                 $(event.currentTarget).closest("tr").remove();
             });
@@ -118,17 +124,23 @@ namespace WebApplication.Admin.ShoppingCard
             console.log(orderId);
 
             let updateUserOrder: IUserOrderPaid = {
-                paid: $(event.currentTarget).hasClass("sc-orderTable-paidIcon")
+                paid: !$(event.currentTarget).hasClass("sc-orderTable-paidIcon")
             };
+
+            $(event.currentTarget).closest("tr").find('td').addClass("hide");
+            $(event.currentTarget).removeClass("hide");
+            $(event.currentTarget).toggleClass("sc-orderTable-outstandingIcon",false).toggleClass("sc-orderTable-paidIcon",false).addClass("loading");
 
             ShoppingCardService.markOrder(orderId,updateUserOrder, success =>
             {
-                $(event.currentTarget).toggleClass("sc-orderTable-outstandingIcon",updateUserOrder.paid).toggleClass("sc-orderTable-paidIcon",!updateUserOrder.paid);
-                this._tableData[$(event.currentTarget).closest("tr").index()][6] = !updateUserOrder.paid ? "1" : "2";
-                $(event.currentTarget).closest("tr").addClass(!updateUserOrder.paid ? "sc-orderTable-green-blink" : "sc-orderTable-red-blink");
+                $(event.currentTarget).closest("tr").find('td').removeClass("hide");
+                $(event.currentTarget).removeClass("loading");
+                $(event.currentTarget).toggleClass("sc-orderTable-outstandingIcon",!updateUserOrder.paid).toggleClass("sc-orderTable-paidIcon",updateUserOrder.paid);
+                this._tableData[$(event.currentTarget).closest("tr").index()][6] = updateUserOrder.paid ? "1" : "2";
+                $(event.currentTarget).closest("tr").addClass(updateUserOrder.paid ? "sc-orderTable-green-blink" : "sc-orderTable-red-blink");
                 setTimeout(() =>
                 {
-                    $(event.currentTarget).closest("tr").removeClass(!updateUserOrder.paid ? "sc-orderTable-green-blink" : "sc-orderTable-red-blink");
+                    $(event.currentTarget).closest("tr").removeClass(updateUserOrder.paid ? "sc-orderTable-green-blink" : "sc-orderTable-red-blink");
                 }, 500);
             }
             );
