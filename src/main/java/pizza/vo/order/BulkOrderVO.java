@@ -16,7 +16,7 @@ public class BulkOrderVO {
     @NotNull
     private Integer bulkOrderId;
 
-    @NotNull
+    @Getter
     private Integer catalogId;
 
     @NotNull
