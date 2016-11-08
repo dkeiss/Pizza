@@ -91,7 +91,7 @@ public class UserServiceImpl implements UserService {
     }
 
     private User getUserById(Integer userId) {
-        User user = userRepository.findOne(userId);
+        User user = findUser(userId);
         if (user == null) {
             throw new NotFoundException();
         }
@@ -119,6 +119,16 @@ public class UserServiceImpl implements UserService {
         } catch (EmptyResultDataAccessException e) {
             throw new NotFoundException();
         }
+    }
+
+    @Override
+    public boolean userExists(Integer userId) {
+        return userRepository.exists(userId);
+    }
+
+    @Override
+    public User findUser(Integer userId) {
+        return userRepository.findOne(userId);
     }
 
     private User getUserByUsername(String username) {

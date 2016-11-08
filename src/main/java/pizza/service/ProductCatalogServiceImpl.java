@@ -2,10 +2,15 @@ package pizza.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pizza.domain.product.Product;
 import pizza.domain.product.ProductCatalog;
+import pizza.domain.product.ProductVariation;
 import pizza.repositories.ProductCatalogRepository;
+import pizza.repositories.ProductRepository;
+import pizza.repositories.ProductVariationRepository;
 import pizza.service.common.ObjectMapperUtil;
 import pizza.service.exception.NotFoundException;
+import pizza.vo.order.BulkOrderVO;
 import pizza.vo.product.menu.ProductCatalogInfoVO;
 import pizza.vo.product.menu.ProductCatalogVO;
 
@@ -23,7 +28,16 @@ import static pizza.service.common.ProductValueToBusinessObjectConverter.getProd
 public class ProductCatalogServiceImpl implements ProductCatalogService {
 
     @Autowired
+    private BulkOrderService bulkOrderService;
+
+    @Autowired
     private ProductCatalogRepository productCatalogRepository;
+
+    @Autowired
+    private ProductRepository productRepository;
+
+    @Autowired
+    private ProductVariationRepository productVariationRepository;
 
     @Override
     public ProductCatalogVO createProductCatalog(ProductCatalogVO productCatalogVO) {
@@ -38,8 +52,8 @@ public class ProductCatalogServiceImpl implements ProductCatalogService {
     }
 
     @Override
-    public ProductCatalogVO getProductCatalog(Integer id) {
-        ProductCatalog productCatalog = productCatalogRepository.findOne(id);
+    public ProductCatalogVO getProductCatalog(Integer productCatalogId) {
+        ProductCatalog productCatalog = productCatalogRepository.findOne(productCatalogId);
         if (productCatalog == null) {
             throw new NotFoundException();
         }
@@ -49,6 +63,40 @@ public class ProductCatalogServiceImpl implements ProductCatalogService {
     @Override
     public List<ProductCatalogInfoVO> listProductCataloges() {
         return copyListFromBusinessObject(productCatalogRepository.findAll(), ProductCatalogInfoVO.class);
+    }
+
+    @Override
+    public boolean productCatalogExists(Integer productCatalogId) {
+        return productCatalogRepository.exists(productCatalogId);
+    }
+
+    @Override
+    public ProductCatalogVO getActiveProductCatalog() {
+        BulkOrderVO activeBulkOrder = bulkOrderService.getActiveBulkOrder();
+        if (activeBulkOrder == null) {
+            throw new NotFoundException();
+        }
+        return getProductCatalog(activeBulkOrder.getCatalogId());
+    }
+
+    @Override
+    public boolean productExists(Integer productId) {
+        return productRepository.exists(productId);
+    }
+
+    @Override
+    public boolean productVariationExists(Integer productVariationId) {
+        return productVariationRepository.exists(productVariationId);
+    }
+
+    @Override
+    public Product findProduct(Integer productId) {
+        return productRepository.findOne(productId);
+    }
+
+    @Override
+    public ProductVariation findProductVariation(Integer productVariationId) {
+        return productVariationRepository.findOne(productVariationId);
     }
 
 }

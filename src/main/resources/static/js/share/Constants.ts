@@ -39,14 +39,7 @@ class AdminOverviewSelectors
     public static adminCatalogPostfixLabel = ".admin-label_catalogPostfix";
     public static adminCatalogComboBox = ".admin-combobox_productCatalogs";
 
-
     public static adminActivateCatalogButton = ".admin-submitButton_activateCtlg";
-
-
-    public static adminCardErrorLabel = ".admin-errorlabel_card";
-    public static adminUserManagementErrorLabel = ".admin-errorlabel_umgmt";
-    public static adminPrintErrorLabel = ".admin-errorlabel_print";
-    public static adminUploadErrorLabel = ".admin-errorlabel_upload";
 
     public static adminCardDiv = ".admin-container_cardDiv";
     public static adminUserManagementDiv = ".admin-container_umnmtDiv";

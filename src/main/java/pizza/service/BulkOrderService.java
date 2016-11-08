@@ -1,5 +1,6 @@
 package pizza.service;
 
+import pizza.domain.order.BulkOrder;
 import pizza.vo.order.BulkOrderVO;
 
 import java.util.List;
@@ -18,5 +19,11 @@ public interface BulkOrderService {
     void deleteBulkOrderById(Integer bulkorderId);
 
     void updateBulkOrderById(BulkOrderVO bulkOrderVO);
+
+    BulkOrderVO getActiveBulkOrder();
+
+    BulkOrder findActiveBulkOrder();
+
+    boolean bulkOrderExists(Integer bulkOrderId);
 
 }

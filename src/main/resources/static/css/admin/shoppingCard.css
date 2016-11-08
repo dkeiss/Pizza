@@ -148,3 +148,16 @@
 .sc-orderTable-deleteIndicator{
     text-decoration: line-through;
 }
+
+.loading{
+    background: url(../../img/loader.gif) no-repeat center;
+    background-size: 16px;
+}
+
+.hide{
+    opacity: 0.1;
+}
+
+.sc-orderTable tr{
+    transition: 5s linear;
+}

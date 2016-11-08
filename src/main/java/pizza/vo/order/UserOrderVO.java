@@ -1,6 +1,7 @@
 package pizza.vo.order;
 
 import lombok.Data;
+import lombok.Getter;
 import pizza.vo.product.additional.AdditionalInfoVO;
 
 import java.math.BigDecimal;
@@ -16,22 +17,10 @@ public class UserOrderVO {
 
     private Integer userId;
 
-    private String firstName;
-
-    private String lastName;
-
     private Integer productId;
-
-    private String productName;
 
     private Integer productVariationId;
 
-    private String productVariationName;
-
-    private List<AdditionalInfoVO> additionals;
-
-    private BigDecimal sum;
-
-    private Boolean paid;
+    private List<Integer> additionalIds;
 
 }

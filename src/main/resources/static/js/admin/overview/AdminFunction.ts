@@ -21,10 +21,6 @@ namespace WebApplication.Admin.Overview
         private _adminCatalogPostfixLabel: JQuery = null;
         private _adminCatalogPrefixLabel: JQuery = null;
         private _adminCatalogComboBox: JQuery = null;
-        private _adminCardErrorLabel: JQuery = null;
-        private _adminUserManagementErrorLabel: JQuery = null;
-        private _adminPrintErrorLabel: JQuery = null;
-        private _adminUploadErrorLabel: JQuery = null;
         private _adminActivateCatalogButton: JQuery = null;
         private _adminFileInput: JQuery = null;
 
@@ -52,10 +48,6 @@ namespace WebApplication.Admin.Overview
             this._adminCatalogPrefixLabel = $(AdminOverviewSelectors.adminCatalogPrefixLabel);
             this._adminCatalogPostfixLabel = $(AdminOverviewSelectors.adminCatalogPostfixLabel);
             this._adminCatalogComboBox = $(AdminOverviewSelectors.adminCatalogComboBox);
-            this._adminCardErrorLabel = $(AdminOverviewSelectors.adminCardErrorLabel);
-            this._adminUserManagementErrorLabel = $(AdminOverviewSelectors.adminUserManagementErrorLabel);
-            this._adminPrintErrorLabel = $(AdminOverviewSelectors.adminPrintErrorLabel);
-            this._adminUploadErrorLabel = $(AdminOverviewSelectors.adminUploadErrorLabel);
             this._adminTimePickerLabel = $(AdminOverviewSelectors.adminTimePickerLabel);
             this._adminActivateCatalogButton = $(AdminOverviewSelectors.adminActivateCatalogButton);
             this._adminCardDiv = $(AdminOverviewSelectors.adminCardDiv);
@@ -78,12 +70,9 @@ namespace WebApplication.Admin.Overview
             this._adminCardButton.removeClass("admin-button-enabled").addClass("admin-button-disabled");
             this._adminTimePicker.hide();
             this._adminCatalogComboBox.hide();
-            this._adminCardErrorLabel.hide();
-            this._adminUserManagementErrorLabel.hide();
-            this._adminPrintErrorLabel.hide();
-            this._adminUploadErrorLabel.hide();
             this._adminTimePickerLabel.hide();
             this._adminCatalogComboBox.empty();
+            this._availableProductCatalogs = null;
             this._adminTimePicker.val("");
             this._adminCatalogPostfixLabel.show();
             this._currentBulkOrder = null;
@@ -262,6 +251,9 @@ namespace WebApplication.Admin.Overview
                 setTimeout(() =>
                 {
                     this._adminCatalogDiv.removeClass("admin-success-blink");
+                    /*this.resetGUI();
+                    this.getProductCatalogs();
+                    this.getCurrentBulkOrder();*/
                 }, 500);
             },onError => {
                 this._adminUploadCatalogButton.removeClass("hide");

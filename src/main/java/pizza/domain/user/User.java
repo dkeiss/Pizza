@@ -17,16 +17,25 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "USER_ID_SEQ")
     @SequenceGenerator(name = "USER_ID_SEQ", sequenceName = "USER_ID_SEQ", allocationSize = 100)
     private Integer userId;
+
     @Column(unique = true)
     private String userName;
+
     private String password;
+
     @Enumerated(EnumType.STRING)
     private PasswordType passwordType;
+
     private boolean isAdmin;
+
     private String firstName;
+
     private String lastName;
+
     private BigDecimal discount = BigDecimal.ZERO;
+
     private Date creationDate;
+
     private Date modificationDate;
 
 }
