@@ -1,6 +1,6 @@
 #FileLock
-#Sun Nov 06 20:18:30 CET 2016
-hostName=Hoshek
-id=1583b13dfabdf436e75099586b20587366b3efe13d7
+#Tue Nov 08 22:54:37 CET 2016
+hostName=DESKTOP-O0LMQQC.fritz.box
+id=15845ef85a1086277702358c72c697d61446003b1e5
 method=file
-server=192.168.42.171\:53599
+server=192.168.178.29\:65167
