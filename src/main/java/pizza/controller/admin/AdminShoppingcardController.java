@@ -4,6 +4,7 @@ import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pizza.service.exception.NotFoundException;
+import pizza.vo.order.UserOrderDetailsVO;
 import pizza.vo.order.UserOrderPaidVO;
 import pizza.vo.order.UserOrderVO;
 import pizza.vo.product.additional.AdditionalInfoVO;
@@ -22,10 +23,10 @@ import static pizza.controller.ResponseUtil.getResponseWithStatus;
 @RequestMapping("rest/admin/shoppingcard")
 public class AdminShoppingcardController {
 
-    private List<UserOrderVO> userOrders = mockUserOrders();
+    private List<UserOrderDetailsVO> userOrders = mockUserOrders();
 
-    private List<UserOrderVO> mockUserOrders() {
-        List<UserOrderVO> userOrders = new ArrayList<>();
+    private List<UserOrderDetailsVO> mockUserOrders() {
+        List<UserOrderDetailsVO> userOrders = new ArrayList<>();
         userOrders.add(getUserOrder(1, 4, "Axel", "Schweiß", 1, "Salat", 1, "Ohne Ei", 1, "Normal", "5.99", false));
         userOrders.add(getUserOrder(2, 17, "Chris", "P. Bacon", 2, "Pizza Schinken", null, null, 2, "Groß", "9.50", false));
         userWithTwoAdditionals(userOrders);
@@ -35,8 +36,8 @@ public class AdminShoppingcardController {
         return userOrders;
     }
 
-    private void userWithTwoAdditionals(List<UserOrderVO> userOrders) {
-        UserOrderVO userOrder = getUserOrder(3, 1, "Max", "Mustermann", 3, "Pizza Salami", 2, "Peperonie", 2, "Groß", "7.53", false);
+    private void userWithTwoAdditionals(List<UserOrderDetailsVO> userOrders) {
+        UserOrderDetailsVO userOrder = getUserOrder(3, 1, "Max", "Mustermann", 3, "Pizza Salami", 2, "Peperonie", 2, "Groß", "7.53", false);
         AdditionalInfoVO additionalInfo = new AdditionalInfoVO();
         additionalInfo.setAdditionalId(4);
         additionalInfo.setDescription("Kapern");
@@ -44,8 +45,8 @@ public class AdminShoppingcardController {
         userOrders.add(userOrder);
     }
 
-    private UserOrderVO getUserOrder(Integer orderId, Integer userId, String firstname, String lastname, Integer productId, String productName, Integer additionalId, String additionalName, Integer productVariationId, String productVariationName, String sum, boolean paid) {
-        UserOrderVO userOrder = new UserOrderVO();
+    private UserOrderDetailsVO getUserOrder(Integer orderId, Integer userId, String firstname, String lastname, Integer productId, String productName, Integer additionalId, String additionalName, Integer productVariationId, String productVariationName, String sum, boolean paid) {
+        UserOrderDetailsVO userOrder = new UserOrderDetailsVO();
         userOrder.setUserOrderId(orderId);
         userOrder.setUserId(userId);
         userOrder.setFirstName(firstname);
@@ -70,7 +71,7 @@ public class AdminShoppingcardController {
     @RequestMapping(method = RequestMethod.GET)
     public
     @ResponseBody
-    List<UserOrderVO> getUserOrders() {
+    List<UserOrderDetailsVO> getUserOrders() {
         return userOrders;
     }
 
@@ -85,7 +86,7 @@ public class AdminShoppingcardController {
     public
     @ResponseBody
     Map setUserOrderPaid(@PathVariable("userOrderId") Integer userOrderId, @RequestBody UserOrderPaidVO userOrderPaidVO) {
-        UserOrderVO userOrder = getUserOrderById(userOrderId);
+        UserOrderDetailsVO userOrder = getUserOrderById(userOrderId);
         userOrder.setPaid(userOrderPaidVO.getPaid());
         return getResponseWithStatus(true);
     }
@@ -99,8 +100,8 @@ public class AdminShoppingcardController {
         return getResponseWithStatus(true);
     }
 
-    private UserOrderVO getUserOrderById(Integer userOrderId) {
-        for (UserOrderVO userOrder : userOrders) {
+    private UserOrderDetailsVO getUserOrderById(Integer userOrderId) {
+        for (UserOrderDetailsVO userOrder : userOrders) {
             if (userOrder.getUserOrderId().equals(userOrderId)) {
                 return userOrder;
             }

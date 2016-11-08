@@ -1,5 +1,6 @@
 package pizza.service;
 
+import pizza.domain.user.User;
 import pizza.vo.user.UserVO;
 
 import java.util.List;
@@ -28,5 +29,9 @@ public interface UserService {
     void setInitialAdminPassword(String username, String password);
 
     void deleteUser(Integer userId);
+
+    boolean userExists(Integer userId);
+
+    User findUser(Integer userId);
 
 }

@@ -2,8 +2,12 @@ package pizza.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pizza.domain.product.Product;
 import pizza.domain.product.ProductCatalog;
+import pizza.domain.product.ProductVariation;
 import pizza.repositories.ProductCatalogRepository;
+import pizza.repositories.ProductRepository;
+import pizza.repositories.ProductVariationRepository;
 import pizza.service.common.ObjectMapperUtil;
 import pizza.service.exception.NotFoundException;
 import pizza.vo.order.BulkOrderVO;
@@ -28,6 +32,12 @@ public class ProductCatalogServiceImpl implements ProductCatalogService {
 
     @Autowired
     private ProductCatalogRepository productCatalogRepository;
+
+    @Autowired
+    private ProductRepository productRepository;
+
+    @Autowired
+    private ProductVariationRepository productVariationRepository;
 
     @Override
     public ProductCatalogVO createProductCatalog(ProductCatalogVO productCatalogVO) {
@@ -57,7 +67,7 @@ public class ProductCatalogServiceImpl implements ProductCatalogService {
 
     @Override
     public boolean productCatalogExists(Integer productCatalogId) {
-        return productCatalogRepository.findOne(productCatalogId) != null;
+        return productCatalogRepository.exists(productCatalogId);
     }
 
     @Override
@@ -67,6 +77,26 @@ public class ProductCatalogServiceImpl implements ProductCatalogService {
             throw new NotFoundException();
         }
         return getProductCatalog(activeBulkOrder.getCatalogId());
+    }
+
+    @Override
+    public boolean productExists(Integer productId) {
+        return productRepository.exists(productId);
+    }
+
+    @Override
+    public boolean productVariationExists(Integer productVariationId) {
+        return productVariationRepository.exists(productVariationId);
+    }
+
+    @Override
+    public Product findProduct(Integer productId) {
+        return productRepository.findOne(productId);
+    }
+
+    @Override
+    public ProductVariation findProductVariation(Integer productVariationId) {
+        return productVariationRepository.findOne(productVariationId);
     }
 
 }

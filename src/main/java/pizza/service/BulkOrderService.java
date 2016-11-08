@@ -24,4 +24,6 @@ public interface BulkOrderService {
 
     BulkOrder findActiveBulkOrder();
 
+    boolean bulkOrderExists(Integer bulkOrderId);
+
 }

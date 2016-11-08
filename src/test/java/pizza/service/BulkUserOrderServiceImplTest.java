@@ -25,7 +25,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 /**
  * Created by Daniel Keiss on 27.10.2016.
  */
-public class BulkOrderUserServiceImplTest {
+public class BulkUserOrderServiceImplTest {
 
     @InjectMocks
     private BulkOrderService bulkOrderService = new BulkOrderServiceImpl();

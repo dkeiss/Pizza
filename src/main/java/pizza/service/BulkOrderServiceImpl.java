@@ -102,6 +102,11 @@ public class BulkOrderServiceImpl implements BulkOrderService {
         return activeBulkOrders.get(0);
     }
 
+    @Override
+    public boolean bulkOrderExists(Integer bulkOrderId) {
+        return bulkOrderRepository.exists(bulkOrderId);
+    }
+
     private void isValid(BulkOrderVO bulkOrder) {
         isActiveUntilValid(bulkOrder);
         isAnotherBulkOrderActive();
