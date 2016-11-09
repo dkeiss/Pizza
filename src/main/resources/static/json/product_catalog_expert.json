@@ -1,47 +1,48 @@
 {
   "productCatalog": {
-    "name": "Erweiterter Produktkatalog",
+    "name": "Katalogname z.B. pizza.de",
     "productCategories": [
       {
-        "name": "Pizza",
+        "id": null,
+        "name": "Kategorie z.B. Pizza",
         "productGroups": [
           {
-            "name": "Leckere Pizza",
+            "name": "Produktgruppe z.B. Käserandpizza",
             "products": [
               {
                 "number": 2,
-                "name": "Margherita",
-                "description": "",
+                "name": "Produktname",
+                "description": "Produktbeschreibung",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "Produktgröße z.B. klein",
                     "price": 3.2
                   },
                   {
-                    "name": "medium",
+                    "name": "Produktgröße z.B. mittel",
                     "price": 4.4
                   },
                   {
-                    "name": "large",
+                    "name": "Produktgröße z.B. groß",
                     "price": 6.3
                   }
                 ]
               },
               {
                 "number": 6,
-                "name": "Salami",
-                "description": "mit Salami",
+                "name": "Produktname",
+                "description": "Produktbeschreibung",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "Produktgröße z.B. klein",
                     "price": 4.4
                   },
                   {
-                    "name": "medium",
+                    "name": "Produktgröße z.B. mittel",
                     "price": 5.9
                   },
                   {
-                    "name": "large",
+                    "name": "Produktgröße z.B. groß",
                     "price": 7.4
                   }
                 ]
@@ -49,15 +50,15 @@
             ]
           },
           {
-            "name": "Party-Pizza",
+            "name": "Weiter Produktgruppe z.B. Partypizza",
             "products": [
               {
                 "number": 1,
-                "name": "Party-Blech-Pizza",
-                "description": "für ca. 5 Personen (40x60 cm)",
+                "name": "Produktname",
+                "description": "Produktbeschreibung",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "Produktgröße z.B. normal",
                     "price": 19
                   }
                 ]
@@ -68,22 +69,22 @@
       },
       {
         "id": null,
-        "name": "Insalata",
+        "name": "Weitere Kategorie z.B. Insalata",
         "productGroups": [
           {
-            "name": "Salate",
+            "name": "Produktgruppe z.B. Salate",
             "products": [
               {
                 "number": 421,
-                "name": "Insalata Speciale",
-                "description": "Eisbergsalat,Gurken,Tomaten,gebr.Champignons,Krautsalat,Pep.,rote Zwiebeln,Weichkäse",
+                "name": "Produktname",
+                "description": "Produktbeschreibung",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "Produktgröße z.B. mittel",
                     "price": 5.2
                   },
                   {
-                    "name": "large",
+                    "name": "Produktgröße z.B. groß",
                     "price": 7.2
                   }
                 ]
@@ -94,9 +95,9 @@
       }
     ]
   },
-  "addionals": [
+  "additionals": [
     {
-      "name": "Extra Zutaten",
+      "name": "Optionale Zutaten z.B. Beläge",
       "duty": false,
       "productIds": [
         2,
@@ -104,7 +105,7 @@
       ],
       "additionals": [
         {
-          "description": "scharfe Sauce",
+          "description": "Zutatenbezeichnung",
           "additionalPrices": [
             {
               "name": "",
@@ -121,7 +122,7 @@
           ]
         },
         {
-          "description": "Peperoniwurst",
+          "description": "Zutatenbezeichnung",
           "additionalPrices": [
             {
               "name": "",
@@ -140,14 +141,14 @@
       ]
     },
     {
-      "name": "Dressing",
+      "name": "Pflichtzutat z.B. Dressing",
       "duty": true,
       "productIds": [
         421
       ],
       "additionals": [
         {
-          "description": "Joghurtdressing",
+          "description": "Zutatenbezeichnung",
           "additionalPrices": [
             {
               "name": "",
@@ -164,7 +165,7 @@
           ]
         },
         {
-          "description": "Chocktaildressing",
+          "description": "Zutatenbezeichnung",
           "additionalPrices": [
             {
               "name": "",
