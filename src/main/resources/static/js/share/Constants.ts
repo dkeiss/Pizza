@@ -61,6 +61,8 @@ class ShoppingCardSelectors {
 class ErrorDialogSelectors
 {
     public static container = ".core-serverError_container";
+    public static boxCenter =".core-serverError-boxCenter";
+    public static box = ".core-serverError-box";
     public static title = ".core-serverError_title";
     public static text = ".core-serverError_text";
     public static refreshButton = ".core-serverError_refreshButton";

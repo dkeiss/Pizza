@@ -30,8 +30,16 @@ namespace WebApplication.UserOrder
             this._menuClickSelectors = $(UserOrderSelector.menuClickSelectors);
         }
 
+
+
         private setMenuHtml(menus: IProductCategories): void
         {
+            if (!menus)
+            {
+                new ShowErrorDialog(null, "Load data error", "Could not load menu!");
+                return;
+            }
+
             let menuElement = "";
 
             for (let i = 0; i < menus.length; i++)

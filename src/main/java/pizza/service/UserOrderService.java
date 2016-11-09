@@ -1,5 +1,6 @@
 package pizza.service;
 
+import pizza.vo.order.UserOrderDetailsVO;
 import pizza.vo.order.UserOrderVO;
 
 import java.util.List;
@@ -9,8 +10,8 @@ import java.util.List;
  */
 public interface UserOrderService {
 
-    List<UserOrderVO> addUserOrder(UserOrderVO userOrder);
+    UserOrderDetailsVO addUserOrder(UserOrderVO userOrder);
 
-    List<UserOrderVO> getUserOrders();
+    List<UserOrderDetailsVO> getUserOrders();
 
 }

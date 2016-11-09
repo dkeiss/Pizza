@@ -1,6 +1,6 @@
 #FileLock
-#Sun Nov 06 20:18:30 CET 2016
-hostName=Hoshek
-id=1583b13dfabdf436e75099586b20587366b3efe13d7
+#Tue Nov 08 22:27:09 CET 2016
+hostName=Flux-Mobile.Speedport_W_921V_1_39_000
+id=15845d65f9df152dde4fe970f76230e1ea984d60299
 method=file
-server=192.168.42.171\:53599
+server=192.168.2.109\:63730

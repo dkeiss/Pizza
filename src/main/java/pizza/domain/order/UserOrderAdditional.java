@@ -15,18 +15,16 @@ import java.util.Date;
  */
 @Entity
 @Data
-public class OrderUserAdditions {
+public class UserOrderAdditional {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "ORDER_ID_SEQ")
-    @SequenceGenerator(name = "ORDER_ID_SEQ", sequenceName = "ORDER_ID_SEQ", allocationSize = 100)
-    private Integer orderUserAdditionsId;
-
-    private BigDecimal amount;
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "USER_ORDER_ADDITIONAL_ID_SEQ")
+    @SequenceGenerator(name = "USER_ORDER_ADDITIONAL_ID_SEQ", sequenceName = "USER_ORDER_ADDITIONAL_ID_SEQ", allocationSize = 100)
+    private Integer userOrderAdditionalId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ORDER_ID")
-    private OrderUser orderUser;
+    @JoinColumn(name = "USER_ORDER_ID")
+    private UserOrder userOrder;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ADDITIONAL_ID")

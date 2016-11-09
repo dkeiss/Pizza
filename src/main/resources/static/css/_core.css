@@ -122,13 +122,19 @@ p {
     position: absolute;
 }
 
+.core-serverError-boxCenter {
+    overflow: hidden;
+    margin: 10% auto 0;
+    min-width: 210px;
+}
+
 .core-serverError-box {
     background-color: #1a0c0c;
     border: 1px solid #ffffff;
     z-index: 120;
-    position: absolute;
-    left: calc(50% - 200px);
-    top: calc(50% - 300px);
+    position: relative;
+    display: inline-block;
+    min-width: 200px;
 }
 
 .core-serverError-title {
