@@ -19,13 +19,14 @@ interface IBulkOrder
     isActive?: boolean;
 }
 
-interface IOrderInformation
+interface IDeliveryData
 {
     informationId: number;
     company: string;
     firstName: string;
     lastName: string;
-    streetAddress: string;
+    street: string;
+    number: string;
     zipCode: number;
     city: string;
     phone: string;

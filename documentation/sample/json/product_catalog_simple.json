@@ -1,32 +1,31 @@
 {
   "productCatalog": {
-    "name": "Einfacher Produktkatalog",
+    "name": "Katalogname z.B. pizza.de",
     "productCategories": [
       {
-        "id": null,
-        "name": "",
+        "name": "Kategorie z.B. Pizza",
         "productGroups": [
           {
-            "name": "",
+            "name": "Produktgruppe z.B. Käserandpizza",
             "products": [
               {
                 "number": 2,
-                "name": "Margherita",
-                "description": "",
+                "name": "Produktname",
+                "description": "Produktbeschreibung",
                 "productVariations": [
                   {
-                    "name": "medium",
+                    "name": "Produktgröße z.B. klein",
                     "price": 4.4
                   }
                 ]
               },
               {
                 "number": 6,
-                "name": "Salami",
-                "description": "mit Salami",
+                "name": "Produktname",
+                "description": "Produktbeschreibung",
                 "productVariations": [
                   {
-                    "name": "medium",
+                    "name": "Produktgröße z.B. klein",
                     "price": 5.9
                   }
                 ]
@@ -37,5 +36,5 @@
       }
     ]
   },
-  "addionals":[]
+  "additionals":[]
 }

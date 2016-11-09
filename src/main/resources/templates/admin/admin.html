@@ -1,16 +1,20 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
     <title>Adminbereich</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge;"/>
     <link href="../../static/css/_core.css" th:href="@{/css/_core.css}" rel="stylesheet" media="screen"/>
     <link href="../../static/css/admin/admin.css" th:href="@{/css/admin/admin.css}" rel="stylesheet" media="screen"/>
+    <link href="../../static/css/admin/deliveryDataDialog.css" th:href="@{/css/admin/deliveryDataDialog.css}" rel="stylesheet" media="screen"/>
     <script src="../../static/js/thirdParty/jquery-2.1.4.min.js" th:src="@{/js/thirdParty/jquery-2.1.4.min.js}"></script>
     <script src="../../static/js/admin/overview/_app.js" th:src="@{/js/admin/overview/_app.js}"></script>
 </head>
 <body>
+
+<div class="core-dialog-container">
+    <div th:replace="fragments/deliveryDataDialog :: inputDialog">&nbsp;</div>
+</div>
 
 <div class="core-dialog-container">
     <div th:replace="fragments/serverErrorDialog :: serverError">&nbsp;</div>
@@ -43,7 +47,7 @@
     </div>
 
     <div class="core-link-container-box admin-container_printDiv">
-        <a href="#" class="admin-button-enabled admin-button_print">Druckinformationen bearbeiten</a>
+        <a class="admin-button-enabled admin-button_print">Druckinformationen bearbeiten</a>
     </div>
 
     <div class="core-link-container-box admin-container_catalogDiv">

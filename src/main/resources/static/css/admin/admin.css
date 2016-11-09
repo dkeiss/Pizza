@@ -105,7 +105,7 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
-.admin-inputField_time_error{
+.admin-inputField-error{
 
     color: #f00;
     background-color: #fee;
