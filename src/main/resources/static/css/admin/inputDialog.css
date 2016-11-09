@@ -1,0 +1,85 @@
+
+
+.admin-inputDialog-container.admin-inputDialog-showContainer {
+    display: block;
+}
+
+.admin-inputDialog-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 100;
+    display: none;
+}
+
+.admin-inputDialog-opacity {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    /*background-color: #F0F0F0;*/
+    opacity: 0.90;
+    z-index: 110;
+    position: absolute;
+}
+
+.admin-inputDialog-box {
+    background-color: #fff;
+    border: 1px solid #c4c8ca;
+    z-index: 120;
+    position: absolute;
+    left: calc(50% - 200px);
+    top: calc(50% - 300px);
+    padding: 10px;
+    display: block;
+}
+
+.admin-inputDialog-title {
+    color: #000000;
+    font-size: 15px;
+    border-bottom: 1px solid #c4c8ca;
+    padding: 0 0 10px 0;
+    margin: 0 0 10px 0;
+    font-weight: 500;
+}
+
+.admin-inputDialog-fieldContainer.row1 :first-child,
+.cadmin-inputDialog-fieldContainer.row2 :last-child {
+    box-sizing: border-box;
+    width: calc(75% - 5px);
+}
+
+.admin-inputDialog-fieldContainer.row1 :last-child,
+.admin-inputDialog-fieldContainer.row2 :first-child{
+    box-sizing: border-box;
+    width: calc(25% - 5px);
+}
+
+.admin-inputDialog-fieldContainer *{
+    box-sizing: border-box;
+    width: calc(50% - 5px);
+}
+
+.admin-inputDialog-fieldContainer :first-child{
+    float: left;
+}
+
+.admin-inputDialog-fieldContainer :last-child{
+    float: right;
+}
+
+.admin-inputDialog-inputField {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 5px 0;
+    float: left;
+}
+
+.admin-inputDialog-textArea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 10px 0;
+    resize: none;
+}
