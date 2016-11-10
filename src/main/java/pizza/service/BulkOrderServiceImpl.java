@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import pizza.domain.order.BulkOrder;
+import pizza.domain.order.deliveryservice.DeliveryService;
 import pizza.repositories.BulkOrderRepository;
+import pizza.repositories.DeliveryServiceRepository;
 import pizza.service.exception.BulkOrderActiveUntilNotValidException;
 import pizza.service.exception.BulkOrderAlreadyActiveException;
 import pizza.service.exception.BulkOrderProductCatalogNotExistsException;
@@ -31,6 +33,9 @@ public class BulkOrderServiceImpl implements BulkOrderService {
     private BulkOrderRepository bulkOrderRepository;
 
     @Autowired
+    private DeliveryServiceRepository deliveryServiceRepository;
+
+    @Autowired
     private ProductCatalogService productCatalogService;
 
     @Autowired
@@ -50,6 +55,9 @@ public class BulkOrderServiceImpl implements BulkOrderService {
         isValid(bulkOrderVO);
 
         BulkOrder bulkOrderBO = createBulkOrderFromVO(bulkOrderVO);
+        DeliveryService deliveryServiceBO = deliveryServiceRepository.save(bulkOrderBO.getDeliveryService());
+        bulkOrderBO.setDeliveryService(deliveryServiceBO);
+
         bulkOrderBO = bulkOrderRepository.save(bulkOrderBO);
         bulkOrderVO = getBulkOrderFromBO(bulkOrderBO);
 

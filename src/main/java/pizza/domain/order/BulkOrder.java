@@ -1,11 +1,9 @@
 package pizza.domain.order;
 
 import lombok.Data;
-import pizza.domain.deliveryservice.DeliveryService;
-import pizza.domain.product.Product;
+import pizza.domain.order.deliveryservice.DeliveryService;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
