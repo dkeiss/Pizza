@@ -1,5 +1,6 @@
 package pizza.service;
 
+import pizza.domain.product.additional.AdditionalCategory;
 import pizza.vo.product.additional.AdditionalCategoryVO;
 
 import java.util.List;

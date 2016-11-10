@@ -44,11 +44,15 @@ public class AdditionalServiceImpl implements AdditionalService {
 
     @Override
     public AdditionalCategoryVO getAdditionalCategory(Integer additionalCategoryId) {
-        AdditionalCategory additionalCategory = additionalCategoryRepository.findOne(additionalCategoryId);
+        AdditionalCategory additionalCategory = findAdditionalCategory(additionalCategoryId);
         if (additionalCategory == null) {
             throw new NotFoundException();
         }
         return getAdditionalCategoryFromBO(additionalCategory);
+    }
+
+    private AdditionalCategory findAdditionalCategory(Integer additionalCategoryId) {
+        return additionalCategoryRepository.findOne(additionalCategoryId);
     }
 
     @Override

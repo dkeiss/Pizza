@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pizza.domain.order.BulkOrder;
 import pizza.domain.order.UserOrder;
-import pizza.domain.order.UserOrderAdditional;
+import pizza.domain.order.UserOrderAdditionals;
 import pizza.domain.product.Product;
 import pizza.domain.product.ProductVariation;
 import pizza.domain.product.additional.AdditionalCategory;
@@ -14,14 +14,13 @@ import pizza.repositories.*;
 import pizza.service.exception.*;
 import pizza.vo.order.UserOrderDetailsVO;
 import pizza.vo.order.UserOrderVO;
-import pizza.vo.product.menu.ProductCatalogInfoVO;
+import pizza.vo.product.additional.AdditionalCategoryVO;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static pizza.service.common.ObjectMapperUtil.copyListFromBusinessObject;
 import static pizza.service.common.UserOrderBusinessToValueObjectConverter.getUserOrderFromBO;
 import static pizza.service.common.UserOrderBusinessToValueObjectConverter.getUserOrdersFromBOs;
 
@@ -43,6 +42,9 @@ public class UserOrderServiceImpl implements UserOrderService {
     @Autowired
     private ProductCatalogService productCatalogService;
 
+    @Autowired
+    private AdditionalService additionalService;
+
     @Override
     public UserOrderDetailsVO addUserOrder(UserOrderVO userOrderVO) {
         checkUserOrderValid(userOrderVO);
@@ -57,7 +59,7 @@ public class UserOrderServiceImpl implements UserOrderService {
         if (!product.getProductId().equals(productVariation.getProduct().getProductId())) {
             throw new UserOrderProductAndProductVariationNotMatchException();
         }
-        List<UserOrderAdditional> userOrderAdditionals = getUserOrderAdditionals(userOrderVO);
+        List<UserOrderAdditionals> userOrderAdditionals = createUserOrderAdditionals(userOrderVO);
 
         UserOrder userOrder = new UserOrder();
         userOrder.setUser(user);
@@ -74,12 +76,12 @@ public class UserOrderServiceImpl implements UserOrderService {
         return getUserOrderFromBO(userOrder);
     }
 
-    private BigDecimal calculateAmount(ProductVariation productVariation, List<UserOrderAdditional> userOrderAdditionals) {
+    private BigDecimal calculateAmount(ProductVariation productVariation, List<UserOrderAdditionals> userOrderAdditionalses) {
         BigDecimal amount = productVariation.getPrice();
-        if (userOrderAdditionals != null) {
-            for (UserOrderAdditional userOrderAdditional : userOrderAdditionals) {
+        if (userOrderAdditionalses != null) {
+            for (UserOrderAdditionals userOrderAdditional : userOrderAdditionalses) {
                 AdditionalPrice additionalPrice = userOrderAdditional.getAdditionalPrice();
-                if(additionalPrice == null){
+                if (additionalPrice == null) {
                     continue;
                 }
                 amount = amount.add(additionalPrice.getPrice());
@@ -88,12 +90,20 @@ public class UserOrderServiceImpl implements UserOrderService {
         return amount;
     }
 
-    private List<UserOrderAdditional> getUserOrderAdditionals(UserOrderVO userOrderVO) {
+    private List<UserOrderAdditionals> createUserOrderAdditionals(UserOrderVO userOrderVO) {
         if (userOrderVO.getAdditionalIds() == null || userOrderVO.getAdditionalIds().isEmpty()) {
             return null;
         }
-        List<UserOrderAdditional> userOrderAdditions = new ArrayList<>();
-
+        List<UserOrderAdditionals> userOrderAdditions = new ArrayList<>();
+        for (Integer additionalId : userOrderVO.getAdditionalIds()) {
+            // TODO
+//            AdditionalCategory additionalCategory = additionalService.findAdditionalCategory(additionalId);
+//            if(additionalCategory == null){
+//                throw new UserOrderAdditionalNotFoundException();
+//            }
+//            UserOrderAdditionals userOrderAdditionals = new UserOrderAdditionals();
+//            userOrderAdditionals.setAdditional(additionalCategory.);
+        }
         return userOrderAdditions;
     }
 
