@@ -54,12 +54,7 @@ public class AdditionalServiceImpl implements AdditionalService {
     @Override
     public List<AdditionalCategoryVO> getAdditionalsByProductId(Integer productId) {
         List<AdditionalCategoryVO> additionalCategoryVOs = listAdditionalCategories();
-        List<AdditionalCategoryVO> selected = new ArrayList<>();
-        for (AdditionalCategoryVO additionalCategoryVO : additionalCategoryVOs) {
-            if (additionalCategoryVO.getProductIds().contains(productId)) {
-                selected.add(additionalCategoryVO);
-            }
-        }
+        List<AdditionalCategoryVO> selected = additionalCategoryVOs.stream().filter(additionalCategoryVO -> additionalCategoryVO.getProductIds().contains(productId)).collect(Collectors.toList());
         return selected;
     }
 
