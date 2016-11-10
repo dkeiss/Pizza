@@ -85,12 +85,14 @@ public class BulkOrderServiceImpl implements BulkOrderService {
     }
 
     @Override
-    public void updateBulkOrderById(BulkOrderVO bulkOrderVO) {
+    public void updateBulkOrder(BulkOrderVO bulkOrderVO) {
         BulkOrder bulkOrder = bulkOrderRepository.findOne(bulkOrderVO.getBulkOrderId());
         if (bulkOrder == null) {
             throw new NotFoundException();
         }
-        copyFromValueObject(bulkOrderVO.getDeliveryService(), bulkOrder.getDeliveryService());
+        DeliveryService deliveryService = copyFromValueObject(bulkOrderVO.getDeliveryService(), bulkOrder.getDeliveryService());
+        deliveryService = deliveryServiceRepository.save(deliveryService);
+        bulkOrder.setDeliveryService(deliveryService);
         copyFromValueObject(bulkOrderVO, bulkOrder);
         bulkOrder.setModificationDate(new Date());
         bulkOrderRepository.save(bulkOrder);
