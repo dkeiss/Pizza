@@ -2,6 +2,7 @@ package pizza.vo.order;
 
 import lombok.Data;
 import lombok.Getter;
+import pizza.vo.deliveryservice.DeliveryServiceVO;
 
 import javax.validation.constraints.NotNull;
 import java.beans.Transient;
@@ -24,6 +25,9 @@ public class BulkOrderVO {
 
     @NotNull
     private Date activeUntil;
+
+    @NotNull
+    private DeliveryServiceVO deliveryService;
 
     private Date creationDate;
 

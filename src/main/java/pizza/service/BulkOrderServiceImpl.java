@@ -11,9 +11,12 @@ import pizza.service.exception.BulkOrderProductCatalogNotExistsException;
 import pizza.service.exception.NotFoundException;
 import pizza.vo.order.BulkOrderVO;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static pizza.service.common.BulkOrderBusinessToValueObjectConverter.getBulkOrderFromBO;
+import static pizza.service.common.BulkOrderValueToBusinessObjectConverter.createBulkOrderFromVO;
 import static pizza.service.common.ObjectMapperUtil.copyFromBusinessObject;
 import static pizza.service.common.ObjectMapperUtil.copyFromValueObject;
 import static pizza.service.common.ObjectMapperUtil.copyListFromBusinessObject;
@@ -35,18 +38,20 @@ public class BulkOrderServiceImpl implements BulkOrderService {
 
     @Override
     public List<BulkOrderVO> listBulkOrders() {
-        return copyListFromBusinessObject(bulkOrderRepository.findAll(), BulkOrderVO.class);
+        List<BulkOrderVO> bulkOrderVOs = new ArrayList<>();
+        for (BulkOrder bulkOrder : bulkOrderRepository.findAll()) {
+            bulkOrderVOs.add(getBulkOrderFromBO(bulkOrder));
+        }
+        return bulkOrderVOs;
     }
 
     @Override
     public BulkOrderVO createBulkOrder(BulkOrderVO bulkOrderVO) {
         isValid(bulkOrderVO);
 
-        bulkOrderVO.setBulkOrderId(null);
-        BulkOrder bulkOrderBO = copyFromValueObject(bulkOrderVO, new BulkOrder());
-        bulkOrderBO.setCreationDate(new Date());
+        BulkOrder bulkOrderBO = createBulkOrderFromVO(bulkOrderVO);
         bulkOrderBO = bulkOrderRepository.save(bulkOrderBO);
-        bulkOrderVO = copyFromBusinessObject(bulkOrderBO, bulkOrderVO);
+        bulkOrderVO = getBulkOrderFromBO(bulkOrderBO);
 
         mailService.sendBulkOrderInvitationToAll(bulkOrderVO.getName());
 
@@ -59,7 +64,7 @@ public class BulkOrderServiceImpl implements BulkOrderService {
         if (bulkOrder == null) {
             throw new NotFoundException();
         }
-        return copyFromBusinessObject(bulkOrder, new BulkOrderVO());
+        return getBulkOrderFromBO(bulkOrder);
     }
 
     @Override
@@ -77,6 +82,7 @@ public class BulkOrderServiceImpl implements BulkOrderService {
         if (bulkOrder == null) {
             throw new NotFoundException();
         }
+        copyFromValueObject(bulkOrderVO.getDeliveryService(), bulkOrder.getDeliveryService());
         copyFromValueObject(bulkOrderVO, bulkOrder);
         bulkOrder.setModificationDate(new Date());
         bulkOrderRepository.save(bulkOrder);
@@ -85,18 +91,18 @@ public class BulkOrderServiceImpl implements BulkOrderService {
     @Override
     public BulkOrderVO getActiveBulkOrder() {
         BulkOrder activeBulkOrder = findActiveBulkOrder();
-        if(activeBulkOrder == null){
+        if (activeBulkOrder == null) {
             throw new NotFoundException();
         }
-        return copyFromBusinessObject(activeBulkOrder, new BulkOrderVO());
+        return getBulkOrderFromBO(activeBulkOrder);
     }
 
     public BulkOrder findActiveBulkOrder() {
         List<BulkOrder> activeBulkOrders = bulkOrderRepository.findByActiveUntilGreaterThan(new Date());
-        if(activeBulkOrders.isEmpty()){
+        if (activeBulkOrders.isEmpty()) {
             return null;
         }
-        if(activeBulkOrders.size() > 1){
+        if (activeBulkOrders.size() > 1) {
             throw new RuntimeException("More than one bulk order active. Please contact your administrator!");
         }
         return activeBulkOrders.get(0);

@@ -1,6 +1,8 @@
 package pizza.domain.order;
 
 import lombok.Data;
+import pizza.domain.deliveryservice.DeliveryService;
+import pizza.domain.product.Product;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -23,6 +25,10 @@ public class BulkOrder {
     private String name;
 
     private Date activeUntil;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "DELIVERY_SERVICE_ID")
+    private DeliveryService deliveryService;
 
     private Date creationDate;
 
