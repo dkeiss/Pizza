@@ -51,6 +51,9 @@ class AdminOverviewSelectors
 
     public static adminFileInput= ".admin-inputField_file";
 
+    public static adminGetSimpleCatalogButton= ".admin-submitButton_simple";
+    public static adminGetExpertCatalogButton= ".admin-submitButton_expert";
+
 }
 
 class ShoppingCardSelectors {

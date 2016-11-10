@@ -24,6 +24,8 @@ namespace WebApplication.Admin.Overview
         private _adminCatalogComboBox: JQuery = null;
         private _adminActivateCatalogButton: JQuery = null;
         private _adminFileInput: JQuery = null;
+        private _adminGetSimpleCatalogButton: JQuery = null;
+        private _adminGetExpertCatalogButton: JQuery = null;
 
         private _adminCardDiv: JQuery = null;
         private _adminUserManagementDiv: JQuery = null;
@@ -60,6 +62,8 @@ namespace WebApplication.Admin.Overview
             this._adminCatalogDiv = $(AdminOverviewSelectors.adminCatalogDiv);
             this._adminFileInput = $(AdminOverviewSelectors.adminFileInput);
             this._adminOpenInputDialogButton = $(AdminOverviewSelectors.adminOpenInputDialogButton);
+            this._adminGetSimpleCatalogButton = $(AdminOverviewSelectors.adminGetSimpleCatalogButton);
+            this._adminGetExpertCatalogButton = $(AdminOverviewSelectors.adminGetExpertCatalogButton);
 
             this.resetGUI();
             this.getProductCatalogs();
@@ -69,6 +73,8 @@ namespace WebApplication.Admin.Overview
             this._adminUploadCatalogButton.on("click", () => {this._adminFileInput.trigger("click");});
             this._adminFileInput.on("change", () => this.uploadProductCatalog());
             this._adminOpenInputDialogButton.on("click",function(){new ShowInputDialog()});
+            this._adminGetSimpleCatalogButton.on("click", () => {window.location.replace('rest/admin/productcatalog/download/simple');});
+            this._adminGetExpertCatalogButton.on("click", () => {window.location.replace('rest/admin/productcatalog/download/expert');});
         }
 
         private resetGUI(): void {
