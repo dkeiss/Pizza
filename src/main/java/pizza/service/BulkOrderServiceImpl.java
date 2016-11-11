@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import pizza.domain.order.BulkOrder;
-import pizza.domain.order.deliveryservice.DeliveryService;
 import pizza.repositories.BulkOrderRepository;
 import pizza.repositories.DeliveryServiceRepository;
 import pizza.service.exception.BulkOrderActiveUntilNotValidException;
@@ -19,9 +18,7 @@ import java.util.List;
 
 import static pizza.service.common.BulkOrderBusinessToValueObjectConverter.getBulkOrderFromBO;
 import static pizza.service.common.BulkOrderValueToBusinessObjectConverter.createBulkOrderFromVO;
-import static pizza.service.common.ObjectMapperUtil.copyFromBusinessObject;
 import static pizza.service.common.ObjectMapperUtil.copyFromValueObject;
-import static pizza.service.common.ObjectMapperUtil.copyListFromBusinessObject;
 
 /**
  * Created by Daniel Keiss on 26.10.2016.
@@ -55,9 +52,6 @@ public class BulkOrderServiceImpl implements BulkOrderService {
         isValid(bulkOrderVO);
 
         BulkOrder bulkOrderBO = createBulkOrderFromVO(bulkOrderVO);
-        DeliveryService deliveryServiceBO = deliveryServiceRepository.save(bulkOrderBO.getDeliveryService());
-        bulkOrderBO.setDeliveryService(deliveryServiceBO);
-
         bulkOrderBO = bulkOrderRepository.save(bulkOrderBO);
         bulkOrderVO = getBulkOrderFromBO(bulkOrderBO);
 
@@ -90,9 +84,6 @@ public class BulkOrderServiceImpl implements BulkOrderService {
         if (bulkOrder == null) {
             throw new NotFoundException();
         }
-        DeliveryService deliveryService = copyFromValueObject(bulkOrderVO.getDeliveryService(), bulkOrder.getDeliveryService());
-        deliveryService = deliveryServiceRepository.save(deliveryService);
-        bulkOrder.setDeliveryService(deliveryService);
         copyFromValueObject(bulkOrderVO, bulkOrder);
         bulkOrder.setModificationDate(new Date());
         bulkOrderRepository.save(bulkOrder);
