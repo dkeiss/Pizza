@@ -1,16 +1,11 @@
 package pizza.service.common;
 
 import pizza.domain.order.UserOrder;
-import pizza.domain.order.UserOrderAdditional;
-import pizza.domain.product.ProductCatalog;
-import pizza.domain.product.ProductCategory;
+import pizza.domain.order.UserOrderAdditionals;
 import pizza.domain.user.User;
 import pizza.vo.order.UserOrderDetailsVO;
-import pizza.vo.order.UserOrderVO;
 import pizza.vo.product.additional.AdditionalInfoVO;
-import pizza.vo.product.menu.ProductCatalogVO;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,19 +34,19 @@ public class UserOrderBusinessToValueObjectConverter {
         return userOrderDetailsVO;
     }
 
-    private static List<AdditionalInfoVO> getAdditionalInfosFromBOs(List<UserOrderAdditional> userOrderAdditionals) {
-        return userOrderAdditionals.stream().map(UserOrderBusinessToValueObjectConverter::getAdditionalInfoFromBOs).collect(Collectors.toList());
+    private static List<AdditionalInfoVO> getAdditionalInfosFromBOs(List<UserOrderAdditionals> userOrderAdditionalses) {
+        return userOrderAdditionalses.stream().map(UserOrderBusinessToValueObjectConverter::getAdditionalInfoFromBOs).collect(Collectors.toList());
     }
 
-    private static AdditionalInfoVO getAdditionalInfoFromBOs(UserOrderAdditional userOrderAdditional) {
+    private static AdditionalInfoVO getAdditionalInfoFromBOs(UserOrderAdditionals userOrderAdditionals) {
         AdditionalInfoVO additionalInfoVO = new AdditionalInfoVO();
-        additionalInfoVO.setAdditionalId(userOrderAdditional.getAdditional().getAdditionalId());
-        additionalInfoVO.setDescription(userOrderAdditional.getAdditional().getDescription());
+        additionalInfoVO.setAdditionalId(userOrderAdditionals.getAdditional().getAdditionalId());
+        additionalInfoVO.setDescription(userOrderAdditionals.getAdditional().getDescription());
         return additionalInfoVO;
     }
 
-    private static List<Integer> getAdditionalIdsFromBOs(List<UserOrderAdditional> userOrderAdditionals) {
-        return userOrderAdditionals.stream().map(userOrderAdditional -> userOrderAdditional.getAdditional().getAdditionalId()).collect(Collectors.toList());
+    private static List<Integer> getAdditionalIdsFromBOs(List<UserOrderAdditionals> userOrderAdditionalses) {
+        return userOrderAdditionalses.stream().map(userOrderAdditional -> userOrderAdditional.getAdditional().getAdditionalId()).collect(Collectors.toList());
     }
 
 }

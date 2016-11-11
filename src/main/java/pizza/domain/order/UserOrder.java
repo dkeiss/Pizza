@@ -2,9 +2,7 @@ package pizza.domain.order;
 
 import lombok.Data;
 import pizza.domain.product.Product;
-import pizza.domain.product.ProductCategory;
 import pizza.domain.product.ProductVariation;
-import pizza.domain.product.additional.Additional;
 import pizza.domain.user.User;
 
 import javax.persistence.*;
@@ -43,7 +41,7 @@ public class UserOrder {
     private ProductVariation productVariation;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "userOrder", cascade = {CascadeType.ALL}, orphanRemoval = true)
-    private List<UserOrderAdditional> userOrderAdditionals;
+    private List<UserOrderAdditionals> userOrderAdditionals;
 
     private Boolean paid;
 

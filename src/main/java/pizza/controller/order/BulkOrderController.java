@@ -53,7 +53,7 @@ public class BulkOrderController {
     @ResponseBody
     Map updateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId, @RequestBody BulkOrderVO bulkOrder) {
         bulkOrder.setBulkOrderId(bulkorderId);
-        bulkOrderService.updateBulkOrderById(bulkOrder);
+        bulkOrderService.updateBulkOrder(bulkOrder);
         return getResponseWithStatus(true);
     }
 
