@@ -52,11 +52,11 @@ class ShowInputDialog
         this._inputDialogCancelButton.on("click", () => {
             this._inputDialogContainer.removeClass(this._cssShowContainer);
             this._inputDialogContainer.find("input").val('');
-            this._inputDialogContainer.find("input").removeClass("admin-inputField-error");
+            this._inputDialogContainer.find("input").removeClass("core-inputField-error");
         });
         this._inputDialogAcceptButton.on("click", () => this.saveDeliveryData());
 
-        this.getDeliveryData();
+        //this.getDeliveryData();
     }
 
     private getDeliveryData(): void {
@@ -108,15 +108,15 @@ class ShowInputDialog
         let valid = true;
         const emailPattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
 
-        this._inputDialogFirstNameInput.toggleClass("admin-inputField-error", this._inputDialogFirstNameInput.val().length == 0);
-        this._inputDialogLastNameInput.toggleClass("admin-inputField-error", this._inputDialogLastNameInput.val().length == 0);
-        this._inputDialogStreetInput.toggleClass("admin-inputField-error", this._inputDialogStreetInput.val().length == 0);
-        this._inputDialogNumberInput.toggleClass("admin-inputField-error", this._inputDialogNumberInput.val().length == 0);
-        this._inputDialogZipInput.toggleClass("admin-inputField-error", this._inputDialogZipInput.val().length == 0);
-        this._inputDialogCityInput.toggleClass("admin-inputField-error", this._inputDialogCityInput.val().length == 0);
-        this._inputDialogPhoneInput.toggleClass("admin-inputField-error", this._inputDialogPhoneInput.val().length == 0);
-        this._inputDialogEMailInput.toggleClass("admin-inputField-error", !emailPattern.test(this._inputDialogEMailInput.val()));
+        this._inputDialogFirstNameInput.toggleClass("core-inputField-error", this._inputDialogFirstNameInput.val().length == 0);
+        this._inputDialogLastNameInput.toggleClass("core-inputField-error", this._inputDialogLastNameInput.val().length == 0);
+        this._inputDialogStreetInput.toggleClass("core-inputField-error", this._inputDialogStreetInput.val().length == 0);
+        this._inputDialogNumberInput.toggleClass("core-inputField-error", this._inputDialogNumberInput.val().length == 0);
+        this._inputDialogZipInput.toggleClass("core-inputField-error", this._inputDialogZipInput.val().length == 0);
+        this._inputDialogCityInput.toggleClass("core-inputField-error", this._inputDialogCityInput.val().length == 0);
+        this._inputDialogPhoneInput.toggleClass("core-inputField-error", this._inputDialogPhoneInput.val().length == 0);
+        this._inputDialogEMailInput.toggleClass("core-inputField-error", !emailPattern.test(this._inputDialogEMailInput.val()));
 
-        return this._inputDialogContainer.find(".admin-inputField-error").length == 0;
+        return this._inputDialogContainer.find(".core-inputField-error").length == 0;
     }
 }

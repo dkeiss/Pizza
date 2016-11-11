@@ -13,9 +13,9 @@ namespace WebApplication.Admin.Overview
             WebServiceAccess.ajaxGet(WebService.bulkOrder, onSuccess);
         }
 
-        public static activateBulkOrder(bulkOrder: IBulkOrder, onSuccess: (bulkOrder: IBulkOrder) => void, onError: (xhr: any) => void): void
+        public static activateBulkOrder(bulkOrder: IBulkOrder, onSuccess: (bulkOrder: IBulkOrder) => void/*, onError: (xhr: any) => void*/): void
         {
-            WebServiceAccess.ajaxPost(WebService.bulkOrder,bulkOrder, onSuccess, onError);
+            WebServiceAccess.ajaxPost(WebService.bulkOrder,bulkOrder, onSuccess/*, onError*/);
         }
 
         public static deactivateBulkOrder(id: number, onSuccess: (success: IOnSuccess) => void): void

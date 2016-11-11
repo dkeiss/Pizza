@@ -70,11 +70,18 @@ p {
 }
 
 .core-inputField {
-    width: calc(100% - 15px);
+    /*width: calc(100% - 15px);*/
+    width: 100%;
+    box-sizing: border-box;
     padding: 5px;
-    margin: 4px 0 4px 0;
+    margin: 5px 0 5px 0;
     float: left;
 }
+
+.core-inputField-error{
+    box-shadow: 0 0 2px 1px #f00;
+}
+
 
 .core-submitButton {
     width: 100%;

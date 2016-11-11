@@ -103,12 +103,12 @@ namespace WebApplication.Admin.Overview
             let isValid = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])$/.test(this._adminTimePicker.val());
 
             if (isValid) {
-                this._adminTimePicker.removeClass("admin-inputField-error");
+                this._adminTimePicker.removeClass("core-inputField-error");
                 this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled").addClass("admin-submitButton-enabled");
                 this._adminTimePickerLabel.hide();
                 this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
             } else {
-                this._adminTimePicker.addClass("admin-inputField-error");
+                this._adminTimePicker.addClass("core-inputField-error");
                 this._adminActivateCatalogButton.addClass("admin-submitButton-disabled").removeClass("admin-submitButton-enabled");
                 this._adminTimePickerLabel.text("Ungültige Uhrzeit");
                 this._adminTimePickerLabel.show();
@@ -178,11 +178,11 @@ namespace WebApplication.Admin.Overview
                     bulkOrder => {
                         this._currentBulkOrder = bulkOrder;
 
-                        this._adminTimePicker.removeClass("admin-inputField-error");
-                        this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled").addClass("admin-submitButton-enabled");
+                        //this._adminTimePicker.removeClass("core-inputField-error");
+                        //this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled").addClass("admin-submitButton-enabled");
 
-                        this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
-                        this._adminTimePickerLabel.hide();
+                        //this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
+                        //this._adminTimePickerLabel.hide();
 
                         this.resetGUI();
                         this.getCurrentBulkOrder();
@@ -198,12 +198,12 @@ namespace WebApplication.Admin.Overview
                         this._adminCatalogComboBox.removeClass("hide");
                         this._adminActivateCatalogButton.removeClass("hide");
                         this._adminBulkOrderDiv.removeClass("admin-loading");
-                    },
+                    }/*,
                     errorResponse => {
                         this._errorResponse = errorResponse.responseJSON;
                         this._adminTimePickerLabel.text(this._errorResponse.message);
 
-                        this._adminTimePicker.addClass("admin-inputField-error");
+                        this._adminTimePicker.addClass("core-inputField-error");
                         this._adminActivateCatalogButton.addClass("admin-submitButton-disabled").removeClass("admin-submitButton-enabled");
                         this._adminTimePickerLabel.show();
                         this._adminBulkOrderDiv.addClass("admin-failure-blink");
@@ -218,7 +218,7 @@ namespace WebApplication.Admin.Overview
                         this._adminCatalogComboBox.removeClass("hide");
                         this._adminActivateCatalogButton.removeClass("hide");
                         this._adminBulkOrderDiv.removeClass("admin-loading");
-                    }
+                    }*/
                 );
             }
         }

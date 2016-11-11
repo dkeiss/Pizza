@@ -86,24 +86,25 @@
 
 .sc-orderTable-outstandingIcon {
     background: url(../../img/outstanding.png) no-repeat center;
-    background-size: 16px;
+    background-size: 20px;
     cursor: pointer;
 }
 
 .sc-orderTable-outstandingIcon:hover {
-    background: url(../../img/markPaid.png) no-repeat center;
-    background-size: 16px;
+    background: url(../../img/outstanding-hover.png) no-repeat center;
+    background-size: 20px;
 }
 
 .sc-orderTable-paidIcon {
     background: url(../../img/paid.png) no-repeat center;
-    background-size: 16px;
+    background-size: 20px;
     cursor: pointer;
 }
 
 .sc-orderTable-paidIcon:hover {
-    background: url(../../img/markOutstanding.png) no-repeat center;
-    background-size: 16px;
+
+    background: url(../../img/paid-hover.png) no-repeat center;
+    background-size: 20px;
 }
 
 .sc-orderTable-trashIcon {
@@ -116,17 +117,6 @@
 .sc-orderTable-trashIcon:hover {
     opacity: 1;
 }
-
-.sc-orderTable-markPaidIcon {
-    background: url(../../img/markPaid.png) no-repeat center;
-    background-size: 16px;
-}
-
-.sc-orderTable-markOutstaindingIcon {
-    background: url(../../img/markOutstanding.png) no-repeat center;
-    background-size: 16px;
-}
-
 
 .sc-orderTable-green-blink{
     animation: green-blink 0.5s ease-out;
@@ -156,8 +146,4 @@
 
 .hide{
     opacity: 0.1;
-}
-
-.sc-orderTable tr{
-    transition: 5s linear;
 }
