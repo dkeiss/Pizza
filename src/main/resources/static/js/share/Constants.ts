@@ -1,6 +1,6 @@
 class WebService
 {
-    public static deliveryData = `${window.location.origin}/rest/admin/deliveryData`;
+    public static deliveryData = `${window.location.origin}/rest/deliveryservice`;
     public static shoppingCard = `${window.location.origin}/rest/admin/shoppingcard`;
     public static adminProductCatalog = `${window.location.origin}/rest/admin/productcatalog`;
     public static productCatalog = `${window.location.origin}/rest/productcatalog`;

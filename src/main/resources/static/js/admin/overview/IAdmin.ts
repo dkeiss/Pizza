@@ -21,15 +21,15 @@ interface IBulkOrder
 
 interface IDeliveryData
 {
-    informationId: number;
-    company: string;
+    deliveryServiceId: number;
+    deliveryServiceName: string;
     firstName: string;
     lastName: string;
     street: string;
-    number: string;
-    zipCode: number;
-    city: string;
-    phone: string;
+    streetNumber: string;
+    postalCode: string;
+    town: string;
+    /*phone: string;
     eMail: string;
-    additionalInformation?: string;
+    additionalInformation?: string;*/
 }

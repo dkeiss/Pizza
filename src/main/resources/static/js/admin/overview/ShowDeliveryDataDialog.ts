@@ -56,49 +56,49 @@ class ShowInputDialog
         });
         this._inputDialogAcceptButton.on("click", () => this.saveDeliveryData());
 
-        //this.getDeliveryData();
+        this.getDeliveryData();
     }
 
     private getDeliveryData(): void {
         AdminService.getDeliveryData(deliveryData =>
             {
                 this._currentDeliveryData = deliveryData;
-                this._inputDialogCompanyInput.val(this._currentDeliveryData.company);
+                this._inputDialogCompanyInput.val(this._currentDeliveryData.deliveryServiceName);
                 this._inputDialogFirstNameInput.val(this._currentDeliveryData.firstName);
                 this._inputDialogLastNameInput.val(this._currentDeliveryData.lastName);
                 this._inputDialogStreetInput.val(this._currentDeliveryData.street);
-                this._inputDialogNumberInput.val(this._currentDeliveryData.number);
-                this._inputDialogZipInput.val(this._currentDeliveryData.zipCode);
-                this._inputDialogCityInput.val(this._currentDeliveryData.city);
-                this._inputDialogPhoneInput.val(this._currentDeliveryData.phone);
+                this._inputDialogNumberInput.val(this._currentDeliveryData.streetNumber);
+                this._inputDialogZipInput.val(this._currentDeliveryData.postalCode);
+                this._inputDialogCityInput.val(this._currentDeliveryData.town);
+                /*this._inputDialogPhoneInput.val(this._currentDeliveryData.phone);
                 this._inputDialogEMailInput.val(this._currentDeliveryData.eMail);
-                this._inputDialogCommentArea.val(this._currentDeliveryData.additionalInformation);
+                this._inputDialogCommentArea.val(this._currentDeliveryData.additionalInformation);*/
             }
         );
     }
 
     private saveDeliveryData(): void {
-        console.log(this.validateInputFields());
         if(!this.validateInputFields()){
             this._inputDialogWarningLabel.show();
         } else {
             this._inputDialogWarningLabel.hide();
 
-            this._currentDeliveryData.company = this._inputDialogCompanyInput.val();
+            this._currentDeliveryData.deliveryServiceName = this._inputDialogCompanyInput.val();
             this._currentDeliveryData.firstName = this._inputDialogFirstNameInput.val();
             this._currentDeliveryData.lastName = this._inputDialogLastNameInput.val();
             this._currentDeliveryData.street = this._inputDialogStreetInput.val();
-            this._currentDeliveryData.number = this._inputDialogNumberInput.val();
-            this._currentDeliveryData.zipCode = this._inputDialogZipInput.val();
-            this._currentDeliveryData.city = this._inputDialogCityInput.val();
-            this._currentDeliveryData.phone = this._inputDialogPhoneInput.val();
+            this._currentDeliveryData.streetNumber = this._inputDialogNumberInput.val();
+            this._currentDeliveryData.postalCode = this._inputDialogZipInput.val();
+            this._currentDeliveryData.town = this._inputDialogCityInput.val();
+            /*this._currentDeliveryData.phone = this._inputDialogPhoneInput.val();
             this._currentDeliveryData.eMail = this._inputDialogEMailInput.val();
-            this._currentDeliveryData.additionalInformation = this._inputDialogCommentArea.val();
+            this._currentDeliveryData.additionalInformation = this._inputDialogCommentArea.val();*/
 
             AdminService.saveDeliveryData(this._currentDeliveryData, success =>
                 {
                     this._inputDialogContainer.removeClass(this._cssShowContainer);
                     this._inputDialogContainer.find("input").val('');
+                    this._inputDialogContainer.find("input").removeClass("core-inputField-error");
                 }
             );
          }

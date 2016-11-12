@@ -4,9 +4,8 @@
 <head>
     <title>Login</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="../static/css/core.css"
-          th:href="@{/css/core.css}"
-          rel="stylesheet" media="screen"/>
+    <link href="../static/css/core.css" th:href="@{/css/core.css}" rel="stylesheet" media="screen"/>
+    <link href="../static/css/_core.css" th:href="@{/css/_core.css}" rel="stylesheet" media="screen"/>
 </head>
 <body>
 
@@ -16,6 +15,18 @@
     </div>
 </div>
 
+<div class="core-container-login">
+    <!--<div th:if="${param.logout}" class="core-container-box">Sie wurden ausgeloggt.</div>-->
+    <div class="core-container-box">
+        <form id="login-form" th:action="@{/login}" method="post">
+            <input type="text" name="username" th:value="${username}" class="core-inputField" placeholder="Benutzername"/>
+            <input th:if="${isAdmin}" type="password" name="password" class="core-inputField" placeholder="Passwort"/>
+            <div class="core-submitButton" onClick="document.forms['login-form'].submit();">Bestätigen</div>
+        </form>
+        <!--<label th:if="${param.error}" class="core-warningLabel">Falscher Benutzername oder Passwort.</label>-->
+    </div>
+</div>
+<!--
 <div id="main">
     <div class="container">
         <div th:if="${param.error}">
@@ -37,6 +48,6 @@
         </form>
     </div>
 </div>
-
+-->
 </body>
 </html>

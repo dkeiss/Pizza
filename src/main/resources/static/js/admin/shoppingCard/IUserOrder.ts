@@ -1,7 +1,11 @@
 
 interface IProductAdditionInfo{
+    userOrderAdditionalId: number;
+    userOrderId: number;
     additionalId: number;
-    description: string;
+    additionalDescription: string;
+    additionalPriceId: number;
+    additionalPriceName: string;
 }
 
 
@@ -11,13 +15,14 @@ interface IUserOrder
 {
     userOrderId: number;
     userId: number;
+    productId: number;
+    productVariationId: number;
+    number: number;
+    userOrderAdditionals: IProductAdditions;
     firstName: string;
     lastName: string;
-    productId: number;
     productName: string;
-    productVariationId: number;
     productVariationName: string;
-    additionals: IProductAdditions;
     sum: number;
     paid: boolean;
 }

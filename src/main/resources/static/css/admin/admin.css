@@ -22,15 +22,16 @@
 }
 
 .admin-button-box{
-    width: 250px;
     float: right
 }
 
 .admin-button-box :first-child{
     float: left;
+    margin-right: 5px;
 }
 .admin-button-box :last-child{
     float: right;
+    margin-left: 5px;
 }
 
 .admin-submitButton-disabled{
@@ -49,10 +50,10 @@
 }
 
 .admin-submitButton{
-    width: 120px;
+    min-width: 120px;
     text-align: center;
     text-transform: uppercase;
-    padding: 5px 0;
+    padding: 5px 5px;
     float: right;
     cursor: pointer;
 }

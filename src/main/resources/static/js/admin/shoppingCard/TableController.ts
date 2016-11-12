@@ -33,7 +33,6 @@ namespace WebApplication.Admin.ShoppingCard
             for(let i = 0; i <this._orderTableSortButton.length; i++) {
                 $(this._orderTableSortButton[i]).on("click", () => this.sort(i));
             }
-            console.log("consti");
             this.getUserOrders();
             this.createTable();
         }
@@ -42,7 +41,6 @@ namespace WebApplication.Admin.ShoppingCard
             ShoppingCardService.loadUserOrders(orderList =>
             {
                 this._orderList = orderList;
-                console.log(this._orderList);
             });
         }
 
@@ -51,16 +49,15 @@ namespace WebApplication.Admin.ShoppingCard
             this._tableData = new Array(this._orderList.length);
 
             for(let i = 0; i < this._orderList.length; i++) {
-                console.log(this._orderList[i]);
                 let element = "";
                 element += "<tr orderid='" + this._orderList[i].userOrderId + "'>";
                 element += "<td >" +  this._orderList[i].firstName + " " + this._orderList[i].lastName + "</td>";
-                element += "<td >" +  this._orderList[i].productId + "</td>";
+                element += "<td >" +  this._orderList[i].number + "</td>";
                 element += "<td >" +  this._orderList[i].productName + "</td>";
                 let additionString = "";
-                if(this._orderList[i].additionals) {
-                    for (let a = 0; a < this._orderList[i].additionals.length; a++) {
-                        additionString += this._orderList[i].additionals[a].description + ", ";
+                if(this._orderList[i].userOrderAdditionals) {
+                    for (let a = 0; a < this._orderList[i].userOrderAdditionals.length; a++) {
+                        additionString += this._orderList[i].userOrderAdditionals[a].additionalDescription + ", ";
                     }
                     additionString = additionString.substring(0,additionString.length - 2);
                 }
@@ -74,7 +71,7 @@ namespace WebApplication.Admin.ShoppingCard
 
                 this._tableData[i] = new Array(9);
                 this._tableData[i][0] =  this._orderList[i].firstName + " " + this._orderList[i].lastName;
-                this._tableData[i][1] =  this._orderList[i].productId;
+                this._tableData[i][1] =  this._orderList[i].number;
                 this._tableData[i][2] =  this._orderList[i].productName;
                 this._tableData[i][3] =  additionString;
                 this._tableData[i][4] =  this._orderList[i].productVariationName;
@@ -121,7 +118,6 @@ namespace WebApplication.Admin.ShoppingCard
             const orderId = parseInt($(event.currentTarget)
                 .closest("tr")
                 .attr("orderid"));
-            console.log(orderId);
 
             let updateUserOrder: IUserOrderPaid = {
                 paid: !$(event.currentTarget).hasClass("sc-orderTable-paidIcon")

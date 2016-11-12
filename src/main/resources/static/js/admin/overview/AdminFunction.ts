@@ -65,16 +65,15 @@ namespace WebApplication.Admin.Overview
             this._adminGetSimpleCatalogButton = $(AdminOverviewSelectors.adminGetSimpleCatalogButton);
             this._adminGetExpertCatalogButton = $(AdminOverviewSelectors.adminGetExpertCatalogButton);
 
-            this.resetGUI();
-            this.getProductCatalogs();
-            this.getCurrentBulkOrder();
-
-
             this._adminUploadCatalogButton.on("click", () => {this._adminFileInput.trigger("click");});
             this._adminFileInput.on("change", () => this.uploadProductCatalog());
             this._adminOpenInputDialogButton.on("click",function(){new ShowInputDialog()});
             this._adminGetSimpleCatalogButton.on("click", () => {window.location.replace('rest/admin/productcatalog/download/simple');});
             this._adminGetExpertCatalogButton.on("click", () => {window.location.replace('rest/admin/productcatalog/download/expert');});
+
+            this.resetGUI();
+            this.getProductCatalogs();
+            this.getCurrentBulkOrder();
         }
 
         private resetGUI(): void {
@@ -263,9 +262,9 @@ namespace WebApplication.Admin.Overview
                 setTimeout(() =>
                 {
                     this._adminCatalogDiv.removeClass("admin-success-blink");
-                    /*this.resetGUI();
+                    this.resetGUI();
                     this.getProductCatalogs();
-                    this.getCurrentBulkOrder();*/
+                    this.getCurrentBulkOrder();
                 }, 500);
             },onError => {
                 this._adminUploadCatalogButton.removeClass("hide");
