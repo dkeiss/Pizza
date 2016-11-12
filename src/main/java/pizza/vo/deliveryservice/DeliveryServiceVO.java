@@ -18,6 +18,12 @@ public class DeliveryServiceVO {
     @NotNull
     private String deliveryServiceName;
 
+    private String telephoneNumber;
+
+    private String emailAddress;
+
+    private String additionalInfos;
+
     private String firstName;
 
     private String lastName;
