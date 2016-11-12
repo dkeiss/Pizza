@@ -41,7 +41,9 @@ public class UserOrder {
     private ProductVariation productVariation;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "userOrder", cascade = {CascadeType.ALL}, orphanRemoval = true)
-    private List<UserOrderAdditionals> userOrderAdditionals;
+    private List<UserOrderAdditional> userOrderAdditionals;
+
+    private Integer number;
 
     private Boolean paid;
 

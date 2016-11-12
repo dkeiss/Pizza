@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.Getter;
 import pizza.vo.product.additional.AdditionalInfoVO;
 
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -15,12 +16,18 @@ public class UserOrderVO {
 
     private Integer userOrderId;
 
+    @NotNull
     private Integer userId;
 
+    @NotNull
     private Integer productId;
 
+    @NotNull
     private Integer productVariationId;
 
-    private List<Integer> additionalIds;
+    @NotNull
+    private Integer number;
+
+    private List<UserOrderAdditionalVO> userOrderAdditionals;
 
 }

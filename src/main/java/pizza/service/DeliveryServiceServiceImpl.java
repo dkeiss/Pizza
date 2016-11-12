@@ -9,6 +9,7 @@ import pizza.vo.deliveryservice.DeliveryServiceVO;
 import java.util.Date;
 
 import static pizza.service.common.ObjectMapperUtil.copyFromBusinessObject;
+import static pizza.service.common.ObjectMapperUtil.copyFromValueObject;
 
 /**
  * Created by Daniel Keiss on 11.11.2016.
@@ -16,35 +17,35 @@ import static pizza.service.common.ObjectMapperUtil.copyFromBusinessObject;
 @Service
 public class DeliveryServiceServiceImpl implements DeliveryServiceService {
 
-	@Autowired
-	private DeliveryServiceRepository deliveryServiceRepository;
+    @Autowired
+    private DeliveryServiceRepository deliveryServiceRepository;
 
-	@Override
-	public DeliveryServiceVO getDeliveryService() {
-		DeliveryService deliveryService = getDeliveryServiceBO();
-		return copyFromBusinessObject(deliveryService, new DeliveryServiceVO());
-	}
+    private final static int DELIVERY_SERVICE_ID = 100;
 
-	@Override
-	public void updateDeliveryService(DeliveryServiceVO deliveryServiceVO) {
-		DeliveryService deliveryService = getDeliveryServiceBO();
-		deliveryService.setDeliveryServiceName(deliveryServiceVO.getDeliveryServiceName());
-		deliveryService.setFirstName(deliveryServiceVO.getFirstName());
-		deliveryService.setLastName(deliveryServiceVO.getLastName());
-		deliveryService.setPostalCode(deliveryServiceVO.getPostalCode());
-		deliveryService.setStreet(deliveryServiceVO.getStreet());
-		deliveryService.setTown(deliveryServiceVO.getTown());
-		deliveryService.setModificationDate(new Date());
-		deliveryServiceRepository.save(new DeliveryService());
-	}
+    @Override
+    public DeliveryServiceVO getDeliveryService() {
+        DeliveryService deliveryService = getDeliveryServiceBO();
+        return copyFromBusinessObject(deliveryService, new DeliveryServiceVO());
+    }
 
-	private DeliveryService getDeliveryServiceBO() {
-		Iterable<DeliveryService> deliveryServices = deliveryServiceRepository.findAll();
-		DeliveryService deliveryService = deliveryServices.iterator().hasNext() ? deliveryServices.iterator().next() : null;
-		if (deliveryService == null) {
-			deliveryService = deliveryServiceRepository.save(new DeliveryService());
-		}
-		return deliveryService;
-	}
+    @Override
+    public void updateDeliveryService(DeliveryServiceVO deliveryServiceVO) {
+        DeliveryService deliveryService = getDeliveryServiceBO();
+        copyFromValueObject(deliveryServiceVO, deliveryService);
+        deliveryService.setDeliveryServiceId(DELIVERY_SERVICE_ID);
+        deliveryService.setCreationDate(new Date());
+        deliveryService.setModificationDate(new Date());
+        deliveryServiceRepository.save(deliveryService);
+    }
+
+    private DeliveryService getDeliveryServiceBO() {
+        DeliveryService deliveryService = deliveryServiceRepository.findOne(DELIVERY_SERVICE_ID);
+        if (deliveryService == null) {
+            deliveryService = new DeliveryService();
+            deliveryService.setDeliveryServiceId(DELIVERY_SERVICE_ID);
+            deliveryService = deliveryServiceRepository.save(deliveryService);
+        }
+        return deliveryService;
+    }
 
 }

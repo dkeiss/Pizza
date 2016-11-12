@@ -1,8 +1,11 @@
 package pizza.service.common;
 
 import pizza.domain.order.UserOrder;
-import pizza.domain.order.UserOrderAdditionals;
+import pizza.domain.order.UserOrderAdditional;
+import pizza.domain.product.additional.Additional;
+import pizza.domain.product.additional.AdditionalPrice;
 import pizza.domain.user.User;
+import pizza.vo.order.UserOrderAdditionalVO;
 import pizza.vo.order.UserOrderDetailsVO;
 import pizza.vo.product.additional.AdditionalInfoVO;
 
@@ -27,26 +30,30 @@ public class UserOrderBusinessToValueObjectConverter {
         userOrderDetailsVO.setLastName(user.getLastName());
         userOrderDetailsVO.setProductId(userOrder.getProduct().getProductId());
         userOrderDetailsVO.setProductVariationId(userOrder.getProductVariation().getProductVariationId());
-        userOrderDetailsVO.setAdditionalIds(getAdditionalIdsFromBOs(userOrder.getUserOrderAdditionals()));
-        userOrderDetailsVO.setAdditionals(getAdditionalInfosFromBOs(userOrder.getUserOrderAdditionals()));
+        if (userOrder.getUserOrderAdditionals() != null) {
+            userOrderDetailsVO.setUserOrderAdditionals(getUserOrderAdditionalsFromBOs(userOrder.getUserOrderAdditionals()));
+        }
         userOrderDetailsVO.setSum(userOrder.getAmount());
+        userOrderDetailsVO.setNumber(userOrder.getNumber());
         userOrderDetailsVO.setPaid(userOrder.getPaid());
         return userOrderDetailsVO;
     }
 
-    private static List<AdditionalInfoVO> getAdditionalInfosFromBOs(List<UserOrderAdditionals> userOrderAdditionalses) {
-        return userOrderAdditionalses.stream().map(UserOrderBusinessToValueObjectConverter::getAdditionalInfoFromBOs).collect(Collectors.toList());
+    private static List<UserOrderAdditionalVO> getUserOrderAdditionalsFromBOs(List<UserOrderAdditional> userOrderAdditionals) {
+        return userOrderAdditionals.stream().map(UserOrderBusinessToValueObjectConverter::getUserOrderAdditionalsFromBO).collect(Collectors.toList());
     }
 
-    private static AdditionalInfoVO getAdditionalInfoFromBOs(UserOrderAdditionals userOrderAdditionals) {
-        AdditionalInfoVO additionalInfoVO = new AdditionalInfoVO();
-        additionalInfoVO.setAdditionalId(userOrderAdditionals.getAdditional().getAdditionalId());
-        additionalInfoVO.setDescription(userOrderAdditionals.getAdditional().getDescription());
-        return additionalInfoVO;
-    }
-
-    private static List<Integer> getAdditionalIdsFromBOs(List<UserOrderAdditionals> userOrderAdditionalses) {
-        return userOrderAdditionalses.stream().map(userOrderAdditional -> userOrderAdditional.getAdditional().getAdditionalId()).collect(Collectors.toList());
+    private static UserOrderAdditionalVO getUserOrderAdditionalsFromBO(UserOrderAdditional userOrderAdditional) {
+        UserOrderAdditionalVO userOrderAdditionalVO = new UserOrderAdditionalVO();
+        Additional additional = userOrderAdditional.getAdditional();
+        userOrderAdditionalVO.setAdditionalId(additional.getAdditionalId());
+        userOrderAdditionalVO.setAdditionalDescription(additional.getDescription());
+        AdditionalPrice additionalPrice = userOrderAdditional.getAdditionalPrice();
+        userOrderAdditionalVO.setAdditionalPriceId(additionalPrice.getAdditionalPriceId());
+        userOrderAdditionalVO.setAdditionalPriceName(additionalPrice.getName());
+        userOrderAdditionalVO.setUserOrderAdditionalId(userOrderAdditional.getUserOrderAdditionalId());
+        userOrderAdditionalVO.setUserOrderId(userOrderAdditional.getUserOrder().getUserOrderId());
+        return userOrderAdditionalVO;
     }
 
 }

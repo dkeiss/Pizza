@@ -25,34 +25,6 @@ public class AdditionalController {
     public
     @ResponseBody
     List<AdditionalCategoryVO> listAdditionals() throws IOException {
-//        String additionalMenuJson = new String(Files.readAllBytes(Paths.get("documentation/ZusatzMenu.json")));
-//        AdditionalMenusVO additionalMenusVO = new ObjectMapper().readValue(additionalMenuJson, AdditionalMenusVO.class);
-//
-//        List<AdditionalCategoryVO> additionalCategorys = new ArrayList<>();
-//        for (AdditionalMenuVO additionalMenuVO : additionalMenusVO.getAdditionalMenus()) {
-//            for (AdditionMenuAsVO additionMenuAsVO : additionalMenuVO.getAs()) {
-//                AdditionalCategoryVO additionalCategoryVO = new AdditionalCategoryVO();
-//                additionalCategoryVO.setProductIds(additionalMenuVO.getNumbers());
-//                additionalCategoryVO.setDuty(additionMenuAsVO.isDuty());
-//                List<AdditionalVO> additionalVOs = new ArrayList<>();
-//                for (AdditionalMenuBsVO additionalMenuBsVO : additionMenuAsVO.getBs()) {
-//                    AdditionalVO additionalVO = new AdditionalVO();
-//                    additionalVO.setDescription(additionalMenuBsVO.getName());
-//                    List<AdditionalPriceVO> additionalPriceVOs = new ArrayList<>();
-//                    for (BigDecimal price : additionalMenuBsVO.getPrices()) {
-//                        AdditionalPriceVO additionalPriceVO = new AdditionalPriceVO();
-//                        additionalPriceVO.setPrice(price);
-//                        additionalPriceVOs.add(additionalPriceVO);
-//                    }
-//                    additionalVO.setAdditionalPrices(additionalPriceVOs);
-//                    additionalVOs.add(additionalVO);
-//                }
-//                additionalCategoryVO.setAdditionals(additionalVOs);
-//                additionalCategorys.add(additionalCategoryVO);
-//            }
-//        }
-//
-//        return additionalCategorys;
         return additionalService.listAdditionalCategories();
     }
 

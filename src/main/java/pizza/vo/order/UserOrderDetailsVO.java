@@ -20,8 +20,6 @@ public class UserOrderDetailsVO extends UserOrderVO {
 
     private String productVariationName;
 
-    private List<AdditionalInfoVO> additionals;
-
     private BigDecimal sum;
 
     private Boolean paid;

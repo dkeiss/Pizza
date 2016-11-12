@@ -1,6 +1,6 @@
 #FileLock
-#Fri Nov 11 10:59:54 CET 2016
-hostName=WEP00710.de.t-online.corp
-id=15852d44bce6b580e8b5bf3421faf3fdf19c99584e2
+#Sat Nov 12 16:56:41 CET 2016
+hostName=Flux-Mobile.Speedport_W_921V_1_39_000
+id=15859414220f70f7d01a91a93cc5d4521d2c0214ea3
 method=file
-server=10.224.192.17\:53801
+server=192.168.2.104\:57377

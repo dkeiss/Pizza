@@ -15,12 +15,12 @@ import java.util.Date;
  */
 @Entity
 @Data
-public class UserOrderAdditionals {
+public class UserOrderAdditional {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "USER_ORDER_ADDITIONALS_ID_SEQ")
-    @SequenceGenerator(name = "USER_ORDER_ADDITIONALS_ID_SEQ", sequenceName = "USER_ORDER_ADDITIONALS_ID_SEQ", allocationSize = 100)
-    private Integer userOrderAdditionalsId;
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "USER_ORDER_ADDITIONAL_ID_SEQ")
+    @SequenceGenerator(name = "USER_ORDER_ADDITIONAL_ID_SEQ", sequenceName = "USER_ORDER_ADDITIONAL_ID_SEQ", allocationSize = 100)
+    private Integer userOrderAdditionalId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ORDER_ID")

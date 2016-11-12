@@ -24,6 +24,8 @@ public class DeliveryServiceVO {
 
     private String street;
 
+    private String streetNumber;
+
     private String postalCode;
 
     private String town;

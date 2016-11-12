@@ -1,8 +1,10 @@
 package pizza.controller.admin;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import pizza.service.UserOrderService;
 import pizza.service.exception.NotFoundException;
 import pizza.vo.order.UserOrderDetailsVO;
 import pizza.vo.order.UserOrderPaidVO;
@@ -23,71 +25,28 @@ import static pizza.controller.ResponseUtil.getResponseWithStatus;
 @RequestMapping("rest/admin/shoppingcard")
 public class AdminShoppingcardController {
 
-    private List<UserOrderDetailsVO> userOrders = mockUserOrders();
-
-    private List<UserOrderDetailsVO> mockUserOrders() {
-        List<UserOrderDetailsVO> userOrders = new ArrayList<>();
-        userOrders.add(getUserOrder(1, 4, "Axel", "Schweiß", 1, "Salat", 1, "Ohne Ei", 1, "Normal", "5.99", false));
-        userOrders.add(getUserOrder(2, 17, "Chris", "P. Bacon", 2, "Pizza Schinken", null, null, 2, "Groß", "9.50", false));
-        userWithTwoAdditionals(userOrders);
-        userOrders.add(getUserOrder(4, 12, "Peter", "Sile", 4, "Nudeln", null, null, 1, "Normal", "12.00", false));
-        userOrders.add(getUserOrder(5, 5, "Rosa", "Schlüpfer", 5, "Calzone", null, null, 1, "Normal", "6.50", false));
-        userOrders.add(getUserOrder(6, 3, "Wilma", "Bierholen", 6, "Pizza Diavolo", 42, "Jalapenos", 3, "Klein", "7.53", false));
-        return userOrders;
-    }
-
-    private void userWithTwoAdditionals(List<UserOrderDetailsVO> userOrders) {
-        UserOrderDetailsVO userOrder = getUserOrder(3, 1, "Max", "Mustermann", 3, "Pizza Salami", 2, "Peperonie", 2, "Groß", "7.53", false);
-        AdditionalInfoVO additionalInfo = new AdditionalInfoVO();
-        additionalInfo.setAdditionalId(4);
-        additionalInfo.setDescription("Kapern");
-        userOrder.getAdditionals().add(additionalInfo);
-        userOrders.add(userOrder);
-    }
-
-    private UserOrderDetailsVO getUserOrder(Integer orderId, Integer userId, String firstname, String lastname, Integer productId, String productName, Integer additionalId, String additionalName, Integer productVariationId, String productVariationName, String sum, boolean paid) {
-        UserOrderDetailsVO userOrder = new UserOrderDetailsVO();
-        userOrder.setUserOrderId(orderId);
-        userOrder.setUserId(userId);
-        userOrder.setFirstName(firstname);
-        userOrder.setLastName(lastname);
-        userOrder.setProductId(productId);
-        userOrder.setProductName(productName);
-        userOrder.setProductVariationId(productVariationId);
-        userOrder.setProductVariationName(productVariationName);
-        if (additionalId != null) {
-            ArrayList<AdditionalInfoVO> additionals = new ArrayList<>();
-            AdditionalInfoVO additionalInfo = new AdditionalInfoVO();
-            additionalInfo.setAdditionalId(additionalId);
-            additionalInfo.setDescription(additionalName);
-            additionals.add(additionalInfo);
-            userOrder.setAdditionals(additionals);
-        }
-        userOrder.setSum(new BigDecimal(sum));
-        userOrder.setPaid(paid);
-        return userOrder;
-    }
+    @Autowired
+    private UserOrderService userOrderService;
 
     @RequestMapping(method = RequestMethod.GET)
     public
     @ResponseBody
     List<UserOrderDetailsVO> getUserOrders() {
-        return userOrders;
+        return userOrderService.getUserOrders();
     }
 
     @RequestMapping(value = "/{userOrderId}", method = RequestMethod.GET)
     public
     @ResponseBody
-    UserOrderVO getUserOrder(@PathVariable("userOrderId") Integer userOrderId) {
-        return getUserOrderById(userOrderId);
+    UserOrderDetailsVO getUserOrder(@PathVariable("userOrderId") Integer userOrderId) {
+        return userOrderService.getUserOrder(userOrderId);
     }
 
     @RequestMapping(value = "/{userOrderId}/paid", method = RequestMethod.PUT)
     public
     @ResponseBody
     Map setUserOrderPaid(@PathVariable("userOrderId") Integer userOrderId, @RequestBody UserOrderPaidVO userOrderPaidVO) {
-        UserOrderDetailsVO userOrder = getUserOrderById(userOrderId);
-        userOrder.setPaid(userOrderPaidVO.getPaid());
+        userOrderService.setUserOrderPaid(userOrderId, userOrderPaidVO);
         return getResponseWithStatus(true);
     }
 
@@ -95,18 +54,8 @@ public class AdminShoppingcardController {
     public
     @ResponseBody
     Map deleteUserOrder(@PathVariable("userOrderId") Integer userOrderId) {
-        UserOrderVO userOrder = getUserOrderById(userOrderId);
-        userOrders.remove(userOrder);
+        userOrderService.deleteUserOrder(userOrderId);
         return getResponseWithStatus(true);
-    }
-
-    private UserOrderDetailsVO getUserOrderById(Integer userOrderId) {
-        for (UserOrderDetailsVO userOrder : userOrders) {
-            if (userOrder.getUserOrderId().equals(userOrderId)) {
-                return userOrder;
-            }
-        }
-        throw new NotFoundException();
     }
 
 }

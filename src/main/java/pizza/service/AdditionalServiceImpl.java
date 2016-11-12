@@ -2,8 +2,12 @@ package pizza.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pizza.domain.product.additional.Additional;
 import pizza.domain.product.additional.AdditionalCategory;
+import pizza.domain.product.additional.AdditionalPrice;
 import pizza.repositories.AdditionalCategoryRepository;
+import pizza.repositories.AdditionalPriceRepository;
+import pizza.repositories.AdditionalRepository;
 import pizza.service.exception.NotFoundException;
 import pizza.vo.product.additional.AdditionalCategoryVO;
 
@@ -24,6 +28,12 @@ public class AdditionalServiceImpl implements AdditionalService {
 
     @Autowired
     private AdditionalCategoryRepository additionalCategoryRepository;
+
+    @Autowired
+    private AdditionalRepository additionalRepository;
+
+    @Autowired
+    private AdditionalPriceRepository additionalPriceRepository;
 
     @Override
     public List<AdditionalCategoryVO> listAdditionalCategories() {
@@ -60,6 +70,16 @@ public class AdditionalServiceImpl implements AdditionalService {
         List<AdditionalCategoryVO> additionalCategoryVOs = listAdditionalCategories();
         List<AdditionalCategoryVO> selected = additionalCategoryVOs.stream().filter(additionalCategoryVO -> additionalCategoryVO.getProductIds().contains(productId)).collect(Collectors.toList());
         return selected;
+    }
+
+    @Override
+    public Additional findAdditional(Integer additionalId) {
+        return additionalRepository.findOne(additionalId);
+    }
+
+    @Override
+    public AdditionalPrice findAdditionalPrice(Integer additionalPriceId) {
+        return additionalPriceRepository.findOne(additionalPriceId);
     }
 
 }

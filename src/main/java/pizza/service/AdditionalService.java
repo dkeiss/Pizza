@@ -1,6 +1,8 @@
 package pizza.service;
 
+import pizza.domain.product.additional.Additional;
 import pizza.domain.product.additional.AdditionalCategory;
+import pizza.domain.product.additional.AdditionalPrice;
 import pizza.vo.product.additional.AdditionalCategoryVO;
 
 import java.util.List;
@@ -17,5 +19,9 @@ public interface AdditionalService {
     AdditionalCategoryVO getAdditionalCategory(Integer additionalCategoryId);
 
     List<AdditionalCategoryVO> getAdditionalsByProductId(Integer productId);
+
+    Additional findAdditional(Integer additionalId);
+
+    AdditionalPrice findAdditionalPrice(Integer additionalPriceId);
 
 }
