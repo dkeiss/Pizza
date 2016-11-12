@@ -2,6 +2,8 @@ package pizza.service.common;
 
 import pizza.domain.order.UserOrder;
 import pizza.domain.order.UserOrderAdditional;
+import pizza.domain.product.Product;
+import pizza.domain.product.ProductVariation;
 import pizza.domain.product.additional.Additional;
 import pizza.domain.product.additional.AdditionalPrice;
 import pizza.domain.user.User;
@@ -28,8 +30,12 @@ public class UserOrderBusinessToValueObjectConverter {
         userOrderDetailsVO.setUserId(user.getUserId());
         userOrderDetailsVO.setFirstName(user.getFirstName());
         userOrderDetailsVO.setLastName(user.getLastName());
-        userOrderDetailsVO.setProductId(userOrder.getProduct().getProductId());
-        userOrderDetailsVO.setProductVariationId(userOrder.getProductVariation().getProductVariationId());
+        Product product = userOrder.getProduct();
+        userOrderDetailsVO.setProductId(product.getProductId());
+        userOrderDetailsVO.setProductName(product.getName());
+        ProductVariation productVariation = userOrder.getProductVariation();
+        userOrderDetailsVO.setProductVariationId(productVariation.getProductVariationId());
+        userOrderDetailsVO.setProductVariationName(productVariation.getName());
         if (userOrder.getUserOrderAdditionals() != null) {
             userOrderDetailsVO.setUserOrderAdditionals(getUserOrderAdditionalsFromBOs(userOrder.getUserOrderAdditionals()));
         }
