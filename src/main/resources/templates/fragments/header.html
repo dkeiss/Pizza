@@ -9,8 +9,8 @@
 <div class="container" th:fragment="header">
 
     <div th:if="${isAdmin}">
-        <a th:if="${'admin' != pageType}" href="../admin">Zur Administratorseite wechseln</a>
-        <a th:if="${'order' != pageType}" href="../order">Zur Bestellseite wechseln</a>
+        <a th:if="${#httpServletRequest.requestURI.contains('order')}" href="../admin">Zur Administratorseite wechseln</a>
+        <a th:if="${#httpServletRequest.requestURI.contains('admin')}" href="../order">Zur Bestellseite wechseln</a>
     </div>
 
     <p th:inline="text">[[${#httpServletRequest.remoteUser}]]</p>

@@ -66,20 +66,16 @@ public class AuthenticationValidator {
     public String checkAdminAuthenticationGetPage(Principal principal, Model model, String template) {
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
         if (isAuthenticated(principal, model) && isAdmin(usernamePasswordAuthenticationToken)) {
-            model.addAttribute("pageType", "admin");
             return template;
         }
-        model.addAttribute("pageType", "order");
         return "login";
     }
 
     public String checkIsAdminGetPage(Principal principal, Model model) {
         if (isAdmin(principal)) {
-            model.addAttribute("pageType", "admin");
-            return "admin/admin";
+            return "redirect:admin";
         }
-        model.addAttribute("pageType", "order");
-        return "order/order";
+        return "redirect:order";
     }
 
 }
