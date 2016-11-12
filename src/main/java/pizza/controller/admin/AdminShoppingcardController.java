@@ -32,7 +32,7 @@ public class AdminShoppingcardController {
     public
     @ResponseBody
     List<UserOrderDetailsVO> getUserOrders() {
-        return userOrderService.getUserOrders();
+        return userOrderService.getAllUserOrders();
     }
 
     @RequestMapping(value = "/{userOrderId}", method = RequestMethod.GET)
