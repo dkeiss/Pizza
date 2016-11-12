@@ -50,9 +50,10 @@ class ShowInputDialog
         this._inputDialogWarningLabel.hide();
         /*this._container = this._inputDialogContainer.addClass(this._cssShowContainer);*/
         this._inputDialogCancelButton.on("click", () => {
-            this._inputDialogContainer.removeClass(this._cssShowContainer);
+            location.reload();
+            /*this._inputDialogContainer.removeClass(this._cssShowContainer);
             this._inputDialogContainer.find("input").val('');
-            this._inputDialogContainer.find("input").removeClass("core-inputField-error");
+            this._inputDialogContainer.find("input").removeClass("core-inputField-error");*/
         });
         this._inputDialogAcceptButton.on("click", () => this.saveDeliveryData());
 
@@ -70,9 +71,9 @@ class ShowInputDialog
                 this._inputDialogNumberInput.val(this._currentDeliveryData.streetNumber);
                 this._inputDialogZipInput.val(this._currentDeliveryData.postalCode);
                 this._inputDialogCityInput.val(this._currentDeliveryData.town);
-                /*this._inputDialogPhoneInput.val(this._currentDeliveryData.phone);
-                this._inputDialogEMailInput.val(this._currentDeliveryData.eMail);
-                this._inputDialogCommentArea.val(this._currentDeliveryData.additionalInformation);*/
+                this._inputDialogPhoneInput.val(this._currentDeliveryData.telephoneNumber);
+                this._inputDialogEMailInput.val(this._currentDeliveryData.emailAddress);
+                this._inputDialogCommentArea.val(this._currentDeliveryData.additionalInfos);
             }
         );
     }
@@ -90,15 +91,16 @@ class ShowInputDialog
             this._currentDeliveryData.streetNumber = this._inputDialogNumberInput.val();
             this._currentDeliveryData.postalCode = this._inputDialogZipInput.val();
             this._currentDeliveryData.town = this._inputDialogCityInput.val();
-            /*this._currentDeliveryData.phone = this._inputDialogPhoneInput.val();
-            this._currentDeliveryData.eMail = this._inputDialogEMailInput.val();
-            this._currentDeliveryData.additionalInformation = this._inputDialogCommentArea.val();*/
-
+            this._currentDeliveryData.telephoneNumber = this._inputDialogPhoneInput.val();
+            this._currentDeliveryData.emailAddress = this._inputDialogEMailInput.val();
+            this._currentDeliveryData.additionalInfos = this._inputDialogCommentArea.val();
+            console.log(this._currentDeliveryData);
             AdminService.saveDeliveryData(this._currentDeliveryData, success =>
                 {
-                    this._inputDialogContainer.removeClass(this._cssShowContainer);
+                    location.reload();
+                    /*this._inputDialogContainer.removeClass(this._cssShowContainer);
                     this._inputDialogContainer.find("input").val('');
-                    this._inputDialogContainer.find("input").removeClass("core-inputField-error");
+                    this._inputDialogContainer.find("input").removeClass("core-inputField-error");*/
                 }
             );
          }

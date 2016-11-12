@@ -29,7 +29,7 @@ interface IDeliveryData
     streetNumber: string;
     postalCode: string;
     town: string;
-    /*phone: string;
-    eMail: string;
-    additionalInformation?: string;*/
+    telephoneNumber: string;
+    emailAddress: string;
+    additionalInfos?: string;
 }

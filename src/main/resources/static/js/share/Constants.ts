@@ -85,7 +85,7 @@ class InputDialogSelectors
     public static inputDialogCityInput = ".admin-inputDialog_city";
     public static inputDialogPhoneInput = ".admin-inputDialog_phone";
     public static inputDialogEMailInput = ".admin-inputDialog_eMail";
-    public static inputDialogCommentArea = ".admin-inputDialog_acceptButton";
+    public static inputDialogCommentArea = ".admin-inputDialog_comment";
     public static inputDialogAcceptButton = ".admin-inputDialog_acceptButton";
     public static inputDialogCancelButton = ".admin-inputDialog_cancelButton";
     public static inputDialogWarningLabel = ".admin-inputDialog_warningLabel";
