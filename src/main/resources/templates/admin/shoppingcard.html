@@ -5,6 +5,7 @@
     <title>UserManagement</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge;"/>
     <link href="../../static/css/admin/shoppingCard.css" th:href="@{/css/admin/shoppingCard.css}" rel="stylesheet" media="screen"/>
+    <link href="../../static/css/admin/admin.css" th:href="@{/css/admin/admin.css}" rel="stylesheet" media="screen"/>
     <link href="../../static/css/_core.css" th:href="@{/css/_core.css}" rel="stylesheet" media="screen"/>
     <script src="../../static/js/thirdParty/jquery-2.1.4.min.js" th:src="@{/js/thirdParty/jquery-2.1.4.min.js}"></script>
     <script src="../../static/js/admin/shoppingCard/_app.js" th:src="@{/js/admin/shoppingCard/_app.js}"></script>
@@ -20,6 +21,11 @@
 
     <div class="core-container-center">
         <div class="core-container-box">
+            <label class="admin-label">Warenkorb ausdrucken</label>
+            <div class="admin-button-box">
+                <div class="admin-submitButton admin-submitButton-enabled card-submitButton_expert">Lieferkontrolle</div>
+                <div class="admin-submitButton admin-submitButton-enabled card-submitButton_simple">Bestellformular</div>
+            </div>
         </div>
         <div class="core-container-box">
             <table class="sc-orderTable card-orderTable">
