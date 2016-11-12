@@ -1,4 +1,4 @@
-package pizza.controller;
+package pizza.controller.rest;
 
 import java.util.HashMap;
 import java.util.Map;

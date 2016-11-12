@@ -1,4 +1,4 @@
-package pizza.controller.deliveryservice;
+package pizza.controller.rest.deliveryservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +11,7 @@ import pizza.vo.deliveryservice.DeliveryServiceVO;
 
 import java.util.Map;
 
-import static pizza.controller.ResponseUtil.getResponseWithStatus;
+import static pizza.controller.rest.ResponseUtil.getResponseWithStatus;
 
 /**
  * Created by Daniel Keiss on 11.11.2016.

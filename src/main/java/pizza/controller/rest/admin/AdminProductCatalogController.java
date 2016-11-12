@@ -1,4 +1,4 @@
-package pizza.controller.admin;
+package pizza.controller.rest.admin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

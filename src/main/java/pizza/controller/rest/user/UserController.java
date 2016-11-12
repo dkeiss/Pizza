@@ -1,19 +1,15 @@
-package pizza.controller.user;
+package pizza.controller.rest.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pizza.service.UserService;
 import pizza.vo.user.UserVO;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static pizza.controller.ResponseUtil.getResponseWithStatus;
+import static pizza.controller.rest.ResponseUtil.getResponseWithStatus;
 
 /**
  * Created by Daniel Keiss on 22.09.2016.

@@ -21,9 +21,6 @@ public class IndexController {
     @Autowired
     private AuthenticationValidator authenticationValidator;
 
-    @Autowired
-    private UserService userService;
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String root(Principal principal, Model model) {
         return login(principal, model);
@@ -36,23 +33,11 @@ public class IndexController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Principal principal, Model model) {
-        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
-        boolean authenticated = authenticationValidator.isAuthenticated(usernamePasswordAuthenticationToken, model);
+        boolean authenticated = authenticationValidator.isAuthenticated(principal, model);
         if (!authenticated) {
-            if (usernamePasswordAuthenticationToken != null && userService.isInitialAdminPassword(usernamePasswordAuthenticationToken.getName())) {
-                return "admin/initialpassword";
-            } else {
-                return "login";
-            }
+            return authenticationValidator.checkIsInitialAdminPasswordGetPage(principal, model);
         }
-        if (isAdmin(usernamePasswordAuthenticationToken)) {
-            return "admin/admin";
-        }
-        return "order/order";
-    }
-
-    boolean isAdmin(UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken) {
-        return usernamePasswordAuthenticationToken.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        return authenticationValidator.checkIsAdminGetPage(principal, model);
     }
 
 }

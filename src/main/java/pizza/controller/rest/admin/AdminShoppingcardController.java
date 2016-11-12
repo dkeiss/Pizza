@@ -1,22 +1,16 @@
-package pizza.controller.admin;
+package pizza.controller.rest.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pizza.service.UserOrderService;
-import pizza.service.exception.NotFoundException;
 import pizza.vo.order.UserOrderDetailsVO;
 import pizza.vo.order.UserOrderPaidVO;
-import pizza.vo.order.UserOrderVO;
-import pizza.vo.product.additional.AdditionalInfoVO;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static pizza.controller.ResponseUtil.getResponseWithStatus;
+import static pizza.controller.rest.ResponseUtil.getResponseWithStatus;
 
 /**
  * Created by Daniel Keiss on 06.11.2016.

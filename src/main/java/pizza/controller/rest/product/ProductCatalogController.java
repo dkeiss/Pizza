@@ -1,10 +1,9 @@
-package pizza.controller.product;
+package pizza.controller.rest.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pizza.service.ProductCatalogService;
-import pizza.vo.product.menu.ProductCatalogFullVO;
 import pizza.vo.product.menu.ProductCatalogInfoVO;
 import pizza.vo.product.menu.ProductCatalogVO;
 

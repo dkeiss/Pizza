@@ -1,4 +1,4 @@
-package pizza.controller.product;
+package pizza.controller.rest.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,7 +7,6 @@ import pizza.service.AdditionalService;
 import pizza.vo.product.additional.AdditionalCategoryVO;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 

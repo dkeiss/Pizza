@@ -1,4 +1,4 @@
-package pizza.controller.order;
+package pizza.controller.rest.bulkorder;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,7 +8,7 @@ import pizza.vo.order.BulkOrderVO;
 
 import java.util.*;
 
-import static pizza.controller.ResponseUtil.getResponseWithStatus;
+import static pizza.controller.rest.ResponseUtil.getResponseWithStatus;
 
 /**
  * Created by Daniel Keiss on 24.10.2016.
