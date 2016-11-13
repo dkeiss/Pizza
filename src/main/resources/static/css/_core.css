@@ -52,6 +52,16 @@ p {
     margin: -101px 0 0 -200px;
 }
 
+.core-container-initial {
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    min-height: 318px;
+    width: 400px;
+    margin: -159px 0 0 -200px;
+}
+
 .core-container-box {
     background-color: #FFFFFF;
     overflow: hidden;
