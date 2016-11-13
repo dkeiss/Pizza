@@ -22,7 +22,7 @@
             <div class="core-container-boxHeader">Bitte geben Sie Ihre Anmeldedaten ein</div>
             <input type="text" name="username" th:value="${username}" class="core-inputField" placeholder="Benutzername"/>
             <input th:if="${isAdmin}" type="password" name="password" class="core-inputField" placeholder="Passwort"/>
-            <div class="core-submitButton" onClick="document.forms['login-form'].submit();">Bestätigen</div>
+            <div class="core-submitButton" onClick="document.forms['login-form'].submit();">Anmelden</div>
         </form>
         <label th:if="${param.error}" class="core-warningLabel" th:text="${isAdmin} ? 'Falsches Passwort' : 'Falscher Benutzername'"/>
     </div>
