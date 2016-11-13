@@ -16,7 +16,7 @@ public interface BulkOrderService {
 
     BulkOrderVO getBulkOrderById(Integer bulkorderId);
 
-    void deleteBulkOrderById(Integer bulkorderId);
+    void deactivateBulkOrderById(Integer bulkorderId);
 
     void updateBulkOrder(BulkOrderVO bulkOrderVO);
 
@@ -24,6 +24,10 @@ public interface BulkOrderService {
 
     BulkOrder findActiveBulkOrder();
 
-    boolean bulkOrderExists(Integer bulkOrderId);
+    BulkOrderVO finishActiveBulkOrder();
+
+    BulkOrder findOpenBulkOrder();
+
+    BulkOrderVO getOpenBulkOrder();
 
 }

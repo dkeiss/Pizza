@@ -23,6 +23,8 @@ public class BulkOrder {
 
     private Date activeUntil;
 
+    private Boolean finished = false;
+
     private Date creationDate;
 
     private Date modificationDate;

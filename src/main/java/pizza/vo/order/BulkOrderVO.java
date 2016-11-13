@@ -25,6 +25,9 @@ public class BulkOrderVO {
     @NotNull
     private Date activeUntil;
 
+    @Getter
+    private Boolean finished = false;
+
     private Date creationDate;
 
     private Date modificationDate;

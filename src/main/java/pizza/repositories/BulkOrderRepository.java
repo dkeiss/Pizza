@@ -13,4 +13,6 @@ public interface BulkOrderRepository extends CrudRepository<BulkOrder, Integer> 
 
     List<BulkOrder> findByActiveUntilGreaterThan(Date activeUntil);
 
+    List<BulkOrder> findByFinished(Boolean finished);
+
 }

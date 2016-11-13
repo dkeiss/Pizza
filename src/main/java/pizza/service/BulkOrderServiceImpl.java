@@ -5,11 +5,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import pizza.domain.order.BulkOrder;
 import pizza.repositories.BulkOrderRepository;
-import pizza.repositories.DeliveryServiceRepository;
-import pizza.service.exception.BulkOrderActiveUntilNotValidException;
-import pizza.service.exception.BulkOrderAlreadyActiveException;
-import pizza.service.exception.BulkOrderProductCatalogNotExistsException;
-import pizza.service.exception.NotFoundException;
+import pizza.service.exception.*;
 import pizza.vo.order.BulkOrderVO;
 
 import java.util.ArrayList;
@@ -28,9 +24,6 @@ public class BulkOrderServiceImpl implements BulkOrderService {
 
     @Autowired
     private BulkOrderRepository bulkOrderRepository;
-
-    @Autowired
-    private DeliveryServiceRepository deliveryServiceRepository;
 
     @Autowired
     private ProductCatalogService productCatalogService;
@@ -70,12 +63,20 @@ public class BulkOrderServiceImpl implements BulkOrderService {
     }
 
     @Override
-    public void deleteBulkOrderById(Integer bulkorderId) {
-        try {
-            bulkOrderRepository.delete(bulkorderId);
-        } catch (EmptyResultDataAccessException e) {
+    public void deactivateBulkOrderById(Integer bulkorderId) {
+        BulkOrder bulkOrder = bulkOrderRepository.findOne(bulkorderId);
+        if (bulkOrder == null) {
             throw new NotFoundException();
         }
+        setFinished(bulkOrder);
+        bulkOrderRepository.save(bulkOrder);
+    }
+
+    public void setFinished(BulkOrder bulkOrder) {
+        if (bulkOrder.getActiveUntil().after(new Date())) {
+            bulkOrder.setActiveUntil(new Date());
+        }
+        bulkOrder.setFinished(true);
     }
 
     @Override
@@ -110,13 +111,41 @@ public class BulkOrderServiceImpl implements BulkOrderService {
     }
 
     @Override
-    public boolean bulkOrderExists(Integer bulkOrderId) {
-        return bulkOrderRepository.exists(bulkOrderId);
+    public BulkOrderVO finishActiveBulkOrder() {
+        BulkOrder activeBulkOrder = findActiveBulkOrder();
+        if (activeBulkOrder == null) {
+            throw new NotFoundException();
+        }
+        setFinished(activeBulkOrder);
+        bulkOrderRepository.save(activeBulkOrder);
+        return getBulkOrderFromBO(activeBulkOrder);
+    }
+
+    @Override
+    public BulkOrder findOpenBulkOrder() {
+        List<BulkOrder> openBulkOrder = bulkOrderRepository.findByFinished(false);
+        if (openBulkOrder.isEmpty()) {
+            return null;
+        }
+        if (openBulkOrder.size() > 1) {
+            throw new RuntimeException("There exist more than one open bulk order!");
+        }
+        return openBulkOrder.get(0);
+    }
+
+    @Override
+    public BulkOrderVO getOpenBulkOrder() {
+        BulkOrder openBulkOrder = findOpenBulkOrder();
+        if (openBulkOrder == null) {
+            throw new NotFoundException();
+        }
+        return getBulkOrderFromBO(openBulkOrder);
     }
 
     private void isValid(BulkOrderVO bulkOrder) {
         isActiveUntilValid(bulkOrder);
         isAnotherBulkOrderActive();
+        isAnotherBulkOrderNotFinished();
         productCatalogExists(bulkOrder.getCatalogId());
     }
 
@@ -135,6 +164,13 @@ public class BulkOrderServiceImpl implements BulkOrderService {
     private void isAnotherBulkOrderActive() {
         if (!bulkOrderRepository.findByActiveUntilGreaterThan(new Date()).isEmpty()) {
             throw new BulkOrderAlreadyActiveException();
+        }
+    }
+
+    private void isAnotherBulkOrderNotFinished() {
+        List<BulkOrder> openBulkOrder = bulkOrderRepository.findByFinished(false);
+        if (!openBulkOrder.isEmpty()) {
+            throw new BulkOrderNotClosedException();
         }
     }
 

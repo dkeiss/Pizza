@@ -48,6 +48,20 @@ public class BulkOrderController {
         return bulkOrderService.getActiveBulkOrder();
     }
 
+    @RequestMapping(value = "/open", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    BulkOrderVO getOpenBulkOrder() {
+        return bulkOrderService.getOpenBulkOrder();
+    }
+
+    @RequestMapping(value = "/open/finish", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    BulkOrderVO finishBulkOrder() {
+        return bulkOrderService.finishActiveBulkOrder();
+    }
+
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.PUT)
     public
     @ResponseBody
@@ -60,8 +74,8 @@ public class BulkOrderController {
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.DELETE)
     public
     @ResponseBody
-    Map deleteBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
-        bulkOrderService.deleteBulkOrderById(bulkorderId);
+    Map deactivateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
+        bulkOrderService.deactivateBulkOrderById(bulkorderId);
         return getResponseWithStatus(true);
     }
 

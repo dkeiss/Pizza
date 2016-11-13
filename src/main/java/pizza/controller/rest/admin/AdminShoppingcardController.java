@@ -26,7 +26,7 @@ public class AdminShoppingcardController {
     public
     @ResponseBody
     List<UserOrderDetailsVO> getUserOrders() {
-        return userOrderService.getAllUserOrders();
+        return userOrderService.getCurrentUserOrders();
     }
 
     @RequestMapping(value = "/{userOrderId}", method = RequestMethod.GET)

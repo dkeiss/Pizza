@@ -2,7 +2,6 @@ package pizza.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import pizza.domain.order.BulkOrder;
 import pizza.domain.order.UserOrder;
@@ -18,7 +17,6 @@ import pizza.vo.order.UserOrderAdditionalVO;
 import pizza.vo.order.UserOrderDetailsVO;
 import pizza.vo.order.UserOrderPaidVO;
 import pizza.vo.order.UserOrderVO;
-import pizza.vo.user.UserVO;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -188,6 +186,13 @@ public class UserOrderServiceImpl implements UserOrderService {
         } catch (EmptyResultDataAccessException e) {
             throw new NotFoundException();
         }
+    }
+
+    @Override
+    public List<UserOrderDetailsVO> getCurrentUserOrders() {
+        BulkOrder bulkOrder = bulkOrderService.findOpenBulkOrder();
+        List<UserOrder> userOrders = userOrderRepository.findByBulkOrder(bulkOrder);
+        return getUserOrdersFromBOs(userOrders);
     }
 
 }

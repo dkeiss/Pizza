@@ -1,6 +1,7 @@
 package pizza.repositories;
 
 import org.springframework.data.repository.CrudRepository;
+import pizza.domain.order.BulkOrder;
 import pizza.domain.order.UserOrder;
 import pizza.domain.product.additional.AdditionalCategory;
 import pizza.domain.user.User;
@@ -13,6 +14,8 @@ import java.util.List;
 public interface UserOrderRepository extends CrudRepository<UserOrder, Integer> {
 
     List<UserOrder> findByUser(User user);
+
+    List<UserOrder> findByBulkOrder(BulkOrder bulkOrder);
 
 
 }
