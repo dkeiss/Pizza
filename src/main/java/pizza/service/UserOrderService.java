@@ -13,7 +13,9 @@ public interface UserOrderService {
 
     UserOrderDetailsVO addUserOrder(UserOrderVO userOrder);
 
-    List<UserOrderDetailsVO> getUserOrders();
+    List<UserOrderDetailsVO> getAllUserOrders();
+
+    List<UserOrderDetailsVO> getUserOrders(Integer userId);
 
     UserOrderDetailsVO getUserOrder(Integer userOrderId);
 

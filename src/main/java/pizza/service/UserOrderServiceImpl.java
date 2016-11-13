@@ -18,6 +18,7 @@ import pizza.vo.order.UserOrderAdditionalVO;
 import pizza.vo.order.UserOrderDetailsVO;
 import pizza.vo.order.UserOrderPaidVO;
 import pizza.vo.order.UserOrderVO;
+import pizza.vo.user.UserVO;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -78,6 +79,13 @@ public class UserOrderServiceImpl implements UserOrderService {
         userOrderRepository.save(userOrder);
 
         return getUserOrderFromBO(userOrder);
+    }
+
+    @Override
+    public List<UserOrderDetailsVO> getAllUserOrders() {
+        List<UserOrder> userOrders = new ArrayList<>();
+        userOrderRepository.findAll().forEach(userOrders::add);
+        return getUserOrdersFromBOs(userOrders);
     }
 
     private BigDecimal calculateAmount(ProductVariation productVariation, List<UserOrderAdditional> userOrderAdditionalses) {
@@ -143,9 +151,12 @@ public class UserOrderServiceImpl implements UserOrderService {
     }
 
     @Override
-    public List<UserOrderDetailsVO> getUserOrders() {
-        List<UserOrder> userOrders = new ArrayList<>();
-        userOrderRepository.findAll().forEach(userOrders::add);
+    public List<UserOrderDetailsVO> getUserOrders(Integer userId) {
+        User user = userService.findUser(userId);
+        if (user == null) {
+            throw new NotFoundException();
+        }
+        List<UserOrder> userOrders = userOrderRepository.findByUser(user);
         return getUserOrdersFromBOs(userOrders);
     }
 
