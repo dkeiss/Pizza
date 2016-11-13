@@ -95,4 +95,7 @@ class UserOrderSelector
 {
     public static menuContainerSelector = ".userOrder-menu_container";
     public static menuClickSelectors = ".userOrder-menu_elementClick";
+    public static setCategoriesHtml = "userOrder-categories_container";
+    public static categoriesSelectors = "userOrder-categoriesSelector-container";
+    public static groupSelectors = "userOrder-groupsSelector-container";
 }
