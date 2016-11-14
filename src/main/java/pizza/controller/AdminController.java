@@ -7,6 +7,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pizza.controller.validator.AuthenticationValidator;
+import pizza.vo.admin.InitialAdminVO;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
@@ -41,12 +42,11 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/admin/initialpassword", method = RequestMethod.POST)
-    public String setInitialPassword(HttpServletRequest request, Principal principal, Model model) {
-        String password = request.getParameter("password");
-        if (StringUtils.isEmpty(password) || !authenticationValidator.isInitialAdminPassword(principal, model)) {
+    public String setInitialPassword(InitialAdminVO initialAdmin, Principal principal, Model model) {
+        if (StringUtils.isEmpty(initialAdmin.getPassword()) || !authenticationValidator.isInitialAdminPassword(principal, model)) {
             return "admin/initialpassword";
         }
-        authenticationValidator.setInitialAdminPassword(principal, model, password);
+        authenticationValidator.setInitialAdminPassword(principal, model, initialAdmin.getPassword());
         return "login";
     }
 
