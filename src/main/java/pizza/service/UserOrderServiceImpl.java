@@ -49,14 +49,18 @@ public class UserOrderServiceImpl implements UserOrderService {
     private AdditionalService additionalService;
 
     @Override
-    public UserOrderDetailsVO addUserOrder(UserOrderVO userOrderVO) {
+    public UserOrderDetailsVO addUserOrder(String username, UserOrderVO userOrderVO) {
         checkUserOrderValid(userOrderVO);
+        User user = userService.findUserByUsername(username);
+        if(user == null){
+            throw new UserOrderUserNotFoundException();
+        }
+
         BulkOrder activeBulkOrder = bulkOrderService.findActiveBulkOrder();
         if (activeBulkOrder == null) {
             throw new UserOrderNoBulkOrderActiveException();
         }
 
-        User user = userService.findUser(userOrderVO.getUserId());
         Product product = productCatalogService.findProduct(userOrderVO.getProductId());
         ProductVariation productVariation = productCatalogService.findProductVariation(userOrderVO.getProductVariationId());
         if (!product.getProductId().equals(productVariation.getProduct().getProductId())) {
@@ -126,15 +130,8 @@ public class UserOrderServiceImpl implements UserOrderService {
     }
 
     private void checkUserOrderValid(UserOrderVO userOrderVO) {
-        checkIfUserExist(userOrderVO.getUserId());
         checkIfProductExist(userOrderVO.getProductId());
         checkIfProductVariationExist(userOrderVO.getProductVariationId());
-    }
-
-    private void checkIfUserExist(Integer userId) {
-        if (!userService.userExists(userId)) {
-            throw new UserOrderUserNotFoundException();
-        }
     }
 
     private void checkIfProductExist(Integer productId) {

@@ -34,4 +34,6 @@ public interface UserService {
 
     User findUser(Integer userId);
 
+    User findUserByUsername(String username);
+
 }

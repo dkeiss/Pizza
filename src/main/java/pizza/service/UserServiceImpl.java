@@ -29,12 +29,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean usernameExist(String username) {
-        return getUserByUsername(username) != null;
+        return findUserByUsername(username) != null;
     }
 
     @Override
     public boolean isUsernameAndPasswordValid(String username, String password) {
-        User user = getUserByUsername(username);
+        User user = findUserByUsername(username);
         if (user != null) {
             return checkPassword(password, user);
         }
@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean isAdmin(String username) {
-        User user = getUserByUsername(username);
+        User user = findUserByUsername(username);
         return user.isAdmin();
     }
 
@@ -99,13 +99,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean isInitialAdminPassword(String username) {
-        User user = getUserByUsername(username);
+        User user = findUserByUsername(username);
         return user.isAdmin() && user.getPassword() == null;
     }
 
     @Override
     public void setInitialAdminPassword(String username, String password) {
-        User user = getUserByUsername(username);
+        User user = findUserByUsername(username);
         user.setPassword(password);
         user.setPasswordType(PasswordType.PLAIN);
         userRepository.save(user);
@@ -130,7 +130,8 @@ public class UserServiceImpl implements UserService {
         return userRepository.findOne(userId);
     }
 
-    private User getUserByUsername(String username) {
+    @Override
+    public User findUserByUsername(String username) {
         return userRepository.findByUserName(username);
     }
 

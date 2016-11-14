@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface UserOrderService {
 
-    UserOrderDetailsVO addUserOrder(UserOrderVO userOrder);
+    UserOrderDetailsVO addUserOrder(String userName, UserOrderVO userOrder);
 
     List<UserOrderDetailsVO> getAllUserOrders();
 

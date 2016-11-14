@@ -16,7 +16,6 @@ public class UserOrderVO {
 
     private Integer userOrderId;
 
-    @NotNull
     private Integer userId;
 
     @NotNull
