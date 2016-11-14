@@ -1,11 +1,14 @@
 package pizza.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import pizza.domain.order.BulkOrder;
 import pizza.repositories.BulkOrderRepository;
 import pizza.service.exception.*;
+import pizza.service.exception.bulkorder.BulkOrderActiveUntilNotValidException;
+import pizza.service.exception.bulkorder.BulkOrderAlreadyActiveException;
+import pizza.service.exception.bulkorder.BulkOrderNotClosedException;
+import pizza.service.exception.bulkorder.BulkOrderProductCatalogNotExistsException;
 import pizza.vo.order.BulkOrderVO;
 
 import java.util.ArrayList;

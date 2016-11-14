@@ -7,8 +7,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import pizza.domain.order.BulkOrder;
 import pizza.repositories.BulkOrderRepository;
-import pizza.service.exception.BulkOrderActiveUntilNotValidException;
-import pizza.service.exception.BulkOrderAlreadyActiveException;
+import pizza.service.exception.bulkorder.BulkOrderActiveUntilNotValidException;
+import pizza.service.exception.bulkorder.BulkOrderAlreadyActiveException;
 import pizza.vo.order.BulkOrderVO;
 
 import java.util.Collections;

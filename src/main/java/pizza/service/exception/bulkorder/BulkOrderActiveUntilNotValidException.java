@@ -1,4 +1,4 @@
-package pizza.service.exception;
+package pizza.service.exception.bulkorder;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
