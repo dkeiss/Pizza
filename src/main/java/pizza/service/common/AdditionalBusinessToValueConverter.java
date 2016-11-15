@@ -61,7 +61,7 @@ public class AdditionalBusinessToValueConverter {
         if (StringUtils.isEmpty(products)) {
             return new ArrayList<>();
         }
-        return Stream.of(products.split("\\s*,\\s*")).mapToInt(s -> new Integer(s)).boxed().collect(Collectors.toList());
+        return Stream.of(products.split("\\s*,\\s*")).mapToInt(Integer::new).boxed().collect(Collectors.toList());
     }
 
 }
