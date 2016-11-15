@@ -76,6 +76,23 @@ public class PizzaAuthenticationProviderTest {
     }
 
     @Test
+    public void authenticateInvalidAdminPassword() throws Exception {
+        Authentication authentication = mock(Authentication.class);
+        when(authentication.getCredentials()).thenReturn("test1234");
+        when(userService.usernameExist(anyString())).thenReturn(true);
+        when(userService.isAdmin(anyString())).thenReturn(true);
+        when(userService.isUsernameAndPasswordValid(anyString(), anyString())).thenReturn(false);
+
+        authentication = pizzaAuthenticationProvider.authenticate(authentication);
+
+        assertThat(authentication.isAuthenticated(), is(false));
+        assertThat(authentication.getAuthorities().size(), is(2));
+        Iterator<? extends GrantedAuthority> iterator = authentication.getAuthorities().iterator();
+        assertThat(iterator.next().getAuthority(), is("ROLE_USER"));
+        assertThat(iterator.next().getAuthority(), is("ROLE_ADMIN"));
+    }
+
+    @Test
     public void supports() throws Exception {
         assertTrue(pizzaAuthenticationProvider.supports(UsernamePasswordAuthenticationToken.class));
     }

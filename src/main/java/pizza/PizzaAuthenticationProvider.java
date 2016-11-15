@@ -31,24 +31,29 @@ public class PizzaAuthenticationProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String name = authentication.getName();
-        if (userService.usernameExist(name)) {
-            List<GrantedAuthority> grantedAuths = new ArrayList<>();
-            grantedAuths.add(ROLE_USER);
-            String password = authentication.getCredentials() != null ? authentication.getCredentials().toString() : null;
-            if (userService.isAdmin(name)) {
-                grantedAuths.add(ROLE_ADMIN);
-                UsernamePasswordAuthenticationToken passwordAuthenticationToken = new UsernamePasswordAuthenticationToken(name, password, grantedAuths);
-                if (!StringUtils.isEmpty(password) && userService.isUsernameAndPasswordValid(name, password)) {
-                    return passwordAuthenticationToken;
-                } else {
-                    passwordAuthenticationToken.setAuthenticated(false);
-                    return passwordAuthenticationToken;
-                }
-            }
-            return new UsernamePasswordAuthenticationToken(name, password, grantedAuths);
-        } else {
+        if (!userService.usernameExist(name)) {
             return null;
         }
+        List<GrantedAuthority> grantedAuths = new ArrayList<>();
+        grantedAuths.add(ROLE_USER);
+        if (userService.isAdmin(name)) {
+            grantedAuths.add(ROLE_ADMIN);
+            String password = getPassword(authentication);
+            UsernamePasswordAuthenticationToken passwordAuthenticationToken = new UsernamePasswordAuthenticationToken(name, password, grantedAuths);
+            if (!isPasswordValid(name, password)) {
+                passwordAuthenticationToken.setAuthenticated(false);
+            }
+            return passwordAuthenticationToken;
+        }
+        return new UsernamePasswordAuthenticationToken(name, null, grantedAuths);
+    }
+
+    private boolean isPasswordValid(String name, String password) {
+        return StringUtils.hasText(password) && userService.isUsernameAndPasswordValid(name, password);
+    }
+
+    private String getPassword(Authentication authentication) {
+        return authentication.getCredentials() != null ? authentication.getCredentials().toString() : null;
     }
 
     @Override
