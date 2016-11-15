@@ -1,6 +1,7 @@
 package pizza.service;
 
 import pizza.domain.user.User;
+import pizza.vo.admin.InitialAdminVO;
 import pizza.vo.user.UserVO;
 
 import java.util.List;
@@ -35,5 +36,7 @@ public interface UserService {
     User findUser(Integer userId);
 
     User findUserByUsername(String username);
+
+	boolean isInitialAdminValid(InitialAdminVO initialAdmin);
 
 }

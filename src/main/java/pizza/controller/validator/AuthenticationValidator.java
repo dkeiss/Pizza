@@ -1,9 +1,7 @@
 package pizza.controller.validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -11,7 +9,6 @@ import pizza.PizzaAuthenticationProvider;
 import pizza.service.UserService;
 
 import java.security.Principal;
-import java.util.Map;
 
 /**
  * Created by Daniel Keiss on 19.10.2016.
@@ -55,12 +52,6 @@ public class AuthenticationValidator {
     public boolean isAdmin(Principal principal) {
         UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) principal;
         return authenticationToken.getAuthorities().contains(PizzaAuthenticationProvider.ROLE_ADMIN);
-    }
-
-    public void setInitialAdminPassword(Principal principal, Model model, String password) {
-        UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) principal;
-        userService.setInitialAdminPassword(authenticationToken.getName(), password);
-        model.addAttribute("username", authenticationToken.getName());
     }
 
     public String checkAdminAuthenticationGetPage(Principal principal, Model model, String template) {
