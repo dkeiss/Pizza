@@ -1,11 +1,8 @@
 package pizza.vo.order;
 
 import lombok.Data;
-import lombok.Getter;
-import pizza.vo.product.additional.AdditionalInfoVO;
 
 import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
 import java.util.List;
 
 /**

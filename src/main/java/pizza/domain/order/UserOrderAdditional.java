@@ -1,13 +1,10 @@
 package pizza.domain.order;
 
 import lombok.Data;
-import pizza.domain.product.Product;
-import pizza.domain.product.ProductVariation;
 import pizza.domain.product.additional.Additional;
 import pizza.domain.product.additional.AdditionalPrice;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 
 /**

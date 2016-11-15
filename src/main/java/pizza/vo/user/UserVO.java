@@ -1,7 +1,6 @@
 package pizza.vo.user;
 
 import lombok.Data;
-import lombok.Getter;
 
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;

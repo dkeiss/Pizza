@@ -5,8 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
-import javax.servlet.annotation.WebServlet;
-
 /**
  * Created by Daniel Keiss on 01.09.2016.
  */

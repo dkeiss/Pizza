@@ -9,7 +9,6 @@ import pizza.domain.product.additional.AdditionalPrice;
 import pizza.domain.user.User;
 import pizza.vo.order.UserOrderAdditionalVO;
 import pizza.vo.order.UserOrderDetailsVO;
-import pizza.vo.product.additional.AdditionalInfoVO;
 
 import java.util.List;
 import java.util.stream.Collectors;

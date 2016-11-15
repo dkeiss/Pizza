@@ -12,9 +12,7 @@ import org.springframework.util.StringUtils;
 import pizza.service.UserService;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Daniel Keiss on 11.09.2016.

@@ -2,7 +2,6 @@ package pizza.vo.product.additional;
 
 import lombok.Data;
 
-import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 

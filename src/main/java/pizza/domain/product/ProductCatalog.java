@@ -1,7 +1,6 @@
 package pizza.domain.product;
 
 import lombok.Data;
-import pizza.vo.product.menu.ProductCategoryVO;
 
 import javax.persistence.*;
 import java.util.Date;

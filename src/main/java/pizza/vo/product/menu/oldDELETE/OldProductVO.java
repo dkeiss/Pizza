@@ -1,9 +1,6 @@
 package pizza.vo.product.menu.oldDELETE;
 
 import lombok.Data;
-import pizza.vo.product.menu.ProductVariationVO;
-
-import java.util.List;
 
 /**
  * Created by Daniel Keiss on 28.10.2016.

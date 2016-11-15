@@ -1,7 +1,6 @@
 package pizza.service;
 
 import pizza.domain.product.additional.Additional;
-import pizza.domain.product.additional.AdditionalCategory;
 import pizza.domain.product.additional.AdditionalPrice;
 import pizza.vo.product.additional.AdditionalCategoryVO;
 

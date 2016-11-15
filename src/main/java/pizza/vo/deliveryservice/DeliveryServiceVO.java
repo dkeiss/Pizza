@@ -1,9 +1,7 @@
 package pizza.vo.deliveryservice;
 
 import lombok.Data;
-import org.hibernate.validator.constraints.NotBlank;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 

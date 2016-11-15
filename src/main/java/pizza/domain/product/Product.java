@@ -1,11 +1,8 @@
 package pizza.domain.product;
 
 import lombok.Data;
-import org.hibernate.annotations.Cascade;
-import pizza.vo.product.menu.ProductVariationVO;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

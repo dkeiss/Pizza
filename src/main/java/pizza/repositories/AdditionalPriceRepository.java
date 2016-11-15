@@ -1,7 +1,6 @@
 package pizza.repositories;
 
 import org.springframework.data.repository.CrudRepository;
-import pizza.domain.product.additional.Additional;
 import pizza.domain.product.additional.AdditionalPrice;
 
 /**

@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.Getter;
 
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 /**
  * Created by Daniel Keiss on 22.10.2016.

@@ -2,7 +2,6 @@ package pizza.vo.product.additional.old;
 
 import lombok.Data;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 /**

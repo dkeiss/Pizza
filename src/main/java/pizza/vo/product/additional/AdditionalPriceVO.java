@@ -2,7 +2,6 @@ package pizza.vo.product.additional;
 
 import lombok.Data;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
