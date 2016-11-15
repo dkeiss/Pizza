@@ -16,57 +16,59 @@ import java.security.Principal;
 @Component
 public class AuthenticationValidator {
 
-    @Autowired
-    private UserService userService;
+	@Autowired
+	private UserService userService;
 
-    public boolean isAuthenticated(Principal principal, Model model) {
-        UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) principal;
-        if (authenticationToken == null || StringUtils.isEmpty(principal.getName())) {
-            return false;
-        }
-        model.addAttribute("username", authenticationToken.getName());
+	public boolean isAuthenticated(Principal principal, Model model) {
+		UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) principal;
+		if (authenticationToken == null || !StringUtils.hasText(authenticationToken.getName())) {
+			return false;
+		}
+		model.addAttribute("username", authenticationToken.getName());
 
-        if (isAdmin(authenticationToken)) {
-            model.addAttribute("isAdmin", true);
-        }
+		if (isAdmin(authenticationToken)) {
+			model.addAttribute("isAdmin", true);
+		}
 
-        return authenticationToken.isAuthenticated();
-    }
+		return authenticationToken.isAuthenticated();
+	}
 
-    public boolean isInitialAdminPassword(Principal principal, Model model) {
-        UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) principal;
-        if (authenticationToken != null) {
-            model.addAttribute("username", authenticationToken.getName());
-        }
-        return authenticationToken != null && !StringUtils.isEmpty(authenticationToken.getName()) && userService.isInitialAdminPassword(authenticationToken.getName());
-    }
+	public boolean isInitialAdminPassword(Principal principal, Model model) {
+		UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) principal;
+		if (authenticationToken == null || !StringUtils.hasText(authenticationToken.getName())) {
+			return false;
+		}
+		model.addAttribute("username", authenticationToken.getName());
 
-    public String checkIsInitialAdminPasswordGetPage(Principal principal, Model model) {
-        if (isInitialAdminPassword(principal, model)) {
-            return "admin/initialpassword";
-        } else {
-            return "login";
-        }
-    }
+		return userService.isInitialAdminPassword(authenticationToken.getName());
+	}
 
-    public boolean isAdmin(Principal principal) {
-        UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) principal;
-        return authenticationToken.getAuthorities().contains(PizzaAuthenticationProvider.ROLE_ADMIN);
-    }
+	public String checkIsInitialAdminPasswordGetPage(Principal principal, Model model) {
+		if (isInitialAdminPassword(principal, model)) {
+			return "admin/initialpassword";
+		} else {
+			return "login";
+		}
+	}
 
-    public String checkAdminAuthenticationGetPage(Principal principal, Model model, String template) {
-        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
-        if (isAuthenticated(principal, model) && isAdmin(usernamePasswordAuthenticationToken)) {
-            return template;
-        }
-        return "login";
-    }
+	public boolean isAdmin(Principal principal) {
+		UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) principal;
+		return authenticationToken.getAuthorities().contains(PizzaAuthenticationProvider.ROLE_ADMIN);
+	}
 
-    public String checkIsAdminGetPage(Principal principal, Model model) {
-        if (isAdmin(principal)) {
-            return "redirect:admin";
-        }
-        return "redirect:order";
-    }
+	public String checkAdminAuthenticationGetPage(Principal principal, Model model, String adminTemplate) {
+		UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
+		if (isAuthenticated(principal, model) && isAdmin(usernamePasswordAuthenticationToken)) {
+			return adminTemplate;
+		}
+		return "login";
+	}
+
+	public String redirectBasedOnRole(Principal principal, Model model) {
+		if (isAdmin(principal)) {
+			return "redirect:admin";
+		}
+		return "redirect:order";
+	}
 
 }

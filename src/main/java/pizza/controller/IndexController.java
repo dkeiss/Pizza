@@ -1,14 +1,11 @@
 package pizza.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pizza.controller.validator.AuthenticationValidator;
-import pizza.service.UserService;
 
 import java.security.Principal;
 
@@ -37,7 +34,7 @@ public class IndexController {
         if (!authenticated) {
             return authenticationValidator.checkIsInitialAdminPasswordGetPage(principal, model);
         }
-        return authenticationValidator.checkIsAdminGetPage(principal, model);
+        return authenticationValidator.redirectBasedOnRole(principal, model);
     }
 
 }

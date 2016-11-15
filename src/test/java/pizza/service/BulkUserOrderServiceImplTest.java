@@ -36,13 +36,15 @@ public class BulkUserOrderServiceImplTest {
     @Mock
     private MailService mailService;
 
+    @Mock
+    private ProductCatalogService productCatalogService;
+
     @Before
     public void before() {
         initMocks(this);
     }
 
     @Test
-    @Ignore
     public void listBulkOrders() throws Exception {
         when(bulkOrderRepository.findAll()).thenReturn(Collections.singletonList(mock(BulkOrder.class)));
 
@@ -52,10 +54,12 @@ public class BulkUserOrderServiceImplTest {
     }
 
     @Test
-    @Ignore
     public void createValidBulkOrder() throws Exception {
         BulkOrderVO bulkOrder = mock(BulkOrderVO.class);
         when(bulkOrder.isActive()).thenReturn(true);
+        when(bulkOrder.getCatalogId()).thenReturn(42);
+        when(productCatalogService.productCatalogExists(42)).thenReturn(true);
+        when(bulkOrderRepository.save(any(BulkOrder.class))).thenReturn(mock(BulkOrder.class));
 
         bulkOrder = bulkOrderService.createBulkOrder(bulkOrder);
 
