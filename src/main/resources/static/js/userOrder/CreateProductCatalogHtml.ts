@@ -32,6 +32,7 @@ namespace WebApplication.UserOrder
         public start(): void
         {
             this._menuClickSelectors = $(UserOrderSelector.menuClickSelectors);
+            this._menuClickSelectors.on("click", event => { this.showHideCategories(event)} );
         }
 
 
@@ -48,7 +49,7 @@ namespace WebApplication.UserOrder
 
             for (let i = 0; i < menus.length; i++)
             {
-                menuHtml += `<div class="${UserOrderSelector.menuClickSelectors.replace(".", "")}">${menus[i].name}</div>`;
+                menuHtml += `<div class="${UserOrderSelector.menuClickSelectors.replace(".", "")}" categorise="${i}">${menus[i].name}</div>`;
             }
 
             this._menuSelector.append(menuHtml);
@@ -62,7 +63,7 @@ namespace WebApplication.UserOrder
                 let categoriseSelect = $("." + UserOrderSelector.setCategoriesHtml)
                     .append(
                         $("<div>", {
-                            "class": UserOrderSelector.categoriesSelectors,
+                            "class": UserOrderSelector.categoriesShowContainer,
                             "categorise": indexCategorise
                         })
                     )
@@ -103,8 +104,8 @@ namespace WebApplication.UserOrder
             for (let indexProducts = 0; indexProducts < products.length; indexProducts++)
             {
                 productElements += `<tr productId="${products[indexProducts].productId}">`;
-                    productElements += "<td>" + products[indexProducts].number + "</td>";
-                    productElements += "<td><div>" + products[indexProducts].name + "</div>";
+                    productElements += "<td class='userOrder-productTable-number'>" + products[indexProducts].number + "</td>";
+                    productElements += "<td class='userOrder-productTable-text'><div>" + products[indexProducts].name + "</div>";
                     productElements += "<div>" + products[indexProducts].description + "</div></td>";
 
                     productElements += this.getVariationPrices(products[indexProducts].productVariations);
@@ -131,10 +132,10 @@ namespace WebApplication.UserOrder
             }
 
             let returnVariations = "";
-            if (this._productPriceVariations[0]) return "<th class='userOrder-price-default'></th>";
-            if (this._productPriceVariations[1]) returnVariations += "<th class='userOrder-price-small'>small</th>";
-            if (this._productPriceVariations[2]) returnVariations += "<th class='userOrder-price-medium'>medium</th>";
-            if (this._productPriceVariations[3]) returnVariations += "<th class='userOrder-price-large'>large</th>";
+            if (this._productPriceVariations[0]) return "<th class='userOrder-price'></th>";
+            if (this._productPriceVariations[1]) returnVariations += "<th class='userOrder-price'>small</th>";
+            if (this._productPriceVariations[2]) returnVariations += "<th class='userOrder-price'>medium</th>";
+            if (this._productPriceVariations[3]) returnVariations += "<th class='userOrder-price'>large</th>";
 
             return returnVariations;
         }
@@ -143,7 +144,7 @@ namespace WebApplication.UserOrder
         {
             if (this._productPriceVariations[0])
             {
-                return "<td>" + variations[0].price + "</td>";
+                return "<td class='userOrder-price-cell'><div>" + variations[0].price + "</div></td>";
             }
 
             let returnPriceElements = "";
@@ -153,7 +154,7 @@ namespace WebApplication.UserOrder
                 const variation = variations.filter(item => item.name == "small");
                 if (variation.length > 0)
                 {
-                    returnPriceElements += "<td>" + variation[0].price + "</td>";
+                    returnPriceElements += "<td class='userOrder-price-cell'><div>" + variation[0].price + "</div></td>";
                 }
                 else
                 {
@@ -166,11 +167,11 @@ namespace WebApplication.UserOrder
                 const variation = variations.filter(item => item.name == "medium");
                 if (variation.length > 0)
                 {
-                    returnPriceElements += "<td>" + variation[0].price + "</td>";
+                    returnPriceElements += "<td class='userOrder-price-cell'><div>" + variation[0].price + "</div></td>";
                 }
                 else
                 {
-                    returnPriceElements += "<tr></tr>";
+                    returnPriceElements += "<td></td>";
                 }
             }
 
@@ -179,15 +180,35 @@ namespace WebApplication.UserOrder
                 const variation = variations.filter(item => item.name == "large");
                 if (variation.length > 0)
                 {
-                    returnPriceElements += "<td>" + variation[0].price + "</td>";
+                    returnPriceElements += "<td class='userOrder-price-cell'><div>" + variation[0].price + "</div></td>";
                 }
                 else
                 {
-                    returnPriceElements += "<tr></tr>";
+                    returnPriceElements += "<td></td>";
                 }
             }
 
             return returnPriceElements;
+        }
+
+
+        // ################ EVENTS ################
+        private showHideCategories(eventObject: JQueryEventObject)
+        {
+            const elementShow = "show";
+
+            $("." + UserOrderSelector.categoriesShowContainer)
+                .each( (index, element) =>
+                {
+                    if (eventObject.target.getAttribute("categorise") == $(element).attr("categorise"))
+                    {
+                        $(element).addClass(elementShow);
+                    }
+                    else
+                    {
+                        $(element).removeClass(elementShow);
+                    }
+                });
         }
     }
 }

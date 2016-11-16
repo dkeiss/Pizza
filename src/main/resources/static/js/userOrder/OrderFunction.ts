@@ -15,6 +15,7 @@ namespace WebApplication.UserOrder
         constructor()
         {
             this._createProductCatalogHtml = new CreateProductCatalogHtml();
+            this._createProductCatalogHtml.start();
         }
     }
 }

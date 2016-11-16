@@ -1,13 +1,138 @@
 @import url("../_core.css");
 
-.userOrder-menu-container {
+body {
+    overflow-y: scroll;
+}
 
+.userOrder-menu-container {
+    overflow: hidden;
+    display: block;
+    float: left;
+    margin: 0 0 40px 0;
 }
 
 .userOrder-menu-container div {
     float: left;
     padding: 10px 20px;
-    background-color: aliceblue;
+    background-color: #50aecc;
     margin: 0 6px 6px 6px;
     cursor: pointer;
+    color: #fff;
+    border-radius: 4px;
 }
+
+.userOrder-menu-container div:hover {
+    background: #1a657d;
+}
+
+
+
+.userOrder-categoriesSelector-showContainer {
+    display: none;
+}
+
+.userOrder-categoriesSelector-showContainer.show {
+    display: block;
+}
+
+.userOrder-groupsSelector-container {
+    background: #fff;
+    overflow: hidden;
+    float: left;
+    margin: 0 0 40px 0;
+    width: 100%;
+}
+
+.productTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.productTable tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.productTable tr:hover:first-child {
+    background: transparent;
+}
+
+.productTable tr:hover {
+    background: #e4e4e4;
+}
+
+.productTable tr:last-child {
+    border-bottom: 0;
+}
+
+tr.userOrder-productTable-titleTr th {
+    border-bottom: 2px solid #ccc;
+    text-align: center;
+    padding: 10px 0;
+    text-transform: uppercase;
+    min-width: 60px;
+}
+
+tr.userOrder-productTable-titleTr th:first-child {
+    width: 100%;
+}
+
+th.userOrder-price {
+    font-size: 12px;
+}
+
+td.userOrder-productTable-number {
+    text-align: center;
+    min-width: 50px;
+    font-size: 12px;
+}
+
+td.userOrder-productTable-text {
+    padding: 6px 0;
+    width: 100%;
+}
+
+td.userOrder-productTable-text div:first-child {
+    width: 100%;
+    float: left;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+td.userOrder-productTable-text div:last-child {
+    width: 100%;
+    float: left;
+    font-size: 12px;
+}
+
+td.userOrder-price-cell {
+    text-align: center;
+}
+
+td.userOrder-price-cell div {
+    background: #50AECC;
+    display: inline-block;
+    padding: 6px 0;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+    width: 100%;
+    margin: 5px 0;
+}
+
+td.userOrder-price-cell div:hover {
+    background: #1a657d;
+}
+
+td.userOrder-price-cell div::after {
+    content: " €";
+}
+
+
+
+
+
+
+
+
