@@ -17,7 +17,6 @@ public class ProductCatalogFullVO {
     @NotNull
     private ProductCatalogVO productCatalog;
 
-    @NotNull
     private List<AdditionalCategoryVO> additionals;
 
 }
