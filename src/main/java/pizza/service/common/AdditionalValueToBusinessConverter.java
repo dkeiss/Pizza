@@ -28,6 +28,9 @@ public class AdditionalValueToBusinessConverter {
     }
 
     private static List<Additional> getAdditionalsFromVO(List<AdditionalVO> additionalVOs, AdditionalCategory additionalCategory) {
+        if(additionalVOs == null){
+            return null;
+        }
         return additionalVOs.stream().map(additionalVO -> getAdditionalFromVO(additionalVO, additionalCategory)).collect(Collectors.toList());
     }
 
@@ -52,6 +55,9 @@ public class AdditionalValueToBusinessConverter {
     }
 
     private static String getProductsFromProductsList(List<Integer> productIds) {
+        if(productIds == null){
+            return null;
+        }
         return productIds.stream().map(Object::toString).collect(Collectors.joining(","));
     }
 
