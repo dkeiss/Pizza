@@ -30,7 +30,10 @@ public class AuthenticationValidator {
 			model.addAttribute("isAdmin", true);
 		}
 
-		return authenticationToken.isAuthenticated();
+		boolean authenticated = authenticationToken.isAuthenticated();
+		model.addAttribute("isLoggedIn", authenticated);
+
+		return authenticated;
 	}
 
 	public boolean isInitialAdminPassword(Principal principal, Model model) {
