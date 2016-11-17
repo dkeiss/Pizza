@@ -41,7 +41,7 @@ public class AdminShoppingcardController {
     @ResponseBody
     Map setUserOrderPaid(@PathVariable("userOrderId") Integer userOrderId, @RequestBody UserOrderPaidVO userOrderPaidVO) {
         userOrderService.setUserOrderPaid(userOrderId, userOrderPaidVO);
-        return getEmptyJsonSucessResponse(true);
+        return getEmptyJsonSucessResponse();
     }
 
     @RequestMapping(value = "/{userOrderId}", method = RequestMethod.DELETE)
@@ -49,7 +49,7 @@ public class AdminShoppingcardController {
     @ResponseBody
     Map deleteUserOrder(@PathVariable("userOrderId") Integer userOrderId) {
         userOrderService.deleteUserOrder(userOrderId);
-        return getEmptyJsonSucessResponse(true);
+        return getEmptyJsonSucessResponse();
     }
 
 }

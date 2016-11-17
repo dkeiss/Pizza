@@ -35,7 +35,7 @@ public class DeliveryServiceController {
     @ResponseBody
     Map updateDeliveryService(@RequestBody DeliveryServiceVO deliveryService) {
         deliveryServiceService.updateDeliveryService(deliveryService);
-        return getEmptyJsonSucessResponse(true);
+        return getEmptyJsonSucessResponse();
     }
 
 }

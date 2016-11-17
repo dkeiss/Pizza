@@ -68,7 +68,7 @@ public class BulkOrderController {
     Map updateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId, @RequestBody BulkOrderVO bulkOrder) {
         bulkOrder.setBulkOrderId(bulkorderId);
         bulkOrderService.updateBulkOrder(bulkOrder);
-        return getEmptyJsonSucessResponse(true);
+        return getEmptyJsonSucessResponse();
     }
 
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.DELETE)
@@ -76,7 +76,7 @@ public class BulkOrderController {
     @ResponseBody
     Map deactivateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
         bulkOrderService.deactivateBulkOrderById(bulkorderId);
-        return getEmptyJsonSucessResponse(true);
+        return getEmptyJsonSucessResponse();
     }
 
 }

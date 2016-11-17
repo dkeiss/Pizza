@@ -41,7 +41,7 @@ public class UserController {
     Map updateUser(@PathVariable("userId") Integer userId, @RequestBody UserVO user) {
         user.setUserId(userId);
         userService.updateUser(user);
-        return getEmptyJsonSucessResponse(true);
+        return getEmptyJsonSucessResponse();
     }
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.DELETE)
@@ -49,7 +49,7 @@ public class UserController {
     @ResponseBody
     Map deleteUser(@PathVariable("userId") Integer userId) {
         userService.deleteUser(userId);
-        return getEmptyJsonSucessResponse(true);
+        return getEmptyJsonSucessResponse();
     }
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
