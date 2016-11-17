@@ -10,7 +10,7 @@ import pizza.vo.order.UserOrderPaidVO;
 import java.util.List;
 import java.util.Map;
 
-import static pizza.controller.rest.ResponseUtil.getResponseWithStatus;
+import static pizza.controller.rest.ResponseUtil.getEmptyJsonSucessResponse;
 
 /**
  * Created by Daniel Keiss on 06.11.2016.
@@ -41,7 +41,7 @@ public class AdminShoppingcardController {
     @ResponseBody
     Map setUserOrderPaid(@PathVariable("userOrderId") Integer userOrderId, @RequestBody UserOrderPaidVO userOrderPaidVO) {
         userOrderService.setUserOrderPaid(userOrderId, userOrderPaidVO);
-        return getResponseWithStatus(true);
+        return getEmptyJsonSucessResponse(true);
     }
 
     @RequestMapping(value = "/{userOrderId}", method = RequestMethod.DELETE)
@@ -49,7 +49,7 @@ public class AdminShoppingcardController {
     @ResponseBody
     Map deleteUserOrder(@PathVariable("userOrderId") Integer userOrderId) {
         userOrderService.deleteUserOrder(userOrderId);
-        return getResponseWithStatus(true);
+        return getEmptyJsonSucessResponse(true);
     }
 
 }

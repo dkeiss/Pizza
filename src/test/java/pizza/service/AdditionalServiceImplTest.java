@@ -4,8 +4,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
 import pizza.domain.product.additional.Additional;
 import pizza.domain.product.additional.AdditionalCategory;
 import pizza.domain.product.additional.AdditionalPrice;
@@ -16,6 +14,7 @@ import pizza.service.exception.NotFoundException;
 import pizza.vo.product.additional.AdditionalCategoryVO;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.hamcrest.core.Is.is;
@@ -49,7 +48,7 @@ public class AdditionalServiceImplTest {
     @Test
     public void listAdditionalCategories() throws Exception {
         AdditionalCategory additionalCategory = new AdditionalCategory();
-        when(additionalCategoryRepository.findAll()).thenReturn(Arrays.asList(additionalCategory));
+        when(additionalCategoryRepository.findAll()).thenReturn(Collections.singletonList(additionalCategory));
 
         List<AdditionalCategoryVO> additionalCategoryVOs = additionalService.listAdditionalCategories();
 

@@ -6,6 +6,6 @@ package pizza.domain.user;
 public enum PasswordType {
 
 	PLAIN,
-	ENCRYPTED;
+	ENCRYPTED
 
 }

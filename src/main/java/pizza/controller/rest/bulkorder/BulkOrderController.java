@@ -8,7 +8,7 @@ import pizza.vo.order.BulkOrderVO;
 
 import java.util.*;
 
-import static pizza.controller.rest.ResponseUtil.getResponseWithStatus;
+import static pizza.controller.rest.ResponseUtil.getEmptyJsonSucessResponse;
 
 /**
  * Created by Daniel Keiss on 24.10.2016.
@@ -68,7 +68,7 @@ public class BulkOrderController {
     Map updateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId, @RequestBody BulkOrderVO bulkOrder) {
         bulkOrder.setBulkOrderId(bulkorderId);
         bulkOrderService.updateBulkOrder(bulkOrder);
-        return getResponseWithStatus(true);
+        return getEmptyJsonSucessResponse(true);
     }
 
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.DELETE)
@@ -76,7 +76,7 @@ public class BulkOrderController {
     @ResponseBody
     Map deactivateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
         bulkOrderService.deactivateBulkOrderById(bulkorderId);
-        return getResponseWithStatus(true);
+        return getEmptyJsonSucessResponse(true);
     }
 
 }

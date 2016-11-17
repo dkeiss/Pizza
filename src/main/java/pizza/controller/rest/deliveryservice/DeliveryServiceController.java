@@ -11,7 +11,7 @@ import pizza.vo.deliveryservice.DeliveryServiceVO;
 
 import java.util.Map;
 
-import static pizza.controller.rest.ResponseUtil.getResponseWithStatus;
+import static pizza.controller.rest.ResponseUtil.getEmptyJsonSucessResponse;
 
 /**
  * Created by Daniel Keiss on 11.11.2016.
@@ -35,7 +35,7 @@ public class DeliveryServiceController {
     @ResponseBody
     Map updateDeliveryService(@RequestBody DeliveryServiceVO deliveryService) {
         deliveryServiceService.updateDeliveryService(deliveryService);
-        return getResponseWithStatus(true);
+        return getEmptyJsonSucessResponse(true);
     }
 
 }
