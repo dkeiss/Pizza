@@ -20,11 +20,7 @@
     <div th:replace="fragments/serverErrorDialog :: serverError">&nbsp;</div>
 </div>
 
-<div class="core-container-header">
-    <div class="core-container-center">
-        <div th:replace="fragments/header :: header">&nbsp;</div>
-    </div>
-</div>
+<div th:replace="fragments/header :: header">&nbsp;</div>
 
 <div class="core-container-center">
     <div class="core-link-container-box admin-container_cardDiv">
@@ -62,6 +58,8 @@
         </div>
     </div>
 </div>
+
+<div th:replace="fragments/footer :: footer">&nbsp;</div>
 
 </body>
 </html>

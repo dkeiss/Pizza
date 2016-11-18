@@ -6,6 +6,19 @@
 </head>
 <body>
 
+<div th:style="'background-image:url('+ @{/img/pizza.png} +');'" th:class="${#httpServletRequest.requestURI.contains('order')} ? 'core-header core-header_order' : (${#httpServletRequest.requestURI.contains('admin')} ? 'core-header core-header_admin' : 'core-header core-header_default')" th:fragment="header">
+<!---<div  th:class="${#httpServletRequest.requestURI.contains('order')} ? 'core-header core-header_order' : 'core-header core-header_default'" th:fragment="header">-->
+    <div th:if="${isAdmin}" th:class="${#httpServletRequest.requestURI.contains('admin')} ? 'core-header-menu core-header-menu-active_admin' : 'core-header-menu core-header-menu-inactive_admin'"><a href="../admin">Administratorbereich</a></div>
+    <div th:if="${#httpServletRequest.requestURI.contains('admin')} or ${#httpServletRequest.requestURI.contains('order')}" th:class="${#httpServletRequest.requestURI.contains('order')} ? 'core-header-menu core-header-menu-active_order' : 'core-header-menu core-header-menu-inactive_order'"><a href="../order">Bestellbereich</a></div>
+    <div style="float: right" th:if="${#httpServletRequest.requestURI.contains('admin')} or ${#httpServletRequest.requestURI.contains('order')}">
+        <form id="logout-form" th:action="@{/logout}" method="post">
+            <p style="float: left" th:inline="text"> Angemeldet als [[${#httpServletRequest.remoteUser}]]</p>
+            <a style="float: right"  onClick="document.forms['logout-form'].submit();">[Abmelden]</a>
+        </form>
+    </div>
+</div>
+
+<!--
 <div class="container" th:fragment="header">
 
     <div th:if="${isAdmin}">
@@ -18,6 +31,6 @@
         <input type="submit" value="Ausloggen"/>
     </form>
 </div>
-
+-->
 </body>
 </html>

@@ -14,12 +14,13 @@
         <div th:replace="fragments/serverErrorDialog :: serverError">&nbsp;</div>
     </div>
 
-    <div class="core-container-header">
+    <div th:replace="fragments/header :: header">&nbsp;</div>
+    <!--<div class="core-container-header">
         <div class="core-container-center">
             <h1>Admin</h1>
             <div th:replace="fragments/header :: header">&nbsp;</div>
         </div>
-    </div>
+    </div>-->
 
     <div class="core-container-center">
         <div class="core-container-box um-newUser_container">
@@ -66,6 +67,7 @@
         </div>
     </div>
 
+    <div th:replace="fragments/footer :: footer">&nbsp;</div>
 
 </body>
 </html>

@@ -9,11 +9,7 @@
 </head>
 <body>
 
-<div id="header">
-    <div class="container">
-        <h1>Login</h1>
-    </div>
-</div>
+<div th:replace="fragments/header :: header">&nbsp;</div>
 
 <div class="core-container-login">
     <div th:if="${param.logout}" class="core-container-box">Sie wurden ausgeloggt.</div>
@@ -28,5 +24,6 @@
     </div>
 </div>
 
+<div th:replace="fragments/footer :: footer">&nbsp;</div>
 </body>
 </html>

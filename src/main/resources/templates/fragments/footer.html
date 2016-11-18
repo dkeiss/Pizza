@@ -4,8 +4,12 @@
     ...
 </head>
 <body>
-<div th:fragment="footer">
-    &copy; 2016 Footer
+<div th:class="${#httpServletRequest.requestURI.contains('order')} ? 'core-footer core-footer_order' : (${#httpServletRequest.requestURI.contains('admin')} ? 'core-footer core-footer_admin' : 'core-footer core-footer_default')" th:fragment="footer">
+<!--<div th:class="${#httpServletRequest.requestURI.contains('order')} ? 'core-footer core-footer_order' : 'core-footer core-footer_default'" th:fragment="footer">-->
+    @ KeKoWa GmbH
 </div>
+<!--<div class="footer" th:fragment="footer">
+    &copy; 2016 Footer
+</div>-->
 </body>
 </html>

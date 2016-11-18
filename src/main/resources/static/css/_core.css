@@ -203,3 +203,106 @@ p {
     display: block;
 }
 
+.core-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #ddd;
+    /*border-top: 5px solid #aaa;*/
+    height: 20px;
+    margin-top: 30px;
+    background-image: url(../img/pizza-logo.png);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: right center;
+}
+
+.core-footer_default{
+    box-shadow: inset 0 5px 5px -5px #000;
+}
+
+.core-footer_admin{
+    box-shadow: inset 0 5px 5px -5px #f00;
+}
+
+.core-footer_order{
+    box-shadow: inset 0 5px 5px -5px #50aecc;
+}
+
+.core-header{
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    /*top: 0;*/
+    width: 100%;
+    background-color: #ddd;
+    padding-left:200px;
+    /*border-bottom: 5px solid #aaa;*/
+    height: 50px;
+    margin-bottom: 30px;
+    background-image: url(../img/pizza.png);
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: 50px center;
+}
+
+.core-header_default{
+    box-shadow: inset 0 -5px 5px -5px #000;
+}
+
+.core-header_admin{
+    box-shadow: inset 0 -5px 5px -5px #f00;
+}
+
+.core-header_order{
+    box-shadow: inset 0 -5px 5px -5px #50aecc;
+}
+
+
+.core-header-menu{
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    height: 100%;
+    padding: 0 10px 0 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    float:left;
+}
+
+.core-header-menu-active_order {
+    border: 1px solid #50aecc;
+    z-index: 1;
+    background: #F0F0F0;
+    box-shadow: 0 0 5px 0 #50aecc;
+    /*background: red;*/
+    /*width: 200px;*/
+}
+
+.core-header-menu-active_admin {
+    border: 1px solid #f00;
+    z-index: 1;
+    background: #F0F0F0;
+    box-shadow: 0 0 5px 0 #f00;
+    /*background: red;*/
+    /*width: 200px;*/
+}
+
+.core-header-menu-inactive_admin  {
+    border: 1px solid #aaa;
+    z-index: 0;
+    background: #d0d0d0;
+    box-shadow: inset 0 -5px 5px -5px #50aecc;
+    /*box-shadow: 0 0 5px 0 #f00;*/
+    /*background: red;*/
+}
+
+.core-header-menu-inactive_order  {
+    border: 1px solid #aaa;
+    z-index: 0;
+    background: #d0d0d0;
+    box-shadow: inset 0 -5px 5px -5px #f00;
+    /*box-shadow: 0 0 5px 0 #f00;*/
+    /*background: red;*/
+}
+
