@@ -20,6 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/img/**").permitAll()
                 .antMatchers("/css/**").permitAll()
                 .antMatchers("/rest/**").permitAll() // TODO disable after development
                 .antMatchers("/console/**").permitAll() // h2 console disable after development

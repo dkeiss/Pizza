@@ -221,11 +221,7 @@ p {
     box-shadow: inset 0 5px 5px -5px #000;
 }
 
-.core-footer_admin{
-    box-shadow: inset 0 5px 5px -5px #f00;
-}
-
-.core-footer_order{
+.core-footer_loggedIn{
     box-shadow: inset 0 5px 5px -5px #50aecc;
 }
 
@@ -236,73 +232,83 @@ p {
     /*top: 0;*/
     width: 100%;
     background-color: #ddd;
-    padding-left:200px;
+    /*padding-left:200px;*/
     /*border-bottom: 5px solid #aaa;*/
     height: 50px;
     margin-bottom: 30px;
     background-image: url(../img/pizza.png);
     background-repeat: no-repeat;
     background-size: 100px;
-    background-position: 50px center;
+    background-position: 10px center;
 }
 
 .core-header_default{
     box-shadow: inset 0 -5px 5px -5px #000;
 }
 
-.core-header_admin{
-    box-shadow: inset 0 -5px 5px -5px #f00;
-}
-
-.core-header_order{
+.core-header_loggedIn{
     box-shadow: inset 0 -5px 5px -5px #50aecc;
 }
 
-
 .core-header-menu{
     position: relative;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     height: 100%;
     padding: 0 10px 0 10px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    float:left;
+    float: left;
 }
 
-.core-header-menu-active_order {
+.core-header-menu-active {
     border: 1px solid #50aecc;
     z-index: 1;
     background: #F0F0F0;
     box-shadow: 0 0 5px 0 #50aecc;
-    /*background: red;*/
-    /*width: 200px;*/
 }
 
-.core-header-menu-active_admin {
-    border: 1px solid #f00;
-    z-index: 1;
-    background: #F0F0F0;
-    box-shadow: 0 0 5px 0 #f00;
-    /*background: red;*/
-    /*width: 200px;*/
-}
-
-.core-header-menu-inactive_admin  {
+.core-header-menu-inactive  {
     border: 1px solid #aaa;
     z-index: 0;
     background: #d0d0d0;
     box-shadow: inset 0 -5px 5px -5px #50aecc;
-    /*box-shadow: 0 0 5px 0 #f00;*/
-    /*background: red;*/
 }
 
-.core-header-menu-inactive_order  {
-    border: 1px solid #aaa;
-    z-index: 0;
-    background: #d0d0d0;
-    box-shadow: inset 0 -5px 5px -5px #f00;
-    /*box-shadow: 0 0 5px 0 #f00;*/
-    /*background: red;*/
+.logout{
+    text-align: center;
+    text-transform:uppercase;
+    text-decoration: none;
+    float: right;
 }
 
+.core-header-content {
+    position: relative;
+    overflow: visible;
+    max-width: 920px;
+    min-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%
+}
+
+.core-logout-button {
+    margin:3px;
+    float: right;
+    width:16px;
+    height:16px;
+    background: url(../img/logout.png) no-repeat center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+.core-logout-button:hover {
+    background: url(../img/logout-hover.png) no-repeat center;
+    background-size: 16px;
+}
+
+.core-header-user{
+    height: 100%;
+    width:100%;
+    text-align: right;
+}
