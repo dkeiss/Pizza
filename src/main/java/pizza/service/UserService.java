@@ -28,8 +28,6 @@ public interface UserService {
 
     boolean isInitialAdminPassword(String name);
 
-    void setInitialAdminPassword(String username, String password);
-
     void deleteUser(Integer userId);
 
     boolean userExists(Integer userId);
@@ -39,5 +37,9 @@ public interface UserService {
     User findUserByUsername(String username);
 
 	boolean isInitialAdminValid(InitialAdminVO initialAdmin);
+
+    void setInitialAdmin(InitialAdminVO initialAdmin);
+
+    UserVO getUserByName(String username);
 
 }

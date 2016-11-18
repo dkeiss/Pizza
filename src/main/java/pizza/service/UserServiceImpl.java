@@ -104,14 +104,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void setInitialAdminPassword(String username, String password) {
-        User user = findUserByUsername(username);
-
-        String hash = sha3hash(password);
-
+    public void setInitialAdmin(InitialAdminVO initialAdmin) {
+        User user = findUserByUsername(initialAdmin.getUsername());
+        String hash = sha3hash(initialAdmin.getPassword());
         user.setPassword(hash);
         user.setPasswordType(PasswordType.ENCRYPTED);
+        user.setFirstName(initialAdmin.getFirstName());
+        user.setLastName(initialAdmin.getLastName());
         userRepository.save(user);
+    }
+
+    @Override
+    public UserVO getUserByName(String username) {
+        User user = findUserByUsername(username);
+        if(user == null){
+            throw new NotFoundException();
+        }
+        return copyFromBusinessObject(user, new UserVO());
     }
 
     public String sha3hash(String password) {

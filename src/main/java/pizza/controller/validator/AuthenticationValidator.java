@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import pizza.PizzaAuthenticationProvider;
 import pizza.service.UserService;
+import pizza.vo.user.UserVO;
 
 import java.security.Principal;
 
@@ -43,7 +44,13 @@ public class AuthenticationValidator {
 		}
 		model.addAttribute("username", authenticationToken.getName());
 
-		return userService.isInitialAdminPassword(authenticationToken.getName());
+		boolean initialAdminPassword = userService.isInitialAdminPassword(authenticationToken.getName());
+		if(initialAdminPassword){
+			UserVO user = userService.getUserByName(authenticationToken.getName());
+			model.addAttribute("user", user);
+		}
+
+		return initialAdminPassword;
 	}
 
 	public String checkIsInitialAdminPasswordGetPage(Principal principal, Model model) {

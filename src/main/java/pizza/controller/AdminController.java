@@ -58,7 +58,8 @@ public class AdminController {
 		}
 
 		UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) principal;
-		userService.setInitialAdminPassword(authenticationToken.getName(), initialAdmin.getPassword());
+		initialAdmin.setUsername(principal.getName());
+		userService.setInitialAdmin(initialAdmin);
 		model.addAttribute("username", authenticationToken.getName());
 
 		return "login";
