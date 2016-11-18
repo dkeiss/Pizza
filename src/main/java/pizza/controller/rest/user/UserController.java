@@ -9,7 +9,7 @@ import pizza.vo.user.UserVO;
 import java.util.List;
 import java.util.Map;
 
-import static pizza.controller.rest.ResponseUtil.getResponseWithStatus;
+import static pizza.controller.rest.ResponseUtil.getEmptyJsonSucessResponse;
 
 /**
  * Created by Daniel Keiss on 22.09.2016.
@@ -41,7 +41,7 @@ public class UserController {
     Map updateUser(@PathVariable("userId") Integer userId, @RequestBody UserVO user) {
         user.setUserId(userId);
         userService.updateUser(user);
-        return getResponseWithStatus(true);
+        return getEmptyJsonSucessResponse();
     }
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.DELETE)
@@ -49,7 +49,7 @@ public class UserController {
     @ResponseBody
     Map deleteUser(@PathVariable("userId") Integer userId) {
         userService.deleteUser(userId);
-        return getResponseWithStatus(true);
+        return getEmptyJsonSucessResponse();
     }
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET)

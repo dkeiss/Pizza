@@ -36,6 +36,9 @@ public class AdditionalBusinessToValueConverter {
     }
 
     private static List<AdditionalVO> getAdditionalsFromBO(List<Additional> additionals) {
+        if(additionals == null){
+            return null;
+        }
         return additionals.stream().map(AdditionalBusinessToValueConverter::getAdditionalFromBO).collect(Collectors.toList());
     }
 

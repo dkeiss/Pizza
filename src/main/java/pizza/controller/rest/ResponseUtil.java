@@ -8,9 +8,9 @@ import java.util.Map;
  */
 public class ResponseUtil {
 
-    public static Map<String, Object> getResponseWithStatus(boolean success){
+    public static Map<String, Object> getEmptyJsonSucessResponse(){
         Map<String, Object> response = new HashMap<>();
-        response.put("success", success);
+        response.put("success", true);
         return response;
     }
 

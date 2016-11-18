@@ -34,10 +34,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean isUsernameAndPasswordValid(String username, String password) {
 		User user = findUserByUsername(username);
-		if (user != null) {
-			return checkPassword(password, user);
-		}
-		return false;
+		return user != null && checkPassword(password, user);
 	}
 
 	private boolean checkPassword(String password, User user) {
@@ -148,10 +145,7 @@ public class UserServiceImpl implements UserService {
 		if (!StringUtils.hasText(initialAdmin.getPasswordCheck())) {
 			return false;
 		}
-		if (!StringUtils.hasText(initialAdmin.getUsername())) {
-			return false;
-		}
-		return initialAdmin.getPassword().equals(initialAdmin.getPasswordCheck());
+		return StringUtils.hasText(initialAdmin.getUsername()) && initialAdmin.getPassword().equals(initialAdmin.getPasswordCheck());
 	}
 
 }

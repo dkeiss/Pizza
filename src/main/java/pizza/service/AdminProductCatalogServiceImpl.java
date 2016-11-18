@@ -8,6 +8,8 @@ import pizza.vo.product.menu.ProductCatalogFullVO;
 import pizza.vo.product.menu.ProductCatalogInfoVO;
 import pizza.vo.product.menu.ProductCatalogVO;
 
+import java.util.List;
+
 /**
  * Created by Daniel Keiss on 06.11.2016.
  */
@@ -22,11 +24,18 @@ public class AdminProductCatalogServiceImpl implements AdminProductCatalogServic
 
     @Override
     public ProductCatalogInfoVO createProductCatalogFull(ProductCatalogFullVO productCatalogFull) {
-        for (AdditionalCategoryVO additionalCategory : productCatalogFull.getAdditionals()) {
-            additionalService.createAdditionalCategory(additionalCategory);
+        List<AdditionalCategoryVO> additionals = productCatalogFull.getAdditionals();
+        if (additionals != null) {
+            addAdditionals(additionals);
         }
         ProductCatalogVO productCatalog = productCatalogService.createProductCatalog(productCatalogFull.getProductCatalog());
         return ObjectMapperUtil.copyFromBusinessObject(productCatalog, new ProductCatalogInfoVO());
+    }
+
+    public void addAdditionals(List<AdditionalCategoryVO> additionals) {
+        for (AdditionalCategoryVO additionalCategory : additionals) {
+            additionalService.createAdditionalCategory(additionalCategory);
+        }
     }
 
 }
