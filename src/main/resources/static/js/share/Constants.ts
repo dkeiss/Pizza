@@ -98,4 +98,5 @@ class UserOrderSelector
     public static setCategoriesHtml = "userOrder-categories_container";
     public static categoriesShowContainer = "userOrder-categoriesSelector-showContainer";
     public static groupSelectors = "userOrder-groupsSelector-container";
+    public static CellSelectors = "userOrder-price_cell";
 }

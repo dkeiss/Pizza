@@ -29,10 +29,11 @@ namespace WebApplication.UserOrder
             this.createProductCategories(this._productCatalog.productCategories);
         }
 
-        public start(): void
+        public start(returnDataForAddition: (priceSize: number, productId: number) => void): void
         {
             this._menuClickSelectors = $(UserOrderSelector.menuClickSelectors);
             this._menuClickSelectors.on("click", event => { this.showHideCategories(event)} );
+            $("." + UserOrderSelector.CellSelectors).on("click", event => { this.getDataForAddition(event, returnDataForAddition) });
         }
 
 
@@ -103,7 +104,7 @@ namespace WebApplication.UserOrder
 
             for (let indexProducts = 0; indexProducts < products.length; indexProducts++)
             {
-                productElements += `<tr productId="${products[indexProducts].productId}">`;
+                productElements += `<tr>`;
                     productElements += "<td class='userOrder-productTable-number'>" + products[indexProducts].number + "</td>";
                     productElements += "<td class='userOrder-productTable-text'><div>" + products[indexProducts].name + "</div>";
                     productElements += "<div>" + products[indexProducts].description + "</div></td>";
@@ -144,7 +145,7 @@ namespace WebApplication.UserOrder
         {
             if (this._productPriceVariations[0])
             {
-                return "<td class='userOrder-price-cell'><div>" + variations[0].price + "</div></td>";
+                return "<td class='userOrder-price-cell'><div priceSize='0' class='" + UserOrderSelector.CellSelectors + "'>" + variations[0].price + "</div></td>";
             }
 
             let returnPriceElements = "";
@@ -154,7 +155,7 @@ namespace WebApplication.UserOrder
                 const variation = variations.filter(item => item.name == "small");
                 if (variation.length > 0)
                 {
-                    returnPriceElements += "<td class='userOrder-price-cell'><div>" + variation[0].price + "</div></td>";
+                    returnPriceElements += "<td class='userOrder-price-cell'><div priceSize='0' class='" + UserOrderSelector.CellSelectors + "'>" + variation[0].price + "</div></td>";
                 }
                 else
                 {
@@ -167,7 +168,7 @@ namespace WebApplication.UserOrder
                 const variation = variations.filter(item => item.name == "medium");
                 if (variation.length > 0)
                 {
-                    returnPriceElements += "<td class='userOrder-price-cell'><div>" + variation[0].price + "</div></td>";
+                    returnPriceElements += "<td class='userOrder-price-cell'><div priceSize='1' class='" + UserOrderSelector.CellSelectors + "'>" + variation[0].price + "</div></td>";
                 }
                 else
                 {
@@ -180,7 +181,7 @@ namespace WebApplication.UserOrder
                 const variation = variations.filter(item => item.name == "large");
                 if (variation.length > 0)
                 {
-                    returnPriceElements += "<td class='userOrder-price-cell'><div>" + variation[0].price + "</div></td>";
+                    returnPriceElements += "<td class='userOrder-price-cell'><div priceSize='2' class='" + UserOrderSelector.CellSelectors + "'>" + variation[0].price + "</div></td>";
                 }
                 else
                 {
@@ -209,6 +210,19 @@ namespace WebApplication.UserOrder
                         $(element).removeClass(elementShow);
                     }
                 });
+        }
+
+        private getDataForAddition(eventObject: JQueryEventObject, returnDataForAddition: (priceSize: number, productId: number) => void): void
+        {
+            const priceSize = eventObject.target.getAttribute("priceSize");
+
+            const productId = $(eventObject.currentTarget)
+                .closest("tr")
+                .find("td")
+                .first()
+                .text();
+
+            returnDataForAddition( parseInt(priceSize), parseInt(productId));
         }
     }
 }
