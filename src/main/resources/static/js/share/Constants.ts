@@ -6,6 +6,7 @@ class WebService
     public static productCatalogActive = `${window.location.origin}/rest/productcatalog/active`;
     public static bulkOrder = `${window.location.origin}/rest/bulkorder`;
     public static user = `${window.location.origin}/rest/user`;
+    public static addition = `${window.location.origin}/rest/additional`;
 }
 
 class UserManagementSelectors
