@@ -3,7 +3,7 @@ class WebService
     public static deliveryData = `${window.location.origin}/rest/deliveryservice`;
     public static shoppingCard = `${window.location.origin}/rest/admin/shoppingcard`;
     public static adminProductCatalog = `${window.location.origin}/rest/admin/productcatalog`;
-    public static productCatalog = `${window.location.origin}/rest/productcatalog`;
+    public static productCatalogActive = `${window.location.origin}/rest/productcatalog/active`;
     public static bulkOrder = `${window.location.origin}/rest/bulkorder`;
     public static user = `${window.location.origin}/rest/user`;
 }

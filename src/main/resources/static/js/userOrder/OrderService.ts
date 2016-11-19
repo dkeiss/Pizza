@@ -9,7 +9,7 @@ namespace WebApplication.UserOrder
     {
         public static loadProductCatalog(getProductCatalog: (productCatalog: IProductCatalog) => void): void
         {
-            WebServiceAccess.ajaxGet(WebService.productCatalog + "/1", getProductCatalog);
+            WebServiceAccess.ajaxGet(WebService.productCatalogActive, getProductCatalog);
         }
     }
 }
