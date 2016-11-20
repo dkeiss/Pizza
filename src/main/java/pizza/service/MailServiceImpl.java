@@ -12,6 +12,8 @@ import pizza.repositories.UserRepository;
 import pizza.vo.order.BulkOrderVO;
 import pizza.vo.order.UserOrderDetailsVO;
 
+import java.util.List;
+
 /**
  * Created by Daniel Keiss on 19.10.2016.
  */
@@ -21,17 +23,8 @@ public class MailServiceImpl implements MailService {
     @Value("${smtp.host}")
     private String smtpHost;
 
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private UserOrderService userOrderService;
-
-    @Autowired
-    private BulkOrderService bulkOrderService;
-
     @Override
-    public void sendBulkOrderInvitationToAll(String bulkOrderName) {
+    public void sendBulkOrderInvitationToAll(String bulkOrderName, List<String> emailAddresses) {
         new Thread(() -> {
             try {
                 Email email = new SimpleEmail();
@@ -43,8 +36,8 @@ public class MailServiceImpl implements MailService {
                 email.setSubject("Die Sammelbestellung \"" + bulkOrderName + "\" ist eröffnet!");
                 email.setMsg("Bestellungen können nun aufgenommen werden!");
 
-                for (User user : userRepository.findAll()) {
-                    email.addTo(user.getUserName());
+                for (String emailAdress : emailAddresses) {
+                    email.addTo(emailAdress);
                 }
 
                 email.send();
@@ -55,9 +48,8 @@ public class MailServiceImpl implements MailService {
     }
 
     @Override
-    public void sendBulkOrderFinishedToSubscribers(Integer bulkOrderId) {
+    public void sendBulkOrderFinishedToSubscribers(String bulkOrderName, List<String> emailAddresses) {
         new Thread(() -> {
-            BulkOrderVO bulkOrderVO = bulkOrderService.getBulkOrderById(bulkOrderId);
             try {
                 Email email = new SimpleEmail();
                 email.setHostName(smtpHost);
@@ -65,11 +57,11 @@ public class MailServiceImpl implements MailService {
                 email.setAuthenticator(new DefaultAuthenticator("whbpizza", "whb@pizza"));
                 email.setSSLOnConnect(true);
                 email.setFrom("whbpizza@gmail.com");
-                email.setSubject("Die Sammelbestellung \"" + bulkOrderVO.getName() + "\" ist abgeschlossen!");
+                email.setSubject("Die Sammelbestellung \"" + bulkOrderName + "\" ist abgeschlossen!");
                 email.setMsg("Die Bestellungen können nun abgeholt werden.");
 
-                for (UserOrderDetailsVO userOrderDetails : userOrderService.getCurrentUserOrders()) {
-                    email.addTo(userOrderDetails.getUserName());
+                for (String emailAdress : emailAddresses) {
+                    email.addTo(emailAdress);
                 }
 
                 email.send();

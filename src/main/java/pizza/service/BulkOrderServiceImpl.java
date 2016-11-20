@@ -10,10 +10,13 @@ import pizza.service.exception.bulkorder.BulkOrderAlreadyActiveException;
 import pizza.service.exception.bulkorder.BulkOrderNotClosedException;
 import pizza.service.exception.bulkorder.BulkOrderProductCatalogNotExistsException;
 import pizza.vo.order.BulkOrderVO;
+import pizza.vo.order.UserOrderDetailsVO;
+import pizza.vo.user.UserVO;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static pizza.service.common.BulkOrderBusinessToValueObjectConverter.getBulkOrderFromBO;
 import static pizza.service.common.BulkOrderValueToBusinessObjectConverter.createBulkOrderFromVO;
@@ -30,6 +33,12 @@ public class BulkOrderServiceImpl implements BulkOrderService {
 
     @Autowired
     private ProductCatalogService productCatalogService;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private UserOrderService userOrderService;
 
     @Autowired
     private MailService mailService;
@@ -51,7 +60,7 @@ public class BulkOrderServiceImpl implements BulkOrderService {
         bulkOrderBO = bulkOrderRepository.save(bulkOrderBO);
         bulkOrderVO = getBulkOrderFromBO(bulkOrderBO);
 
-        mailService.sendBulkOrderInvitationToAll(bulkOrderVO.getName());
+        mailService.sendBulkOrderInvitationToAll(bulkOrderBO.getName(), getAllEmailAddresses());
 
         return bulkOrderVO;
     }
@@ -75,7 +84,7 @@ public class BulkOrderServiceImpl implements BulkOrderService {
         bulkOrderRepository.save(bulkOrder);
     }
 
-    public void setFinished(BulkOrder bulkOrder) {
+    private void setFinished(BulkOrder bulkOrder) {
         if (bulkOrder.getActiveUntil().after(new Date())) {
             bulkOrder.setActiveUntil(new Date());
         }
@@ -114,14 +123,16 @@ public class BulkOrderServiceImpl implements BulkOrderService {
     }
 
     @Override
-    public BulkOrderVO finishActiveBulkOrder() {
+    public BulkOrderVO finishOpenBulkOrder() {
         BulkOrder openBulkOrder = findOpenBulkOrder();
         if (openBulkOrder == null) {
             throw new NotFoundException();
         }
+        mailService.sendBulkOrderFinishedToSubscribers(openBulkOrder.getName(), getAllEmailAddressesFromCurrentUserOrders());
 
         setFinished(openBulkOrder);
         bulkOrderRepository.save(openBulkOrder);
+
         return getBulkOrderFromBO(openBulkOrder);
     }
 
@@ -176,6 +187,16 @@ public class BulkOrderServiceImpl implements BulkOrderService {
         if (!openBulkOrder.isEmpty()) {
             throw new BulkOrderNotClosedException();
         }
+    }
+
+    public List<String> getAllEmailAddresses() {
+        List<UserVO> users = userService.getUsers();
+        return users.stream().map(UserVO::getUserName).collect(Collectors.toList());
+    }
+
+    public List<String> getAllEmailAddressesFromCurrentUserOrders() {
+        List<UserOrderDetailsVO> currentUserOrders = userOrderService.getCurrentUserOrders();
+        return currentUserOrders.stream().map(UserOrderDetailsVO::getUserName).collect(Collectors.toList());
     }
 
 }

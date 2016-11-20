@@ -24,7 +24,7 @@ public interface BulkOrderService {
 
     BulkOrder findActiveBulkOrder();
 
-    BulkOrderVO finishActiveBulkOrder();
+    BulkOrderVO finishOpenBulkOrder();
 
     BulkOrder findOpenBulkOrder();
 
