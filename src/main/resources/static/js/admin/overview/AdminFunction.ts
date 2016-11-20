@@ -163,6 +163,7 @@ namespace WebApplication.Admin.Overview
                     bulkOrderId: -1,
                     catalogId: this._availableProductCatalogs[this._adminCatalogComboBox.val()].productCatalogId,
                     name: this._availableProductCatalogs[this._adminCatalogComboBox.val()].name,
+                    finished: false,
                     activeUntil: endDate.getTime()
                 };
 
@@ -314,7 +315,8 @@ namespace WebApplication.Admin.Overview
                 this._bulkOrder = bulkOrder;
                 let currentTime = new Date().getTime();
                 for(let i = 0; i < this._bulkOrder.length; i++)
-                    if((this._bulkOrder[i].activeUntil - currentTime) > 0)
+                    //if((this._bulkOrder[i].activeUntil - currentTime) > 0)
+                    if(!this._bulkOrder[i].finished)
                         this._currentBulkOrder = this._bulkOrder[i];
 
                 if(this._currentBulkOrder){

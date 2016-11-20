@@ -5,11 +5,6 @@
 
 namespace WebApplication.Admin.ShoppingCard
 {
-    $(document).ready(() =>
-    {
-        new TableController();
-    });
-
     export class TableController {
         private _orderTable: JQuery = null;
         private _orderTableBody: JQuery = null;

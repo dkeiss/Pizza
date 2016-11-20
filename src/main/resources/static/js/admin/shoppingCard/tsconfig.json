@@ -9,6 +9,7 @@
     "../../share/WebServiceAccess.ts",
     "TableController.ts",
     "IUserOrder.ts",
-    "ShoppingCardService.ts"
+    "ShoppingCardService.ts",
+    "ShoppingCardFunction.ts"
   ]
 }
