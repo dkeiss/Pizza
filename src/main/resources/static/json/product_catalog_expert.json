@@ -3,7 +3,6 @@
     "name": "Katalogname z.B. pizza.de",
     "productCategories": [
       {
-        "id": null,
         "name": "Kategorie z.B. Pizza",
         "productGroups": [
           {
@@ -68,7 +67,6 @@
         ]
       },
       {
-        "id": null,
         "name": "Weitere Kategorie z.B. Insalata",
         "productGroups": [
           {
