@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import pizza.service.AdminProductCatalogService;
 import pizza.service.exception.NotFoundException;
+import pizza.service.exception.productCatalog.ProductCatalogInvalidException;
 import pizza.vo.product.menu.ProductCatalogFullVO;
 import pizza.vo.product.menu.ProductCatalogInfoVO;
 
@@ -26,8 +27,6 @@ import java.util.stream.Collectors;
 @RequestMapping("rest/admin/productcatalog")
 public class AdminProductCatalogController {
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
-
     @Autowired
     private AdminProductCatalogService adminProductCatalogService;
 
@@ -35,8 +34,7 @@ public class AdminProductCatalogController {
     public
     @ResponseBody
     ProductCatalogInfoVO uploadProductCatalog(@RequestParam("file") MultipartFile file) throws IOException {
-        String fileString = read(file.getInputStream());
-        ProductCatalogFullVO productCatalogFull = objectMapper.readValue(fileString, ProductCatalogFullVO.class);
+        ProductCatalogFullVO productCatalogFull = adminProductCatalogService.getProductCatalogFullVO(file);
         return adminProductCatalogService.createProductCatalogFull(productCatalogFull);
     }
 
@@ -56,12 +54,6 @@ public class AdminProductCatalogController {
 
         InputStreamResource isr = new InputStreamResource(new FileInputStream(file));
         return new ResponseEntity<>(isr, header, HttpStatus.OK);
-    }
-
-    private static String read(InputStream input) throws IOException {
-        try (BufferedReader buffer = new BufferedReader(new InputStreamReader(input))) {
-            return buffer.lines().collect(Collectors.joining("\n"));
-        }
     }
 
 }

@@ -10,7 +10,6 @@ import java.util.List;
  * Created by Daniel Keiss on 28.10.2016.
  */
 @Data
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductGroupVO {
 
     private Integer productGroupId;
