@@ -4,6 +4,7 @@ import pizza.domain.product.*;
 import pizza.vo.product.menu.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,9 +16,9 @@ public class ProductValueToBusinessObjectConverter {
         List<ProductCategory> productCategories = new ArrayList<>();
         for (ProductCategoryVO productCategoryVO : productCatalogVO.getProductCategories()) {
             ProductCategory productCategory = new ProductCategory();
-            productCategory.setName(productCatalogVO.getName());
+            productCategory.setName(productCategoryVO.getName());
             productCategory.setProductCatalog(productCatalog);
-            productCategory.setCreationDate(productCatalog.getCreationDate());
+            productCategory.setCreationDate(new Date());
             productCategory.setProductGroups(getProductGroupsFromVO(productCategoryVO, productCategory));
             productCategories.add(productCategory);
         }
