@@ -4,6 +4,7 @@ class WebService
     public static shoppingCard = `${window.location.origin}/rest/admin/shoppingcard`;
     public static adminProductCatalog = `${window.location.origin}/rest/admin/productcatalog`;
     public static productCatalogActive = `${window.location.origin}/rest/productcatalog/active`;
+    public static productCatalog = `${window.location.origin}/rest/productcatalog`;
     public static bulkOrder = `${window.location.origin}/rest/bulkorder`;
     public static user = `${window.location.origin}/rest/user`;
     public static addition = `${window.location.origin}/rest/additional`;
@@ -100,4 +101,12 @@ class UserOrderSelector
     public static categoriesShowContainer = "userOrder-categoriesSelector-showContainer";
     public static groupSelectors = "userOrder-groupsSelector-container";
     public static CellSelectors = "userOrder-price_cell";
+
+    public static additionalDialog = ".userOrder-additionalDialog_container";
+    public static additionalBox = ".userOrder-additionalDialog_additionBox";
+    public static additionalBoxMenus = "userOrder-additionalDialog-additionBoxMenus";
+
+    public static orderOverviewText = ".userOrder-additionalDialog_orderOverviewText";
+    public static orderOverviewAddition = ".userOrder-additionalDialog_orderOverviewAddition";
+    public static orderOverviewUserDiscount = ".userOrder-additionalDialog_orderOverviewUserDiscount";
 }
