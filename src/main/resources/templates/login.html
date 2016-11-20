@@ -20,7 +20,8 @@
             <input th:if="${isAdmin}" type="password" name="password" class="core-inputField" placeholder="Passwort"/>
             <div class="core-submitButton" onClick="document.forms['login-form'].submit();">Anmelden</div>
         </form>
-        <label th:if="${param.error}" class="core-warningLabel" th:text="${isAdmin} ? 'Falsches Passwort' : 'Falscher Benutzername'"/>
+        <label th:if="${param.error}" class="core-warningLabel" th:text="'Falscher Benutzername'"/>
+        <label th:if="${isAdminPasswordInvalid}" class="core-warningLabel" th:text="'Falsches Passwort'"/>
     </div>
 </div>
 
