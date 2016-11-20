@@ -8,13 +8,17 @@ namespace WebApplication.UserOrder
     export class ShowAdditionDialog
     {
         private _additions: IAdditions = null;
+        private _currentAdditions: IAdditionals = [];
         private _priceSize: number = null;
         private _product: IProduct = null;
+        private _currentAdditionalIds = [];
 
         private _cssShowDialog = "userOrder-additionalDialog-showContainer";
+        private _cssSelectAdditions = "userOrder-additionalDialog-selectedAdditions";
 
         private _additionalBox: JQuery = null;
         private _additionalDialog: JQuery = null;
+        private _additionalBoxMenuSelector: JQuery = null;
         private _orderOverviewProduct: JQuery = null;
         private _orderOverviewAddition: JQuery = null;
         private _orderOverviewUserDiscount: JQuery = null;
@@ -33,17 +37,22 @@ namespace WebApplication.UserOrder
             this._additions = additionalInfo;
             this._priceSize = priceSize;
             this._product = product;
+            //if (this._currentAdditions != null)
+                this._currentAdditions.length = 0;
 
             this.existProductIdInAdditions();
             this.setProductData();
             this.calcOrder();
 
+            //this._additionalBoxMenuSelector = $(UserOrderSelector.additionalBoxMenusSelector + " div");
+            this._additionalBoxMenuSelector = $(`.userOrder-additionalDialog_additionBoxMenus div`);
             this._additionalDialog = $(UserOrderSelector.additionalDialog).addClass(this._cssShowDialog);
         }
 
         public start()
         {
             this._closeDialog.on("click", () => { this.closeDialog() });
+            this._additionalBoxMenuSelector.on("click", event => { this.selectAdditions(event); });
         }
 
         private existProductIdInAdditions()
@@ -56,19 +65,27 @@ namespace WebApplication.UserOrder
 
                 if (found.length > 0)
                 {
-                    this.createHtmlAdditionals(additions[i].additionals);
+                    this.createHtmlAdditionals(additions[i].additionals, additions[i].duty);
                 }
             }
         }
 
-        private createHtmlAdditionals(additionals: IAdditionals)
+        private createHtmlAdditionals(additionals: IAdditionals, duty: boolean)
         {
             let htmlInput = "<div class='userOrder-additionalDialog-additionBox'>";
-            htmlInput += "<span class='title'>Extrazutaten / Extra Auswahl</span><div class='" + UserOrderSelector.additionalBoxMenus + "'>";
+
+            duty ?
+                htmlInput += `<span class='title'>Bitte auswählen ...</span>` :
+                htmlInput += `<span class='title'>Extrazutaten / Extra Auswahl</span>`;
+
+
+            htmlInput += `<div duty='${duty}' class='${UserOrderSelector.additionalBoxMenus} ${UserOrderSelector.additionalBoxMenusSelector}'>`;
 
             for (let i = 0; i < additionals.length; i++)
             {
-                htmlInput += "<div><span>" + additionals[i].description + "</span><span>" + additionals[i].additionalPrices[this._priceSize].price + "</span></div>";
+                htmlInput += `<div additionalId='${additionals[i].additionalId}'><span>${additionals[i].description}</span><span>${additionals[i].additionalPrices[this._priceSize].price}</span></div>`;
+
+                this._currentAdditions.push(additionals[i]);
             }
 
             htmlInput += "</div></div>";
@@ -108,6 +125,37 @@ namespace WebApplication.UserOrder
         private closeDialog()
         {
             this._additionalDialog.removeClass(this._cssShowDialog);
+        }
+
+        private selectAdditions(eventObject: JQueryEventObject)
+        {
+            const target = $(eventObject.currentTarget);
+            const duty = target.closest(`.${UserOrderSelector.additionalBoxMenusSelector}`).attr("duty");
+
+            duty == "true" ? this.selectSingleAdditions(target) : this.selectMultiAdditions(target);
+        }
+
+        private selectSingleAdditions(target: JQuery)
+        {
+
+        }
+
+        private selectMultiAdditions(target: JQuery)
+        {
+            target.hasClass(this._cssSelectAdditions) ? target.removeClass(this._cssSelectAdditions) : target.addClass(this._cssSelectAdditions);
+
+            const additionalId = ShowAdditionDialog.getAdditionalIdFromDiv(target);
+
+            this._currentAdditionalIds.indexOf(additionalId) >= 0 ?
+                this._currentAdditionalIds.splice(this._currentAdditionalIds.indexOf(additionalId), 1) :
+                this._currentAdditionalIds.push(additionalId);
+
+
+        }
+
+        private static getAdditionalIdFromDiv(target: JQuery): number
+        {
+            return parseInt(target.attr("additionalId"));
         }
     }
 }

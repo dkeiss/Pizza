@@ -178,6 +178,7 @@ td.userOrder-price-cell div:hover {
     min-width: 300px;
     margin: 0 auto;
     overflow: hidden;
+    border: 1px solid #000;
 }
 
 .userOrder-additionalDialog-actionBoxClose {
@@ -207,7 +208,7 @@ td.userOrder-price-cell div:hover {
 
 .userOrder-additionalDialog-box {
     background: #fff;
-    padding: 10px 10px 5px 10px;
+    padding: 6px 10px 0 10px;
     overflow: hidden;
 }
 
@@ -222,7 +223,7 @@ td.userOrder-price-cell div:hover {
     display: block;
     text-align: center;
     margin: 0 0 14px 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #000;
     padding: 0 0 3px 0;
     font-weight: bold;
     text-transform: uppercase;
@@ -237,6 +238,10 @@ td.userOrder-price-cell div:hover {
     margin: 0 0 5px 0;
     font-size: 12px;
     cursor: pointer;
+}
+
+.userOrder-additionalDialog-additionBoxMenus div.userOrder-additionalDialog-selectedAdditions {
+    border: 1px solid red;
 }
 
 .userOrder-additionalDialog-additionBoxMenus div:hover {
@@ -263,6 +268,11 @@ td.userOrder-price-cell div:hover {
     padding: 4px 0 4px 0;
 }
 
+.userOrder-additionalDialog-orderOverviewContainer div span:first-child,
+.userOrder-additionalDialog-orderOverviewContainer div span:last-child {
+    font-size: 12px;
+}
+
 .userOrder-additionalDialog-orderOverviewContainer div span:first-child {
     float: left;
     width: 45%;
@@ -274,6 +284,9 @@ td.userOrder-price-cell div:hover {
     float: right;
     text-align: right;
 }
+
+
+
 
 
 
