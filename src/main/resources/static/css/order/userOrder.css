@@ -130,9 +130,89 @@ td.userOrder-price-cell div::after {
 }
 
 
+.userOrder-additionalDialog-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 100;
+    display: none;
+}
 
+.userOrder-additionalDialog-container.userOrder-additionalDialog-showContainer {
+    display: block;
+}
 
+.userOrder-additionalDialog-opacity {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.9;
+    z-index: 110;
+    position: absolute;
+}
 
+.userOrder-additionalDialog-boxCenter {
+    overflow: hidden;
+    margin: 10% auto 0;
+    min-width: 210px;
+}
 
+.userOrder-additionalDialog-box {
+    background: #fff;
+    position: relative;
+    display: block;
+    z-index: 110;
+    max-width: 600px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.userOrder-additionalDialog-additionBox {
+    overflow: hidden;
+    width: 100%;
+}
+
+.userOrder-additionalDialog-additionBoxMenus div {
+    float: left;
+    overflow: hidden;
+    width: 45%;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 0 0 5px 0;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.userOrder-additionalDialog-additionBoxMenus div:hover {
+    background: #e4e4e4;
+}
+
+.userOrder-additionalDialog-additionBox span.title {
+    width: 100%;
+    float: left;
+    display: block;
+    text-align: center;
+    margin: 0 0 14px 0;
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 3px 0;
+}
+
+.userOrder-additionalDialog-additionBoxMenus div:nth-child(2n) {
+    float: right;
+}
+
+.userOrder-additionalDialog-additionBoxMenus div span:first-child {
+    float: left;
+}
+
+.userOrder-additionalDialog-additionBoxMenus div span:last-child {
+    float: right;
+}
+
+.userOrder-additionalDialog-additionBoxMenus div span:last-child::after {
+    content: " €";
+}
 
 

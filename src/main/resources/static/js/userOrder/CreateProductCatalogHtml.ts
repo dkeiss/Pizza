@@ -22,7 +22,6 @@ namespace WebApplication.UserOrder
             OrderService.loadProductCatalog(getProductCatalog =>
             {
                 this._productCatalog = getProductCatalog;
-                console.log(this._productCatalog);
             });
 
             this.createMenuHtml(this._productCatalog.productCategories);

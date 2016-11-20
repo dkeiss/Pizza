@@ -5,18 +5,9 @@ interface IAddition
     additionalCategoryId: number;
     name: string;
     duty: boolean;
-    productIds: IProductIds;
+    productIds: number[];
     additionals: IAdditionals;
     creationDate?: number;
-}
-
-
-
-interface IProductIds extends Array<IProductId>{}
-
-interface IProductId
-{
-    number;
 }
 
 

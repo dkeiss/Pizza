@@ -10,6 +10,8 @@
     "../share/ErrorDialog.ts",
     "IProductCatalog.ts",
     "OrderFunction.ts",
-    "CreateProductCatalogHtml"
+    "CreateProductCatalogHtml.ts",
+    "IAddition.ts",
+    "ShowAdditionDialog.ts"
   ]
 }
