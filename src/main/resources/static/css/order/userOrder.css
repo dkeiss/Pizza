@@ -4,6 +4,19 @@ body {
     overflow-y: scroll;
 }
 
+td.userOrder-price-cell div::after,
+.userOrder-additionalDialog-additionBoxMenus div span:last-child::after,
+.userOrder-additionalDialog-orderOverviewContainer div span:last-child::after,
+.userOrder-additionalDialog-orderSubmit::after {
+    content: " €";
+}
+
+.userOrder-additionalDialog-orderSubmit::before {
+    content: "Bestellen ";
+}
+
+
+
 .userOrder-menu-container {
     overflow: hidden;
     display: block;
@@ -24,6 +37,7 @@ body {
 .userOrder-menu-container div:hover {
     background: #1a657d;
 }
+
 
 
 
@@ -125,9 +139,7 @@ td.userOrder-price-cell div:hover {
     background: #1a657d;
 }
 
-td.userOrder-price-cell div::after {
-    content: " €";
-}
+
 
 
 .userOrder-additionalDialog-container {
@@ -158,20 +170,62 @@ td.userOrder-price-cell div::after {
     min-width: 210px;
 }
 
-.userOrder-additionalDialog-box {
-    background: #fff;
+.userOrder-additionalDialog-boxMain {
     position: relative;
     display: block;
     z-index: 110;
     max-width: 600px;
     min-width: 300px;
     margin: 0 auto;
-    padding: 10px;
+    overflow: hidden;
+}
+
+.userOrder-additionalDialog-actionBoxClose {
+    background: #f00;
+    color: #fff;
+    font-weight: bold;
+    text-align: right;
+    padding: 2px 8px;
+    cursor: pointer;
+}
+
+.userOrder-additionalDialog-actionBoxClose:hover {
+    background: #9e2121;
+}
+
+.userOrder-additionalDialog-actionBoxSubmit {
+    background: #448036;
+    color: #fff;
+    text-align: center;
+    padding: 6px 0;
+    cursor: pointer;
+}
+
+.userOrder-additionalDialog-actionBoxSubmit:hover {
+    background: #4eb336;
+}
+
+.userOrder-additionalDialog-box {
+    background: #fff;
+    padding: 10px 10px 5px 10px;
+    overflow: hidden;
 }
 
 .userOrder-additionalDialog-additionBox {
     overflow: hidden;
     width: 100%;
+}
+
+.userOrder-additionalDialog-box span.title {
+    width: 100%;
+    float: left;
+    display: block;
+    text-align: center;
+    margin: 0 0 14px 0;
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 3px 0;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .userOrder-additionalDialog-additionBoxMenus div {
@@ -189,16 +243,6 @@ td.userOrder-price-cell div::after {
     background: #e4e4e4;
 }
 
-.userOrder-additionalDialog-additionBox span.title {
-    width: 100%;
-    float: left;
-    display: block;
-    text-align: center;
-    margin: 0 0 14px 0;
-    border-bottom: 1px solid #ccc;
-    padding: 0 0 3px 0;
-}
-
 .userOrder-additionalDialog-additionBoxMenus div:nth-child(2n) {
     float: right;
 }
@@ -211,8 +255,31 @@ td.userOrder-price-cell div::after {
     float: right;
 }
 
-.userOrder-additionalDialog-additionBoxMenus div span:last-child::after {
-    content: " €";
+.userOrder-additionalDialog-orderOverviewContainer div {
+    float: left;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding: 4px 0 4px 0;
 }
+
+.userOrder-additionalDialog-orderOverviewContainer div span:first-child {
+    float: left;
+    width: 45%;
+    text-align: left;
+}
+
+.userOrder-additionalDialog-orderOverviewContainer div span:last-child {
+    width: 45%;
+    float: right;
+    text-align: right;
+}
+
+
+
+
+
+
+
 
 

@@ -105,8 +105,9 @@ class UserOrderSelector
     public static additionalDialog = ".userOrder-additionalDialog_container";
     public static additionalBox = ".userOrder-additionalDialog_additionBox";
     public static additionalBoxMenus = "userOrder-additionalDialog-additionBoxMenus";
-
     public static orderOverviewText = ".userOrder-additionalDialog_orderOverviewText";
     public static orderOverviewAddition = ".userOrder-additionalDialog_orderOverviewAddition";
     public static orderOverviewUserDiscount = ".userOrder-additionalDialog_orderOverviewUserDiscount";
+    public static orderSubmit = ".userOrder-additionalDialog_orderSubmit";
+    public static closeDialog = ".userOrder-additionalDialog_closeDialog";
 }

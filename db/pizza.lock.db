@@ -1,6 +1,6 @@
 #FileLock
-#Sat Nov 19 18:48:44 CET 2016
+#Sun Nov 20 04:34:16 CET 2016
 hostName=DESKTOP-O0LMQQC.fritz.box
-id=1587db45e2945ec5a3cc43f5c331cca069e6bad66d4
+id=1587fcc6e488f4a7a95db5242a659afef0cd2f97160
 method=file
-server=192.168.178.29\:64619
+server=192.168.178.29\:53036

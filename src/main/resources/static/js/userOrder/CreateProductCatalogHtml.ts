@@ -8,6 +8,7 @@ namespace WebApplication.UserOrder
     export class CreateProductCatalogHtml
     {
         private _productCatalog: IProductCatalog = null;
+        private _products: IProducts = [];
         private _productPriceVariations = [];
 
         private _menuSelector: JQuery = null;
@@ -28,7 +29,7 @@ namespace WebApplication.UserOrder
             this.createProductCategories(this._productCatalog.productCategories);
         }
 
-        public start(returnDataForAddition: (priceSize: number, productId: number) => void): void
+        public start(returnDataForAddition: (priceSize: number, product: IProduct) => void): void
         {
             this._menuClickSelectors = $(UserOrderSelector.menuClickSelectors);
             this._menuClickSelectors.on("click", event => { this.showHideCategories(event)} );
@@ -103,6 +104,8 @@ namespace WebApplication.UserOrder
 
             for (let indexProducts = 0; indexProducts < products.length; indexProducts++)
             {
+                this._products.push(products[indexProducts]);
+
                 productElements += `<tr>`;
                     productElements += "<td class='userOrder-productTable-number'>" + products[indexProducts].number + "</td>";
                     productElements += "<td class='userOrder-productTable-text'><div>" + products[indexProducts].name + "</div>";
@@ -211,7 +214,7 @@ namespace WebApplication.UserOrder
                 });
         }
 
-        private getDataForAddition(eventObject: JQueryEventObject, returnDataForAddition: (priceSize: number, productId: number) => void): void
+        private getDataForAddition(eventObject: JQueryEventObject, returnDataForAddition: (priceSize: number, product: IProduct) => void): void
         {
             const priceSize = eventObject.target.getAttribute("priceSize");
 
@@ -221,7 +224,9 @@ namespace WebApplication.UserOrder
                 .first()
                 .text();
 
-            returnDataForAddition( parseInt(priceSize), parseInt(productId));
+            const product = this._products.filter(item => item.number == parseInt(productId))[0];
+
+            returnDataForAddition( parseInt(priceSize), product);
         }
     }
 }
