@@ -38,7 +38,7 @@ public class PizzaAuthenticationProvider implements AuthenticationProvider {
             grantedAuths.add(ROLE_ADMIN);
             String password = getPassword(authentication);
             UsernamePasswordAuthenticationToken passwordAuthenticationToken = new UsernamePasswordAuthenticationToken(name, password, grantedAuths);
-            if (!isPasswordValid(name, password)) {
+            if (!isPasswordValid(passwordAuthenticationToken, name, password)) {
                 passwordAuthenticationToken.setAuthenticated(false);
             }
             return passwordAuthenticationToken;
@@ -46,8 +46,15 @@ public class PizzaAuthenticationProvider implements AuthenticationProvider {
         return new UsernamePasswordAuthenticationToken(name, null, grantedAuths);
     }
 
-    private boolean isPasswordValid(String name, String password) {
-        return StringUtils.hasText(password) && userService.isUsernameAndPasswordValid(name, password);
+    private boolean isPasswordValid(UsernamePasswordAuthenticationToken passwordAuthenticationToken, String name, String password) {
+        if (!StringUtils.hasText(password)) {
+            return false;
+        }
+        boolean usernameAndPasswordValid = userService.isUsernameAndPasswordValid(name, password);
+        if (!usernameAndPasswordValid) {
+            passwordAuthenticationToken.setDetails("password_invalid");
+        }
+        return usernameAndPasswordValid;
     }
 
     private String getPassword(Authentication authentication) {

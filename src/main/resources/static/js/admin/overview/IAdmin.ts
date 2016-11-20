@@ -14,6 +14,7 @@ interface IBulkOrder
     catalogId: number;
     name: string;
     activeUntil: number;
+    finished: boolean;
     creationDate?: number;
     modificationDate?: number;
     isActive?: boolean;

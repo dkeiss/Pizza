@@ -29,6 +29,7 @@ public class AuthenticationValidator {
 
 		if (isAdmin(authenticationToken)) {
 			model.addAttribute("isAdmin", true);
+			model.addAttribute("isAdminPasswordInvalid", authenticationToken.getDetails() != null && authenticationToken.getDetails().toString().contains("password_invalid"));
 		}
 
 		boolean authenticated = authenticationToken.isAuthenticated();
