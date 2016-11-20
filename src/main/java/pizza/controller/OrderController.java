@@ -20,10 +20,7 @@ public class OrderController {
 
     @RequestMapping(value = "/order", method = RequestMethod.GET)
     public String order(Principal principal, Model model) {
-        if (authenticationValidator.isAdmin(principal)) {
-            model.addAttribute("isAdmin", true);
-        }
-        return "order/order";
+        return authenticationValidator.checkAuthenticationGetPage(principal, model,  "order/order");
     }
 
 

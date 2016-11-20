@@ -66,14 +66,6 @@ public class AuthenticationValidator {
 		return authenticationToken.getAuthorities().contains(PizzaAuthenticationProvider.ROLE_ADMIN);
 	}
 
-	public String checkAdminAuthenticationGetPage(Principal principal, Model model, String adminTemplate) {
-		UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
-		if (isAuthenticated(principal, model) && isAdmin(usernamePasswordAuthenticationToken)) {
-			return adminTemplate;
-		}
-		return "login";
-	}
-
 	public String redirectBasedOnRole(Principal principal, Model model) {
 		if (isAdmin(principal)) {
 			return "redirect:admin";
@@ -81,4 +73,18 @@ public class AuthenticationValidator {
 		return "redirect:order";
 	}
 
+	public String checkAdminAuthenticationGetPage(Principal principal, Model model, String adminTemplate) {
+		UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = (UsernamePasswordAuthenticationToken) principal;
+		if (isAuthenticated(principal, model) && isAdmin(usernamePasswordAuthenticationToken)) {
+			return adminTemplate;
+		}
+		return "redirect:login";
+	}
+
+	public String checkAuthenticationGetPage(Principal principal, Model model, String template) {
+		if(isAuthenticated(principal, model)){
+			return template;
+		}
+		return "redirect:login";
+	}
 }
