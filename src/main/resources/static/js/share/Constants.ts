@@ -63,6 +63,9 @@ class ShoppingCardSelectors {
     public static orderTableSortButton = ".card-orderTable_sortButton";
     public static orderTableStateButton = ".card-orderTable_stateButton";
     public static orderTableDeleteButton = ".card-orderTable_deleteButton";
+
+    public static cardOrderContainer = ".card-container_order";
+    public static cardOrderButton = ".card-button_order";
 }
 
 class ErrorDialogSelectors
