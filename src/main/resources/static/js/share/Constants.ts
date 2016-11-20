@@ -7,6 +7,7 @@ class WebService
     public static productCatalog = `${window.location.origin}/rest/productcatalog`;
     public static bulkOrder = `${window.location.origin}/rest/bulkorder`;
     public static user = `${window.location.origin}/rest/user`;
+    public static currentUser = `${window.location.origin}/rest/user/current`;
     public static addition = `${window.location.origin}/rest/additional`;
 }
 
@@ -105,6 +106,7 @@ class UserOrderSelector
     public static additionalDialog = ".userOrder-additionalDialog_container";
     public static additionalBox = ".userOrder-additionalDialog_additionBox";
     public static additionalBoxMenus = "userOrder-additionalDialog-additionBoxMenus";
+    public static additionalBoxMenusSelector = "userOrder-additionalDialog_additionBoxMenus";
     public static orderOverviewText = ".userOrder-additionalDialog_orderOverviewText";
     public static orderOverviewAddition = ".userOrder-additionalDialog_orderOverviewAddition";
     public static orderOverviewUserDiscount = ".userOrder-additionalDialog_orderOverviewUserDiscount";
