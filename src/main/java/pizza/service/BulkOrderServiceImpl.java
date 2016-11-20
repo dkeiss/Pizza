@@ -115,13 +115,14 @@ public class BulkOrderServiceImpl implements BulkOrderService {
 
     @Override
     public BulkOrderVO finishActiveBulkOrder() {
-        BulkOrder activeBulkOrder = findActiveBulkOrder();
-        if (activeBulkOrder == null) {
+        BulkOrder openBulkOrder = findOpenBulkOrder();
+        if (openBulkOrder == null) {
             throw new NotFoundException();
         }
-        setFinished(activeBulkOrder);
-        bulkOrderRepository.save(activeBulkOrder);
-        return getBulkOrderFromBO(activeBulkOrder);
+
+        setFinished(openBulkOrder);
+        bulkOrderRepository.save(openBulkOrder);
+        return getBulkOrderFromBO(openBulkOrder);
     }
 
     @Override

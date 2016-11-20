@@ -7,4 +7,6 @@ public interface MailService {
 
     void sendBulkOrderInvitationToAll(String bulkOrderName);
 
+    void sendBulkOrderFinishedToSubscribers(Integer bulkOrderId);
+
 }

@@ -29,6 +29,7 @@ public class UserOrderBusinessToValueObjectConverter {
         userOrderDetailsVO.setUserId(user.getUserId());
         userOrderDetailsVO.setFirstName(user.getFirstName());
         userOrderDetailsVO.setLastName(user.getLastName());
+        userOrderDetailsVO.setUserName(user.getUserName());
         Product product = userOrder.getProduct();
         userOrderDetailsVO.setProductId(product.getProductId());
         userOrderDetailsVO.setProductName(product.getName());

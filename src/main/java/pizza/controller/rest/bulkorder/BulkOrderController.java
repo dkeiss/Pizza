@@ -55,7 +55,7 @@ public class BulkOrderController {
         return bulkOrderService.getOpenBulkOrder();
     }
 
-    @RequestMapping(value = "/open/finish", method = RequestMethod.POST)
+    @RequestMapping(value = "/finish", method = RequestMethod.POST)
     public
     @ResponseBody
     BulkOrderVO finishBulkOrder() {
