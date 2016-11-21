@@ -12,11 +12,11 @@
 <body>
 <!-- <div id="ajax-load"><img width="220" height="19" src="../../static/img/ajax-loader.gif" th:src="@{/img/ajax-loader.gif}"/></div> -->
 
-    <div class="core-dialog-container">
-        <div th:replace="fragments/serverErrorDialog :: serverError">&nbsp;</div>
-        <div th:replace="fragments/orderAdditionalDialog :: orderAdditional">&nbsp;</div>
-    </div>
     <div class="core-wrapper">
+        <div class="core-dialog-container">
+            <div th:replace="fragments/serverErrorDialog :: serverError">&nbsp;</div>
+            <div th:replace="fragments/orderAdditionalDialog :: orderAdditional">&nbsp;</div>
+        </div>
         <div th:replace="fragments/header :: header">&nbsp;</div>
         <!--<div class="core-container-header">
             <div class="core-container-center">

@@ -12,15 +12,6 @@
 </head>
 <body>
 
-<div class="core-dialog-container">
-    <div th:replace="fragments/deliveryDataDialog :: inputDialog">&nbsp;</div>
-</div>
-
-<div class="core-dialog-container">
-    <div th:replace="fragments/serverErrorDialog :: serverError">&nbsp;</div>
-</div>
-
-
 <!--<div class="core-header core-header_loggedIn" th:fragment="header">
     <div class="core-header-content">
         <div class="core-header-menu core-header-menu-active"><a href="../admin">Administratorbereich</a></div>
@@ -33,6 +24,14 @@
     </div>
 </div>-->
 <div class="core-wrapper">
+    <div class="core-dialog-container">
+        <div th:replace="fragments/deliveryDataDialog :: inputDialog">&nbsp;</div>
+    </div>
+
+    <div class="core-dialog-container">
+        <div th:replace="fragments/serverErrorDialog :: serverError">&nbsp;</div>
+    </div>
+
     <div th:replace="fragments/header :: header">&nbsp;</div>
 
     <div class="core-container-center">
