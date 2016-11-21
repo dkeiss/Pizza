@@ -179,6 +179,7 @@ td.userOrder-price-cell div:hover {
     margin: 0 auto;
     overflow: hidden;
     border: 1px solid #000;
+    background: #fff;
 }
 
 .userOrder-additionalDialog-actionBoxClose {
@@ -200,6 +201,7 @@ td.userOrder-price-cell div:hover {
     text-align: center;
     padding: 6px 0;
     cursor: pointer;
+    margin: 10px 0 0 0;
 }
 
 .userOrder-additionalDialog-actionBoxSubmit:hover {

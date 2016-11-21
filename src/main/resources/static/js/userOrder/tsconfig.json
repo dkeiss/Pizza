@@ -7,7 +7,7 @@
   "files": [
     "../share/Constants.ts",
     "../share/WebServiceAccess.ts",
-    "../share/ErrorDialog.ts",
+    "../share/ShowErrorDialog.ts",
     "IProductCatalog.ts",
     "OrderFunction.ts",
     "CreateProductCatalogHtml.ts",

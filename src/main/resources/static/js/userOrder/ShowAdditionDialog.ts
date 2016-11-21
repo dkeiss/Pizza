@@ -1,17 +1,20 @@
 /// <reference path="../thirdParty/jquery.d.ts" />
 /// <reference path="../share/Constants.ts" />
+/// <reference path="../share/ShowErrorDialog.ts" />
 /// <reference path="IAddition.ts" />
 /// <reference path="IProductCatalog.ts" />
+/// <reference path="IUser.ts" />
 
 namespace WebApplication.UserOrder
 {
     export class ShowAdditionDialog
     {
         private _additions: IAdditions = null;
-        private _currentAdditions: IAdditionals = [];
+        private _currentUser: IUser = null;
+        private _showCurrentAdditions: IAdditionals = [];
         private _priceSize: number = null;
         private _product: IProduct = null;
-        private _currentAdditionalIds = [];
+        private _selectedAdditionalIds = [];
 
         private _cssShowDialog = "userOrder-additionalDialog-showContainer";
         private _cssSelectAdditions = "userOrder-additionalDialog-selectedAdditions";
@@ -25,7 +28,7 @@ namespace WebApplication.UserOrder
         private _orderSubmit: JQuery = null;
         private _closeDialog: JQuery = null;
 
-        constructor(additionalInfo: IAdditions, priceSize: number, product: IProduct)
+        constructor(additionalInfo: IAdditions, currentUser: IUser, priceSize: number, product: IProduct)
         {
             this._additionalBox = $(UserOrderSelector.additionalBox).html("");
             this._orderOverviewProduct = $(UserOrderSelector.orderOverviewText);
@@ -35,10 +38,11 @@ namespace WebApplication.UserOrder
             this._closeDialog = $(UserOrderSelector.closeDialog);
 
             this._additions = additionalInfo;
+            this._currentUser = currentUser;
             this._priceSize = priceSize;
             this._product = product;
             //if (this._currentAdditions != null)
-                this._currentAdditions.length = 0;
+                this._showCurrentAdditions.length = 0;
 
             this.existProductIdInAdditions();
             this.setProductData();
@@ -85,7 +89,7 @@ namespace WebApplication.UserOrder
             {
                 htmlInput += `<div additionalId='${additionals[i].additionalId}'><span>${additionals[i].description}</span><span>${additionals[i].additionalPrices[this._priceSize].price}</span></div>`;
 
-                this._currentAdditions.push(additionals[i]);
+                this._showCurrentAdditions.push(additionals[i]);
             }
 
             htmlInput += "</div></div>";
@@ -105,6 +109,16 @@ namespace WebApplication.UserOrder
                 .find("span")
                 .last()
                 .text(product.productVariations[this._priceSize].price);
+
+            this._orderOverviewAddition
+                .find("span")
+                .last()
+                .text(this.calcAddition());
+
+            this._orderOverviewUserDiscount
+                .find("span")
+                .last()
+                .text(this._currentUser.discount);
         }
 
 
@@ -112,14 +126,25 @@ namespace WebApplication.UserOrder
         private calcOrder()
         {
             const productPrice: number = this._product.productVariations[this._priceSize].price;
-            const extraAddition: number = parseFloat(this._orderOverviewAddition
-                .find("span")
-                .last()
-                .text());
-
-            const userDiscount: number = 0;
+            const extraAddition = this.calcAddition();
+            const userDiscount: number = this._currentUser.discount;
 
             this._orderSubmit.text((productPrice + extraAddition) - userDiscount);
+        }
+
+        private calcAddition(): number
+        {
+            let extraAddition: number = 0;
+
+            for (let i = 0; i < this._selectedAdditionalIds.length; i++)
+            {
+                let tempObject = this._showCurrentAdditions.filter(item => item.additionalId == this._selectedAdditionalIds[i]);
+                if (tempObject.length == 0) new ShowErrorDialog(null, "Load data error", "Could not load menu!");
+
+                extraAddition += tempObject[0].additionalPrices[this._priceSize].price;
+            }
+
+            return extraAddition;
         }
 
         private closeDialog()
@@ -146,9 +171,9 @@ namespace WebApplication.UserOrder
 
             const additionalId = ShowAdditionDialog.getAdditionalIdFromDiv(target);
 
-            this._currentAdditionalIds.indexOf(additionalId) >= 0 ?
-                this._currentAdditionalIds.splice(this._currentAdditionalIds.indexOf(additionalId), 1) :
-                this._currentAdditionalIds.push(additionalId);
+            this._selectedAdditionalIds.indexOf(additionalId) >= 0 ?
+                this._selectedAdditionalIds.splice(this._selectedAdditionalIds.indexOf(additionalId), 1) :
+                this._selectedAdditionalIds.push(additionalId);
 
 
         }

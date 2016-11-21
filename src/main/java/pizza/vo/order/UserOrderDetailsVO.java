@@ -16,6 +16,10 @@ public class UserOrderDetailsVO extends UserOrderVO {
 
     private String userName;
 
+    private String productCategoryName;
+
+    private String productGroupName;
+
     private String productName;
 
     private String productVariationName;
