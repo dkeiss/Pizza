@@ -1,5 +1,6 @@
 /// <reference path="../thirdParty/jquery.d.ts" />
 /// <reference path="../share/Constants.ts" />
+/// <reference path="../share/ShowErrorDialog.ts" />
 /// <reference path="OrderService.ts" />
 /// <reference path="IProductCatalog.ts" />
 
