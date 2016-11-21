@@ -67,6 +67,19 @@ class ShoppingCardSelectors {
 
     public static cardOrderContainer = ".card-container_order";
     public static cardOrderButton = ".card-button_order";
+
+    public static cardPrintControlSheetButton = ".card-submitButton_controlSheet";
+    public static cardPrintOrderSheetButton = ".card-submitButton_orderSheet";
+
+    public static cardDeliveryDataCompanySpan = ".deliveryData_company"
+    public static cardDeliveryDataFirstNameSpan = ".deliveryData_firstName";
+    public static cardDeliveryDataLastNameSpan = ".deliveryData_lastName";
+    public static cardDeliveryDataStreetAddressSpan = ".deliveryData_streetAddress";
+    public static cardDeliveryDataZipTownSpan = ".deliveryData_zipTown";
+    public static cardDeliveryDataAdditionalInfoSpan = ".deliveryData_additionalInformation";
+    public static cardDeliveryDataPhoneSpan = ".deliveryData_phone";
+    public static cardDeliveryDataEMailSpan = ".deliveryData_email";
+
 }
 
 class ErrorDialogSelectors

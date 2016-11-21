@@ -21,5 +21,10 @@ namespace WebApplication.Admin.ShoppingCard
         {
             WebServiceAccess.ajaxPut(WebService.shoppingCard + "/" + userOrderId + "/paid", updateUserOrder, onSuccess);
         }
+
+        public static getDeliveryData(onSuccess: (deliveryData: IDeliveryData) => void): void
+        {
+            WebServiceAccess.ajaxGet(WebService.deliveryData, onSuccess);
+        }
     }
 }
