@@ -1,9 +1,10 @@
-body {
+html, body {
     font-family: 'Segoe UI', sans-serif;
     font-size: 15px;
     padding: 0;
     margin: 0;
     background: #F0F0F0;
+    height: 100%;
 }
 
 a {
@@ -30,6 +31,15 @@ p {
 
 .core-container-header {
     /*display: none;*/
+}
+
+.core-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    min-height:100%;
+    height:auto !important;
+    height:100%;
 }
 
 .core-container-center {
@@ -204,17 +214,21 @@ p {
 }
 
 .core-footer{
-    position: absolute;
+    /*position: absolute;*/
     bottom: 0;
     width: 100%;
     background-color: #ddd;
     /*border-top: 5px solid #aaa;*/
     height: 20px;
-    margin-top: 30px;
     background-image: url(../img/pizza-logo.png);
     background-repeat: no-repeat;
     background-size: 16px;
     background-position: right center;
+
+    position: relative;
+    margin:-20px auto 0;
+    /*margin-top: 30px;*/
+
 }
 
 .core-footer_default{

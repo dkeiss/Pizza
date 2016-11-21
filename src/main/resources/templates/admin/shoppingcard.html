@@ -11,67 +11,68 @@
     <script src="../../static/js/admin/shoppingCard/_app.js" th:src="@{/js/admin/shoppingCard/_app.js}"></script>
 </head>
 <body>
+    <div class="core-wrapper">
+        <div th:replace="fragments/header :: header">&nbsp;</div>
+        <!--<div class="core-container-header">
+            <div class="core-container-center">
+                <h1>Admin</h1>
+                <div th:replace="fragments/header :: header">&nbsp;</div>
+            </div>
+        </div>-->
 
-    <div th:replace="fragments/header :: header">&nbsp;</div>
-    <!--<div class="core-container-header">
         <div class="core-container-center">
-            <h1>Admin</h1>
-            <div th:replace="fragments/header :: header">&nbsp;</div>
-        </div>
-    </div>-->
-
-    <div class="core-container-center">
-        <div class="core-link-container-box card-container_order">
-            <a class="admin-button-enabled card-button_order">Sammelbestellung beenden und Mails versenden</a>
-        </div>
-        <div class="core-container-box card-container_print">
-            <label class="admin-label">Warenkorb ausdrucken</label>
-            <div class="admin-button-box">
-                <div class="admin-submitButton admin-submitButton-enabled card-submitButton_controlSheet">Lieferkontrolle</div>
-                <div class="admin-submitButton admin-submitButton-enabled card-submitButton_orderSheet">Bestellformular</div>
+            <div class="core-link-container-box card-container_order">
+                <a class="admin-button-enabled card-button_order">Sammelbestellung beenden und Mails versenden</a>
+            </div>
+            <div class="core-container-box card-container_print">
+                <label class="admin-label">Warenkorb ausdrucken</label>
+                <div class="admin-button-box">
+                    <div class="admin-submitButton admin-submitButton-enabled card-submitButton_controlSheet">Lieferkontrolle</div>
+                    <div class="admin-submitButton admin-submitButton-enabled card-submitButton_orderSheet">Bestellformular</div>
+                </div>
+            </div>
+            <table class="deliverData">
+                <tr>
+                    <td colspan="4"><label>Firma:</label><span class="deliveryData_company"></span></td>
+                </tr>
+                <tr>
+                    <td><label>Vorname:</label><span class="deliveryData_firstName"></span></td>
+                    <td><label>Nachname:</label><span class="deliveryData_lastName"></span></td>
+                    <td><label>Straße/Nr:</label><span class="deliveryData_streetAddress"></span></td>
+                    <td><label>PLZ/Ort:</label><span class="deliveryData_zipTown"></span></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><label>Sonstige Informationen:</label><span class="deliveryData_additionalInformation"></span></td>
+                </tr>
+                <tr>
+                    <td><br/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label>Telefon:</label><span class="deliveryData_phone"></span></td>
+                    <td colspan="2"> <label>E-Mail:</label><span class="deliveryData_email"></span></td>
+                </tr>
+            </table>
+            <div class="core-container-box">
+                <table class="sc-orderTable card-orderTable">
+                    <thead>
+                        <tr class="sc-orderTable-headlines ">
+                            <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Benutzer</th>
+                            <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Nr</th>
+                            <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Artikel</th>
+                            <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Extras</th>
+                            <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Größe</th>
+                            <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Preis</th>
+                            <th class="sc-orderTable-sortIcon card-orderTable_sortButton"></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <table class="deliverData">
-            <tr>
-                <td colspan="4"><label>Firma:</label><span class="deliveryData_company"></span></td>
-            </tr>
-            <tr>
-                <td><label>Vorname:</label><span class="deliveryData_firstName"></span></td>
-                <td><label>Nachname:</label><span class="deliveryData_lastName"></span></td>
-                <td><label>Straße/Nr:</label><span class="deliveryData_streetAddress"></span></td>
-                <td><label>PLZ/Ort:</label><span class="deliveryData_zipTown"></span></td>
-            </tr>
-            <tr>
-                <td colspan="4"><label>Sonstige Informationen:</label><span class="deliveryData_additionalInformation"></span></td>
-            </tr>
-            <tr>
-                <td><br/></td>
-            </tr>
-            <tr>
-                <td colspan="2"><label>Telefon:</label><span class="deliveryData_phone"></span></td>
-                <td colspan="2"> <label>E-Mail:</label><span class="deliveryData_email"></span></td>
-            </tr>
-        </table>
-        <div class="core-container-box">
-            <table class="sc-orderTable card-orderTable">
-                <thead>
-                    <tr class="sc-orderTable-headlines ">
-                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Benutzer</th>
-                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Nr</th>
-                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Artikel</th>
-                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Extras</th>
-                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Größe</th>
-                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton">Preis</th>
-                        <th class="sc-orderTable-sortIcon card-orderTable_sortButton"></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
+        <div class="orderSummary card_orderSummary"></div>
     </div>
-    <div class="orderSummary card_orderSummary"></div>
     <div th:replace="fragments/footer :: footer">&nbsp;</div>
 </body>
 </html>

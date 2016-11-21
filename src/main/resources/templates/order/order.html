@@ -16,21 +16,21 @@
         <div th:replace="fragments/serverErrorDialog :: serverError">&nbsp;</div>
         <div th:replace="fragments/orderAdditionalDialog :: orderAdditional">&nbsp;</div>
     </div>
+    <div class="core-wrapper">
+        <div th:replace="fragments/header :: header">&nbsp;</div>
+        <!--<div class="core-container-header">
+            <div class="core-container-center">
+                <div th:replace="fragments/header :: header">&nbsp;</div>
+            </div>
+        </div>-->
 
-    <div th:replace="fragments/header :: header">&nbsp;</div>
-    <!--<div class="core-container-header">
         <div class="core-container-center">
-            <div th:replace="fragments/header :: header">&nbsp;</div>
+            <div class="userOrder-menu-container userOrder-menu_container"></div>
+
+            <div class="userOrder-categories-container userOrder-categories_container"></div>
         </div>
-    </div>-->
-
-    <div class="core-container-center">
-        <div class="userOrder-menu-container userOrder-menu_container"></div>
-
-        <div class="userOrder-categories-container userOrder-categories_container"></div>
     </div>
-
-<div th:replace="fragments/footer :: footer">&nbsp;</div>
+    <div th:replace="fragments/footer :: footer">&nbsp;</div>
 
 </body>
 </html>
