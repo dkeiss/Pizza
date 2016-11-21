@@ -41,21 +41,20 @@ namespace WebApplication.UserOrder
             this._currentUser = currentUser;
             this._priceSize = priceSize;
             this._product = product;
-            //if (this._currentAdditions != null)
-                this._showCurrentAdditions.length = 0;
+            this._showCurrentAdditions.length = 0;
 
             this.existProductIdInAdditions();
             this.setProductData();
             this.calcOrder();
 
-            //this._additionalBoxMenuSelector = $(UserOrderSelector.additionalBoxMenusSelector + " div");
-            this._additionalBoxMenuSelector = $(`.userOrder-additionalDialog_additionBoxMenus div`);
+            this._additionalBoxMenuSelector = $("." + UserOrderSelector.additionalBoxMenusSelector + " div");
             this._additionalDialog = $(UserOrderSelector.additionalDialog).addClass(this._cssShowDialog);
         }
 
         public start()
         {
             this._closeDialog.on("click", () => { this.closeDialog() });
+
             this._additionalBoxMenuSelector.on("click", event => { this.selectAdditions(event); });
         }
 
@@ -110,11 +109,6 @@ namespace WebApplication.UserOrder
                 .last()
                 .text(product.productVariations[this._priceSize].price);
 
-            this._orderOverviewAddition
-                .find("span")
-                .last()
-                .text(this.calcAddition());
-
             this._orderOverviewUserDiscount
                 .find("span")
                 .last()
@@ -129,7 +123,8 @@ namespace WebApplication.UserOrder
             const extraAddition = this.calcAddition();
             const userDiscount: number = this._currentUser.discount;
 
-            this._orderSubmit.text((productPrice + extraAddition) - userDiscount);
+            const sum = parseFloat(((productPrice + extraAddition) - userDiscount).toFixed(2));
+            this._orderSubmit.text( sum >= 0 ? sum : 0 );
         }
 
         private calcAddition(): number
@@ -139,33 +134,46 @@ namespace WebApplication.UserOrder
             for (let i = 0; i < this._selectedAdditionalIds.length; i++)
             {
                 let tempObject = this._showCurrentAdditions.filter(item => item.additionalId == this._selectedAdditionalIds[i]);
-                if (tempObject.length == 0) new ShowErrorDialog(null, "Load data error", "Could not load menu!");
+                if (tempObject.length == 0) new ShowErrorDialog(null, "Load data error", "Additional not found - Please contact Administrator!");
 
                 extraAddition += tempObject[0].additionalPrices[this._priceSize].price;
             }
 
+            this._orderOverviewAddition
+                .find("span")
+                .last()
+                .text( parseFloat(extraAddition.toFixed(2)) );
+
             return extraAddition;
         }
 
-        private closeDialog()
+        private closeDialog(): void
         {
             this._additionalDialog.removeClass(this._cssShowDialog);
         }
 
-        private selectAdditions(eventObject: JQueryEventObject)
+        private selectAdditions(eventObject: JQueryEventObject): void
         {
             const target = $(eventObject.currentTarget);
             const duty = target.closest(`.${UserOrderSelector.additionalBoxMenusSelector}`).attr("duty");
 
             duty == "true" ? this.selectSingleAdditions(target) : this.selectMultiAdditions(target);
+            this.calcOrder();
         }
 
-        private selectSingleAdditions(target: JQuery)
+        private selectSingleAdditions(target: JQuery): void
         {
+            target
+                .closest(`.${UserOrderSelector.additionalBoxMenusSelector}`)
+                .find("div")
+                .each( (index, element) => {
+                    $(element).removeClass(this._cssSelectAdditions);
+                });
 
+            target.addClass(this._cssSelectAdditions);
         }
 
-        private selectMultiAdditions(target: JQuery)
+        private selectMultiAdditions(target: JQuery): void
         {
             target.hasClass(this._cssSelectAdditions) ? target.removeClass(this._cssSelectAdditions) : target.addClass(this._cssSelectAdditions);
 
@@ -174,8 +182,6 @@ namespace WebApplication.UserOrder
             this._selectedAdditionalIds.indexOf(additionalId) >= 0 ?
                 this._selectedAdditionalIds.splice(this._selectedAdditionalIds.indexOf(additionalId), 1) :
                 this._selectedAdditionalIds.push(additionalId);
-
-
         }
 
         private static getAdditionalIdFromDiv(target: JQuery): number

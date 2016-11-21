@@ -24,8 +24,7 @@ namespace WebApplication.UserOrder
             {
                 if (this._additional == null) this.loadAddition();
                 if (this._currentUser == null) this.loadUser();
-                console.log(this._additional);
-                console.log(this._currentUser);
+
                 var showAdditionDialog = new ShowAdditionDialog(this._additional, this._currentUser, priceSize, product);
                 showAdditionDialog.start();
 
