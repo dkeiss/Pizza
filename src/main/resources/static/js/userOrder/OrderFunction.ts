@@ -1,7 +1,7 @@
 /// <reference path="../thirdParty/jquery.d.ts" />
 /// <reference path="../share/Constants.ts" />
 /// <reference path="IAddition.ts" />
-/// <reference path="IUser.ts" />
+/// <reference path="IOrder.ts" />
 /// <reference path="ShowAdditionDialog.ts" />
 
 namespace WebApplication.UserOrder

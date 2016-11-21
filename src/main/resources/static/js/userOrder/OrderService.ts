@@ -3,7 +3,7 @@
 /// <reference path="../share/WebServiceAccess.ts" />
 /// <reference path="IProductCatalog.ts" />
 /// <reference path="IAddition.ts" />
-/// <reference path="IUser.ts" />
+/// <reference path="IOrder.ts" />
 
 namespace WebApplication.UserOrder
 {
