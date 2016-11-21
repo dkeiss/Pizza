@@ -12,6 +12,7 @@
     "OrderFunction.ts",
     "CreateProductCatalogHtml.ts",
     "IAddition.ts",
+    "IOrder.ts",
     "ShowAdditionDialog.ts"
   ]
 }

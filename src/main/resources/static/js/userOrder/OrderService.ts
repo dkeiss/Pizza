@@ -3,7 +3,7 @@
 /// <reference path="../share/WebServiceAccess.ts" />
 /// <reference path="IProductCatalog.ts" />
 /// <reference path="IAddition.ts" />
-/// <reference path="IUser.ts" />
+/// <reference path="IOrder.ts" />
 
 namespace WebApplication.UserOrder
 {
@@ -22,6 +22,11 @@ namespace WebApplication.UserOrder
         public static loadUserInfo(getUser: (user: IUser) => void): void
         {
             WebServiceAccess.ajaxGet(WebService.currentUser, getUser);
+        }
+
+        public static sendOrder(sendOrder: IOrder, onSuccess: (xhr: any) => void)
+        {
+            WebServiceAccess.ajaxPost(WebService.order, sendOrder, onSuccess);
         }
     }
 }

@@ -231,6 +231,10 @@ td.userOrder-price-cell div:hover {
     text-transform: uppercase;
 }
 
+.userOrder-additionalDialog-box span.title.userOrder-additionalDialog-titleRed {
+    color: red;
+}
+
 .userOrder-additionalDialog-additionBoxMenus div {
     float: left;
     overflow: hidden;

@@ -9,3 +9,10 @@ interface IUser
     creationDate?: number;
     modificationDate?: number;
 }
+
+interface IOrder
+{
+    productId: number;
+    productVariationId: number;
+    additionalIds: number[];
+}
