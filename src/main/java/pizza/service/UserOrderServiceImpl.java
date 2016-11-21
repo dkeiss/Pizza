@@ -2,11 +2,13 @@ package pizza.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jca.cci.core.InteractionCallback;
 import org.springframework.stereotype.Service;
 import pizza.domain.order.BulkOrder;
 import pizza.domain.order.UserOrder;
 import pizza.domain.order.UserOrderAdditional;
 import pizza.domain.product.Product;
+import pizza.domain.product.ProductCatalog;
 import pizza.domain.product.ProductVariation;
 import pizza.domain.product.additional.Additional;
 import pizza.domain.product.additional.AdditionalPrice;
@@ -52,7 +54,7 @@ public class UserOrderServiceImpl implements UserOrderService {
     public UserOrderDetailsVO addUserOrder(String username, UserOrderVO userOrderVO) {
         checkUserOrderValid(userOrderVO);
         User user = userService.findUserByUsername(username);
-        if(user == null){
+        if (user == null) {
             throw new UserOrderUserNotFoundException();
         }
 
@@ -65,6 +67,11 @@ public class UserOrderServiceImpl implements UserOrderService {
         ProductVariation productVariation = productCatalogService.findProductVariation(userOrderVO.getProductVariationId());
         if (!product.getProductId().equals(productVariation.getProduct().getProductId())) {
             throw new UserOrderProductAndProductVariationNotMatchException();
+        }
+
+        ProductCatalog productCatalog = product.getProductGroup().getProductCategory().getProductCatalog();
+        if (!productCatalog.getProductCatalogId().equals(activeBulkOrder.getCatalogId())) {
+            throw new UserOrderProductCatalogNotMatchException();
         }
 
         UserOrder userOrder = new UserOrder();

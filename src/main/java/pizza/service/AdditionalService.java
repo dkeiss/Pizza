@@ -11,13 +11,15 @@ import java.util.List;
  */
 public interface AdditionalService {
 
-    List<AdditionalCategoryVO> listAdditionalCategories();
+    List<AdditionalCategoryVO> listAdditionalCategoriesFromActiveProductCatalog();
 
-    AdditionalCategoryVO createAdditionalCategory(AdditionalCategoryVO additionalCategory);
+    AdditionalCategoryVO createAdditionalCategory(Integer productCatalogId, AdditionalCategoryVO additionalCategory);
+
+    AdditionalCategoryVO createAdditionalCategoryForActiveProductCatalog(AdditionalCategoryVO additionalCategory);
 
     AdditionalCategoryVO getAdditionalCategory(Integer additionalCategoryId);
 
-    List<AdditionalCategoryVO> getAdditionalsByProductId(Integer productId);
+    List<AdditionalCategoryVO> getAdditionalsByProductIdForActiveProductCatalog(Integer productId);
 
     Additional findAdditional(Integer additionalId);
 

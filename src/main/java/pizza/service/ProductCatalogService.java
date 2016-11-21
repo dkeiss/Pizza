@@ -1,6 +1,7 @@
 package pizza.service;
 
 import pizza.domain.product.Product;
+import pizza.domain.product.ProductCatalog;
 import pizza.domain.product.ProductVariation;
 import pizza.vo.product.menu.ProductCatalogInfoVO;
 import pizza.vo.product.menu.ProductCatalogVO;
@@ -15,6 +16,8 @@ public interface ProductCatalogService {
     ProductCatalogVO createProductCatalog(ProductCatalogVO menuVO);
 
     ProductCatalogVO getProductCatalog(Integer productCatalogId);
+
+    ProductCatalog getProductCatalogBO(Integer productCatalogId);
 
     List<ProductCatalogInfoVO> listProductCataloges();
 

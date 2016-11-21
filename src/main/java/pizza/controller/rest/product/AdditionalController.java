@@ -1,7 +1,6 @@
 package pizza.controller.rest.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pizza.service.AdditionalService;
 import pizza.vo.product.additional.AdditionalCategoryVO;
@@ -22,17 +21,17 @@ public class AdditionalController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<AdditionalCategoryVO> listAdditionals() throws IOException {
-        return additionalService.listAdditionalCategories();
+        return additionalService.listAdditionalCategoriesFromActiveProductCatalog();
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public AdditionalCategoryVO createAdditional(@RequestBody AdditionalCategoryVO additionalCategory) throws IOException {
-        return additionalService.createAdditionalCategory(additionalCategory);
+        return additionalService.createAdditionalCategoryForActiveProductCatalog(additionalCategory);
     }
 
     @RequestMapping(value = "/full", method = RequestMethod.POST)
     public List<AdditionalCategoryVO> createAdditionals(@RequestBody List<AdditionalCategoryVO> additionalCategorys) throws IOException {
-        List<AdditionalCategoryVO> additionalCategoryVOs = additionalCategorys.stream().map(additionalCategory -> additionalService.createAdditionalCategory(additionalCategory)).collect(Collectors.toList());
+        List<AdditionalCategoryVO> additionalCategoryVOs = additionalCategorys.stream().map(additionalCategory -> additionalService.createAdditionalCategoryForActiveProductCatalog(additionalCategory)).collect(Collectors.toList());
         return additionalCategoryVOs;
     }
 
@@ -43,7 +42,7 @@ public class AdditionalController {
 
     @RequestMapping(value = "/product/{productId}", method = RequestMethod.GET)
     public List<AdditionalCategoryVO> getAdditionalByProductId(@PathVariable("productId") Integer productId) throws IOException {
-        return additionalService.getAdditionalsByProductId(productId);
+        return additionalService.getAdditionalsByProductIdForActiveProductCatalog(productId);
     }
 
 }
