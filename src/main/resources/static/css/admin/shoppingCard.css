@@ -147,3 +147,11 @@
 .hide{
     opacity: 0.1;
 }
+
+.deliverData{
+    display: none;
+}
+
+.orderSummery{
+    display: none;
+}

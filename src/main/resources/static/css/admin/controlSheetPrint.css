@@ -1,0 +1,80 @@
+@media print {
+
+    .orderSummery {
+        margin-top: 20px;
+        width: 100%
+    }
+    .orderSummery span{
+        font-size: 12px;
+        display: block;
+    }
+
+
+    .deliverData{
+        display: none;
+    }
+
+    .card-container_order, .card-container_print, .core-header, .core-footer {
+        display: none;
+    }
+    .sc-orderTable {
+        border-collapse: collapse;
+        border: 1px solid black;
+        width: 100%;
+    }
+
+    .sc-orderTable-headlines th:nth-child(6),
+    .sc-orderTable-headlines th:nth-child(7),
+    .sc-orderTable-headlines th:nth-child(8),
+    .sc-orderTable td:nth-child(6),
+    .sc-orderTable td:nth-child(7),
+    .sc-orderTable td:nth-child(8){
+        display: none;
+    }
+
+    .sc-orderTable th {
+        border: 1px solid black;
+        padding: 10px 15px;
+        text-align: left;
+        font-weight: 600;
+        text-align: left;
+        font-size: 15px;
+    }
+
+    .sc-orderTable-headlines th:nth-child(2){
+        width: 3%;
+        max-width: 3%;
+    }
+
+    .sc-orderTable-headlines th:nth-child(5){
+        width: 5%;
+        max-width: 5%;
+    }
+
+    .sc-orderTable-headlines th:nth-child(6){
+        width: 10%;
+        max-width: 10%;
+    }
+
+
+    .sc-orderTable-headlines th:nth-child(1),
+    .sc-orderTable-headlines th:nth-child(3) {
+        width: 20%;
+    }
+
+    .sc-orderTable-headlines th:nth-child(4) {
+        width: 36%;
+    }
+
+    .sc-orderTable td:nth-child(6){
+        text-align: right;
+    }
+
+    .sc-orderTable td {
+        border: 1px solid black;
+        padding: 10px 15px;
+        text-align: left;
+        font-size: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+}
