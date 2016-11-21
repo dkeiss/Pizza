@@ -43,10 +43,8 @@ public class AdditionalServiceImpl implements AdditionalService {
     @Override
     public List<AdditionalCategoryVO> listAdditionalCategoriesFromActiveProductCatalog() {
 
-        ProductCatalogVO activeProductCatalog = productCatalogService.getActiveProductCatalog();
-
         List<AdditionalCategory> additionalCategories = new ArrayList<>();
-        ProductCatalog productCatalog = productCatalogService.getProductCatalogBO(activeProductCatalog.getProductCatalogId());
+        ProductCatalog productCatalog = productCatalogService.getActiveProductCatalogBO();
         List<AdditionalCategory> byProductCatalog = additionalCategoryRepository.findByProductCatalog(productCatalog);
         if (byProductCatalog == null) {
             return null;
@@ -58,7 +56,7 @@ public class AdditionalServiceImpl implements AdditionalService {
     @Override
     public AdditionalCategoryVO createAdditionalCategoryForActiveProductCatalog(AdditionalCategoryVO additionalCategoryVO) {
 
-        ProductCatalogVO activeProductCatalog = productCatalogService.getActiveProductCatalog();
+        ProductCatalog activeProductCatalog = productCatalogService.getActiveProductCatalogBO();
 
         return createAdditionalCategory(activeProductCatalog.getProductCatalogId(), additionalCategoryVO);
     }
@@ -66,6 +64,7 @@ public class AdditionalServiceImpl implements AdditionalService {
     @Override
     public AdditionalCategoryVO createAdditionalCategory(Integer productCatalogId, AdditionalCategoryVO additionalCategoryVO) {
         AdditionalCategory additionalCategory = getAdditionalCategoryFromVO(additionalCategoryVO, new AdditionalCategory());
+        additionalCategory.setCreationDate(new Date());
         ProductCatalog productCatalog = productCatalogService.getProductCatalogBO(productCatalogId);
         additionalCategory.setProductCatalog(productCatalog);
 

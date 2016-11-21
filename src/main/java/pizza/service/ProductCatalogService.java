@@ -33,4 +33,6 @@ public interface ProductCatalogService {
 
     ProductVariation findProductVariation(Integer productVariationId);
 
+    ProductCatalog getActiveProductCatalogBO();
+
 }
