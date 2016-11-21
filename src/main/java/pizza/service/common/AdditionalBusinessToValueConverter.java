@@ -29,7 +29,7 @@ public class AdditionalBusinessToValueConverter {
         additionalCategoryVO.setAdditionalCategoryId(additionalCategory.getAdditionalCategoryId());
         additionalCategoryVO.setName(additionalCategory.getName());
         additionalCategoryVO.setDuty(additionalCategory.getDuty());
-        additionalCategoryVO.setCreationDate(additionalCategoryVO.getCreationDate());
+        additionalCategoryVO.setCreationDate(additionalCategory.getCreationDate());
         additionalCategoryVO.setAdditionals(getAdditionalsFromBO(additionalCategory.getAdditionals()));
         additionalCategoryVO.setProductIds(getProductsFromProductsString(additionalCategory));
         return additionalCategoryVO;

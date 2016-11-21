@@ -66,7 +66,6 @@ public class AdditionalServiceImpl implements AdditionalService {
     @Override
     public AdditionalCategoryVO createAdditionalCategory(Integer productCatalogId, AdditionalCategoryVO additionalCategoryVO) {
         AdditionalCategory additionalCategory = getAdditionalCategoryFromVO(additionalCategoryVO, new AdditionalCategory());
-        additionalCategory.setCreationDate(new Date());
         ProductCatalog productCatalog = productCatalogService.getProductCatalogBO(productCatalogId);
         additionalCategory.setProductCatalog(productCatalog);
 
