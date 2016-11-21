@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by Daniel Keiss on 28.10.2016.
  */
-@Controller
+@RestController
 @RequestMapping("rest/productcatalog")
 public class ProductCatalogController {
 
@@ -21,30 +21,22 @@ public class ProductCatalogController {
     private ProductCatalogService productCatalogService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    List<ProductCatalogInfoVO> listProductInfos() throws IOException {
+    public List<ProductCatalogInfoVO> listProductInfos() throws IOException {
         return productCatalogService.listProductCataloges();
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    ProductCatalogVO createProductCatalog(@RequestBody ProductCatalogVO productCatalog) throws IOException {
+    public ProductCatalogVO createProductCatalog(@RequestBody ProductCatalogVO productCatalog) throws IOException {
         return productCatalogService.createProductCatalog(productCatalog);
     }
 
     @RequestMapping(value = "{productCatalogId}", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    ProductCatalogVO getProductCatalog(@PathVariable("productCatalogId") Integer productCatalogId) throws IOException {
+    public ProductCatalogVO getProductCatalog(@PathVariable("productCatalogId") Integer productCatalogId) throws IOException {
         return productCatalogService.getProductCatalog(productCatalogId);
     }
 
     @RequestMapping(value = "active", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    ProductCatalogVO getActiveProductCatalog() throws IOException {
+    public ProductCatalogVO getActiveProductCatalog() throws IOException {
         return productCatalogService.getActiveProductCatalog();
     }
 

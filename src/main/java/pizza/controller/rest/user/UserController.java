@@ -17,7 +17,7 @@ import static pizza.controller.rest.ResponseUtil.getEmptyJsonSucessResponse;
 /**
  * Created by Daniel Keiss on 22.09.2016.
  */
-@Controller
+@RestController
 @RequestMapping("rest/user")
 public class UserController {
 
@@ -25,16 +25,12 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    List<UserVO> getUsers() {
+    public List<UserVO> getUsers() {
         return userService.getUsers();
     }
 
     @RequestMapping(value = "current", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    UserVO getCurrentUser(Principal principal) {
+    public UserVO getCurrentUser(Principal principal) {
         if (principal == null) {
             throw new UserNotLoggedInException();
         }
@@ -43,33 +39,25 @@ public class UserController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    UserVO createUser(@RequestBody UserVO user) {
+    public UserVO createUser(@RequestBody UserVO user) {
         return userService.createUser(user);
     }
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.PUT)
-    public
-    @ResponseBody
-    Map updateUser(@PathVariable("userId") Integer userId, @RequestBody UserVO user) {
+    public Map updateUser(@PathVariable("userId") Integer userId, @RequestBody UserVO user) {
         user.setUserId(userId);
         userService.updateUser(user);
         return getEmptyJsonSucessResponse();
     }
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.DELETE)
-    public
-    @ResponseBody
-    Map deleteUser(@PathVariable("userId") Integer userId) {
+    public Map deleteUser(@PathVariable("userId") Integer userId) {
         userService.deleteUser(userId);
         return getEmptyJsonSucessResponse();
     }
 
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    UserVO getUser(@PathVariable("userId") Integer userId) {
+    public UserVO getUser(@PathVariable("userId") Integer userId) {
         return userService.getUser(userId);
     }
 
