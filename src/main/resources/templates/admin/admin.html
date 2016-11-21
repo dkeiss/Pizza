@@ -21,6 +21,17 @@
 </div>
 
 <div th:replace="fragments/header :: header">&nbsp;</div>
+<!--<div class="core-header core-header_loggedIn" th:fragment="header">
+    <div class="core-header-content">
+        <div class="core-header-menu core-header-menu-active"><a href="../admin">Administratorbereich</a></div>
+        <div class="core-header-menu core-header-menu-inactive"><a href="../order">Bestellbereich</a></div>
+        <div class="core-header-user">
+            <form id="logout-form" th:action="@{/logout}" method="post">
+                <span th:inline="text"> Angemeldet als admin@test.de <div class="core-logout-button" onClick="document.forms['logout-form'].submit();"></div></span>
+            </form>
+        </div>
+    </div>
+</div>-->
 
 <div class="core-container-center">
     <div class="core-link-container-box admin-container_cardDiv">

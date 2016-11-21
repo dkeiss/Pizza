@@ -12,11 +12,15 @@ namespace WebApplication.Admin.ShoppingCard
         private _orderTableStateButton: JQuery = null;
         private _orderTableDeleteButton: JQuery = null;
 
+        private _cardOrderSummaryDiv: JQuery = null;
+
         private _currentSortColumn: number;
 
         private _tableData: any;
 
         private _orderList: IUserOrder[] = null;
+
+        private _orderSummary: {[productCategory : string]: number} = {};
 
         constructor()
         {
@@ -24,6 +28,7 @@ namespace WebApplication.Admin.ShoppingCard
             this._orderTable = $(ShoppingCardSelectors.orderTable);
             this._orderTableBody = this._orderTable.find("tbody");
             this._orderTableSortButton = $(ShoppingCardSelectors.orderTableSortButton);
+            this._cardOrderSummaryDiv = $(ShoppingCardSelectors.cardOrderSummaryDiv);
 
             for(let i = 0; i <this._orderTableSortButton.length; i++) {
                 $(this._orderTableSortButton[i]).on("click", () => this.sort(i));
@@ -36,7 +41,156 @@ namespace WebApplication.Admin.ShoppingCard
             ShoppingCardService.loadUserOrders(orderList =>
             {
                 this._orderList = orderList;
+                /*this._orderList = [
+                    {
+                        userOrderId: 1,
+                        userId: 2,
+                        productId: 1,
+                        productVariationId: 1,
+                        number: 421,
+                        userOrderAdditionals: [
+                            {
+                                userOrderAdditionalId: 1,
+                                userOrderId: 1,
+                                additionalId: 2,
+                                additionalDescription: "test",
+                                additionalPriceId: 1,
+                                additionalPriceName: "test"
+
+                            }],
+                        firstName: "Sascha",
+                        lastName: "Walther",
+                        userName: "a@a.de",
+                        productCategoryName: "Pizza",
+                        productGroupName: "Pizza,",
+                        productName: "Pizza Salami",
+                        productVariationName: "Groß",
+                        sum: 7.99,
+                        paid: true
+                    },
+                    {
+                        userOrderId: 2,
+                        userId: 2,
+                        productId: 1,
+                        productVariationId: 1,
+                        number: 572,
+                        userOrderAdditionals: [
+                            {
+                                userOrderAdditionalId: 1,
+                                userOrderId: 1,
+                                additionalId: 2,
+                                additionalDescription: "test",
+                                additionalPriceId: 1,
+                                additionalPriceName: "test"
+
+                            }],
+                        firstName: "Sascha",
+                        lastName: "Walther",
+                        userName: "a@a.de",
+                        productCategoryName: "Pizza",
+                        productGroupName: "Pizza,",
+                        productName: "Pizza Salami",
+                        productVariationName: "Groß",
+                        sum: 5.55,
+                        paid: true
+                    },
+                    {
+                        userOrderId: 3,
+                        userId: 2,
+                        productId: 1,
+                        productVariationId: 1,
+                        number: 421,
+                        userOrderAdditionals: [
+                            {
+                                userOrderAdditionalId: 1,
+                                userOrderId: 1,
+                                additionalId: 2,
+                                additionalDescription: "test",
+                                additionalPriceId: 1,
+                                additionalPriceName: "test"
+
+                            }],
+                        firstName: "Sascha",
+                        lastName: "Walther",
+                        userName: "a@a.de",
+                        productCategoryName: "Pizza",
+                        productGroupName: "Pizza,",
+                        productName: "Pizza Salami",
+                        productVariationName: "Groß",
+                        sum: 7.00,
+                        paid: false
+                    },
+                    {
+                        userOrderId: 4,
+                        userId: 2,
+                        productId: 1,
+                        productVariationId: 1,
+                        number: 576,
+                        userOrderAdditionals: [
+                            {
+                                userOrderAdditionalId: 1,
+                                userOrderId: 1,
+                                additionalId: 2,
+                                additionalDescription: "test",
+                                additionalPriceId: 1,
+                                additionalPriceName: "test"
+
+                            }],
+                        firstName: "Sascha",
+                        lastName: "Walther",
+                        userName: "a@a.de",
+                        productCategoryName: "Muschu",
+                        productGroupName: "Pizza,",
+                        productName: "Pizza Salami",
+                        productVariationName: "Groß",
+                        sum: 7.59,
+                        paid: false
+                    },
+                    {
+                        userOrderId: 5,
+                        userId: 2,
+                        productId: 1,
+                        productVariationId: 1,
+                        number: 426,
+                        userOrderAdditionals: [
+                            {
+                                userOrderAdditionalId: 1,
+                                userOrderId: 1,
+                                additionalId: 2,
+                                additionalDescription: "test",
+                                additionalPriceId: 1,
+                                additionalPriceName: "test"
+
+                            }],
+                        firstName: "Sascha",
+                        lastName: "Walther",
+                        userName: "a@a.de",
+                        productCategoryName: "Pizza",
+                        productGroupName: "Pizza,",
+                        productName: "Pizza Salami",
+                        productVariationName: "Groß",
+                        sum: 8.46,
+                        paid: true
+                    }
+                ]*/
             });
+        }
+
+        private setSummaryData() : void {
+            this._cardOrderSummaryDiv.empty();
+            let productCategory;
+            for(productCategory in this._orderSummary){
+                if(this._orderSummary[productCategory]>0) {
+                    let element = "";
+                    element += "<span>" + productCategory + ": " + this._orderSummary[productCategory] + "</span>";
+                    this._cardOrderSummaryDiv.append(element);
+                }
+            }
+            let sum = 0;
+            for(let i = 0; i < this._tableData.length; i++)
+                sum += this._tableData[i][5];
+            let element = "<br/><span>Gesamtpreis: "+sum+" €</span>";
+            this._cardOrderSummaryDiv.append(element);
         }
 
         private createTable() : void {
@@ -44,6 +198,11 @@ namespace WebApplication.Admin.ShoppingCard
             this._tableData = new Array(this._orderList.length);
 
             for(let i = 0; i < this._orderList.length; i++) {
+                if(this._orderList[i].productCategoryName in this._orderSummary)
+                    this._orderSummary[this._orderList[i].productCategoryName]++;
+                else
+                    this._orderSummary[this._orderList[i].productCategoryName] = 1;
+
                 let element = "";
                 element += "<tr orderid='" + this._orderList[i].userOrderId + "'>";
                 element += "<td >" +  this._orderList[i].firstName + " " + this._orderList[i].lastName + "</td>";
@@ -72,6 +231,7 @@ namespace WebApplication.Admin.ShoppingCard
                 this._tableData[i][4] =  this._orderList[i].productVariationName;
                 this._tableData[i][5] =  this._orderList[i].sum;
                 this._tableData[i][6] =  this._orderList[i].paid ? "1" : "2";
+                this._tableData[i][7] =  this._orderList[i].productCategoryName;
                 this._tableData[i][8] = this._orderTableBody.find("tr").last()[0];
             }
             this._orderTableStateButton = $(ShoppingCardSelectors.orderTableStateButton);
@@ -86,6 +246,7 @@ namespace WebApplication.Admin.ShoppingCard
                 let elements = $(this).closest("tr").find("td");
                 for(let i = 0; i < elements.length; i++)
                     $(elements[i]).removeClass("sc-orderTable-deleteIndicator")});
+            this.setSummaryData();
             this.sort(0);
         }
 
@@ -104,8 +265,10 @@ namespace WebApplication.Admin.ShoppingCard
             {
                 $(event.currentTarget).removeClass("loading").addClass("sc-orderTable-trashIcon");
                 $(event.currentTarget).closest("tr").find('td').removeClass("hide");
+                this._orderSummary[this._tableData[$(event.currentTarget).closest("tr").index()][7]]--;
                 this._tableData.splice($(event.currentTarget).closest("tr").index(),1);
                 $(event.currentTarget).closest("tr").remove();
+                this.setSummaryData();
             });
         }
         private switchOrderState(event: JQueryEventObject): void

@@ -7,7 +7,6 @@
     <link href="../../static/css/admin/shoppingCard.css" th:href="@{/css/admin/shoppingCard.css}" rel="stylesheet" media="screen"/>
     <link href="../../static/css/admin/admin.css" th:href="@{/css/admin/admin.css}" rel="stylesheet" media="screen"/>
     <link href="../../static/css/_core.css" th:href="@{/css/_core.css}" rel="stylesheet" media="screen"/>
-    <link href="../../static/css/admin/orderSheetPrint.css" th:href="@{/css/admin/orderSheetPrint.css}" rel="stylesheet" media="print"/>
     <script src="../../static/js/thirdParty/jquery-2.1.4.min.js" th:src="@{/js/thirdParty/jquery-2.1.4.min.js}"></script>
     <script src="../../static/js/admin/shoppingCard/_app.js" th:src="@{/js/admin/shoppingCard/_app.js}"></script>
 </head>
@@ -23,7 +22,7 @@
 
     <div class="core-container-center">
         <div class="core-link-container-box card-container_order">
-            <a class="admin-button-enabled card-button_order">Sammelbestellung als "bestellt" markieren</a>
+            <a class="admin-button-enabled card-button_order">Sammelbestellung beenden und Mails versenden</a>
         </div>
         <div class="core-container-box card-container_print">
             <label class="admin-label">Warenkorb ausdrucken</label>
@@ -68,41 +67,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                <!--<tr orderid="1">
-                    <td>Sascha Walther</td>
-                    <td>970</td>
-                    <td>Pizza Salami</td>
-                    <td>Extra Soße, Jalapenos</td>
-                    <td>medium</td>
-                    <td>7,99 €</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr orderid="2">
-                    <td>Simon Kotowicz</td>
-                    <td>540</td>
-                    <td>Chicken Masala</td>
-                    <td></td>
-                    <td>default</td>
-                    <td>8,50 €</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr orderid="3">
-                    <td>Daniel Keiss</td>
-                    <td>980</td>
-                    <td>Pizza Hamburg</td>
-                    <td>doppelt Käse</td>
-                    <td>large</td>
-                    <td>9,57 €</td>
-                    <td></td>
-                    <td></td>
-                </tr>-->
                 </tbody>
             </table>
         </div>
     </div>
-    <div class="orderSummery"></div>
+    <div class="orderSummary card_orderSummary"></div>
     <div th:replace="fragments/footer :: footer">&nbsp;</div>
 </body>
 </html>
