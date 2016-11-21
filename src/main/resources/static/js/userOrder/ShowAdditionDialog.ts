@@ -18,10 +18,11 @@ namespace WebApplication.UserOrder
 
         private _cssShowDialog = "userOrder-additionalDialog-showContainer";
         private _cssSelectAdditions = "userOrder-additionalDialog-selectedAdditions";
+        private _cssAdditionalTitleRed = "userOrder-additionalDialog-titleRed";
 
         private _additionalBox: JQuery = null;
         private _additionalDialog: JQuery = null;
-        private _additionalBoxMenuSelector: JQuery = null;
+        private _additionalBoxMenuSelectorDiv: JQuery = null;
         private _orderOverviewProduct: JQuery = null;
         private _orderOverviewAddition: JQuery = null;
         private _orderOverviewUserDiscount: JQuery = null;
@@ -47,15 +48,15 @@ namespace WebApplication.UserOrder
             this.setProductData();
             this.calcOrder();
 
-            this._additionalBoxMenuSelector = $("." + UserOrderSelector.additionalBoxMenusSelector + " div");
+            this._additionalBoxMenuSelectorDiv = $("." + UserOrderSelector.additionalBoxMenusSelector + " div");
             this._additionalDialog = $(UserOrderSelector.additionalDialog).addClass(this._cssShowDialog);
         }
 
         public start()
         {
             this._closeDialog.on("click", () => { this.closeDialog() });
-
-            this._additionalBoxMenuSelector.on("click", event => { this.selectAdditions(event); });
+            this._additionalBoxMenuSelectorDiv.on("click", event => { this.selectAdditions(event); });
+            this._orderSubmit.on("click", () => { this.checkAndSubmitOrder(); });
         }
 
         private existProductIdInAdditions()
@@ -171,6 +172,13 @@ namespace WebApplication.UserOrder
                 });
 
             target.addClass(this._cssSelectAdditions);
+
+            target
+                .parent()
+                .parent()
+                .find("span.title")
+                .first()
+                .removeClass(this._cssAdditionalTitleRed);
         }
 
         private selectMultiAdditions(target: JQuery): void
@@ -188,5 +196,34 @@ namespace WebApplication.UserOrder
         {
             return parseInt(target.attr("additionalId"));
         }
+
+
+        private checkAndSubmitOrder()
+        {
+            this._additionalBoxMenuSelectorDiv
+                .parent()
+                .each( (index, element) => {
+                    if ($(element).attr("duty") == "true")
+                    {
+                        if ( $(element).find(`div.${this._cssSelectAdditions}`).length != 1)
+                        {
+                            $(element)
+                                .parent()
+                                .find("span.title")
+                                .first()
+                                .addClass(this._cssAdditionalTitleRed);
+                        }
+                    }
+                });
+
+
+        }
+    }
+
+    export class SendOrder implements IOrder
+    {
+        productId: number;
+        productVariationId: number;
+        additionalIds: number[];
     }
 }

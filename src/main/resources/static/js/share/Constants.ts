@@ -9,6 +9,7 @@ class WebService
     public static user = `${window.location.origin}/rest/user`;
     public static currentUser = `${window.location.origin}/rest/user/current`;
     public static addition = `${window.location.origin}/rest/additional`;
+    public static order = `${window.location.origin}/rest/user/order`;
 }
 
 class UserManagementSelectors

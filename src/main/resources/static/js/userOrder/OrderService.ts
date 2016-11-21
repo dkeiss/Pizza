@@ -23,5 +23,10 @@ namespace WebApplication.UserOrder
         {
             WebServiceAccess.ajaxGet(WebService.currentUser, getUser);
         }
+
+        public static sendOrder(sendOrder: IOrder, onSuccess: (xhr: any) => void)
+        {
+            WebServiceAccess.ajaxPost(WebService.order, sendOrder, onSuccess);
+        }
     }
 }
