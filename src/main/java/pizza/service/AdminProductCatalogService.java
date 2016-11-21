@@ -1,5 +1,6 @@
 package pizza.service;
 
+import org.springframework.web.multipart.MultipartFile;
 import pizza.vo.product.menu.ProductCatalogFullVO;
 import pizza.vo.product.menu.ProductCatalogInfoVO;
 
@@ -9,5 +10,7 @@ import pizza.vo.product.menu.ProductCatalogInfoVO;
 public interface AdminProductCatalogService {
 
     ProductCatalogInfoVO createProductCatalogFull(ProductCatalogFullVO productCatalogFull);
+
+    ProductCatalogFullVO getProductCatalogFullVO(MultipartFile file);
 
 }

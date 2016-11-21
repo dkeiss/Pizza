@@ -59,7 +59,7 @@ public class BulkOrderController {
     public
     @ResponseBody
     BulkOrderVO finishBulkOrder() {
-        return bulkOrderService.finishActiveBulkOrder();
+        return bulkOrderService.finishOpenBulkOrder();
     }
 
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.PUT)

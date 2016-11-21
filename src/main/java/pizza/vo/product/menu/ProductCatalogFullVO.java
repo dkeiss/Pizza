@@ -11,7 +11,6 @@ import java.util.List;
  * Created by Daniel Keiss on 06.11.2016.
  */
 @Data
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductCatalogFullVO {
 
     @NotNull

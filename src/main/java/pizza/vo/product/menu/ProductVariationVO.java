@@ -10,7 +10,6 @@ import java.util.Date;
  * Created by Daniel Keiss on 28.10.2016.
  */
 @Data
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductVariationVO {
 
     private Integer productVariationId;
