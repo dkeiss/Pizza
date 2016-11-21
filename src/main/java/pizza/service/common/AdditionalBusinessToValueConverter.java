@@ -31,12 +31,12 @@ public class AdditionalBusinessToValueConverter {
         additionalCategoryVO.setDuty(additionalCategory.getDuty());
         additionalCategoryVO.setCreationDate(additionalCategory.getCreationDate());
         additionalCategoryVO.setAdditionals(getAdditionalsFromBO(additionalCategory.getAdditionals()));
-        additionalCategoryVO.setProductIds(getProductsFromProductsString(additionalCategory));
+        additionalCategoryVO.setProductIds(getProductIdsFromProductsString(additionalCategory.getProductIds()));
         return additionalCategoryVO;
     }
 
     private static List<AdditionalVO> getAdditionalsFromBO(List<Additional> additionals) {
-        if(additionals == null){
+        if (additionals == null) {
             return null;
         }
         return additionals.stream().map(AdditionalBusinessToValueConverter::getAdditionalFromBO).collect(Collectors.toList());
@@ -59,8 +59,7 @@ public class AdditionalBusinessToValueConverter {
         return copyFromBusinessObject(additionalPrice, new AdditionalPriceVO());
     }
 
-    private static List<Integer> getProductsFromProductsString(AdditionalCategory additionalCategory) {
-        String products = additionalCategory.getProductIds();
+    public static List<Integer> getProductIdsFromProductsString(String products) {
         if (StringUtils.isEmpty(products)) {
             return new ArrayList<>();
         }
