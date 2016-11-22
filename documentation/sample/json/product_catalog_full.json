@@ -1,9 +1,8 @@
 {
   "productCatalog": {
-    "name": "test",
+    "name": "speedpizza",
     "productCategories": [
       {
-        "id": null,
         "name": "Angebot",
         "productGroups": [
           {
@@ -15,7 +14,7 @@
                 "description": "Hähnchenfleisch mit Mandeln, versch. Gemüse, leicht-scharfer Currysauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.5
                   }
                 ]
@@ -26,7 +25,7 @@
                 "description": "Kartoffeln, Broccoli, fr. Paprika, fr. Tomaten, Spinat, leicht-scharfe Currysauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.2
                   }
                 ]
@@ -37,7 +36,7 @@
                 "description": "Lammfleisch gebraten, fr. Tomaten, fr. Paprika, Ingwer, Zwiebeln, leicht-scharfe Currysauc",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 9.6
                   }
                 ]
@@ -48,7 +47,7 @@
                 "description": "Lammfleisch mit fr. Tomaten, Auberginen, Zucchini, Zwiebeln, leicht-scharfe Currysauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 9.6
                   }
                 ]
@@ -59,7 +58,7 @@
                 "description": "Hühnerfleisch mit Gemüse in deftig-leckerer Currysauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -70,7 +69,7 @@
                 "description": "Hühnerfleisch mit Kartoffeln in deftig-leckerer Currysauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -81,7 +80,7 @@
                 "description": "Lammfleisch gebraten mit Ingwer, Knoblauch, Spinat, fr. Tomaten, Currysauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 9.6
                   }
                 ]
@@ -92,7 +91,7 @@
                 "description": "Hähnchenfleisch, fr. Paprika, Zwiebeln, Peperoni, Ingwer, Currysauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.8
                   }
                 ]
@@ -103,7 +102,7 @@
                 "description": "Garnelen, fr. Tomaten, Zwiebeln, fr. Champignons in Currysauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 11.9
                   }
                 ]
@@ -113,7 +112,6 @@
         ]
       },
       {
-        "id": null,
         "name": "Pizza",
         "productGroups": [
           {
@@ -125,15 +123,15 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 3.2
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 4.4
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 6.3
                   }
                 ]
@@ -144,15 +142,15 @@
                 "description": "mit Gyros, Zwiebeln, Peperoni, Tzatziki (ohne Tomatensauce)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.7
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.6
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.9
                   }
                 ]
@@ -163,15 +161,15 @@
                 "description": "mit Salami",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 4.4
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 5.9
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.4
                   }
                 ]
@@ -182,15 +180,15 @@
                 "description": "mit Hähnchenfleisch, roten Zwiebeln, Jalapenos, Barbecuesauce (ohne Tomatensauce)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.6
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 8.6
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 9.6
                   }
                 ]
@@ -201,15 +199,15 @@
                 "description": "mit Vorderschinken",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 4.4
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 5.9
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.4
                   }
                 ]
@@ -220,15 +218,15 @@
                 "description": "fr. Champignons",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 4.5
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 6.1
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.4
                   }
                 ]
@@ -239,15 +237,15 @@
                 "description": "Gyros, Zwiebeln, Weichkäse, Peperoni",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.1
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.4
                   }
                 ]
@@ -258,15 +256,15 @@
                 "description": "Hollandaise-Sauce, Broccoli, Vorderschinken (ohne Tomatensauce)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.6
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.3
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.5
                   }
                 ]
@@ -277,15 +275,15 @@
                 "description": "mit Thunfisch",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 4.6
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 6.2
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.9
                   }
                 ]
@@ -296,15 +294,15 @@
                 "description": "mit Spinat (Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 4.4
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 6.2
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.8
                   }
                 ]
@@ -315,15 +313,15 @@
                 "description": "Peperonisalami, fr. Paprika, Jalapenos",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.3
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.7
                   }
                 ]
@@ -334,15 +332,15 @@
                 "description": "mit Mais, Zwiebeln, Barbecue-Sauce, Paprika (ohne Tomatensauce)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.1
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.9
                   }
                 ]
@@ -353,15 +351,15 @@
                 "description": "mit Pute, Paprika, Broccoli, Sauce-Hollandaise (ohne Tomatensauce)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.6
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.4
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.9
                   }
                 ]
@@ -372,15 +370,15 @@
                 "description": "mit Spaghetti, Fleischsauce",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 4.7
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.3
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.7
                   }
                 ]
@@ -391,15 +389,15 @@
                 "description": "mit Putenbrust, Currysauce, Ananas (ohne Tomatensauce)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.4
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.6
                   }
                 ]
@@ -410,15 +408,15 @@
                 "description": "mit Meeresfrüchte (Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.6
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.8
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 9.1
                   }
                 ]
@@ -429,15 +427,15 @@
                 "description": "mit Gyros",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 4.9
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.1
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.3
                   }
                 ]
@@ -448,15 +446,15 @@
                 "description": "mit Salami, Peperoni",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.1
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.3
                   }
                 ]
@@ -467,15 +465,15 @@
                 "description": "Mozzarella, fr. Tomaten (Basilikum)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.2
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.4
                   }
                 ]
@@ -486,15 +484,15 @@
                 "description": "Sardellen, Kapern, Oliven6, Knoblauch",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.3
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.6
                   }
                 ]
@@ -505,15 +503,15 @@
                 "description": "Vorderschinken, fr. Champignons, Salami",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.2
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.2
                   }
                 ]
@@ -524,15 +522,15 @@
                 "description": "Ananas, Vorderschinken",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 6.9
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.4
                   }
                 ]
@@ -543,15 +541,15 @@
                 "description": "Räucherlachs, fr. Tomaten, Scampi (Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.9
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.9
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 9.5
                   }
                 ]
@@ -562,15 +560,15 @@
                 "description": "mit Hähnchenbrust, Mozzarella",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.3
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.5
                   }
                 ]
@@ -581,15 +579,15 @@
                 "description": "Barbeque-Sauce, Mozzarella, Speck, Peperoni, Champignons (ohne Tomatensauce)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.7
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 6.9
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.1
                   }
                 ]
@@ -600,15 +598,15 @@
                 "description": "Thunfisch, Weichkäse, Zwiebeln, Tomaten, Peperoni",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.4
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.8
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.3
                   }
                 ]
@@ -619,15 +617,15 @@
                 "description": "Weichkäse, Zwiebeln, fr. Tomaten",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 4.9
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 6.8
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.9
                   }
                 ]
@@ -638,15 +636,15 @@
                 "description": "Weichkäse, Spinat, (Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 6.9
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.1
                   }
                 ]
@@ -657,15 +655,15 @@
                 "description": "Spinat, Ei, Salami, Vorderschinken, fr. Tomaten, Mozzarella",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.5
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.4
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.7
                   }
                 ]
@@ -676,15 +674,15 @@
                 "description": "Parmaschinken, Ruccola",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.9
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.6
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 9.2
                   }
                 ]
@@ -695,15 +693,15 @@
                 "description": "mit Thunfisch, Zwiebeln, Salami",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.2
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.1
                   }
                 ]
@@ -714,15 +712,15 @@
                 "description": "mit Thunfisch, Zwiebeln, Sardellen, Oliven",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.3
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.1
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.3
                   }
                 ]
@@ -733,15 +731,15 @@
                 "description": "Spinat, Champignons, Mozzarella",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.2
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.4
                   }
                 ]
@@ -752,15 +750,15 @@
                 "description": "mit Spinat, fr. Champignons, Broccoli, Artischocken (Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.4
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.1
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.4
                   }
                 ]
@@ -771,15 +769,15 @@
                 "description": "Sauce-Hollandaise, Gyros, Jalapenos (ohne Tomatensauce)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.7
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.4
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.7
                   }
                 ]
@@ -790,15 +788,15 @@
                 "description": "mit fr. Champignons, Zwiebeln, Salami, Vorderschinken",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.4
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.3
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.4
                   }
                 ]
@@ -809,15 +807,15 @@
                 "description": "mit Thunfisch, fr. Champignons, Vorderschinken, Salami",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.4
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.5
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.4
                   }
                 ]
@@ -828,15 +826,15 @@
                 "description": "mit Thunfisch, Champignons, Zwiebeln, Vorderschinken",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.7
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.3
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.6
                   }
                 ]
@@ -847,11 +845,11 @@
                 "description": "Gefüllt mit Thunfisch, fr. Champignons, Vorderschinken",
                 "productVariations": [
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.4
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.7
                   }
                 ]
@@ -862,11 +860,11 @@
                 "description": "Gefüllt mit roter Zwiebel, Gyros, Krautsalat",
                 "productVariations": [
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.4
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.9
                   }
                 ]
@@ -877,11 +875,11 @@
                 "description": "Gefüllt mit Spinat, fr. Champignons, Weichkäse",
                 "productVariations": [
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.3
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.6
                   }
                 ]
@@ -892,15 +890,15 @@
                 "description": "mit Putenbrust, Broccoli, Mais",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.6
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.4
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.7
                   }
                 ]
@@ -911,15 +909,15 @@
                 "description": "mit Salami, fr. Paprika, Peperoni",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 6.1
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.1
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.1
                   }
                 ]
@@ -930,15 +928,15 @@
                 "description": "mit Spinat, Scampi, fr. Tomaten, Mozzarella (Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.9
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.6
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 9.2
                   }
                 ]
@@ -949,15 +947,15 @@
                 "description": "mit Scampi (Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.3
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.3
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.7
                   }
                 ]
@@ -968,15 +966,15 @@
                 "description": "vier verschiedene Käsesorten",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.6
                   },
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 7.2
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.7
                   }
                 ]
@@ -987,11 +985,11 @@
                 "description": "mit Garnelen, Knoblauch",
                 "productVariations": [
                   {
-                    "name": "medium",
+                    "name": "mittel",
                     "price": 9.6
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 11.9
                   }
                 ]
@@ -1007,7 +1005,7 @@
                 "description": "für ca. 5 Personen (40x60 cm)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 19
                   }
                 ]
@@ -1018,7 +1016,7 @@
                 "description": "für ca. 4 Personen (rund 45 cm)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 15
                   }
                 ]
@@ -1034,7 +1032,7 @@
                 "description": "Pizzabrötchen mit Kräuterbutter ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.8
                   }
                 ]
@@ -1045,7 +1043,7 @@
                 "description": "Pizzabrötchen mit Aioli",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.9
                   }
                 ]
@@ -1056,7 +1054,7 @@
                 "description": "(7 Stk.) gefüllt mit Gouda und Thunfisch",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.9
                   }
                 ]
@@ -1067,7 +1065,7 @@
                 "description": "(7 Stk.) gefüllt mit Putenfleisch und Gouda ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.9
                   }
                 ]
@@ -1078,7 +1076,7 @@
                 "description": "(7 Stk.) gefüllt mit Gouda und Vorderschinken",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.7
                   }
                 ]
@@ -1089,7 +1087,7 @@
                 "description": "(7 Stk.) gefüllt mit Gyros",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.7
                   }
                 ]
@@ -1100,7 +1098,7 @@
                 "description": "(7 Stk.) gefüllt mit Weichkäse und Spinat",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.7
                   }
                 ]
@@ -1111,7 +1109,7 @@
                 "description": "(7 Stk.) gefüllt mit fr. Champignons, Gouda-Käse[1]",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.8
                   }
                 ]
@@ -1122,7 +1120,7 @@
                 "description": "(7 Stk.) gefüllt mit Gouda und Salami",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.6
                   }
                 ]
@@ -1133,7 +1131,7 @@
                 "description": "Kräuterbutter hausgemacht",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 0.6
                   }
                 ]
@@ -1144,7 +1142,7 @@
                 "description": "hausgemacht",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 0.7
                   }
                 ]
@@ -1154,7 +1152,6 @@
         ]
       },
       {
-        "id": null,
         "name": "Pasta",
         "productGroups": [
           {
@@ -1166,7 +1163,7 @@
                 "description": "mit Tomaten-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6.4
                   }
                 ]
@@ -1177,7 +1174,7 @@
                 "description": "mit Olivenöl,fr.Basilikum,Peperoni,fr.Tomaten,scharf(Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -1188,7 +1185,7 @@
                 "description": "mit (Rind) Fleischsauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6.6
                   }
                 ]
@@ -1199,7 +1196,7 @@
                 "description": "Meeresfrüchte,fr.Tomaten,Zwiebeln,Tomatensauce,Sahnesauce(Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.5
                   }
                 ]
@@ -1210,7 +1207,7 @@
                 "description": "mit Vorderschinken,Ei in Käse-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -1221,7 +1218,7 @@
                 "description": "mit Scampi,fr.Paprika,Sahnesauce(Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.7
                   }
                 ]
@@ -1232,7 +1229,7 @@
                 "description": "mit Thunfisch,Zwiebeln,Erbsen,Tomaten-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -1248,7 +1245,7 @@
                 "description": "Nudelröllchen mit (Rind) Fleischsauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6.6
                   }
                 ]
@@ -1259,7 +1256,7 @@
                 "description": "Nudelröllchen,Spinat,Champignons,Tomaten- Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -1270,7 +1267,7 @@
                 "description": "Nudelröllchen, Broccoli, Zwiebeln, fr. Champignons, Tomaten-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -1281,7 +1278,7 @@
                 "description": "Nudelröllchen,fr.Champignons,Erbsen,Vorderschinken,Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -1292,7 +1289,7 @@
                 "description": "fr.Tomaten,Zwiebeln,Champignons,Tomaten-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -1303,7 +1300,7 @@
                 "description": "Nudelröllchen,Hühnerfleisch,fr.Champignons,Curry-Käse-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.4
                   }
                 ]
@@ -1314,7 +1311,7 @@
                 "description": "Nudelröllchen,Broccoli,Spinat,Sauce-Hollandaise(Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -1325,7 +1322,7 @@
                 "description": "mit Hähnchenfleisch, fr. Champignons, Zwiebeln, fr. Paprika, Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -1341,7 +1338,7 @@
                 "description": "mit Vorderschinken,Ei und Käse-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.2
                   }
                 ]
@@ -1352,7 +1349,7 @@
                 "description": "(Rind) Fleischsauce,Hausrezept",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6.7
                   }
                 ]
@@ -1363,7 +1360,7 @@
                 "description": "Broccoli,Spinat,(Knoblauch),Käse-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -1374,7 +1371,7 @@
                 "description": "Spinat,Vorderschinken,Tomaten-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.3
                   }
                 ]
@@ -1385,7 +1382,7 @@
                 "description": "vier versch. Käsesorten,Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.2
                   }
                 ]
@@ -1396,7 +1393,7 @@
                 "description": "mit Broccoli,Scampi,Sahnesauce (Knoblauch )",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -1412,7 +1409,7 @@
                 "description": "Bandnudeln,Scampi,Spinat,Sahnesauce (Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.8
                   }
                 ]
@@ -1423,7 +1420,7 @@
                 "description": "Bandnudeln,Hühnerfleisch,Champignons,Curry-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.2
                   }
                 ]
@@ -1434,7 +1431,7 @@
                 "description": "Bandnudeln,fr.Champignons,Paprika,Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.3
                   }
                 ]
@@ -1445,7 +1442,7 @@
                 "description": "Bandnudeln, Broccoli, Hühnerfleisch, fr. Tomaten, in Tomaten-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.4
                   }
                 ]
@@ -1456,7 +1453,7 @@
                 "description": "Bandnudeln,Lachs,Tomaten-Sahnesauce (Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -1467,7 +1464,7 @@
                 "description": "Bandnudeln,Vorderschinken,Erbsen,Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -1483,7 +1480,7 @@
                 "description": "Gnocchi,Spinat in Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.2
                   }
                 ]
@@ -1494,7 +1491,7 @@
                 "description": "Gnocchi,Gorgonzola in Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -1505,7 +1502,7 @@
                 "description": "in Sahnesauce,Champignons",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.3
                   }
                 ]
@@ -1516,7 +1513,7 @@
                 "description": "Gnocchi,mit Hühnerfleisch und Broccoli in Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.3
                   }
                 ]
@@ -1527,7 +1524,7 @@
                 "description": "Gnocchi, Hähnchenfleisch, fr. Champignons, fr. Paprika in Tomaten-Sahne-Sauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.8
                   }
                 ]
@@ -1543,7 +1540,7 @@
                 "description": "Maccaroni, Bolognesesauce (hausgemacht, vom Rind)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -1554,7 +1551,7 @@
                 "description": "Maccaroni, fr. Tomaten, Vorderschinken, Erbsen, fr. Champignons, Tomaten-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.8
                   }
                 ]
@@ -1565,7 +1562,7 @@
                 "description": "Spinat, fr. Paprika, Mais, Hollandaise-Sauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -1576,7 +1573,7 @@
                 "description": "Kartoffeln, Broccoli, Vorderschinken, Spinat mit Curry-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -1587,7 +1584,7 @@
                 "description": "Hähnchenbrust, fr. Tomaten, fr. Paprika, Tomaten-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -1598,7 +1595,7 @@
                 "description": "Putenbrust mit Rahmsauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -1609,7 +1606,7 @@
                 "description": "Gyros mit Sauce Hollandaise ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -1620,7 +1617,7 @@
                 "description": "Kartoffeln, fr. Paprika, fr. Champignons, Spinat, Tomaten-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.8
                   }
                 ]
@@ -1631,7 +1628,7 @@
                 "description": "fr. Tomaten, (Rind) Fleischsauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.7
                   }
                 ]
@@ -1642,7 +1639,7 @@
                 "description": "Nudelschichten, Ei, Vorderschinken, Fleischsauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.5
                   }
                 ]
@@ -1653,7 +1650,7 @@
                 "description": "(Rind) Fleischsauce, Sahne, Chilli Con Carne (schartf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.8
                   }
                 ]
@@ -1664,7 +1661,7 @@
                 "description": "Vorderschinken, Broccoli mit Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.7
                   }
                 ]
@@ -1675,7 +1672,7 @@
                 "description": "Gefüllte Nudelröllchen mit Tomaten-Sahnesauce ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.6
                   }
                 ]
@@ -1686,7 +1683,7 @@
                 "description": "Tortellini, Ananas, Vorderschinken und Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.7
                   }
                 ]
@@ -1697,7 +1694,7 @@
                 "description": "mir Reis, Hühnerfleisch, Champignons mit Rahmsauce ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -1708,7 +1705,7 @@
                 "description": "Kartoffeln, Gyros, fr. Paprika, Weichkäse, Sahnesauce ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -1719,7 +1716,7 @@
                 "description": "Bandnudeln mit Putenbrust, fr. Champignons, Sauce-Hollandaise",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -1730,7 +1727,7 @@
                 "description": "Maccaroni, fr.Tomaten, Weichkäse, Rahmsauce ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.7
                   }
                 ]
@@ -1741,7 +1738,7 @@
                 "description": "Maccaroni, Scampi, (Knoblauch) mit Käse-Sahnesauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.6
                   }
                 ]
@@ -1752,7 +1749,7 @@
                 "description": "vier verschiedene Nudelsorten mit Vorderschinken, Tomaten, Sahnesauce ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -1763,7 +1760,7 @@
                 "description": "Maccaroni, fr. Champignons, Broccoli, Spinat, fr. Tomaten in Tomatensauce (Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -1774,7 +1771,7 @@
                 "description": "vier verschiedene Nudelsorten,Sahnesauce,Gyros,Zwiebeln,Weichkäse,Maccaroni",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -1784,7 +1781,6 @@
         ]
       },
       {
-        "id": null,
         "name": "Insalata",
         "productGroups": [
           {
@@ -1796,11 +1792,11 @@
                 "description": "Eisbergsalat,Gurken,Tomaten,gebr.Champignons,Krautsalat,Pep.,rote Zwiebeln,Weichkäse",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.2
                   }
                 ]
@@ -1811,11 +1807,11 @@
                 "description": "Eisbergsalat,Tomaten,Gurken,Paprika,Mais,Möhren,Hähnchenbrust",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.6
                   }
                 ]
@@ -1826,11 +1822,11 @@
                 "description": "Eisbergsalat, Tomaten, Gurken, gebratene Champignons, Broccoli, Hähnchenfleisch",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.5
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 8.1
                   }
                 ]
@@ -1841,11 +1837,11 @@
                 "description": "Eisbergsalat, Tomaten, Gurken, Mais, in der Pfanne gebr. Hähnchenfleisch, Zwiebeln,Paprika",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.9
                   }
                 ]
@@ -1856,11 +1852,11 @@
                 "description": "Eisbergsalat,Gurke,Cherrytomaten,Möhren,rote Zwiebel,Paprika,Rucola",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.6
                   }
                 ]
@@ -1871,11 +1867,11 @@
                 "description": "Eisbergsalat,Tomaten,Gurke,Paprika,Möhren,Mais,rote Beete,Spargel",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 4.4
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 6.5
                   }
                 ]
@@ -1886,11 +1882,11 @@
                 "description": "Eisbergsalat,Tomaten,Gurke,Gyros,rote Zwiebeln,Krautsalat,Peperoni,Weichkäse",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.8
                   }
                 ]
@@ -1901,11 +1897,11 @@
                 "description": "Eisbergsalat,Tomaten,Gurke,Thunfisch,Mais,Zwiebeln",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 4.9
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.2
                   }
                 ]
@@ -1916,11 +1912,11 @@
                 "description": "Eisbergsalat,Tomaten,Gurke,Gouda,Vorderschinken,Ei,Mais,Oliven",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.2
                   }
                 ]
@@ -1931,11 +1927,11 @@
                 "description": "Eisbergsalat,Tomaten,Gurke,Ei,Peperoni,Zwiebeln,Weichkäse,Krautsalat,Oliven",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.3
                   }
                 ]
@@ -1946,11 +1942,11 @@
                 "description": "Eisbergsalat,Tomaten,Gurke,Mais,Thunfisch,Vorderschinken,Gouda,Oliven,Ei",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.3
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.6
                   }
                 ]
@@ -1961,11 +1957,11 @@
                 "description": "Eisbergsalat,Tom.,Gurk.,Gouda,Ei,Vordersch.,Thunf.,Mais,Artischocken,Zwieb.Spargel",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 5.4
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 7.9
                   }
                 ]
@@ -1976,7 +1972,7 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.5
                   }
                 ]
@@ -1987,7 +1983,7 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.5
                   }
                 ]
@@ -1998,7 +1994,7 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.5
                   }
                 ]
@@ -2009,7 +2005,7 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.1
                   }
                 ]
@@ -2020,7 +2016,7 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.1
                   }
                 ]
@@ -2031,7 +2027,7 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.1
                   }
                 ]
@@ -2042,7 +2038,7 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.1
                   }
                 ]
@@ -2053,7 +2049,7 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.1
                   }
                 ]
@@ -2064,7 +2060,7 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.5
                   }
                 ]
@@ -2074,7 +2070,6 @@
         ]
       },
       {
-        "id": null,
         "name": "Baguette",
         "productGroups": [
           {
@@ -2086,7 +2081,7 @@
                 "description": "mit Gouda",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.6
                   }
                 ]
@@ -2097,7 +2092,7 @@
                 "description": "mit Thunfisch",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.4
                   }
                 ]
@@ -2108,7 +2103,7 @@
                 "description": "mit Vorderschinken",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.1
                   }
                 ]
@@ -2119,7 +2114,7 @@
                 "description": "mit Salami",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.1
                   }
                 ]
@@ -2130,7 +2125,7 @@
                 "description": "mit Gouda, Vorderschinken",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.7
                   }
                 ]
@@ -2141,7 +2136,7 @@
                 "description": "mit Gouda, Thunfisch",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.8
                   }
                 ]
@@ -2152,7 +2147,7 @@
                 "description": "mit Parmaschinken, Rucola, fr. Tomaten",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 5.4
                   }
                 ]
@@ -2163,7 +2158,7 @@
                 "description": "mit fr. Tomaten, Mozzarella",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.8
                   }
                 ]
@@ -2174,7 +2169,7 @@
                 "description": "mit Vorderschinken, Ananas, Gouda",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.8
                   }
                 ]
@@ -2185,7 +2180,7 @@
                 "description": "mit Vorderschinken, Gouda, Ei",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.5
                   }
                 ]
@@ -2196,7 +2191,7 @@
                 "description": "mit Hühnerfleisch, Gouda",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 5.4
                   }
                 ]
@@ -2207,7 +2202,7 @@
                 "description": "mit Gyros, Zwiebeln",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 5
                   }
                 ]
@@ -2217,7 +2212,6 @@
         ]
       },
       {
-        "id": null,
         "name": "Schnitzel",
         "productGroups": [
           {
@@ -2229,7 +2223,7 @@
                 "description": "mit Vorderschinken,(Rind)Fleischsauce,Gouda überb.(Beilagensalat)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.4
                   }
                 ]
@@ -2240,7 +2234,7 @@
                 "description": "mit Spargel,Broccoli,Hollandaise-Sauce,Gouda überb. (Beilagensalat)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.4
                   }
                 ]
@@ -2251,7 +2245,7 @@
                 "description": "mit Zitrone (Beilagensalat)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6.9
                   }
                 ]
@@ -2262,7 +2256,7 @@
                 "description": "mit fr.Champignons, Zwiebeln, mit Sahnesauce, Gouda überb. (Beilagensalat)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.4
                   }
                 ]
@@ -2273,7 +2267,7 @@
                 "description": "mit fr. Champignons, Rahmsauce (Beilagensalat)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.8
                   }
                 ]
@@ -2284,7 +2278,7 @@
                 "description": "mit Paprika, Zwiebeln, Gurken (Beilagensalat)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.8
                   }
                 ]
@@ -2295,7 +2289,7 @@
                 "description": "mit Rahmsauce (Beilagensalat)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -2306,7 +2300,7 @@
                 "description": "mit Ananas, Vorderschinken, Sahnesauce, mit Gouda überb. (Beilagensalat)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.4
                   }
                 ]
@@ -2317,7 +2311,7 @@
                 "description": "gef. mit Vorderschinken, Sauce-Hollandaise (Beilagensalat)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.6
                   }
                 ]
@@ -2328,7 +2322,7 @@
                 "description": "mit Mozzarella, Tomatenscheiben, Basilikum und Gouda überb.",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.6
                   }
                 ]
@@ -2339,7 +2333,7 @@
                 "description": "Zwiebeln, Paprika, Tomaten-Sahnesauce (Beilagensalat,scharf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -2350,7 +2344,7 @@
                 "description": "mit Vorderschinken, Spargel, Gouda überb., Sauce-Hollandaise (Beilagensalat)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.5
                   }
                 ]
@@ -2360,7 +2354,6 @@
         ]
       },
       {
-        "id": null,
         "name": "International",
         "productGroups": [
           {
@@ -2372,7 +2365,7 @@
                 "description": "mit Remoulade, Zitrone, Pommes Frites",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6.9
                   }
                 ]
@@ -2383,7 +2376,7 @@
                 "description": "mir Remoulade, Zitrone, grüner Salat",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.2
                   }
                 ]
@@ -2399,7 +2392,7 @@
                 "description": "klein",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 1.5
                   }
                 ]
@@ -2410,7 +2403,7 @@
                 "description": "groß",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2
                   }
                 ]
@@ -2421,7 +2414,7 @@
                 "description": "mit Pommes ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.8
                   }
                 ]
@@ -2432,7 +2425,7 @@
                 "description": "mit Pommes ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.5
                   }
                 ]
@@ -2443,7 +2436,7 @@
                 "description": "(8 Stk.)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.2
                   }
                 ]
@@ -2454,7 +2447,7 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.9
                   }
                 ]
@@ -2465,7 +2458,7 @@
                 "description": "hausgemacht",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2
                   }
                 ]
@@ -2476,7 +2469,7 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 0.5
                   }
                 ]
@@ -2487,7 +2480,7 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 0.5
                   }
                 ]
@@ -2503,7 +2496,7 @@
                 "description": "mit rote Zwiebeln, Krautsalat, Tzatziki",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.8
                   }
                 ]
@@ -2514,7 +2507,7 @@
                 "description": "mit Pommes Frites,rote Zwiebeln,Karutsalat,Tzatziki",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.4
                   }
                 ]
@@ -2525,7 +2518,7 @@
                 "description": "mit Pommes und Tzatziki ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6.6
                   }
                 ]
@@ -2536,7 +2529,7 @@
                 "description": "überbacken mit Sauce Hollandaise, Pommes Frites ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -2552,7 +2545,7 @@
                 "description": "Baked Potatoe mit Vorderschinkenstreifen,Broccoli,Sourcream,Käse überbacken",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.2
                   }
                 ]
@@ -2563,7 +2556,7 @@
                 "description": "Backed Potatoe mit gebr. Hähnchenbrust,Champignons,Hausdressing,überbacken",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.3
                   }
                 ]
@@ -2574,7 +2567,7 @@
                 "description": "Backed Potatoe mit Spinat,Feta-Käse, Zwiebeln,Hausdressing,Käse überbacken",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.4
                   }
                 ]
@@ -2590,7 +2583,7 @@
                 "description": "(6 Stk.) mit Pommes, 1 Sauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 5.9
                   }
                 ]
@@ -2601,7 +2594,7 @@
                 "description": "(9 Stk.) mit Pommes, 2 Saucen",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -2612,7 +2605,7 @@
                 "description": "(20 Stk.) mit Pommes, 3 Saucen",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.9
                   }
                 ]
@@ -2623,7 +2616,7 @@
                 "description": "(6 Stk.) mit BBQ-Sauce-pikant, würzig, Pommes Frites ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6.4
                   }
                 ]
@@ -2634,7 +2627,7 @@
                 "description": "(9 Stk.) mit BBQ-Saucen-pikant, würzig, Pommes Frites ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.6
                   }
                 ]
@@ -2650,7 +2643,7 @@
                 "description": "100 gr. Fleisch, 0.5 l Cola dazu",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6.9
                   }
                 ]
@@ -2661,7 +2654,7 @@
                 "description": "100 gr. Fleisch mit Gouda, 0.5 l Cola dazu",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -2672,7 +2665,7 @@
                 "description": "2x 100 gr. Fleisch, 0.5 l Cola dazu ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -2683,7 +2676,7 @@
                 "description": "2x 100 gr. Fleisch mit Gouda, 0.5 l Cola dazu ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.9
                   }
                 ]
@@ -2694,7 +2687,7 @@
                 "description": "mit 180 gr. Fleisch, Bacon, Jalapenos, dazu 0.5 l Cola",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.5
                   }
                 ]
@@ -2705,7 +2698,7 @@
                 "description": "mit 2x 180gr. Fleisch, Bacon, Jalapenos, dazu 0.5 l Cola",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 9.9
                   }
                 ]
@@ -2716,7 +2709,7 @@
                 "description": "mit Hähnchenfleisch, dazu Coca Cola (0,5 l)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -2727,7 +2720,7 @@
                 "description": "180 gr. Fleisch, Jalapeños, Mais, Chili-Sauce, dazu Coca Cola (0,5 l)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 9.1
                   }
                 ]
@@ -2738,7 +2731,7 @@
                 "description": "180 gr. Fleisch, Barbecue-Sauce, rote Zwiebeln, dazu Coca Cola (0,5 l)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 9.1
                   }
                 ]
@@ -2749,7 +2742,7 @@
                 "description": "180 gr. Fleisch, Curry-Mayo-Sauce, dazu Coca Cola (0,5 l)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 9.1
                   }
                 ]
@@ -2759,7 +2752,6 @@
         ]
       },
       {
-        "id": null,
         "name": "Asia",
         "productGroups": [
           {
@@ -2771,7 +2763,7 @@
                 "description": "mit chin. Gemüse",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.9
                   }
                 ]
@@ -2782,7 +2774,7 @@
                 "description": "mit chin. Gemüse ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 4.1
                   }
                 ]
@@ -2793,7 +2785,7 @@
                 "description": "hausgemacht (scharf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.9
                   }
                 ]
@@ -2804,7 +2796,7 @@
                 "description": "hausgemacht (scharf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.9
                   }
                 ]
@@ -2815,7 +2807,7 @@
                 "description": "Gefüllt mit Hühnerfleisch, chin.Gemüse, süß-sauer-Sauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.7
                   }
                 ]
@@ -2826,7 +2818,7 @@
                 "description": "(8 Stk.) gefüllt mit chin.Gemüse und süß-sauer-Sauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.2
                   }
                 ]
@@ -2837,7 +2829,7 @@
                 "description": "Krabbenchips",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.5
                   }
                 ]
@@ -2853,7 +2845,7 @@
                 "description": "(scharf) mit Ei, Scampi,Zwiebeln,Hühnerfleisch,Erbsen,Curry,Gemüse",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.2
                   }
                 ]
@@ -2864,7 +2856,7 @@
                 "description": "mit Ei, Schweinefleisch, chin. Gemüse",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.4
                   }
                 ]
@@ -2875,7 +2867,7 @@
                 "description": "mit Ei, Hühnerfleisch, chin. Gemüse",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -2886,7 +2878,7 @@
                 "description": "mit Ei, Rindfleisch, chin. Gemüse",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -2897,7 +2889,7 @@
                 "description": "mit Ei, Rindfleisch, Schweinefleisch, Hühnerfleisch, chin. Gemüse",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.9
                   }
                 ]
@@ -2908,7 +2900,7 @@
                 "description": "Gebratener Reis mit Ei, chin. Gemüse ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6.3
                   }
                 ]
@@ -2924,7 +2916,7 @@
                 "description": "mit Ei, Schweinefleisch, chin. Gemüse",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.1
                   }
                 ]
@@ -2935,7 +2927,7 @@
                 "description": "mit Ei, Hühnerfleisch, chin. Gemüse ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -2946,7 +2938,7 @@
                 "description": "mit Ei, Rindfleisch, chin. Gemüse ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 7.9
                   }
                 ]
@@ -2957,7 +2949,7 @@
                 "description": "mit Ei, Hühnerfleisch, Vorderschinken, Curry, Scampi, Gemüse ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.2
                   }
                 ]
@@ -2968,7 +2960,7 @@
                 "description": "mit Ei, Rindfleisch, Schweinefleisch, Hühnerfleisch, chin. Gemüse ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.9
                   }
                 ]
@@ -2979,7 +2971,7 @@
                 "description": "mit Ei, Scampi, chin. Gemüse (Knoblauch)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.2
                   }
                 ]
@@ -2990,7 +2982,7 @@
                 "description": "Gebratene Nudeln mit Ei, chin. Gemüse",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6.3
                   }
                 ]
@@ -3006,7 +2998,7 @@
                 "description": "mit Gemüse ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 11.3
                   }
                 ]
@@ -3017,7 +3009,7 @@
                 "description": "mit Bambus, fr.Campignons, Paprika, Morcheln(Hoisin-Sauce)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 11.3
                   }
                 ]
@@ -3028,7 +3020,7 @@
                 "description": "mit Bambus, Paprika, Möhren, Champignons(scharf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 11.3
                   }
                 ]
@@ -3039,7 +3031,7 @@
                 "description": "mit Bambus, Paprika, Glasnudeln",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 11.3
                   }
                 ]
@@ -3050,7 +3042,7 @@
                 "description": "mit Bambus, Paprika, Möhren",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 11.3
                   }
                 ]
@@ -3066,7 +3058,7 @@
                 "description": "mit chin. Gemüse ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 10.3
                   }
                 ]
@@ -3077,7 +3069,7 @@
                 "description": "Bambus, fr.Champignons, Paprika, Bambus (scharf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 10.3
                   }
                 ]
@@ -3088,7 +3080,7 @@
                 "description": "mit Ananas, Paprika, Bambus, Möhren",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 10.3
                   }
                 ]
@@ -3099,7 +3091,7 @@
                 "description": "mit Bambus, fr.Champignons, Paprika, Morcheln, Hoisinsauce(scharf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 10.3
                   }
                 ]
@@ -3110,7 +3102,7 @@
                 "description": "mit chin. Gemüse",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 10.3
                   }
                 ]
@@ -3126,7 +3118,7 @@
                 "description": "Bambus, Paprika, Zwiebeln, Möhren",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3137,7 +3129,7 @@
                 "description": "chin. Gemüse ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3148,7 +3140,7 @@
                 "description": "Bambus, Paprika, fr.Champignons, Bambus, Peperoni",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3159,7 +3151,7 @@
                 "description": "Bambus, Ananas",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3170,7 +3162,7 @@
                 "description": "Bambus, fr.Champignons, Paprika, Morcheln, Hoisinsauce(scharf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3181,7 +3173,7 @@
                 "description": "Bambus, Möhren, Paprika, Ananas, süß-sauer, paniert",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3192,7 +3184,7 @@
                 "description": "Bambus, Paprika, Banane, Ananas, Curry (leicht scharf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3203,7 +3195,7 @@
                 "description": "Paprika, Bambus, Möhren, Erdnusssauce",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3219,7 +3211,7 @@
                 "description": "mit chin. Gemüse ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3230,7 +3222,7 @@
                 "description": "mit Bambus, Paprika, fr. Champignons (scharf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3241,7 +3233,7 @@
                 "description": "mit Bambus, fr. Champignons, Paprika, Morcheln, Hoisinsauce (scharf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3252,7 +3244,7 @@
                 "description": "mit Ananas, Paprika, süß-sauer, paniert, Bambus ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3263,7 +3255,7 @@
                 "description": "mit Bambus, Paprika, Zwiebeln, Möhren, Bambus (scharf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3274,7 +3266,7 @@
                 "description": "mit Bambus, Paprika, Ananas, Möhren, süß-sauer ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.1
                   }
                 ]
@@ -3290,7 +3282,7 @@
                 "description": "mit chin. Gemüse ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.2
                   }
                 ]
@@ -3301,7 +3293,7 @@
                 "description": "miz Zwiebeln",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.2
                   }
                 ]
@@ -3312,7 +3304,7 @@
                 "description": "mit Bambus, Paprika, fr. Champignons",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.2
                   }
                 ]
@@ -3323,7 +3315,7 @@
                 "description": "mit Broccoli, fr. Champignons, Bambus ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.2
                   }
                 ]
@@ -3334,7 +3326,7 @@
                 "description": "mit Bambus, fr. Champignons, Paprika, Morcheln, Hoisinsauce ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.2
                   }
                 ]
@@ -3345,7 +3337,7 @@
                 "description": "mit Bambus, Paprika, Zwiebeln (scharf)",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 8.2
                   }
                 ]
@@ -3355,7 +3347,6 @@
         ]
       },
       {
-        "id": null,
         "name": "Kiddy-Box",
         "productGroups": [
           {
@@ -3367,7 +3358,7 @@
                 "description": "mit Pommes Frites, 1 Capri Sonne, 1 Überraschung",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 5.5
                   }
                 ]
@@ -3378,7 +3369,7 @@
                 "description": "mit Pommes Frites, 1 Capri Sonne, 1 Überraschung ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 5.5
                   }
                 ]
@@ -3389,7 +3380,7 @@
                 "description": "mit 1 Capri Sonne, 1 Überraschung",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 5.5
                   }
                 ]
@@ -3400,7 +3391,7 @@
                 "description": "1 Capri Sonne, 1 Überraschung",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 5.5
                   }
                 ]
@@ -3411,7 +3402,7 @@
                 "description": "mit Gemüse, 1 Capri Sonne, 1 Überraschung",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 5.5
                   }
                 ]
@@ -3421,7 +3412,6 @@
         ]
       },
       {
-        "id": null,
         "name": "Getränke",
         "productGroups": [
           {
@@ -3433,7 +3423,7 @@
                 "description": "1l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.5
                   }
                 ]
@@ -3444,7 +3434,7 @@
                 "description": "1l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.5
                   }
                 ]
@@ -3455,7 +3445,7 @@
                 "description": "1l Flasche ",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.5
                   }
                 ]
@@ -3466,7 +3456,7 @@
                 "description": "1l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.5
                   }
                 ]
@@ -3477,7 +3467,7 @@
                 "description": "1l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.5
                   }
                 ]
@@ -3488,7 +3478,7 @@
                 "description": "1l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.5
                   }
                 ]
@@ -3499,7 +3489,7 @@
                 "description": "0.7l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.1
                   }
                 ]
@@ -3510,7 +3500,7 @@
                 "description": "1l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 2.5
                   }
                 ]
@@ -3521,7 +3511,7 @@
                 "description": "1l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3
                   }
                 ]
@@ -3532,7 +3522,7 @@
                 "description": "1l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3
                   }
                 ]
@@ -3543,7 +3533,7 @@
                 "description": "0,5l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 1.8
                   }
                 ]
@@ -3554,7 +3544,7 @@
                 "description": "0,5l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 1.8
                   }
                 ]
@@ -3565,7 +3555,7 @@
                 "description": "0,5l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 1.8
                   }
                 ]
@@ -3576,7 +3566,7 @@
                 "description": "(Alkoholfrei) 0,5l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 1.8
                   }
                 ]
@@ -3587,7 +3577,7 @@
                 "description": "0,5l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 1.8
                   }
                 ]
@@ -3598,7 +3588,7 @@
                 "description": "Mischgetränk, Cola",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 1.8
                   }
                 ]
@@ -3609,7 +3599,7 @@
                 "description": "0,5l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 1.8
                   }
                 ]
@@ -3620,7 +3610,7 @@
                 "description": "0,75l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6
                   }
                 ]
@@ -3631,7 +3621,7 @@
                 "description": "0,75l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6
                   }
                 ]
@@ -3642,7 +3632,7 @@
                 "description": "0,75l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6
                   }
                 ]
@@ -3653,7 +3643,7 @@
                 "description": "0.75l Flasche",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 6
                   }
                 ]
@@ -3663,7 +3653,6 @@
         ]
       },
       {
-        "id": null,
         "name": "Dessert",
         "productGroups": [
           {
@@ -3675,7 +3664,7 @@
                 "description": "hausgemacht mit Sahne",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.5
                   }
                 ]
@@ -3686,7 +3675,7 @@
                 "description": "hausgemacht mit Honig",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.5
                   }
                 ]
@@ -3697,7 +3686,7 @@
                 "description": "hausgemacht",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.2
                   }
                 ]
@@ -3708,7 +3697,7 @@
                 "description": "hausgemacht mit Honig",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.5
                   }
                 ]
@@ -3719,7 +3708,7 @@
                 "description": "hausgemacht mit Honig",
                 "productVariations": [
                   {
-                    "name": "default",
+                    "name": "normal",
                     "price": 3.5
                   }
                 ]
@@ -3735,11 +3724,11 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 3.7
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 6.9
                   }
                 ]
@@ -3750,11 +3739,11 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 3.7
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 6.9
                   }
                 ]
@@ -3765,11 +3754,11 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 3.7
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 6.9
                   }
                 ]
@@ -3780,11 +3769,11 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 3.7
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 6.9
                   }
                 ]
@@ -3795,11 +3784,11 @@
                 "description": "",
                 "productVariations": [
                   {
-                    "name": "small",
+                    "name": "klein",
                     "price": 3.7
                   },
                   {
-                    "name": "large",
+                    "name": "groß",
                     "price": 6.9
                   }
                 ]

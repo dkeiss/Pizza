@@ -14,15 +14,15 @@
                 "description": "Produktbeschreibung",
                 "productVariations": [
                   {
-                    "name": "Produktgröße z.B. klein",
+                    "name": "Produktgröße (klein/mittel/groß/normal)",
                     "price": 3.2
                   },
                   {
-                    "name": "Produktgröße z.B. mittel",
+                    "name": "Produktgröße (klein/mittel/groß/normal)",
                     "price": 4.4
                   },
                   {
-                    "name": "Produktgröße z.B. groß",
+                    "name": "Produktgröße (klein/mittel/groß/normal)",
                     "price": 6.3
                   }
                 ]
@@ -33,15 +33,15 @@
                 "description": "Produktbeschreibung",
                 "productVariations": [
                   {
-                    "name": "Produktgröße z.B. klein",
+                    "name": "Produktgröße (klein/mittel/groß/normal)",
                     "price": 4.4
                   },
                   {
-                    "name": "Produktgröße z.B. mittel",
+                    "name": "Produktgröße (klein/mittel/groß/normal)",
                     "price": 5.9
                   },
                   {
-                    "name": "Produktgröße z.B. groß",
+                    "name": "Produktgröße (klein/mittel/groß/normal)",
                     "price": 7.4
                   }
                 ]
@@ -57,7 +57,7 @@
                 "description": "Produktbeschreibung",
                 "productVariations": [
                   {
-                    "name": "Produktgröße z.B. normal",
+                    "name": "Produktgröße (klein/mittel/groß/normal)",
                     "price": 19
                   }
                 ]
@@ -78,11 +78,11 @@
                 "description": "Produktbeschreibung",
                 "productVariations": [
                   {
-                    "name": "Produktgröße z.B. mittel",
+                    "name": "Produktgröße (klein/mittel/groß/normal)",
                     "price": 5.2
                   },
                   {
-                    "name": "Produktgröße z.B. groß",
+                    "name": "Produktgröße (klein/mittel/groß/normal)",
                     "price": 7.2
                   }
                 ]

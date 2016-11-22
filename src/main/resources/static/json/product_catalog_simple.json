@@ -14,7 +14,7 @@
                 "description": "Produktbeschreibung",
                 "productVariations": [
                   {
-                    "name": "Produktgröße z.B. klein",
+                    "name": "Produktgröße z.B. (klein/mittel/groß/normal)",
                     "price": 4.4
                   }
                 ]
@@ -25,7 +25,7 @@
                 "description": "Produktbeschreibung",
                 "productVariations": [
                   {
-                    "name": "Produktgröße z.B. klein",
+                    "name": "Produktgröße (klein/mittel/groß/normal)",
                     "price": 5.9
                   }
                 ]
