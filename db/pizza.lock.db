@@ -1,6 +1,6 @@
 #FileLock
-#Tue Nov 22 01:34:03 CET 2016
-hostName=DESKTOP-O0LMQQC.fritz.box
-id=1588971dfb66a8509a0cf468998f52db2528fcc6e70
+#Tue Nov 22 11:48:34 CET 2016
+hostName=WWD0539.ads.wmgruppe.de
+id=1588ba6cbf3e138d9178f8426ba2904890824b96ae0
 method=file
-server=192.168.178.29\:62891
+server=192.168.42.171\:58247
