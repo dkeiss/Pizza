@@ -41,7 +41,7 @@ public class UserOrderBusinessToValueObjectConverter {
 		userOrderDetailsVO.setProductName(product.getName());
 		ProductVariation productVariation = userOrder.getProductVariation();
 		userOrderDetailsVO.setProductVariationId(productVariation.getProductVariationId());
-		userOrderDetailsVO.setProductVariationName(productVariation.getName());
+		userOrderDetailsVO.setProductVariationName(productVariation.getName().name());
 		if (userOrder.getUserOrderAdditionals() != null) {
 			userOrderDetailsVO.setUserOrderAdditionals(getUserOrderAdditionalsFromBOs(userOrder.getUserOrderAdditionals()));
 		}

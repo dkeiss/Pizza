@@ -18,7 +18,8 @@ public class ProductVariation {
     @SequenceGenerator(name = "PRODUCT_VARIATION_ID_SEQ", sequenceName = "PRODUCT_VARIATION_ID_SEQ", allocationSize = 100)
     private Integer productVariationId;
 
-    private String name;
+    @Enumerated(EnumType.STRING)
+    private ProductVariationType name;
 
     private BigDecimal price;
 
