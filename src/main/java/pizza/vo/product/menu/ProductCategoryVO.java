@@ -1,6 +1,5 @@
 package pizza.vo.product.menu;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import java.util.Date;
