@@ -30,7 +30,7 @@ namespace WebApplication.UserOrder
             this.createProductCategories(this._productCatalog.productCategories);
         }
 
-        public start(returnDataForAddition: (priceSize: number, product: IProduct) => void): void
+        public start(returnDataForAddition: (product: IProduct, productVariationId: number, priceSize: number) => void): void
         {
             this._menuClickSelectors = $(UserOrderSelector.menuClickSelectors);
             this._menuClickSelectors.on("click", event => { this.showHideCategories(event)} );
@@ -148,7 +148,7 @@ namespace WebApplication.UserOrder
         {
             if (this._productPriceVariations[0])
             {
-                return "<td class='userOrder-price-cell'><div priceSize='0' class='" + UserOrderSelector.CellSelectors + "'>" + variations[0].price + "</div></td>";
+                return `<td class='userOrder-price-cell'><div priceSize='0' productVariationId='${variations[0].productVariationId}' class='${UserOrderSelector.CellSelectors}'>${variations[0].price}</div></td>`;
             }
 
             let returnPriceElements = "";
@@ -158,7 +158,7 @@ namespace WebApplication.UserOrder
                 const variation = variations.filter(item => item.name == "small");
                 if (variation.length > 0)
                 {
-                    returnPriceElements += "<td class='userOrder-price-cell'><div priceSize='0' class='" + UserOrderSelector.CellSelectors + "'>" + variation[0].price + "</div></td>";
+                    returnPriceElements += `<td class='userOrder-price-cell'><div priceSize='0' productVariationId='${variation[0].productVariationId}' class='${UserOrderSelector.CellSelectors}'>${variation[0].price}</div></td>`;
                 }
                 else
                 {
@@ -171,7 +171,7 @@ namespace WebApplication.UserOrder
                 const variation = variations.filter(item => item.name == "medium");
                 if (variation.length > 0)
                 {
-                    returnPriceElements += "<td class='userOrder-price-cell'><div priceSize='1' class='" + UserOrderSelector.CellSelectors + "'>" + variation[0].price + "</div></td>";
+                    returnPriceElements += `<td class='userOrder-price-cell'><div priceSize='1' productVariationId='${variation[0].productVariationId}' class='${UserOrderSelector.CellSelectors}'>${variation[0].price}</div></td>`;
                 }
                 else
                 {
@@ -184,7 +184,7 @@ namespace WebApplication.UserOrder
                 const variation = variations.filter(item => item.name == "large");
                 if (variation.length > 0)
                 {
-                    returnPriceElements += "<td class='userOrder-price-cell'><div priceSize='2' class='" + UserOrderSelector.CellSelectors + "'>" + variation[0].price + "</div></td>";
+                    returnPriceElements += `<td class='userOrder-price-cell'><div priceSize='2' productVariationId='${variation[0].productVariationId}' class='${UserOrderSelector.CellSelectors}'>${variation[0].price}</div></td>`;
                 }
                 else
                 {
@@ -215,9 +215,10 @@ namespace WebApplication.UserOrder
                 });
         }
 
-        private getDataForAddition(eventObject: JQueryEventObject, returnDataForAddition: (priceSize: number, product: IProduct) => void): void
+        private getDataForAddition(eventObject: JQueryEventObject, returnDataForAddition: (product: IProduct, productVariationId: number, priceSize: number) => void): void
         {
             const priceSize = eventObject.target.getAttribute("priceSize");
+            const productVariationId = eventObject.target.getAttribute("productVariationId");
 
             const productId = $(eventObject.currentTarget)
                 .closest("tr")
@@ -227,7 +228,7 @@ namespace WebApplication.UserOrder
 
             const product = this._products.filter(item => item.number == parseInt(productId))[0];
 
-            returnDataForAddition( parseInt(priceSize), product);
+            returnDataForAddition(product, parseInt(productVariationId), parseInt(priceSize));
         }
     }
 }

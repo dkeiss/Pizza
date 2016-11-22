@@ -20,12 +20,12 @@ namespace WebApplication.UserOrder
         constructor()
         {
             this._createProductCatalogHtml = new CreateProductCatalogHtml();
-            this._createProductCatalogHtml.start( (priceSize, product) =>
+            this._createProductCatalogHtml.start( (product, productVariationId, priceSize) =>
             {
                 if (this._additional == null) this.loadAddition();
                 if (this._currentUser == null) this.loadUser();
 
-                var showAdditionDialog = new ShowAdditionDialog(this._additional, this._currentUser, priceSize, product);
+                var showAdditionDialog = new ShowAdditionDialog(this._additional, this._currentUser, product, productVariationId ,priceSize);
                 showAdditionDialog.start();
 
             });

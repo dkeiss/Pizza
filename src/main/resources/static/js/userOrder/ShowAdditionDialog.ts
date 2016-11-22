@@ -12,8 +12,9 @@ namespace WebApplication.UserOrder
         private _additions: IAdditions = null;
         private _currentUser: IUser = null;
         private _showCurrentAdditions: IAdditionals = [];
-        private _priceSize: number = null;
         private _product: IProduct = null;
+        private _productVariationId: number = null;
+        private _priceSize: number = null;
         private _selectedAdditionalIds = [];
 
         private _cssShowDialog = "userOrder-additionalDialog-showContainer";
@@ -29,7 +30,7 @@ namespace WebApplication.UserOrder
         private _orderSubmit: JQuery = null;
         private _closeDialog: JQuery = null;
 
-        constructor(additionalInfo: IAdditions, currentUser: IUser, priceSize: number, product: IProduct)
+        constructor(additionalInfo: IAdditions, currentUser: IUser, product: IProduct, productVariationId: number, priceSize: number)
         {
             this._additionalBox = $(UserOrderSelector.additionalBox).html("");
             this._orderOverviewProduct = $(UserOrderSelector.orderOverviewText);
@@ -40,8 +41,9 @@ namespace WebApplication.UserOrder
 
             this._additions = additionalInfo;
             this._currentUser = currentUser;
-            this._priceSize = priceSize;
             this._product = product;
+            this._productVariationId = productVariationId;
+            this._priceSize = priceSize;
             this._showCurrentAdditions.length = 0;
 
             this.existProductIdInAdditions();
@@ -87,7 +89,24 @@ namespace WebApplication.UserOrder
 
             for (let i = 0; i < additionals.length; i++)
             {
-                htmlInput += `<div additionalId='${additionals[i].additionalId}'><span>${additionals[i].description}</span><span>${additionals[i].additionalPrices[this._priceSize].price}</span></div>`;
+                const additionalPrices = additionals[i].additionalPrices;
+                let price = 0;
+
+                if (additionalPrices.length == 1)
+                {
+                    price = additionalPrices[0].price;
+                }
+                else if (additionalPrices.length == 2 && this._priceSize == 3)
+                {
+                    price = additionalPrices[1].price;
+                }
+                else
+                {
+                    price = additionalPrices[this._priceSize].price;
+                }
+
+
+                htmlInput += `<div additionalId='${additionals[i].additionalId}'><span>${additionals[i].description}</span><span>${price}</span></div>`;
 
                 this._showCurrentAdditions.push(additionals[i]);
             }
@@ -108,7 +127,7 @@ namespace WebApplication.UserOrder
             this._orderOverviewProduct
                 .find("span")
                 .last()
-                .text(product.productVariations[this._priceSize].price);
+                .text(this.getProductPrice());
 
             this._orderOverviewUserDiscount
                 .find("span")
@@ -116,11 +135,16 @@ namespace WebApplication.UserOrder
                 .text(this._currentUser.discount);
         }
 
+        private getProductPrice(): number
+        {
+            return this._product.productVariations.filter(item => item.productVariationId == this._productVariationId)[0].price;
+        }
+
 
         /// EVENTS
         private calcOrder()
         {
-            const productPrice: number = this._product.productVariations[this._priceSize].price;
+            const productPrice: number = this.getProductPrice();
             const extraAddition = this.calcAddition();
             const userDiscount: number = this._currentUser.discount;
 
@@ -217,6 +241,12 @@ namespace WebApplication.UserOrder
                 });
 
 
+            var sendOrder = new SendOrder();
+            sendOrder.productId = this._product.productId;
+            sendOrder.productVariationId = this._productVariationId;
+            sendOrder.additionalIds = this._selectedAdditionalIds;
+
+            OrderService.sendOrderForUser(sendOrder, onsuccess => { alert("Bestellt!") });
         }
     }
 
