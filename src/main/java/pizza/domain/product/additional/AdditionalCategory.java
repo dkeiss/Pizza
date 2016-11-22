@@ -1,6 +1,7 @@
 package pizza.domain.product.additional;
 
 import lombok.Data;
+import pizza.domain.product.ProductCatalog;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -24,6 +25,10 @@ public class AdditionalCategory {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "additionalCategory", cascade = {CascadeType.ALL}, orphanRemoval = true)
     private List<Additional> additionals;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PRODUCT_CATALOG_ID")
+    private ProductCatalog productCatalog;
 
     private String productIds;
 

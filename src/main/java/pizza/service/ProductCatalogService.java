@@ -1,6 +1,7 @@
 package pizza.service;
 
 import pizza.domain.product.Product;
+import pizza.domain.product.ProductCatalog;
 import pizza.domain.product.ProductVariation;
 import pizza.vo.product.menu.ProductCatalogInfoVO;
 import pizza.vo.product.menu.ProductCatalogVO;
@@ -16,6 +17,8 @@ public interface ProductCatalogService {
 
     ProductCatalogVO getProductCatalog(Integer productCatalogId);
 
+    ProductCatalog getProductCatalogBO(Integer productCatalogId);
+
     List<ProductCatalogInfoVO> listProductCataloges();
 
     boolean productCatalogExists(Integer productCatalogId);
@@ -29,5 +32,7 @@ public interface ProductCatalogService {
     Product findProduct(Integer productId);
 
     ProductVariation findProductVariation(Integer productVariationId);
+
+    ProductCatalog getActiveProductCatalogBO();
 
 }

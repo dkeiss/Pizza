@@ -2,16 +2,19 @@ package pizza.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jca.cci.core.InteractionCallback;
 import org.springframework.stereotype.Service;
 import pizza.domain.order.BulkOrder;
 import pizza.domain.order.UserOrder;
 import pizza.domain.order.UserOrderAdditional;
 import pizza.domain.product.Product;
+import pizza.domain.product.ProductCatalog;
 import pizza.domain.product.ProductVariation;
 import pizza.domain.product.additional.Additional;
 import pizza.domain.product.additional.AdditionalPrice;
 import pizza.domain.user.User;
 import pizza.repositories.*;
+import pizza.service.common.AdditionalBusinessToValueConverter;
 import pizza.service.exception.*;
 import pizza.service.exception.userorder.*;
 import pizza.vo.order.UserOrderAdditionalVO;
@@ -24,6 +27,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static pizza.service.common.AdditionalBusinessToValueConverter.getProductIdsFromProductsString;
 import static pizza.service.common.UserOrderBusinessToValueObjectConverter.getUserOrderFromBO;
 import static pizza.service.common.UserOrderBusinessToValueObjectConverter.getUserOrdersFromBOs;
 
@@ -52,7 +56,7 @@ public class UserOrderServiceImpl implements UserOrderService {
     public UserOrderDetailsVO addUserOrder(String username, UserOrderVO userOrderVO) {
         checkUserOrderValid(userOrderVO);
         User user = userService.findUserByUsername(username);
-        if(user == null){
+        if (user == null) {
             throw new UserOrderUserNotFoundException();
         }
 
@@ -67,12 +71,17 @@ public class UserOrderServiceImpl implements UserOrderService {
             throw new UserOrderProductAndProductVariationNotMatchException();
         }
 
+        ProductCatalog productCatalog = product.getProductGroup().getProductCategory().getProductCatalog();
+        if (!productCatalog.getProductCatalogId().equals(activeBulkOrder.getCatalogId())) {
+            throw new UserOrderProductCatalogNotMatchException();
+        }
+
         UserOrder userOrder = new UserOrder();
         userOrder.setUser(user);
         userOrder.setBulkOrder(activeBulkOrder);
         userOrder.setProduct(product);
         userOrder.setProductVariation(productVariation);
-        List<UserOrderAdditional> userOrderAdditionals = createUserOrderAdditionals(userOrderVO, userOrder);
+        List<UserOrderAdditional> userOrderAdditionals = createUserOrderAdditionals(product, userOrderVO, userOrder);
         userOrder.setUserOrderAdditionals(userOrderAdditionals);
         userOrder.setAmount(calculateAmount(productVariation, userOrderAdditionals));
         userOrder.setPaid(false);
@@ -105,7 +114,7 @@ public class UserOrderServiceImpl implements UserOrderService {
         return amount;
     }
 
-    private List<UserOrderAdditional> createUserOrderAdditionals(UserOrderVO userOrderVO, UserOrder userOrder) {
+    private List<UserOrderAdditional> createUserOrderAdditionals(Product product, UserOrderVO userOrderVO, UserOrder userOrder) {
         if (userOrderVO.getUserOrderAdditionals() == null || userOrderVO.getUserOrderAdditionals().isEmpty()) {
             return null;
         }
@@ -116,8 +125,11 @@ public class UserOrderServiceImpl implements UserOrderService {
                 throw new UserOrderAdditionalNotFoundException();
             }
             AdditionalPrice additionalPrice = additionalService.findAdditionalPrice(userOrderAdditionalVO.getAdditionalPriceId());
-            if (additionalPrice == null) {
+            if (additionalPrice == null || additionalPrice.getAdditional().getAdditionalId().equals(additional.getAdditionalId())) {
                 throw new UserOrderAdditionalPriceNotFoundException();
+            }
+            if (!getProductIdsFromProductsString(additional.getAdditionalCategory().getProductIds()).contains(product.getProductId())) {
+                throw new UserOrderAdditionalAndProductNotMatchException();
             }
             UserOrderAdditional userOrderAdditional = new UserOrderAdditional();
             userOrderAdditional.setUserOrder(userOrder);

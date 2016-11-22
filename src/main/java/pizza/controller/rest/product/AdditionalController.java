@@ -1,7 +1,6 @@
 package pizza.controller.rest.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pizza.service.AdditionalService;
 import pizza.vo.product.additional.AdditionalCategoryVO;
@@ -13,7 +12,7 @@ import java.util.stream.Collectors;
 /**
  * Created by Daniel Keiss on 03.11.2016.
  */
-@Controller
+@RestController
 @RequestMapping("rest/additional")
 public class AdditionalController {
 
@@ -21,39 +20,29 @@ public class AdditionalController {
     private AdditionalService additionalService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    List<AdditionalCategoryVO> listAdditionals() throws IOException {
-        return additionalService.listAdditionalCategories();
+    public List<AdditionalCategoryVO> listAdditionals() throws IOException {
+        return additionalService.listAdditionalCategoriesFromActiveProductCatalog();
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    AdditionalCategoryVO createAdditional(@RequestBody AdditionalCategoryVO additionalCategory) throws IOException {
-        return additionalService.createAdditionalCategory(additionalCategory);
+    public AdditionalCategoryVO createAdditional(@RequestBody AdditionalCategoryVO additionalCategory) throws IOException {
+        return additionalService.createAdditionalCategoryForActiveProductCatalog(additionalCategory);
     }
 
     @RequestMapping(value = "/full", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    List<AdditionalCategoryVO> createAdditionals(@RequestBody List<AdditionalCategoryVO> additionalCategorys) throws IOException {
-        List<AdditionalCategoryVO> additionalCategoryVOs = additionalCategorys.stream().map(additionalCategory -> additionalService.createAdditionalCategory(additionalCategory)).collect(Collectors.toList());
+    public List<AdditionalCategoryVO> createAdditionals(@RequestBody List<AdditionalCategoryVO> additionalCategorys) throws IOException {
+        List<AdditionalCategoryVO> additionalCategoryVOs = additionalCategorys.stream().map(additionalCategory -> additionalService.createAdditionalCategoryForActiveProductCatalog(additionalCategory)).collect(Collectors.toList());
         return additionalCategoryVOs;
     }
 
     @RequestMapping(value = "{additionalCategoryId}", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    AdditionalCategoryVO getAdditional(@PathVariable("additionalCategoryId") Integer additionalCategoryId) throws IOException {
+    public AdditionalCategoryVO getAdditional(@PathVariable("additionalCategoryId") Integer additionalCategoryId) throws IOException {
         return additionalService.getAdditionalCategory(additionalCategoryId);
     }
 
     @RequestMapping(value = "/product/{productId}", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    List<AdditionalCategoryVO> getAdditionalByProductId(@PathVariable("productId") Integer productId) throws IOException {
-        return additionalService.getAdditionalsByProductId(productId);
+    public List<AdditionalCategoryVO> getAdditionalByProductId(@PathVariable("productId") Integer productId) throws IOException {
+        return additionalService.getAdditionalsByProductIdForActiveProductCatalog(productId);
     }
 
 }

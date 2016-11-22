@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by Daniel Keiss on 22.10.2016.
  */
-@Controller
+@RestController
 @RequestMapping("rest/user")
 public class UserOrderController {
 
@@ -23,9 +23,7 @@ public class UserOrderController {
     private UserOrderService userOrderService;
 
     @RequestMapping(value = "order", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    UserOrderDetailsVO addUserOrder(@RequestBody UserOrderVO userOrder, Principal principal) {
+    public UserOrderDetailsVO addUserOrder(@RequestBody UserOrderVO userOrder, Principal principal) {
         if (principal == null) {
             throw new UserNotLoggedInException();
         }
@@ -34,9 +32,7 @@ public class UserOrderController {
     }
 
     @RequestMapping(value = "{userId}/order", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    List<UserOrderDetailsVO> getUserOrders(@PathVariable("userId") Integer userId) {
+    public List<UserOrderDetailsVO> getUserOrders(@PathVariable("userId") Integer userId) {
         return userOrderService.getUserOrders(userId);
     }
 

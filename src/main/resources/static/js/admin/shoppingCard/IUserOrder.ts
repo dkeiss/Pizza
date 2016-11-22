@@ -21,6 +21,9 @@ interface IUserOrder
     userOrderAdditionals: IProductAdditions;
     firstName: string;
     lastName: string;
+    userName: string;
+    productCategoryName: string;
+    productGroupName: string;
     productName: string;
     productVariationName: string;
     sum: number;

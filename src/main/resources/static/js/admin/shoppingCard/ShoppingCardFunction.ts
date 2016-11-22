@@ -52,29 +52,42 @@ namespace WebApplication.Admin.ShoppingCard
             this.getDeliveryData();
 
             this._tableController = new TableController();
-            this._cardOrderButton.on("click", () => this.markOrderAsOrdered());
-            this._cardPrintControlSheetButton.on("click", () => window.print());
-        }
-
-        private markOrderAsOrdered(): void {
-            console.log("markOrderAsOrdered");
-            this._cardOrderButton.text("Sammelbestellung ist eingetroffen");
-            this._cardOrderButton.off();
-            this._cardOrderButton.on("click", () => this.markOrderAsArived());
-
-        }
-
-        private markOrderAsArived(): void {
-            console.log("markOrderAsArived");
-            this._cardOrderButton.off();
-            this._cardOrderButton.text("Sammelbestellung abschließen");
             this._cardOrderButton.on("click", () => this.closeOrder());
+            this._cardPrintControlSheetButton.on("click", () => this.printControlSheet());
+            this._cardPrintOrderSheetButton.on("click", () => this.printOrderSheet());
+        }
+
+        private printControlSheet(): void {
+            let oldTitle = document.title;
+            document.title = "Lieferkontrolle";
+            $('head').append('<link rel="stylesheet" href="/css/admin/controlSheetPrint.css" type="text/css" media="print"/>');
+            setTimeout(() =>
+            {
+                window.print();
+                $('link[rel=stylesheet][href~="/css/admin/controlSheetPrint.css"]').remove();
+                document.title = oldTitle;
+            }, 500);
+
+        }
+
+        private printOrderSheet(): void {
+            let oldTitle = document.title;
+            document.title = "Bestellformular";
+            $('head').append('<link id="orderS" rel="stylesheet" href="/css/admin/orderSheetPrint.css" type="text/css" media="print"/>');
+            setTimeout(() =>
+            {
+                window.print();
+                $('link[rel=stylesheet][href~="/css/admin/orderSheetPrint.css"]').remove();
+                document.title = oldTitle;
+            }, 500);
 
         }
 
         private closeOrder(): void {
-            console.log("closeOrder");
-
+            ShoppingCardService.finishBulkOrder(success =>
+            {
+                window.location.replace('/admin');
+            });
         }
 
         private getDeliveryData(): void {

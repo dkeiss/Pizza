@@ -13,7 +13,7 @@ import static pizza.controller.rest.ResponseUtil.getEmptyJsonSucessResponse;
 /**
  * Created by Daniel Keiss on 24.10.2016.
  */
-@Controller
+@RestController
 @RequestMapping("rest/bulkorder")
 public class BulkOrderController {
 
@@ -21,60 +21,44 @@ public class BulkOrderController {
     private BulkOrderService bulkOrderService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    List<BulkOrderVO> listBulkOrders() {
+    public List<BulkOrderVO> listBulkOrders() {
         return bulkOrderService.listBulkOrders();
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    BulkOrderVO createBulkOrder(@RequestBody BulkOrderVO bulkOrder) {
+    public BulkOrderVO createBulkOrder(@RequestBody BulkOrderVO bulkOrder) {
         return bulkOrderService.createBulkOrder(bulkOrder);
     }
 
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    BulkOrderVO getBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
+    public BulkOrderVO getBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
         return bulkOrderService.getBulkOrderById(bulkorderId);
     }
 
     @RequestMapping(value = "/active", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    BulkOrderVO getActiveBulkOrder() {
+    public BulkOrderVO getActiveBulkOrder() {
         return bulkOrderService.getActiveBulkOrder();
     }
 
     @RequestMapping(value = "/open", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    BulkOrderVO getOpenBulkOrder() {
+    public BulkOrderVO getOpenBulkOrder() {
         return bulkOrderService.getOpenBulkOrder();
     }
 
     @RequestMapping(value = "/finish", method = RequestMethod.POST)
-    public
-    @ResponseBody
-    BulkOrderVO finishBulkOrder() {
+    public BulkOrderVO finishBulkOrder() {
         return bulkOrderService.finishOpenBulkOrder();
     }
 
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.PUT)
-    public
-    @ResponseBody
-    Map updateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId, @RequestBody BulkOrderVO bulkOrder) {
+    public Map updateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId, @RequestBody BulkOrderVO bulkOrder) {
         bulkOrder.setBulkOrderId(bulkorderId);
         bulkOrderService.updateBulkOrder(bulkOrder);
         return getEmptyJsonSucessResponse();
     }
 
     @RequestMapping(value = "/{bulkorderId}", method = RequestMethod.DELETE)
-    public
-    @ResponseBody
-    Map deactivateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
+    public Map deactivateBulkOrder(@PathVariable("bulkorderId") Integer bulkorderId) {
         bulkOrderService.deactivateBulkOrderById(bulkorderId);
         return getEmptyJsonSucessResponse();
     }

@@ -9,7 +9,9 @@ import pizza.repositories.BulkOrderRepository;
 import pizza.service.exception.bulkorder.BulkOrderActiveUntilNotValidException;
 import pizza.service.exception.bulkorder.BulkOrderAlreadyActiveException;
 import pizza.vo.order.BulkOrderVO;
+import pizza.vo.user.UserVO;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -37,9 +39,16 @@ public class BulkUserOrderServiceImplTest {
     @Mock
     private ProductCatalogService productCatalogService;
 
+    @Mock
+    private UserService userService;
+
     @Before
     public void before() {
         initMocks(this);
+
+        UserVO user = mock(UserVO.class);
+        when(user.getUserName()).thenReturn("jerome@bestermann.de");
+        when(userService.getUsers()).thenReturn(Collections.singletonList(user));
     }
 
     @Test

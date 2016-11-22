@@ -52,11 +52,17 @@ public class ProductCatalogServiceImpl implements ProductCatalogService {
 
     @Override
     public ProductCatalogVO getProductCatalog(Integer productCatalogId) {
+        ProductCatalog productCatalog = getProductCatalogBO(productCatalogId);
+        return getProductCatalogFromBO(productCatalog);
+    }
+
+    @Override
+    public ProductCatalog getProductCatalogBO(Integer productCatalogId) {
         ProductCatalog productCatalog = productCatalogRepository.findOne(productCatalogId);
         if (productCatalog == null) {
             throw new NotFoundException();
         }
-        return getProductCatalogFromBO(productCatalog);
+        return productCatalog;
     }
 
     @Override
@@ -71,11 +77,17 @@ public class ProductCatalogServiceImpl implements ProductCatalogService {
 
     @Override
     public ProductCatalogVO getActiveProductCatalog() {
+        ProductCatalog activeProductCatalogBO = getActiveProductCatalogBO();
+        return getProductCatalogFromBO(activeProductCatalogBO);
+    }
+
+    @Override
+    public ProductCatalog getActiveProductCatalogBO() {
         BulkOrderVO activeBulkOrder = bulkOrderService.getActiveBulkOrder();
         if (activeBulkOrder == null) {
             throw new NotFoundException();
         }
-        return getProductCatalog(activeBulkOrder.getCatalogId());
+        return getProductCatalogBO(activeBulkOrder.getCatalogId());
     }
 
     @Override

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import pizza.service.common.ObjectMapperUtil;
 import pizza.service.exception.productCatalog.ProductCatalogInvalidException;
@@ -36,11 +35,11 @@ public class AdminProductCatalogServiceImpl implements AdminProductCatalogServic
 
     @Override
     public ProductCatalogInfoVO createProductCatalogFull(ProductCatalogFullVO productCatalogFull) {
+        ProductCatalogVO productCatalog = productCatalogService.createProductCatalog(productCatalogFull.getProductCatalog());
         List<AdditionalCategoryVO> additionals = productCatalogFull.getAdditionals();
         if (additionals != null) {
-            addAdditionals(additionals);
+            addAdditionals(productCatalog.getProductCatalogId(), additionals);
         }
-        ProductCatalogVO productCatalog = productCatalogService.createProductCatalog(productCatalogFull.getProductCatalog());
         return ObjectMapperUtil.copyFromBusinessObject(productCatalog, new ProductCatalogInfoVO());
     }
 
@@ -56,9 +55,9 @@ public class AdminProductCatalogServiceImpl implements AdminProductCatalogServic
         }
     }
 
-    public void addAdditionals(List<AdditionalCategoryVO> additionals) {
+    public void addAdditionals(Integer productCatalogId, List<AdditionalCategoryVO> additionals) {
         for (AdditionalCategoryVO additionalCategory : additionals) {
-            additionalService.createAdditionalCategory(additionalCategory);
+            additionalService.createAdditionalCategory(productCatalogId, additionalCategory);
         }
     }
 

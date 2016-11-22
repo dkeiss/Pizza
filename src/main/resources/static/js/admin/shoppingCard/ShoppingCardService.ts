@@ -26,5 +26,11 @@ namespace WebApplication.Admin.ShoppingCard
         {
             WebServiceAccess.ajaxGet(WebService.deliveryData, onSuccess);
         }
+
+        public static finishBulkOrder(onSuccess: (success: IOnSuccess) => void): void
+        {
+            WebServiceAccess.ajaxPost(WebService.bulkOrder + "/finish",{}, onSuccess/*, onError*/);
+        }
+
     }
 }

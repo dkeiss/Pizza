@@ -2,6 +2,7 @@ package pizza.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pizza.domain.product.ProductCatalog;
 import pizza.domain.product.additional.Additional;
 import pizza.domain.product.additional.AdditionalCategory;
 import pizza.domain.product.additional.AdditionalPrice;
@@ -10,6 +11,7 @@ import pizza.repositories.AdditionalPriceRepository;
 import pizza.repositories.AdditionalRepository;
 import pizza.service.exception.NotFoundException;
 import pizza.vo.product.additional.AdditionalCategoryVO;
+import pizza.vo.product.menu.ProductCatalogVO;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -35,17 +37,36 @@ public class AdditionalServiceImpl implements AdditionalService {
     @Autowired
     private AdditionalPriceRepository additionalPriceRepository;
 
+    @Autowired
+    private ProductCatalogService productCatalogService;
+
     @Override
-    public List<AdditionalCategoryVO> listAdditionalCategories() {
+    public List<AdditionalCategoryVO> listAdditionalCategoriesFromActiveProductCatalog() {
+
         List<AdditionalCategory> additionalCategories = new ArrayList<>();
-        additionalCategoryRepository.findAll().forEach(additionalCategories::add);
+        ProductCatalog productCatalog = productCatalogService.getActiveProductCatalogBO();
+        List<AdditionalCategory> byProductCatalog = additionalCategoryRepository.findByProductCatalog(productCatalog);
+        if (byProductCatalog == null) {
+            return null;
+        }
+        byProductCatalog.forEach(additionalCategories::add);
         return getAdditionalCategorysFromBO(additionalCategories);
     }
 
     @Override
-    public AdditionalCategoryVO createAdditionalCategory(AdditionalCategoryVO additionalCategoryVO) {
+    public AdditionalCategoryVO createAdditionalCategoryForActiveProductCatalog(AdditionalCategoryVO additionalCategoryVO) {
+
+        ProductCatalog activeProductCatalog = productCatalogService.getActiveProductCatalogBO();
+
+        return createAdditionalCategory(activeProductCatalog.getProductCatalogId(), additionalCategoryVO);
+    }
+
+    @Override
+    public AdditionalCategoryVO createAdditionalCategory(Integer productCatalogId, AdditionalCategoryVO additionalCategoryVO) {
         AdditionalCategory additionalCategory = getAdditionalCategoryFromVO(additionalCategoryVO, new AdditionalCategory());
         additionalCategory.setCreationDate(new Date());
+        ProductCatalog productCatalog = productCatalogService.getProductCatalogBO(productCatalogId);
+        additionalCategory.setProductCatalog(productCatalog);
 
         additionalCategory = additionalCategoryRepository.save(additionalCategory);
 
@@ -66,8 +87,8 @@ public class AdditionalServiceImpl implements AdditionalService {
     }
 
     @Override
-    public List<AdditionalCategoryVO> getAdditionalsByProductId(Integer productId) {
-        List<AdditionalCategoryVO> additionalCategoryVOs = listAdditionalCategories();
+    public List<AdditionalCategoryVO> getAdditionalsByProductIdForActiveProductCatalog(Integer productId) {
+        List<AdditionalCategoryVO> additionalCategoryVOs = listAdditionalCategoriesFromActiveProductCatalog();
         List<AdditionalCategoryVO> selected = additionalCategoryVOs.stream().filter(additionalCategoryVO -> additionalCategoryVO.getProductIds().contains(productId)).collect(Collectors.toList());
         return selected;
     }

@@ -16,13 +16,19 @@ public class UserVO {
 
     @NotNull
     private String firstName;
+
     @NotNull
     private String lastName;
+
     @NotNull
     private String userName;
+
     private BigDecimal discount;
+
     private boolean isAdmin;
+
     private Date creationDate;
+
     private Date modificationDate;
 
 }

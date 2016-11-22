@@ -12,53 +12,65 @@
 </head>
 <body>
 
-<div class="core-dialog-container">
-    <div th:replace="fragments/deliveryDataDialog :: inputDialog">&nbsp;</div>
-</div>
-
-<div class="core-dialog-container">
-    <div th:replace="fragments/serverErrorDialog :: serverError">&nbsp;</div>
-</div>
-
-<div th:replace="fragments/header :: header">&nbsp;</div>
-
-<div class="core-container-center">
-    <div class="core-link-container-box admin-container_cardDiv">
-        <a href="/admin/shoppingcard" class="admin-button-enabled admin-button_card">Warenkorb</a>
+<!--<div class="core-header core-header_loggedIn" th:fragment="header">
+    <div class="core-header-content">
+        <div class="core-header-menu core-header-menu-active"><a href="../admin">Administratorbereich</a></div>
+        <div class="core-header-menu core-header-menu-inactive"><a href="../order">Bestellbereich</a></div>
+        <div class="core-header-user">
+            <form id="logout-form" th:action="@{/logout}" method="post">
+                <span th:inline="text"> Angemeldet als admin@test.de <div class="core-logout-button" onClick="document.forms['logout-form'].submit();"></div></span>
+            </form>
+        </div>
+    </div>
+</div>-->
+<div class="core-wrapper">
+    <div class="core-dialog-container">
+        <div th:replace="fragments/deliveryDataDialog :: inputDialog">&nbsp;</div>
     </div>
 
-
-    <div class="core-link-container-box admin-container_umnmtDiv">
-        <a href="/admin/usermanagement" class="admin-button-enabled admin-button_umgmt">Benutzerverwaltung</a>
+    <div class="core-dialog-container">
+        <div th:replace="fragments/serverErrorDialog :: serverError">&nbsp;</div>
     </div>
 
-    <div class="core-container-box admin-container_bulkOrderDiv">
-        <label class="admin-label admin-label_catalogPrefix">Kein Produktkatalog vorhanden</label>
-        <select class="admin-combobox admin-combobox_productCatalogs" name="productCatalogs" size="0"></select>
-        <label class="admin-label admin-label_catalogPostfix"></label>
-        <input class="admin-inputField_time" maxlength="5" placeholder="hh:mm" readonly="true"/>
-        <div class="admin-submitButton admin-submitButton-enabled admin-submitButton_activateCtlg">Aktivieren</div>
-        <label class="admin-errorLableTimepicker admin-errorlabel_time">Ungültige Uhrzeit!</label>
-    </div>
+    <div th:replace="fragments/header :: header">&nbsp;</div>
 
-    <div class="core-link-container-box admin-container_printDiv">
-        <a class="admin-button-enabled admin-button_print">Druckinformationen bearbeiten</a>
-    </div>
+    <div class="core-container-center">
+        <div class="core-link-container-box admin-container_cardDiv">
+            <a href="/admin/shoppingcard" class="admin-button-enabled admin-button_card">Warenkorb</a>
+        </div>
 
-    <div class="core-link-container-box admin-container_catalogDiv">
-        <a href="#" class="admin-button-enabled admin-button_uploadcatalog">Produktkatalog hochladen</a>
-        <input type="file" id="file" class="admin-inputField_file" accept=".json"/>
-    </div>
 
-    <div class="core-container-box">
-        <label class="admin-label">Beispiel-Produktkatalog herunterladen</label>
-        <div class="admin-button-box">
-            <div class="admin-submitButton admin-submitButton-enabled admin-submitButton_expert">Experte</div>
-            <div class="admin-submitButton admin-submitButton-enabled admin-submitButton_simple">Simple</div>
+        <div class="core-link-container-box admin-container_umnmtDiv">
+            <a href="/admin/usermanagement" class="admin-button-enabled admin-button_umgmt">Benutzerverwaltung</a>
+        </div>
+
+        <div class="core-container-box admin-container_bulkOrderDiv">
+            <label class="admin-label admin-label_catalogPrefix">Kein Produktkatalog vorhanden</label>
+            <select class="admin-combobox admin-combobox_productCatalogs" name="productCatalogs" size="0"></select>
+            <label class="admin-label admin-label_catalogPostfix"></label>
+            <input class="admin-inputField_time" maxlength="5" placeholder="hh:mm" readonly="true"/>
+            <div class="admin-submitButton admin-submitButton-enabled admin-submitButton_activateCtlg">Aktivieren</div>
+            <label class="admin-errorLableTimepicker admin-errorlabel_time">Ungültige Uhrzeit!</label>
+        </div>
+
+        <div class="core-link-container-box admin-container_printDiv">
+            <a class="admin-button-enabled admin-button_print">Druckinformationen bearbeiten</a>
+        </div>
+
+        <div class="core-link-container-box admin-container_catalogDiv">
+            <a href="#" class="admin-button-enabled admin-button_uploadcatalog">Produktkatalog hochladen</a>
+            <input type="file" id="file" class="admin-inputField_file" accept=".json"/>
+        </div>
+
+        <div class="core-container-box">
+            <label class="admin-label">Beispiel-Produktkatalog herunterladen</label>
+            <div class="admin-button-box">
+                <div class="admin-submitButton admin-submitButton-enabled admin-submitButton_expert">Experte</div>
+                <div class="admin-submitButton admin-submitButton-enabled admin-submitButton_simple">Simple</div>
+            </div>
         </div>
     </div>
 </div>
-
 <div th:replace="fragments/footer :: footer">&nbsp;</div>
 
 </body>

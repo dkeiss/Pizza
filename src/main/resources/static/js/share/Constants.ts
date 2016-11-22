@@ -81,6 +81,8 @@ class ShoppingCardSelectors {
     public static cardDeliveryDataPhoneSpan = ".deliveryData_phone";
     public static cardDeliveryDataEMailSpan = ".deliveryData_email";
 
+    public static cardOrderSummaryDiv = ".card_orderSummary";
+
 }
 
 class ErrorDialogSelectors

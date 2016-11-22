@@ -2,10 +2,7 @@ package pizza.controller.rest.deliveryservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import pizza.service.DeliveryServiceService;
 import pizza.vo.deliveryservice.DeliveryServiceVO;
 
@@ -16,7 +13,7 @@ import static pizza.controller.rest.ResponseUtil.getEmptyJsonSucessResponse;
 /**
  * Created by Daniel Keiss on 11.11.2016.
  */
-@Controller
+@RestController
 @RequestMapping("rest/deliveryservice")
 public class DeliveryServiceController {
 
@@ -24,16 +21,12 @@ public class DeliveryServiceController {
     private DeliveryServiceService deliveryServiceService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public
-    @ResponseBody
-    DeliveryServiceVO getDeliveryService() {
+    public DeliveryServiceVO getDeliveryService() {
         return deliveryServiceService.getDeliveryService();
     }
 
     @RequestMapping(value = "", method = RequestMethod.PUT)
-    public
-    @ResponseBody
-    Map updateDeliveryService(@RequestBody DeliveryServiceVO deliveryService) {
+    public Map updateDeliveryService(@RequestBody DeliveryServiceVO deliveryService) {
         deliveryServiceService.updateDeliveryService(deliveryService);
         return getEmptyJsonSucessResponse();
     }

@@ -1,10 +1,10 @@
 @media print {
 
-    .orderSummery {
+    .orderSummary {
         margin-top: 20px;
         width: 100%
     }
-    .orderSummery span{
+    .orderSummary span{
         font-size: 12px;
         display: block;
     }
