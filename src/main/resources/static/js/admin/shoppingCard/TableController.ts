@@ -189,7 +189,7 @@ namespace WebApplication.Admin.ShoppingCard
             let sum = 0;
             for(let i = 0; i < this._tableData.length; i++)
                 sum += this._tableData[i][5];
-            let element = "<br/><span>Gesamtpreis: "+sum+" €</span>";
+            let element = "<br/><span>Gesamtpreis: "+ sum.toFixed(2).toString().replace(".",",") + " €</span>";
             this._cardOrderSummaryDiv.append(element);
         }
 

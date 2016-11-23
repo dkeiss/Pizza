@@ -328,12 +328,17 @@ namespace WebApplication.Admin.Overview
                     this._adminCatalogComboBox.hide();
                     this._adminCatalogPostfixLabel.hide();
 
-                    this._adminCatalogPrefixLabel.text("Warenkorb \""+this._currentBulkOrder.name+"\" ist noch aktiv bis");
-                    this._adminTimePicker.show();
-                    this._adminTimePicker.prop('readonly',true);
-                    console.log(new Date(this._currentBulkOrder.activeUntil).toString());
-                    this._adminTimePicker.val(new Date(this._currentBulkOrder.activeUntil).toTimeString().substr(0,5));
-                    this._adminTimePicker.off();
+                    let activeUntilString = new Date(this._currentBulkOrder.activeUntil).toLocaleString().substr(0,17);
+                    if((this._currentBulkOrder.activeUntil - currentTime) > 0) {
+                        this._adminCatalogPrefixLabel.text("Bestellannahme für \"" + this._currentBulkOrder.name + "\" ist noch aktiv bis zum " + activeUntilString + " Uhr");
+                    } else {
+                        this._adminCatalogPrefixLabel.text("Bestellannahme für \"" + this._currentBulkOrder.name + "\" ist deaktiviert seit dem " + activeUntilString + " Uhr");
+                    }
+                    this._adminTimePicker.hide();
+                    //this._adminTimePicker.prop('readonly',true);
+                    //console.log(new Date(this._currentBulkOrder.activeUntil).toString());
+                    //this._adminTimePicker.val(new Date(this._currentBulkOrder.activeUntil).toTimeString().substr(0,5));
+                    //this._adminTimePicker.off();
 
                     this._adminActivateCatalogButton.off();
                     this._adminActivateCatalogButton.text("Abbrechen");

@@ -9,6 +9,9 @@
         display: block;
     }
 
+    .core-dialog-container{
+        display: none;
+    }
 
     .deliverData{
         display: none;
