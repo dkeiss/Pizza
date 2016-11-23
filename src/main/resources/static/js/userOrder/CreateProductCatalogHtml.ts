@@ -128,18 +128,28 @@ namespace WebApplication.UserOrder
                 let priceVariations = products[indexProduct].productVariations;
                 for (let indexVariation = 0; indexVariation < priceVariations.length; indexVariation++)
                 {
-                    if (priceVariations[indexVariation].name == "default") this._productPriceVariations[0] = true;
-                    if (priceVariations[indexVariation].name == "small") this._productPriceVariations[1] = true;
-                    if (priceVariations[indexVariation].name == "medium") this._productPriceVariations[2] = true;
-                    if (priceVariations[indexVariation].name == "large") this._productPriceVariations[3] = true;
+                    if (priceVariations[indexVariation].name == "normal")
+                        this._productPriceVariations[0] = true;
+
+                    if (priceVariations[indexVariation].name == "klein")
+                        this._productPriceVariations[1] = true;
+
+                    if (priceVariations[indexVariation].name == "mittel")
+                        this._productPriceVariations[2] = true;
+
+                    if (priceVariations[indexVariation].name == "groß")
+                    {
+                        this._productPriceVariations[3] = true;
+                    }
+
                 }
             }
 
             let returnVariations = "";
             if (this._productPriceVariations[0]) return "<th class='userOrder-price'></th>";
-            if (this._productPriceVariations[1]) returnVariations += "<th class='userOrder-price'>small</th>";
-            if (this._productPriceVariations[2]) returnVariations += "<th class='userOrder-price'>medium</th>";
-            if (this._productPriceVariations[3]) returnVariations += "<th class='userOrder-price'>large</th>";
+            if (this._productPriceVariations[1]) returnVariations += "<th class='userOrder-price'>klein</th>";
+            if (this._productPriceVariations[2]) returnVariations += "<th class='userOrder-price'>mittel</th>";
+            if (this._productPriceVariations[3]) returnVariations += "<th class='userOrder-price'>groß</th>";
 
             return returnVariations;
         }
@@ -155,7 +165,7 @@ namespace WebApplication.UserOrder
 
             if (this._productPriceVariations[1])
             {
-                const variation = variations.filter(item => item.name == "small");
+                const variation = variations.filter(item => item.name == "klein");
                 if (variation.length > 0)
                 {
                     returnPriceElements += `<td class='userOrder-price-cell'><div priceSize='0' productVariationId='${variation[0].productVariationId}' class='${UserOrderSelector.CellSelectors}'>${variation[0].price}</div></td>`;
@@ -168,7 +178,7 @@ namespace WebApplication.UserOrder
 
             if (this._productPriceVariations[2])
             {
-                const variation = variations.filter(item => item.name == "medium");
+                const variation = variations.filter(item => item.name == "mittel");
                 if (variation.length > 0)
                 {
                     returnPriceElements += `<td class='userOrder-price-cell'><div priceSize='1' productVariationId='${variation[0].productVariationId}' class='${UserOrderSelector.CellSelectors}'>${variation[0].price}</div></td>`;
@@ -181,7 +191,7 @@ namespace WebApplication.UserOrder
 
             if (this._productPriceVariations[3])
             {
-                const variation = variations.filter(item => item.name == "large");
+                const variation = variations.filter(item => item.name == "groß");
                 if (variation.length > 0)
                 {
                     returnPriceElements += `<td class='userOrder-price-cell'><div priceSize='2' productVariationId='${variation[0].productVariationId}' class='${UserOrderSelector.CellSelectors}'>${variation[0].price}</div></td>`;
