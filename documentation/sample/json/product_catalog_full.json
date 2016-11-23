@@ -1965,7 +1965,12 @@
                     "price": 7.9
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "name": "Gemischt",
+            "products": [
               {
                 "number": 442,
                 "name": "Tomatensalat",

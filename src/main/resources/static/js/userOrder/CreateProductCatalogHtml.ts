@@ -138,10 +138,10 @@ namespace WebApplication.UserOrder
                         this._productPriceVariations[2] = true;
 
                     if (priceVariations[indexVariation].name == "groß")
-                    {
                         this._productPriceVariations[3] = true;
-                    }
 
+                    if (priceVariations[indexVariation].name == "")
+                    {} // for Debug
                 }
             }
 

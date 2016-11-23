@@ -11,7 +11,7 @@
               {
                 "number": 730,
                 "name": "Murga Mandel-Curry",
-                "description": "Hähnchenfleisch mit Mandeln, versch. Gemüse, leicht-scharfer Currysauce",
+                "description": "HÃ¤hnchenfleisch mit Mandeln, versch. GemÃ¼se, leicht-scharfer Currysauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -55,7 +55,7 @@
               {
                 "number": 734,
                 "name": "Murgh Sabji",
-                "description": "Hühnerfleisch mit Gemüse in deftig-leckerer Currysauce",
+                "description": "HÃ¼hnerfleisch mit GemÃ¼se in deftig-leckerer Currysauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -66,7 +66,7 @@
               {
                 "number": 735,
                 "name": "Murgh Vindaloo",
-                "description": "Hühnerfleisch mit Kartoffeln in deftig-leckerer Currysauce",
+                "description": "HÃ¼hnerfleisch mit Kartoffeln in deftig-leckerer Currysauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -88,7 +88,7 @@
               {
                 "number": 737,
                 "name": "Karahi Chicken",
-                "description": "Hähnchenfleisch, fr. Paprika, Zwiebeln, Peperoni, Ingwer, Currysauce",
+                "description": "HÃ¤hnchenfleisch, fr. Paprika, Zwiebeln, Peperoni, Ingwer, Currysauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -131,7 +131,7 @@
                     "price": 4.4
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 6.3
                   }
                 ]
@@ -150,7 +150,7 @@
                     "price": 7.6
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.9
                   }
                 ]
@@ -169,7 +169,7 @@
                     "price": 5.9
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.4
                   }
                 ]
@@ -177,7 +177,7 @@
               {
                 "number": 8,
                 "name": "Western",
-                "description": "mit Hähnchenfleisch, roten Zwiebeln, Jalapenos, Barbecuesauce (ohne Tomatensauce)",
+                "description": "mit HÃ¤hnchenfleisch, roten Zwiebeln, Jalapenos, Barbecuesauce (ohne Tomatensauce)",
                 "productVariations": [
                   {
                     "name": "klein",
@@ -188,7 +188,7 @@
                     "price": 8.6
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 9.6
                   }
                 ]
@@ -207,7 +207,7 @@
                     "price": 5.9
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.4
                   }
                 ]
@@ -226,7 +226,7 @@
                     "price": 6.1
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.4
                   }
                 ]
@@ -234,7 +234,7 @@
               {
                 "number": 15,
                 "name": "Hellas",
-                "description": "Gyros, Zwiebeln, Weichkäse, Peperoni",
+                "description": "Gyros, Zwiebeln, WeichkÃ¤se, Peperoni",
                 "productVariations": [
                   {
                     "name": "klein",
@@ -245,7 +245,7 @@
                     "price": 7.1
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.4
                   }
                 ]
@@ -264,7 +264,7 @@
                     "price": 7.3
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.5
                   }
                 ]
@@ -283,7 +283,7 @@
                     "price": 6.2
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.9
                   }
                 ]
@@ -302,7 +302,7 @@
                     "price": 6.2
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.8
                   }
                 ]
@@ -321,7 +321,7 @@
                     "price": 7.3
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.7
                   }
                 ]
@@ -340,7 +340,7 @@
                     "price": 7.1
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.9
                   }
                 ]
@@ -359,7 +359,7 @@
                     "price": 7.4
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.9
                   }
                 ]
@@ -378,7 +378,7 @@
                     "price": 7.3
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.7
                   }
                 ]
@@ -397,7 +397,7 @@
                     "price": 7.4
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.6
                   }
                 ]
@@ -405,7 +405,7 @@
               {
                 "number": 28,
                 "name": "Frutti Di Mare",
-                "description": "mit Meeresfrüchte (Knoblauch)",
+                "description": "mit MeeresfrÃ¼chte (Knoblauch)",
                 "productVariations": [
                   {
                     "name": "klein",
@@ -416,7 +416,7 @@
                     "price": 7.8
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 9.1
                   }
                 ]
@@ -435,7 +435,7 @@
                     "price": 7.1
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.3
                   }
                 ]
@@ -454,7 +454,7 @@
                     "price": 7.1
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.3
                   }
                 ]
@@ -473,7 +473,7 @@
                     "price": 7.2
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.4
                   }
                 ]
@@ -492,7 +492,7 @@
                     "price": 7.3
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.6
                   }
                 ]
@@ -511,7 +511,7 @@
                     "price": 7.2
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.2
                   }
                 ]
@@ -530,7 +530,7 @@
                     "price": 6.9
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.4
                   }
                 ]
@@ -538,7 +538,7 @@
               {
                 "number": 41,
                 "name": "Gourmet",
-                "description": "Räucherlachs, fr. Tomaten, Scampi (Knoblauch)",
+                "description": "RÃ¤ucherlachs, fr. Tomaten, Scampi (Knoblauch)",
                 "productVariations": [
                   {
                     "name": "klein",
@@ -549,7 +549,7 @@
                     "price": 7.9
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 9.5
                   }
                 ]
@@ -557,7 +557,7 @@
               {
                 "number": 42,
                 "name": "Kentucky",
-                "description": "mit Hähnchenbrust, Mozzarella",
+                "description": "mit HÃ¤hnchenbrust, Mozzarella",
                 "productVariations": [
                   {
                     "name": "klein",
@@ -568,7 +568,7 @@
                     "price": 7.3
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.5
                   }
                 ]
@@ -587,7 +587,7 @@
                     "price": 6.9
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.1
                   }
                 ]
@@ -595,7 +595,7 @@
               {
                 "number": 44,
                 "name": "Alla Pino",
-                "description": "Thunfisch, Weichkäse, Zwiebeln, Tomaten, Peperoni",
+                "description": "Thunfisch, WeichkÃ¤se, Zwiebeln, Tomaten, Peperoni",
                 "productVariations": [
                   {
                     "name": "klein",
@@ -606,7 +606,7 @@
                     "price": 7.8
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.3
                   }
                 ]
@@ -614,7 +614,7 @@
               {
                 "number": 46,
                 "name": "Kreta",
-                "description": "Weichkäse, Zwiebeln, fr. Tomaten",
+                "description": "WeichkÃ¤se, Zwiebeln, fr. Tomaten",
                 "productVariations": [
                   {
                     "name": "klein",
@@ -625,7 +625,7 @@
                     "price": 6.8
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.9
                   }
                 ]
@@ -633,7 +633,7 @@
               {
                 "number": 48,
                 "name": "Athen",
-                "description": "Weichkäse, Spinat, (Knoblauch)",
+                "description": "WeichkÃ¤se, Spinat, (Knoblauch)",
                 "productVariations": [
                   {
                     "name": "klein",
@@ -644,7 +644,7 @@
                     "price": 6.9
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.1
                   }
                 ]
@@ -663,7 +663,7 @@
                     "price": 7.4
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.7
                   }
                 ]
@@ -682,7 +682,7 @@
                     "price": 7.6
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 9.2
                   }
                 ]
@@ -701,7 +701,7 @@
                     "price": 7.2
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.1
                   }
                 ]
@@ -720,7 +720,7 @@
                     "price": 7.1
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.3
                   }
                 ]
@@ -739,7 +739,7 @@
                     "price": 7.2
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.4
                   }
                 ]
@@ -758,7 +758,7 @@
                     "price": 7.1
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.4
                   }
                 ]
@@ -777,7 +777,7 @@
                     "price": 7.4
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.7
                   }
                 ]
@@ -796,7 +796,7 @@
                     "price": 7.3
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.4
                   }
                 ]
@@ -815,7 +815,7 @@
                     "price": 7.5
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.4
                   }
                 ]
@@ -834,7 +834,7 @@
                     "price": 7.3
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.6
                   }
                 ]
@@ -842,14 +842,14 @@
               {
                 "number": 62,
                 "name": "Calzone 1",
-                "description": "Gefüllt mit Thunfisch, fr. Champignons, Vorderschinken",
+                "description": "GefÃ¼llt mit Thunfisch, fr. Champignons, Vorderschinken",
                 "productVariations": [
                   {
                     "name": "mittel",
                     "price": 7.4
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.7
                   }
                 ]
@@ -857,14 +857,14 @@
               {
                 "number": 63,
                 "name": "Calzone 2",
-                "description": "Gefüllt mit roter Zwiebel, Gyros, Krautsalat",
+                "description": "GefÃ¼llt mit roter Zwiebel, Gyros, Krautsalat",
                 "productVariations": [
                   {
                     "name": "mittel",
                     "price": 7.4
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.9
                   }
                 ]
@@ -872,14 +872,14 @@
               {
                 "number": 64,
                 "name": "Calzone 3",
-                "description": "Gefüllt mit Spinat, fr. Champignons, Weichkäse",
+                "description": "GefÃ¼llt mit Spinat, fr. Champignons, WeichkÃ¤se",
                 "productVariations": [
                   {
                     "name": "mittel",
                     "price": 7.3
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.6
                   }
                 ]
@@ -898,7 +898,7 @@
                     "price": 7.4
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.7
                   }
                 ]
@@ -917,7 +917,7 @@
                     "price": 7.1
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.1
                   }
                 ]
@@ -936,7 +936,7 @@
                     "price": 7.6
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 9.2
                   }
                 ]
@@ -955,7 +955,7 @@
                     "price": 7.3
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.7
                   }
                 ]
@@ -963,7 +963,7 @@
               {
                 "number": 76,
                 "name": "Quattro Formaggi",
-                "description": "vier verschiedene Käsesorten",
+                "description": "vier verschiedene KÃ¤sesorten",
                 "productVariations": [
                   {
                     "name": "klein",
@@ -974,7 +974,7 @@
                     "price": 7.2
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.7
                   }
                 ]
@@ -989,7 +989,7 @@
                     "price": 9.6
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 11.9
                   }
                 ]
@@ -1002,7 +1002,7 @@
               {
                 "number": 1,
                 "name": "Party-Blech-Pizza",
-                "description": "für ca. 5 Personen (40x60 cm)",
+                "description": "fÃ¼r ca. 5 Personen (40x60 cm)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1013,7 +1013,7 @@
               {
                 "number": 1,
                 "name": "Party-Blech-Pizza",
-                "description": "für ca. 4 Personen (rund 45 cm)",
+                "description": "fÃ¼r ca. 4 Personen (rund 45 cm)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1029,7 +1029,7 @@
               {
                 "number": 91,
                 "name": "Panini",
-                "description": "Pizzabrötchen mit Kräuterbutter ",
+                "description": "PizzabrÃ¶tchen mit KrÃ¤uterbutter ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1040,7 +1040,7 @@
               {
                 "number": 93,
                 "name": "Panini",
-                "description": "Pizzabrötchen mit Aioli",
+                "description": "PizzabrÃ¶tchen mit Aioli",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1050,8 +1050,8 @@
               },
               {
                 "number": 94,
-                "name": "Panini gefüllt",
-                "description": "(7 Stk.) gefüllt mit Gouda und Thunfisch",
+                "name": "Panini gefÃ¼llt",
+                "description": "(7 Stk.) gefÃ¼llt mit Gouda und Thunfisch",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1061,8 +1061,8 @@
               },
               {
                 "number": 95,
-                "name": "Panini gefüllt",
-                "description": "(7 Stk.) gefüllt mit Putenfleisch und Gouda ",
+                "name": "Panini gefÃ¼llt",
+                "description": "(7 Stk.) gefÃ¼llt mit Putenfleisch und Gouda ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1072,8 +1072,8 @@
               },
               {
                 "number": 96,
-                "name": "Panini gefüllt",
-                "description": "(7 Stk.) gefüllt mit Gouda und Vorderschinken",
+                "name": "Panini gefÃ¼llt",
+                "description": "(7 Stk.) gefÃ¼llt mit Gouda und Vorderschinken",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1083,8 +1083,8 @@
               },
               {
                 "number": 97,
-                "name": "Panini gefüllt",
-                "description": "(7 Stk.) gefüllt mit Gyros",
+                "name": "Panini gefÃ¼llt",
+                "description": "(7 Stk.) gefÃ¼llt mit Gyros",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1094,8 +1094,8 @@
               },
               {
                 "number": 98,
-                "name": "Panini gefüllt",
-                "description": "(7 Stk.) gefüllt mit Weichkäse und Spinat",
+                "name": "Panini gefÃ¼llt",
+                "description": "(7 Stk.) gefÃ¼llt mit WeichkÃ¤se und Spinat",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1105,8 +1105,8 @@
               },
               {
                 "number": 99,
-                "name": "Panini gefüllt",
-                "description": "(7 Stk.) gefüllt mit fr. Champignons, Gouda-Käse[1]",
+                "name": "Panini gefÃ¼llt",
+                "description": "(7 Stk.) gefÃ¼llt mit fr. Champignons, Gouda-KÃ¤se[1]",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1116,8 +1116,8 @@
               },
               {
                 "number": 100,
-                "name": "Panini gefüllt",
-                "description": "(7 Stk.) gefüllt mit Gouda und Salami",
+                "name": "Panini gefÃ¼llt",
+                "description": "(7 Stk.) gefÃ¼llt mit Gouda und Salami",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1128,7 +1128,7 @@
               {
                 "number": 101,
                 "name": "Extra Butter",
-                "description": "Kräuterbutter hausgemacht",
+                "description": "KrÃ¤uterbutter hausgemacht",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1171,7 +1171,7 @@
               {
                 "number": 314,
                 "name": "Aioli E Peperoncini",
-                "description": "mit Olivenöl,fr.Basilikum,Peperoni,fr.Tomaten,scharf(Knoblauch)",
+                "description": "mit OlivenÃ¶l,fr.Basilikum,Peperoni,fr.Tomaten,scharf(Knoblauch)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1193,7 +1193,7 @@
               {
                 "number": 316,
                 "name": "Mare",
-                "description": "Meeresfrüchte,fr.Tomaten,Zwiebeln,Tomatensauce,Sahnesauce(Knoblauch)",
+                "description": "MeeresfrÃ¼chte,fr.Tomaten,Zwiebeln,Tomatensauce,Sahnesauce(Knoblauch)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1204,7 +1204,7 @@
               {
                 "number": 317,
                 "name": "Carbonara",
-                "description": "mit Vorderschinken,Ei in Käse-Sahnesauce",
+                "description": "mit Vorderschinken,Ei in KÃ¤se-Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1242,7 +1242,7 @@
               {
                 "number": 320,
                 "name": "Maccaroni Bolognese",
-                "description": "Nudelröllchen mit (Rind) Fleischsauce",
+                "description": "NudelrÃ¶llchen mit (Rind) Fleischsauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1253,7 +1253,7 @@
               {
                 "number": 321,
                 "name": "Santa Maria",
-                "description": "Nudelröllchen,Spinat,Champignons,Tomaten- Sahnesauce",
+                "description": "NudelrÃ¶llchen,Spinat,Champignons,Tomaten- Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1264,7 +1264,7 @@
               {
                 "number": 322,
                 "name": "Santa Fe",
-                "description": "Nudelröllchen, Broccoli, Zwiebeln, fr. Champignons, Tomaten-Sahnesauce",
+                "description": "NudelrÃ¶llchen, Broccoli, Zwiebeln, fr. Champignons, Tomaten-Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1275,7 +1275,7 @@
               {
                 "number": 323,
                 "name": "Casa",
-                "description": "Nudelröllchen,fr.Champignons,Erbsen,Vorderschinken,Sahnesauce",
+                "description": "NudelrÃ¶llchen,fr.Champignons,Erbsen,Vorderschinken,Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1297,7 +1297,7 @@
               {
                 "number": 325,
                 "name": "San Marino",
-                "description": "Nudelröllchen,Hühnerfleisch,fr.Champignons,Curry-Käse-Sahnesauce",
+                "description": "NudelrÃ¶llchen,HÃ¼hnerfleisch,fr.Champignons,Curry-KÃ¤se-Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1308,7 +1308,7 @@
               {
                 "number": 326,
                 "name": "Maccaroni Hollandaise",
-                "description": "Nudelröllchen,Broccoli,Spinat,Sauce-Hollandaise(Knoblauch)",
+                "description": "NudelrÃ¶llchen,Broccoli,Spinat,Sauce-Hollandaise(Knoblauch)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1319,7 +1319,7 @@
               {
                 "number": 327,
                 "name": "Maccaroni Speed",
-                "description": "mit Hähnchenfleisch, fr. Champignons, Zwiebeln, fr. Paprika, Sahnesauce",
+                "description": "mit HÃ¤hnchenfleisch, fr. Champignons, Zwiebeln, fr. Paprika, Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1335,7 +1335,7 @@
               {
                 "number": 335,
                 "name": "Alla Panna ",
-                "description": "mit Vorderschinken,Ei und Käse-Sahnesauce",
+                "description": "mit Vorderschinken,Ei und KÃ¤se-Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1357,7 +1357,7 @@
               {
                 "number": 337,
                 "name": "Fiorentina",
-                "description": "Broccoli,Spinat,(Knoblauch),Käse-Sahnesauce",
+                "description": "Broccoli,Spinat,(Knoblauch),KÃ¤se-Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1379,7 +1379,7 @@
               {
                 "number": 339,
                 "name": "Quattro Formaggio",
-                "description": "vier versch. Käsesorten,Sahnesauce",
+                "description": "vier versch. KÃ¤sesorten,Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1417,7 +1417,7 @@
               {
                 "number": 342,
                 "name": "Tagliatelle Milano",
-                "description": "Bandnudeln,Hühnerfleisch,Champignons,Curry-Sahnesauce",
+                "description": "Bandnudeln,HÃ¼hnerfleisch,Champignons,Curry-Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1439,7 +1439,7 @@
               {
                 "number": 345,
                 "name": "Rimini",
-                "description": "Bandnudeln, Broccoli, Hühnerfleisch, fr. Tomaten, in Tomaten-Sahnesauce",
+                "description": "Bandnudeln, Broccoli, HÃ¼hnerfleisch, fr. Tomaten, in Tomaten-Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1510,7 +1510,7 @@
               {
                 "number": 353,
                 "name": "Gnocchi",
-                "description": "Gnocchi,mit Hühnerfleisch und Broccoli in Sahnesauce",
+                "description": "Gnocchi,mit HÃ¼hnerfleisch und Broccoli in Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1521,7 +1521,7 @@
               {
                 "number": 354,
                 "name": "Pollo Funghi",
-                "description": "Gnocchi, Hähnchenfleisch, fr. Champignons, fr. Paprika in Tomaten-Sahne-Sauce",
+                "description": "Gnocchi, HÃ¤hnchenfleisch, fr. Champignons, fr. Paprika in Tomaten-Sahne-Sauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1532,7 +1532,7 @@
             ]
           },
           {
-            "name": "Aufläufe",
+            "name": "AuflÃ¤ufe",
             "products": [
               {
                 "number": 186,
@@ -1581,7 +1581,7 @@
               {
                 "number": 203,
                 "name": "Kentucky Al Forno",
-                "description": "Hähnchenbrust, fr. Tomaten, fr. Paprika, Tomaten-Sahnesauce",
+                "description": "HÃ¤hnchenbrust, fr. Tomaten, fr. Paprika, Tomaten-Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1613,7 +1613,7 @@
               },
               {
                 "number": 208,
-                "name": "Gemüse Gratin",
+                "name": "GemÃ¼se Gratin",
                 "description": "Kartoffeln, fr. Paprika, fr. Champignons, Spinat, Tomaten-Sahnesauce",
                 "productVariations": [
                   {
@@ -1669,7 +1669,7 @@
               {
                 "number": 217,
                 "name": "Canneloni",
-                "description": "Gefüllte Nudelröllchen mit Tomaten-Sahnesauce ",
+                "description": "GefÃ¼llte NudelrÃ¶llchen mit Tomaten-Sahnesauce ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1691,7 +1691,7 @@
               {
                 "number": 223,
                 "name": "Risotto Con Pollo",
-                "description": "mir Reis, Hühnerfleisch, Champignons mit Rahmsauce ",
+                "description": "mir Reis, HÃ¼hnerfleisch, Champignons mit Rahmsauce ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1702,7 +1702,7 @@
               {
                 "number": 224,
                 "name": "Kartoffel Max ",
-                "description": "Kartoffeln, Gyros, fr. Paprika, Weichkäse, Sahnesauce ",
+                "description": "Kartoffeln, Gyros, fr. Paprika, WeichkÃ¤se, Sahnesauce ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1724,7 +1724,7 @@
               {
                 "number": 228,
                 "name": "Greek Al Forno",
-                "description": "Maccaroni, fr.Tomaten, Weichkäse, Rahmsauce ",
+                "description": "Maccaroni, fr.Tomaten, WeichkÃ¤se, Rahmsauce ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1735,7 +1735,7 @@
               {
                 "number": 232,
                 "name": "Royal Al Forno",
-                "description": "Maccaroni, Scampi, (Knoblauch) mit Käse-Sahnesauce",
+                "description": "Maccaroni, Scampi, (Knoblauch) mit KÃ¤se-Sahnesauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1768,7 +1768,7 @@
               {
                 "number": 238,
                 "name": "Gyros Auflauf ",
-                "description": "vier verschiedene Nudelsorten,Sahnesauce,Gyros,Zwiebeln,Weichkäse,Maccaroni",
+                "description": "vier verschiedene Nudelsorten,Sahnesauce,Gyros,Zwiebeln,WeichkÃ¤se,Maccaroni",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -1789,14 +1789,14 @@
               {
                 "number": 421,
                 "name": "Insalata Speciale",
-                "description": "Eisbergsalat,Gurken,Tomaten,gebr.Champignons,Krautsalat,Pep.,rote Zwiebeln,Weichkäse",
+                "description": "Eisbergsalat,Gurken,Tomaten,gebr.Champignons,Krautsalat,Pep.,rote Zwiebeln,WeichkÃ¤se",
                 "productVariations": [
                   {
                     "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.2
                   }
                 ]
@@ -1804,14 +1804,14 @@
               {
                 "number": 422,
                 "name": "Chicken Salat",
-                "description": "Eisbergsalat,Tomaten,Gurken,Paprika,Mais,Möhren,Hähnchenbrust",
+                "description": "Eisbergsalat,Tomaten,Gurken,Paprika,Mais,MÃ¶hren,HÃ¤hnchenbrust",
                 "productVariations": [
                   {
                     "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.6
                   }
                 ]
@@ -1819,14 +1819,14 @@
               {
                 "number": 427,
                 "name": "Salat Gourmet",
-                "description": "Eisbergsalat, Tomaten, Gurken, gebratene Champignons, Broccoli, Hähnchenfleisch",
+                "description": "Eisbergsalat, Tomaten, Gurken, gebratene Champignons, Broccoli, HÃ¤hnchenfleisch",
                 "productVariations": [
                   {
                     "name": "klein",
                     "price": 5.5
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 8.1
                   }
                 ]
@@ -1834,14 +1834,14 @@
               {
                 "number": 423,
                 "name": "Pollo Salat",
-                "description": "Eisbergsalat, Tomaten, Gurken, Mais, in der Pfanne gebr. Hähnchenfleisch, Zwiebeln,Paprika",
+                "description": "Eisbergsalat, Tomaten, Gurken, Mais, in der Pfanne gebr. HÃ¤hnchenfleisch, Zwiebeln,Paprika",
                 "productVariations": [
                   {
                     "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.9
                   }
                 ]
@@ -1849,14 +1849,14 @@
               {
                 "number": 424,
                 "name": "Cocktail Salat ",
-                "description": "Eisbergsalat,Gurke,Cherrytomaten,Möhren,rote Zwiebel,Paprika,Rucola",
+                "description": "Eisbergsalat,Gurke,Cherrytomaten,MÃ¶hren,rote Zwiebel,Paprika,Rucola",
                 "productVariations": [
                   {
                     "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.6
                   }
                 ]
@@ -1864,14 +1864,14 @@
               {
                 "number": 428,
                 "name": "Gemischter Salat",
-                "description": "Eisbergsalat,Tomaten,Gurke,Paprika,Möhren,Mais,rote Beete,Spargel",
+                "description": "Eisbergsalat,Tomaten,Gurke,Paprika,MÃ¶hren,Mais,rote Beete,Spargel",
                 "productVariations": [
                   {
                     "name": "klein",
                     "price": 4.4
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 6.5
                   }
                 ]
@@ -1879,14 +1879,14 @@
               {
                 "number": 429,
                 "name": "Salat Gyros",
-                "description": "Eisbergsalat,Tomaten,Gurke,Gyros,rote Zwiebeln,Krautsalat,Peperoni,Weichkäse",
+                "description": "Eisbergsalat,Tomaten,Gurke,Gyros,rote Zwiebeln,Krautsalat,Peperoni,WeichkÃ¤se",
                 "productVariations": [
                   {
                     "name": "klein",
                     "price": 5.2
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.8
                   }
                 ]
@@ -1901,7 +1901,7 @@
                     "price": 4.9
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.2
                   }
                 ]
@@ -1916,7 +1916,7 @@
                     "price": 5.1
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.2
                   }
                 ]
@@ -1924,14 +1924,14 @@
               {
                 "number": 436,
                 "name": "Greek Salat",
-                "description": "Eisbergsalat,Tomaten,Gurke,Ei,Peperoni,Zwiebeln,Weichkäse,Krautsalat,Oliven",
+                "description": "Eisbergsalat,Tomaten,Gurke,Ei,Peperoni,Zwiebeln,WeichkÃ¤se,Krautsalat,Oliven",
                 "productVariations": [
                   {
                     "name": "klein",
                     "price": 5.1
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.3
                   }
                 ]
@@ -1946,7 +1946,7 @@
                     "price": 5.3
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.6
                   }
                 ]
@@ -1961,11 +1961,16 @@
                     "price": 5.4
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 7.9
                   }
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "name": "Gemischt",
+            "products": [
               {
                 "number": 442,
                 "name": "Tomatensalat",
@@ -1990,7 +1995,7 @@
               },
               {
                 "number": 446,
-                "name": "Grüner Salat",
+                "name": "GrÃ¼ner Salat",
                 "description": "",
                 "productVariations": [
                   {
@@ -2001,7 +2006,7 @@
               },
               {
                 "number": 448,
-                "name": "Möhrensalat",
+                "name": "MÃ¶hrensalat",
                 "description": "",
                 "productVariations": [
                   {
@@ -2056,7 +2061,7 @@
               },
               {
                 "number": 495,
-                "name": "Weichkäse",
+                "name": "WeichkÃ¤se",
                 "description": "",
                 "productVariations": [
                   {
@@ -2077,7 +2082,7 @@
             "products": [
               {
                 "number": 110,
-                "name": "Käse",
+                "name": "KÃ¤se",
                 "description": "mit Gouda",
                 "productVariations": [
                   {
@@ -2188,7 +2193,7 @@
               {
                 "number": 128,
                 "name": "Ibiza",
-                "description": "mit Hühnerfleisch, Gouda",
+                "description": "mit HÃ¼hnerfleisch, Gouda",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2220,7 +2225,7 @@
               {
                 "number": 602,
                 "name": "Schnitzel Bella ",
-                "description": "mit Vorderschinken,(Rind)Fleischsauce,Gouda überb.(Beilagensalat)",
+                "description": "mit Vorderschinken,(Rind)Fleischsauce,Gouda Ã¼berb.(Beilagensalat)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2231,7 +2236,7 @@
               {
                 "number": 603,
                 "name": "Schnitzel Hollandaise ",
-                "description": "mit Spargel,Broccoli,Hollandaise-Sauce,Gouda überb. (Beilagensalat)",
+                "description": "mit Spargel,Broccoli,Hollandaise-Sauce,Gouda Ã¼berb. (Beilagensalat)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2253,7 +2258,7 @@
               {
                 "number": 605,
                 "name": "Schlemmer Schnitzel",
-                "description": "mit fr.Champignons, Zwiebeln, mit Sahnesauce, Gouda überb. (Beilagensalat)",
+                "description": "mit fr.Champignons, Zwiebeln, mit Sahnesauce, Gouda Ã¼berb. (Beilagensalat)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2263,7 +2268,7 @@
               },
               {
                 "number": 606,
-                "name": "Jägerschnitzel",
+                "name": "JÃ¤gerschnitzel",
                 "description": "mit fr. Champignons, Rahmsauce (Beilagensalat)",
                 "productVariations": [
                   {
@@ -2297,7 +2302,7 @@
               {
                 "number": 612,
                 "name": "Hawaii Schnitzel",
-                "description": "mit Ananas, Vorderschinken, Sahnesauce, mit Gouda überb. (Beilagensalat)",
+                "description": "mit Ananas, Vorderschinken, Sahnesauce, mit Gouda Ã¼berb. (Beilagensalat)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2319,7 +2324,7 @@
               {
                 "number": 617,
                 "name": "Schnitzel Mozzarella ",
-                "description": "mit Mozzarella, Tomatenscheiben, Basilikum und Gouda überb.",
+                "description": "mit Mozzarella, Tomatenscheiben, Basilikum und Gouda Ã¼berb.",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2341,7 +2346,7 @@
               {
                 "number": 619,
                 "name": "Schnitzel Paris",
-                "description": "mit Vorderschinken, Spargel, Gouda überb., Sauce-Hollandaise (Beilagensalat)",
+                "description": "mit Vorderschinken, Spargel, Gouda Ã¼berb., Sauce-Hollandaise (Beilagensalat)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2373,7 +2378,7 @@
               {
                 "number": 558,
                 "name": "Calamaris",
-                "description": "mir Remoulade, Zitrone, grüner Salat",
+                "description": "mir Remoulade, Zitrone, grÃ¼ner Salat",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2400,7 +2405,7 @@
               {
                 "number": 584,
                 "name": "Pommes ",
-                "description": "groß",
+                "description": "groÃŸ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2488,7 +2493,7 @@
             ]
           },
           {
-            "name": "Gyros vom Spieß",
+            "name": "Gyros vom SpieÃŸ",
             "products": [
               {
                 "number": 658,
@@ -2526,7 +2531,7 @@
               {
                 "number": 667,
                 "name": "Gyros ",
-                "description": "überbacken mit Sauce Hollandaise, Pommes Frites ",
+                "description": "Ã¼berbacken mit Sauce Hollandaise, Pommes Frites ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2542,7 +2547,7 @@
               {
                 "number": 680,
                 "name": "Percy Sredge",
-                "description": "Baked Potatoe mit Vorderschinkenstreifen,Broccoli,Sourcream,Käse überbacken",
+                "description": "Baked Potatoe mit Vorderschinkenstreifen,Broccoli,Sourcream,KÃ¤se Ã¼berbacken",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2553,7 +2558,7 @@
               {
                 "number": 681,
                 "name": "Chuck Berry",
-                "description": "Backed Potatoe mit gebr. Hähnchenbrust,Champignons,Hausdressing,überbacken",
+                "description": "Backed Potatoe mit gebr. HÃ¤hnchenbrust,Champignons,Hausdressing,Ã¼berbacken",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2564,7 +2569,7 @@
               {
                 "number": 681,
                 "name": "Bil Haley ",
-                "description": "Backed Potatoe mit Spinat,Feta-Käse, Zwiebeln,Hausdressing,Käse überbacken",
+                "description": "Backed Potatoe mit Spinat,Feta-KÃ¤se, Zwiebeln,Hausdressing,KÃ¤se Ã¼berbacken",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2613,7 +2618,7 @@
               {
                 "number": 645,
                 "name": "Chicken Wings ",
-                "description": "(6 Stk.) mit BBQ-Sauce-pikant, würzig, Pommes Frites ",
+                "description": "(6 Stk.) mit BBQ-Sauce-pikant, wÃ¼rzig, Pommes Frites ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2624,7 +2629,7 @@
               {
                 "number": 646,
                 "name": "Chicken Wings ",
-                "description": "(9 Stk.) mit BBQ-Saucen-pikant, würzig, Pommes Frites ",
+                "description": "(9 Stk.) mit BBQ-Saucen-pikant, wÃ¼rzig, Pommes Frites ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2706,7 +2711,7 @@
               {
                 "number": 679,
                 "name": "Chicken-Burger",
-                "description": "mit Hähnchenfleisch, dazu Coca Cola (0,5 l)",
+                "description": "mit HÃ¤hnchenfleisch, dazu Coca Cola (0,5 l)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2717,7 +2722,7 @@
               {
                 "number": 683,
                 "name": "Mexico-Burger",
-                "description": "180 gr. Fleisch, Jalapeños, Mais, Chili-Sauce, dazu Coca Cola (0,5 l)",
+                "description": "180 gr. Fleisch, JalapeÃ±os, Mais, Chili-Sauce, dazu Coca Cola (0,5 l)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2759,8 +2764,8 @@
             "products": [
               {
                 "number": 548,
-                "name": "Hühnersuppe",
-                "description": "mit chin. Gemüse",
+                "name": "HÃ¼hnersuppe",
+                "description": "mit chin. GemÃ¼se",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2771,7 +2776,7 @@
               {
                 "number": 549,
                 "name": "Wan Tan Suppe",
-                "description": "mit chin. Gemüse ",
+                "description": "mit chin. GemÃ¼se ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2803,8 +2808,8 @@
               },
               {
                 "number": 551,
-                "name": "Frühlingsrolle",
-                "description": "Gefüllt mit Hühnerfleisch, chin.Gemüse, süß-sauer-Sauce",
+                "name": "FrÃ¼hlingsrolle",
+                "description": "GefÃ¼llt mit HÃ¼hnerfleisch, chin.GemÃ¼se, sÃ¼ÃŸ-sauer-Sauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2814,8 +2819,8 @@
               },
               {
                 "number": 552,
-                "name": "Mini-Frühlingsrollen",
-                "description": "(8 Stk.) gefüllt mit chin.Gemüse und süß-sauer-Sauce",
+                "name": "Mini-FrÃ¼hlingsrollen",
+                "description": "(8 Stk.) gefÃ¼llt mit chin.GemÃ¼se und sÃ¼ÃŸ-sauer-Sauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2842,7 +2847,7 @@
               {
                 "number": 561,
                 "name": "Nasi Goreng Spezial",
-                "description": "(scharf) mit Ei, Scampi,Zwiebeln,Hühnerfleisch,Erbsen,Curry,Gemüse",
+                "description": "(scharf) mit Ei, Scampi,Zwiebeln,HÃ¼hnerfleisch,Erbsen,Curry,GemÃ¼se",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2853,7 +2858,7 @@
               {
                 "number": 562,
                 "name": "Schweinefleisch",
-                "description": "mit Ei, Schweinefleisch, chin. Gemüse",
+                "description": "mit Ei, Schweinefleisch, chin. GemÃ¼se",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2863,8 +2868,8 @@
               },
               {
                 "number": 563,
-                "name": "Hühnerfleisch",
-                "description": "mit Ei, Hühnerfleisch, chin. Gemüse",
+                "name": "HÃ¼hnerfleisch",
+                "description": "mit Ei, HÃ¼hnerfleisch, chin. GemÃ¼se",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2875,7 +2880,7 @@
               {
                 "number": 564,
                 "name": "Rindfleisch",
-                "description": "mit Ei, Rindfleisch, chin. Gemüse",
+                "description": "mit Ei, Rindfleisch, chin. GemÃ¼se",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2886,7 +2891,7 @@
               {
                 "number": 566,
                 "name": "Reis Spezial",
-                "description": "mit Ei, Rindfleisch, Schweinefleisch, Hühnerfleisch, chin. Gemüse",
+                "description": "mit Ei, Rindfleisch, Schweinefleisch, HÃ¼hnerfleisch, chin. GemÃ¼se",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2897,7 +2902,7 @@
               {
                 "number": 568,
                 "name": "Vegetarischer Reis ",
-                "description": "Gebratener Reis mit Ei, chin. Gemüse ",
+                "description": "Gebratener Reis mit Ei, chin. GemÃ¼se ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2913,7 +2918,7 @@
               {
                 "number": 572,
                 "name": "Schweinefleisch",
-                "description": "mit Ei, Schweinefleisch, chin. Gemüse",
+                "description": "mit Ei, Schweinefleisch, chin. GemÃ¼se",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2923,8 +2928,8 @@
               },
               {
                 "number": 573,
-                "name": "Hühnerfleisch",
-                "description": "mit Ei, Hühnerfleisch, chin. Gemüse ",
+                "name": "HÃ¼hnerfleisch",
+                "description": "mit Ei, HÃ¼hnerfleisch, chin. GemÃ¼se ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2935,7 +2940,7 @@
               {
                 "number": 574,
                 "name": "Rindfleisch",
-                "description": "mit Ei, Rindfleisch, chin. Gemüse ",
+                "description": "mit Ei, Rindfleisch, chin. GemÃ¼se ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2946,7 +2951,7 @@
               {
                 "number": 575,
                 "name": "Bami Goreng ",
-                "description": "mit Ei, Hühnerfleisch, Vorderschinken, Curry, Scampi, Gemüse ",
+                "description": "mit Ei, HÃ¼hnerfleisch, Vorderschinken, Curry, Scampi, GemÃ¼se ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2957,7 +2962,7 @@
               {
                 "number": 577,
                 "name": "Nudeln Spezial",
-                "description": "mit Ei, Rindfleisch, Schweinefleisch, Hühnerfleisch, chin. Gemüse ",
+                "description": "mit Ei, Rindfleisch, Schweinefleisch, HÃ¼hnerfleisch, chin. GemÃ¼se ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2968,7 +2973,7 @@
               {
                 "number": 578,
                 "name": "Scampi - scharf",
-                "description": "mit Ei, Scampi, chin. Gemüse (Knoblauch)",
+                "description": "mit Ei, Scampi, chin. GemÃ¼se (Knoblauch)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2979,7 +2984,7 @@
               {
                 "number": 579,
                 "name": "Vegetarische Nudeln",
-                "description": "Gebratene Nudeln mit Ei, chin. Gemüse",
+                "description": "Gebratene Nudeln mit Ei, chin. GemÃ¼se",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -2995,7 +3000,7 @@
               {
                 "number": 580,
                 "name": "Chup-Suey",
-                "description": "mit Gemüse ",
+                "description": "mit GemÃ¼se ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3017,7 +3022,7 @@
               {
                 "number": 583,
                 "name": "Szechuan-Art",
-                "description": "mit Bambus, Paprika, Möhren, Champignons(scharf)",
+                "description": "mit Bambus, Paprika, MÃ¶hren, Champignons(scharf)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3038,8 +3043,8 @@
               },
               {
                 "number": 589,
-                "name": "Hummer Süß-Sauer ",
-                "description": "mit Bambus, Paprika, Möhren",
+                "name": "Hummer SÃ¼ÃŸ-Sauer ",
+                "description": "mit Bambus, Paprika, MÃ¶hren",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3055,7 +3060,7 @@
               {
                 "number": 521,
                 "name": "Peking-Ente",
-                "description": "mit chin. Gemüse ",
+                "description": "mit chin. GemÃ¼se ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3076,8 +3081,8 @@
               },
               {
                 "number": 523,
-                "name": "Süß-Sauer ",
-                "description": "mit Ananas, Paprika, Bambus, Möhren",
+                "name": "SÃ¼ÃŸ-Sauer ",
+                "description": "mit Ananas, Paprika, Bambus, MÃ¶hren",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3099,7 +3104,7 @@
               {
                 "number": 525,
                 "name": "Erdnuss-Ente (leicht scharf)",
-                "description": "mit chin. Gemüse",
+                "description": "mit chin. GemÃ¼se",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3115,7 +3120,7 @@
               {
                 "number": 529,
                 "name": "Huhn Szechuan Art ",
-                "description": "Bambus, Paprika, Zwiebeln, Möhren",
+                "description": "Bambus, Paprika, Zwiebeln, MÃ¶hren",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3126,7 +3131,7 @@
               {
                 "number": 530,
                 "name": "Huhn Chop Suey",
-                "description": "chin. Gemüse ",
+                "description": "chin. GemÃ¼se ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3147,7 +3152,7 @@
               },
               {
                 "number": 533,
-                "name": "Huhn Süß-Sauer ",
+                "name": "Huhn SÃ¼ÃŸ-Sauer ",
                 "description": "Bambus, Ananas",
                 "productVariations": [
                   {
@@ -3170,7 +3175,7 @@
               {
                 "number": 535,
                 "name": "Huhn Ku-Lu-Ju",
-                "description": "Bambus, Möhren, Paprika, Ananas, süß-sauer, paniert",
+                "description": "Bambus, MÃ¶hren, Paprika, Ananas, sÃ¼ÃŸ-sauer, paniert",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3192,7 +3197,7 @@
               {
                 "number": 538,
                 "name": "Huhn Erdnuss",
-                "description": "Paprika, Bambus, Möhren, Erdnusssauce",
+                "description": "Paprika, Bambus, MÃ¶hren, Erdnusssauce",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3208,7 +3213,7 @@
               {
                 "number": 501,
                 "name": "Chop Suey",
-                "description": "mit chin. Gemüse ",
+                "description": "mit chin. GemÃ¼se ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3241,7 +3246,7 @@
               {
                 "number": 505,
                 "name": "Ku-Lu-Ju",
-                "description": "mit Ananas, Paprika, süß-sauer, paniert, Bambus ",
+                "description": "mit Ananas, Paprika, sÃ¼ÃŸ-sauer, paniert, Bambus ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3252,7 +3257,7 @@
               {
                 "number": 506,
                 "name": "Szechuan Art ",
-                "description": "mit Bambus, Paprika, Zwiebeln, Möhren, Bambus (scharf)",
+                "description": "mit Bambus, Paprika, Zwiebeln, MÃ¶hren, Bambus (scharf)",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3262,8 +3267,8 @@
               },
               {
                 "number": 507,
-                "name": "Süß-Sauer ",
-                "description": "mit Bambus, Paprika, Ananas, Möhren, süß-sauer ",
+                "name": "SÃ¼ÃŸ-Sauer ",
+                "description": "mit Bambus, Paprika, Ananas, MÃ¶hren, sÃ¼ÃŸ-sauer ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3279,7 +3284,7 @@
               {
                 "number": 511,
                 "name": "Chop Suey ",
-                "description": "mit chin. Gemüse ",
+                "description": "mit chin. GemÃ¼se ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3355,7 +3360,7 @@
               {
                 "number": 701,
                 "name": "6er Nuggets",
-                "description": "mit Pommes Frites, 1 Capri Sonne, 1 Überraschung",
+                "description": "mit Pommes Frites, 1 Capri Sonne, 1 Ãœberraschung",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3366,7 +3371,7 @@
               {
                 "number": 702,
                 "name": "Hamburger ",
-                "description": "mit Pommes Frites, 1 Capri Sonne, 1 Überraschung ",
+                "description": "mit Pommes Frites, 1 Capri Sonne, 1 Ãœberraschung ",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3377,7 +3382,7 @@
               {
                 "number": 703,
                 "name": "1 Mini Pizza Margherita",
-                "description": "mit 1 Capri Sonne, 1 Überraschung",
+                "description": "mit 1 Capri Sonne, 1 Ãœberraschung",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3388,7 +3393,7 @@
               {
                 "number": 704,
                 "name": "Spaghetti Napoli",
-                "description": "1 Capri Sonne, 1 Überraschung",
+                "description": "1 Capri Sonne, 1 Ãœberraschung",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3399,7 +3404,7 @@
               {
                 "number": 705,
                 "name": "Gebratene Nudeln",
-                "description": "mit Gemüse, 1 Capri Sonne, 1 Überraschung",
+                "description": "mit GemÃ¼se, 1 Capri Sonne, 1 Ãœberraschung",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3412,10 +3417,10 @@
         ]
       },
       {
-        "name": "Getränke",
+        "name": "GetrÃ¤nke",
         "productGroups": [
           {
-            "name": "Getränke",
+            "name": "GetrÃ¤nke",
             "products": [
               {
                 "number": 800,
@@ -3551,7 +3556,7 @@
               },
               {
                 "number": 816,
-                "name": "Früh Kölsch",
+                "name": "FrÃ¼h KÃ¶lsch",
                 "description": "0,5l Flasche",
                 "productVariations": [
                   {
@@ -3585,7 +3590,7 @@
               {
                 "number": 819,
                 "name": "Mixery",
-                "description": "Mischgetränk, Cola",
+                "description": "MischgetrÃ¤nk, Cola",
                 "productVariations": [
                   {
                     "name": "normal",
@@ -3728,7 +3733,7 @@
                     "price": 3.7
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 6.9
                   }
                 ]
@@ -3743,7 +3748,7 @@
                     "price": 3.7
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 6.9
                   }
                 ]
@@ -3758,7 +3763,7 @@
                     "price": 3.7
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 6.9
                   }
                 ]
@@ -3773,7 +3778,7 @@
                     "price": 3.7
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 6.9
                   }
                 ]
@@ -3788,7 +3793,7 @@
                     "price": 3.7
                   },
                   {
-                    "name": "groß",
+                    "name": "groÃŸ",
                     "price": 6.9
                   }
                 ]
@@ -3955,7 +3960,7 @@
           ]
         },
         {
-          "description": "Meeresfrüchte",
+          "description": "MeeresfrÃ¼chte",
           "additionalPrices": [
             {
               "name": "",
@@ -4006,7 +4011,7 @@
           ]
         },
         {
-          "description": "Fetakäse",
+          "description": "FetakÃ¤se",
           "additionalPrices": [
             {
               "name": "",
@@ -4091,7 +4096,7 @@
           ]
         },
         {
-          "description": "Käse",
+          "description": "KÃ¤se",
           "additionalPrices": [
             {
               "name": "",
@@ -4463,7 +4468,7 @@
           ]
         },
         {
-          "description": "Essig-Öl",
+          "description": "Essig-Ã–l",
           "additionalPrices": [
             {
               "name": "",
@@ -4664,7 +4669,7 @@
       ],
       "additionals": [
         {
-          "description": "Süß-Sauer",
+          "description": "SÃ¼ÃŸ-Sauer",
           "additionalPrices": [
             {
               "name": "",
