@@ -23,9 +23,7 @@ import pizza.vo.order.UserOrderPaidVO;
 import pizza.vo.order.UserOrderVO;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import static pizza.service.common.AdditionalBusinessToValueConverter.getProductIdsFromProductsString;
 import static pizza.service.common.UserOrderBusinessToValueObjectConverter.getUserOrderFromBO;
@@ -174,7 +172,7 @@ public class UserOrderServiceImpl implements UserOrderService {
         return getUserOrderFromBO(userOrder);
     }
 
-    public UserOrder getUserOrderBO(Integer userOrderId) {
+    private UserOrder getUserOrderBO(Integer userOrderId) {
         UserOrder userOrder = userOrderRepository.findOne(userOrderId);
         if (userOrder == null) {
             throw new NotFoundException();
@@ -186,6 +184,9 @@ public class UserOrderServiceImpl implements UserOrderService {
     public void setUserOrderPaid(Integer userOrderId, UserOrderPaidVO userOrderPaidVO) {
         UserOrder userOrder = getUserOrderBO(userOrderId);
         userOrder.setPaid(userOrderPaidVO.getPaid());
+
+        // TODO calculate discount and set user discount
+
         userOrderRepository.save(userOrder);
     }
 
@@ -199,10 +200,28 @@ public class UserOrderServiceImpl implements UserOrderService {
     }
 
     @Override
-    public List<UserOrderDetailsVO> getCurrentUserOrders() {
+    public List<UserOrderDetailsVO> getCurrentUserOrdersIncludingDiscount() {
         BulkOrder bulkOrder = bulkOrderService.findOpenBulkOrder();
         List<UserOrder> userOrders = userOrderRepository.findByBulkOrder(bulkOrder);
-        return getUserOrdersFromBOs(userOrders);
+        List<UserOrderDetailsVO> userOrderVOs = getUserOrdersFromBOs(userOrders);
+        Map<Integer, BigDecimal> usersWithDiscount = getDistinctUsersWithDiscount(userOrders);
+        for (UserOrderDetailsVO userOrderDetailsVO : userOrderVOs) {
+            if (usersWithDiscount.containsKey(userOrderDetailsVO.getUserId()) && usersWithDiscount.get(userOrderDetailsVO.getUserId()).compareTo(BigDecimal.ZERO) > 0) {
+                // TODO calculate discount
+            }
+        }
+        return userOrderVOs;
+    }
+
+    private Map<Integer, BigDecimal> getDistinctUsersWithDiscount(List<UserOrder> userOrders) {
+        Map<Integer, BigDecimal> userDiscount = new HashMap<>();
+        for (UserOrder userOrder : userOrders) {
+            Integer userId = userOrder.getUser().getUserId();
+            if (!userDiscount.containsKey(userId)) {
+                userDiscount.put(userId, userOrder.getUser().getDiscount());
+            }
+        }
+        return userDiscount;
     }
 
 }

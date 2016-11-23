@@ -195,7 +195,7 @@ public class BulkOrderServiceImpl implements BulkOrderService {
     }
 
     public List<String> getAllEmailAddressesFromCurrentUserOrders() {
-        List<UserOrderDetailsVO> currentUserOrders = userOrderService.getCurrentUserOrders();
+        List<UserOrderDetailsVO> currentUserOrders = userOrderService.getCurrentUserOrdersIncludingDiscount();
         return currentUserOrders.stream().map(UserOrderDetailsVO::getUserName).collect(Collectors.toList());
     }
 

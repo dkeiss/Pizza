@@ -1,7 +1,6 @@
 package pizza.controller.rest.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pizza.service.UserOrderService;
 import pizza.vo.order.UserOrderDetailsVO;
@@ -24,7 +23,7 @@ public class AdminShoppingcardController {
 
     @RequestMapping(method = RequestMethod.GET)
     public List<UserOrderDetailsVO> getUserOrders() {
-        return userOrderService.getCurrentUserOrders();
+        return userOrderService.getCurrentUserOrdersIncludingDiscount();
     }
 
     @RequestMapping(value = "/{userOrderId}", method = RequestMethod.GET)

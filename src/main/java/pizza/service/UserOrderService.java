@@ -23,6 +23,6 @@ public interface UserOrderService {
 
     void deleteUserOrder(Integer userOrderId);
 
-    List<UserOrderDetailsVO> getCurrentUserOrders();
+    List<UserOrderDetailsVO> getCurrentUserOrdersIncludingDiscount();
 
 }
