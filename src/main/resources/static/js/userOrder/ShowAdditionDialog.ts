@@ -56,9 +56,9 @@ namespace WebApplication.UserOrder
 
         public start()
         {
-            this._closeDialog.on("click", () => { this.closeDialog() });
-            this._additionalBoxMenuSelectorDiv.on("click", event => { this.selectAdditions(event); });
-            this._orderSubmit.on("click", () => { this.checkAndSubmitOrder(); });
+            this._closeDialog.off().on("click", () => { this.closeDialog() });
+            this._additionalBoxMenuSelectorDiv.off().on("click", event => { this.selectAdditions(event); });
+            this._orderSubmit.off().on("click", () => { this.checkAndSubmitOrder(); });
         }
 
         private existProductIdInAdditions()
