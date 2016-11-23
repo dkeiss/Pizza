@@ -48,9 +48,9 @@ public class AdminProductCatalogServiceImpl implements AdminProductCatalogServic
         try {
             String fileString = read(file.getInputStream());
             return objectMapper.readValue(fileString, ProductCatalogFullVO.class);
-        } catch (UnrecognizedPropertyException e){
+        } catch (UnrecognizedPropertyException e) {
             throw new ProductCatalogInvalidException(e);
-        } catch(IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
@@ -62,7 +62,7 @@ public class AdminProductCatalogServiceImpl implements AdminProductCatalogServic
     }
 
     private String read(InputStream input) throws IOException {
-        try (BufferedReader buffer = new BufferedReader(new InputStreamReader(input))) {
+        try (BufferedReader buffer = new BufferedReader(new InputStreamReader(input, "UTF-8"))) {
             return buffer.lines().collect(Collectors.joining("\n"));
         }
     }
