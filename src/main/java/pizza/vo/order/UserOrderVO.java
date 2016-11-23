@@ -22,7 +22,7 @@ public class UserOrderVO {
     private Integer productVariationId;
 
     @NotNull
-    private Integer number;
+    private Integer number = 1;
 
     private List<UserOrderAdditionalVO> userOrderAdditionals;
 
