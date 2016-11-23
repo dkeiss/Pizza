@@ -55,7 +55,7 @@ public class AdminProductCatalogServiceImpl implements AdminProductCatalogServic
         }
     }
 
-    public void addAdditionals(Integer productCatalogId, List<AdditionalCategoryVO> additionals) {
+    private void addAdditionals(Integer productCatalogId, List<AdditionalCategoryVO> additionals) {
         for (AdditionalCategoryVO additionalCategory : additionals) {
             additionalService.createAdditionalCategory(productCatalogId, additionalCategory);
         }
