@@ -203,12 +203,19 @@ namespace WebApplication.UserOrder
                 .find("span.title")
                 .first()
                 .removeClass(this._cssAdditionalTitleRed);
+
+            this.getSetSelectedAdditionalIds(target);
         }
 
         private selectMultiAdditions(target: JQuery): void
         {
             target.hasClass(this._cssSelectAdditions) ? target.removeClass(this._cssSelectAdditions) : target.addClass(this._cssSelectAdditions);
 
+            this.getSetSelectedAdditionalIds(target);
+        }
+
+        private getSetSelectedAdditionalIds(target: JQuery)
+        {
             const additionalId = ShowAdditionDialog.getAdditionalIdFromDiv(target);
 
             this._selectedAdditionalIds.indexOf(additionalId) >= 0 ?
@@ -224,6 +231,8 @@ namespace WebApplication.UserOrder
 
         private checkAndSubmitOrder()
         {
+            let dutyControls = false;
+
             this._additionalBoxMenuSelectorDiv
                 .parent()
                 .each( (index, element) => {
@@ -236,17 +245,36 @@ namespace WebApplication.UserOrder
                                 .find("span.title")
                                 .first()
                                 .addClass(this._cssAdditionalTitleRed);
+
+                            dutyControls = true;
                         }
                     }
                 });
 
+            if (dutyControls) return;
 
             var sendOrder = new SendOrder();
             sendOrder.productId = this._product.productId;
             sendOrder.productVariationId = this._productVariationId;
-            sendOrder.additionalIds = this._selectedAdditionalIds;
+            sendOrder.userOrderAdditionals = [];
+            sendOrder.number = 1;
 
-            OrderService.sendOrderForUser(sendOrder, onsuccess => { alert("Bestellt!") });
+            for (let i = 0; i < this._selectedAdditionalIds.length; i++)
+            {
+                var sendOrderAdditional = new SendOrderAdditionals();
+                sendOrderAdditional.additionalId = this._selectedAdditionalIds[i];
+
+                let additionObject = this._showCurrentAdditions.filter(item => item.additionalId == this._selectedAdditionalIds[i])[0];
+                sendOrderAdditional.additionalPriceId = additionObject.additionalPrices[this._priceSize].additionalPriceId;
+
+                sendOrder.userOrderAdditionals.push(sendOrderAdditional);
+            }
+
+            OrderService.sendOrderForUser(sendOrder, onsuccess =>
+            {
+                this.closeDialog();
+                alert("Ihre Auswahl wurde Bestellt!")
+            });
         }
     }
 
@@ -254,6 +282,14 @@ namespace WebApplication.UserOrder
     {
         productId: number;
         productVariationId: number;
-        additionalIds: number[];
+        userOrderAdditionals: SendOrderAdditionals[];
+        number: number;
+    }
+
+    export class SendOrderAdditionals implements IUserOrderAdditional
+    {
+        additionalId: number;
+        additionalPriceId: number;
+
     }
 }

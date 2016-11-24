@@ -10,9 +10,21 @@ interface IUser
     modificationDate?: number;
 }
 
+
+
+
 interface IOrder
 {
     productId: number;
     productVariationId: number;
-    additionalIds: number[];
+    userOrderAdditionals: IUserOrderAdditionals;
+    number: number;
+}
+
+interface IUserOrderAdditionals extends Array<IUserOrderAdditional>{}
+
+interface IUserOrderAdditional
+{
+    additionalId: number,
+    additionalPriceId: number
 }
