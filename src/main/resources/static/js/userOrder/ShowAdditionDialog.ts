@@ -203,12 +203,19 @@ namespace WebApplication.UserOrder
                 .find("span.title")
                 .first()
                 .removeClass(this._cssAdditionalTitleRed);
+
+            this.getSetSelectedAdditionalIds(target);
         }
 
         private selectMultiAdditions(target: JQuery): void
         {
             target.hasClass(this._cssSelectAdditions) ? target.removeClass(this._cssSelectAdditions) : target.addClass(this._cssSelectAdditions);
 
+            this.getSetSelectedAdditionalIds(target);
+        }
+
+        private getSetSelectedAdditionalIds(target: JQuery)
+        {
             const additionalId = ShowAdditionDialog.getAdditionalIdFromDiv(target);
 
             this._selectedAdditionalIds.indexOf(additionalId) >= 0 ?
@@ -224,6 +231,8 @@ namespace WebApplication.UserOrder
 
         private checkAndSubmitOrder()
         {
+            let dutyControls = false;
+
             this._additionalBoxMenuSelectorDiv
                 .parent()
                 .each( (index, element) => {
@@ -236,10 +245,13 @@ namespace WebApplication.UserOrder
                                 .find("span.title")
                                 .first()
                                 .addClass(this._cssAdditionalTitleRed);
+
+                            dutyControls = true;
                         }
                     }
                 });
 
+            if (dutyControls) return;
 
             var sendOrder = new SendOrder();
             sendOrder.productId = this._product.productId;
@@ -258,7 +270,6 @@ namespace WebApplication.UserOrder
                 sendOrder.userOrderAdditionals.push(sendOrderAdditional);
             }
 
-            console.log(sendOrder);
             OrderService.sendOrderForUser(sendOrder, onsuccess =>
             {
                 this.closeDialog();
