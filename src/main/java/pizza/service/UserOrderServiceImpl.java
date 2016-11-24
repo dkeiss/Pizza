@@ -2,7 +2,6 @@ package pizza.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jca.cci.core.InteractionCallback;
 import org.springframework.stereotype.Service;
 import pizza.domain.order.BulkOrder;
 import pizza.domain.order.UserOrder;
@@ -13,9 +12,8 @@ import pizza.domain.product.ProductVariation;
 import pizza.domain.product.additional.Additional;
 import pizza.domain.product.additional.AdditionalPrice;
 import pizza.domain.user.User;
-import pizza.repositories.*;
-import pizza.service.common.AdditionalBusinessToValueConverter;
-import pizza.service.exception.*;
+import pizza.repositories.UserOrderRepository;
+import pizza.service.exception.NotFoundException;
 import pizza.service.exception.userorder.*;
 import pizza.vo.order.UserOrderAdditionalVO;
 import pizza.vo.order.UserOrderDetailsVO;
@@ -123,7 +121,7 @@ public class UserOrderServiceImpl implements UserOrderService {
                 throw new UserOrderAdditionalNotFoundException();
             }
             AdditionalPrice additionalPrice = additionalService.findAdditionalPrice(userOrderAdditionalVO.getAdditionalPriceId());
-            if (additionalPrice == null || additionalPrice.getAdditional().getAdditionalId().equals(additional.getAdditionalId())) {
+            if (additionalPrice == null || !additionalPrice.getAdditional().getAdditionalId().equals(additional.getAdditionalId())) {
                 throw new UserOrderAdditionalPriceNotFoundException();
             }
             if (!getProductIdsFromProductsString(additional.getAdditionalCategory().getProductIds()).contains(product.getProductId())) {
