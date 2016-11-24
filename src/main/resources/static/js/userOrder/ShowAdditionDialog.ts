@@ -244,9 +244,26 @@ namespace WebApplication.UserOrder
             var sendOrder = new SendOrder();
             sendOrder.productId = this._product.productId;
             sendOrder.productVariationId = this._productVariationId;
-            sendOrder.additionalIds = this._selectedAdditionalIds;
+            sendOrder.userOrderAdditionals = [];
+            sendOrder.number = 1;
 
-            OrderService.sendOrderForUser(sendOrder, onsuccess => { alert("Bestellt!") });
+            for (let i = 0; i < this._selectedAdditionalIds.length; i++)
+            {
+                var sendOrderAdditional = new SendOrderAdditionals();
+                sendOrderAdditional.additionalId = this._selectedAdditionalIds[i];
+
+                let additionObject = this._showCurrentAdditions.filter(item => item.additionalId == this._selectedAdditionalIds[i])[0];
+                sendOrderAdditional.additionalPriceId = additionObject.additionalPrices[this._priceSize].additionalPriceId;
+
+                sendOrder.userOrderAdditionals.push(sendOrderAdditional);
+            }
+
+            console.log(sendOrder);
+            OrderService.sendOrderForUser(sendOrder, onsuccess =>
+            {
+                this.closeDialog();
+                alert("Ihre Auswahl wurde Bestellt!")
+            });
         }
     }
 
@@ -254,6 +271,14 @@ namespace WebApplication.UserOrder
     {
         productId: number;
         productVariationId: number;
-        additionalIds: number[];
+        userOrderAdditionals: SendOrderAdditionals[];
+        number: number;
+    }
+
+    export class SendOrderAdditionals implements IUserOrderAdditional
+    {
+        additionalId: number;
+        additionalPriceId: number;
+
     }
 }
