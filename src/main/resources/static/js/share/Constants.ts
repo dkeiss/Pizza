@@ -31,6 +31,13 @@ class UserManagementSelectors
     public static userTableDeleteUser = ".um-userTable_deleteUser";
     public static userTableConfirmEdit = ".um-userTable_confirmEdit";
     public static userTableAboardEdit = ".um-userTable_aboardEdit";
+
+    public static confirmationDialogContainer = ".confirmationDialog_container";
+
+    public static confirmationDialogMessage = ".confirmationDialog_messageDiv";
+    public static confirmationDialogAccept = ".confirmationDialog_acceptButton";
+    public static confirmationDialogCancel = ".confirmationDialog_cancelButton";
+    public static confirmationDialogClose = ".confirmationDialog_closeButton";
 }
 
 class AdminOverviewSelectors
@@ -82,6 +89,13 @@ class ShoppingCardSelectors {
     public static cardDeliveryDataEMailSpan = ".deliveryData_email";
 
     public static cardOrderSummaryDiv = ".card_orderSummary";
+
+    public static confirmationDialogContainer = ".confirmationDialog_container";
+
+    public static confirmationDialogMessage = ".confirmationDialog_messageDiv";
+    public static confirmationDialogAccept = ".confirmationDialog_acceptButton";
+    public static confirmationDialogCancel = ".confirmationDialog_cancelButton";
+    public static confirmationDialogClose = ".confirmationDialog_closeButton";
 
 }
 

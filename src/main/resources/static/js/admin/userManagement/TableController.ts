@@ -20,8 +20,30 @@ namespace WebApplication.Admin.UserManagement
         private _cssDisableSelections = "um-userTable-disableSelections";
 
 
+        private _confirmationDialogContainer: JQuery = null;
+        private _confirmationDialogMessage: JQuery = null;
+        private _confirmationDialogAccept: JQuery = null;
+        private _confirmationDialogCancel: JQuery = null;
+        private _confirmationDialogClose: JQuery = null;
+
+        private _currentEvent: JQueryEventObject = null;
+
+        private _cssShowContainer = "confirmationDialog-showContainer";
+
+
         constructor()
         {
+            this._confirmationDialogContainer = $(UserManagementSelectors.confirmationDialogContainer);
+            this._confirmationDialogMessage = $(UserManagementSelectors.confirmationDialogMessage);
+            this._confirmationDialogAccept = $(UserManagementSelectors.confirmationDialogAccept);
+            this._confirmationDialogCancel = $(UserManagementSelectors.confirmationDialogCancel);
+            this._confirmationDialogClose = $(UserManagementSelectors.confirmationDialogClose);
+
+            this._confirmationDialogMessage.text("Möchten Sie den Benutzer wirklich löschen?");
+            this._confirmationDialogClose.on("click", () => {this._confirmationDialogContainer.removeClass(this._cssShowContainer);this._currentEvent=null;});
+            this._confirmationDialogCancel.on("click", () => {this._confirmationDialogContainer.removeClass(this._cssShowContainer);this._currentEvent=null;});
+            this._confirmationDialogAccept.on("click", () => {this._confirmationDialogContainer.removeClass(this._cssShowContainer);this.deleteSelectedUser(this._currentEvent);this._currentEvent=null;});
+
             this._findUserSelector = $(UserManagementSelectors.inputFieldFindUser);
             this._userTableSelector = $(UserManagementSelectors.userTable);
             this.refreshConstructor()
@@ -42,7 +64,8 @@ namespace WebApplication.Admin.UserManagement
 
             this._findUserSelector.on("keyup", event => this.findUserInList(event));
             this._userTableRowSelector.on("click", event => this.activeTableEdit(event));
-            this._userTableDeleteUser.on("click", event => this.deleteSelectedUser(event));
+            this._userTableDeleteUser.on("click", event => { this._currentEvent = event; this._confirmationDialogContainer.addClass(this._cssShowContainer);});
+            //this._userTableDeleteUser.on("click", event => this.deleteSelectedUser(event));
             this._userTableConfirmEdit.on("click", event => this.rowConfirmIcon(event));
             this._userTableAboardEdit.on("click", event => this.rowAboardIcon(event));
         }
