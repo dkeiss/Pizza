@@ -22,8 +22,29 @@ namespace WebApplication.Admin.ShoppingCard
 
         private _orderSummary: {[productCategory : string]: number} = {};
 
+        private _confirmationDialogContainer: JQuery = null;
+        private _confirmationDialogMessage: JQuery = null;
+        private _confirmationDialogAccept: JQuery = null;
+        private _confirmationDialogCancel: JQuery = null;
+        private _confirmationDialogClose: JQuery = null;
+
+        private _currentEvent: JQueryEventObject = null;
+
+        private _cssShowContainer = "confirmationDialog-showContainer";
+
         constructor()
         {
+            this._confirmationDialogContainer = $(ShoppingCardSelectors.confirmationDialogContainer);
+            this._confirmationDialogMessage = $(ShoppingCardSelectors.confirmationDialogMessage);
+            this._confirmationDialogAccept = $(ShoppingCardSelectors.confirmationDialogAccept);
+            this._confirmationDialogCancel = $(ShoppingCardSelectors.confirmationDialogCancel);
+            this._confirmationDialogClose = $(ShoppingCardSelectors.confirmationDialogClose);
+
+            this._confirmationDialogMessage.text("Möchten Sie die Bestellung wirklich löschen?");
+            this._confirmationDialogClose.on("click", () => {this._confirmationDialogContainer.removeClass(this._cssShowContainer);this._currentEvent=null;});
+            this._confirmationDialogCancel.on("click", () => {this._confirmationDialogContainer.removeClass(this._cssShowContainer);this._currentEvent=null;});
+            this._confirmationDialogAccept.on("click", () => {this._confirmationDialogContainer.removeClass(this._cssShowContainer);this.deleteOrder(this._currentEvent);this._currentEvent=null;});
+
             this._currentSortColumn = -1;
             this._orderTable = $(ShoppingCardSelectors.orderTable);
             this._orderTableBody = this._orderTable.find("tbody");
@@ -41,138 +62,6 @@ namespace WebApplication.Admin.ShoppingCard
             ShoppingCardService.loadUserOrders(orderList =>
             {
                 this._orderList = orderList;
-                /*this._orderList = [
-                    {
-                        userOrderId: 1,
-                        userId: 2,
-                        productId: 1,
-                        productVariationId: 1,
-                        number: 421,
-                        userOrderAdditionals: [
-                            {
-                                userOrderAdditionalId: 1,
-                                userOrderId: 1,
-                                additionalId: 2,
-                                additionalDescription: "test",
-                                additionalPriceId: 1,
-                                additionalPriceName: "test"
-
-                            }],
-                        firstName: "Sascha",
-                        lastName: "Walther",
-                        userName: "a@a.de",
-                        productCategoryName: "Pizza",
-                        productGroupName: "Pizza,",
-                        productName: "Pizza Salami",
-                        productVariationName: "Groß",
-                        sum: 7.99,
-                        paid: true
-                    },
-                    {
-                        userOrderId: 2,
-                        userId: 2,
-                        productId: 1,
-                        productVariationId: 1,
-                        number: 572,
-                        userOrderAdditionals: [
-                            {
-                                userOrderAdditionalId: 1,
-                                userOrderId: 1,
-                                additionalId: 2,
-                                additionalDescription: "test",
-                                additionalPriceId: 1,
-                                additionalPriceName: "test"
-
-                            }],
-                        firstName: "Sascha",
-                        lastName: "Walther",
-                        userName: "a@a.de",
-                        productCategoryName: "Pizza",
-                        productGroupName: "Pizza,",
-                        productName: "Pizza Salami",
-                        productVariationName: "Groß",
-                        sum: 5.55,
-                        paid: true
-                    },
-                    {
-                        userOrderId: 3,
-                        userId: 2,
-                        productId: 1,
-                        productVariationId: 1,
-                        number: 421,
-                        userOrderAdditionals: [
-                            {
-                                userOrderAdditionalId: 1,
-                                userOrderId: 1,
-                                additionalId: 2,
-                                additionalDescription: "test",
-                                additionalPriceId: 1,
-                                additionalPriceName: "test"
-
-                            }],
-                        firstName: "Sascha",
-                        lastName: "Walther",
-                        userName: "a@a.de",
-                        productCategoryName: "Pizza",
-                        productGroupName: "Pizza,",
-                        productName: "Pizza Salami",
-                        productVariationName: "Groß",
-                        sum: 7.00,
-                        paid: false
-                    },
-                    {
-                        userOrderId: 4,
-                        userId: 2,
-                        productId: 1,
-                        productVariationId: 1,
-                        number: 576,
-                        userOrderAdditionals: [
-                            {
-                                userOrderAdditionalId: 1,
-                                userOrderId: 1,
-                                additionalId: 2,
-                                additionalDescription: "test",
-                                additionalPriceId: 1,
-                                additionalPriceName: "test"
-
-                            }],
-                        firstName: "Sascha",
-                        lastName: "Walther",
-                        userName: "a@a.de",
-                        productCategoryName: "Muschu",
-                        productGroupName: "Pizza,",
-                        productName: "Pizza Salami",
-                        productVariationName: "Groß",
-                        sum: 7.59,
-                        paid: false
-                    },
-                    {
-                        userOrderId: 5,
-                        userId: 2,
-                        productId: 1,
-                        productVariationId: 1,
-                        number: 426,
-                        userOrderAdditionals: [
-                            {
-                                userOrderAdditionalId: 1,
-                                userOrderId: 1,
-                                additionalId: 2,
-                                additionalDescription: "test",
-                                additionalPriceId: 1,
-                                additionalPriceName: "test"
-
-                            }],
-                        firstName: "Sascha",
-                        lastName: "Walther",
-                        userName: "a@a.de",
-                        productCategoryName: "Pizza",
-                        productGroupName: "Pizza,",
-                        productName: "Pizza Salami",
-                        productVariationName: "Groß",
-                        sum: 8.46,
-                        paid: true
-                    }
-                ]*/
             });
         }
 
@@ -238,7 +127,7 @@ namespace WebApplication.Admin.ShoppingCard
             this._orderTableDeleteButton = $(ShoppingCardSelectors.orderTableDeleteButton);
 
             this._orderTableStateButton.on("click", event => this.switchOrderState(event));
-            this._orderTableDeleteButton.on("click", event => this.deleteOrder(event));
+            this._orderTableDeleteButton.on("click", event => { this._currentEvent = event; this._confirmationDialogContainer.addClass(this._cssShowContainer);});
             this._orderTableDeleteButton.hover(function(){
                 let elements = $(this).closest("tr").find("td");
                 for(let i = 0; i < elements.length; i++)
