@@ -1,6 +1,6 @@
 #FileLock
-#Tue Nov 22 11:48:34 CET 2016
-hostName=WWD0539.ads.wmgruppe.de
-id=1588ba6cbf3e138d9178f8426ba2904890824b96ae0
+#Thu Nov 24 19:39:18 CET 2016
+hostName=Flux-Mobile.Speedport_W_921V_1_39_000
+id=15897a2762f901fa7ed648b563c4926a2e516116883
 method=file
-server=192.168.42.171\:58247
+server=192.168.2.104\:50210
