@@ -97,8 +97,8 @@ namespace WebApplication.Admin.ShoppingCard
                     this._cardDeliveryDataCompanySpan.text(this._currentDeliveryData.deliveryServiceName);
                     this._cardDeliveryDataFirstNameSpan.text(this._currentDeliveryData.firstName);
                     this._cardDeliveryDataLastNameSpan.text(this._currentDeliveryData.lastName);
-                    this._cardDeliveryDataStreetAddressSpan.text((this._currentDeliveryData.street.length ? this._currentDeliveryData.street : "")  + " " + (this._currentDeliveryData.streetNumber.length ? this._currentDeliveryData.streetNumber : ""));
-                    this._cardDeliveryDataZipTownSpan.text((this._currentDeliveryData.postalCode.length ? this._currentDeliveryData.postalCode : "") + " " + (this._currentDeliveryData.town.length ? this._currentDeliveryData.town : ""));
+                    this._cardDeliveryDataStreetAddressSpan.text((this._currentDeliveryData.street != null ? this._currentDeliveryData.street : "")  + " " + (this._currentDeliveryData.streetNumber != null ? this._currentDeliveryData.streetNumber : ""));
+                    this._cardDeliveryDataZipTownSpan.text((this._currentDeliveryData.postalCode != null ? this._currentDeliveryData.postalCode : "") + " " + (this._currentDeliveryData.town != null ? this._currentDeliveryData.town : ""));
                     this._cardDeliveryDataPhoneSpan.text(this._currentDeliveryData.telephoneNumber);
                     this._cardDeliveryDataEMailSpan.text(this._currentDeliveryData.emailAddress);
                     this._cardDeliveryDataAdditionalInfoSpan.text(this._currentDeliveryData.additionalInfos);

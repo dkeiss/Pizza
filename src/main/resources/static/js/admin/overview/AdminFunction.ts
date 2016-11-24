@@ -91,7 +91,8 @@ namespace WebApplication.Admin.Overview
             this._adminCatalogPostfixLabel.show();
             this._currentBulkOrder = null;
             this._adminActivateCatalogButton.off();
-            this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
+//            this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
+            this._adminActivateCatalogButton.addClass("admin-submitButton-disabled").removeClass("admin-submitButton-enabled");
             this._adminActivateCatalogButton.text("Aktivieren");
         }
 
@@ -237,6 +238,8 @@ namespace WebApplication.Admin.Overview
                     this._adminTimePicker.show();
                     this._adminTimePicker.prop('readonly', false);
                     this._adminTimePicker.on("change", () => this.validateTime());
+                    this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled").addClass("admin-submitButton-enabled");
+                    this._adminActivateCatalogButton.on("click", () => this.activateBulkOrder());
                 }
             });
         }
@@ -341,6 +344,7 @@ namespace WebApplication.Admin.Overview
                     //this._adminTimePicker.off();
 
                     this._adminActivateCatalogButton.off();
+                    this._adminActivateCatalogButton.removeClass("admin-submitButton-disabled").addClass("admin-submitButton-enabled");
                     this._adminActivateCatalogButton.text("Abbrechen");
                     this._adminActivateCatalogButton.on("click", () => this.deaktivateBulkOrder());
                 }
