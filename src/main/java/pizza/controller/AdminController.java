@@ -46,7 +46,7 @@ public class AdminController {
 
 	@RequestMapping(value = "/admin/initialpassword", method = RequestMethod.POST)
 	public String setInitialPassword(InitialAdminVO initialAdmin, Principal principal, Model model) {
-		if (!userService.isInitialAdminValid(initialAdmin)) {
+		if (authenticationValidator.isInitialAdminPassword(principal, model) && !userService.isInitialAdminValid(initialAdmin)) {
 			addDataToModel(initialAdmin, model);
 			model.addAttribute("errorMsg", "Bitte überprüfen Sie Ihre Eingaben!");
 			return "admin/initialpassword";
