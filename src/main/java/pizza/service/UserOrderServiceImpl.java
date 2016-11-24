@@ -153,7 +153,7 @@ public class UserOrderServiceImpl implements UserOrderService {
 				throw new UserOrderAdditionalNotFoundException();
 			}
 			AdditionalPrice additionalPrice = additionalService.findAdditionalPrice(userOrderAdditionalVO.getAdditionalPriceId());
-			if (additionalPrice == null || additionalPrice.getAdditional().getAdditionalId().equals(additional.getAdditionalId())) {
+			if (additionalPrice == null || !additionalPrice.getAdditional().getAdditionalId().equals(additional.getAdditionalId())) {
 				throw new UserOrderAdditionalPriceNotFoundException();
 			}
 			if (!getProductIdsFromProductsString(additional.getAdditionalCategory().getProductIds()).contains(product.getProductId())) {
