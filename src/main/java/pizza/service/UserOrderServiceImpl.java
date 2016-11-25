@@ -156,7 +156,7 @@ public class UserOrderServiceImpl implements UserOrderService {
 			if (additionalPrice == null || !additionalPrice.getAdditional().getAdditionalId().equals(additional.getAdditionalId())) {
 				throw new UserOrderAdditionalPriceNotFoundException();
 			}
-			if (!getProductIdsFromProductsString(additional.getAdditionalCategory().getProductIds()).contains(product.getProductId())) {
+			if (!getProductIdsFromProductsString(additional.getAdditionalCategory().getProductIds()).contains(product.getNumber())) {
 				throw new UserOrderAdditionalAndProductNotMatchException();
 			}
 			UserOrderAdditional userOrderAdditional = new UserOrderAdditional();

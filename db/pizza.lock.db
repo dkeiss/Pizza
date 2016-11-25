@@ -1,6 +1,6 @@
 #FileLock
-#Thu Nov 24 19:39:18 CET 2016
+#Fri Nov 25 19:35:39 CET 2016
 hostName=Flux-Mobile.Speedport_W_921V_1_39_000
-id=15897a2762f901fa7ed648b563c4926a2e516116883
+id=1589cc57a0c8999b567caef4540865e3876f0aeb962
 method=file
-server=192.168.2.104\:50210
+server=192.168.2.106\:54053
