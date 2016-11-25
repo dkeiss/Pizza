@@ -331,7 +331,7 @@ p {
 .core-helpButton{
     float: right;
     color: #3595b4;
-    padding-right: 25px;
+    padding-right: 20px;
     text-transform: uppercase;
     cursor: pointer;
 }
