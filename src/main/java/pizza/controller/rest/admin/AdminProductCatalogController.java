@@ -46,13 +46,28 @@ public class AdminProductCatalogController {
             throw new NotFoundException();
         }
 
+        return getInputStreamResourceHttpEntity("attachment; filename=" + fileType + ".json", file.length(), new FileInputStream(file));
+    }
+
+    @RequestMapping(value = "/download-manual", method = RequestMethod.GET)
+    public HttpEntity<InputStreamResource> getManual(HttpServletResponse response) throws FileNotFoundException {
+        Path path = Paths.get("src/main/resources/static/pdf/Handbuch.pdf");
+        File file = path.toFile();
+        if (!file.exists()) {
+            throw new NotFoundException();
+        }
+
+        return getInputStreamResourceHttpEntity("attachment; filename=Handbuch.pdf", file.length(), new FileInputStream(file));
+    }
+
+    private HttpEntity<InputStreamResource> getInputStreamResourceHttpEntity(String headerValue, long length, FileInputStream inputStream) throws FileNotFoundException {
         HttpHeaders header = new HttpHeaders();
         header.setContentType(new MediaType("application", "json"));
         header.set("Content-Disposition",
-                "attachment; filename=" + fileType + ".json");
-        header.setContentLength(file.length());
+                headerValue);
+        header.setContentLength(length);
 
-        InputStreamResource isr = new InputStreamResource(new FileInputStream(file));
+        InputStreamResource isr = new InputStreamResource(inputStream);
         return new ResponseEntity<>(isr, header, HttpStatus.OK);
     }
 
