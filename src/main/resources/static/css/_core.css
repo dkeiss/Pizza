@@ -327,3 +327,11 @@ p {
     text-align: right;
     padding-top: 12px;
 }
+
+.core-helpButton{
+    float: right;
+    color: #3595b4;
+    padding-right: 25px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
