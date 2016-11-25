@@ -31,15 +31,7 @@ public class MailServiceImpl implements MailService {
                 email.setSSLOnConnect(true);
                 email.setFrom("whbpizza@gmail.com");
                 email.setSubject("Die Sammelbestellung \"" + bulkOrderName + "\" ist eröffnet!");
-                email.setMsg("Bestellungen können nun aufgenommen werden!");
-
-                // Create the attachment
-                EmailAttachment attachment = new EmailAttachment();
-                attachment.setPath("src/main/resources/static/pdf/Kurzanleitung_Bestellvorgang.pdf");
-                attachment.setDisposition(EmailAttachment.ATTACHMENT);
-                attachment.setDescription("Kurzanleitung Bestellvorgang");
-                attachment.setName("Kurzanleitung_Bestellvorgang.pdf");
-                email.attach(attachment);
+                email.setMsg("Bestellungen können nun aufgenommen werden!\nEine Kurzanleitung ist hier zu finden: http://localhost:8080/rest/admin/productcatalog/quick-start-guide");
 
                 for (String emailAdress : emailAddresses) {
                     email.addTo(emailAdress);

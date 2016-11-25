@@ -65,6 +65,17 @@ public class AdminProductCatalogController implements ResourceLoaderAware {
         }
     }
 
+    @RequestMapping(value = "/quick-start-guide", method = RequestMethod.GET)
+    public HttpEntity<InputStreamResource> getQuickStartGuide(HttpServletResponse response) throws FileNotFoundException {
+        InputStream inputStream = getInputStream("/static/pdf/Kurzanleitung_Bestellvorgang.pdf");
+
+        try {
+            return getInputStreamResourceHttpEntity("attachment; filename=Kurzanleitung_Bestellvorgang.pdf", inputStream.available(), inputStream);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private InputStream getInputStream(String location) {
         Resource resource = getResource("classpath:" + location);
         InputStream inputStream = null;
