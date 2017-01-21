@@ -1,5 +1,7 @@
 package pizza.service;
 
+import pizza.domain.order.BulkOrder;
+
 import java.util.List;
 
 /**
@@ -7,7 +9,7 @@ import java.util.List;
  */
 public interface MailService {
 
-    void sendBulkOrderInvitationToAll(String bulkOrderName, List<String> emailAddresses);
+    void sendBulkOrderInvitationToAll(BulkOrder bulkOrder, List<String> emailAddresses);
 
     void sendBulkOrderFinishedToSubscribers(String bulkOrderName, List<String> emailAddresses);
 

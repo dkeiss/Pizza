@@ -60,7 +60,7 @@ public class BulkOrderServiceImpl implements BulkOrderService {
         bulkOrderBO = bulkOrderRepository.save(bulkOrderBO);
         bulkOrderVO = getBulkOrderFromBO(bulkOrderBO);
 
-        mailService.sendBulkOrderInvitationToAll(bulkOrderBO.getName(), getAllEmailAddresses());
+        mailService.sendBulkOrderInvitationToAll(bulkOrderBO, getAllEmailAddresses());
 
         return bulkOrderVO;
     }
