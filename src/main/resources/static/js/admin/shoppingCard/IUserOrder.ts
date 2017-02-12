@@ -22,6 +22,7 @@ interface IUserOrder
     firstName: string;
     lastName: string;
     userName: string;
+    productNumber: number;
     productCategoryName: string;
     productGroupName: string;
     productName: string;
