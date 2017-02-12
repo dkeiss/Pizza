@@ -19,6 +19,7 @@ public class Application {
     public ServletRegistrationBean h2servletRegistration() {
         ServletRegistrationBean registration = new ServletRegistrationBean(new org.h2.server.web.WebServlet());
         registration.addUrlMappings("/console/*");
+        registration.addInitParameter("webAllowOthers", "true");
         return registration;
     }
 
