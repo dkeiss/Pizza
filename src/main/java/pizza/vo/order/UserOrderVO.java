@@ -26,4 +26,6 @@ public class UserOrderVO {
 
     private List<UserOrderAdditionalVO> userOrderAdditionals;
 
+    private Integer productNumber;
+
 }
