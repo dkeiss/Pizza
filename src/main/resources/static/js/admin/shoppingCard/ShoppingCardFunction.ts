@@ -55,6 +55,12 @@ namespace WebApplication.Admin.ShoppingCard
             this._cardOrderButton.on("click", () => this.closeOrder());
             this._cardPrintControlSheetButton.on("click", () => this.printControlSheet());
             this._cardPrintOrderSheetButton.on("click", () => this.printOrderSheet());
+
+            var isAdmin = decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent("isAdmin").replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+            if (isAdmin == "false" || isAdmin == "")
+            {
+                $('head').append('<link rel="stylesheet" href="/css/admin/isNotAdmin.css" type="text/css" />');
+            }
         }
 
         private printControlSheet(): void {
