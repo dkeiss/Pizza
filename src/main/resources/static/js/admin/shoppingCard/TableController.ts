@@ -95,7 +95,7 @@ namespace WebApplication.Admin.ShoppingCard
                 let element = "";
                 element += "<tr orderid='" + this._orderList[i].userOrderId + "'>";
                 element += "<td >" +  this._orderList[i].firstName + " " + this._orderList[i].lastName + "</td>";
-                element += "<td >" +  this._orderList[i].number + "</td>";
+                element += "<td >" +  this._orderList[i].productNumber + "</td>";
                 element += "<td >" +  this._orderList[i].productName + "</td>";
                 let additionString = "";
                 if(this._orderList[i].userOrderAdditionals) {
