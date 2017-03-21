@@ -29,12 +29,12 @@ public class Application {
     }
 
     /*
-     * Path: jdbc:h2:tcp://localhost:9090/~/pizza
+	 * Path: jdbc:h2:tcp://localhost:9090/./db/pizza
      */
-    @Bean
-    @ConditionalOnExpression("${h2.tcp.enabled:true}")
-    public Server h2TcpServer() throws SQLException {
-        return Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9090").start();
-    }
+	@Bean
+	@ConditionalOnExpression("${h2.tcp.enabled:true}")
+	public Server h2TcpServer() throws SQLException {
+		return Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9090").start();
+	}
 
 }
